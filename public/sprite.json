@@ -1,0 +1,30 @@
+{
+  "marker_customers": {
+    "height": 50,
+    "pixelRatio": 1,
+    "width": 50,
+    "x": 0,
+    "y": 0
+  },
+  "marker_default": {
+    "height": 50,
+    "pixelRatio": 1,
+    "width": 50,
+    "x": 50,
+    "y": 0
+  },
+  "marker_no": {
+    "height": 50,
+    "pixelRatio": 1,
+    "width": 49,
+    "x": 0,
+    "y": 50
+  },
+  "marker_private": {
+    "height": 50,
+    "pixelRatio": 1,
+    "width": 50,
+    "x": 49,
+    "y": 50
+  }
+}
