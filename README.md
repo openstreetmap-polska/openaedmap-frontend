@@ -48,6 +48,7 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 
 # Libraries used
 - [Maplibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/)
+- [OSM Auth](https://github.com/osmlab/osm-auth)
 - [React](https://reactjs.org/docs/getting-started.html)
 - [Bulma](https://bulma.io/) 
 - [Bulma Tooltip](https://bulma-tooltip.netlify.app/)
