@@ -15,6 +15,7 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
     "maplibre-gl": "^2.1.9",
+    "opening_hours": "^3.8.0",
     "osm-auth": "^2.0.0",
     "react": "^18.1.0",
     "react-bulma-components": "^4.1.0",
