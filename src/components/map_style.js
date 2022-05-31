@@ -1,9 +1,6 @@
-{
+export default {
     "version": 8,
     "name": "Map style",
-    "metadata": {
-        "maputnik:renderer": "mbgljs"
-    },
     "sources": {
         "osm": {
             "type": "raster",
@@ -18,7 +15,7 @@
             "attribution": "© <a target=\"_blank\" rel=\"noopener\" href=\"https://openstreetmap.org/copyright\">OpenStreetMap contributors</a>"
         }
     },
-    "sprite": "",
+    "sprite": "http://localhost:3000/sprite",
     "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
     "layers": [
         {
@@ -31,4 +28,4 @@
         }
     ],
     "id": "style"
-}
+};

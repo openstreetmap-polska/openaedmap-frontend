@@ -2,13 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './map.css';
+import styleJson from './map_style'
 
 export default function Map(){
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [lng] = useState(0);
-    const [lat] = useState(0);
-    const [zoom] = useState(2);
+    const [lng] = useState(-8);
+    const [lat] = useState(47.74);
+    const [zoom] = useState(3);
     const controlsLocation = 'bottom-right';
 
     useEffect(() => {
@@ -16,7 +17,7 @@ export default function Map(){
         map.current = new maplibregl.Map({
           container: mapContainer.current,
           hash: 'map',
-          style: './map_style.json',
+          style: styleJson,
           center: [lng, lat],
           zoom: zoom,
           minZoom: 3,
