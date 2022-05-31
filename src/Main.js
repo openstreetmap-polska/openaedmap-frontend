@@ -7,7 +7,7 @@ import Map from './components/map.js';
 
 function Main() {
     return (
-        <div className="Main">
+        <div>
             <SiteNavbar />
             <Map />
         </div>
