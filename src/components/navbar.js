@@ -4,6 +4,8 @@ import 'bulma/css/bulma.min.css';
 import { Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
+import Icon from '@mdi/react'
+import { mdiGithub } from '@mdi/js';
 
 
 export default function SiteNavbar(){
@@ -31,6 +33,11 @@ export default function SiteNavbar(){
             <Navbar.Menu className='pr-2'>
                 <Navbar.Container align='right'>
                     <LanguageSwitcher/>
+                    <Navbar.Item renderAs='div' className='pb-0'>
+                        <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noopener'>
+                            <Icon title={t('navbar.visit_github')} alt='GitHub' path={mdiGithub} size='2rem' className='has-text-white mr-1' />
+                        </a>
+                    </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>
         </Navbar>
