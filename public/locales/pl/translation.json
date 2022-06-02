@@ -4,5 +4,12 @@
         "visit_github": "Odwiedź naszego GitHuba",
         "visit_osmp_website": "Odwiedź stronę OpenStreetMap Polska"
     },
+    "sidebar": {
+        "close": "Zamknij panel boczny",
+        "csv": "CSV",
+        "download_title": "Pobierz dane o dodanych AED do OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON"
+    },
     "osmp": "OpenStreetMap Polska"
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import i18n from 'i18next';
 import { languages } from '../i18n';
-import 'bulma/css/bulma.min.css';
 import { Navbar } from 'react-bulma-components';
 
 
