@@ -24,6 +24,7 @@ export default function SiteNavbar(){
                     <span className='has-text-white has-text-weight-light mr-3'>|</span>
                     <span className="has-text-weight-light is-size-6 is-size-7-touch pl-0">
                         {t('navbar.created_with_<3_by')}
+                        &nbsp;
                         <a className="has-text-weight-medium navbarUrl"
                         href="https://openstreetmap.org.pl/" rel="noreferrer" target="_blank"
                         title={t('navbar.visit_osmp_website')}>{t('osmp')}</a>
