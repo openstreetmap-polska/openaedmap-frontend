@@ -25,7 +25,7 @@ export default function DownloadCard() {
     ];
 
     return (
-        <div className='px-4 pt-5 pb-4'>
+        <div className='px-4 pt-5'>
             <div className='content has-text-weight-light'>
                 <p className='has-text-weight-normal'>
                     <Icon path={mdiDownload} size={1} className='icon mr-1' color='#7a7a7a' />

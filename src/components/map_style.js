@@ -32,11 +32,47 @@ export default {
             }
         },
         {
-            "id": "unclustered",
+            "id": "unclustered-customers",
             "type": "symbol",
             "source": "aed-locations",
             "source-layer": "defibrillators",
-            "filter": ["!", ["has", "point_count"]],
+            "filter": ["all", ["==", "access", "customers"], ["!has", "point_count"]],
+            "layout": {
+                "icon-image": "marker_customers",
+                "icon-size": 0.5,
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "unclustered-no",
+            "type": "symbol",
+            "source": "aed-locations",
+            "source-layer": "defibrillators",
+            "filter": ["all", ["==", "access", "no"], ["!has", "point_count"]],
+            "layout": {
+                "icon-image": "marker_no",
+                "icon-size": 0.5,
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "unclustered-private",
+            "type": "symbol",
+            "source": "aed-locations",
+            "source-layer": "defibrillators",
+            "filter": ["all", ["==", "access", "private"], ["!has", "point_count"]],
+            "layout": {
+                "icon-image": "marker_private",
+                "icon-size": 0.5,
+                "icon-allow-overlap": true
+            }
+        },
+        {
+            "id": "unclustered-default",
+            "type": "symbol",
+            "source": "aed-locations",
+            "source-layer": "defibrillators",
+            "filter": ["all", ["!=", "access", "customers"], ["!=", "access", "no"], ["!=", "access", "private"], ["!has", "point_count"]],
             "layout": {
                 "icon-image": "marker_default",
                 "icon-size": 0.5,

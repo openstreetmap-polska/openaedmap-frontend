@@ -1,4 +1,10 @@
 {
+    "access": {
+        "yes": "Publicznie dostępny",
+        "private": "Dostępny za zgodą właściciela",
+        "customers": "Dostępny tylko w godzinach pracy",
+        "no": "Niedostępny"
+    },
     "navbar": {
         "created_with_<3_by": "tworzona z ❤️ przez",
         "visit_github": "Odwiedź naszego GitHuba",
@@ -9,7 +15,8 @@
         "csv": "CSV",
         "download_title": "Pobierz dane o dodanych AED do OSM",
         "excel": "Excel",
-        "geojson": "GeoJSON"
+        "geojson": "GeoJSON",
+        "map_legend_title": "Legenda"
     },
     "osmp": "OpenStreetMap Polska"
 }

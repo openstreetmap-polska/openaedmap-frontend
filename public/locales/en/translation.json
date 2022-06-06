@@ -1,4 +1,10 @@
 {
+    "access": {
+        "yes": "Publicly accessible",
+        "private": "Accessible with owner's permit",
+        "customers": "Accessible during work hours",
+        "no": "Unavailable"
+    },
     "navbar": {
         "created_with_<3_by": "created with ❤️ by",
         "visit_github": "Visit our GitHub repository",
@@ -9,7 +15,8 @@
         "csv": "CSV",
         "download_title": "Download AED data added to OSM",
         "excel": "Excel",
-        "geojson": "GeoJSON"
+        "geojson": "GeoJSON",
+        "map_legend_title": "Map legend"
     },
     "osmp": "OpenStreetMap Poland"
 }
