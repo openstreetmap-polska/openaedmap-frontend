@@ -3,7 +3,7 @@ import './navbar.css';
 import { Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
-import Icon from '@mdi/react'
+import Icon from '@mdi/react';
 import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
 
 
