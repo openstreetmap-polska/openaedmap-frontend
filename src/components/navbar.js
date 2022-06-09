@@ -3,8 +3,8 @@ import './navbar.css';
 import { Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
-import Icon from '@mdi/react'
-import { mdiCog, mdiGithub } from '@mdi/js';
+import Icon from '@mdi/react';
+import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
 
 
 export default function SiteNavbar({ toggleSidebarShown }) {
@@ -13,8 +13,9 @@ export default function SiteNavbar({ toggleSidebarShown }) {
         <Navbar color='success' className='pl-1'>
             <Navbar.Brand>
                 <Navbar.Item renderAs='div'>
-                    <span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile pr-1 pl-2">
-                    Open<span className="has-text-weight-semibold pl-1">AED</span>Map
+                    <Icon path={mdiHeartFlash} size={1.3} className="icon" color="#fff" />
+                    <span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile pr-1 pl-1">
+                    Open<span className="has-text-weight-semibold">AED</span>Map
                     </span>
                 </Navbar.Item>
                 <Navbar.Item className='is-hidden-touch' renderAs='div'>

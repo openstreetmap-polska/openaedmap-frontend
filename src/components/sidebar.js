@@ -2,6 +2,7 @@ import React from 'react';
 import './sidebar.css';
 import DownloadCard from './downloadCard.js';
 import {useTranslation} from "react-i18next";
+import MapLegend from "./legend";
 
 export default function Sidebar({ closeSidebar }) {
     const { t } = useTranslation();
@@ -21,6 +22,7 @@ export default function Sidebar({ closeSidebar }) {
                     />
                 </div>
                 <DownloadCard />
+                <MapLegend />
             </div>
         </div>
     );

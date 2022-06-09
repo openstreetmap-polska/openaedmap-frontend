@@ -36,9 +36,9 @@ export default {
             "type": "symbol",
             "source": "aed-locations",
             "source-layer": "defibrillators",
-            "filter": ["!", ["has", "point_count"]],
+            "filter": ["!has", "point_count"],
             "layout": {
-                "icon-image": "marker_default",
+                "icon-image": ["image", ["concat", "marker_", ["get", "access"]]],
                 "icon-size": 0.5,
                 "icon-allow-overlap": true
             }
