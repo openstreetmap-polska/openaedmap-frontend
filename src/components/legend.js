@@ -33,8 +33,8 @@ export default function MapLegend() {
         },
     ];
     return (
-        <div className="px-4 pb-4">
-            <p className='has-text-weight-normal pb-4'>
+        <div className="p-4">
+            <p className='has-text-weight-normal mb-5'>
                 <Icon path={mdiMapLegend} size={1} className='icon mr-1' color='#7a7a7a' />
                 {t('sidebar.map_legend_title')}
             </p>

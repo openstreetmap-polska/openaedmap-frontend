@@ -46,8 +46,44 @@ export default function Map(){
 
         // Map controls
         map.current.addControl(control, controlsLocation);
-
         map.current.addControl(geolocate, controlsLocation);
+
+        // Map interaction
+        map.current.on('mouseenter', 'clustered-circle', () => {
+            map.current.getCanvas().style.cursor = 'pointer';
+        });
+        map.current.on('mouseleave', 'clustered-circle', () => {
+            map.current.getCanvas().style.cursor = '';
+        });
+        map.current.on('mouseenter', 'unclustered', () => {
+            map.current.getCanvas().style.cursor = 'pointer';
+        });
+        map.current.on('mouseleave', 'unclustered', () => {
+            map.current.getCanvas().style.cursor = '';
+        });
+
+        // zoom to cluster on click
+        map.current.on('click', 'clustered-circle', function (e) {
+            var features = map.current.queryRenderedFeatures(e.point, {
+                layers: ['clustered-circle']
+            });
+            var zoom = map.current.getZoom();
+            map.current.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom + 2
+            });
+        });
+        // show sidebar on single element click
+        // map.current.on('click', 'unclustered', function (e) {
+        //     console.log(e.features[0].properties);
+        //     if (e.features[0].properties !== undefined) {
+        //         let properties = {
+        //             action: "showDetails",
+        //             data: e.features[0].properties,
+        //         };
+                
+        //     }
+        // });
     });
 
     return (

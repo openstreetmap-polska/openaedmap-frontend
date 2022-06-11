@@ -4,7 +4,7 @@ import DownloadCard from './downloadCard.js';
 import {useTranslation} from "react-i18next";
 import MapLegend from "./legend";
 
-export default function Sidebar({ closeSidebar }) {
+export default function SidebarRight({ closeSidebar }) {
     const { t } = useTranslation();
     return (
         <div className='sidebar-right'>
