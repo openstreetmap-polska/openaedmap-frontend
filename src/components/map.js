@@ -3,14 +3,23 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './map.css';
 import styleJson from './map_style'
+import SidebarLeft from './sidebar-left'
 
-export default function Map(){
+export default function Map() {
+
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [lng] = useState(-8);
     const [lat] = useState(47.74);
     const [zoom] = useState(3);
     const controlsLocation = 'bottom-right';
+
+    const [sidebarLeftData, setSidebarLeftData] = useState({});
+    const [sidebarLeftAction, setSidebarLeftAction] = useState("init");
+    const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
+    // const toggleSidebarLeftShown = () => setSidebarLeftShown(!sidebarShown);
+    const closeSidebarLeft = () => setSidebarLeftShown(false);
+
 
     useEffect(() => {
         if (map.current) return; //stops map from intializing more than once
@@ -74,21 +83,27 @@ export default function Map(){
             });
         });
         // show sidebar on single element click
-        // map.current.on('click', 'unclustered', function (e) {
-        //     console.log(e.features[0].properties);
-        //     if (e.features[0].properties !== undefined) {
-        //         let properties = {
-        //             action: "showDetails",
-        //             data: e.features[0].properties,
-        //         };
-                
-        //     }
-        // });
+        map.current.on('click', 'unclustered', function (e) {
+            console.log(e.features[0].properties);
+            if (e.features[0].properties !== undefined) {
+                // let properties = {
+                //     action: "showDetails",
+                //     data: e.features[0].properties,
+                // };
+                // <SidebarLeft action={"showDetails"} data={e.features[0].properties} visible={true} />
+                setSidebarLeftAction("showDetails");
+                setSidebarLeftData(e.features[0].properties);
+                setSidebarLeftShown(true);
+            }
+        });
     });
 
     return (
+        <>
+        { sidebarLeftShown && <SidebarLeft action={sidebarLeftAction} data={sidebarLeftData} closeSidebar={closeSidebarLeft} visible={sidebarLeftShown} />}
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
+        </>
     );
 }
