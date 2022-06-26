@@ -3,7 +3,8 @@
         "yes": "Publicznie dostępny",
         "private": "Dostępny za zgodą właściciela",
         "customers": "Dostępny tylko w godzinach pracy",
-        "no": "Niedostępny"
+        "no": "Niedostępny",
+        "permissive": "permissive"
     },
     "navbar": {
         "created_with_<3_by": "tworzona z ❤️ przez",
@@ -16,7 +17,15 @@
         "download_title": "Pobierz dane o dodanych AED do OSM",
         "excel": "Excel",
         "geojson": "GeoJSON",
-        "map_legend_title": "Legenda"
+        "map_legend_title": "Legenda",
+        "caption_info": "AED",
+        "no_data": "Brak danych",
+        "indoor": "Wewnątrz budynku",
+        "location": "Dokładna lokalizacja"
+    },
+    "indoor": {
+        "yes": "Tak",
+        "no": "Nie"
     },
     "osmp": "OpenStreetMap Polska"
 }

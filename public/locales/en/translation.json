@@ -3,7 +3,8 @@
         "yes": "Publicly accessible",
         "private": "Accessible with owner's permit",
         "customers": "Accessible during work hours",
-        "no": "Unavailable"
+        "no": "Unavailable",
+        "permissive": "permissive"
     },
     "navbar": {
         "created_with_<3_by": "created with ❤️ by",
@@ -16,7 +17,15 @@
         "download_title": "Download AED data added to OSM",
         "excel": "Excel",
         "geojson": "GeoJSON",
-        "map_legend_title": "Map legend"
+        "map_legend_title": "Map legend",
+        "caption_info": "AED",
+        "no_data": "No data",
+        "indoor": "Inside building",
+        "location": "Location"
+    },
+    "indoor": {
+        "yes": "Yes",
+        "no": "No"
     },
     "osmp": "OpenStreetMap Poland"
 }
