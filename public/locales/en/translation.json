@@ -21,7 +21,14 @@
         "caption_info": "AED",
         "no_data": "No data",
         "indoor": "Inside building",
-        "location": "Location"
+        "location": "Location",
+        "opening_hours": "Opening hours",
+        "description": "Description"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Open",
+        "closed": "Closed"
     },
     "indoor": {
         "yes": "Yes",

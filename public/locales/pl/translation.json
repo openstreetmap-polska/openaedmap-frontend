@@ -21,7 +21,14 @@
         "caption_info": "AED",
         "no_data": "Brak danych",
         "indoor": "Wewnątrz budynku",
-        "location": "Dokładna lokalizacja"
+        "location": "Dokładna lokalizacja",
+        "opening_hours": "Godziny otwarcia",
+        "description": "Opis"
+    },
+    "opening_hours": {
+        "24_7": "całodobowo",
+        "open": "Otwarte",
+        "closed": "Zamknięte"
     },
     "indoor": {
         "yes": "Tak",

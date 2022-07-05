@@ -10,7 +10,7 @@ import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
 export default function SiteNavbar({ toggleSidebarShown }) {
     const { t } = useTranslation();
     return (
-        <Navbar color='success' className='pl-1'>
+        <Navbar color='success' className='pl-1 has-background-green'>
             <Navbar.Brand>
                 <Navbar.Item renderAs='div'>
                     <Icon path={mdiHeartFlash} size={1.3} className="icon" color="#fff" />
