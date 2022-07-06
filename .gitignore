@@ -117,3 +117,6 @@ dist
 
 # production
 /build
+
+# ide
+.vscode
