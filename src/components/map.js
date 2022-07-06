@@ -1,9 +1,19 @@
 import React, { useRef, useEffect, useState } from 'react';
-import maplibregl from 'maplibre-gl';
+// import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './map.css';
 import styleJson from './map_style'
 import SidebarLeft from './sidebar-left'
+
+// -------------------------------------------------------------------
+// https://github.com/maplibre/maplibre-gl-js/issues/1011
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import maplibregl from '!maplibre-gl';      // ! is important here
+import maplibreglWorker from 'maplibre-gl/dist/maplibre-gl-csp-worker';
+
+maplibregl.workerClass = maplibreglWorker;
+// -------------------------------------------------------------------
 
 export default function Map() {
 
