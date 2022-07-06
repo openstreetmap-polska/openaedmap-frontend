@@ -29,7 +29,13 @@ i18n
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
+    },
+    backend: {
+      loadPath: './locales/{{lng}}/{{ns}}.json'
     }
+  }, (err, t) => {
+    if (err) return console.log('something went wrong loading', err);
+    t('key');
   });
 
 export default i18n;

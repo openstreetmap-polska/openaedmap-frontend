@@ -1,3 +1,6 @@
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname;
+
 export default {
     "version": 8,
     "name": "Map style",
@@ -20,7 +23,7 @@ export default {
           "maxzoom": 13
         }
     },
-    "sprite": "http://localhost:3000/sprite",
+    "sprite": new URL("sprite", baseUrl).href,
     "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
     "layers": [
         {
