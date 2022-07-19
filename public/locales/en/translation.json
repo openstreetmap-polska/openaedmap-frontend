@@ -23,7 +23,12 @@
         "indoor": "Inside building",
         "location": "Location",
         "opening_hours": "Opening hours",
-        "description": "Description"
+        "description": "Description",
+        "contact_number": "Contact number",
+        "operator": "Operator",
+        "note": "Note",
+        "edit": "Edit in OSM",
+        "view": "View in OSM"
     },
     "opening_hours": {
         "24_7": "24/7",

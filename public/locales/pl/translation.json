@@ -23,7 +23,12 @@
         "indoor": "Wewnątrz budynku",
         "location": "Dokładna lokalizacja",
         "opening_hours": "Godziny otwarcia",
-        "description": "Opis"
+        "description": "Opis",
+        "contact_number": "Numer kontaktowy",
+        "operator": "Operator",
+        "note": "Notatka",
+        "edit": "Edytuj w OSM",
+        "view": "View in OSM"
     },
     "opening_hours": {
         "24_7": "całodobowo",

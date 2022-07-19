@@ -1,11 +1,13 @@
-import React from "react";
-import './sidebar.css';
-import '../Main.css';
+import { mdiMagnify, mdiPencil } from "@mdi/js";
+import Icon from '@mdi/react';
 import 'bulma/css/bulma.min.css';
-import { Card, Columns, Image, Button } from 'react-bulma-components';
-import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import opening_hours from "opening_hours";
+import React from "react";
+import { Card, Columns, Image } from 'react-bulma-components';
+import { useTranslation } from 'react-i18next';
+import '../Main.css';
+import './sidebar.css';
 
 
 const accessToColourMapping = {
@@ -92,6 +94,31 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
       const descriptionText = data[`description_${i18n.resolvedLanguage}`] || data["description"]
       const description = descriptionText ? <span className="has-text-weight-medium">{descriptionText}</span> : noData
 
+      const contactNumber = data.phone ? <span className="has-text-weight-medium">{data.phone}</span> : noData
+
+      const operator = data.operator ? <span className="has-text-weight-medium">{data.operator}</span> : noData
+
+      const noteText = data[`note_${i18n.resolvedLanguage}`] || data["note"]
+      const note = noteText ? <span className="has-text-weight-medium">{noteText}</span> : noData
+
+      const editButton = osmId => {
+        return <a key={"edit_url_" + osmId} href={"https://www.openstreetmap.org/edit?node=" + osmId}
+          className="button is-small is-success mx-1"
+          rel={"noreferrer"} target={"_blank"}>
+            <Icon path={mdiPencil} size={1.0} className="icon" color="#fff" />
+            <span>{t("sidebar.edit")}</span>
+        </a>
+      }
+
+      const viewButton = osmId => {
+        return <a key={"view_url_" + osmId} href={"https://www.openstreetmap.org/node=" + osmId}
+          className="button is-small is-success mx-1"
+          rel={"noreferrer"} target={"_blank"}>
+            <Icon path={mdiMagnify} size={1.0} className="icon" color="#fff" />
+            <span>{t("sidebar.view")}</span>
+        </a>
+      }
+
       return (
         <div className={visible ? "sidebar": "sidebar is-invisible"} id="sidebar-div">
           <Card>
@@ -122,16 +149,23 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
                 <p className="has-text-weight-light">{t('sidebar.location') + ": "}{location}</p>
                 <p className="has-text-weight-light">{t('sidebar.opening_hours') + ": "}{openingHours}</p>
                 <p className="has-text-weight-light">{t('sidebar.description') + ": "}{description}</p>
+                <p className="has-text-weight-light">{t('sidebar.contact_number') + ": "}{contactNumber}</p>
+                <p className="has-text-weight-light">{t('sidebar.operator') + ": "}{operator}</p>
+                <p className="has-text-weight-light">{t('sidebar.note') + ": "}{note}</p>
               </div>
             </Card.Content>
             <Card.Footer>
-              <div
+              <Card.Footer.Item className="has-background-success-light">
+                {viewButton(data.osm_id)}
+                {editButton(data.osm_id)}
+              </Card.Footer.Item>
+              {/* <div
                 className="has-background-success-light card-footer-item is-block has-text-centered is-size-7 has-text-weight-semibold p-1"
                 id="sidebar-footer-button-left">
                 <a className="has-background-success-light card-footer-item has-text-centered is-size-7 has-text-weight-semibold"
                   href="#" rel="noopener"
                   target="_blank"></a>
-              </div>
+              </div> */}
             </Card.Footer>
           </Card>
         </div>
