@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import { Navbar } from 'react-bulma-components';
+import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
 import Icon from '@mdi/react';
@@ -32,14 +32,14 @@ export default function SiteNavbar({ toggleSidebarShown }) {
             <Navbar.Menu className='pr-2'>
                 <Navbar.Container align='right'>
                     <LanguageSwitcher/>
-                    <Navbar.Item renderAs='div' className='pb-0'>
-                        <a onClick={() => toggleSidebarShown()}>
-                            <Icon path={mdiCog} size='2rem' className='has-text-white mr-1' />
-                        </a>
+                    <Navbar.Item renderAs='div' p={0}>
+                        <Button onClick={() => toggleSidebarShown()} color={'white'} outlined={true}>
+                            <Icon path={mdiCog} size='2rem' />
+                        </Button>
                     </Navbar.Item>
-                    <Navbar.Item renderAs='div' className='pb-0'>
-                        <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noopener'>
-                            <Icon title={t('navbar.visit_github')} alt='GitHub' path={mdiGithub} size='2rem' className='has-text-white mr-1' />
+                    <Navbar.Item renderAs='div' p={0}>
+                        <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noreferrer' className='is-white is-outlined button'>
+                            <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem' color='white'/>
                         </a>
                     </Navbar.Item>
                 </Navbar.Container>
