@@ -4,10 +4,11 @@ import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
 import Icon from '@mdi/react';
-import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
+import { mdiCog, mdiGithub, mdiHeartFlash, mdiInformation } from '@mdi/js';
 
 
 export default function SiteNavbar({ toggleSidebarShown }) {
+    const [isActive, setisActive] = React.useState(false);
     const { t } = useTranslation();
     return (
         <Navbar color='success' className='pl-1 has-background-green'>
@@ -28,8 +29,22 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                         title={t('navbar.visit_osmp_website')}>{t('osmp')}</a>
                     </span>
                 </Navbar.Item>
+                <Navbar.Burger
+                        id='navbarBurger'
+                        onClick={() => {
+                            setisActive(!isActive);
+                        }}
+                        className={`${isActive ? "is-active" : ""}`}
+                        aria-label="menu"
+                        aria-expanded="false"
+                        data-target="navbarMenu"
+                    >
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </Navbar.Burger>
             </Navbar.Brand>
-            <Navbar.Menu className='pr-2'>
+            <Navbar.Menu className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`} id='navbarMenu'>
                 <Navbar.Container align='right'>
                     <LanguageSwitcher/>
                     <Navbar.Item renderAs='div' p={0}>
@@ -42,6 +57,11 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                             <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem' color='white'/>
                         </a>
                     </Navbar.Item>
+                    {/* <Navbar.Item renderAs='div' p={0}>
+                        <Button color={'white'} outlined={true}>
+                            <Icon path={mdiInformation} size='2rem' />
+                        </Button>
+                    </Navbar.Item> */}
                 </Navbar.Container>
             </Navbar.Menu>
         </Navbar>

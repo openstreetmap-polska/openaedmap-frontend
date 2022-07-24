@@ -10,10 +10,10 @@ export default function LanguageSwitcher(){
     return (
         <Navbar.Item hoverable="true" >
             <Navbar.Link key={i18n.resolvedLanguage}>
-                <Icon path={mdiTranslate} size={1.3} className="icon mr-2" color="#fff" />
+                <Icon path={mdiTranslate} size={1.3} className="icon mr-2"/>
                 {languages[i18n.resolvedLanguage].nativeName}
             </Navbar.Link>
-            <Navbar.Dropdown>
+            <Navbar.Dropdown className='has-background-green navbarUrl'>
             {Object.keys(languages).map((lng) => {
                 if (i18n.resolvedLanguage !== lng) {
                     return (
