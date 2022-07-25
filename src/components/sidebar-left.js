@@ -42,6 +42,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
                 });
             } catch (error) {
                 console.log('Error when parsing opening hours');
+                console.log(error);
                 return undefined;
             }
             return hoursPrettified;
@@ -72,7 +73,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
     }
   }
 
-  console.log(action);
+  console.log("Opening left sidebar with action: ", action, " and data:");
   console.log(data);
 
     const { t } = useTranslation();
