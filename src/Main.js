@@ -8,7 +8,18 @@ import Map from './components/map.js';
 
 
 function Main() {
-    const [sidebarShown, setSidebarShown] = useState(true);
+
+    // init
+    let defaultRightSidebarState = false;
+
+    // some ui elements migth depend on window size i.e. we don't want some stuff open by default on mobile
+    if (window.innerWidth > 1024) {
+        defaultRightSidebarState = true;
+    } else {
+        defaultRightSidebarState = false;
+    }
+
+    const [sidebarShown, setSidebarShown] = useState(defaultRightSidebarState);
     const toggleSidebarShown = () => setSidebarShown(!sidebarShown);
     const closeSidebar = () => setSidebarShown(false);
     return (
