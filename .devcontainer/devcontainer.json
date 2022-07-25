@@ -16,7 +16,10 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"dsznajder.es7-react-js-snippets",
+				"lukas-tr.materialdesignicons-intellisense",
+				"jock.svg"
 			]
 		}
 	},
