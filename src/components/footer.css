@@ -1,0 +1,17 @@
+.footer-div {
+    left: 0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-height: 3.0rem;
+    padding: 0px 0px 18px !important;
+}
+
+.white-bottom-bar {
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    opacity: 0.69;
+    background-color: white;
+}

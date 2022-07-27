@@ -5,6 +5,7 @@ import 'bulma/css/bulma.min.css';
 import SiteNavbar from './components/navbar.js';
 import SidebarRight from './components/sidebar-right.js';
 import Map from './components/map.js';
+import FooterDiv from './components/footer';
 
 
 function Main() {
@@ -27,6 +28,7 @@ function Main() {
             <SiteNavbar toggleSidebarShown={toggleSidebarShown} />
             { sidebarShown && <SidebarRight closeSidebar={closeSidebar} />}
             <Map />
+            <FooterDiv />
         </>
     );
 }

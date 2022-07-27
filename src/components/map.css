@@ -10,3 +10,33 @@
     width: 100%;
     height: 100%;
 }
+
+.mapboxgl-ctrl-bottom-right,
+.maplibregl-ctrl-bottom-right {
+    bottom: 64px !important;
+}
+
+.maplibregl-ctrl-logo,
+.mapboxgl-ctrl-logo {
+    position: fixed;
+    bottom: 64px !important;
+    min-width: 90px;
+}
+
+.mapboxgl-ctrl-top-right,
+.maplibregl-ctrl-top-right {
+    top: 60px !important;
+}
+
+.mapboxgl-ctrl-group button,
+.maplibregl-ctrl-group button {
+    width: 44px !important;
+    height: 44px !important;
+}
+
+.mapboxgl-ctrl-zoom-in .mapboxgl-ctrl-icon,
+.mapboxgl-ctrl-zoom-out .mapboxgl-ctrl-icon,
+.maplibregl-ctrl-attrib .mapboxgl-ctrl-attrib,
+.mapboxgl-ctrl-geolocate {
+    filter: contrast(80%);
+}
