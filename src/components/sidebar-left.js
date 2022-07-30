@@ -112,7 +112,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
       }
 
       const viewButton = osmId => {
-        return <a key={"view_url_" + osmId} href={"https://www.openstreetmap.org/node=" + osmId}
+        return <a key={"view_url_" + osmId} href={"https://www.openstreetmap.org/node/" + osmId}
           className="button is-small is-success mx-1"
           rel={"noreferrer"} target={"_blank"}>
             <Icon path={mdiMagnify} size={1.0} className="icon" color="#fff" />
@@ -126,7 +126,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
             <Card.Header id="sidebar-header" className={accessColourClass(data.access)}>
               <Columns centered flex="true" className="mr-0">
                 <Columns.Column className="is-one-fifth is-one-sixth-mobile">
-                  <Image m={2} src="./img/card-image.png" alt="" size={48}></Image>
+                  <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
                 </Columns.Column>
                 <Columns.Column>
                   <p className="title is-5 py-2 has-text-white-ter has-text-weight-light" 
