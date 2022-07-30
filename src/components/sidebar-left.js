@@ -4,7 +4,7 @@ import 'bulma/css/bulma.min.css';
 import i18n from 'i18next';
 import opening_hours from "opening_hours";
 import React from "react";
-import { Card, Columns, Image } from 'react-bulma-components';
+import { Button, Card, Image } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
@@ -123,26 +123,18 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
       return (
         <div className={visible ? "sidebar": "sidebar is-invisible"} id="sidebar-div">
           <Card>
-            <Card.Header id="sidebar-header" className={accessColourClass(data.access)}>
-              <Columns centered flex="true" className="mr-0">
-                <Columns.Column className="is-one-fifth is-one-sixth-mobile">
-                  <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
-                </Columns.Column>
-                <Columns.Column>
-                  <p className="title is-5 py-2 has-text-white-ter has-text-weight-light" 
-                     id="sidebar-caption">{t('sidebar.caption_info') + accessText}</p>
-                </Columns.Column>
-                <button
-                  aria-label={t('sidebar.close')}
-                  className='delete is-medium is-hidden-touch is-pulled-right close-button mr-2 mt-5'
-                  onClick={closeSidebar}
-                />
-                <button
-                  aria-label={t('sidebar.close')}
-                  className='delete is-large is-hidden-desktop is-pulled-right close-button mr-2 mt-5'
-                  onClick={closeSidebar}
-                />
-              </Columns>
+            <Card.Header id="sidebar-header" className={accessColourClass(data.access)} alignItems="center">
+              <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
+              <span
+                className="is-size-5 mr-3 has-text-white-ter has-text-weight-light" 
+                id="sidebar-caption">
+                  {t('sidebar.caption_info') + accessText}
+              </span>
+              <button
+                aria-label={t('sidebar.close')}
+                className='delete is-large is-pulled-right mr-3 ml-6'
+                onClick={closeSidebar}
+              />
             </Card.Header>
             <Card.Content py={3} >
               <div className="content" id="sidebar-content-div">
