@@ -30,6 +30,10 @@
         "edit": "Edytuj w OSM",
         "view": "Zobacz w OSM"
     },
+    "footer": {
+        "add": "Dodaj",
+        "add_aed": "Dodaj AED"
+    },
     "opening_hours": {
         "24_7": "całodobowo",
         "open": "Otwarte",

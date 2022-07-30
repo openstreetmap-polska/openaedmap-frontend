@@ -30,6 +30,10 @@
         "edit": "Edit in OSM",
         "view": "View in OSM"
     },
+    "footer": {
+        "add": "Add",
+        "add_aed": "Add AED"
+    },
     "opening_hours": {
         "24_7": "24/7",
         "open": "Open",
