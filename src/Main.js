@@ -20,13 +20,13 @@ function Main() {
         defaultRightSidebarState = false;
     }
 
-    const [sidebarShown, setSidebarShown] = useState(defaultRightSidebarState);
-    const toggleSidebarShown = () => setSidebarShown(!sidebarShown);
-    const closeSidebar = () => setSidebarShown(false);
+    const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
+    const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
+    const closeRightSidebar = () => setRightSidebarShown(false);
     return (
         <>
-            <SiteNavbar toggleSidebarShown={toggleSidebarShown} />
-            { sidebarShown && <SidebarRight closeSidebar={closeSidebar} />}
+            <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} />
+            { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
             <Map />
             <FooterDiv />
         </>
