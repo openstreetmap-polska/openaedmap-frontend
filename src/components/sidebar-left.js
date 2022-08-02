@@ -8,6 +8,8 @@ import { Button, Card, Image } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
+import { IndoorField } from "./sidebar/indoor";
+import { LocationField } from "./sidebar/location";
 
 
 const accessToColourMapping = {
@@ -84,10 +86,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
 
       const accessText = data.access ? " - " + t(`access.${data.access}`) : ""
 
-      const indoor = data.indoor ? <span className="has-text-weight-medium">{t(`indoor.${data.indoor}`)}</span> : noData
-
       const locationDescription = data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]
-      const location = locationDescription ? <span className="has-text-weight-medium">{locationDescription}</span> : noData
 
       const ohours = data.opening_hours
       const openingHours = (ohours && parseOpeningHours(ohours)) ? <span><span className="has-text-weight-medium">{parseOpeningHours(ohours)}</span>{renderCurrentlyOpenStatus(ohours)}</span> : noData
@@ -138,8 +137,8 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
             </Card.Header>
             <Card.Content py={3} >
               <div className="content" id="sidebar-content-div">
-                <p className="has-text-weight-light">{t('sidebar.indoor') + "?: "}{indoor}</p>
-                <p className="has-text-weight-light">{t('sidebar.location') + ": "}{location}</p>
+                <IndoorField indoor={data.indoor} />
+                <LocationField description={locationDescription} />
                 <p className="has-text-weight-light">{t('sidebar.opening_hours') + ": "}{openingHours}</p>
                 <p className="has-text-weight-light">{t('sidebar.description') + ": "}{description}</p>
                 <p className="has-text-weight-light">{t('sidebar.contact_number') + ": "}{contactNumber}</p>
