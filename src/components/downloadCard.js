@@ -32,7 +32,7 @@ export default function DownloadCard() {
                     {t('sidebar.download_title')}
                 </p>
                 {downloadFormats.map(({icon, name, url}) =>
-                    <a className='button is-success mr-1' href={url} target='_blank' download key={name}>
+                    <a className='button is-success mr-1' href={url} target='_blank' rel="noreferrer" download key={name}>
                         <Icon path={icon} size={1} className='icon mr-2' />{name}
                     </a>
                 )}
