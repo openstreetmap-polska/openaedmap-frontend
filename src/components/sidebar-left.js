@@ -54,22 +54,14 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
               onClick={closeSidebar}
             />
           </Card.Header>
-          <Card.Content py={3} >
-            <div className="content" id="sidebar-content-div">
-              <IndoorField indoor={data.indoor} />
-              <LocationField description={
-                data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]
-              } />
-              <OpeningHoursField openingHours={data.opening_hours} />
-              <DescriptionField description={
-                data[`description_${i18n.resolvedLanguage}`] || data["description"]
-              } />
-              <ContactNumberField contactNumber={data.phone} />
-              <OperatorField operator={data.operator} />
-              <NoteField note={
-                data[`note_${i18n.resolvedLanguage}`] || data["note"]
-              } />
-            </div>
+          <Card.Content py={3} className="content">
+            <IndoorField indoor={data.indoor} />
+            <LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} />
+            <OpeningHoursField openingHours={data.opening_hours} />
+            <DescriptionField description={data[`description_${i18n.resolvedLanguage}`] || data["description"]} />
+            <ContactNumberField contactNumber={data.phone} />
+            <OperatorField operator={data.operator} />
+            <NoteField note={data[`note_${i18n.resolvedLanguage}`] || data["note"]} />
           </Card.Content>
           <Card.Footer>
             <Card.Footer.Item className="has-background-success-light">
