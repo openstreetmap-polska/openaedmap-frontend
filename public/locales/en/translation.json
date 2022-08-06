@@ -28,7 +28,8 @@
         "operator": "Operator",
         "note": "Note",
         "edit": "Edit in OSM",
-        "view": "View in OSM"
+        "view": "View in OSM",
+        "copy_url": "Copy URL"
     },
     "footer": {
         "add": "Add",

@@ -28,7 +28,8 @@
         "operator": "Operator",
         "note": "Notatka",
         "edit": "Edytuj w OSM",
-        "view": "Zobacz w OSM"
+        "view": "Zobacz w OSM",
+        "copy_url": "Skopiuj URL"
     },
     "footer": {
         "add": "Dodaj",
