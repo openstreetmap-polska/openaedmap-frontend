@@ -1,10 +1,9 @@
 import React from 'react';
-import './sidebar.css';
-import DownloadCard from './downloadCard.js';
-import {useTranslation} from "react-i18next";
-import MapLegend from "./legend";
-import { CloseSidebarButton } from './sidebar/buttons';
 import { Card } from 'react-bulma-components';
+import DownloadCard from './downloadCard.js';
+import MapLegend from "./legend";
+import './sidebar.css';
+import { CloseSidebarButton } from './sidebar/buttons';
 
 export default function SidebarRight({ closeSidebar }) {
     return (
