@@ -7,7 +7,6 @@ import { CloseSidebarButton } from './sidebar/buttons';
 import { Card } from 'react-bulma-components';
 
 export default function SidebarRight({ closeSidebar }) {
-    const { t } = useTranslation();
     return (
         <div className='sidebar-right'>
             <Card>
