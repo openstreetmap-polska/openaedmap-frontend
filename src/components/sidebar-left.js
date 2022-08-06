@@ -5,7 +5,7 @@ import { Card, Image } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
-import { CopyUrlButton, EditButton, ViewButton } from './sidebar/buttons';
+import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton } from './sidebar/buttons';
 import { ContactNumberField } from "./sidebar/contactNumber";
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField } from "./sidebar/indoor";
@@ -48,11 +48,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
               id="sidebar-caption">
               {t('sidebar.caption_info') + accessText}
             </span>
-            <button
-              aria-label={t('sidebar.close')}
-              className='delete is-large is-pulled-right mr-3 ml-6'
-              onClick={closeSidebar}
-            />
+            <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
           </Card.Header>
           <Card.Content py={3} className="content">
             <IndoorField indoor={data.indoor} />
