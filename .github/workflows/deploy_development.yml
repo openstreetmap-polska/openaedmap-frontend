@@ -1,0 +1,28 @@
+name: Deploy to development env
+
+on:
+  push:
+    branches:
+    - dev
+    paths:
+    - src/**
+    - public/**
+    - package*.json
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+    - uses: actions/checkout@main
+    - uses: jeanlescure/react-deploy-to-s3-action@main
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        NODE_ENV: development
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: eu-west-1
+        SOURCE_DIR: build
+        CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
