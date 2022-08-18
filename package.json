@@ -2,7 +2,7 @@
   "name": "openaedmap-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "/",
   "dependencies": {
     "@creativebulma/bulma-collapsible": "^1.0.4",
     "@creativebulma/bulma-tooltip": "^1.2.0",
