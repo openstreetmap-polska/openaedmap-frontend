@@ -70,13 +70,13 @@ jobs:
         text
         EOF
 
-        aws s3 sync build s3://${AWS_S3_BUCKET}/ \
+        aws s3 sync build/ s3://${AWS_S3_BUCKET}/ \
           --profile react-deploy-to-s3-action \
           --no-progress
 
         aws cloudfront create-invalidation \
           --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION_ID} \
-          --paths /\*"
+          --paths /\*
 
         aws configure --profile react-deploy-to-s3-action <<-EOF > /dev/null 2>&1
         null
