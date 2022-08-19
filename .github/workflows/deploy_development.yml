@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build app
-      run: npm build
+      run: npm run build
     - name: Send to AWS S3 bucket and invalidate cache
       env:
         NODE_ENV: development
