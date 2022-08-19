@@ -1,7 +1,7 @@
 var getUrl = window.location;
 var baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname;
 
-export default {
+const style = {
     "version": 8,
     "name": "Map style",
     "sources": {
@@ -77,4 +77,6 @@ export default {
         }
     ],
     "id": "style"
-};
+}
+
+export default style

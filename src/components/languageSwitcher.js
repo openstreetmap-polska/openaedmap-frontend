@@ -21,8 +21,8 @@ export default function LanguageSwitcher(){
                             {languages[lng].nativeName}
                         </Navbar.Item>
                     );
-                }
-            })}
+                } else return null;
+            }).filter(x => x)}
             </Navbar.Dropdown>
         </Navbar.Item>
     );

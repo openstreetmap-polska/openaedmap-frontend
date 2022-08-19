@@ -4,7 +4,7 @@ import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
 import Icon from '@mdi/react';
-import { mdiCog, mdiGithub, mdiHeartFlash, mdiInformation } from '@mdi/js';
+import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
 
 
 export default function SiteNavbar({ toggleSidebarShown }) {
