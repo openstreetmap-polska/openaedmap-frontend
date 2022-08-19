@@ -84,11 +84,3 @@ jobs:
         null
         text
         EOF
-
-        if [ $SUCCESS -eq 0 ]
-        then
-          echo "Deploy successful."
-        else
-          echo "Failed to perform deploy!"
-          exit 1
-        fi
