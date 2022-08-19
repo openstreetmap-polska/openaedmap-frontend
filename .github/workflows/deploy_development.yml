@@ -32,7 +32,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: eu-west-1
-        CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+        AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
       run: |
         set -e
 
@@ -75,7 +75,7 @@ jobs:
           --no-progress
 
         aws cloudfront create-invalidation \
-          --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} \
+          --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION_ID} \
           --paths /\*"
 
         aws configure --profile react-deploy-to-s3-action <<-EOF > /dev/null 2>&1
