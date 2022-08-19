@@ -8,6 +8,7 @@ on:
     - src/**
     - public/**
     - package*.json
+    - .github/workflows/deploy_development.yml
 
 jobs:
   deploy:
