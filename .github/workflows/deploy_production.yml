@@ -24,18 +24,19 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build app
+      env:
+        NODE_ENV: production
+        REACT_APP_OSM_API_URL: ${{ secrets.REACT_APP_OSM_API_URL }}
+        REACT_APP_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
+        REACT_APP_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
       run: npm run build
     - name: Send to AWS S3 bucket and invalidate cache
       env:
-        NODE_ENV: production
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: eu-west-1
         AWS_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
-        REACT_APP_OSM_API_URL: ${{ secrets.REACT_APP_OSM_API_URL }}
-        REACT_APP_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
-        REACT_APP_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
       run: |
         set -e
 
