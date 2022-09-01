@@ -15,9 +15,22 @@ Create branch off of `dev` branch and when finished make PR back to `dev` branch
 
 ## Local environment
 
+One way to set up is:
 1. Clone repo and open terminal in the project directory
 2. Install Node version 18 or use [Node version manager](https://github.com/nvm-sh/nvm)
 3. Run `npm install`
+
+Second way is if you are using VS Code and have Docker installed you can use devContainer extension.
+
+Create .env file and put these variables there:
+```
+SKIP_PREFLIGHT_CHECK=true
+REACT_APP_VERSION=$npm_package_version
+REACT_APP_OSM_API_URL=https://master.apis.dev.openstreetmap.org
+REACT_APP_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
+REACT_APP_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
+HOST=127.0.0.1
+```
 
 ### Available Scripts
 

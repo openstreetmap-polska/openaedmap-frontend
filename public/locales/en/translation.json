@@ -9,7 +9,9 @@
     "navbar": {
         "created_with_<3_by": "created with ❤️ by",
         "visit_github": "Visit our GitHub repository",
-        "visit_osmp_website": "Visit OpenStreetMap Poland's website"
+        "visit_osmp_website": "Visit OpenStreetMap Poland's website",
+        "login": "Log in using OSM account",
+        "logout": "Log out"
     },
     "sidebar": {
         "close": "Close sidebar",
