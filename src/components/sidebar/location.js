@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { SpanNoData } from './common.js'
 
-function LocationDescription({description}) {
+function LocationDescription({ description }) {
     if (description) {
         return <span className="has-text-weight-medium">{description}</span>
     } else {
-        return <SpanNoData/>
+        return <SpanNoData />
     }
 }
 
-export function LocationField({description}) {
+export function LocationField({ description }) {
     const { t } = useTranslation();
 
     return (
@@ -17,5 +17,19 @@ export function LocationField({description}) {
             {t('sidebar.location') + ": "}
             <LocationDescription description={description} />
         </p>
+    )
+}
+
+export function LocationFormField({ lang }) {
+    const { t } = useTranslation();
+
+    return (
+        <div className="field pt-2">
+            <label className="label has-text-weight-semibold">{t('form.location') + ":"}</label>
+            <div className="control">
+                <textarea tag={"defibrillator:location" + lang ? ":" + lang : ""} className="textarea is-success" rows="1"
+                    placeholder={t("form.location_example")}></textarea>
+            </div>
+        </div>
     )
 }

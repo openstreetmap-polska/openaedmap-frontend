@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
-// import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './map.css';
-import styleJson from './map_style'
-import SidebarLeft from './sidebar-left'
+import styleJson from './map_style';
+import SidebarLeft from './sidebar-left';
+import FooterDiv from './footer';
 
 // -------------------------------------------------------------------
 // https://github.com/maplibre/maplibre-gl-js/issues/1011
@@ -227,6 +227,7 @@ export default function Map() {
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
+        <FooterDiv actionSetter={setSidebarLeftAction} dataSetter={setSidebarLeftData} visibilitySetter={setSidebarLeftShown} />
         </>
     );
 }

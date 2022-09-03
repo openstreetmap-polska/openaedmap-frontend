@@ -36,7 +36,7 @@ export function CopyUrlButton() {
     </Button>
 }
 
-export function CloseSidebarButton({closeSidebarFunction, margins}) {
+export function CloseSidebarButton({ closeSidebarFunction, margins }) {
     const { t } = useTranslation();
     // Button seems to have issues with delete class, using button instead
     return <button
@@ -44,4 +44,11 @@ export function CloseSidebarButton({closeSidebarFunction, margins}) {
         className={'delete is-large is-pulled-right ' + margins}
         onClick={closeSidebarFunction}
     />
+}
+
+export function AddAedButton() {
+    const { t } = useTranslation();
+    return <Button color={'success'} mt={1} ml={2} className='has-text-weight-light'>
+        {t('footer.add_aed')}
+    </Button>
 }

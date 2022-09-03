@@ -5,14 +5,15 @@ import { Card, Image } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
-import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton } from './sidebar/buttons';
+import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton, AddAedButton } from './sidebar/buttons';
 import { ContactNumberField } from "./sidebar/contactNumber";
 import { DescriptionField } from "./sidebar/description";
-import { IndoorField } from "./sidebar/indoor";
-import { LocationField } from "./sidebar/location";
+import { IndoorField, IndoorFormField } from "./sidebar/indoor";
+import { LocationField, LocationFormField } from "./sidebar/location";
 import { NoteField } from "./sidebar/note";
 import { OpeningHoursField } from "./sidebar/openingHours";
 import { OperatorField } from "./sidebar/operator";
+import { AccessFormField } from "./sidebar/access";
 
 
 const accessToColourMapping = {
@@ -65,19 +66,36 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
               <ViewButton osmId={data.osm_id} />
               <EditButton osmId={data.osm_id} />
             </Card.Footer.Item>
-            {/* <div
-                className="has-background-success-light card-footer-item is-block has-text-centered is-size-7 has-text-weight-semibold p-1"
-                id="sidebar-footer-button-left">
-                <a className="has-background-success-light card-footer-item has-text-centered is-size-7 has-text-weight-semibold"
-                  href="#" rel="noopener"
-                  target="_blank"></a>
-              </div> */}
           </Card.Footer>
         </Card>
       </div>
     )
   } else if (action === "addNode") {
-    console.log(`Action: '${action}' not implemented.`)
+    return (
+    <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
+      <Card>
+        <Card.Header id="sidebar-header" className="has-background-grey" alignItems="center">
+          <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
+          <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
+            {t('sidebar.add_defibrillator')}
+          </span>
+          <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
+        </Card.Header>
+        <Card.Content py={3} className="content">
+          <form>
+            <AccessFormField/>
+            <IndoorFormField/>
+            <LocationFormField/>
+          </form>
+        </Card.Content>
+        <Card.Footer>
+          <Card.Footer.Item className="has-background-success-light">
+            <AddAedButton />
+          </Card.Footer.Item>
+        </Card.Footer>
+      </Card>
+    </div>
+    )
   } else if (action === "init") {
     return <div id="sidebar-div"></div>
   } else {

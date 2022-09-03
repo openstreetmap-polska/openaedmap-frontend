@@ -31,7 +31,16 @@
         "note": "Notatka",
         "edit": "Edytuj w OSM",
         "view": "Zobacz w OSM",
-        "copy_url": "Skopiuj URL"
+        "copy_url": "Skopiuj URL",
+        "add_defibrillator": "Dodaj defibrylator"
+    },
+    "form": {
+        "is_indoor": "Czy wewnątrz budynku?",
+        "inside": "Wewnątrz",
+        "outside": "Na zewnątrz",
+        "accessibility": "Rodzaj dostępności",
+        "location": "Opisz dokładną lokalizację",
+        "location_example": "Na przykład: Na ścianie przy wejściu"
     },
     "footer": {
         "add": "Dodaj",
