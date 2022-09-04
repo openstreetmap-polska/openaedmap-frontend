@@ -85,7 +85,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
           <form>
             <AccessFormField/>
             <IndoorFormField/>
-            <LocationFormField/>
+            <LocationFormField lang={i18n.resolvedLanguage} />
           </form>
         </Card.Content>
         <Card.Footer>
