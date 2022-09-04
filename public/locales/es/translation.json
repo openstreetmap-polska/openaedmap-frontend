@@ -1,0 +1,48 @@
+{
+    "access": {
+        "yes": "Accesible públicamente",
+        "private": "Accesible con permiso del propietario",
+        "customers": "Accesible en horario laboral",
+        "no": "No disponible",
+        "permissive": "Permisivo"
+    },
+    "navbar": {
+        "created_with_<3_by": "creado con ❤️ por",
+        "visit_github": "Visita nuestro repositorio de GitHub",
+        "visit_osmp_website": "Visita la web de OpenStreetMap Polonia"
+    },
+    "sidebar": {
+        "close": "Cierra la barra lateral",
+        "csv": "CSV",
+        "download_title": "Bájate los datos de AED añadidos a OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Leyenda",
+        "caption_info": "AED",
+        "no_data": "Sin datos",
+        "indoor": "Interior",
+        "location": "Ubicación",
+        "opening_hours": "Horario",
+        "description": "Descripción",
+        "contact_number": "Número de contacto",
+        "operator": "Operador",
+        "note": "Nota",
+        "edit": "Editar en OSM",
+        "view": "Ver en OSM",
+        "copy_url": "Copiar URL"
+    },
+    "footer": {
+        "add": "Añadir",
+        "add_aed": "Añadir AED"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Abierto",
+        "closed": "Cerrado"
+    },
+    "indoor": {
+        "yes": "Sí",
+        "no": "No"
+    },
+    "osmp": "OpenStreetMap Polonia"
+}

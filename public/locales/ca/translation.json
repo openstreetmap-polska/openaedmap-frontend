@@ -1,0 +1,48 @@
+{
+    "access": {
+        "yes": "Accessible públicament",
+        "private": "Accessible amb permís del propietari",
+        "customers": "Accessible en horari laboral",
+        "no": "No disponible",
+        "permissive": "Permissiu"
+    },
+    "navbar": {
+        "created_with_<3_by": "creat amb ❤️ per",
+        "visit_github": "Visita el nostre repositori de GitHub",
+        "visit_osmp_website": "Visita la web d'OpenStreetMap Polònia"
+    },
+    "sidebar": {
+        "close": "Tanca la barra lateral",
+        "csv": "CSV",
+        "download_title": "Baixa't les dades d'AED afegits a OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Llegenda",
+        "caption_info": "AED",
+        "no_data": "Sense dades",
+        "indoor": "Interior",
+        "location": "Ubicació",
+        "opening_hours": "Horari",
+        "description": "Descripció",
+        "contact_number": "Número de contacte",
+        "operator": "Operador",
+        "note": "Nota",
+        "edit": "Edita a OSM",
+        "view": "Veure a OSM",
+        "copy_url": "Copiar URL"
+    },
+    "footer": {
+        "add": "Afegir",
+        "add_aed": "Afegir AED"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Obert",
+        "closed": "Tancat"
+    },
+    "indoor": {
+        "yes": "Sí",
+        "no": "No"
+    },
+    "osmp": "OpenStreetMap Polònia"
+}
