@@ -7,7 +7,11 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const languages = {
   en: { nativeName: 'English' },
-  pl: { nativeName: 'Polski' }
+  pl: { nativeName: 'Polski' },
+  de: { nativeName: 'Deutsch' },
+  es: { nativeName: 'Español' },
+  ca: { nativeName: 'Català' },
+  nl: { nativeName: 'Nederlands' },
 };
 const languagesIsoCodes = Object.keys(languages);
 
