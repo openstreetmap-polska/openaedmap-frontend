@@ -14,10 +14,10 @@
     "sidebar": {
         "close": "Seitenleiste schließen",
         "csv": "CSV",
-        "download_title": "Download AED Daten, die zu OSM hingefügt wurden",
+        "download_title": "Downloade AED-Daten, die zu OSM hingefügt wurden",
         "excel": "Excel",
         "geojson": "GeoJSON",
-        "map_legend_title": "Kartenlegende",
+        "map_legend_title": "Legende",
         "caption_info": "AED",
         "no_data": "Keine Daten",
         "indoor": "Im Gebäude",
@@ -27,8 +27,8 @@
         "contact_number": "Kontaktnummer",
         "operator": "Betreiber",
         "note": "Hinweis",
-        "edit": "Bearbeitung in OSM",
-        "view": "Ansehen in OSM",
+        "edit": "Bearbeiten in OSM",
+        "view": "Auf OSM ansehen",
         "copy_url": "URL kopieren"
     },
     "footer": {
