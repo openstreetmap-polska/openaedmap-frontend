@@ -13,6 +13,11 @@ Branches:
 
 Create branch off of `dev` branch and when finished make PR back to `dev` branch.
 
+## Translating
+Edit JSON files using this file path template `public/locales/{language ISO 639-1 code}/translation.json`
+
+If creating new translation add it to `src/i18n.js` with the 2 letter language code and native name (this is going to be displayed in dropdown).
+
 ## Local environment
 
 One way to set up is:
