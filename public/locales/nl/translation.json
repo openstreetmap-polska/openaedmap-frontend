@@ -1,0 +1,48 @@
+{
+    "access": {
+        "yes": "Publiek toegankelijk",
+        "private": "Toegankelijk met vergunning van de eigenaar",
+        "customers": "Toegankelijk tijdens de openingstijden",
+        "no": "Niet toegankelijk",
+        "permissive": "Toegang vrijgegeven"
+    },
+    "navbar": {
+        "created_with_<3_by": "gemaakt met ❤️ door",
+        "visit_github": "Bezoek ons GitHub-repositorium",
+        "visit_osmp_website": "Bezoek OpenStreetMap Poland's website"
+    },
+    "sidebar": {
+        "close": "Zijpaneel sluiten",
+        "csv": "CSV",
+        "download_title": "Download AED-gegevens die zijn toegevoegd aan OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Kaartlegenda",
+        "caption_info": "AED",
+        "no_data": "Geen gegevens",
+        "indoor": "In gebouw",
+        "location": "Locatie",
+        "opening_hours": "Openingstijden",
+        "description": "Beschrijving",
+        "contact_number": "Contactnummer",
+        "operator": "Uitbatende organisatie",
+        "note": "Aantekening",
+        "edit": "Bewerken in OSM",
+        "view": "Bekijken in OSM",
+        "copy_url": "URL kopiëren"
+    },
+    "footer": {
+        "add": "Toevoegen",
+        "add_aed": "AED toevoegen"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Open",
+        "closed": "Gesloten"
+    },
+    "indoor": {
+        "yes": "Ja",
+        "no": "Nee"
+    },
+    "osmp": "OpenStreetMap Poland"
+}
