@@ -5,14 +5,8 @@ import Icon from '@mdi/react'
 import {mdiMapMarkerPlus} from '@mdi/js'
 import './footer.css'
 
-export default function FooterDiv({ actionSetter, dataSetter, visibilitySetter }) {
+export default function FooterDiv({ openForm }) {
     const { t } = useTranslation();
-
-    function openForm() {
-        dataSetter({});
-        actionSetter("addNode");
-        visibilitySetter(true);
-    }
 
     return (
         <Footer className='footer-div'>

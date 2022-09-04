@@ -27,7 +27,7 @@ export function LocationFormField({ lang }) {
         <div className="field pt-2">
             <label className="label has-text-weight-semibold">{t('form.location') + ` (${lang}):`}</label>
             <div className="control">
-                <textarea tag={"defibrillator:location" + lang ? ":" + lang : ""} className="textarea is-success" rows="1"
+                <textarea tag={"defibrillator:location" + (lang ? ":" + lang : "")} name="aedLocation" className="textarea is-success" rows="1"
                     placeholder={t("form.location_example")}></textarea>
             </div>
         </div>

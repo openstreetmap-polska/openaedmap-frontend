@@ -4,6 +4,7 @@ import './map.css';
 import styleJson from './map_style';
 import SidebarLeft from './sidebar-left';
 import FooterDiv from './footer';
+import { useTranslation } from 'react-i18next';
 
 // -------------------------------------------------------------------
 // https://github.com/maplibre/maplibre-gl-js/issues/1011
@@ -101,6 +102,8 @@ function getNewHashString(parameters) {
 
 export default function Map() {
 
+    const { t } = useTranslation();
+
     const hash4MapName = "map";
 
     const paramsFromHash = parseHash();
@@ -126,16 +129,52 @@ export default function Map() {
     const [zoom] = useState(initialMapZoom);
     const controlsLocation = 'bottom-right';
 
+    const [marker, setMarker] = useState(null);
+
     const [sidebarLeftData, setSidebarLeftData] = useState(initialSidebarData);
     const [sidebarLeftAction, setSidebarLeftAction] = useState(initialSidebarAction);
     const [sidebarLeftShown, setSidebarLeftShown] = useState(initialSidebarVisibility);
-    // const toggleSidebarLeftShown = () => setSidebarLeftShown(!sidebarShown);
-    const closeSidebarLeft = () => {
-        setSidebarLeftShown(false);
+    
+    const removeNodeIdFromHash = () => {
         let hashParams = parseHash();
         delete hashParams["node_id"];
         window.location.hash = getNewHashString(hashParams);
+    }
+
+    const deleteMarker = () => {
+        if (marker !== null) {
+            marker.remove();
+            setMarker(null);
+        }
+    }
+
+    const closeSidebarLeft = () => {
+        setSidebarLeftShown(false);
+        deleteMarker();
+        removeNodeIdFromHash();
     };
+
+    const openForm = () => {
+        deleteMarker();
+        removeNodeIdFromHash();
+        setSidebarLeftData({});
+        setSidebarLeftAction("addNode");
+        setSidebarLeftShown(true);
+        // add marker
+        const markerColour = "#e81224";
+        const mapCenter = map.current.getCenter();
+        const initialCoordinates = [mapCenter.lng, mapCenter.lat];
+        setMarker(
+            new maplibregl.Marker({
+                draggable: true,
+                color: markerColour,
+            })
+            .setLngLat(initialCoordinates)
+            .setPopup(new maplibregl.Popup().setHTML(t("form.marker_popup_text")))
+            .addTo(map.current)
+            .togglePopup()
+        );
+    }
 
     useEffect(() => {
         if (map.current) return; //stops map from intializing more than once
@@ -223,11 +262,11 @@ export default function Map() {
 
     return (
         <>
-        { sidebarLeftShown && <SidebarLeft action={sidebarLeftAction} data={sidebarLeftData} closeSidebar={closeSidebarLeft} visible={sidebarLeftShown} />}
+        { sidebarLeftShown && <SidebarLeft action={sidebarLeftAction} data={sidebarLeftData} closeSidebar={closeSidebarLeft} visible={sidebarLeftShown} marker={marker} />}
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
-        <FooterDiv actionSetter={setSidebarLeftAction} dataSetter={setSidebarLeftData} visibilitySetter={setSidebarLeftShown} />
+        <FooterDiv openForm={openForm} />
         </>
     );
 }

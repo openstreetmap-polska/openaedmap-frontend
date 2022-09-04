@@ -30,7 +30,7 @@ function accessColourClass(access) {
 }
 
 
-export default function SidebarLeft({ action, data, closeSidebar, visible }) {
+export default function SidebarLeft({ action, data, closeSidebar, visible, marker }) {
   const { t } = useTranslation();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
@@ -71,6 +71,27 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
       </div>
     )
   } else if (action === "addNode") {
+    const parseForm = (formElements) => {
+      let tags = {};
+      // access
+      const access = Array.from(formElements.aedAccess).filter(x => x.checked)
+      if (access.length === 1) tags[access[0].attributes.tag.value] = access[0].attributes.value.value;
+      //indoor
+      const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked)
+      if (indoor.length === 1) tags[indoor[0].attributes.tag.value] = indoor[0].attributes.value.value;
+      // location
+
+      //phone
+
+      return tags
+    }
+    const printFormData = (event) => {
+      event.preventDefault();
+      console.log("form data");
+      console.log(marker.getLngLat());
+      const tags = parseForm(event.target.form.elements);
+      console.log(tags);
+    }
     return (
     <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
       <Card>
@@ -87,13 +108,14 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
             <IndoorFormField/>
             <LocationFormField lang={i18n.resolvedLanguage} />
             <ContactPhoneFormField/>
+            <AddAedButton type="submit" nextStep={printFormData} />
           </form>
         </Card.Content>
-        <Card.Footer>
+        {/* <Card.Footer>
           <Card.Footer.Item className="has-background-success-light">
-            <AddAedButton />
+            <AddAedButton nextStep={printFormData} />
           </Card.Footer.Item>
-        </Card.Footer>
+        </Card.Footer> */}
       </Card>
     </div>
     )

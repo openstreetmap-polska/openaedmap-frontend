@@ -24,13 +24,14 @@ export function IndoorField({ indoor }) {
 
 export function IndoorFormField() {
     const { t } = useTranslation();
+    const groupName = "aedIndoor";
     return (
         <div>
             <label className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</label>
             <div className="field">
-                <input className="is-checkradio is-success mr-1" id="indoorRadio1" type="radio" name="aedIndoor" value="no" tag="indoor" />
+                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="no" tag="indoor" />
                 <label className="mr-2" htmlFor="indoorRadio1">{t("form.outside")}</label>
-                <input className="is-checkradio is-success mr-1" id="indoorRadio2" type="radio" name="aedIndoor" value="yes" tag="indoor" />
+                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="yes" tag="indoor" />
                 <label className="mr-2" htmlFor="indoorRadio2">{t("form.inside")}</label>
             </div>
         </div>

@@ -36,6 +36,7 @@
     },
     "form": {
         "optional_field": "Field optional",
+        "marker_popup_text": "Move marker to AED location",
         "is_indoor": "Is inside building?",
         "inside": "Inside",
         "outside": "Outside",
