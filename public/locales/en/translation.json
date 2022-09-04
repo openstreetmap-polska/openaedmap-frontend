@@ -35,6 +35,7 @@
         "add_defibrillator": "Add defibrillator"
     },
     "form": {
+        "optional_field": "Field optional",
         "is_indoor": "Is inside building?",
         "inside": "Inside",
         "outside": "Outside",

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
 import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton, AddAedButton } from './sidebar/buttons';
-import { ContactNumberField } from "./sidebar/contactNumber";
+import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumber";
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
 import { LocationField, LocationFormField } from "./sidebar/location";
@@ -86,6 +86,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
             <AccessFormField/>
             <IndoorFormField/>
             <LocationFormField lang={i18n.resolvedLanguage} />
+            <ContactPhoneFormField/>
           </form>
         </Card.Content>
         <Card.Footer>
