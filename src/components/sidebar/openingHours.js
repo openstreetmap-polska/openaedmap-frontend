@@ -6,11 +6,9 @@ import i18n from 'i18next';
 
 function parseOpeningHours(openingHours) {
     if (openingHours) {
-
         let hoursPrettified;
         try {
-            let hours = openingHours.toString();
-            let oh = new opening_hours(hours, undefined, 2);
+            let oh = new opening_hours(openingHours, undefined, 2);
             hoursPrettified = oh.prettifyValue({
                 conf: {
                     locale: i18n.resolvedLanguage
@@ -30,20 +28,20 @@ function isCurrentlyOpen(openingHours) {
         if (openingHours === '24/7') {
             return true;
         } else {
-            const hours = openingHours.toString();
-            const oh = new opening_hours(hours, undefined, 2);
+            const oh = new opening_hours(openingHours, undefined, 2);
             const isOpen = oh.getState();
             return isOpen;
         }
     }
 }
 
-function CurrentlyOpenStatus(openingHours) {
+function CurrentlyOpenStatus({ openingHours }) {
+    const { t } = useTranslation();
     const isOpen = isCurrentlyOpen(openingHours);
     return (
         <sup className="pl-1">
             <span className={"tag is-light " + isOpen ? "is-success" : "is-danger"}>
-                {useTranslation(isOpen ? "opening_hours.open" : "opening_hours.closed")}
+                {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
             </span>
         </sup>
     )

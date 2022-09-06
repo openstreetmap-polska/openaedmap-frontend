@@ -1,0 +1,48 @@
+{
+    "access": {
+        "yes": "Öffentlich zugänglich",
+        "private": "Zugänglich mit Erlaubnis des Eigentümers",
+        "customers": "Zugänglich während der Öffnungszeiten",
+        "no": "Unzugänglich",
+        "permissive": "Zugang freigegeben"
+    },
+    "navbar": {
+        "created_with_<3_by": "erstellt mit ❤️  von",
+        "visit_github": "Besuche unser GitHub Repositorium",
+        "visit_osmp_website": "Besuche OpenStreetMap Polens Website"
+    },
+    "sidebar": {
+        "close": "Seitenleiste schließen",
+        "csv": "CSV",
+        "download_title": "Downloade AED-Daten, die zu OSM hingefügt wurden",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Legende",
+        "caption_info": "AED",
+        "no_data": "Keine Daten",
+        "indoor": "Im Gebäude",
+        "location": "Ort",
+        "opening_hours": "Öffnungszeiten",
+        "description": "Beschreibung",
+        "contact_number": "Kontaktnummer",
+        "operator": "Betreiber",
+        "note": "Hinweis",
+        "edit": "Bearbeiten in OSM",
+        "view": "Auf OSM ansehen",
+        "copy_url": "URL kopieren"
+    },
+    "footer": {
+        "add": "Hinzufügen",
+        "add_aed": "AED hinzufügen"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Offen",
+        "closed": "geschlossen"
+    },
+    "indoor": {
+        "yes": "Ja",
+        "no": "Nein"
+    },
+    "osmp": "OpenStreetMap Polen"
+}

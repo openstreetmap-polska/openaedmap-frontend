@@ -9,7 +9,9 @@
     "navbar": {
         "created_with_<3_by": "tworzona z ❤️ przez",
         "visit_github": "Odwiedź naszego GitHuba",
-        "visit_osmp_website": "Odwiedź stronę OpenStreetMap Polska"
+        "visit_osmp_website": "Odwiedź stronę OpenStreetMap Polska",
+        "login": "Zaloguj się kontem OSM",
+        "logout": "Wyloguj"
     },
     "sidebar": {
         "close": "Zamknij panel boczny",
@@ -29,11 +31,24 @@
         "note": "Notatka",
         "edit": "Edytuj w OSM",
         "view": "Zobacz w OSM",
-        "copy_url": "Skopiuj URL"
+        "copy_url": "Skopiuj URL",
+        "add_defibrillator": "Dodaj defibrylator"
+    },
+    "form": {
+        "optional_field": "Pole opcjonalne",
+        "marker_popup_text": "Przesuń marker w miejsce AED",
+        "is_indoor": "Czy wewnątrz budynku?",
+        "inside": "Wewnątrz",
+        "outside": "Na zewnątrz",
+        "accessibility": "Rodzaj dostępności",
+        "location": "Opisz dokładną lokalizację",
+        "location_example": "Na przykład: Na ścianie przy wejściu"
     },
     "footer": {
         "add": "Dodaj",
-        "add_aed": "Dodaj AED"
+        "add_aed": "Dodaj AED",
+        "cancel": "Anuluj",
+        "continue": "Dalej"
     },
     "opening_hours": {
         "24_7": "całodobowo",

@@ -1,9 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
-// import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './map.css';
-import styleJson from './map_style'
-import SidebarLeft from './sidebar-left'
+import styleJson from './map_style';
+import SidebarLeft from './sidebar-left';
+import FooterDiv from './footer';
+import { useTranslation } from 'react-i18next';
+import { fetchNodeDataFromOsm } from '../osm';
+import { BUTTONS_TYPE_NONE, BUTTONS_TYPE_ADD_AED, BUTTONS_TYPE_MOBILE_STEP_1 } from './footer'
 
 // -------------------------------------------------------------------
 // https://github.com/maplibre/maplibre-gl-js/issues/1011
@@ -15,34 +18,7 @@ import maplibreglWorker from 'maplibre-gl/dist/maplibre-gl-csp-worker';
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
 
-async function fetchNodeDataFromOsm(nodeId) {
-    const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
-    console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
-    return fetch(url)
-        .then(response => response.json())
-        .then(response => {
-            const node = response["elements"][0];
-            const tags = Object.fromEntries(
-                Object.entries(node["tags"]).map(([key, val]) => [key.replaceAll(":", "_"), val])
-            );
-            const lon = node["lon"];
-            const lat = node["lat"];
 
-            return {
-                "lat": lat,
-                "lon": lon,
-                "data": {
-                    osm_id: node["id"],
-                    osm_type: "node",
-                    ...tags,
-                },
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            return {};
-        });
-}
 
 function fillSidebarWithOsmDataAndShow(nodeId, mapInstance, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, jumpInsteadOfEaseTo) {
     const result = fetchNodeDataFromOsm(nodeId);
@@ -99,7 +75,9 @@ function getNewHashString(parameters) {
         .join("&")
 }
 
-export default function Map() {
+export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
+
+    const { t } = useTranslation();
 
     const hash4MapName = "map";
 
@@ -126,16 +104,90 @@ export default function Map() {
     const [zoom] = useState(initialMapZoom);
     const controlsLocation = 'bottom-right';
 
+    const [marker, setMarker] = useState(null);
+
     const [sidebarLeftData, setSidebarLeftData] = useState(initialSidebarData);
     const [sidebarLeftAction, setSidebarLeftAction] = useState(initialSidebarAction);
     const [sidebarLeftShown, setSidebarLeftShown] = useState(initialSidebarVisibility);
-    // const toggleSidebarLeftShown = () => setSidebarLeftShown(!sidebarShown);
-    const closeSidebarLeft = () => {
-        setSidebarLeftShown(false);
+
+    const [footerButtonType, setFooterButtonType] = useState(BUTTONS_TYPE_ADD_AED);
+    
+    const removeNodeIdFromHash = () => {
         let hashParams = parseHash();
         delete hashParams["node_id"];
         window.location.hash = getNewHashString(hashParams);
+    }
+
+    const deleteMarker = () => {
+        if (marker !== null) {
+            marker.remove();
+            setMarker(null);
+        }
+    }
+
+    const closeSidebarLeft = () => {
+        setSidebarLeftShown(false);
+        deleteMarker();
+        removeNodeIdFromHash();
+        setFooterButtonType(BUTTONS_TYPE_ADD_AED);
     };
+
+    const mobileStepOne = () => {
+        deleteMarker();
+        removeNodeIdFromHash();
+        setSidebarLeftData({});
+        setSidebarLeftAction("addNode");
+        setSidebarLeftShown(false); // hide sidebar so marker is visible
+        setFooterButtonType(BUTTONS_TYPE_MOBILE_STEP_1);
+        // add marker
+        const markerColour = "#e81224";
+        const mapCenter = map.current.getCenter();
+        const initialCoordinates = [mapCenter.lng, mapCenter.lat];
+        setMarker(
+            new maplibregl.Marker({
+                draggable: true,
+                color: markerColour,
+            })
+            .setLngLat(initialCoordinates)
+            .setPopup(new maplibregl.Popup().setHTML(t("form.marker_popup_text")))
+            .addTo(map.current)
+            .togglePopup()
+        );
+    }
+
+    const mobileCancel = () => {
+        deleteMarker();
+        setSidebarLeftShown(false);
+        setFooterButtonType(BUTTONS_TYPE_ADD_AED);
+    }
+
+    const mobileStepTwo = () => {
+        setSidebarLeftShown(true);
+        setFooterButtonType(BUTTONS_TYPE_NONE);
+    }
+
+    const openForm = () => {
+        deleteMarker();
+        removeNodeIdFromHash();
+        setSidebarLeftData({});
+        setSidebarLeftAction("addNode");
+        setSidebarLeftShown(true);
+        setFooterButtonType(BUTTONS_TYPE_NONE);
+        // add marker
+        const markerColour = "#e81224";
+        const mapCenter = map.current.getCenter();
+        const initialCoordinates = [mapCenter.lng, mapCenter.lat];
+        setMarker(
+            new maplibregl.Marker({
+                draggable: true,
+                color: markerColour,
+            })
+            .setLngLat(initialCoordinates)
+            .setPopup(new maplibregl.Popup().setHTML(t("form.marker_popup_text")))
+            .addTo(map.current)
+            .togglePopup()
+        );
+    }
 
     useEffect(() => {
         if (map.current) return; //stops map from intializing more than once
@@ -223,10 +275,20 @@ export default function Map() {
 
     return (
         <>
-        { sidebarLeftShown && <SidebarLeft action={sidebarLeftAction} data={sidebarLeftData} closeSidebar={closeSidebarLeft} visible={sidebarLeftShown} />}
+        { sidebarLeftShown && <SidebarLeft 
+                                action={sidebarLeftAction}
+                                data={sidebarLeftData}
+                                closeSidebar={closeSidebarLeft}
+                                visible={sidebarLeftShown}
+                                marker={marker}
+                                auth={auth}
+                                openChangesetId={openChangesetId}
+                                setOpenChangesetId={setOpenChangesetId}
+                              />}
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
+        <FooterDiv openForm={openForm} mobileStepOne={mobileStepOne} mobileCancel={mobileCancel} mobileStepTwo={mobileStepTwo} buttonsConfiguration={footerButtonType} />
         </>
     );
 }

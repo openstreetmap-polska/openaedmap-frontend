@@ -9,7 +9,9 @@
     "navbar": {
         "created_with_<3_by": "created with ❤️ by",
         "visit_github": "Visit our GitHub repository",
-        "visit_osmp_website": "Visit OpenStreetMap Poland's website"
+        "visit_osmp_website": "Visit OpenStreetMap Poland's website",
+        "login": "Log in using OSM account",
+        "logout": "Log out"
     },
     "sidebar": {
         "close": "Close sidebar",
@@ -29,11 +31,24 @@
         "note": "Note",
         "edit": "Edit in OSM",
         "view": "View in OSM",
-        "copy_url": "Copy URL"
+        "copy_url": "Copy URL",
+        "add_defibrillator": "Add defibrillator"
+    },
+    "form": {
+        "optional_field": "Field optional",
+        "marker_popup_text": "Move marker to AED location",
+        "is_indoor": "Is inside building?",
+        "inside": "Inside",
+        "outside": "Outside",
+        "accessibility": "Accessibility",
+        "location": "Describe location",
+        "location_example": "For example: On the wall near the entrance"
     },
     "footer": {
         "add": "Add",
-        "add_aed": "Add AED"
+        "add_aed": "Add AED",
+        "cancel": "Cancel",
+        "continue": "Continue"
     },
     "opening_hours": {
         "24_7": "24/7",

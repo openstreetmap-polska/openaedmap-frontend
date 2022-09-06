@@ -5,14 +5,16 @@ import { Card, Image } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
-import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton } from './sidebar/buttons';
-import { ContactNumberField } from "./sidebar/contactNumber";
+import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton, AddAedButton } from './sidebar/buttons';
+import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumber";
 import { DescriptionField } from "./sidebar/description";
-import { IndoorField } from "./sidebar/indoor";
-import { LocationField } from "./sidebar/location";
+import { IndoorField, IndoorFormField } from "./sidebar/indoor";
+import { LocationField, LocationFormField } from "./sidebar/location";
 import { NoteField } from "./sidebar/note";
 import { OpeningHoursField } from "./sidebar/openingHours";
 import { OperatorField } from "./sidebar/operator";
+import { AccessFormField } from "./sidebar/access";
+import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
 
 
 const accessToColourMapping = {
@@ -28,8 +30,26 @@ function accessColourClass(access) {
   return accessToColourMapping[access] || accessToColourMapping['default'];
 }
 
+const parseForm = (formElements) => {
+  let tags = {};
+  // access
+  const access = Array.from(formElements.aedAccess).filter(x => x.checked)
+  if (access.length === 1) tags[access[0].attributes.tag.value] = access[0].attributes.value.value;
+  //indoor
+  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked)
+  if (indoor.length === 1) tags[indoor[0].attributes.tag.value] = indoor[0].attributes.value.value;
+  // location
+  const location = formElements.aedLocation;
+  if (location.value.trim()) tags[location.attributes.tag.value] = location.value.trim();
+  //phone
+  const phone = formElements.aedPhone;
+  if (phone.value.trim()) tags[phone.attributes.tag.value] = phone.value.trim();
 
-export default function SidebarLeft({ action, data, closeSidebar, visible }) {
+  return tags
+}
+
+
+export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId }) {
   const { t } = useTranslation();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
@@ -65,19 +85,60 @@ export default function SidebarLeft({ action, data, closeSidebar, visible }) {
               <ViewButton osmId={data.osm_id} />
               <EditButton osmId={data.osm_id} />
             </Card.Footer.Item>
-            {/* <div
-                className="has-background-success-light card-footer-item is-block has-text-centered is-size-7 has-text-weight-semibold p-1"
-                id="sidebar-footer-button-left">
-                <a className="has-background-success-light card-footer-item has-text-centered is-size-7 has-text-weight-semibold"
-                  href="#" rel="noopener"
-                  target="_blank"></a>
-              </div> */}
           </Card.Footer>
         </Card>
       </div>
     )
   } else if (action === "addNode") {
-    console.log(`Action: '${action}' not implemented.`)
+
+    const sendFormData = (event) => {
+      event.preventDefault();
+      event.target.classList.add("is-loading");
+      const lngLat = marker.getLngLat();
+      const tags = parseForm(event.target.form.elements);
+      const data = {
+        lng: lngLat.lng,
+        lat: lngLat.lat,
+        tags: tags,
+      };
+      console.log(lngLat);
+      console.log(tags);
+      getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, i18n.resolvedLanguage)
+        .then(changesetId => {
+            return addDefibrillatorToOSM(auth, changesetId, data);
+        })
+        .then(newNodeId => {
+          event.target.classList.remove("is-loading");
+            console.log("created new node with id: ", newNodeId);
+        })
+        .catch(err => {
+          event.target.classList.remove("is-loading");
+            console.log(err);
+            console.log(`${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`);
+        });
+    }
+    return (
+    <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
+      <Card>
+        <Card.Header id="sidebar-header" className="has-background-grey" alignItems="center">
+          <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
+          <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
+            {t('sidebar.add_defibrillator')}
+          </span>
+          <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
+        </Card.Header>
+        <Card.Content py={3} className="content">
+          <form>
+            <AccessFormField/>
+            <IndoorFormField/>
+            <LocationFormField lang={i18n.resolvedLanguage} />
+            <ContactPhoneFormField/>
+            <AddAedButton type="submit" nextStep={sendFormData} />
+          </form>
+        </Card.Content>
+      </Card>
+    </div>
+    )
   } else if (action === "init") {
     return <div id="sidebar-div"></div>
   } else {

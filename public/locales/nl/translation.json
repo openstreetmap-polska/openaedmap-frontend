@@ -8,7 +8,7 @@
     },
     "navbar": {
         "created_with_<3_by": "gemaakt met ❤️ door",
-        "visit_github": "Bezoek ons GitHub-repositorium",
+        "visit_github": "Bezoek onze GitHub-pagina",
         "visit_osmp_website": "Bezoek OpenStreetMap Poland's website"
     },
     "sidebar": {
@@ -17,7 +17,7 @@
         "download_title": "Download AED-gegevens die zijn toegevoegd aan OSM",
         "excel": "Excel",
         "geojson": "GeoJSON",
-        "map_legend_title": "Kaartlegenda",
+        "map_legend_title": "Legenda",
         "caption_info": "AED",
         "no_data": "Geen gegevens",
         "indoor": "In gebouw",
