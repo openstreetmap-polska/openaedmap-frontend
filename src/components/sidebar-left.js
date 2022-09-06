@@ -14,6 +14,7 @@ import { NoteField } from "./sidebar/note";
 import { OpeningHoursField } from "./sidebar/openingHours";
 import { OperatorField } from "./sidebar/operator";
 import { AccessFormField } from "./sidebar/access";
+import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
 
 
 const accessToColourMapping = {
@@ -29,8 +30,26 @@ function accessColourClass(access) {
   return accessToColourMapping[access] || accessToColourMapping['default'];
 }
 
+const parseForm = (formElements) => {
+  let tags = {};
+  // access
+  const access = Array.from(formElements.aedAccess).filter(x => x.checked)
+  if (access.length === 1) tags[access[0].attributes.tag.value] = access[0].attributes.value.value;
+  //indoor
+  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked)
+  if (indoor.length === 1) tags[indoor[0].attributes.tag.value] = indoor[0].attributes.value.value;
+  // location
+  const location = formElements.aedLocation;
+  if (location.value.trim()) tags[location.attributes.tag.value] = location.value.trim();
+  //phone
+  const phone = formElements.aedPhone;
+  if (phone.value.trim()) tags[phone.attributes.tag.value] = phone.value.trim();
 
-export default function SidebarLeft({ action, data, closeSidebar, visible, marker }) {
+  return tags
+}
+
+
+export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId }) {
   const { t } = useTranslation();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
@@ -71,26 +90,32 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
       </div>
     )
   } else if (action === "addNode") {
-    const parseForm = (formElements) => {
-      let tags = {};
-      // access
-      const access = Array.from(formElements.aedAccess).filter(x => x.checked)
-      if (access.length === 1) tags[access[0].attributes.tag.value] = access[0].attributes.value.value;
-      //indoor
-      const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked)
-      if (indoor.length === 1) tags[indoor[0].attributes.tag.value] = indoor[0].attributes.value.value;
-      // location
 
-      //phone
-
-      return tags
-    }
-    const printFormData = (event) => {
+    const sendFormData = (event) => {
       event.preventDefault();
-      console.log("form data");
-      console.log(marker.getLngLat());
+      event.target.classList.add("is-loading");
+      const lngLat = marker.getLngLat();
       const tags = parseForm(event.target.form.elements);
+      const data = {
+        lng: lngLat.lng,
+        lat: lngLat.lat,
+        tags: tags,
+      };
+      console.log(lngLat);
       console.log(tags);
+      getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, i18n.resolvedLanguage)
+        .then(changesetId => {
+            return addDefibrillatorToOSM(auth, changesetId, data);
+        })
+        .then(newNodeId => {
+          event.target.classList.remove("is-loading");
+            console.log("created new node with id: ", newNodeId);
+        })
+        .catch(err => {
+          event.target.classList.remove("is-loading");
+            console.log(err);
+            console.log(`${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`);
+        });
     }
     return (
     <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
@@ -108,14 +133,9 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             <IndoorFormField/>
             <LocationFormField lang={i18n.resolvedLanguage} />
             <ContactPhoneFormField/>
-            <AddAedButton type="submit" nextStep={printFormData} />
+            <AddAedButton type="submit" nextStep={sendFormData} />
           </form>
         </Card.Content>
-        {/* <Card.Footer>
-          <Card.Footer.Item className="has-background-success-light">
-            <AddAedButton nextStep={printFormData} />
-          </Card.Footer.Item>
-        </Card.Footer> */}
       </Card>
     </div>
     )

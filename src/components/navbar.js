@@ -8,7 +8,7 @@ import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
 import Login from './login';
 
 
-export default function SiteNavbar({ toggleSidebarShown }) {
+export default function SiteNavbar({ toggleSidebarShown, auth }) {
     const [isActive, setisActive] = React.useState(false);
     const { t } = useTranslation();
     return (
@@ -58,7 +58,7 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                             <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem' color='white'/>
                         </a>
                     </Navbar.Item>
-                    <Login/>
+                    <Login auth={auth}/>
                     {/* <Navbar.Item renderAs='div' p={0}>
                         <Button color={'white'} outlined={true}>
                             <Icon path={mdiInformation} size='2rem' />
