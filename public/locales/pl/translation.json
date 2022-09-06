@@ -46,7 +46,9 @@
     },
     "footer": {
         "add": "Dodaj",
-        "add_aed": "Dodaj AED"
+        "add_aed": "Dodaj AED",
+        "cancel": "Anuluj",
+        "continue": "Dalej"
     },
     "opening_hours": {
         "24_7": "całodobowo",

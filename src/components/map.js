@@ -6,6 +6,7 @@ import SidebarLeft from './sidebar-left';
 import FooterDiv from './footer';
 import { useTranslation } from 'react-i18next';
 import { fetchNodeDataFromOsm } from '../osm';
+import { BUTTONS_TYPE_NONE, BUTTONS_TYPE_ADD_AED, BUTTONS_TYPE_MOBILE_STEP_1 } from './footer'
 
 // -------------------------------------------------------------------
 // https://github.com/maplibre/maplibre-gl-js/issues/1011
@@ -108,6 +109,8 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
     const [sidebarLeftData, setSidebarLeftData] = useState(initialSidebarData);
     const [sidebarLeftAction, setSidebarLeftAction] = useState(initialSidebarAction);
     const [sidebarLeftShown, setSidebarLeftShown] = useState(initialSidebarVisibility);
+
+    const [footerButtonType, setFooterButtonType] = useState(BUTTONS_TYPE_ADD_AED);
     
     const removeNodeIdFromHash = () => {
         let hashParams = parseHash();
@@ -126,7 +129,42 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
         setSidebarLeftShown(false);
         deleteMarker();
         removeNodeIdFromHash();
+        setFooterButtonType(BUTTONS_TYPE_ADD_AED);
     };
+
+    const mobileStepOne = () => {
+        deleteMarker();
+        removeNodeIdFromHash();
+        setSidebarLeftData({});
+        setSidebarLeftAction("addNode");
+        setSidebarLeftShown(false); // hide sidebar so marker is visible
+        setFooterButtonType(BUTTONS_TYPE_MOBILE_STEP_1);
+        // add marker
+        const markerColour = "#e81224";
+        const mapCenter = map.current.getCenter();
+        const initialCoordinates = [mapCenter.lng, mapCenter.lat];
+        setMarker(
+            new maplibregl.Marker({
+                draggable: true,
+                color: markerColour,
+            })
+            .setLngLat(initialCoordinates)
+            .setPopup(new maplibregl.Popup().setHTML(t("form.marker_popup_text")))
+            .addTo(map.current)
+            .togglePopup()
+        );
+    }
+
+    const mobileCancel = () => {
+        deleteMarker();
+        setSidebarLeftShown(false);
+        setFooterButtonType(BUTTONS_TYPE_ADD_AED);
+    }
+
+    const mobileStepTwo = () => {
+        setSidebarLeftShown(true);
+        setFooterButtonType(BUTTONS_TYPE_NONE);
+    }
 
     const openForm = () => {
         deleteMarker();
@@ -134,6 +172,7 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
         setSidebarLeftData({});
         setSidebarLeftAction("addNode");
         setSidebarLeftShown(true);
+        setFooterButtonType(BUTTONS_TYPE_NONE);
         // add marker
         const markerColour = "#e81224";
         const mapCenter = map.current.getCenter();
@@ -249,7 +288,7 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
-        <FooterDiv openForm={openForm} />
+        <FooterDiv openForm={openForm} mobileStepOne={mobileStepOne} mobileCancel={mobileCancel} mobileStepTwo={mobileStepTwo} buttonsConfiguration={footerButtonType} />
         </>
     );
 }

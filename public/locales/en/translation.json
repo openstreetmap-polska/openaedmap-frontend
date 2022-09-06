@@ -46,7 +46,9 @@
     },
     "footer": {
         "add": "Add",
-        "add_aed": "Add AED"
+        "add_aed": "Add AED",
+        "cancel": "Cancel",
+        "continue": "Continue"
     },
     "opening_hours": {
         "24_7": "24/7",
