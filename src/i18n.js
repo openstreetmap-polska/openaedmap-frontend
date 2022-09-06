@@ -13,6 +13,9 @@ const languages = {
   ca: { nativeName: 'Català' },
   nl: { nativeName: 'Nederlands' },
 };
+if (!isProduction) {
+  languages['debug'] = { nativeName: '--debug--'}
+}
 const languagesIsoCodes = Object.keys(languages);
 
 i18n
@@ -30,7 +33,7 @@ i18n
   .init({
     debug: !isProduction,
     supportedLngs: languagesIsoCodes,
-    fallbackLng: 'en',
+    fallbackLng: isProduction ? 'en' : 'debug',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
