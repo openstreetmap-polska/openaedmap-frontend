@@ -1,20 +1,22 @@
 {
     "access": {
         "yes": "Öffentlich zugänglich",
-        "private": "Zugänglich mit Erlaubnis des Eigentümers",
-        "customers": "Zugänglich während der Öffnungszeiten",
-        "no": "Unzugänglich",
-        "permissive": "Zugang freigegeben"
+        "private": "Zugang mit Erlaubnis der Eigentümer",
+        "customers": "Zugang während der Öffnungszeiten",
+        "no": "Kein Zugang",
+        "permissive": "Zugang bis auf Widerruf"
     },
     "navbar": {
-        "created_with_<3_by": "erstellt mit ❤️  von",
+        "created_with_<3_by": "erstellt mit ❤️ von",
         "visit_github": "Besuche unser GitHub Repositorium",
-        "visit_osmp_website": "Besuche OpenStreetMap Polens Website"
+        "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
+        "login": "Mit OSM-Account anmelden",
+        "logout": "Abmelden"
     },
     "sidebar": {
         "close": "Seitenleiste schließen",
         "csv": "CSV",
-        "download_title": "Downloade AED-Daten, die zu OSM hingefügt wurden",
+        "download_title": "AED-Daten herunterladen, die zu OSM hingefügt wurden",
         "excel": "Excel",
         "geojson": "GeoJSON",
         "map_legend_title": "Legende",
@@ -24,12 +26,23 @@
         "location": "Ort",
         "opening_hours": "Öffnungszeiten",
         "description": "Beschreibung",
-        "contact_number": "Kontaktnummer",
+        "contact_number": "Telefonnummer",
         "operator": "Betreiber",
         "note": "Hinweis",
-        "edit": "Bearbeiten in OSM",
-        "view": "Auf OSM ansehen",
-        "copy_url": "URL kopieren"
+        "edit": "In OSM bearbeiten",
+        "view": "In OSM ansehen",
+        "copy_url": "URL kopieren",
+        "add_defibrillator": "Defibrillator hinzufügen"
+    },
+    "form": {
+        "optional_field": "Optionales Feld",
+        "marker_popup_text": "Bewege den Pin zur AED Position",
+        "is_indoor": "Wo im Gebäude befindet sich dieser Defibrillator?",
+        "inside": "Innenbereich",
+        "outside": "Außenbereich",
+        "accessibility": "Zugänglichkeit",
+        "location": "Beschreibe die genaue Lage",
+        "location_example": "Zum Beispiel: An der Wand neben dem Eingang"
     },
     "footer": {
         "add": "Hinzufügen",
@@ -38,7 +51,7 @@
     "opening_hours": {
         "24_7": "24/7",
         "open": "Offen",
-        "closed": "geschlossen"
+        "closed": "Geschlossen"
     },
     "indoor": {
         "yes": "Ja",
