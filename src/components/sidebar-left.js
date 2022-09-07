@@ -49,7 +49,7 @@ const parseForm = (formElements) => {
 }
 
 
-export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId }) {
+export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
   const { t } = useTranslation();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
@@ -109,12 +109,16 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
         })
         .then(newNodeId => {
           event.target.classList.remove("is-loading");
-            console.log("created new node with id: ", newNodeId);
+          closeSidebar();
+          console.log("created new node with id: ", newNodeId);
+          setModalState({visible: true, type: "nodeAddedSucesfully", nodeId: newNodeId});
         })
         .catch(err => {
           event.target.classList.remove("is-loading");
-            console.log(err);
-            console.log(`${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`);
+          closeSidebar();
+          console.log(err);
+          const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`;
+          setModalState({visible: true, type: "error", errorMessage: errorMessage});
         });
     }
     return (

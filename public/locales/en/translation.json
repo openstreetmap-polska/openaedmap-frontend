@@ -59,5 +59,11 @@
         "yes": "Yes",
         "no": "No"
     },
-    "osmp": "OpenStreetMap Poland"
+    "osmp": "OpenStreetMap Poland",
+    "modal": {
+        "aed_added_sucesfully": "AED added sucesfully.",
+        "available_in_osm": "Available in OpenStreetMap with the url:",
+        "should_appear_soon": "Object should appear on the map within <strong>60</strong> minutes.",
+        "error_occured": "Error occured"
+    }
 }

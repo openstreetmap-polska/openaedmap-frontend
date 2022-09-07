@@ -6,6 +6,7 @@ import SiteNavbar from './components/navbar.js';
 import SidebarRight from './components/sidebar-right.js';
 import Map from './components/map.js';
 import { osmAuth } from 'osm-auth';
+import { CustomModal } from './components/modal'
 
 
 function Main() {
@@ -20,6 +21,7 @@ function Main() {
         defaultRightSidebarState = false;
     }
 
+    const [modalState, setModalState] = useState({visible: false, type: "init"});
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
     const closeRightSidebar = () => setRightSidebarShown(false);
@@ -43,8 +45,9 @@ function Main() {
     return (
         <>
             <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} auth={auth} />
+            <CustomModal state={modalState} />
             { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
-            <Map auth={auth} openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} />
+            <Map auth={auth} openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} modalState={modalState} setModalState={setModalState} />
         </>
     );
 }

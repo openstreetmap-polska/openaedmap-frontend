@@ -75,7 +75,7 @@ function getNewHashString(parameters) {
         .join("&")
 }
 
-export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
+export default function Map({ auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
 
     const { t } = useTranslation();
 
@@ -284,6 +284,8 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
                                 auth={auth}
                                 openChangesetId={openChangesetId}
                                 setOpenChangesetId={setOpenChangesetId}
+                                modalState={modalState}
+                                setModalState={setModalState}
                               />}
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
