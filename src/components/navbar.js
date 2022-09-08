@@ -4,11 +4,11 @@ import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
 import Icon from '@mdi/react';
-import { mdiCog, mdiGithub, mdiHeartFlash } from '@mdi/js';
+import { mdiCog, mdiGithub, mdiHeartFlash, mdiInformation } from '@mdi/js';
 import Login from './login';
 
 
-export default function SiteNavbar({ toggleSidebarShown, auth }) {
+export default function SiteNavbar({ toggleSidebarShown, auth, setModalState }) {
     const [isActive, setisActive] = React.useState(false);
     const { t } = useTranslation();
     return (
@@ -59,11 +59,12 @@ export default function SiteNavbar({ toggleSidebarShown, auth }) {
                         </a>
                     </Navbar.Item>
                     <Login auth={auth}/>
-                    {/* <Navbar.Item renderAs='div' p={0}>
-                        <Button color={'white'} outlined={true}>
+                    <Navbar.Item renderAs='div' p={0}>
+                        <Button color={'white'} outlined={true} onClick={() => setModalState({visible: true, type: "info"})}>
                             <Icon path={mdiInformation} size='2rem' />
+                            {t("navbar.about")}
                         </Button>
-                    </Navbar.Item> */}
+                    </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>
         </Navbar>

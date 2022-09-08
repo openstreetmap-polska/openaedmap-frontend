@@ -44,7 +44,7 @@ function Main() {
 
     return (
         <>
-            <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} auth={auth} />
+            <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} auth={auth} setModalState={setModalState} />
             <CustomModal state={modalState} setModalState={setModalState} />
             { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
             <Map auth={auth} openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} modalState={modalState} setModalState={setModalState} />

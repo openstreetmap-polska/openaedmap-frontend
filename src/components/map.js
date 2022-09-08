@@ -132,6 +132,14 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
         setFooterButtonType(BUTTONS_TYPE_ADD_AED);
     };
 
+    const checkConditionsThenCall = (callable) => {
+        if (!auth.authenticated())
+            setModalState({visible: true, type: "needToLogin"})
+        else if (map.current.getZoom() < 15)
+            setModalState({visible: true, type: "needMoreZoom", currentZoom: map.current.getZoom()})
+        else callable()
+    }
+
     const mobileStepOne = () => {
         deleteMarker();
         removeNodeIdFromHash();
@@ -290,7 +298,13 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
-        <FooterDiv openForm={openForm} mobileStepOne={mobileStepOne} mobileCancel={mobileCancel} mobileStepTwo={mobileStepTwo} buttonsConfiguration={footerButtonType} />
+        <FooterDiv
+            openForm={() => checkConditionsThenCall(openForm)}
+            mobileStepOne={() => checkConditionsThenCall(mobileStepOne)}
+            mobileCancel={mobileCancel}
+            mobileStepTwo={mobileStepTwo}
+            buttonsConfiguration={footerButtonType}
+        />
         </>
     );
 }
