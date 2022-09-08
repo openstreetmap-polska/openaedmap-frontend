@@ -11,7 +11,8 @@
         "visit_github": "Visit our GitHub repository",
         "visit_osmp_website": "Visit OpenStreetMap Poland's website",
         "login": "Log in using OSM account",
-        "logout": "Log out"
+        "logout": "Log out",
+        "about": "About"
     },
     "sidebar": {
         "close": "Close sidebar",
@@ -59,5 +60,19 @@
         "yes": "Yes",
         "no": "No"
     },
-    "osmp": "OpenStreetMap Poland"
+    "osmp": "OpenStreetMap Poland",
+    "modal": {
+        "aed_added_sucesfully": "AED added sucesfully.",
+        "available_in_osm": "Available in OpenStreetMap with the url:",
+        "should_appear_soon": "Object should appear on the map within <strong>60</strong> minutes.",
+        "error_occured": "Error occured",
+        "title": "Information",
+        "need_to_login": "To add features you need to log in using OpenStreetMap account.",
+        "click_login_button": "Close this window and click login button at the top to log in.",
+        "need_more_zoom": "To add features you need to zoom in so the location that you provide is accurate.",
+        "current_zoom": "Current zoom:",
+        "zoom_need_to_be": "Zoom needs to be at level 15 minimum.",
+        "about_osm": "OpenStreetMap (OSM) is like a Wikipedia for maps. You too can contribute.",
+        "create_account": "Create free account on "
+    }
 }

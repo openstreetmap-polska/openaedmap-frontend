@@ -75,7 +75,7 @@ function getNewHashString(parameters) {
         .join("&")
 }
 
-export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
+export default function Map({ auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
 
     const { t } = useTranslation();
 
@@ -131,6 +131,14 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
         removeNodeIdFromHash();
         setFooterButtonType(BUTTONS_TYPE_ADD_AED);
     };
+
+    const checkConditionsThenCall = (callable) => {
+        if (!auth.authenticated())
+            setModalState({visible: true, type: "needToLogin"})
+        else if (map.current.getZoom() < 15)
+            setModalState({visible: true, type: "needMoreZoom", currentZoom: map.current.getZoom()})
+        else callable()
+    }
 
     const mobileStepOne = () => {
         deleteMarker();
@@ -284,11 +292,19 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId }) {
                                 auth={auth}
                                 openChangesetId={openChangesetId}
                                 setOpenChangesetId={setOpenChangesetId}
+                                modalState={modalState}
+                                setModalState={setModalState}
                               />}
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />
         </div>
-        <FooterDiv openForm={openForm} mobileStepOne={mobileStepOne} mobileCancel={mobileCancel} mobileStepTwo={mobileStepTwo} buttonsConfiguration={footerButtonType} />
+        <FooterDiv
+            openForm={() => checkConditionsThenCall(openForm)}
+            mobileStepOne={() => checkConditionsThenCall(mobileStepOne)}
+            mobileCancel={mobileCancel}
+            mobileStepTwo={mobileStepTwo}
+            buttonsConfiguration={footerButtonType}
+        />
         </>
     );
 }
