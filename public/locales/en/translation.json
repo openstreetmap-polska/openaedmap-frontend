@@ -64,6 +64,7 @@
         "aed_added_sucesfully": "AED added sucesfully.",
         "available_in_osm": "Available in OpenStreetMap with the url:",
         "should_appear_soon": "Object should appear on the map within <strong>60</strong> minutes.",
-        "error_occured": "Error occured"
+        "error_occured": "Error occured",
+        "title": "Information"
     }
 }

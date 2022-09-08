@@ -21,7 +21,7 @@ function Main() {
         defaultRightSidebarState = false;
     }
 
-    const [modalState, setModalState] = useState({visible: false, type: "init"});
+    const [modalState, setModalState] = useState({visible: false});
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
     const closeRightSidebar = () => setRightSidebarShown(false);
@@ -45,7 +45,7 @@ function Main() {
     return (
         <>
             <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} auth={auth} />
-            <CustomModal state={modalState} />
+            <CustomModal state={modalState} setModalState={setModalState} />
             { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
             <Map auth={auth} openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} modalState={modalState} setModalState={setModalState} />
         </>
