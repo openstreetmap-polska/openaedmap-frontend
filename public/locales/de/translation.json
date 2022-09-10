@@ -12,7 +12,7 @@
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
         "login": "Mit OSM-Account anmelden",
         "logout": "Abmelden",
-        "about": "About"
+        "about": "Über"
     },
     "sidebar": {
         "close": "Seitenleiste schließen",
@@ -48,8 +48,8 @@
     "footer": {
         "add": "Hinzufügen",
         "add_aed": "AED hinzufügen",
-        "cancel": "Cancel",
-        "continue": "Continue"
+        "cancel": "Abbrechen",
+        "continue": "Weiter"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -62,17 +62,17 @@
     },
     "osmp": "OpenStreetMap Polen",
     "modal": {
-        "aed_added_sucesfully": "AED added sucesfully.",
-        "available_in_osm": "Available in OpenStreetMap with the url:",
-        "should_appear_soon": "Object should appear on the map within <strong>60</strong> minutes.",
-        "error_occured": "Error occured",
+        "aed_added_sucesfully": "AED erfolgreich hinzugefügt.",
+        "available_in_osm": "Verfügbar in OpenStreetMap mit der URL:",
+        "should_appear_soon": "Objekt sollte auf der Karte innerhalb von <strong>60</strong> Minuten sichtbar werden.",
+        "error_occured": "Fehler aufgetreten",
         "title": "Information",
-        "need_to_login": "To add features you need to log in using OpenStreetMap account.",
-        "click_login_button": "Close this window and click login button at the top to log in.",
-        "need_more_zoom": "To add features you need to zoom in so the location that you provide is accurate.",
-        "current_zoom": "Current zoom:",
-        "zoom_need_to_be": "Zoom needs to be at level 15 minimum.",
-        "about_osm": "OpenStreetMap (OSM) is like a Wikipedia for maps. You too can contribute.",
-        "create_account": "Create free account on "
+        "need_to_login": "Um Features hinzuzufügen, musst du dich mit deinem OpenStreetMap Account einloggen.",
+        "click_login_button": "Schließe dieses Fenster und klicke den Login-Button oben.",
+        "need_more_zoom": "Um Features hinzuzufügen, musst du zu dem Zielort hineinzoomen, sodass die Position genau wird.",
+        "current_zoom": "Aktuelles Zoomlevel:",
+        "zoom_need_to_be": "Zoomlevel muss mindestens 15 sein.",
+        "about_osm": "OpenStreetMap (OSM) ist wie eine Wikipedia für Landkarten. Du kannst auch beitragen.",
+        "create_account": "Erstelle einen kostenlosen Account auf "
     }
 }
