@@ -11,7 +11,8 @@
         "visit_github": "Besuche unser GitHub Repositorium",
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
         "login": "Mit OSM-Account anmelden",
-        "logout": "Abmelden"
+        "logout": "Abmelden",
+        "about": "Über"
     },
     "sidebar": {
         "close": "Seitenleiste schließen",
@@ -46,7 +47,9 @@
     },
     "footer": {
         "add": "Hinzufügen",
-        "add_aed": "AED hinzufügen"
+        "add_aed": "AED hinzufügen",
+        "cancel": "Abbrechen",
+        "continue": "Weiter"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -57,5 +60,19 @@
         "yes": "Ja",
         "no": "Nein"
     },
-    "osmp": "OpenStreetMap Polen"
+    "osmp": "OpenStreetMap Polen",
+    "modal": {
+        "aed_added_sucesfully": "AED erfolgreich hinzugefügt.",
+        "available_in_osm": "Verfügbar in OpenStreetMap mit der URL:",
+        "should_appear_soon": "Objekt sollte auf der Karte innerhalb von <strong>60</strong> Minuten sichtbar werden.",
+        "error_occured": "Fehler aufgetreten",
+        "title": "Information",
+        "need_to_login": "Um Features hinzuzufügen, musst du dich mit deinem OpenStreetMap Account einloggen.",
+        "click_login_button": "Schließe dieses Fenster und klicke den Login-Button oben.",
+        "need_more_zoom": "Um Features hinzuzufügen, musst du zu dem Zielort hineinzoomen, sodass die Position genau wird.",
+        "current_zoom": "Aktuelles Zoomlevel:",
+        "zoom_need_to_be": "Zoomlevel muss mindestens 15 sein.",
+        "about_osm": "OpenStreetMap (OSM) ist wie eine Wikipedia für Landkarten. Du kannst auch beitragen.",
+        "create_account": "Erstelle einen kostenlosen Account auf "
+    }
 }
