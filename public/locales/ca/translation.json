@@ -9,16 +9,19 @@
     "navbar": {
         "created_with_<3_by": "creat amb ❤️ per",
         "visit_github": "Visita el nostre repositori de GitHub",
-        "visit_osmp_website": "Visita la web d'OpenStreetMap Polònia"
+        "visit_osmp_website": "Visita la web d'OpenStreetMap Polònia",
+		"login": "Entrar usant el compte d'OSM",
+        "logout": "Sortir",
+        "about": "Quant a"
     },
     "sidebar": {
         "close": "Tanca la barra lateral",
         "csv": "CSV",
-        "download_title": "Baixa't les dades d'AED afegits a OSM",
+        "download_title": "Baixa't les dades de DEAs afegits a OSM",
         "excel": "Excel",
         "geojson": "GeoJSON",
         "map_legend_title": "Llegenda",
-        "caption_info": "AED",
+        "caption_info": "DEA",
         "no_data": "Sense dades",
         "indoor": "Interior",
         "location": "Ubicació",
@@ -29,11 +32,24 @@
         "note": "Nota",
         "edit": "Edita a OSM",
         "view": "Veure a OSM",
-        "copy_url": "Copiar URL"
+        "copy_url": "Copiar URL",
+		"add_defibrillator": "Afegir desfibril·lador"
+},
+    "form": {
+        "optional_field": "Camp opcional",
+        "marker_popup_text": "Mou el marcador a la localització del DEA",
+        "is_indoor": "Està dins d'un edifici?",
+        "inside": "Dins",
+        "outside": "Fora",
+        "accessibility": "Accessibilitat",
+        "location": "Descriu localització",
+        "location_example": "Per exemple: A la paret al costat de l'entrada"
     },
     "footer": {
         "add": "Afegir",
-        "add_aed": "Afegir AED"
+        "add_aed": "Afegir DEA",
+		"cancel": "Cancel·lar",
+        "continue": "Continuar"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -44,5 +60,19 @@
         "yes": "Sí",
         "no": "No"
     },
-    "osmp": "OpenStreetMap Polònia"
+    "osmp": "OpenStreetMap Polònia",
+	"modal": {
+        "aed_added_sucesfully": "DEA afegit amb èxit.",
+        "available_in_osm": "Disponible en OpenStreetMap amb la url:",
+        "should_appear_soon": "L'objecte hauria de sortir al mapa en <strong>60</strong> minuts.",
+        "error_occured": "Ha hagut un error",
+        "title": "Informació",
+        "need_to_login": "Per afegir elements has d'entrar usant el teu compte d'OpenStreetMap.",
+        "click_login_button": "Tanca aquesta finestra i fes clic al botó d'entrada superior per entrar.",
+        "need_more_zoom": "Per afegir elements necessites ampliar la zona suficientment per assegurar-te que és exacta.",
+        "current_zoom": "Zoom actual:",
+        "zoom_need_to_be": "El zoom mínim ha de ser de nivell 15 com a mínim.",
+        "about_osm": "OpenStreetMap (OSM) és com la Viquipèdia dels mapes. Tu també pots contribuir.",
+        "create_account": "Crea compte de franc a "
+    }
 }
