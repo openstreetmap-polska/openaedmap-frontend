@@ -60,7 +60,7 @@
         "yes": "Tak",
         "no": "Nie"
     },
-    "osmp": "OpenStreetMap Polska"
+    "osmp": "OpenStreetMap Polska",
     "modal": {
         "aed_added_sucesfully": "AED został dodany.",
         "available_in_osm": "Dostępny w OpenStreetMap pod adresem URL:",
@@ -74,4 +74,5 @@
         "zoom_need_to_be": "Powiększenie musi być na poziomie minimum 15.",
         "about_osm": "OpenStreetMap jest jak Wikipedia dla map. Ty również możesz ją współtworzyć.",
         "create_account": "Stwórz darmowe konto "
+    }
 }
