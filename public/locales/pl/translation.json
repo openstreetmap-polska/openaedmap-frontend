@@ -12,6 +12,7 @@
         "visit_osmp_website": "Odwiedź stronę OpenStreetMap Polska",
         "login": "Zaloguj się kontem OSM",
         "logout": "Wyloguj"
+        "about": "O projekcie"
     },
     "sidebar": {
         "close": "Zamknij panel boczny",
@@ -60,4 +61,17 @@
         "no": "Nie"
     },
     "osmp": "OpenStreetMap Polska"
+    "modal": {
+        "aed_added_sucesfully": "AED został dodany.",
+        "available_in_osm": "Dostępny w OpenStreetMap pod adresem URL:",
+        "should_appear_soon": "Obiekt powinien być widoczny na mapie w ciągu <strong>60</strong> minut.",
+        "error_occured": "Wystąpił błąd",
+        "title": "Informacja",
+        "need_to_login": "Aby dodawać obiekty, musisz zalogować się na swoje konto OpenStreetMap.",
+        "click_login_button": "Zamknij to okno i kliknij przycisk logowania u góry, aby się zalogować.",
+        "need_more_zoom": "Aby dodawać obiekty, musisz przybliżyć mapę, aby podana lokalizacja była dokładna.",
+        "current_zoom": "Aktualny poziom powiększenia:",
+        "zoom_need_to_be": "Powiększenie musi być na poziomie minimum 15.",
+        "about_osm": "OpenStreetMap jest jak Wikipedia dla map. Ty również możesz ją współtworzyć.",
+        "create_account": "Stwórz darmowe konto "
 }
