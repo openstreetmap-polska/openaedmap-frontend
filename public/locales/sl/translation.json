@@ -1,0 +1,78 @@
+{
+    "access": {
+        "yes": "Javno dostopen",
+        "private": "Dostopen z dovoljenjem lastnika",
+        "customers": "Dostopen v obratovalnem času",
+        "no": "Nedostopen",
+        "permissive": "Z dovoljenjem"
+    },
+    "navbar": {
+        "created_with_<3_by": "z ❤️ ustvaril",
+        "visit_github": "Obiščite naš GitHub repozitorij",
+        "visit_osmp_website": "Obiščite spletno stran OpenStreetMap Poljska",
+        "login": "Vpis v OSM",
+        "logout": "Odjava",
+        "about": "O aplikaciji"
+    },
+    "sidebar": {
+        "close": "Zapri okno",
+        "csv": "CSV",
+        "download_title": "Prenos podatkov AED iz OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Legenda zemljevida",
+        "caption_info": "AED",
+        "no_data": "Ni podatka",
+        "indoor": "Znotraj zgradbe",
+        "location": "Lokacija",
+        "opening_hours": "Urnik dostopnosti",
+        "description": "Opis",
+        "contact_number": "Kontaktna številka",
+        "operator": "Operater",
+        "note": "Opomba",
+        "edit": "Uredi v OSM",
+        "view": "Prikaži v OSM",
+        "copy_url": "Kopiraj URL",
+        "add_defibrillator": "Dodaj defibrillator"
+    },
+    "form": {
+        "optional_field": "Če je znano",
+        "marker_popup_text": "Prestavite oznako na lokacijo AED",
+        "is_indoor": "Ali je znotraj zgradbe?",
+        "inside": "Znotraj",
+        "outside": "Zunaj",
+        "accessibility": "Dostopnost",
+        "location": "Opišite lokacijo",
+        "location_example": "Na primer: Na steni ob vhodu"
+    },
+    "footer": {
+        "add": "Dodaj",
+        "add_aed": "Dodaj AED",
+        "cancel": "Prekliči",
+        "continue": "Nadaljuj"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Odprto",
+        "closed": "Zaprto"
+    },
+    "indoor": {
+        "yes": "Da",
+        "no": "Ne"
+    },
+    "osmp": "OpenStreetMap Poljska",
+    "modal": {
+        "aed_added_sucesfully": "AED uspešno dodan.",
+        "available_in_osm": "Na voljo v OpenStreetMap na povezavi:",
+        "should_appear_soon": "Sprememba bi morala biti vidna na zemljevidu v <strong>60</strong> minutah.",
+        "error_occured": "Prišlo je do napake",
+        "title": "Informacije",
+        "need_to_login": "Za dodajanje elementov se morate vpisati z računom OpenStreetMap.",
+        "click_login_button": "Zaprite to okno in kliknite na gumb za vpis v meniju zgoraj.",
+        "need_more_zoom": "Za natančnejše dodajanje elementov morate bolj povečati zemljevid.",
+        "current_zoom": "Trenutna povečava:",
+        "zoom_need_to_be": "Povečava mora biti vsaj na nivoju 15 ali višja.",
+        "about_osm": "OpenStreetMap (OSM) je kot Wikipedija za zemljevide. Tudi vi lahko prispevate.",
+        "create_account": "Ustvarite si brezplačen račun na "
+    }
+}

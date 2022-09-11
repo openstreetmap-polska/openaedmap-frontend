@@ -12,6 +12,7 @@ const languages = {
   es: { nativeName: 'Español' },
   ca: { nativeName: 'Català' },
   nl: { nativeName: 'Nederlands' },
+  sl: { nativeName: 'Slovenščina' },
 };
 if (!isProduction) {
   languages['debug'] = { nativeName: '--debug--'}
