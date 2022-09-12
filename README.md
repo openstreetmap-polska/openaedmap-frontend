@@ -1,8 +1,8 @@
 # Open AED Map
 
-This project shows [Automated External Defibrillators (AED)](https://en.wikipedia.org/wiki/Automated_external_defibrillator) location on a map. Site is integrated with [OpenStreetMap](https://osm.org) reading data from OSM and allowing to add AED location to OSM.
+This project shows [Automated External Defibrillators (AED)](https://en.wikipedia.org/wiki/Automated_external_defibrillator) location on a map. Site is integrated with [OpenStreetMap](https://www.openstreetmap.org/) reading data from OSM and allowing to add AED location to OSM.
 
-This is a rewrite of [the first version](https://aed.openstreetmap.org.pl) to React. Development is in progress.
+This is a rewrite of [the first version](https://aed.openstreetmap.org.pl/) to React. Development is in progress.
 
 # Development
 ## Gitflow
