@@ -29,7 +29,8 @@
         "note": "Nota",
         "edit": "Editar en OSM",
         "view": "Ver en OSM",
-        "copy_url": "Copiar URL"
+        "copy_url": "Copiar URL",
+        "add_defibrillator": "Añadir desfibrilador"
     },
     "footer": {
         "add": "Añadir",
