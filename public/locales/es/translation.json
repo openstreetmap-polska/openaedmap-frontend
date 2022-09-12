@@ -9,16 +9,19 @@
     "navbar": {
         "created_with_<3_by": "creado con ❤️ por",
         "visit_github": "Visita nuestro repositorio de GitHub",
-        "visit_osmp_website": "Visita la web de OpenStreetMap Polonia"
+        "visit_osmp_website": "Visita la web de OpenStreetMap Polonia",
+		"login": "Entrar usando la cuenta de OSM",
+        "logout": "Salir",
+        "about": "Sobre"
     },
     "sidebar": {
         "close": "Cierra la barra lateral",
         "csv": "CSV",
-        "download_title": "Bájate los datos de AED añadidos a OSM",
+        "download_title": "Bájate los datos de DEA añadidos a OSM",
         "excel": "Excel",
         "geojson": "GeoJSON",
         "map_legend_title": "Leyenda",
-        "caption_info": "AED",
+        "caption_info": "DEA",
         "no_data": "Sin datos",
         "indoor": "Interior",
         "location": "Ubicación",
@@ -30,11 +33,23 @@
         "edit": "Editar en OSM",
         "view": "Ver en OSM",
         "copy_url": "Copiar URL",
-        "add_defibrillator": "Añadir desfibrilador"
+		"add_defibrillator": "Añadir desfibrilador"
+},
+    "form": {
+        "optional_field": "Campo opcional",
+        "marker_popup_text": "Mueve el marcador a la localización del DEA",
+        "is_indoor": "¿Está dentro de un edificio?",
+        "inside": "Dentro",
+        "outside": "Fuera",
+        "accessibility": "Accesibilidad",
+        "location": "Describe localización",
+        "location_example": "Por ejemplo: En la pared al lado de la entrada"
     },
     "footer": {
         "add": "Añadir",
-        "add_aed": "Añadir AED"
+        "add_aed": "Añadir DEA",
+		"cancel": "Cancelar",
+        "continue": "Continuar"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -45,5 +60,19 @@
         "yes": "Sí",
         "no": "No"
     },
-    "osmp": "OpenStreetMap Polonia"
+    "osmp": "OpenStreetMap Polonia",
+	"modal": {
+        "aed_added_sucesfully": "DEA añadido con éxito.",
+        "available_in_osm": "Disponible en OpenStreetMap con la url:",
+        "should_appear_soon": "El objeto debería aparecer en el mapa en <strong>60</strong> minutos.",
+        "error_occured": "Ha ocurrido un error",
+        "title": "Información",
+        "need_to_login": "Para añadir elementos debes entrar usando tu cuenta de OpenStreetMap.",
+        "click_login_button": "Cierra esta ventana y haz clic en el botón de entrada superior para entrar.",
+        "need_more_zoom": "Para añadir elementos necesitas ampliar la zona lo suficiente para asegurarte que es exacta.",
+        "current_zoom": "Zoom actual:",
+        "zoom_need_to_be": "El zoom mínimo debe de ser de nivel 15 por lo menos.",
+        "about_osm": "OpenStreetMap (OSM) es como la Wikipedia de los mapas. Tú también puedes contribuir.",
+        "create_account": "Crear cuenta gratis en "
+    }
 }
