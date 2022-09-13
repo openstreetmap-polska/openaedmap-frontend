@@ -72,7 +72,7 @@
         "need_more_zoom": "To add features you need to zoom in so the location that you provide is accurate.",
         "current_zoom": "Current zoom:",
         "zoom_need_to_be": "Zoom needs to be at level 15 minimum.",
-        "about_osm": "OpenAEDMap is open-data project which shows all Automated External Defibrillators (AED) around the world. The website is based on data from OpenStreetMap.",
+        "about_osm": "OpenAEDMap is open-data project which shows all Automated External Defibrillators (AED) around the world. The website is based on data from OpenStreetMap (OSM).",
         "history": "Site is the result of OpenStreetMap Poland association efforts. It was created in 2022 after remaking Polish AED Map into a new design.",
         "create_account": "You can contibute too! Just create a free account on "
     }
