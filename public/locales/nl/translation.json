@@ -9,7 +9,8 @@
     "navbar": {
         "created_with_<3_by": "gemaakt met ❤️ door",
         "visit_github": "Bezoek onze GitHub-pagina",
-        "visit_osmp_website": "Bezoek OpenStreetMap Poland's website"
+        "visit_osmp_website": "Bezoek OpenStreetMap Poland's website",
+        "login": "Aanmelden met OSM-account"
     },
     "sidebar": {
         "close": "Zijpaneel sluiten",
