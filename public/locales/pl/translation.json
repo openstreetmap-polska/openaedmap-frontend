@@ -72,7 +72,7 @@
         "need_more_zoom": "Aby dodawać obiekty, musisz przybliżyć mapę, aby podana lokalizacja była dokładna.",
         "current_zoom": "Aktualny poziom powiększenia:",
         "zoom_need_to_be": "Powiększenie musi być na poziomie minimum 15.",
-        "about_osm": "OpenAEDMap jest otwartym projektem, który ukazuje wszystkie automatyczne defibrylatory zewnętrzne (AED) na całym świecie. Strona jest oparta na danych z OpenStreetMap.",
+        "about_osm": "OpenAEDMap jest otwartym projektem, który ukazuje wszystkie automatyczne defibrylatory zewnętrzne (AED) na całym świecie. Strona jest oparta na danych z OpenStreetMap (OSM).",
         "history": "Strona powstała w wyniku starań stowarzyszenia OpenStreetMap Polska. Wprowadzona została w 2022 roku po przekształceniu polskiej Mapy AED na nowy design.",
         "create_account": "Ty również możesz ją współtworzyć! Stwórz darmowe konto "
     }
