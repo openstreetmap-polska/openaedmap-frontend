@@ -6,6 +6,9 @@ This project shows [Automated External Defibrillators (AED)](https://en.wikipedi
 
 This is a rewrite of [the first version](https://aed.openstreetmap.org.pl/) to React. Development is in progress.
 
+Production environemnt: https://openaedmap.org \
+Development environment: https://dev.openaedmap.org
+
 # Development
 ## Gitflow
 
@@ -14,6 +17,8 @@ Branches:
 - dev - for dev environment
 
 Create branch off of `dev` branch and when finished make PR back to `dev` branch.
+
+Pushes to both branches result in auto deployment.
 
 ## Translating
 We are using [Weblate](https://weblate.org) to manage translations.
