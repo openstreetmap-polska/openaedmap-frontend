@@ -15,6 +15,7 @@ const languages = {
   sl: { nativeName: 'Slovenščina' },
   fr: { nativeName: 'Français' },
   it: { nativeName: 'Italiano' },
+  fi: { nativeName: 'Suomi' },
 };
 if (!isProduction) {
   languages['debug'] = { nativeName: '--debug--'}
