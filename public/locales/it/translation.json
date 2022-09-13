@@ -1,0 +1,78 @@
+{
+    "form": {
+        "accessibility": "Accessibilità",
+        "optional_field": "Campo opzionale",
+        "location_example": "Per esempio: Sulla parete vicino all'ingresso",
+        "location": "Descrivi la posizione",
+        "marker_popup_text": "Sposta il marcatore sulla posizione del DAE",
+        "is_indoor": "È all'interno dell'edificio?",
+        "inside": "Dentro",
+        "outside": "Fuori"
+    },
+    "footer": {
+        "add": "Aggiungi",
+        "cancel": "Annulla",
+        "add_aed": "Aggiungi un DAE",
+        "continue": "Continua"
+    },
+    "indoor": {
+        "no": "No",
+        "yes": "Sì"
+    },
+    "navbar": {
+        "about": "Informazioni",
+        "created_with_<3_by": "creato con ❤️ da",
+        "login": "Accedi usando un account OSM",
+        "visit_github": "Visita il nostro repository GitHub",
+        "visit_osmp_website": "Visita il sito web di OpenStreetMap Polonia",
+        "logout": "Esci"
+    },
+    "access": {
+        "no": "Non disponibile",
+        "yes": "Accessibile al pubblico",
+        "permissive": "permissivo",
+        "private": "Accessibile con il permesso del proprietario",
+        "customers": "Accessibile durante l'orario di lavoro"
+    },
+    "sidebar": {
+        "download_title": "Scarica i dati DAE aggiunti a OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Legenda della mappa",
+        "caption_info": "DAE",
+        "indoor": "Interno dell'edificio",
+        "no_data": "Nessun dato",
+        "location": "Posizione",
+        "close": "Chiudi la barra laterale",
+        "csv": "CSV",
+        "description": "Descrizione",
+        "contact_number": "Numero di contatto",
+        "operator": "Operatore",
+        "add_defibrillator": "Aggiungi un defibrillatore",
+        "opening_hours": "Orari di apertura",
+        "note": "Nota",
+        "edit": "Modifica in OSM",
+        "view": "Visualizza in OSM",
+        "copy_url": "Copia l'URL"
+    },
+    "osmp": "OpenStreetMap Polonia",
+    "modal": {
+        "aed_added_sucesfully": "DAE aggiunto con successo.",
+        "error_occured": "Si è verificato un errore",
+        "title": "Informazioni",
+        "need_to_login": "Per aggiungere funzionalità è necessario accedere con l'account OpenStreetMap.",
+        "current_zoom": "Zoom attuale:",
+        "click_login_button": "Chiudi questa finestra e fai clic sul pulsante in alto per effettuare l'accesso.",
+        "need_more_zoom": "Per aggiungere le caratteristiche è necessario eseguire lo zoom in modo che la posizione fornita sia accurata.",
+        "about_osm": "OpenStreetMap (OSM) è come una Wikipedia per le mappe. Anche tu puoi contribuire.",
+        "available_in_osm": "Disponibile in OpenStreetMap con l'URL:",
+        "should_appear_soon": "L'oggetto dovrebbe apparire sulla mappa entro <strong>60</strong> minuti.",
+        "zoom_need_to_be": "Lo zoom deve essere almeno al livello 15.",
+        "create_account": "Crea un account gratuito su "
+    },
+    "opening_hours": {
+        "closed": "Chiuso",
+        "24_7": "24/7",
+        "open": "Aperto"
+    }
+}

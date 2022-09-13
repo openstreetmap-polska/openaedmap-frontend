@@ -1,8 +1,13 @@
+[![Translation status](https://hosted.weblate.org/widgets/openaedmap/-/svg-badge.svg)](https://hosted.weblate.org/engage/openaedmap/)
+
 # Open AED Map
 
 This project shows [Automated External Defibrillators (AED)](https://en.wikipedia.org/wiki/Automated_external_defibrillator) location on a map. Site is integrated with [OpenStreetMap](https://www.openstreetmap.org/) reading data from OSM and allowing to add AED location to OSM.
 
 This is a rewrite of [the first version](https://aed.openstreetmap.org.pl/) to React. Development is in progress.
+
+Production environemnt: https://openaedmap.org \
+Development environment: https://dev.openaedmap.org
 
 # Development
 ## Gitflow
@@ -13,10 +18,18 @@ Branches:
 
 Create branch off of `dev` branch and when finished make PR back to `dev` branch.
 
-## Translating
-Edit JSON files using this file path template `public/locales/{language ISO 639-1 code}/translation.json`
+Pushes to both branches result in auto deployment.
 
-If creating new translation add it to `src/i18n.js` with the 2 letter language code and native name (this is going to be displayed in dropdown).
+## Translating
+We are using [Weblate](https://weblate.org) to manage translations.
+
+If you want to help go to https://hosted.weblate.org/projects/openaedmap/ and start translating :)
+
+If new language is added then create an issue or make a PR adding it to `src/i18n.js` with the 2 letter language ISO 639-1 code and native name (this is going to be displayed in dropdown).
+
+Status:
+
+[![Translation status](https://hosted.weblate.org/widgets/openaedmap/-/multi-auto.svg)](https://hosted.weblate.org/engage/openaedmap/)
 
 ## Local environment
 

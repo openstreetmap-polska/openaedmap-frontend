@@ -1,1 +1,78 @@
-{}
+{
+    "access": {
+        "yes": "Accessible au public",
+        "no": "Indisponible",
+        "permissive": "permissif",
+        "customers": "Accessible pendant les heures de travail",
+        "private": "Accessible avec la permission du propriétaire"
+    },
+    "sidebar": {
+        "csv": "CSV",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Légende de la carte",
+        "caption_info": "DAE",
+        "excel": "Excel",
+        "download_title": "Télécharger les données du DAE ajoutées à OSM",
+        "location": "Emplacememt",
+        "opening_hours": "Heures d'ouverture",
+        "add_defibrillator": "Ajouter un défibrillateur",
+        "no_data": "Aucune donnée",
+        "indoor": "À l'intérieur du bâtiment",
+        "description": "Description",
+        "contact_number": "Numéro de contact",
+        "operator": "Opérateur",
+        "note": "Note",
+        "edit": "Modifier dans OSM",
+        "view": "Voir dans OSM",
+        "close": "Fermer la barre latérale",
+        "copy_url": "Copier l'URL"
+    },
+    "form": {
+        "optional_field": "Champ facultatif",
+        "is_indoor": "Est-ce à l'intérieur du bâtiment ?",
+        "marker_popup_text": "Déplacer le marqueur vers l'emplacement du DAE",
+        "location_example": "Par exemple : Sur le mur près de l'entrée",
+        "inside": "À l'intérieur",
+        "accessibility": "Accessibilité",
+        "location": "Décrivez l'emplacement",
+        "outside": "À l'extérieur"
+    },
+    "footer": {
+        "add_aed": "Ajouter un DAE",
+        "cancel": "Annuler",
+        "add": "Ajouter",
+        "continue": "Continuer"
+    },
+    "modal": {
+        "should_appear_soon": "L'objet devrait apparaître sur la carte dans un délai de <strong>60</strong> minutes.",
+        "error_occured": "Une erreur s'est produite",
+        "title": "Informations",
+        "need_to_login": "Pour ajouter des fonctionnalités, vous devez vous connecter en utilisant votre compte OpenStreetMap.",
+        "zoom_need_to_be": "Le zoom doit être au niveau 15 minimum.",
+        "create_account": "Créer un compte gratuit sur ",
+        "aed_added_sucesfully": "DAE ajouté avec succès.",
+        "current_zoom": "Zoom actuel :",
+        "click_login_button": "Fermez cette fenêtre et cliquez sur le bouton de connexion en haut de la page pour vous connecter.",
+        "available_in_osm": "Disponible dans OpenStreetMap avec l'URL :",
+        "need_more_zoom": "Pour ajouter des fonctionnalités, vous devez effectuer un zoom avant afin que l'emplacement que vous fournissez soit précis.",
+        "about_osm": "OpenStreetMap (OSM) est comme un Wikipédia pour les cartes. Vous pouvez vous aussi y contribuer."
+    },
+    "navbar": {
+        "created_with_<3_by": "créé avec ❤️ par",
+        "about": "À propos",
+        "visit_github": "Visitez notre dépôt GitHub",
+        "visit_osmp_website": "Visiter le site web d'OpenStreetMap Pologne",
+        "login": "Se connecter en utilisant un compte OSM",
+        "logout": "Se déconnecter"
+    },
+    "indoor": {
+        "yes": "Oui",
+        "no": "Non"
+    },
+    "osmp": "OpenStreetMap Pologne",
+    "opening_hours": {
+        "open": "Ouvert",
+        "24_7": "24/7",
+        "closed": "Fermé"
+    }
+}

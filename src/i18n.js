@@ -13,6 +13,8 @@ const languages = {
   ca: { nativeName: 'Català' },
   nl: { nativeName: 'Nederlands' },
   sl: { nativeName: 'Slovenščina' },
+  fr: { nativeName: 'Français' },
+  it: { nativeName: 'Italiano' },
 };
 if (!isProduction) {
   languages['debug'] = { nativeName: '--debug--'}

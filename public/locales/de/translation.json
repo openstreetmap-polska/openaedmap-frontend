@@ -8,9 +8,9 @@
     },
     "navbar": {
         "created_with_<3_by": "erstellt mit ❤️ von",
-        "visit_github": "Besuche unser GitHub Repositorium",
+        "visit_github": "Besuche unser GitHub-Repositorium",
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
-        "login": "Mit OSM-Account anmelden",
+        "login": "Mit OSM-Konto anmelden",
         "logout": "Abmelden",
         "about": "Über"
     },
@@ -68,11 +68,11 @@
         "error_occured": "Fehler aufgetreten",
         "title": "Information",
         "need_to_login": "Um Features hinzuzufügen, musst du dich mit deinem OpenStreetMap Account einloggen.",
-        "click_login_button": "Schließe dieses Fenster und klicke den Login-Button oben.",
+        "click_login_button": "Schließe dieses Fenster und klicke oben auf die Anmelden-Schaltfläche, um dich anzumelden.",
         "need_more_zoom": "Um Features hinzuzufügen, musst du zu dem Zielort hineinzoomen, sodass die Position genau wird.",
         "current_zoom": "Aktuelles Zoomlevel:",
         "zoom_need_to_be": "Zoomlevel muss mindestens 15 sein.",
         "about_osm": "OpenStreetMap (OSM) ist wie eine Wikipedia für Landkarten. Du kannst auch beitragen.",
-        "create_account": "Erstelle einen kostenlosen Account auf "
+        "create_account": "Erstelle ein kostenloses Konto auf "
     }
 }
