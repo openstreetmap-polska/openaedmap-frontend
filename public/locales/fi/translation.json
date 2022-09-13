@@ -1,0 +1,76 @@
+{
+    "access": {
+        "yes": "Julkisesti saatavilla",
+        "private": "Pääsy omistajan luvalla",
+        "customers": "Pääsy työaikana",
+        "no": "Ei käytettävissä"
+    },
+    "navbar": {
+        "created_with_<3_by": "luonut ❤️:lla tekijältä",
+        "visit_github": "Vieraile GitHub-tietovarastossamme",
+        "visit_osmp_website": "Vieraile OpenStreetMap Puolan verkkosivusto",
+        "login": "Kirjaudu sisään OSM-tilin avulla",
+        "logout": "Kirjaudu ulos",
+        "about": "Tietoja"
+    },
+    "form": {
+        "location_example": "Esimerkiksi: Seinällä lähellä sisäänkäyntiä",
+        "outside": "Ulkopuolella",
+        "accessibility": "Saavutettavuus",
+        "location": "Kuvaile sijainti",
+        "marker_popup_text": "Siirrä merkki AED-sijaintiin",
+        "optional_field": "Valinnainen kenttä",
+        "is_indoor": "Onko rakennuksen sisällä?",
+        "inside": "Sisällä"
+    },
+    "modal": {
+        "need_more_zoom": "Ominaisuuksien lisäämiseksi sinun on suurennettava, jotta antamasi sijainti on tarkka.",
+        "aed_added_sucesfully": "AED lisätty onnistuneesti.",
+        "available_in_osm": "Saatavilla OpenStreetMapissa URL-osoitteessa:",
+        "should_appear_soon": "Kohteen pitäisi näkyä kartalla <strong>60</strong> minuutin kuluessa.",
+        "error_occured": "Tapahtui virhe",
+        "click_login_button": "Sulje tämä ikkuna ja kirjaudu sisään napsauttamalla yläreunan kirjautumispainiketta.",
+        "create_account": "Luo ilmainen tili osoitteessa ",
+        "zoom_need_to_be": "Zoomin on oltava vähintään 15-tasoinen.",
+        "about_osm": "OpenStreetMap (OSM) on kuin karttojen Wikipedia. Sinäkin voit osallistua.",
+        "need_to_login": "Lisätäksesi ominaisuuksia sinun on kirjauduttava sisään OpenStreetMap-tilillä.",
+        "current_zoom": "Nykyinen zoom:",
+        "title": "Tiedot"
+    },
+    "sidebar": {
+        "view": "Näytä OSM:ssä",
+        "csv": "CSV",
+        "map_legend_title": "Kartan selitys",
+        "caption_info": "AED",
+        "no_data": "Ei tietoja",
+        "opening_hours": "Aukioloajat",
+        "contact_number": "Yhteystiedot",
+        "edit": "Muokkaa OSM:ssä",
+        "note": "Huomautus",
+        "close": "Sulje sivupalkki",
+        "download_title": "Lataa OSM:ään lisättyjä AED-tietoja",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "location": "Sijainti",
+        "copy_url": "Kopioi URL",
+        "indoor": "Rakennuksen sisällä",
+        "description": "Kuvaus",
+        "add_defibrillator": "Lisää defibrillaattori"
+    },
+    "footer": {
+        "add": "Lisää",
+        "add_aed": "Lisää AED",
+        "cancel": "Peruuta",
+        "continue": "Jatka"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Avoin",
+        "closed": "Suljettu"
+    },
+    "indoor": {
+        "yes": "Kyllä",
+        "no": "Ei"
+    },
+    "osmp": "OpenStreetMap Puola"
+}
