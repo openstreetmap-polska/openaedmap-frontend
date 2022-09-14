@@ -10,7 +10,9 @@
         "created_with_<3_by": "gemaakt met ❤️ door",
         "visit_github": "Bezoek onze GitHub-pagina",
         "visit_osmp_website": "Bezoek OpenStreetMap Poland's website",
-        "login": "Aanmelden met OSM-account"
+        "login": "Aanmelden met OSM-account",
+        "logout": "Afmelden",
+        "about": "Over"
     },
     "sidebar": {
         "close": "Zijpaneel sluiten",
@@ -30,11 +32,14 @@
         "note": "Aantekening",
         "edit": "Bewerken in OSM",
         "view": "Bekijken in OSM",
-        "copy_url": "URL kopiëren"
+        "copy_url": "URL kopiëren",
+        "add_defibrillator": "Defibrillator toevoegen"
     },
     "footer": {
         "add": "Toevoegen",
-        "add_aed": "AED toevoegen"
+        "add_aed": "AED toevoegen",
+        "cancel": "Annuleren",
+        "continue": "Verder"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -45,5 +50,29 @@
         "yes": "Ja",
         "no": "Nee"
     },
-    "osmp": "OpenStreetMap Polen"
+    "osmp": "OpenStreetMap Polen",
+    "form": {
+        "optional_field": "Optioneel veld",
+        "marker_popup_text": "Verplaats marker naar AED-locatie",
+        "is_indoor": "Bevindt zich binnen het gebouw?",
+        "inside": "Binnen",
+        "outside": "Buiten",
+        "location_example": "Bijvoorbeeld: Op de muur bij de ingang",
+        "accessibility": "Toegankelijkheid",
+        "location": "Beschrijf de locatie"
+    },
+    "modal": {
+        "aed_added_sucesfully": "AED succesvol toegevoegd.",
+        "available_in_osm": "Beschikbaar in OpenStreetMap met de url:",
+        "should_appear_soon": "Het object zal binnen <strong>60</strong> minuten verschijnen op de kaart.",
+        "error_occured": "Een fout is opgetreden",
+        "title": "Informatie",
+        "need_to_login": "Om objecten toe te voegen moet je inloggen met een OpenStreetMap-account.",
+        "click_login_button": "Sluit dit venster en klik op de aanmeld-knop bovenaan om in te loggen.",
+        "need_more_zoom": "Om objecten toe te voegen moet je inzoomen, zodat de locatie die je aangeeft nauwkeurig is.",
+        "current_zoom": "Huidig zoomniveau:",
+        "zoom_need_to_be": "Zoomniveau moet ten minste 15 zijn.",
+        "about_osm": "OpenStreetMap (OSM) is als een Wikipedia voor kaarten. Ook u kunt bijdragen.",
+        "create_account": "Maak een gratis account aan op "
+    }
 }
