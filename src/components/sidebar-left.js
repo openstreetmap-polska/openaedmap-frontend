@@ -22,7 +22,7 @@ const accessToColourMapping = {
   'no': 'has-background-grey',
   'private': 'has-background-link-dark',
   'permissive': 'has-background-link-dark',
-  'customers': 'has-background-link-dark',
+  'customers': 'has-background-warning',
   'default': 'has-background-grey',
 };
 
