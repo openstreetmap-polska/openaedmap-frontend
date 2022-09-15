@@ -20,10 +20,10 @@ import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
 const accessToColourMapping = {
   'yes': 'has-background-green',
   'no': 'has-background-grey',
-  'private': 'has-background-link-dark',
-  'permissive': 'has-background-link-dark',
-  'customers': 'has-background-warning',
-  'default': 'has-background-grey',
+  'private': 'has-background-blue',
+  'permissive': 'has-background-blue',
+  'customers': 'has-background-yellow',
+  'default': 'has-background-gray',
 };
 
 function accessColourClass(access) {
