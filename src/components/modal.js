@@ -40,6 +40,7 @@ const ModalContent = ({ state }) => {
     } else if (state.type === "info") {
         return (
             <div>
+                <p className="pb-2">{t("modal.about_project")}</p>
                 <p className="pb-2">{t("modal.about_osm")}</p>
                 <p>
                     {t("modal.create_account")}
