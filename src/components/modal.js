@@ -40,8 +40,8 @@ const ModalContent = ({ state }) => {
     } else if (state.type === "info") {
         return (
             <div>
+                <p className="pb-2">{t("modal.about_project")}</p>
                 <p className="pb-2">{t("modal.about_osm")}</p>
-                <p className="pb-2">{t("modal.history")}</p>
                 <p>
                     {t("modal.create_account")}
                     <a href="https://osm.org" rel="noreferrer" target="_blank">osm.org</a>
