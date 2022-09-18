@@ -54,7 +54,7 @@ export default function SiteNavbar({ toggleSidebarShown, auth, setModalState }) 
                         </Button>
                     </Navbar.Item>
                     <Navbar.Item renderAs='div' p={0}>
-                     <Button onclick="window.location='https://github.com/openstreetmap-polska/openaedmap-frontend';" color={'white'} outlined={true}>
+                     <Button onclick="window.location.href='https://github.com/openstreetmap-polska/openaedmap-frontend';" color={'white'} outlined={true}>
                             <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem' />
                         </Button>
                     </Navbar.Item>
