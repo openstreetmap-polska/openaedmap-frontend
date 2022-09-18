@@ -207,7 +207,7 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
           zoom: zoom,
           minZoom: 3,
           maxZoom: 19,
-          maplibreLogo: true,
+          maplibreLogo: false,
         });
 
         // how fast mouse scroll wheel zooms
