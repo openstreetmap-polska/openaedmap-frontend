@@ -18,12 +18,16 @@ code {
   color: #effaf5 !important;
 }
 
+.has-background-green a {
+  color: #effaf5 !important;
+}
+
 .has-background-yellow {
   background-color: #ffcc00 !important;
   color: #effaf5 !important;
 }
 
-.has-background-blue{
+.has-background-blue {
   background-color: #3e8ed0 !important;
   color: #effaf5 !important;
 }
@@ -31,4 +35,9 @@ code {
 .has-background-gray {
   background-color: #7a7a7a !important;
   color: #effaf5 !important;
+}
+
+.navbar-item a:hover
+{
+  color: #000000 !important;
 }

@@ -30,12 +30,12 @@ export default function Login({ auth }) {
         updateOsmUsernameState(auth, setOsmUsername);
         return (
             <Navbar.Item hoverable={true}>
-                <Navbar.Item textColor='white'>
+                <Navbar.Item>
                     <Icon path={mdiAccount} size='2rem' mr={1} />
                     {osmUsername}
                 </Navbar.Item>
                 <Navbar.Dropdown className='has-background-green'>
-                    <Navbar.Item textColor='white' onClick={logout}>
+                    <Navbar.Item onClick={logout}>
                         <Icon path={mdiLogout} size='2rem' mr={1} />
                         {t("navbar.logout")}
                     </Navbar.Item>
@@ -44,7 +44,7 @@ export default function Login({ auth }) {
         )
     } else {
         return (
-            <Navbar.Item px={1}>
+            <Navbar.Item renderAs='div' p={1}>
                 <Button color={"white"} outlined={true} onClick={login}>{t("navbar.login")}</Button>
             </Navbar.Item>
         )
