@@ -111,7 +111,7 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
     const [sidebarLeftShown, setSidebarLeftShown] = useState(initialSidebarVisibility);
 
     const [footerButtonType, setFooterButtonType] = useState(BUTTONS_TYPE_ADD_AED);
-    
+
     const removeNodeIdFromHash = () => {
         let hashParams = parseHash();
         delete hashParams["node_id"];
@@ -283,7 +283,7 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
 
     return (
         <>
-        { sidebarLeftShown && <SidebarLeft 
+        { sidebarLeftShown && <SidebarLeft
                                 action={sidebarLeftAction}
                                 data={sidebarLeftData}
                                 closeSidebar={closeSidebarLeft}

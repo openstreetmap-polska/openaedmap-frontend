@@ -51,7 +51,15 @@ const style = {
           "layout": {"visibility": "visible"},
           "paint": {
             "circle-color": "rgba(0,145,64, 0.85)",
-            "circle-radius": 12,
+            'circle-radius': [
+              'step',
+              ['get', 'point_count'],
+              12,
+              100,
+              16,
+              999,
+              20
+              ],
             "circle-stroke-color": "rgba(245, 245, 245, 0.88)",
             "circle-stroke-width": 2
           }
@@ -63,9 +71,10 @@ const style = {
           "source-layer": "defibrillators",
           "filter": ["has", "point_count"],
           "layout": {
+            "text-allow-overlap": true,
             "text-field": "{point_count}",
             "text-font": ["Open Sans Bold"],
-            "text-size": 12,
+            "text-size": 10,
             "text-letter-spacing": 0.05,
             "visibility": "visible"
           },
