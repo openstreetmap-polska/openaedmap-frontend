@@ -72,7 +72,8 @@
         "need_more_zoom": "Om objecten toe te voegen moet je inzoomen, zodat de locatie die je aangeeft nauwkeurig is.",
         "current_zoom": "Huidig zoomniveau:",
         "zoom_need_to_be": "Zoomniveau moet ten minste 15 zijn.",
-        "about_osm": "OpenStreetMap (OSM) is als een Wikipedia voor kaarten. Ook u kunt bijdragen.",
-        "create_account": "Maak een gratis account aan op "
+        "about_osm": "OpenStreetMap (OSM) is als een Wikipedia voor kaarten. Het is beschikbaar voor gebruik voor iedereen en iedereen kan objecten aan de kaart toevoegen. U kunt uw OSM-account gebruiken om AED-locaties direct vanaf deze website toe te voegen met een simpel invulformulier.",
+        "create_account": "Ook u kunt bijdragen! Maak een gratis account aan op ",
+        "about_project": "OpenAEDMap is een open-data project dat alle Automatische Externe Defibrillatoren (AED) over de hele wereld toont. De website is gebaseerd op gegevens van OpenStreetMap en is het resultaat van het werk van OpenStreetMap Polen's vereniging. De website is gemaakt in 2022 na het veranderen van de Poolse website AED Mapa naar een nieuw design."
     }
 }
