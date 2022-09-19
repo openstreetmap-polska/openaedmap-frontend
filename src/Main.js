@@ -3,7 +3,7 @@ import { Suspense, useState } from 'react';
 import './Main.css';
 import 'bulma/css/bulma.min.css';
 import SiteNavbar from './components/navbar.js';
-import SidebarRight from './components/sidebar-right.js';
+import SidebarRight from './components/sidebar-right';
 import Map from './components/map.js';
 
 // Type declaration in this package is broken. I had to disable it.

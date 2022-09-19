@@ -5,7 +5,7 @@ import MapLegend from "./legend";
 import './sidebar.css';
 import { CloseSidebarButton } from './sidebar/buttons';
 
-export default function SidebarRight({ closeSidebar }) {
+export default function SidebarRight({ closeSidebar }: { closeSidebar: () => void }) {
     return (
         <div className='sidebar-right'>
             <Card>
