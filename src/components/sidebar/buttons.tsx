@@ -3,8 +3,9 @@ import Icon from '@mdi/react';
 import { Button } from "react-bulma-components";
 import { useTranslation } from 'react-i18next';
 
+type OsmId = string
 
-export function EditButton({ osmId }) {
+export function EditButton({ osmId }: { osmId: OsmId }) {
     const { t } = useTranslation();
     return (
         <a key={"edit_url_" + osmId} href={"https://www.openstreetmap.org/edit?node=" + osmId}
@@ -16,7 +17,7 @@ export function EditButton({ osmId }) {
     )
 }
 
-export function ViewButton({ osmId }) {
+export function ViewButton({ osmId }: { osmId: OsmId }) {
     const { t } = useTranslation();
     return <a key={"view_url_" + osmId} href={"https://www.openstreetmap.org/node/" + osmId}
         className="button is-small is-success mx-1"
@@ -36,7 +37,7 @@ export function CopyUrlButton() {
     </Button>
 }
 
-export function CloseSidebarButton({ closeSidebarFunction, margins }) {
+export function CloseSidebarButton({ closeSidebarFunction, margins }: { closeSidebarFunction: () => void, margins: string }) {
     const { t } = useTranslation();
     // Button seems to have issues with delete class, using button instead
     return <button
@@ -46,7 +47,7 @@ export function CloseSidebarButton({ closeSidebarFunction, margins }) {
     />
 }
 
-export function AddAedButton({ nextStep }) {
+export function AddAedButton({ nextStep }: { nextStep: () => void }) {
     const { t } = useTranslation();
     return <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={nextStep}>
         {t('footer.add_aed')}
