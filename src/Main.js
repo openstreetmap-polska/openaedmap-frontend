@@ -5,6 +5,8 @@ import 'bulma/css/bulma.min.css';
 import SiteNavbar from './components/navbar.js';
 import SidebarRight from './components/sidebar-right.js';
 import Map from './components/map.js';
+
+// Type declaration in this package is broken. I had to disable it.
 import { osmAuth } from 'osm-auth';
 import { CustomModal } from './components/modal'
 
