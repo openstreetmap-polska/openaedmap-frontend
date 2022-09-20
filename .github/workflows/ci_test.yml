@@ -9,7 +9,7 @@ on:
     - src/**
     - public/**
     - package*.json
-    - .github/workflows/deploy_development.yml
+    - .github/workflows/ci_test.yml
 
 jobs:
   test:
