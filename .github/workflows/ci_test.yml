@@ -1,0 +1,30 @@
+name: Test CI test
+
+on:
+  push:
+    branches:
+    - '!main'
+    - '!dev'
+    - '**'
+    paths:
+    - src/**
+    - public/**
+    - package*.json
+    - .github/workflows/ci_test.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+    - name: Setup Node JS
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: npm install
+    - name: Run TypeScript typecheck
+      run: npm run typecheck
+    - name: Run tests
+      run: npm run test
