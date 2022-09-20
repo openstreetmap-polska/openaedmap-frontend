@@ -33,6 +33,7 @@
     "src"
   ],
   "exclude": [
+    "node_modules",
     "node_modules/osm-auth/src/osm-auth.d.ts"
   ]
 }
