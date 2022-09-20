@@ -15,7 +15,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: test
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3

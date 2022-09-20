@@ -23,6 +23,10 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm install
+    - name: Run TypeScript typecheck
+      run: npm run typecheck
+    - name: Run tests
+      run: npm run test
     - name: Build app
       env:
         NODE_ENV: development
