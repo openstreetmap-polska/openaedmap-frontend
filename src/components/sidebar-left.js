@@ -61,16 +61,16 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
         <Card>
-          <Card.Header id="sidebar-header" className={accessColourClass(data.access)} alignItems="center">
+          <Card.Header id="sidebar-header" className={[accessColourClass(data.access), 'is-shadowless']} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span
-              className="is-size-5 mr-3 has-text-white-ter has-text-weight-light"
+              className="is-size-5 py-2 has-text-white-ter has-text-weight-light"
               id="sidebar-caption">
               {t('sidebar.caption_info') + accessText}
             </span>
-            <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
+            <CloseSidebarButton closeSidebarFunction={closeSidebar} />
           </Card.Header>
-          <Card.Content py={3} className="content">
+          <Card.Content pt={3} pb={1} className="content">
             <IndoorField indoor={data.indoor} />
             <LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} />
             <OpeningHoursField openingHours={data.opening_hours} />
@@ -129,7 +129,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
           <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
             {t('sidebar.add_defibrillator')}
           </span>
-          <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
+          <CloseSidebarButton closeSidebarFunction={closeSidebar} />
         </Card.Header>
         <Card.Content py={3} className="content">
           <form>

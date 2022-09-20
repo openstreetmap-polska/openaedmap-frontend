@@ -37,12 +37,13 @@ export function CopyUrlButton() {
     </Button>
 }
 
-export function CloseSidebarButton({ closeSidebarFunction, margins }: { closeSidebarFunction: () => void, margins: string }) {
+export function CloseSidebarButton({ closeSidebarFunction }: { closeSidebarFunction: () => void}) {
     const { t } = useTranslation();
     // Button seems to have issues with delete class, using button instead
     return <button
+        id={'sidebar-card-close-button'}
         aria-label={t('sidebar.close')}
-        className={'delete is-large is-pulled-right ' + margins}
+        className={'delete is-large is-pulled-right'}
         onClick={closeSidebarFunction}
     />
 }
