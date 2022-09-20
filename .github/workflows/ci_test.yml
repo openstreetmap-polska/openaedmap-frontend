@@ -2,10 +2,9 @@ name: Test CI test
 
 on:
   push:
-    branches:
-    - '!main'
-    - '!dev'
-    - '**'
+    branches-ignore:
+    - main
+    - dev
     paths:
     - src/**
     - public/**
