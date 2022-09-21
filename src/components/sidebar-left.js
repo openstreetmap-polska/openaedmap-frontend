@@ -131,7 +131,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
           </span>
           <CloseSidebarButton closeSidebarFunction={closeSidebar} />
         </Card.Header>
-        <Card.Content p={3} className="content">
+        <Card.Content pt={4} className="content">
           <form>
             <AccessFormField/>
             <IndoorFormField/>
