@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.REACT_APP_ENV === 'production';
 
 const languages = {
   en: { nativeName: 'English' },

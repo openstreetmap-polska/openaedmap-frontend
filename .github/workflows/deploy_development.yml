@@ -29,7 +29,7 @@ jobs:
       run: npm run test
     - name: Build app
       env:
-        NODE_ENV: development
+        REACT_APP_ENV: development
         REACT_APP_OSM_API_URL: ${{ secrets.REACT_APP_OSM_API_URL }}
         REACT_APP_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         REACT_APP_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
