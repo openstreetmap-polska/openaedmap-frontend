@@ -50,7 +50,7 @@ export function CloseSidebarButton({ closeSidebarFunction }: { closeSidebarFunct
 
 export function AddAedButton({ nextStep }: { nextStep: () => void }) {
     const { t } = useTranslation();
-    return <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={nextStep}>
+    return <Button color={'success'} mt={1} textWeight="light" onClick={nextStep}>
         {t('footer.add_aed')}
     </Button>
 }

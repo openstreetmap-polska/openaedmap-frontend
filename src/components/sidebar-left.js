@@ -61,7 +61,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
         <Card>
-          <Card.Header id="sidebar-header" className={[accessColourClass(data.access), 'is-shadowless']} alignItems="center">
+          <Card.Header id="sidebar-header" shadowless="1" className={accessColourClass(data.access)} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span
               className="is-size-5 py-2 has-text-white-ter has-text-weight-light"
@@ -124,14 +124,14 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
     <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
       <Card>
-        <Card.Header id="sidebar-header" className="has-background-grey" alignItems="center">
+        <Card.Header id="sidebar-header" className="has-background-grey" shadowless="1" alignItems="center">
           <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
           <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
             {t('sidebar.add_defibrillator')}
           </span>
           <CloseSidebarButton closeSidebarFunction={closeSidebar} />
         </Card.Header>
-        <Card.Content py={3} className="content">
+        <Card.Content p={3} className="content">
           <form>
             <AccessFormField/>
             <IndoorFormField/>
