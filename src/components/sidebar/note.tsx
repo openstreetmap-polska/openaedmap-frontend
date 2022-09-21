@@ -1,15 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
+import React, {FC} from "react";
 
-function NoteDescription({ note }) {
+const NoteDescription: FC<NoteProps> = ({ note }) => {
     if (note) {
         return <span className="has-text-weight-medium">{note}</span>
     } else {
         return <SpanNoData />
     }
-}
+};
 
-export function NoteField({ operator: note }) {
+export const NoteField: FC<NoteProps> = ({ note }) => {
     const { t } = useTranslation();
 
     return (
@@ -18,4 +19,8 @@ export function NoteField({ operator: note }) {
             <NoteDescription note={note} />
         </p>
     )
+};
+
+interface NoteProps {
+    note: string,
 }

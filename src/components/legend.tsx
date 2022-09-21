@@ -40,7 +40,7 @@ export default function MapLegend() {
         </p>
         {markers.map(({ icon, key, text }) =>
             <div className="columns is-mobile px-4 py-1 is-flex is-vcentered" key={`legend-div-${key}`}>
-                <img key={`legend-image-${key}`} alt={text} src={icon} className="image is-32x32 pr-1 mr-1"/>
+                <img key={`legend-image-${key}`} alt={text} src={icon.toString()} className="image is-32x32 pr-1 mr-1"/>
                 <p key={`legend-text-${key}`} className="has-text-weight-light">{text}</p>
             </div>
         )}

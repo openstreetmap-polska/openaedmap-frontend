@@ -13,15 +13,8 @@ import { CustomModal } from './components/modal'
 
 function Main() {
 
-    // init
-    let defaultRightSidebarState = false;
-
-    // some ui elements migth depend on window size i.e. we don't want some stuff open by default on mobile
-    if (window.innerWidth > 1024) {
-        defaultRightSidebarState = true;
-    } else {
-        defaultRightSidebarState = false;
-    }
+    // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
+    const defaultRightSidebarState = window.innerWidth > 1024;
 
     const [modalState, setModalState] = useState({visible: false});
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
+import React from "react";
 
 function LocationDescription({ description }) {
     if (description) {
