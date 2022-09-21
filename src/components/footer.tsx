@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import { Button, Footer } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import Icon from '@mdi/react'
@@ -11,7 +11,7 @@ const BUTTONS_TYPE_MOBILE_STEP_1 = 2;
 export { BUTTONS_TYPE_NONE, BUTTONS_TYPE_ADD_AED, BUTTONS_TYPE_MOBILE_STEP_1 };
 
 
-export default function FooterDiv({ openForm, mobileStepOne, mobileCancel, mobileStepTwo, buttonsConfiguration }) {
+const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, mobileStepTwo, buttonsConfiguration }) => {
     const { t } = useTranslation();
 
     const addAedButtons = (
@@ -29,7 +29,7 @@ export default function FooterDiv({ openForm, mobileStepOne, mobileCancel, mobil
             </Button>
         </div>
         </>
-    )
+    );
     const mobileStepOneButtons = (
         <>
             <Button color={'error'} mt={1} ml={2} className='has-text-weight-light' onClick={mobileCancel}>
@@ -41,20 +41,30 @@ export default function FooterDiv({ openForm, mobileStepOne, mobileCancel, mobil
                 {t('footer.continue')}
             </Button>
         </>
-    )
-    function getFooterButtons(buttonConfigurationType) {
-        if (buttonConfigurationType === BUTTONS_TYPE_NONE) return (<></>)
-        else if (buttonConfigurationType === BUTTONS_TYPE_ADD_AED) return addAedButtons
-        else if (buttonConfigurationType === BUTTONS_TYPE_MOBILE_STEP_1) return mobileStepOneButtons
+    );
+    function getFooterButtons(buttonConfigurationType: number) {
+        if (buttonConfigurationType === BUTTONS_TYPE_NONE) return null;
+        else if (buttonConfigurationType === BUTTONS_TYPE_ADD_AED) return addAedButtons;
+        else if (buttonConfigurationType === BUTTONS_TYPE_MOBILE_STEP_1) return mobileStepOneButtons;
     }
 
-    if (buttonsConfiguration === BUTTONS_TYPE_NONE) return (<></>)
+    if (buttonsConfiguration === BUTTONS_TYPE_NONE) return <></>;
     else return (
         <Footer className='footer-div'>
-            <div className='white-bottom-bar'></div>
+            <div className='white-bottom-bar'/>
             <div className='bottom-bar-buttons'>
                 {getFooterButtons(buttonsConfiguration)}
             </div>
         </Footer>
     )
+};
+
+interface FooterDivProps {
+    openForm: () => void,
+    mobileStepOne: () => void,
+    mobileCancel: () => void,
+    mobileStepTwo: () => void,
+    buttonsConfiguration: number,
 }
+
+export default FooterDiv;

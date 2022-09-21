@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
 import opening_hours from "opening_hours";
 import i18n from 'i18next';
 
@@ -50,7 +50,7 @@ function CurrentlyOpenStatus({ openingHours }) {
 function OpeningHoursDescription({ openingHours }) {
     const { t } = useTranslation();
 
-    const is24_7 = openingHours === '24/7'
+    const is24_7 = openingHours === '24/7';
     if (openingHours) {
         return (
             <span>

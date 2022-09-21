@@ -25,12 +25,14 @@
       "./types/",
       "./node_modules/@types"
     ],
+    "baseUrl": ".",
     "paths": {
       "osm-auth": ["./types/osm-auth.d.ts"]
     }
   },
   "include": [
-    "src"
+    "src",
+    "types/custom.d.ts"
   ],
   "exclude": [
     "node_modules",
