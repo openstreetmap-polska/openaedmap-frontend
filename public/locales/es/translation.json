@@ -10,7 +10,7 @@
         "created_with_<3_by": "creado con ❤️ por",
         "visit_github": "Visita nuestro repositorio de GitHub",
         "visit_osmp_website": "Visita la web de OpenStreetMap Polonia",
-		"login": "Entrar usando la cuenta de OSM",
+        "login": "Entrar usando la cuenta de OSM",
         "logout": "Salir",
         "about": "Sobre"
     },
@@ -33,8 +33,8 @@
         "edit": "Editar en OSM",
         "view": "Ver en OSM",
         "copy_url": "Copiar URL",
-		"add_defibrillator": "Añadir desfibrilador"
-},
+        "add_defibrillator": "Añadir desfibrilador"
+    },
     "form": {
         "optional_field": "Campo opcional",
         "marker_popup_text": "Mueve el marcador a la localización del DEA",
@@ -48,7 +48,7 @@
     "footer": {
         "add": "Añadir",
         "add_aed": "Añadir DEA",
-		"cancel": "Cancelar",
+        "cancel": "Cancelar",
         "continue": "Continuar"
     },
     "opening_hours": {
@@ -61,7 +61,7 @@
         "no": "No"
     },
     "osmp": "OpenStreetMap Polonia",
-	"modal": {
+    "modal": {
         "aed_added_sucesfully": "DEA añadido con éxito.",
         "available_in_osm": "Disponible en OpenStreetMap con la url:",
         "should_appear_soon": "El objeto debería aparecer en el mapa en <strong>60</strong> minutos.",
@@ -73,6 +73,7 @@
         "current_zoom": "Zoom actual:",
         "zoom_need_to_be": "El zoom mínimo debe de ser de nivel 15 por lo menos.",
         "about_osm": "OpenStreetMap (OSM) es como la Wikipedia de los mapas. Tú también puedes contribuir.",
-        "create_account": "Crear cuenta gratis en "
+        "create_account": "Crear cuenta gratis en ",
+        "about_project": "OpenAEDMap es un proyecto de datos abiertos que muestra todos los Desfibriladores Externos Automáticos (DEA) del mundo. El sitio web se basa en datos de OpenStreetMap y es el logro de esfuerzos de la asociación OpenStreetMap Polonia. Fue creado en 2022 tras cambiar el AED Mapa del sitio web polaco por un nuevo diseño."
     }
 }
