@@ -25,7 +25,7 @@ We are using [Weblate](https://weblate.org) to manage translations.
 
 If you want to help go to https://hosted.weblate.org/projects/openaedmap/ and start translating :)
 
-If new language is added then create an issue or make a PR adding it to `src/i18n.js` with the 2 letter language ISO 639-1 code and native name (this is going to be displayed in dropdown).
+If new language is added then create an issue or make a PR adding it to `src/i18n.ts` with the 2 letter language ISO 639-1 code and native name (this is going to be displayed in dropdown).
 
 Status:
 
