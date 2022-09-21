@@ -62,10 +62,10 @@
     },
     "osmp": "OpenStreetMap Poljska",
     "modal": {
-        "aed_added_sucesfully": "AED uspešno dodan.",
+        "aed_added_successfully": "AED uspešno dodan.",
         "available_in_osm": "Na voljo v OpenStreetMap na povezavi:",
         "should_appear_soon": "Sprememba bi morala biti vidna na zemljevidu v <strong>60</strong> minutah.",
-        "error_occured": "Prišlo je do napake",
+        "error_occurred": "Prišlo je do napake",
         "title": "Informacije",
         "need_to_login": "Za dodajanje elementov se morate vpisati z računom OpenStreetMap.",
         "click_login_button": "Zaprite to okno in kliknite na gumb za vpis v meniju zgoraj.",

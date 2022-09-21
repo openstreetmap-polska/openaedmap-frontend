@@ -57,8 +57,8 @@
     },
     "osmp": "OpenStreetMap Polonia",
     "modal": {
-        "aed_added_sucesfully": "DAE aggiunto con successo.",
-        "error_occured": "Si è verificato un errore",
+        "aed_added_successfully": "DAE aggiunto con successo.",
+        "error_occurred": "Si è verificato un errore",
         "title": "Informazioni",
         "need_to_login": "Per aggiungere funzionalità è necessario accedere con l'account OpenStreetMap.",
         "current_zoom": "Zoom attuale:",

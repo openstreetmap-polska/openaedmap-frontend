@@ -14,10 +14,10 @@ const ModalContent = ({ state }) => {
     const { t } = useTranslation();
 
     if (!state.visible) return <></>
-    else if (state.type === "nodeAddedSucesfully") {
+    else if (state.type === "nodeAddedSuccessfully") {
         return (
             <div>
-                <p className="pb-2">{t("modal.aed_added_sucesfully")}</p>
+                <p className="pb-2">{t("modal.aed_added_successfully")}</p>
                 <p className="pb-4">{t("modal.available_in_osm")} {getNodeUrl(state.nodeId)}</p>
                 <p className="pb-2">{t("modal.should_appear_soon")}</p>
             </div>
@@ -50,7 +50,7 @@ const ModalContent = ({ state }) => {
         )
     } else if (state.type === "error") {
         return (
-            <p className="pb-2">{t("modal.error_occured")}: ${state.errorMessage}</p>
+            <p className="pb-2">{t("modal.error_occurred")}: ${state.errorMessage}</p>
         )
     } else console.log("Unexpected modal call: ", state)
 }

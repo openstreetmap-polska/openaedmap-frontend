@@ -62,10 +62,10 @@
     },
     "osmp": "OpenStreetMap Polska",
     "modal": {
-        "aed_added_sucesfully": "AED został dodany.",
+        "aed_added_successfully": "AED został dodany.",
         "available_in_osm": "Dostępny w OpenStreetMap pod adresem URL:",
         "should_appear_soon": "Obiekt powinien być widoczny na mapie w ciągu <strong>60</strong> minut.",
-        "error_occured": "Wystąpił błąd",
+        "error_occurred": "Wystąpił błąd",
         "title": "Informacja",
         "need_to_login": "Aby dodawać obiekty, musisz zalogować się na swoje konto OpenStreetMap.",
         "click_login_button": "Zamknij to okno i kliknij przycisk logowania u góry, aby się zalogować.",

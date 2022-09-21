@@ -62,10 +62,10 @@
     },
     "osmp": "OpenStreetMap Poland",
     "modal": {
-        "aed_added_sucesfully": "AED added sucesfully.",
+        "aed_added_successfully": "AED added sucesfully.",
         "available_in_osm": "Available in OpenStreetMap with the url:",
         "should_appear_soon": "Object should appear on the map within <strong>60</strong> minutes.",
-        "error_occured": "Error occured",
+        "error_occurred": "Error occurred",
         "title": "Information",
         "need_to_login": "To add features you need to log in using OpenStreetMap account.",
         "click_login_button": "Close this window and click login button at the top to log in.",

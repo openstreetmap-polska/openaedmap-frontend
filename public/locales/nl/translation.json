@@ -62,10 +62,10 @@
         "location": "Beschrijf de locatie"
     },
     "modal": {
-        "aed_added_sucesfully": "AED succesvol toegevoegd.",
+        "aed_added_successfully": "AED succesvol toegevoegd.",
         "available_in_osm": "Beschikbaar in OpenStreetMap met de url:",
         "should_appear_soon": "Het object zal binnen <strong>60</strong> minuten verschijnen op de kaart.",
-        "error_occured": "Een fout is opgetreden",
+        "error_occurred": "Een fout is opgetreden",
         "title": "Informatie",
         "need_to_login": "Om objecten toe te voegen moet je inloggen met een OpenStreetMap-account.",
         "click_login_button": "Sluit dit venster en klik op de aanmeld-knop bovenaan om in te loggen.",

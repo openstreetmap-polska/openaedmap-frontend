@@ -111,7 +111,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
           event.target.classList.remove("is-loading");
           closeSidebar();
           console.log("created new node with id: ", newNodeId);
-          setModalState({visible: true, type: "nodeAddedSucesfully", nodeId: newNodeId});
+          setModalState({visible: true, type: "nodeAddedSuccessfully", nodeId: newNodeId});
         })
         .catch(err => {
           event.target.classList.remove("is-loading");
