@@ -8,8 +8,8 @@ import { mdiTranslate } from '@mdi/js';
 
 export default function LanguageSwitcher(){
     return (
-        <Navbar.Item hoverable="true" >
-            <Navbar.Link key={i18n.resolvedLanguage}>
+        <Navbar.Item hoverable={true} >
+            <Navbar.Link className="has-text-white" key={i18n.resolvedLanguage}>
                 <Icon path={mdiTranslate} size={1.3} className="icon mr-2"/>
                 {languages[i18n.resolvedLanguage].nativeName}
             </Navbar.Link>

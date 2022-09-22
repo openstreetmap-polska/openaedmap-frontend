@@ -33,20 +33,20 @@ function accessColourClass(access) {
 const parseForm = (formElements) => {
   let tags = {};
   // access
-  const access = Array.from(formElements.aedAccess).filter(x => x.checked)
-  if (access.length === 1) tags[access[0].attributes.tag.value] = access[0].attributes.value.value;
+  const access = Array.from(formElements.aedAccess).filter(x => x.checked);
+  if (access.length === 1) tags["access"] = access[0].attributes.value.value;
   //indoor
-  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked)
-  if (indoor.length === 1) tags[indoor[0].attributes.tag.value] = indoor[0].attributes.value.value;
+  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked);
+  if (indoor.length === 1) tags["indoor"] = indoor[0].attributes.value.value;
   // location
   const location = formElements.aedLocation;
   if (location.value.trim()) tags[location.attributes.tag.value] = location.value.trim();
   //phone
   const phone = formElements.aedPhone;
-  if (phone.value.trim()) tags[phone.attributes.tag.value] = phone.value.trim();
+  if (phone.value.trim()) tags["phone"] = phone.value.trim();
 
   return tags
-}
+};
 
 
 export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
@@ -61,16 +61,16 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
         <Card>
-          <Card.Header id="sidebar-header" className={accessColourClass(data.access)} alignItems="center">
+          <Card.Header id="sidebar-header" shadowless="1" className={accessColourClass(data.access)} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span
-              className="is-size-5 mr-3 has-text-white-ter has-text-weight-light"
+              className="is-size-5 py-2 has-text-white-ter has-text-weight-light"
               id="sidebar-caption">
               {t('sidebar.caption_info') + accessText}
             </span>
-            <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
+            <CloseSidebarButton closeSidebarFunction={closeSidebar} />
           </Card.Header>
-          <Card.Content py={3} className="content">
+          <Card.Content pt={3} pb={1} className="content">
             <IndoorField indoor={data.indoor} />
             <LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} />
             <OpeningHoursField openingHours={data.opening_hours} />
@@ -111,7 +111,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
           event.target.classList.remove("is-loading");
           closeSidebar();
           console.log("created new node with id: ", newNodeId);
-          setModalState({visible: true, type: "nodeAddedSucesfully", nodeId: newNodeId});
+          setModalState({visible: true, type: "nodeAddedSuccessfully", nodeId: newNodeId});
         })
         .catch(err => {
           event.target.classList.remove("is-loading");
@@ -124,14 +124,14 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
     <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
       <Card>
-        <Card.Header id="sidebar-header" className="has-background-grey" alignItems="center">
+        <Card.Header id="sidebar-header" className="has-background-grey" shadowless="1" alignItems="center">
           <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
           <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
             {t('sidebar.add_defibrillator')}
           </span>
-          <CloseSidebarButton closeSidebarFunction={closeSidebar} margins={"mr-3 ml-6"} />
+          <CloseSidebarButton closeSidebarFunction={closeSidebar} />
         </Card.Header>
-        <Card.Content py={3} className="content">
+        <Card.Content pt={4} className="content">
           <form>
             <AccessFormField/>
             <IndoorFormField/>

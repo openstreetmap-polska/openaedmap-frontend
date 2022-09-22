@@ -1,15 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
+import {FC} from "react";
+import React from "react";
 
-function OperatorDescription({ operator }) {
+const OperatorDescription: FC<OperatorProps> = ({ operator }) => {
     if (operator) {
         return <span className="has-text-weight-medium">{operator}</span>
     } else {
         return <SpanNoData />
     }
-}
+};
 
-export function OperatorField({ operator }) {
+export const OperatorField: FC<OperatorProps> = ({ operator }) => {
     const { t } = useTranslation();
 
     return (
@@ -18,4 +20,8 @@ export function OperatorField({ operator }) {
             <OperatorDescription operator={operator} />
         </p>
     )
+};
+
+interface OperatorProps {
+    operator: string,
 }

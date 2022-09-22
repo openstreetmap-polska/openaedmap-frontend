@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
+import {FC} from "react";
+import React from "react";
 
-function IndoorDescription({ indoor }) {
+const IndoorDescription: FC<IndoorProps> = ({ indoor }) => {
     const { t } = useTranslation();
 
     if (indoor) {
@@ -9,9 +11,9 @@ function IndoorDescription({ indoor }) {
     } else {
         return <SpanNoData />
     }
-}
+};
 
-export function IndoorField({ indoor }) {
+export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
     const { t } = useTranslation();
 
     return (
@@ -20,7 +22,7 @@ export function IndoorField({ indoor }) {
             <IndoorDescription indoor={indoor} />
         </p>
     )
-}
+};
 
 export function IndoorFormField() {
     const { t } = useTranslation();
@@ -29,11 +31,15 @@ export function IndoorFormField() {
         <div>
             <label className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</label>
             <div className="field">
-                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="no" tag="indoor" />
+                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="no" />
                 <label className="mr-2" htmlFor="indoorRadio1">{t("form.outside")}</label>
-                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="yes" tag="indoor" />
+                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="yes" />
                 <label className="mr-2" htmlFor="indoorRadio2">{t("form.inside")}</label>
             </div>
         </div>
     )
+}
+
+interface IndoorProps {
+    indoor: string,
 }

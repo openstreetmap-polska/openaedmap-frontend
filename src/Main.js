@@ -3,23 +3,18 @@ import { Suspense, useState } from 'react';
 import './Main.css';
 import 'bulma/css/bulma.min.css';
 import SiteNavbar from './components/navbar.js';
-import SidebarRight from './components/sidebar-right.js';
+import SidebarRight from './components/sidebar-right';
 import Map from './components/map.js';
+
+// Type declaration in this package is broken. I had to disable it.
 import { osmAuth } from 'osm-auth';
 import { CustomModal } from './components/modal'
 
 
 function Main() {
 
-    // init
-    let defaultRightSidebarState = false;
-
-    // some ui elements migth depend on window size i.e. we don't want some stuff open by default on mobile
-    if (window.innerWidth > 1024) {
-        defaultRightSidebarState = true;
-    } else {
-        defaultRightSidebarState = false;
-    }
+    // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
+    const defaultRightSidebarState = window.innerWidth > 1024;
 
     const [modalState, setModalState] = useState({visible: false});
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);

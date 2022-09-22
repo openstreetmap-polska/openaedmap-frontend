@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "typeRoots": [
+      "./types/",
+      "./node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "osm-auth": ["./types/osm-auth.d.ts"]
+    }
+  },
+  "include": [
+    "src",
+    "types/custom.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "node_modules/osm-auth/src/osm-auth.d.ts"
+  ]
+}

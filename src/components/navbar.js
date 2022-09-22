@@ -12,16 +12,16 @@ export default function SiteNavbar({ toggleSidebarShown, auth, setModalState }) 
     const [isActive, setisActive] = React.useState(false);
     const { t } = useTranslation();
     return (
-        <Navbar color='success' className='pl-1 has-background-green'>
+        <Navbar color='success' className='has-background-green'>
             <Navbar.Brand>
-                <Navbar.Item renderAs='div'>
+                <Navbar.Item renderAs='div' pr={1}>
                     <Icon path={mdiHeartFlash} size={1.3} className="icon" color="#fff" />
-                    <span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile pr-1 pl-1">
+                    <span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile p-1">
                     Open<span className="has-text-weight-semibold">AED</span>Map
                     </span>
                 </Navbar.Item>
-                <Navbar.Item className='is-hidden-touch' renderAs='div'>
-                    <span className='has-text-white has-text-weight-light mr-3'>|</span>
+                <Navbar.Item className='is-hidden-touch' renderAs='div' pl={1}>
+                    <span className='has-text-grey-light has-text-weight-light mr-3'>|</span>
                     <span className="has-text-weight-light is-size-6 is-size-7-touch pl-0">
                         {t('navbar.created_with_<3_by')}
                         &nbsp;
@@ -48,20 +48,18 @@ export default function SiteNavbar({ toggleSidebarShown, auth, setModalState }) 
             <Navbar.Menu className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`} id='navbarMenu'>
                 <Navbar.Container align='right'>
                     <LanguageSwitcher/>
-                    <Navbar.Item renderAs='div' p={0}>
+                    <Navbar.Item renderAs='div' p={1}>
                         <Button onClick={() => toggleSidebarShown()} color={'white'} outlined={true}>
                             <Icon path={mdiCog} size='2rem' />
                         </Button>
                     </Navbar.Item>
-                    <Navbar.Item renderAs='div' p={0}>
-                        <a href="https://github.com/openstreetmap-polska/openaedmap-frontend">
-                        <Button color={'white'} outlined={true}>
-                            <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem' />
-                        </Button>
+                    <Navbar.Item renderAs='div' p={1}>
+                        <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noreferrer' className='is-white is-outlined button'>
+                            <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem'/>
                         </a>
                     </Navbar.Item>
                     <Login auth={auth}/>
-                    <Navbar.Item renderAs='div' p={0}>
+                    <Navbar.Item renderAs='div' p={1}>
                         <Button color={'white'} outlined={true} onClick={() => setModalState({visible: true, type: "info"})}>
                             <Icon path={mdiInformation} size='2rem' />
                             {t("navbar.about")}
