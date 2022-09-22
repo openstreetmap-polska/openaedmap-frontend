@@ -37,22 +37,22 @@ export function IndoorFormField() {
             <label className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</label>
             <div className="field">
                 {indoorOptions.map(({value, label}) => (
-                    <div key={`radio-${value}-field`} className="field">
-                    <input
-                        key={`radio-${value}-input`}
-                        className="is-checkradio is-success mr-1"
-                        type="radio"
-                        name={groupName}
-                        value={value}
-                        checked={indoor == value}
-                        onChange={() => setIndoor(value)}
-                    />
-                    <label
-                        key={`radio-${value}-label`}
-                        onClick={() => setIndoor(value)}>
-                        {label}
-                    </label>
-                    </div>
+                    <>
+                        <input
+                            key={`radio-${value}-input`}
+                            className="is-checkradio is-success mr-1"
+                            type="radio"
+                            name={groupName}
+                            value={value}
+                            checked={indoor == value}
+                            onChange={() => setIndoor(value)}
+                        />
+                        <label
+                            key={`radio-${value}-label`}
+                            onClick={() => setIndoor(value)}>
+                            {label}
+                        </label>
+                    </>
                 ))}
             </div>
         </div>
