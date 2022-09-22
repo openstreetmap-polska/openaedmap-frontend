@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
+import {FC} from "react";
+import React from "react";
 
-function IndoorDescription({ indoor }) {
+const IndoorDescription: FC<IndoorProps> = ({ indoor }) => {
     const { t } = useTranslation();
 
     if (indoor) {
@@ -9,9 +11,9 @@ function IndoorDescription({ indoor }) {
     } else {
         return <SpanNoData />
     }
-}
+};
 
-export function IndoorField({ indoor }) {
+export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
     const { t } = useTranslation();
 
     return (
@@ -20,7 +22,7 @@ export function IndoorField({ indoor }) {
             <IndoorDescription indoor={indoor} />
         </p>
     )
-}
+};
 
 export function IndoorFormField() {
     const { t } = useTranslation();
@@ -36,4 +38,8 @@ export function IndoorFormField() {
             </div>
         </div>
     )
+}
+
+interface IndoorProps {
+    indoor: string,
 }

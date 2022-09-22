@@ -1,16 +1,14 @@
-import Icon from '@mdi/react';
-import { useState } from 'react';
-import { Button, Navbar } from 'react-bulma-components';
+import {FC, useState} from 'react';
+import {Button, Icon, Navbar} from 'react-bulma-components';
 import { mdiAccount, mdiLogout } from '@mdi/js';
 import { useTranslation } from 'react-i18next';
 import { updateOsmUsernameState } from '../osm';
+import React from "react";
 
-
-export default function Login({ auth }) {
-
+const Login: FC<LoginProps> = ({ auth }) => {
     const { t } = useTranslation();
 
-    const [authenticated, setAuthenticated] = useState(auth.authenticated())
+    const [authenticated, setAuthenticated] = useState(auth.authenticated());
     const [osmUsername, setOsmUsername] = useState("");
 
     function login() {
@@ -24,19 +22,18 @@ export default function Login({ auth }) {
         auth.logout();
         setAuthenticated(false);
     }
-    
 
     if (authenticated) {
         updateOsmUsernameState(auth, setOsmUsername);
         return (
             <Navbar.Item hoverable={true}>
                 <Navbar.Item>
-                    <Icon path={mdiAccount} size='2rem' mr={1} />
+                    <Icon icon={mdiAccount} size='2rem' mr={1} />
                     {osmUsername}
                 </Navbar.Item>
                 <Navbar.Dropdown className='has-background-green'>
                     <Navbar.Item onClick={logout}>
-                        <Icon path={mdiLogout} size='2rem' mr={1} />
+                        <Icon icon={mdiLogout} size='2rem' mr={1} />
                         {t("navbar.logout")}
                     </Navbar.Item>
                 </Navbar.Dropdown>
@@ -49,4 +46,10 @@ export default function Login({ auth }) {
             </Navbar.Item>
         )
     }
+};
+
+interface LoginProps {
+    auth: any, // TODO: typing
 }
+
+export default Login;
