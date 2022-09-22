@@ -27,7 +27,7 @@ export function ContactPhoneFormField() {
         <div className="field">
         <label className="label has-text-weight-semibold">{t("sidebar.contact_number")}</label>
         <div className="control">
-          <input tag="phone" className="input is-success" type="text" placeholder="+48 123 456 789" name="aedPhone"
+          <input className="input is-success" type="text" placeholder="+48 123 456 789" name="aedPhone"
             pattern="^[+][0-9]{2}[ ]?((?:[0-9]{9})|(?:[0-9]{3} [0-9]{3} [0-9]{3})|(?:[0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}))$" />
         </div>
         <p className="help has-text-weight-light">{t("form.optional_field")}</p>

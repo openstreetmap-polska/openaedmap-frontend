@@ -33,20 +33,20 @@ function accessColourClass(access) {
 const parseForm = (formElements) => {
   let tags = {};
   // access
-  const access = Array.from(formElements.aedAccess).filter(x => x.checked)
-  if (access.length === 1) tags[access[0].attributes.tag.value] = access[0].attributes.value.value;
+  const access = Array.from(formElements.aedAccess).filter(x => x.checked);
+  if (access.length === 1) tags["access"] = access[0].attributes.value.value;
   //indoor
-  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked)
-  if (indoor.length === 1) tags[indoor[0].attributes.tag.value] = indoor[0].attributes.value.value;
+  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked);
+  if (indoor.length === 1) tags["indoor"] = indoor[0].attributes.value.value;
   // location
   const location = formElements.aedLocation;
   if (location.value.trim()) tags[location.attributes.tag.value] = location.value.trim();
   //phone
   const phone = formElements.aedPhone;
-  if (phone.value.trim()) tags[phone.attributes.tag.value] = phone.value.trim();
+  if (phone.value.trim()) tags["phone"] = phone.value.trim();
 
   return tags
-}
+};
 
 
 export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
