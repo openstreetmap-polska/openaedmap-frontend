@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { SpanNoData } from './common'
-import {FC} from "react";
+import {FC, useState} from "react";
 import React from "react";
 
 const IndoorDescription: FC<IndoorProps> = ({ indoor }) => {
@@ -27,14 +27,33 @@ export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
 export function IndoorFormField() {
     const { t } = useTranslation();
     const groupName = "aedIndoor";
+    const [indoor, setIndoor] = useState("");
+    const indoorOptions: Array<{value: string, label: string}> = [
+        {"value": "no", "label": t("form.outside")},
+        {"value": "yes", "label": t("form.inside")},
+    ];
     return (
         <div>
             <label className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</label>
             <div className="field">
-                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="no" />
-                <label className="mr-2" htmlFor="indoorRadio1">{t("form.outside")}</label>
-                <input className="is-checkradio is-success mr-1" type="radio" name={groupName} value="yes" />
-                <label className="mr-2" htmlFor="indoorRadio2">{t("form.inside")}</label>
+                {indoorOptions.map(({value, label}) => (
+                    <div key={`radio-${value}-field`} className="field">
+                    <input
+                        key={`radio-${value}-input`}
+                        className="is-checkradio is-success mr-1"
+                        type="radio"
+                        name={groupName}
+                        value={value}
+                        checked={indoor == value}
+                        onChange={() => setIndoor(value)}
+                    />
+                    <label
+                        key={`radio-${value}-label`}
+                        onClick={() => setIndoor(value)}>
+                        {label}
+                    </label>
+                    </div>
+                ))}
             </div>
         </div>
     )
