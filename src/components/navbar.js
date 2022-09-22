@@ -9,7 +9,7 @@ import Login from './login';
 
 
 export default function SiteNavbar({ toggleSidebarShown, auth, setModalState }) {
-    const [isActive, setisActive] = React.useState(false);
+    const [isActive, setIsActive] = React.useState(false);
     const { t } = useTranslation();
     return (
         <Navbar color='success' className='has-background-green'>
@@ -33,7 +33,7 @@ export default function SiteNavbar({ toggleSidebarShown, auth, setModalState }) 
                 <Navbar.Burger
                         id='navbarBurger'
                         onClick={() => {
-                            setisActive(!isActive);
+                            setIsActive(!isActive);
                         }}
                         className={`${isActive ? "is-active" : ""}`}
                         aria-label="menu"

@@ -198,7 +198,7 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
     }
 
     useEffect(() => {
-        if (map.current) return; //stops map from intializing more than once
+        if (map.current) return; //stops map from initializing more than once
         map.current = new maplibregl.Map({
           container: mapContainer.current,
           hash: hash4MapName,

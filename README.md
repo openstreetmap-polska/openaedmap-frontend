@@ -6,7 +6,7 @@ This project shows [Automated External Defibrillators (AED)](https://en.wikipedi
 
 This is a rewrite of [the first version](https://aed.openstreetmap.org.pl/) to React. Development is in progress.
 
-Production environemnt: https://openaedmap.org \
+Production environment: https://openaedmap.org \
 Development environment: https://dev.openaedmap.org
 
 # Development
