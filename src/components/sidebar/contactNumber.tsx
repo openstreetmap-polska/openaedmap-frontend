@@ -1,15 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common.js'
+import { SpanNoData } from './common'
+import {FC} from "react";
+import React from "react";
 
-function ContactNumberDescription({ contactNumber }) {
+const ContactNumberDescription: FC<ContactNumberProps> = ({ contactNumber }) => {
     if (contactNumber) {
         return <span className="has-text-weight-medium">{contactNumber}</span>
     } else {
         return <SpanNoData />
     }
-}
+};
 
-export function ContactNumberField({ contactNumber }) {
+export const ContactNumberField: FC<ContactNumberProps> = ({ contactNumber }) => {
     const { t } = useTranslation();
 
     return (
@@ -18,7 +20,7 @@ export function ContactNumberField({ contactNumber }) {
             <ContactNumberDescription contactNumber={contactNumber} />
         </p>
     )
-}
+};
 
 export function ContactPhoneFormField() {
     const { t } = useTranslation();
@@ -33,4 +35,8 @@ export function ContactPhoneFormField() {
         <p className="help has-text-weight-light">{t("form.optional_field")}</p>
       </div>
     )
+}
+
+interface ContactNumberProps {
+    contactNumber: string,
 }

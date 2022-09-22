@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { SpanNoData } from './common'
 import {FC} from "react";
-import * as React from "react";
+import React from "react";
 
 const OperatorDescription: FC<OperatorProps> = ({ operator }) => {
     if (operator) {

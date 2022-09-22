@@ -1,1 +1,3 @@
-declare module "osm-auth" {}
+declare module "osm-auth" {
+    function logout();
+}
