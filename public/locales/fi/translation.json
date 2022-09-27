@@ -32,10 +32,11 @@
         "click_login_button": "Sulje tämä ikkuna ja kirjaudu sisään napsauttamalla yläreunan kirjautumispainiketta.",
         "create_account": "Luo ilmainen tili osoitteessa ",
         "zoom_need_to_be": "Zoomin on oltava vähintään 15-tasoinen.",
-        "about_osm": "OpenStreetMap (OSM) on kuin karttojen Wikipedia. Sinäkin voit osallistua.",
+        "about_osm": "OpenStreetMap (OSM) on kuin karttojen Wikipedia. Se on kaikkien käytettävissä, ja kuka tahansa voi lisätä kartalle kohteita. Voit käyttää OSM-tiliäsi lisätä AED-kohteita suoraan tältä sivustolta yksinkertaisella lomakkeella.",
         "need_to_login": "Lisätäksesi ominaisuuksia sinun on kirjauduttava sisään OpenStreetMap-tilillä.",
         "current_zoom": "Nykyinen zoom:",
-        "title": "Tiedot"
+        "title": "Tiedot",
+        "about_project": "OpenAEDMap on avoimen datan projekti, joka näyttää kaikki automaattiset ulkoiset defibrillaattorit (AED) ympäri maailmaa. Sivusto perustuu OpenStreetMapin tietoihin, ja se on OpenStreetMap Polandin yhdistystoiminnan tulos. Se luotiin vuonna 2022 sen jälkeen, kun puolalainen AED Mapa -sivusto muutettiin uuteen ulkoasuun."
     },
     "sidebar": {
         "view": "Näytä OSM:ssä",
@@ -55,7 +56,8 @@
         "copy_url": "Kopioi URL",
         "indoor": "Rakennuksen sisällä",
         "description": "Kuvaus",
-        "add_defibrillator": "Lisää defibrillaattori"
+        "add_defibrillator": "Lisää defibrillaattori",
+        "operator": "Operaattori"
     },
     "footer": {
         "add": "Lisää",
