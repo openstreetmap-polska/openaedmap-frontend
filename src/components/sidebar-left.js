@@ -16,7 +16,7 @@ import { OperatorField } from "./sidebar/operator";
 import { AccessFormField } from "./sidebar/access";
 import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
 import Icon from '@mdi/react'
-import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline } from '@mdi/js';
+import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof } from '@mdi/js';
 
 
 const accessToColourMapping = {
@@ -71,11 +71,10 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             </span>
             <CloseSidebarButton closeSidebarFunction={closeSidebar} />
           </Card.Header>
-          {/* <Card.Content pt={3} pb={1} className="content">
-            <IndoorField indoor={data.indoor} />
-            <NoteField note={data[`note_${i18n.resolvedLanguage}`] || data["note"]} />
-          </Card.Content> */}
           <Card.Content p={4} className="content">
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><IndoorField indoor={data.indoor} /></Columns.Column>
+          </Columns>
           <Columns vCentered="1" className="is-mobile">
           <Columns.Column textAlign="center" size={2}><Icon path={mdiMapMarkerOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} /></Columns.Column>
           </Columns>

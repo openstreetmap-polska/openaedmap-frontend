@@ -17,10 +17,12 @@ export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
     const { t } = useTranslation();
 
     return (
-        <p className="has-text-weight-light">
-            {t('sidebar.indoor') + "?: "}
-            <IndoorDescription indoor={indoor} />
+        <div>
+        <p className="has-text-weight-light has-text-grey mb-1">
+        {t('sidebar.indoor') + "?: "}
         </p>
+        <IndoorDescription indoor={indoor} />
+        </div>
     )
 };
 
