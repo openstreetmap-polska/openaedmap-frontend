@@ -21,7 +21,7 @@ export function AccessFormField() {
                     type="radio"
                     name={groupName}
                     value={value}
-                    checked={access == value}
+                    checked={access === value}
                     onChange={() => setAccess(value)}
                 />
                 <label

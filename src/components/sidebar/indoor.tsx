@@ -46,7 +46,7 @@ export function IndoorFormField() {
                             type="radio"
                             name={groupName}
                             value={value}
-                            checked={indoor == value}
+                            checked={indoor === value}
                             onChange={() => setIndoor(value)}
                         />
                         <label

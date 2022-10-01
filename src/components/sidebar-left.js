@@ -10,7 +10,6 @@ import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumb
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
 import { LocationField, LocationFormField } from "./sidebar/location";
-import { NoteField } from "./sidebar/note";
 import { OpeningHoursField } from "./sidebar/openingHours";
 import { OperatorField } from "./sidebar/operator";
 import { AccessFormField } from "./sidebar/access";
