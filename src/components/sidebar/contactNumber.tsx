@@ -15,10 +15,12 @@ export const ContactNumberField: FC<ContactNumberProps> = ({ contactNumber }) =>
     const { t } = useTranslation();
 
     return (
-        <p className="has-text-weight-light">
+        <div>
+        <p className="has-text-weight-light has-text-grey mb-1">
             {t('sidebar.contact_number') + ": "}
-            <ContactNumberDescription contactNumber={contactNumber} />
         </p>
+        <ContactNumberDescription contactNumber={contactNumber} />
+        </div>
     )
 };
 

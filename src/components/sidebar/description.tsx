@@ -14,10 +14,12 @@ export const DescriptionField: FC<DescriptionProps> = ({ description }) => {
     const { t } = useTranslation();
 
     return (
-        <p className="has-text-weight-light">
+        <div>
+        <p className="has-text-weight-light has-text-grey mb-1">
             {t('sidebar.description') + ": "}
-            <DescriptionText description={description} />
         </p>
+        <DescriptionText description={description} />
+        </div>
     )
 };
 

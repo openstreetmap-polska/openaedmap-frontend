@@ -11,6 +11,8 @@ function parseOpeningHours(openingHours) {
             let oh = new opening_hours(openingHours, undefined, 2);
             hoursPrettified = oh.prettifyValue({
                 conf: {
+                    rule_sep_string: '\n',
+                    print_semicolon: false,
                     locale: i18n.resolvedLanguage
                 },
             });
@@ -67,9 +69,11 @@ export function OpeningHoursField({ openingHours }) {
     const { t } = useTranslation();
 
     return (
-        <p className="has-text-weight-light">
-            {t('sidebar.opening_hours') + ": "}
-            <OpeningHoursDescription openingHours={openingHours} />
+        <div>
+        <p className="has-text-weight-light has-text-grey mb-1">
+            {t('sidebar.opening_hours') + ": "}   
         </p>
+        <OpeningHoursDescription openingHours={openingHours} />
+        </div>
     )
 }

@@ -46,3 +46,8 @@ code {
 {
   color: #000000 !important;
 }
+
+.column
+{
+  border-radius: 4px;
+}
