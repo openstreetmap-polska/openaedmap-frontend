@@ -20,7 +20,6 @@ code {
 
 .has-background-green {
   background-color: #028955 !important;
-  color: #effaf5 !important;
 }
 
 .has-background-green a {
@@ -29,17 +28,14 @@ code {
 
 .has-background-yellow {
   background-color: #ffcc00 !important;
-  color: #effaf5 !important;
 }
 
 .has-background-blue {
   background-color: #3e8ed0 !important;
-  color: #effaf5 !important;
 }
 
 .has-background-gray {
   background-color: #7a7a7a !important;
-  color: #effaf5 !important;
 }
 
 .navbar-item a:hover
