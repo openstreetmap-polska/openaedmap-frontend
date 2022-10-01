@@ -19,12 +19,12 @@ import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSuperv
 
 
 const accessToColourMapping = {
-  'yes': 'has-background-green',
-  'no': 'has-background-grey',
-  'private': 'has-background-blue',
-  'permissive': 'has-background-blue',
-  'customers': 'has-background-yellow',
-  'default': 'has-background-gray',
+  'yes': 'has-background-green has-text-white-ter',
+  'no': 'has-background-grey has-text-white-ter',
+  'private': 'has-background-blue has-text-white-ter',
+  'permissive': 'has-background-blue has-text-white-ter',
+  'customers': 'has-background-yellow has-text-black-ter',
+  'default': 'has-background-gray has-text-white-ter',
 };
 
 function accessColourClass(access) {
@@ -64,7 +64,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
         <Card.Header id="sidebar-header" shadowless="1" className={accessColourClass(data.access)} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span
-              className="is-size-5 py-2 has-text-white-ter has-text-weight-light"
+              className="is-size-5 py-2 has-text-weight-light"
               id="sidebar-caption">
               {t('sidebar.caption_info') + accessText}
             </span>
