@@ -55,6 +55,7 @@
 
 .card {
     z-index: 1;
+    white-space: pre-wrap;
 }
 
 #sidebar-card-image {

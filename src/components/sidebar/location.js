@@ -14,10 +14,12 @@ export function LocationField({ description }) {
     const { t } = useTranslation();
 
     return (
-        <p className="has-text-weight-light">
+        <div>
+        <p className="has-text-weight-light has-text-grey mb-1">
             {t("sidebar.location") + ": "}
-            <LocationDescription description={description} />
         </p>
+        <LocationDescription description={description} />
+        </div>
     )
 }
 

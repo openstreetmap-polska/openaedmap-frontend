@@ -15,10 +15,12 @@ export const OperatorField: FC<OperatorProps> = ({ operator }) => {
     const { t } = useTranslation();
 
     return (
-        <p className="has-text-weight-light">
-            {t('sidebar.operator') + ": "}
+        <div>
+            <p className="has-text-weight-light has-text-grey mb-1">
+                {t('sidebar.operator') + ": "}
+            </p>
             <OperatorDescription operator={operator} />
-        </p>
+        </div>
     )
 };
 

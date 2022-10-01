@@ -1,7 +1,7 @@
 import 'bulma/css/bulma.min.css';
 import i18n from 'i18next';
 import React from "react";
-import { Card, Image } from 'react-bulma-components';
+import { Card, Image, Columns } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
@@ -10,20 +10,21 @@ import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumb
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
 import { LocationField, LocationFormField } from "./sidebar/location";
-import { NoteField } from "./sidebar/note";
 import { OpeningHoursField } from "./sidebar/openingHours";
 import { OperatorField } from "./sidebar/operator";
 import { AccessFormField } from "./sidebar/access";
 import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
+import Icon from '@mdi/react'
+import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof } from '@mdi/js';
 
 
 const accessToColourMapping = {
-  'yes': 'has-background-green',
-  'no': 'has-background-grey',
-  'private': 'has-background-blue',
-  'permissive': 'has-background-blue',
-  'customers': 'has-background-yellow',
-  'default': 'has-background-gray',
+  'yes': 'has-background-green has-text-white-ter',
+  'no': 'has-background-grey has-text-white-ter',
+  'private': 'has-background-blue has-text-white-ter',
+  'permissive': 'has-background-blue has-text-white-ter',
+  'customers': 'has-background-yellow has-text-black-ter',
+  'default': 'has-background-gray has-text-white-ter',
 };
 
 function accessColourClass(access) {
@@ -48,7 +49,6 @@ const parseForm = (formElements) => {
   return tags
 };
 
-
 export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
   const { t } = useTranslation();
 
@@ -61,26 +61,37 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
         <Card>
-          <Card.Header id="sidebar-header" shadowless="1" className={accessColourClass(data.access)} alignItems="center">
+        <Card.Header id="sidebar-header" shadowless="1" className={accessColourClass(data.access)} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span
-              className="is-size-5 py-2 has-text-white-ter has-text-weight-light"
+              className="is-size-5 py-2 has-text-weight-light"
               id="sidebar-caption">
               {t('sidebar.caption_info') + accessText}
             </span>
             <CloseSidebarButton closeSidebarFunction={closeSidebar} />
           </Card.Header>
-          <Card.Content pt={3} pb={1} className="content">
-            <IndoorField indoor={data.indoor} />
-            <LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} />
-            <OpeningHoursField openingHours={data.opening_hours} />
-            <DescriptionField description={data[`description_${i18n.resolvedLanguage}`] || data["description"]} />
-            <ContactNumberField contactNumber={data.phone} />
-            <OperatorField operator={data.operator} />
-            <NoteField note={data[`note_${i18n.resolvedLanguage}`] || data["note"]} />
+          <Card.Content p={4} className="content">
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><IndoorField indoor={data.indoor} /></Columns.Column>
+          </Columns>
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiMapMarkerOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} /></Columns.Column>
+          </Columns>
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiClockOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><OpeningHoursField openingHours={data.opening_hours} /></Columns.Column>
+          </Columns>
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiPhoneOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><ContactNumberField contactNumber={data.phone} /></Columns.Column>
+          </Columns>
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiAccountSupervisorOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><OperatorField operator={data.operator} /></Columns.Column>
+          </Columns>
+          <Columns vCentered="1" className="is-mobile">
+          <Columns.Column textAlign="center" size={2}><Icon path={mdiInformationOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><DescriptionField description={data[`description_${i18n.resolvedLanguage}`] || data["description"]} /></Columns.Column>
+          </Columns>
           </Card.Content>
           <Card.Footer>
-            <Card.Footer.Item className="has-background-success-light">
+            <Card.Footer.Item className="has-background-white-ter">
               <CopyUrlButton />
               <ViewButton osmId={data.osm_id} />
               <EditButton osmId={data.osm_id} />
