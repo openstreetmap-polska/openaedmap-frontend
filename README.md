@@ -83,6 +83,7 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [OSM opening_hours](https://github.com/opening-hours/opening_hours.js/)
 - [React](https://reactjs.org/docs/getting-started.html)
 - [Bulma](https://bulma.io/) 
+- [Bulma Checkradio](https://wikiki.github.io/form/checkradio/)
 - [Bulma Tooltip](https://bulma-tooltip.netlify.app/)
 - [Bulma Collapsible](https://bulma-collapsible.netlify.app/)
 - [React Bulma Components](https://react-bulma.dev/en/storybook)
