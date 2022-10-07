@@ -14,6 +14,8 @@ import { BUTTONS_TYPE_NONE, BUTTONS_TYPE_ADD_AED, BUTTONS_TYPE_MOBILE_STEP_1 } f
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import maplibregl from '!maplibre-gl';      // ! is important here
 import maplibreglWorker from 'maplibre-gl/dist/maplibre-gl-csp-worker';
+import {initialModalState, ModalType} from "../model/modal";
+import {useAppContext} from "../appContext";
 
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
@@ -75,8 +77,8 @@ function getNewHashString(parameters) {
         .join("&")
 }
 
-export default function Map({ auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
-
+export default function Map({ openChangesetId, setOpenChangesetId, modalState, setModalState }) {
+    const { auth } = useAppContext();
     const { t } = useTranslation();
 
     const hash4MapName = "map";
@@ -134,9 +136,9 @@ export default function Map({ auth, openChangesetId, setOpenChangesetId, modalSt
 
     const checkConditionsThenCall = (callable) => {
         if (!auth.authenticated())
-            setModalState({visible: true, type: "needToLogin"})
+            setModalState({...initialModalState, visible: true, type: ModalType.NeedToLogin});
         else if (map.current.getZoom() < 15)
-            setModalState({visible: true, type: "needMoreZoom", currentZoom: map.current.getZoom()})
+            setModalState({...initialModalState, visible: true, type: ModalType.NeedMoreZoom, currentZoom: map.current.getZoom()})
         else callable()
     }
 

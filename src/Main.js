@@ -8,7 +8,9 @@ import Map from './components/map.js';
 
 // Type declaration in this package is broken. I had to disable it.
 import { osmAuth } from 'osm-auth';
-import { CustomModal } from './components/modal'
+import {initialModalState} from './model/modal'
+import {AppContext} from './appContext';
+import {CustomModal} from "./components/modal";
 
 
 function Main() {
@@ -16,7 +18,7 @@ function Main() {
     // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
     const defaultRightSidebarState = window.innerWidth > 1024;
 
-    const [modalState, setModalState] = useState({visible: false});
+    const [modalState, setModalState] = useState(initialModalState);
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
     const closeRightSidebar = () => setRightSidebarShown(false);
@@ -34,16 +36,17 @@ function Main() {
             auto: false,
             singlepage: false,
         })
-    )
+    );
     const [openChangesetId, setOpenChangesetId] = useState(null);
 
+    const appContext = {auth, modalState, setModalState};
     return (
-        <>
-            <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} auth={auth} setModalState={setModalState} />
-            <CustomModal state={modalState} setModalState={setModalState} />
+        <AppContext.Provider value={appContext}>
+            <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} />
+            <CustomModal />
             { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
-            <Map auth={auth} openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} modalState={modalState} setModalState={setModalState} />
-        </>
+            <Map openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} modalState={modalState} />
+        </AppContext.Provider>
     );
 }
 
