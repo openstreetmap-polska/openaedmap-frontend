@@ -77,8 +77,8 @@ function getNewHashString(parameters) {
         .join("&")
 }
 
-export default function Map({ openChangesetId, setOpenChangesetId, modalState, setModalState }) {
-    const { auth } = useAppContext();
+export default function Map({ openChangesetId, setOpenChangesetId }) {
+    const { authState: { auth }, modalState, setModalState } = useAppContext();
     const { t } = useTranslation();
 
     const hash4MapName = "map";
@@ -291,11 +291,8 @@ export default function Map({ openChangesetId, setOpenChangesetId, modalState, s
                                 closeSidebar={closeSidebarLeft}
                                 visible={sidebarLeftShown}
                                 marker={marker}
-                                auth={auth}
                                 openChangesetId={openChangesetId}
                                 setOpenChangesetId={setOpenChangesetId}
-                                modalState={modalState}
-                                setModalState={setModalState}
                               />}
         <div className="map-wrap">
             <div ref={mapContainer} className="map" />

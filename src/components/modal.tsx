@@ -5,6 +5,7 @@ import { Modal } from 'react-bulma-components';
 import {FC} from "react";
 import {ModalType} from "../model/modal";
 import {useAppContext} from "../appContext";
+import LogInButton from "./logInButton";
 
 const ModalContent: FC<{}> = () => {
     const { t } = useTranslation();
@@ -27,7 +28,7 @@ const ModalContent: FC<{}> = () => {
             return (
                 <div>
                     <p className="pb-3">{t("modal.need_to_login")}</p>
-                    <p className="pb-3">{t("modal.click_login_button")}</p>
+                    <LogInButton inNavBar={false} />
                 </div>
             );
         case ModalType.NeedMoreZoom:

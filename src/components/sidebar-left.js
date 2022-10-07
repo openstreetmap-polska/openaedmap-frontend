@@ -17,6 +17,7 @@ import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
 import Icon from '@mdi/react'
 import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof } from '@mdi/js';
 import {initialModalState, ModalType} from '../model/modal';
+import {useAppContext} from "../appContext";
 
 
 const accessToColourMapping = {
@@ -50,8 +51,9 @@ const parseForm = (formElements) => {
   return tags
 };
 
-export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
+export default function SidebarLeft({ action, data, closeSidebar, visible, marker, openChangesetId, setOpenChangesetId }) {
   const { t } = useTranslation();
+  const { authState: { auth }, setModalState } = useAppContext();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
 

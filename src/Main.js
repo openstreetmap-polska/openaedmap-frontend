@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Suspense, useState } from 'react';
 import './Main.css';
 import 'bulma/css/bulma.min.css';
@@ -8,9 +8,10 @@ import Map from './components/map.js';
 
 // Type declaration in this package is broken. I had to disable it.
 import { osmAuth } from 'osm-auth';
-import {initialModalState} from './model/modal'
+import {initialModalState, ModalType} from './model/modal'
 import {AppContext} from './appContext';
 import {CustomModal} from "./components/modal";
+import {updateOsmUsernameState} from "./osm";
 
 
 function Main() {
@@ -20,6 +21,7 @@ function Main() {
 
     const [modalState, setModalState] = useState(initialModalState);
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
+
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
     const closeRightSidebar = () => setRightSidebarShown(false);
 
@@ -37,15 +39,35 @@ function Main() {
             singlepage: false,
         })
     );
+    const [osmUsername, setOsmUsername] = useState("");
     const [openChangesetId, setOpenChangesetId] = useState(null);
 
-    const appContext = {auth, modalState, setModalState};
+    const handleLogIn = () => {
+        auth.authenticate(() => {
+            updateOsmUsernameState(auth, setOsmUsername);
+            if (modalState.type === ModalType.NeedToLogin) {
+                setModalState(initialModalState);
+            }
+        })
+    };
+
+    const handleLogOut = () => {
+        auth.logout();
+        setOsmUsername("");
+    };
+
+    const authState = { auth, osmUsername };
+
+    const appContext = {authState, modalState, setModalState, handleLogIn, handleLogOut};
+    useEffect(() => {
+        if (auth.authenticated()) updateOsmUsernameState(auth, setOsmUsername);
+    });
     return (
         <AppContext.Provider value={appContext}>
             <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} />
             <CustomModal />
             { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
-            <Map openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} modalState={modalState} />
+            <Map openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} />
         </AppContext.Provider>
     );
 }
