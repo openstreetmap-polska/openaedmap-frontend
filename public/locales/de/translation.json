@@ -64,7 +64,7 @@
     "modal": {
         "aed_added_successfully": "AED erfolgreich hinzugefügt.",
         "available_in_osm": "Verfügbar in OpenStreetMap mit der URL:",
-        "should_appear_soon": "Objekt sollte auf der Karte innerhalb von <strong>60</strong> Minuten sichtbar werden.",
+        "should_appear_soon": "Objekt sollte auf der Karte innerhalb von 60 Minuten sichtbar werden.",
         "error_occurred": "Fehler aufgetreten",
         "title": "Information",
         "need_to_login": "Um Features hinzuzufügen, musst du dich mit deinem OpenStreetMap Account einloggen.",
