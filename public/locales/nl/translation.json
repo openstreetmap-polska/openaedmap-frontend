@@ -64,7 +64,7 @@
     "modal": {
         "aed_added_successfully": "AED succesvol toegevoegd.",
         "available_in_osm": "Beschikbaar in OpenStreetMap met de url:",
-        "should_appear_soon": "Het object zal binnen <strong>60</strong> minuten verschijnen op de kaart.",
+        "should_appear_soon": "Het object zal binnen 60 minuten verschijnen op de kaart.",
         "error_occurred": "Een fout is opgetreden",
         "title": "Informatie",
         "need_to_login": "Om objecten toe te voegen moet je inloggen met een OpenStreetMap-account.",
