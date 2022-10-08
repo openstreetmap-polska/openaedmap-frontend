@@ -12,13 +12,11 @@ export async function fetchNodeDataFromOsm(nodeId) {
             const lat = node["lat"];
 
             return {
-                "lat": lat,
-                "lon": lon,
-                "data": {
-                    osm_id: node["id"],
-                    osm_type: "node",
-                    ...tags,
-                },
+                osm_id: node["id"],
+                osm_type: "node",
+                lat: lat,
+                lon: lon,
+                ...tags,
             }
         })
         .catch(error => {

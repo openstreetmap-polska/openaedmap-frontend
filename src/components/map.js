@@ -52,7 +52,7 @@ function fillSidebarWithOsmDataAndShow(nodeId, mapInstance, setSidebarLeftAction
                     });
                 }
             }
-            setSidebarLeftData(data.data);
+            setSidebarLeftData(data);
             setSidebarLeftAction("showDetails");
             setSidebarLeftShown(true);
         }
