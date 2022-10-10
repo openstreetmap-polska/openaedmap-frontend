@@ -64,7 +64,7 @@
 	"modal": {
         "aed_added_successfully": "DEA afegit amb èxit.",
         "available_in_osm": "Disponible en OpenStreetMap amb la url:",
-        "should_appear_soon": "L'objecte hauria de sortir al mapa en <strong>60</strong> minuts.",
+        "should_appear_soon": "L'objecte hauria de sortir al mapa en 60 minuts.",
         "error_occurred": "Ha hagut un error",
         "title": "Informació",
         "need_to_login": "Per afegir elements has d'entrar usant el teu compte d'OpenStreetMap.",

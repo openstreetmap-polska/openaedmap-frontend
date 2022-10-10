@@ -66,7 +66,7 @@
         "need_more_zoom": "Per aggiungere le caratteristiche è necessario eseguire lo zoom in modo che la posizione fornita sia accurata.",
         "about_osm": "OpenStreetMap (OSM) è come una Wikipedia per le mappe. È disponibile per tutti e chiunque può aggiungere oggetti alla mappa. È possibile utilizzare il proprio account OSM per aggiungere località AED direttamente da questo sito utilizzando un semplice modulo.",
         "available_in_osm": "Disponibile in OpenStreetMap con l'URL:",
-        "should_appear_soon": "L'oggetto dovrebbe apparire sulla mappa entro <strong>60</strong> minuti.",
+        "should_appear_soon": "L'oggetto dovrebbe apparire sulla mappa entro 60 minuti.",
         "zoom_need_to_be": "Lo zoom deve essere almeno al livello 15.",
         "create_account": "Anche tu puoi contribuire! Basta creare un account gratuito su ",
         "about_project": "OpenAEDMap è un progetto dati aperti che mostra tutti i defibrillatori automatici esterni (DAE) nel mondo. Il sito web è basato sui dati di OpenStreetMap ed è il risultato degli sforzi dell'associazione OpenStreetMap Polonia. È stato creato nel 2022 dopo aver cambiato il sito web polacco AED Mapa con un nuovo design."
