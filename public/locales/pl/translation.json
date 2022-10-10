@@ -33,7 +33,9 @@
         "edit": "Edytuj w OSM",
         "view": "Zobacz w OSM",
         "copy_url": "Skopiuj URL",
-        "add_defibrillator": "Dodaj defibrylator"
+        "add_defibrillator": "Dodaj defibrylator",
+        "openstreetmap_navigation": "OpenStreetMap Nawigacja",
+        "google_maps_navigation": "Google Maps Nawigacja"
     },
     "form": {
         "optional_field": "Pole opcjonalne",

@@ -1,7 +1,10 @@
-import { mdiMagnify, mdiPencil, mdiContentCopy } from "@mdi/js";
+import {mdiMagnify, mdiPencil, mdiContentCopy, mdiMap} from "@mdi/js";
 import Icon from '@mdi/react';
 import { Button } from "react-bulma-components";
 import { useTranslation } from 'react-i18next';
+import {OSM_DOMAIN} from "../../constants";
+import {mdiGoogleMaps} from "@mdi/js/commonjs/mdi";
+import {FC} from "react";
 
 type OsmId = string
 
@@ -53,4 +56,35 @@ export function AddAedButton({ nextStep }: { nextStep: () => void }) {
     return <Button color={'success'} mt={1} textWeight="light" onClick={nextStep}>
         {t('footer.add_aed')}
     </Button>
+}
+
+interface NavigationButtonProps {
+    lat: number,
+    lon: number,
+}
+
+export const OpenStreetMapNavigationButton: FC<NavigationButtonProps> = ({ lat, lon }) => {
+    const { t } = useTranslation();
+    const OSM_NAVIGATION_ZOOM = 14;
+    return <a
+        className="button is-small is-info mx-1"
+        href={`${OSM_DOMAIN}/directions?from=&to=${lat}%2C${lon}#map=${OSM_NAVIGATION_ZOOM}/${lat}/${lon}`}
+        rel={"noreferrer"} target={"_blank"}
+    >
+        <Icon path={mdiMap} size={0.8} className="icon" color="#fff" />
+        <span>{t("sidebar.openstreetmap_navigation")}</span>
+    </a>
+};
+
+
+export const GoogleMapsNavigationButton: FC<NavigationButtonProps> = ({ lat, lon }) => {
+    const { t } = useTranslation();
+    return <a
+        className="button is-small is-info mx-1"
+        href={`https://google.com/maps/dir/?api=1&destination=${lat}%2C${lon}`}
+        rel={"noreferrer"} target={"_blank"}
+    >
+        <Icon path={mdiGoogleMaps} size={0.8} className="icon" color="#fff" />
+        <span>{t("sidebar.google_maps_navigation")}</span>
+    </a>
 }

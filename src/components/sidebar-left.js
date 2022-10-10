@@ -5,7 +5,15 @@ import { Card, Image, Columns } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
-import { CloseSidebarButton, CopyUrlButton, EditButton, ViewButton, AddAedButton } from './sidebar/buttons';
+import {
+  CloseSidebarButton,
+  CopyUrlButton,
+  EditButton,
+  ViewButton,
+  AddAedButton,
+  OpenStreetMapNavigationButton,
+  GoogleMapsNavigationButton
+} from './sidebar/buttons';
 import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumber";
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
@@ -95,6 +103,12 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
               <CopyUrlButton />
               <ViewButton osmId={data.osm_id} />
               <EditButton osmId={data.osm_id} />
+            </Card.Footer.Item>
+          </Card.Footer>
+          <Card.Footer>
+            <Card.Footer.Item className="has-background-white-ter">
+              <OpenStreetMapNavigationButton lat={data.lat} lon={data.lon} />
+              <GoogleMapsNavigationButton lat={data.lat} lon={data.lon} />
             </Card.Footer.Item>
           </Card.Footer>
         </Card>
