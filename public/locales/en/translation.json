@@ -33,7 +33,9 @@
         "edit": "Edit in OSM",
         "view": "View in OSM",
         "copy_url": "Copy URL",
-        "add_defibrillator": "Add defibrillator"
+        "add_defibrillator": "Add defibrillator",
+        "openstreetmap_navigation": "OpenStreetMap Navigation",
+        "google_maps_navigation": "Google Maps Navigation"
     },
     "form": {
         "optional_field": "Field optional",
@@ -64,7 +66,7 @@
     "modal": {
         "aed_added_successfully": "AED added successfully.",
         "available_in_osm": "Available in OpenStreetMap with the url:",
-        "should_appear_soon": "Object should appear on the map within <strong>60</strong> minutes.",
+        "should_appear_soon": "Object should appear on the map within 60 minutes.",
         "error_occurred": "Error occurred",
         "title": "Information",
         "need_to_login": "To add features you need to log in using OpenStreetMap account.",

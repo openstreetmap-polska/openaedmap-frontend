@@ -27,7 +27,7 @@
         "need_more_zoom": "Ominaisuuksien lisäämiseksi sinun on suurennettava, jotta antamasi sijainti on tarkka.",
         "aed_added_successfully": "AED lisätty onnistuneesti.",
         "available_in_osm": "Saatavilla OpenStreetMapissa URL-osoitteessa:",
-        "should_appear_soon": "Kohteen pitäisi näkyä kartalla <strong>60</strong> minuutin kuluessa.",
+        "should_appear_soon": "Kohteen pitäisi näkyä kartalla 60 minuutin kuluessa.",
         "error_occurred": "Tapahtui virhe",
         "click_login_button": "Sulje tämä ikkuna ja kirjaudu sisään napsauttamalla yläreunan kirjautumispainiketta.",
         "create_account": "Luo ilmainen tili osoitteessa ",
