@@ -2,10 +2,12 @@ import React, {
     FC, useRef, useEffect, useState,
 } from "react";
 import "maplibre-gl/dist/maplibre-gl.css";
+import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import "./map.css";
 import { useTranslation } from "react-i18next";
 // @ts-ignore
 import maplibreglWorker from "maplibre-gl/dist/maplibre-gl-csp-worker";
+import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
 import styleJson from "./map_style";
 import SidebarLeft from "./sidebar-left";
 import FooterDiv from "./footer";
@@ -23,6 +25,7 @@ import { useAppContext } from "../appContext";
 import SidebarAction from "../model/sidebarAction";
 import { fetchNodeDataFromBackend } from "../backend";
 import { DefibrillatorData } from "../model/defibrillatorData";
+import nominatimGeocoder from "./nominatimGeocoder";
 
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
@@ -91,7 +94,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const {
         authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData,
     } = useAppContext();
-    const { t } = useTranslation();
+    const { t, i18n: { resolvedLanguage } } = useTranslation();
 
     const hash4MapName = "map";
 
@@ -195,6 +198,13 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             maxZoom: 19,
             maplibreLogo: false,
         });
+
+        const maplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
+            maplibregl,
+        });
+        maplibreGeocoder.setLanguage(resolvedLanguage);
+
+        map.addControl(maplibreGeocoder);
         mapRef.current = map;
 
         // how fast mouse scroll wheel zooms
@@ -309,7 +319,8 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
                 true,
             );
         }
-    }, [initialLatitude, initialLongitude, initialZoom, setSidebarAction, setSidebarData, setSidebarLeftShown]);
+    }, [initialLatitude, initialLongitude, initialZoom,
+        setSidebarAction, setSidebarData, setSidebarLeftShown, resolvedLanguage]);
 
     return (
         <>
