@@ -25,7 +25,7 @@ export async function fetchNodeDataFromOsm(nodeId) {
         });
 }
 
-export function updateOsmUsernameState(auth, setter) {
+export function updateOsmUsernameState(auth, setOsmUsername) {
     auth.xhr(
         { method: "GET", path: "/api/0.6/user/details" },
         function (err, result) {
@@ -35,7 +35,7 @@ export function updateOsmUsernameState(auth, setter) {
                 throw err;
             }
             const userObject = result.getElementsByTagName('user')[0];
-            setter(userObject.getAttribute('display_name'));
+            setOsmUsername(userObject.getAttribute('display_name'));
         }
     );
 }

@@ -1,7 +1,7 @@
 import 'bulma/css/bulma.min.css';
 import i18n from 'i18next';
 import React from "react";
-import { Card, Image, Columns } from 'react-bulma-components';
+import {Card, Image, Columns, Modal} from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
@@ -24,6 +24,8 @@ import { AccessFormField } from "./sidebar/access";
 import { getOpenChangesetId, addDefibrillatorToOSM } from '../osm';
 import Icon from '@mdi/react'
 import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof } from '@mdi/js';
+import {initialModalState, ModalType} from '../model/modal';
+import {useAppContext} from "../appContext";
 
 
 const accessToColourMapping = {
@@ -57,14 +59,15 @@ const parseForm = (formElements) => {
   return tags
 };
 
-export default function SidebarLeft({ action, data, closeSidebar, visible, marker, auth, openChangesetId, setOpenChangesetId, modalState, setModalState }) {
+export default function SidebarLeft({ action, data, closeSidebar, visible, marker, openChangesetId, setOpenChangesetId }) {
   const { t } = useTranslation();
+  const { authState: { auth }, setModalState } = useAppContext();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
 
   if (action === "showDetails") {
 
-    const accessText = data.access ? " - " + t(`access.${data.access}`) : ""
+    const accessText = data.access ? " - " + t(`access.${data.access}`) : "";
 
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
@@ -136,16 +139,16 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
           event.target.classList.remove("is-loading");
           closeSidebar();
           console.log("created new node with id: ", newNodeId);
-          setModalState({visible: true, type: "nodeAddedSuccessfully", nodeId: newNodeId});
+          setModalState({...initialModalState, visible: true, type: ModalType.NodeAddedSuccessfully, nodeId: newNodeId});
         })
         .catch(err => {
           event.target.classList.remove("is-loading");
           closeSidebar();
           console.log(err);
           const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`;
-          setModalState({visible: true, type: "error", errorMessage: errorMessage});
+          setModalState({...initialModalState, visible: true, type: ModalType.Error, errorMessage: errorMessage});
         });
-    }
+    };
     return (
     <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
       <Card>
@@ -169,7 +172,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     </div>
     )
   } else if (action === "init") {
-    return <div id="sidebar-div"></div>
+    return <div id="sidebar-div"/>
   } else {
     console.log(`Unknown action: '${action}'.`)
   }
