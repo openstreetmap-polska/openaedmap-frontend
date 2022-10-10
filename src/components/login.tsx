@@ -28,12 +28,12 @@ const Login: FC<LoginProps> = ({ auth }) => {
         return (
             <Navbar.Item hoverable={true}>
                 <Navbar.Item>
-                    <Icon icon={mdiAccount} size='2rem' mr={1} />
+                    <Icon icon={mdiAccount} size='2rem' mr={1} color="#fff"/>
                     {osmUsername}
                 </Navbar.Item>
                 <Navbar.Dropdown className='has-background-green'>
                     <Navbar.Item onClick={logout}>
-                        <Icon icon={mdiLogout} size='2rem' mr={1} />
+                        <Icon icon={mdiLogout} size='2rem' mr={1} color="#fff" />
                         {t("navbar.logout")}
                     </Navbar.Item>
                 </Navbar.Dropdown>
