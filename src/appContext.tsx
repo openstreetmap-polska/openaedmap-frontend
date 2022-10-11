@@ -3,14 +3,14 @@ import {useContext} from "react";
 import {initialModalState, ModalState} from "./model/modal";
 import {AuthState, initialAuthState} from "./model/auth";
 
-interface AppContext {
+interface AppContextType {
     authState: AuthState,
     modalState: ModalState,
     setModalState: (modalState: ModalState) => void,
     handleLogIn: () => void,
     handleLogOut: () => void,
 }
-const defaultAppContext: AppContext = {
+const defaultAppContext: AppContextType = {
     authState: initialAuthState,
     modalState: initialModalState,
     setModalState: () => {},

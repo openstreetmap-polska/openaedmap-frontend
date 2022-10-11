@@ -61,7 +61,7 @@ function Main() {
     const appContext = {authState, modalState, setModalState, handleLogIn, handleLogOut};
     useEffect(() => {
         if (auth.authenticated()) updateOsmUsernameState(auth, setOsmUsername);
-    });
+    }, [auth]);
     return (
         <AppContext.Provider value={appContext}>
             <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} />
