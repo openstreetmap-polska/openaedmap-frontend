@@ -78,7 +78,7 @@ function getNewHashString(parameters) {
 }
 
 export default function Map({ openChangesetId, setOpenChangesetId }) {
-    const { authState: { auth }, modalState, setModalState } = useAppContext();
+    const { authState: { auth }, setModalState } = useAppContext();
     const { t } = useTranslation();
 
     const hash4MapName = "map";

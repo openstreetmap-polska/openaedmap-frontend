@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './navbar.css';
 import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +11,7 @@ import {useAppContext} from "../appContext";
 
 
 export default function SiteNavbar({ toggleSidebarShown }) {
-    const {auth, setModalState} = useAppContext();
+    const {setModalState} = useAppContext();
     const [isActive, setIsActive] = React.useState(false);
     const { t } = useTranslation();
     return (

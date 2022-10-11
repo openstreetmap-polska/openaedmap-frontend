@@ -1,7 +1,7 @@
 import 'bulma/css/bulma.min.css';
 import i18n from 'i18next';
 import React from "react";
-import {Card, Image, Columns, Modal} from 'react-bulma-components';
+import {Card, Image, Columns} from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
 import './sidebar.css';
