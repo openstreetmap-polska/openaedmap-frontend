@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { SpanNoData } from './common'
 import opening_hours from "opening_hours";
 import i18n from 'i18next';
+import React from "react";
 
 
 function parseOpeningHours(openingHours) {

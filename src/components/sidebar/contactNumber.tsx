@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { SpanNoData } from './common'
-import {FC} from "react";
-import React from "react";
+import React, {FC} from "react";
 
 const ContactNumberDescription: FC<ContactNumberProps> = ({ contactNumber }) => {
     if (contactNumber) {

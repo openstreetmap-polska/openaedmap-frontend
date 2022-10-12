@@ -2,7 +2,7 @@ import { mdiInformationOutline } from '@mdi/js';
 import Icon from '@mdi/react'
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'react-bulma-components';
-import {FC} from "react";
+import React, {FC} from "react";
 import {ModalType} from "../model/modal";
 import {useAppContext} from "../appContext";
 import LogInButton from "./logInButton";
