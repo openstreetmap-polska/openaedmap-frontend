@@ -8,8 +8,7 @@ export async function fetchNodeDataFromOsm(nodeId) {
             const tags = Object.fromEntries(
                 Object.entries(node["tags"]).map(([key, val]) => [key.replaceAll(":", "_"), val])
             );
-            const lon = node["lon"];
-            const lat = node["lat"];
+            const {lon, lat} = node;
 
             return {
                 osm_id: node["id"],

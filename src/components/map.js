@@ -64,8 +64,8 @@ function fillSidebarWithOsmDataAndShow(nodeId, mapInstance, setSidebarLeftAction
 function parseHash() {
     let parameters = {};
     window.location.hash.slice(1).split('&').forEach(part => {
-        const arr = part.split("=", 2);
-        parameters[arr[0]] = arr[1];
+        const [key, value] = part.split("=", 2);
+        parameters[key] = value;
     });
     return parameters
 }
@@ -93,10 +93,7 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
     let initialMapZoom = 3;
 
     if (paramsFromHash[hash4MapName]) {
-        const p = paramsFromHash[hash4MapName].split("/");
-        initialMapZoom = p[0];
-        initialMapLatitude = p[1];
-        initialMapLongitude = p[2];
+        [initialMapZoom, initialMapLatitude, initialMapLongitude] = paramsFromHash[hash4MapName].split("/");
     }
 
     const mapContainer = useRef(null);
