@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common'
+import SpanNoData from "./spanNoData";
 import {FC, useState} from "react";
 import React from "react";
 
