@@ -57,7 +57,9 @@
         "indoor": "Rakennuksen sisällä",
         "description": "Kuvaus",
         "add_defibrillator": "Lisää defibrillaattori",
-        "operator": "Operaattori"
+        "operator": "Operaattori",
+        "google_maps_navigation": "Google Maps-navigointi",
+        "openstreetmap_navigation": "OpenStreetMap-navigointi"
     },
     "footer": {
         "add": "Lisää",
