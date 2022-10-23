@@ -33,7 +33,9 @@
         "edit": "In OSM bearbeiten",
         "view": "In OSM ansehen",
         "copy_url": "URL kopieren",
-        "add_defibrillator": "Defibrillator hinzufügen"
+        "add_defibrillator": "Defibrillator hinzufügen",
+        "openstreetmap_navigation": "OpenStreetMap-Navigation",
+        "google_maps_navigation": "Google Maps-Navigation"
     },
     "form": {
         "optional_field": "Optionales Feld",

@@ -4,11 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Icon from '@mdi/react'
 import {mdiCancel, mdiArrowRightBold, mdiMapMarkerPlus} from '@mdi/js'
 import './footer.css'
-
-const BUTTONS_TYPE_NONE = 0;
-const BUTTONS_TYPE_ADD_AED = 1;
-const BUTTONS_TYPE_MOBILE_STEP_1 = 2;
-export { BUTTONS_TYPE_NONE, BUTTONS_TYPE_ADD_AED, BUTTONS_TYPE_MOBILE_STEP_1 };
+import {ButtonsType} from "../model/buttonsType";
 
 
 const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, mobileStepTwo, buttonsConfiguration }) => {
@@ -42,13 +38,15 @@ const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, 
             </Button>
         </>
     );
-    function getFooterButtons(buttonConfigurationType: number) {
-        if (buttonConfigurationType === BUTTONS_TYPE_NONE) return null;
-        else if (buttonConfigurationType === BUTTONS_TYPE_ADD_AED) return addAedButtons;
-        else if (buttonConfigurationType === BUTTONS_TYPE_MOBILE_STEP_1) return mobileStepOneButtons;
+    function getFooterButtons(buttonConfigurationType: ButtonsType) {
+        switch (buttonConfigurationType) {
+            case ButtonsType.None: return null;
+            case ButtonsType.AddAED: return addAedButtons;
+            case ButtonsType.MobileStep1: return mobileStepOneButtons;
+        }
     }
 
-    if (buttonsConfiguration === BUTTONS_TYPE_NONE) return <></>;
+    if (buttonsConfiguration === ButtonsType.None) return <></>;
     else return (
         <Footer className='footer-div'>
             <div className='white-bottom-bar'/>

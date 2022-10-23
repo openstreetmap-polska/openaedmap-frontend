@@ -1,6 +1,6 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import { useTranslation } from 'react-i18next';
-import { SpanNoData } from './common'
+import SpanNoData from "./spanNoData";
 
 const DescriptionText: FC<DescriptionProps> =({ description }) => {
     if (description) {

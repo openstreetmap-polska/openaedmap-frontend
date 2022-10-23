@@ -5,7 +5,7 @@
         width: 425px;
         border-radius: 10px;
         box-shadow: 0 .5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
-        max-height: 90vh;
+        max-height: 85vh;
         overflow: auto !important;
         z-index: 10 !important;
     }
@@ -28,7 +28,6 @@
     .sidebar-right {
         position: relative;
         float: right;
-        top: 50px;
         z-index: 1;
         margin: 0.5rem !important;
         width: 385px;

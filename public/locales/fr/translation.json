@@ -25,7 +25,9 @@
         "edit": "Modifier dans OSM",
         "view": "Voir dans OSM",
         "close": "Fermer la barre latérale",
-        "copy_url": "Copier l'URL"
+        "copy_url": "Copier l'URL",
+        "openstreetmap_navigation": "Navigation OpenStreetMap",
+        "google_maps_navigation": "Navigation Google Maps"
     },
     "form": {
         "optional_field": "Champ facultatif",
