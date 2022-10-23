@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "/",
   "dependencies": {
+    "@beyondtracks/spritezero-cli": "^2.3.1",
     "@creativebulma/bulma-collapsible": "^1.0.4",
     "@creativebulma/bulma-tooltip": "^1.2.0",
     "@mdi/js": "^6.7.96",
@@ -37,7 +38,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "typecheck": "tsc -p ./tsconfig.json --noEmit"
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "sprites": "spritezero ./public/sprite ./src/marker_icons; spritezero --ratio=2 ./public/sprite@2 ./src/marker_icons"
   },
   "eslintConfig": {
     "extends": [
