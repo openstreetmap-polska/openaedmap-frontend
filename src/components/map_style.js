@@ -37,7 +37,11 @@ const style = {
             "source-layer": "defibrillators",
             "filter": ["!has", "point_count"],
             "layout": {
-                "icon-image": ["image", ["concat", "marker_", ["coalesce", ["get", "access"], "no"]]],
+                "icon-image": [
+                  "coalesce",
+                  ["image", ["concat", "marker_", ["get", "access"]]],
+                  ["image", "marker_no"]
+                ],
                 "icon-size": 0.5,
                 "icon-allow-overlap": true
             }
