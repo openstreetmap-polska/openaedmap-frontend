@@ -21,7 +21,7 @@ function parseOpeningHours(openingHours) {
         } catch (error) {
             console.log('Error when parsing opening hours');
             console.log(error);
-            return undefined;
+            return openingHours;
         }
     }
 }
@@ -31,9 +31,14 @@ function isCurrentlyOpen(openingHours) {
         if (openingHours === '24/7') {
             return true;
         } else {
-            const oh = new opening_hours(openingHours, undefined, 2);
-            const isOpen = oh.getState();
-            return isOpen;
+            try {
+                const oh = new opening_hours(openingHours, undefined, 2);
+                return oh.getState();
+            } catch (error) {
+                console.log(`Error while parsing opening hours: ${error}`)
+                return null
+            }
+
         }
     }
 }
@@ -41,13 +46,17 @@ function isCurrentlyOpen(openingHours) {
 function CurrentlyOpenStatus({ openingHours }) {
     const { t } = useTranslation();
     const isOpen = isCurrentlyOpen(openingHours);
-    return (
-        <sup className="pl-1">
-            <span className={"tag is-light " + isOpen ? "is-success" : "is-danger"}>
-                {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
-            </span>
-        </sup>
-    )
+    if (isOpen === null) {
+        return <sup></sup>
+    } else {
+        return (
+            <sup className="pl-1">
+                <span className={"tag is-light " + isOpen ? "is-success" : "is-danger"}>
+                    {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
+                </span>
+            </sup>
+        )
+    }
 }
 
 function OpeningHoursDescription({ openingHours }) {

@@ -74,6 +74,10 @@ Builds the app for production to the `build` folder.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+#### `npm run sprites`
+
+Creates sprites from marker icons.
+
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
 
@@ -88,5 +92,6 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [Bulma Collapsible](https://bulma-collapsible.netlify.app/)
 - [React Bulma Components](https://react-bulma.dev/en/storybook)
 - [Material Design Icons](https://dev.materialdesignicons.com/getting-started/react)
+- [spritezero-cli](https://gitlab.com/beyondtracks/spritezero-cli)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

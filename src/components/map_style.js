@@ -40,7 +40,7 @@ const style = {
                 "icon-image": [
                   "coalesce",
                   ["image", ["concat", "marker_", ["get", "access"]]],
-                  ["image", "marker_no"]
+                  ["image", "marker_unknown"]
                 ],
                 "icon-size": 0.5,
                 "icon-allow-overlap": true
