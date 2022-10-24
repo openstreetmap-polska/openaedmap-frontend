@@ -4,8 +4,8 @@
         "private": "Accessible with owner's permit",
         "customers": "Accessible during work hours",
         "no": "Unavailable",
-        "permissive": "Permissive"
         "unknown": "Unknown access"
+        "permissive": "permissive"
     },
     "navbar": {
         "created_with_<3_by": "created with ❤️ by",
