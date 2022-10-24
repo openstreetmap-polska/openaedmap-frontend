@@ -20,7 +20,7 @@ import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSuperv
 
 const accessToColourMapping = {
   'yes': 'has-background-green has-text-white-ter',
-  'no': 'has-background-grey has-text-white-ter',
+  'no': 'has-background-red has-text-white-ter',
   'private': 'has-background-blue has-text-white-ter',
   'permissive': 'has-background-blue has-text-white-ter',
   'customers': 'has-background-yellow has-text-black-ter',
