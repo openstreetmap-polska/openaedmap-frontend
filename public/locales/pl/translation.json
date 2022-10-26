@@ -4,6 +4,7 @@
         "private": "Dostępny za zgodą właściciela",
         "customers": "Dostępny tylko w godzinach pracy",
         "no": "Niedostępny",
+        "unknown": "Dostęp nieznany",
         "permissive": "permissive"
     },
     "navbar": {

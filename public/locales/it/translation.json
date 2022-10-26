@@ -32,7 +32,8 @@
         "yes": "Accessibile al pubblico",
         "permissive": "permissivo",
         "private": "Accessibile con il permesso del proprietario",
-        "customers": "Accessibile durante l'orario di lavoro"
+        "customers": "Accessibile durante l'orario di lavoro",
+        "unknown": "Accesso sconosciuto"
     },
     "sidebar": {
         "download_title": "Scarica i dati DAE aggiunti a OSM",

@@ -36,6 +36,10 @@ code {
   background-color: #3e8ed0 !important;
 }
 
+.has-background-red {
+  background-color: #ff3333 !important;
+}
+
 .has-background-gray {
   background-color: #7a7a7a !important;
 }

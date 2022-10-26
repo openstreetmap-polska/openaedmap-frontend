@@ -3,7 +3,8 @@
         "yes": "Julkisesti saatavilla",
         "private": "Pääsy omistajan luvalla",
         "customers": "Pääsy työaikana",
-        "no": "Ei käytettävissä"
+        "no": "Ei käytettävissä",
+        "unknown": "Tuntematon pääsy"
     },
     "navbar": {
         "created_with_<3_by": "luonut ❤️:lla tekijältä",

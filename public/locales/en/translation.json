@@ -4,6 +4,7 @@
         "private": "Accessible with owner's permit",
         "customers": "Accessible during work hours",
         "no": "Unavailable",
+        "unknown": "Unknown access",
         "permissive": "permissive"
     },
     "navbar": {

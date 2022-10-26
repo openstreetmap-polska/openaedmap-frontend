@@ -3,8 +3,9 @@
         "yes": "Accessible au public",
         "no": "Indisponible",
         "permissive": "permissif",
-        "customers": "Accessible pendant les heures de travail",
-        "private": "Accessible avec la permission du propriétaire"
+        "customers": "Accessible pendant les heures d'ouverture",
+        "private": "Accessible avec la permission du propriétaire",
+        "unknown": "Accès inconnu"
     },
     "sidebar": {
         "csv": "CSV",
