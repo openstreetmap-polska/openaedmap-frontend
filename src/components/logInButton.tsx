@@ -30,7 +30,9 @@ const LogInButton: FC<LogInButtonProps> = ({inNavBar}) => {
     } else {
         return (
             <Navbar.Item renderAs='div' p={1}>
-                <Button color={inNavBar ? "white" : undefined} outlined={true} onClick={handleLogIn}>{t("navbar.login")}</Button>
+                <Button color={inNavBar ? "white" : undefined} outlined={true} onClick={handleLogIn}>
+                    {t("navbar.login")}
+                </Button>
             </Navbar.Item>
         )
     }

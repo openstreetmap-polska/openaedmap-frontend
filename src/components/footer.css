@@ -11,15 +11,6 @@
     background-color: transparent;
 }
 
-.white-bottom-bar {
-    height: 62px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    opacity: 0.69;
-    background-color: white;
-}
-
 .bottom-bar-buttons {
     padding-left: 8px;
 }

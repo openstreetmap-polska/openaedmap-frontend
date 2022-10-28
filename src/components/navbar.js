@@ -4,7 +4,7 @@ import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './languageSwitcher';
 import Icon from '@mdi/react';
-import { mdiCog, mdiGithub, mdiHeartFlash, mdiInformation } from '@mdi/js';
+import { mdiMapLegend, mdiGithub, mdiHeartFlash, mdiInformationOutline } from '@mdi/js';
 import LogInButton from './logInButton';
 import {initialModalState, ModalType} from "../model/modal";
 import {useAppContext} from "../appContext";
@@ -47,25 +47,24 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </Navbar.Burger>
-            </Navbar.Brand>
+            </Navbar.Brand> 
             <Navbar.Menu className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`} id='navbarMenu'>
                 <Navbar.Container align='right'>
                     <LanguageSwitcher/>
+                    <LogInButton inNavBar={true}/>
                     <Navbar.Item renderAs='div' p={1}>
-                        <Button onClick={() => toggleSidebarShown()} color={'white'} outlined={true}>
-                            <Icon path={mdiCog} size='2rem' />
+                        <Button color={'white'} outlined={true} onClick={() => setModalState({...initialModalState, visible: true, type: ModalType.About})}>
+                            {t("navbar.about")}
                         </Button>
                     </Navbar.Item>
                     <Navbar.Item renderAs='div' p={1}>
                         <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noreferrer' className='is-white is-outlined button'>
-                            <Icon title={t('navbar.visit_github')} alt='GitHub logo' path={mdiGithub} size='2rem'/>
+                            <Icon title={t('navbar.visit_github')} alt='GitHub' path={mdiGithub} size='2rem'/>
                         </a>
                     </Navbar.Item>
-                    <LogInButton inNavBar={true}/>
                     <Navbar.Item renderAs='div' p={1}>
-                        <Button color={'white'} outlined={true} onClick={() => setModalState({...initialModalState, visible: true, type: ModalType.About})}>
-                            <Icon path={mdiInformation} size='2rem' />
-                            {t("navbar.about")}
+                        <Button onClick={() => toggleSidebarShown()} color={'white'} outlined={true}>
+                            <Icon path={mdiMapLegend} size='2rem' />
                         </Button>
                     </Navbar.Item>
                 </Navbar.Container>
