@@ -30,9 +30,8 @@ function isCurrentlyOpen(openingHours) {
     if (openingHours) {
         if (openingHours === '24/7') {
             return true;
-        } 
-        else if (openingHours.startsWith('"') && openingHours.endsWith('"') )
-        {
+        }
+        else if (openingHours.startsWith('"') && openingHours.endsWith('"')) {
             return null;
         }
         else {
@@ -85,10 +84,10 @@ export function OpeningHoursField({ openingHours }) {
 
     return (
         <div>
-        <p className="has-text-weight-light has-text-grey mb-1">
-            {t('sidebar.opening_hours') + ": "}   
-        </p>
-        <OpeningHoursDescription openingHours={openingHours} />
+            <p className="has-text-weight-light has-text-grey mb-1">
+                {t('sidebar.opening_hours') + ": "}
+            </p>
+            <OpeningHoursDescription openingHours={openingHours} />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import './navbar.css';
 import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './languageSwitcher';
+import { LanguageSwitcher, LanguageSwitcherMobile } from './languageSwitcher';
 import Icon from '@mdi/react';
 import { mdiMapLegend, mdiGithub, mdiHeartFlash} from '@mdi/js';
 import LogInButton from './logInButton';
@@ -33,6 +33,7 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                         title={t('navbar.visit_osmp_website')}>{t('osmp')}</a>
                     </span>
                 </Navbar.Item>
+                <LanguageSwitcherMobile/>
                 <Navbar.Burger
                         id='navbarBurger'
                         onClick={() => {
@@ -46,7 +47,7 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
-                    </Navbar.Burger>
+                </Navbar.Burger>
             </Navbar.Brand> 
             <Navbar.Menu className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`} id='navbarMenu'>
                 <Navbar.Container align='right'>
