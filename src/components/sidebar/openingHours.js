@@ -30,7 +30,12 @@ function isCurrentlyOpen(openingHours) {
     if (openingHours) {
         if (openingHours === '24/7') {
             return true;
-        } else {
+        } 
+        else if (openingHours.startsWith('"') && openingHours.endsWith('"') )
+        {
+            return null;
+        }
+        else {
             try {
                 const oh = new opening_hours(openingHours, undefined, 2);
                 return oh.getState();
