@@ -13,11 +13,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f2efe9;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.fallback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f2efe9;
+}
+
+.fallback-header {
+  background-color: #028955;
+  min-height: 3.25rem;
+  height: 60px;
+  width: 100%;
 }
 
 .has-background-green {

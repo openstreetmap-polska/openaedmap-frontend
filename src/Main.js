@@ -72,9 +72,11 @@ function Main() {
     );
 }
 
+const Fallback = () => <div className="fallback"><div className="fallback-header"></div></div>;
+
 export default function WrappedApp() {
     return (
-        <Suspense fallback="...is loading">
+        <Suspense fallback={<Fallback />}>
             <Main />
         </Suspense>
     );
