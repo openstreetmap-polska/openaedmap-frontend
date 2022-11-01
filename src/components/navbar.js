@@ -18,14 +18,14 @@ export default function SiteNavbar({ toggleSidebarShown }) {
         <Navbar color='success' className='has-background-green'>
             <Navbar.Brand>
                 <Navbar.Item renderAs='div' pr={1}>
-                    <Icon path={mdiHeartFlash} size={1.3} className="icon" color="#fff" />
+                    <Icon path={mdiHeartFlash} size={1.2} className="icon" color="#fff" />
                     <span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile p-1">
                     Open<span className="has-text-weight-semibold">AED</span>Map
                     </span>
                 </Navbar.Item>
                 <Navbar.Item className='is-hidden-touch' renderAs='div' pl={1}>
                     <span className='has-text-grey-light has-text-weight-light mr-3'>|</span>
-                    <span className="has-text-weight-light is-size-6 is-size-7-touch pl-0">
+                    <span className="has-text-weight-light is-size-6 pl-0">
                         {t('navbar.created_with_<3_by')}
                         &nbsp;
                         <a className="has-text-weight-medium navbarUrl"

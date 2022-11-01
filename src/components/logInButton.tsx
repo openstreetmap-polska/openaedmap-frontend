@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
-import {Button, Icon, Navbar} from 'react-bulma-components';
-import {mdiAccount, mdiLogout} from '@mdi/js';
+import {Button, Navbar} from 'react-bulma-components';
+import Icon from '@mdi/react';
+import {mdiAccount, mdiLogoutVariant} from '@mdi/js';
 import {useTranslation} from 'react-i18next';
 import {useAppContext} from "../appContext";
 
@@ -14,14 +15,14 @@ const LogInButton: FC<LogInButtonProps> = ({inNavBar}) => {
 
     if (auth.authenticated()) {
         return (
-            <Navbar.Item hoverable={true}>
+            <Navbar.Item className="has-text-white" hoverable={true}>
                 <Navbar.Item>
-                    <Icon icon={mdiAccount} size='2rem' mr={1} />
-                    {osmUsername}
+                <Icon className="icon mr-2"  path={mdiAccount} size={1.0}/>
+               {osmUsername}
                 </Navbar.Item>
                 <Navbar.Dropdown className='has-background-green'>
                     <Navbar.Item onClick={handleLogOut}>
-                        <Icon icon={mdiLogout} size='2rem' mr={1} />
+                    <Icon path={mdiLogoutVariant} size={1.3} className="icon mr-2"/>
                         {t("navbar.logout")}
                     </Navbar.Item>
                 </Navbar.Dropdown>
