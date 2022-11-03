@@ -24,6 +24,9 @@ export function LanguageSwitcher() {
                         );
                     } else return null;
                 }).filter(x => x)}
+                <Navbar.Item>
+                <a href ="https://github.com/openstreetmap-polska/openaedmap-frontend#translating" rel="noreferrer" target="_blank"> 🖋 Help in translation</a>
+                </Navbar.Item>
             </Navbar.Dropdown>
         </Navbar.Item>
     );
