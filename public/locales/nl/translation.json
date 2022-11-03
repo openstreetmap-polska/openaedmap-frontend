@@ -4,7 +4,8 @@
         "private": "Toegankelijk met vergunning van de eigenaar",
         "customers": "Toegankelijk tijdens de openingstijden",
         "no": "Niet toegankelijk",
-        "permissive": "Toegang vrijgegeven"
+        "permissive": "Toegang vrijgegeven",
+        "unknown": "Toegang onbekend"
     },
     "navbar": {
         "created_with_<3_by": "gemaakt met ❤️ door",
@@ -33,7 +34,9 @@
         "edit": "Bewerken in OSM",
         "view": "Bekijken in OSM",
         "copy_url": "URL kopiëren",
-        "add_defibrillator": "Defibrillator toevoegen"
+        "add_defibrillator": "Defibrillator toevoegen",
+        "openstreetmap_navigation": "OpenStreetMap-navigatie",
+        "google_maps_navigation": "Google Maps-navigatie"
     },
     "footer": {
         "add": "Toevoegen",
