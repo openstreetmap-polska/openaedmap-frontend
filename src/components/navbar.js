@@ -4,7 +4,7 @@ import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher, LanguageSwitcherMobile } from './languageSwitcher';
 import Icon from '@mdi/react';
-import { mdiMapLegend, mdiGithub, mdiHeartFlash} from '@mdi/js';
+import { mdiMapLegend, mdiGithub } from '@mdi/js';
 import LogInButton from './logInButton';
 import {initialModalState, ModalType} from "../model/modal";
 import {useAppContext} from "../appContext";
