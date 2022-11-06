@@ -13,5 +13,11 @@
 } */
 
 .navbarUrl {
-    color: #effaf5 !important
+    color: #effaf5 !important;
+}
+.navbarLogo {
+    width: 35px;
+    height: 35px;
+    fill: #effaf5 !important;
+    filter: drop-shadow(2px 2px 2px #026841e0);
 }
