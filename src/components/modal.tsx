@@ -35,7 +35,7 @@ const ModalContent: FC<{}> = () => {
             return (
                 <div>
                     <p className="pb-2">{t("modal.need_more_zoom")}</p>
-                    <p className="pb-2">{t("modal.current_zoom")} {currentZoom.toFixed(2)}.</p>
+                    <p className="pb-2">{t("modal.current_zoom")} <span className="has-text-weight-semibold">{currentZoom.toFixed(0)}</span>.</p>
                     <p className="pb-2">{t("modal.zoom_need_to_be")}</p>
                 </div>
             );
