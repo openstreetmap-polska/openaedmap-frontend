@@ -55,7 +55,7 @@ function CurrentlyOpenStatus({ openingHours }) {
     } else {
         return (
             <sup className="pl-1">
-                <span className={"tag is-light " + isOpen ? "is-success" : "is-danger"}>
+                <span className={"tag is-light " + isOpen ? "has-text-success" : "has-text-danger"}>
                     {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
                 </span>
             </sup>
