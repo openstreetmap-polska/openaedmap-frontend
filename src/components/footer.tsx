@@ -49,7 +49,6 @@ const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, 
     if (buttonsConfiguration === ButtonsType.None) return <></>;
     else return (
         <Footer className='footer-div'>
-            <div className='white-bottom-bar'/>
             <div className='bottom-bar-buttons'>
                 {getFooterButtons(buttonsConfiguration)}
             </div>

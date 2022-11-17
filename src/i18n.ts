@@ -6,15 +6,15 @@ import Backend from 'i18next-http-backend';
 const isProduction = process.env.REACT_APP_ENV === 'production';
 
 const languages: { [index: string]: {nativeName: string} } = {
-  en: { nativeName: 'English' },
-  pl: { nativeName: 'Polski' },
-  de: { nativeName: 'Deutsch' },
-  es: { nativeName: 'Español' },
   ca: { nativeName: 'Català' },
-  nl: { nativeName: 'Nederlands' },
-  sl: { nativeName: 'Slovenščina' },
+  de: { nativeName: 'Deutsch' },
+  en: { nativeName: 'English' },
+  es: { nativeName: 'Español' },
   fr: { nativeName: 'Français' },
   it: { nativeName: 'Italiano' },
+  nl: { nativeName: 'Nederlands' },
+  pl: { nativeName: 'Polski' },
+  sl: { nativeName: 'Slovenščina' },
   fi: { nativeName: 'Suomi' },
 };
 if (!isProduction) {

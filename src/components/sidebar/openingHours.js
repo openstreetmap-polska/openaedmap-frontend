@@ -30,7 +30,11 @@ function isCurrentlyOpen(openingHours) {
     if (openingHours) {
         if (openingHours === '24/7') {
             return true;
-        } else {
+        }
+        else if (openingHours.startsWith('"') && openingHours.endsWith('"')) {
+            return null;
+        }
+        else {
             try {
                 const oh = new opening_hours(openingHours, undefined, 2);
                 return oh.getState();
@@ -50,9 +54,9 @@ function CurrentlyOpenStatus({ openingHours }) {
         return <sup></sup>
     } else {
         return (
-            <sup className="pl-1">
-                <span className={"tag is-light " + isOpen ? "is-success" : "is-danger"}>
-                    {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
+            <sup className="pl-1 is-lowercase">
+                <span className={ isOpen ? "has-text-primary-dark" : "has-text-danger-dark"}>
+                • {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
                 </span>
             </sup>
         )
@@ -80,10 +84,10 @@ export function OpeningHoursField({ openingHours }) {
 
     return (
         <div>
-        <p className="has-text-weight-light has-text-grey mb-1">
-            {t('sidebar.opening_hours') + ": "}   
-        </p>
-        <OpeningHoursDescription openingHours={openingHours} />
+            <p className="has-text-weight-light has-text-grey mb-1">
+                {t('sidebar.opening_hours') + ": "}
+            </p>
+            <OpeningHoursDescription openingHours={openingHours} />
         </div>
     )
 }

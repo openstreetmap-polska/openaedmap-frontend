@@ -29,13 +29,12 @@
         position: relative;
         float: right;
         z-index: 1;
-        margin: 0.5rem !important;
-        width: 385px;
+        margin: 10px !important;
+        width: 300px;
         border-radius: 10px;
         box-shadow: 0 .5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
         max-height: 90vh;
         overflow: auto !important;
-        border: 2px solid hsl(0, 0%, 96%);
     }
 }
 
@@ -85,12 +84,13 @@
         border-top: 0;
         border-left: 0;
         border-right: 0;
+        border-radius: 0 0 6px 6px;
     }
 }
 
 #sidebar-caption
 {
-    max-width: 305px; 
+    max-width: 78%; 
 }
 
 [class*=" icon"],
@@ -104,4 +104,16 @@
     line-height: 1;
     position: relative;
     vertical-align: middle;
+}
+
+
+.legend-image
+{
+    border-radius: 2px;
+    box-shadow: 0 .5em 1em -0.125em rgba(182, 182, 182, 0.1), 0 0 0 1px rgba(121, 121, 121, 0.02);
+}
+
+.legend-text 
+{
+    font-size: calc(100% - 1px);
 }

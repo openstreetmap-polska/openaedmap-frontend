@@ -11,11 +11,6 @@
     height: 100%;
 }
 
-.mapboxgl-ctrl-bottom-right,
-.maplibregl-ctrl-bottom-right {
-    bottom: 64px !important;
-}
-
 .maplibregl-ctrl-logo,
 .mapboxgl-ctrl-logo {
     position: fixed;
@@ -39,4 +34,9 @@
 .maplibregl-ctrl-attrib .mapboxgl-ctrl-attrib,
 .mapboxgl-ctrl-geolocate {
     filter: contrast(80%);
+}
+
+.mapboxgl-ctrl-group:not(:empty), .maplibregl-ctrl-group:not(:empty)
+{
+    box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02)
 }
