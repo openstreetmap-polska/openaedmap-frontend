@@ -4,7 +4,8 @@
         "private": "Accesible con permiso del propietario",
         "customers": "Accesible en horario laboral",
         "no": "No disponible",
-        "permissive": "Permisivo"
+        "permissive": "Permisivo",
+        "unknown": "Acceso desconocido"
     },
     "navbar": {
         "created_with_<3_by": "creado con ❤️ por",
@@ -74,7 +75,7 @@
         "need_more_zoom": "Para añadir elementos necesitas ampliar la zona lo suficiente para asegurarte que es exacta.",
         "current_zoom": "Zoom actual:",
         "zoom_need_to_be": "El zoom mínimo debe de ser de nivel 15 por lo menos.",
-        "about_osm": "OpenStreetMap (OSM) es como la Wikipedia de los mapas. Tú también puedes contribuir.",
+        "about_osm": "OpenStreetMap (OSM) es como la Wikipedia de los mapas. Está disponible para todo el mundo y cualquiera puede añadir objetos al mapa. Puedes utilizar tu cuenta de OSM para añadir ubicaciones de la DEA directamente desde este sitio mediante un sencillo formulario.",
         "create_account": "Crear cuenta gratis en ",
         "about_project": "OpenAEDMap es un proyecto de datos abiertos que muestra todos los Desfibriladores Externos Automáticos (DEA) del mundo. El sitio web se basa en datos de OpenStreetMap y es el logro de esfuerzos de la asociación OpenStreetMap Polonia. Fue creado en 2022 tras cambiar el AED Mapa del sitio web polaco por un nuevo diseño."
     }
