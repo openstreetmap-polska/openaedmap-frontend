@@ -27,7 +27,13 @@
         "error_occurred": "发生错误",
         "click_login_button": "关闭本窗口并点击在顶部的登录按钮。",
         "need_to_login": "要添加要素您需要使用OpenStreetMap账号登录。",
-        "should_appear_soon": "对象应于60分钟内显示在地图上。"
+        "should_appear_soon": "对象应于60分钟内显示在地图上。",
+        "create_account": "您也可以参与贡献！只需要一个 上免费注册一个账号。 ",
+        "about_osm": "OpenStreetMap (OSM)如同地图领域的维基百科。它可被所有人使用且所有人均可向其添加对象。您可以用您的OSM账号借助这一简单表格直接从本站上传AED位置。",
+        "current_zoom": "当前缩放等级：",
+        "zoom_need_to_be": "缩放等级最小应为15。",
+        "need_more_zoom": "要添加要素您需要放大地图以保证您提供的位置准确无误。",
+        "about_project": "OpenAEDMap是一个显示世界各地自动体外除颤器 (AED)的一个开放数据项目。该网站基于OpenStreetMap数据，由OpenStreetMap波兰社区主导，是在2022年重新设计波兰网站AED Mapa后所创建的。"
     },
     "sidebar": {
         "view": "在OSM中查看",
