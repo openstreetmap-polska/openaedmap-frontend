@@ -1,1 +1,43 @@
-{}
+{
+    "access": {
+        "no": "사용 불가",
+        "permissive": "접근 제한 없음",
+        "private": "소유주의 허락을 받아 사용 가능",
+        "unknown": "사용 가능 여부 불분명",
+        "customers": "근무 시간 중 사용 가능",
+        "yes": "누구나 사용 가능"
+    },
+    "sidebar": {
+        "close": "사이드바 닫기",
+        "excel": "엑셀",
+        "geojson": "GeoJSON",
+        "map_legend_title": "지도 범례",
+        "caption_info": "제세동기",
+        "no_data": "정보 없음",
+        "location": "위치",
+        "description": "설명",
+        "contact_number": "연락처",
+        "operator": "운영자",
+        "note": "비고",
+        "view": "오픈스트리트맵에서 보기",
+        "add_defibrillator": "제세동기 추가",
+        "openstreetmap_navigation": "오픈스트리트맵 탐색",
+        "google_maps_navigation": "구글 지도 탐색",
+        "opening_hours": "영업시간",
+        "csv": "CSV",
+        "indoor": "건물 안",
+        "download_title": "오픈스트리트맵에 있는 제세동기 정보 내려받기",
+        "edit": "오픈스트리트맵에서 수정하기",
+        "copy_url": "URL 복사"
+    },
+    "navbar": {
+        "login": "오픈스트리트맵 계정으로 로그인",
+        "visit_github": "GitHub 레포지토리 방문하기",
+        "logout": "로그아웃",
+        "visit_osmp_website": "오픈스트리트맵 폴란드 웹사이트 방문",
+        "about": "정보"
+    },
+    "form": {
+        "optional_field": "선택 항목"
+    }
+}
