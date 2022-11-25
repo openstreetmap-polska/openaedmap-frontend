@@ -16,6 +16,7 @@ const languages: { [index: string]: {nativeName: string} } = {
   nl: { nativeName: 'Nederlands' },
   pl: { nativeName: 'Polski' },
   sl: { nativeName: 'Slovenščina' },
+  zh_Hans: { nativeName: '简体中文' },
 };
 if (!isProduction) {
   languages['debug'] = { nativeName: '--debug--'}
