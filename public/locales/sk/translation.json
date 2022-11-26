@@ -1,1 +1,65 @@
-{}
+{
+    "access": {
+        "customers": "Prístupný počas otváracích hodín",
+        "no": "Nedostupný",
+        "unknown": "Neznámy prístup",
+        "yes": "Verejne prístupný",
+        "private": "Prístupný s povolením vlastníka"
+    },
+    "navbar": {
+        "login": "Prihlásiť sa cez OSM účet",
+        "about": "O projekte",
+        "logout": "Odhlásiť sa",
+        "visit_github": "Navštívte náš GitHub repozitár"
+    },
+    "sidebar": {
+        "csv": "CSV",
+        "caption_info": "AED",
+        "map_legend_title": "Legenda",
+        "no_data": "Žiadne dáta",
+        "download_title": "Stiahnuť AED dáta pridané do OSM",
+        "opening_hours": "Otváracie hodiny",
+        "contact_number": "Kontaktné číslo",
+        "edit": "Upraviť v OSM",
+        "view": "Zobraziť v OSM",
+        "location": "Umiestnenie",
+        "copy_url": "Skopírovať URL",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "indoor": "Vnútri budovy",
+        "description": "Popis",
+        "add_defibrillator": "Pridať defibrilátor"
+    },
+    "form": {
+        "optional_field": "Nepovinné pole",
+        "outside": "Vonku",
+        "is_indoor": "Je vnútri budovy?",
+        "accessibility": "Prístupnosť",
+        "location": "Popíšte umiestnenie",
+        "inside": "Vnútri",
+        "location_example": "Napríklad: Na stene blízko vchodu"
+    },
+    "footer": {
+        "add": "Pridať",
+        "add_aed": "Pridať AED",
+        "cancel": "Zrušiť",
+        "continue": "Pokračovať"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Otvorené",
+        "closed": "Zatvorené"
+    },
+    "indoor": {
+        "yes": "Áno",
+        "no": "Nie"
+    },
+    "modal": {
+        "aed_added_successfully": "AED úspešne pridaný.",
+        "should_appear_soon": "Objekt by sa mal objaviť na mape do 60 minút.",
+        "error_occurred": "Nastala chyba",
+        "title": "Informácia",
+        "current_zoom": "Aktuálne priblíženie:",
+        "zoom_need_to_be": "Priblíženie musí byť aspoň na úrovni 15."
+    }
+}
