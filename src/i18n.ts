@@ -13,9 +13,12 @@ const languages: { [index: string]: {nativeName: string} } = {
   fi: { nativeName: 'Suomi' },
   fr: { nativeName: 'Français' },
   it: { nativeName: 'Italiano' },
+  ko: { nativeName: '한국어' },
   nl: { nativeName: 'Nederlands' },
   pl: { nativeName: 'Polski' },
+  sk: { nativeName: 'Slovenčina' },
   sl: { nativeName: 'Slovenščina' },
+  sr: { nativeName: 'Српски / Srpski' },
   zh_Hans: { nativeName: '简体中文' },
 };
 if (!isProduction) {
