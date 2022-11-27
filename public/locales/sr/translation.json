@@ -1,1 +1,81 @@
-{}
+{
+    "access": {
+        "no": "Није доступно",
+        "yes": "Јавно доступан",
+        "private": "Доступно уз дозволу власника",
+        "customers": "Доступно у радно време",
+        "unknown": "Непозната доступност",
+        "permissive": "приступ до опозива"
+    },
+    "navbar": {
+        "created_with_<3_by": "с ❤️ направили",
+        "visit_github": "Посетите наш GitHub репозиторијум",
+        "login": "Пријавите се OSM налогом",
+        "visit_osmp_website": "Посетите web локацију OpenStreetMap Пољске",
+        "logout": "Одјава",
+        "about": "Основни подаци"
+    },
+    "sidebar": {
+        "close": "Затвори бочну траку",
+        "csv": "CSV",
+        "download_title": "Преузети AED подаци су додати у OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Легенда",
+        "caption_info": "AED",
+        "indoor": "Унутар објекта",
+        "location": "Локација",
+        "opening_hours": "Радно време",
+        "description": "Опис",
+        "contact_number": "Број телефона",
+        "operator": "Оператор",
+        "note": "Напомена",
+        "copy_url": "Копирај URL",
+        "edit": "Уреди у OSM",
+        "add_defibrillator": "Додај дефибрилатор",
+        "openstreetmap_navigation": "OpenStreetMap навигација",
+        "google_maps_navigation": "Google Maps навигација",
+        "no_data": "Нема података",
+        "view": "Прикажи у OSM"
+    },
+    "form": {
+        "marker_popup_text": "Преместите обележивач на AED локацију",
+        "is_indoor": "Да ли се налази унутар објекта?",
+        "outside": "Споља",
+        "accessibility": "Доступност",
+        "location": "Опишите локацију",
+        "location_example": "На пример: Окачено о зид, поред улаза",
+        "optional_field": "Необавезно поље",
+        "inside": "Унутра"
+    },
+    "footer": {
+        "add_aed": "Додај AED",
+        "cancel": "Откажи",
+        "continue": "Настави",
+        "add": "Додај"
+    },
+    "indoor": {
+        "no": "Не",
+        "yes": "Да"
+    },
+    "osmp": "OpenStreetMap Пољска",
+    "modal": {
+        "aed_added_successfully": "AED је успешно додат.",
+        "available_in_osm": "Доступно у OpenStreetMap под адресом:",
+        "error_occurred": "Дошло је до грешке",
+        "title": "Информације",
+        "need_to_login": "Потребно је да се пријавите својим OpenStreetMap налогом како бисте додавали нове локације.",
+        "current_zoom": "Тренутно увеличење:",
+        "create_account": "И ви можете да допринесете! Само направите бесплатан налог на ",
+        "should_appear_soon": "Објекат би требало да се појави на карти у року од 60 минута.",
+        "click_login_button": "Затворите овај прозор, а затим кликните на дугме у врху ради пријаве.",
+        "zoom_need_to_be": "Увеличење је потребно да буде минимално 15.",
+        "about_project": "OpenAEDMap је отворени пројекат који приказује све Automated External Defibrillators (AED) широм света. Web локација се заснива на OpenStreetMap подацима и производ је OpenStreetMap Пољске. Направљено је 2022. након што је Пољска web локација AED Mapa променила дизајн.",
+        "need_more_zoom": "Да бисте додали нови објекат потребно је да увеличате како би та локација била прецизна."
+    },
+    "opening_hours": {
+        "open": "Отворено",
+        "24_7": "24/7",
+        "closed": "Затворено"
+    }
+}
