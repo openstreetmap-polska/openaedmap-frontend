@@ -1,0 +1,82 @@
+{
+    "form": {
+        "marker_popup_text": "将标记移动到AED位置",
+        "is_indoor": "是否在建筑物内？",
+        "outside": "外部",
+        "optional_field": "可选字段",
+        "inside": "内部",
+        "accessibility": "无障碍",
+        "location": "描述位置",
+        "location_example": "例如：在入口旁边的墙上"
+    },
+    "footer": {
+        "add_aed": "添加AED",
+        "cancel": "取消",
+        "add": "添加",
+        "continue": "继续"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "开放",
+        "closed": "关闭"
+    },
+    "modal": {
+        "aed_added_successfully": "AED添加成功。",
+        "available_in_osm": "可在如下OpenStreetMap URL中查看：",
+        "title": "信息",
+        "error_occurred": "发生错误",
+        "click_login_button": "关闭本窗口并点击在顶部的登录按钮。",
+        "need_to_login": "要添加要素您需要使用OpenStreetMap账号登录。",
+        "should_appear_soon": "对象应于60分钟内显示在地图上。",
+        "create_account": "您也可以参与贡献！只需要一个 上免费注册一个账号。 ",
+        "about_osm": "OpenStreetMap (OSM)如同地图领域的维基百科。它可被所有人使用且所有人均可向其添加对象。您可以用您的OSM账号借助这一简单表格直接从本站上传AED位置。",
+        "current_zoom": "当前缩放等级：",
+        "zoom_need_to_be": "缩放等级最小应为15。",
+        "need_more_zoom": "要添加要素您需要放大地图以保证您提供的位置准确无误。",
+        "about_project": "OpenAEDMap是一个显示世界各地自动体外除颤器 (AED)的一个开放数据项目。该网站基于OpenStreetMap数据，由OpenStreetMap波兰社区主导，是在2022年重新设计波兰网站AED Mapa后所创建的。"
+    },
+    "sidebar": {
+        "view": "在OSM中查看",
+        "close": "关闭侧边栏",
+        "csv": "CSV",
+        "download_title": "下载添加到OSM上的AED数据",
+        "geojson": "GeoJSON",
+        "map_legend_title": "地图图例",
+        "caption_info": "AED",
+        "opening_hours": "开放时间",
+        "contact_number": "联系电话",
+        "note": "注记",
+        "edit": "在OSM中编辑",
+        "google_maps_navigation": "谷歌地图导航",
+        "no_data": "无数据",
+        "indoor": "在建筑物内",
+        "excel": "Excel",
+        "description": "描述",
+        "location": "位置",
+        "copy_url": "复制URL",
+        "operator": "运营者",
+        "add_defibrillator": "添加除颤器",
+        "openstreetmap_navigation": "OpenStreetMap 导航"
+    },
+    "osmp": "OpenStreetMap波兰社区",
+    "access": {
+        "private": "仅限所有者同意时可进入",
+        "yes": "可被公众使用",
+        "customers": "仅在上班时间可用",
+        "no": "不可用",
+        "unknown": "是否可进入未知",
+        "permissive": "一般情况下默认开放"
+    },
+    "navbar": {
+        "visit_github": "查看我们的GItHub仓库",
+        "login": "使用OSM账号登录",
+        "logout": "登出",
+        "about": "关于",
+        "created_with_<3_by": "由__用❤️创造",
+        "visit_osmp_website": "查看OpenStreetMap波兰社区网站"
+    },
+    "indoor": {
+        "no": "否",
+        "yes": "是"
+    }
+}
