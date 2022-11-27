@@ -10,12 +10,13 @@ const languages: { [index: string]: {nativeName: string} } = {
   de: { nativeName: 'Deutsch' },
   en: { nativeName: 'English' },
   es: { nativeName: 'Español' },
+  fi: { nativeName: 'Suomi' },
   fr: { nativeName: 'Français' },
   it: { nativeName: 'Italiano' },
   nl: { nativeName: 'Nederlands' },
   pl: { nativeName: 'Polski' },
   sl: { nativeName: 'Slovenščina' },
-  fi: { nativeName: 'Suomi' },
+  zh_Hans: { nativeName: '简体中文' },
 };
 if (!isProduction) {
   languages['debug'] = { nativeName: '--debug--'}
