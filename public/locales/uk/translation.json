@@ -1,1 +1,59 @@
-{}
+{
+    "access": {
+        "private": "Доступно з дозволу власника",
+        "yes": "Загальнодоступний",
+        "customers": "Доступно в робочий час",
+        "no": "Недоступний",
+        "unknown": "Доступність невідома"
+    },
+    "navbar": {
+        "about": "Про проєкт",
+        "login": "Увійти використовуючи OSM акаунт",
+        "logout": "Вийти"
+    },
+    "sidebar": {
+        "close": "Закрити бокову панель",
+        "geojson": "GeoJSON",
+        "opening_hours": "Години роботи",
+        "no_data": "Немає даних",
+        "description": "Опис",
+        "location": "Місцезнаходження",
+        "view": "Переглянути в OSM",
+        "add_defibrillator": "Додати дефібрилятор",
+        "operator": "Оператор",
+        "openstreetmap_navigation": "OpenStreetMap Навігація",
+        "contact_number": "Контактний номер",
+        "csv": "CSV",
+        "edit": "Редагувати в OSM",
+        "copy_url": "Копіювати URL",
+        "excel": "Excel",
+        "google_maps_navigation": "Google Maps Навігація"
+    },
+    "form": {
+        "inside": "Всередині",
+        "accessibility": "Доступність",
+        "optional_field": "Поле необов'язкове",
+        "location": "Опишіть місцезнаходження",
+        "outside": "Ззовні",
+        "is_indoor": "Чи всередині будівлі?",
+        "location_example": "Наприклад: На стіні біля входу"
+    },
+    "footer": {
+        "continue": "Продовжити",
+        "cancel": "Скасувати",
+        "add": "Додати"
+    },
+    "opening_hours": {
+        "open": "Відчинено",
+        "closed": "Зачинено",
+        "24_7": "24/7"
+    },
+    "modal": {
+        "title": "Інформація"
+    },
+    "osmp": "OpenStreetMap Poland",
+    "indoor": {
+        "no": "Ні",
+        "yes": "Так"
+    }
+}
