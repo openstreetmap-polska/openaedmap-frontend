@@ -30,7 +30,8 @@
         "excel": "Excel",
         "google_maps_navigation": "Google Maps Навігація",
         "indoor": "Всередині будівлі",
-        "caption_info": "AED"
+        "caption_info": "AED",
+        "download_title": "Завантажте дані AED, додані в OSM"
     },
     "form": {
         "inside": "Всередині",
