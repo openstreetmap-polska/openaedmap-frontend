@@ -9,7 +9,8 @@
     "navbar": {
         "about": "Про проєкт",
         "login": "Увійти використовуючи OSM акаунт",
-        "logout": "Вийти"
+        "logout": "Вийти",
+        "visit_github": "Відвідайте наш GitHub репозиторій"
     },
     "sidebar": {
         "close": "Закрити бокову панель",
@@ -27,7 +28,9 @@
         "edit": "Редагувати в OSM",
         "copy_url": "Копіювати URL",
         "excel": "Excel",
-        "google_maps_navigation": "Google Maps Навігація"
+        "google_maps_navigation": "Google Maps Навігація",
+        "indoor": "Всередині будівлі",
+        "caption_info": "AED"
     },
     "form": {
         "inside": "Всередині",
