@@ -1,0 +1,78 @@
+{
+    "sidebar": {
+        "opening_hours": "Працоўны час",
+        "close": "Зачыніць бакавую панэль",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "caption_info": "AED",
+        "location": "Размяшчэнне",
+        "description": "Апісанне",
+        "contact_number": "Кантактны тэлефон",
+        "operator": "Аператар",
+        "note": "Нататка",
+        "view": "Паглядзець у OSM",
+        "copy_url": "Скапіраваць URL",
+        "google_maps_navigation": "Навігацыя Google Maps",
+        "csv": "CSV",
+        "add_defibrillator": "Дадаць дэфібрылятар",
+        "map_legend_title": "Легенда",
+        "openstreetmap_navigation": "Навігацыя OpenStreetMap",
+        "no_data": "Няма дадзеных",
+        "edit": "Рэдагаваць у OSM",
+        "indoor": "Унутры будынка"
+    },
+    "access": {
+        "yes": "Публічна даступны",
+        "private": "Даступны з дазволу ўладальніка",
+        "customers": "Даступны ў працоўны час",
+        "no": "Недаступны",
+        "unknown": "Невядомы доступ"
+    },
+    "navbar": {
+        "created_with_<3_by": "створана з ❤️",
+        "visit_github": "Наведайце наш рэпазітар GitHub",
+        "login": "Увайдзіце з дапамогай конта OSM",
+        "logout": "Выйсці",
+        "about": "Пра праект",
+        "visit_osmp_website": "Наведайце вэб-старонку OpenStreetMap Польшча"
+    },
+    "form": {
+        "optional_field": "Поле неабавязковае",
+        "is_indoor": "Унутры будынка?",
+        "inside": "Унутры",
+        "outside": "Звонку",
+        "accessibility": "Даступнасць",
+        "location": "Апішыце месцазнаходжанне",
+        "location_example": "Напрыклад: На сцяне каля ўваходу"
+    },
+    "footer": {
+        "add": "Дадаць",
+        "add_aed": "Дадаць AED",
+        "cancel": "Скасаваць",
+        "continue": "Далей"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Адчынена",
+        "closed": "Зачынена"
+    },
+    "indoor": {
+        "yes": "Так",
+        "no": "Не"
+    },
+    "modal": {
+        "aed_added_successfully": "AED паспяхова дададзены.",
+        "available_in_osm": "Даступны ў OpenStreetMap па спасылцы:",
+        "error_occurred": "Адбылася памылка",
+        "title": "Інфармацыя",
+        "current_zoom": "Актуальны маштаб:",
+        "about_project": "OpenAEDMap — праект з адкрытымі дадзенымі, які паказвае ўсе аўтаматычныя вонкавыя дэфібрылятары (AED) па ўсім свеце. Вэб-сайт выкарыстоўвае дадзеныя OpenStreetMap і зьяўляецца вынікам працы асацыяцыі OpenStreetMap Польшча. Ён быў створаны ў 2022 годзе пасля зьмены дызайну польскага сайта AED Mapa.",
+        "about_osm": "OpenStreetMap (OSM) падобны на Вікіпэдыю для мап. Ім можа карыстацца кожны, і кожны можа дадаваць аб’екты на мапу. З дапамогаю свайго конта OSM вы можаце дадаваць месцы размяшчэння AED непасрэдна на гэтым сайце.",
+        "create_account": "Вы таксама можаце дапамагчы! Проста стварыце бясплатны конт на ",
+        "should_appear_soon": "Аб’ект зьявіцца на мапе праз прыблізна 60 хвілін.",
+        "need_to_login": "Каб дадаваць аб’екты, неабходна ўвайсці з дапамогай конта OpenStreetMap.",
+        "need_more_zoom": "Каб дадаваць аб’екты, неабходна павялічыць маштаб: так месцазнаходжаньне будзе дакладнейшым.",
+        "zoom_need_to_be": "Маштаб мусіць быць як мінімум 15."
+    },
+    "osmp": "OpenStreetMap Польшча"
+}

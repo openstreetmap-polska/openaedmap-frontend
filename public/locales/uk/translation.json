@@ -10,7 +10,8 @@
         "about": "Про проєкт",
         "login": "Увійти використовуючи OSM акаунт",
         "logout": "Вийти",
-        "visit_github": "Відвідайте наш GitHub репозиторій"
+        "visit_github": "Відвідайте наш GitHub репозиторій",
+        "created_with_<3_by": "створено з ❤️ від"
     },
     "sidebar": {
         "close": "Закрити бокову панель",
@@ -31,7 +32,8 @@
         "google_maps_navigation": "Google Maps Навігація",
         "indoor": "Всередині будівлі",
         "caption_info": "AED",
-        "download_title": "Завантажте дані AED, додані в OSM"
+        "download_title": "Завантажте дані AED, додані в OSM",
+        "map_legend_title": "Легенда карти"
     },
     "form": {
         "inside": "Всередині",
@@ -40,12 +42,14 @@
         "location": "Опишіть місцезнаходження",
         "outside": "Ззовні",
         "is_indoor": "Чи всередині будівлі?",
-        "location_example": "Наприклад: На стіні біля входу"
+        "location_example": "Наприклад: На стіні біля входу",
+        "marker_popup_text": "Перемістіть маркер до розташування AED"
     },
     "footer": {
         "continue": "Продовжити",
         "cancel": "Скасувати",
-        "add": "Додати"
+        "add": "Додати",
+        "add_aed": "Додати AED"
     },
     "opening_hours": {
         "open": "Відчинено",
@@ -53,7 +57,12 @@
         "24_7": "24/7"
     },
     "modal": {
-        "title": "Інформація"
+        "title": "Інформація",
+        "aed_added_successfully": "AED успішно додано.",
+        "should_appear_soon": "Об’єкт має з’явитися на карті протягом 60 хвилин.",
+        "error_occurred": "Виникла помилка",
+        "click_login_button": "Закрийте це вікно та натисніть кнопку входу вгорі, щоб увійти.",
+        "need_to_login": "Щоб додати об’єкти, вам потрібно увійти, використовуючи обліковий запис OpenStreetMap."
     },
     "osmp": "OpenStreetMap Poland",
     "indoor": {
