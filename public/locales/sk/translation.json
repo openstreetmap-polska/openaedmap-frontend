@@ -10,7 +10,9 @@
         "login": "Prihlásiť sa cez OSM účet",
         "about": "O projekte",
         "logout": "Odhlásiť sa",
-        "visit_github": "Navštívte náš GitHub repozitár"
+        "visit_github": "Navštívte náš GitHub repozitár",
+        "created_with_<3_by": "vytvorené s ❤️",
+        "visit_osmp_website": "Navštíviť stránku OpenStreetMap Poľsko"
     },
     "sidebar": {
         "csv": "CSV",
@@ -28,7 +30,12 @@
         "geojson": "GeoJSON",
         "indoor": "Vnútri budovy",
         "description": "Popis",
-        "add_defibrillator": "Pridať defibrilátor"
+        "add_defibrillator": "Pridať defibrilátor",
+        "operator": "Prevádzkovateľ",
+        "note": "Poznámka",
+        "openstreetmap_navigation": "Navigácia OpenStreetMap",
+        "google_maps_navigation": "Navigácia v Mapách Google",
+        "close": "Zavrieť bočný panel"
     },
     "form": {
         "optional_field": "Nepovinné pole",
@@ -60,6 +67,9 @@
         "error_occurred": "Nastala chyba",
         "title": "Informácia",
         "current_zoom": "Aktuálne priblíženie:",
-        "zoom_need_to_be": "Priblíženie musí byť aspoň na úrovni 15."
-    }
+        "zoom_need_to_be": "Priblíženie musí byť aspoň na úrovni 15.",
+        "need_to_login": "Pre pridanie objektov sa musíte prihlásiť pomocou svojho účtu OpenStreetMap.",
+        "about_project": "OpenAEDMap je open-data projekt, ktorý zobrazuje všetky automatizované externé defibrilátory (AED) po celom svete. Webová stránka je založená na údajoch z OpenStreetMap a je výsledkom práce združenia OpenStreetMap Poľsko. Bola vytvorená v roku 2022 po zmene poľskej webovej stránky AED Mapa na nový dizajn."
+    },
+    "osmp": "OpenStreetMap Poľsko"
 }
