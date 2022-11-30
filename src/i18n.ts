@@ -7,6 +7,7 @@ const isProduction = process.env.REACT_APP_ENV === 'production';
 
 const languages: { [index: string]: {nativeName: string} } = {
   ca: { nativeName: 'Català' },
+  cs: { nativeName: 'Čeština' },
   de: { nativeName: 'Deutsch' },
   en: { nativeName: 'English' },
   es: { nativeName: 'Español' },
