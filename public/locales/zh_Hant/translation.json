@@ -3,6 +3,12 @@
         "no": "不可用",
         "customers": "僅在上班時間可用",
         "private": "僅限獲得業主同意後進入",
-        "yes": "一般人可及"
+        "yes": "一般人可及",
+        "unknown": "未知可用性",
+        "permissive": "一般情況下默認"
+    },
+    "navbar": {
+        "created_with_<3_by": "由_用 ❤️ 製作",
+        "visit_github": "檢視我們的 GitHub 源碼庫"
     }
 }
