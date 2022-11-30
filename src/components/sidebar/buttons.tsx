@@ -1,4 +1,4 @@
-import {mdiMagnify, mdiPencil, mdiContentCopy, mdiMap} from "@mdi/js";
+import {mdiMagnify, mdiPencil, mdiContentCopy, mdiMap, mdiMapMarkerPlus} from "@mdi/js";
 import Icon from '@mdi/react';
 import { Button } from "react-bulma-components";
 import { useTranslation } from 'react-i18next';
@@ -53,7 +53,8 @@ export function CloseSidebarButton({ closeSidebarFunction }: { closeSidebarFunct
 
 export function AddAedButton({ nextStep }: { nextStep: () => void }) {
     const { t } = useTranslation();
-    return <Button color={'success'} mt={1} textWeight="light" onClick={nextStep}>
+    return <Button color={'success'} fullwidth={true} form="add_aed" onClick={nextStep}>
+        <Icon path={mdiMapMarkerPlus} className='icon mr-2' />
         {t('footer.add_aed')}
     </Button>
 }
