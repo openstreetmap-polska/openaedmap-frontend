@@ -9,6 +9,74 @@
     },
     "navbar": {
         "created_with_<3_by": "由_用 ❤️ 製作",
-        "visit_github": "檢視我們的 GitHub 源碼庫"
+        "visit_github": "檢視我們的 GitHub 源碼庫",
+        "login": "使用 OSM 帳號登入",
+        "logout": "登出",
+        "about": "關於",
+        "visit_osmp_website": "造訪開放街圖波蘭的社群網站"
+    },
+    "sidebar": {
+        "close": "關閉側邊欄",
+        "csv": "CSV",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "地圖圖徵",
+        "no_data": "沒有資料",
+        "indoor": "在建築物內",
+        "opening_hours": "開放時間",
+        "note": "註解",
+        "edit": "在 OSM 中編輯",
+        "view": "在 OSM 中察看",
+        "copy_url": "複製網址",
+        "add_defibrillator": "新增除顫器 (AED)",
+        "google_maps_navigation": "Google 地圖導航",
+        "contact_number": "聯繫電話",
+        "caption_info": "AED",
+        "download_title": "下載新增到 OSM 上的 AED 資料",
+        "location": "位置",
+        "description": "描述",
+        "operator": "營運者",
+        "openstreetmap_navigation": "開放街圖導航"
+    },
+    "form": {
+        "optional_field": "可選欄位",
+        "marker_popup_text": "將標記移動到 AED 位置",
+        "is_indoor": "是否在建築物內？",
+        "inside": "內部",
+        "outside": "外面",
+        "accessibility": "無障礙",
+        "location": "描述位置",
+        "location_example": "例如：在入口附近的牆上"
+    },
+    "footer": {
+        "add": "新增",
+        "add_aed": "新增 AED",
+        "continue": "繼續",
+        "cancel": "取消"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "開放",
+        "closed": "關閉"
+    },
+    "indoor": {
+        "no": "否",
+        "yes": "是"
+    },
+    "osmp": "開放街圖波蘭社群",
+    "modal": {
+        "aed_added_successfully": "成功新增 AED。",
+        "should_appear_soon": "物件應當在 60 分鐘以內看得到。",
+        "error_occurred": "發生錯誤",
+        "title": "資訊",
+        "need_to_login": "要新增圖徵必須使用開放街圖帳號登入。",
+        "click_login_button": "關閉這個視窗然後點上方的登入按鈕來登入。",
+        "need_more_zoom": "要新增圖徵必須放大位置才能確保位置正確。",
+        "current_zoom": "當前縮放等級：",
+        "create_account": "只要免費創建帳號，你也可以參與貢獻！ ",
+        "available_in_osm": "可以到以下的開放街圖網址察看：",
+        "zoom_need_to_be": "最小所需的縮放等級是 15。",
+        "about_project": "開放 AED 地圖是能夠顯示全球去顫器 (AED) 的開放資料專案。網站的資料來源是開放街圖以及開放街圖波蘭的共同協力。網站的創立時間是波蘭網站原先的 AED Mapa 改版，而在 2022 年推出新設計。",
+        "about_osm": "開放街圖 (OpenStreetMap, OSM) 就是地圖版的維基百科，能夠被任何人使用，任何人都可以在地圖新增物件。你可以用你的 OSM 帳號，透過簡單的表單輸入來直接新增 AED 的位置。"
     }
 }
