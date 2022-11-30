@@ -6,8 +6,8 @@ import Backend from 'i18next-http-backend';
 const isProduction = process.env.REACT_APP_ENV === 'production';
 
 const languages: { [index: string]: {nativeName: string} } = {
-  cs: { nativeName: 'Čeština' },
   ca: { nativeName: 'Català' },
+  cs: { nativeName: 'Čeština' },
   de: { nativeName: 'Deutsch' },
   en: { nativeName: 'English' },
   es: { nativeName: 'Español' },
