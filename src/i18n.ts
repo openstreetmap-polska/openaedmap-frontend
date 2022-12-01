@@ -6,7 +6,9 @@ import Backend from 'i18next-http-backend';
 const isProduction = process.env.REACT_APP_ENV === 'production';
 
 const languages: { [index: string]: {nativeName: string} } = {
+  be: { nativeName: 'беларуская мова' },
   ca: { nativeName: 'Català' },
+  cs: { nativeName: 'Čeština' },
   de: { nativeName: 'Deutsch' },
   en: { nativeName: 'English' },
   es: { nativeName: 'Español' },
@@ -19,7 +21,9 @@ const languages: { [index: string]: {nativeName: string} } = {
   sk: { nativeName: 'Slovenčina' },
   sl: { nativeName: 'Slovenščina' },
   sr: { nativeName: 'Српски / Srpski' },
-  zh_Hans: { nativeName: '简体中文' },
+  uk: { nativeName: 'українська мова' },
+  'zh-Hans': { nativeName: '简体中文' },
+  'zh-Hant': { nativeName: '繁体中文' },
 };
 if (!isProduction) {
   languages['debug'] = { nativeName: '--debug--'}

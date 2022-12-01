@@ -2,12 +2,12 @@
     .sidebar {
         position: absolute;
         margin: 0.5rem !important;
-        width: 425px;
+        width: 450px;
         border-radius: 10px;
         box-shadow: 0 .5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
-        max-height: 85vh;
-        overflow: auto !important;
+        max-height: 85vh !important;
         z-index: 10 !important;
+        overflow-y: hidden !important;
     }
 }
 
@@ -17,10 +17,10 @@
         margin: 0 !important;
         width: 100vw;
         display: block !important;
-        overflow-wrap: break-word;
-        max-height: 85vh;
+        max-height: 85vh !important;
         z-index: 10 !important;
-        overflow: auto !important;
+        overflow-y: hidden !important;
+        overflow-wrap: break-word;
     }
 }
 
@@ -52,8 +52,21 @@
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh !important;
     z-index: 1;
     white-space: pre-wrap;
+}
+
+.card-content
+{
+    overflow-y: auto;
+}
+
+.card-footer
+{
+    flex: 1;
 }
 
 #sidebar-card-image {

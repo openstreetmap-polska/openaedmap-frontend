@@ -1,0 +1,81 @@
+{
+    "access": {
+        "customers": "Přístupný během otvírací doby",
+        "no": "Nedostupný",
+        "private": "Přístupný s povolením vlastníka",
+        "yes": "Veřejně přístupný",
+        "unknown": "Neznámý přístup"
+    },
+    "navbar": {
+        "created_with_<3_by": "vytvořeno s ❤️",
+        "visit_github": "Navštivte náš GitHub repozitář",
+        "visit_osmp_website": "Navštívit stránku OpenStreetMap Polsko",
+        "login": "Přihlásit se přes OSM účet",
+        "logout": "Odhlásit se",
+        "about": "O projektu"
+    },
+    "sidebar": {
+        "csv": "CSV",
+        "download_title": "Stáhnout AED data přidaná do OSM",
+        "excel": "Excel",
+        "map_legend_title": "Legenda",
+        "caption_info": "AED",
+        "no_data": "Žádná data",
+        "location": "Umístění",
+        "opening_hours": "Otvírací doba",
+        "description": "Popis",
+        "contact_number": "Kontaktní číslo",
+        "operator": "Provozovatel",
+        "note": "Poznámka",
+        "edit": "Upravit v OSM",
+        "view": "Zobrazit v OSM",
+        "copy_url": "Zkopírovat URL",
+        "add_defibrillator": "Přidat defibrilátor",
+        "openstreetmap_navigation": "Navigace OpenStreetMap",
+        "google_maps_navigation": "Navigace Google Maps",
+        "close": "Zavřít boční panel",
+        "geojson": "GeoJSON",
+        "indoor": "Uvnitř budovy"
+    },
+    "form": {
+        "optional_field": "Nepovinné pole",
+        "marker_popup_text": "Přesunout značku do umístění AED",
+        "outside": "Venku",
+        "accessibility": "Přístupnost",
+        "location": "Popište umístění",
+        "location_example": "Například: Na stěně blízko vchodu",
+        "is_indoor": "Nachází se uvnitř budovy?",
+        "inside": "Uvnitř"
+    },
+    "footer": {
+        "add": "Přidat",
+        "add_aed": "Přidat AED",
+        "continue": "Pokračovat",
+        "cancel": "Zrušit"
+    },
+    "indoor": {
+        "no": "Ne",
+        "yes": "Ano"
+    },
+    "osmp": "OpenStreetMap Polsko",
+    "modal": {
+        "aed_added_successfully": "AED úspěšně přidán.",
+        "available_in_osm": "Dostupné na OpenStreetMap na url:",
+        "should_appear_soon": "Objekt by se měl objevit na mapě do 60 minut.",
+        "error_occurred": "Nastala chyba",
+        "title": "Informace",
+        "need_to_login": "Pro přidání obsahu se musíte přihlásit pomocí účtu OpenStreetMap.",
+        "click_login_button": "Zavři toto okno a pro přihlášení klikni nahoře na tlačítko přihlášení.",
+        "need_more_zoom": "Pro přidání obsahu se musíte přiblížit, aby umístění bylo přesné.",
+        "current_zoom": "Současné přiblížení:",
+        "zoom_need_to_be": "Přiblížení musí být alespoň na úrovni 15.",
+        "about_osm": "OpenStreetMap (OSM) je něco jako Wikipedie pro mapy. Je k dispozici všem a každý může do mapy přidávat objekty. Pomocí jednoduchého formuláře a svého OSM účtu můžete přidat umístění AED přímo z této stránky.",
+        "create_account": "Přispějte také! Vytvořte si účet na ",
+        "about_project": "OpenAEDMap je open-data projekt, který zobrazuje všechny automatické externí defibrilátory (AED) na světě. Webová stránka je založena na datech z OpenStreetMap a je výsledkem práce sdružení OpenStreetMap Polsko. Byla vytvořena v roce 2022 po redesignu polské stránky AED Mapa."
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Otevřeno",
+        "closed": "Zavřeno"
+    }
+}
