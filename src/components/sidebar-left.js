@@ -15,6 +15,7 @@ import {
   GoogleMapsNavigationButton
 } from './sidebar/buttons';
 import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumber";
+import { CheckDateFormField } from "./sidebar/verificationDate"
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
 import { LocationField, LocationFormField } from "./sidebar/location";
@@ -55,6 +56,9 @@ const parseForm = (formElements) => {
   //phone
   const phone = formElements.aedPhone;
   if (phone.value.trim()) tags["phone"] = phone.value.trim();
+
+  const checkDate = formElements.aedCheckDate;
+  if (checkDate.value.trim()) tags["check_date"] = checkDate.value.trim();
 
   return tags
 };
@@ -166,6 +170,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
               <IndoorFormField />
               <LocationFormField lang={i18n.resolvedLanguage} />
               <ContactPhoneFormField />
+              <CheckDateFormField />
               </form>
             </Card.Content>
             <Card.Footer>
