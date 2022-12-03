@@ -36,7 +36,8 @@
         "copy_url": "Copy URL",
         "add_defibrillator": "Add defibrillator",
         "openstreetmap_navigation": "OpenStreetMap Navigation",
-        "google_maps_navigation": "Google Maps Navigation"
+        "google_maps_navigation": "Google Maps Navigation",
+        "verification_date": "Date of survey"
     },
     "form": {
         "optional_field": "Field optional",
