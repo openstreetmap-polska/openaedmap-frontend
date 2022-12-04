@@ -36,7 +36,8 @@
         "copy_url": "Copiar URL",
         "add_defibrillator": "Añadir desfibrilador",
         "openstreetmap_navigation": "Navegación con OpenStreetMap",
-        "google_maps_navigation": "Navegación con Google Maps"
+        "google_maps_navigation": "Navegación con Google Maps",
+        "verification_date": "Fecha de la investigación"
     },
     "form": {
         "optional_field": "Campo opcional",
