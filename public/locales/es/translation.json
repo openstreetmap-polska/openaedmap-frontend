@@ -37,7 +37,7 @@
         "add_defibrillator": "Añadir desfibrilador",
         "openstreetmap_navigation": "Navegación con OpenStreetMap",
         "google_maps_navigation": "Navegación con Google Maps",
-        "verification_date": "Fecha de la investigación"
+        "verification_date": "Fecha de la encuesta"
     },
     "form": {
         "optional_field": "Campo opcional",
