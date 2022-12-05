@@ -28,7 +28,8 @@
         "close": "Fermer la barre latérale",
         "copy_url": "Copier l'URL",
         "openstreetmap_navigation": "Navigation OpenStreetMap",
-        "google_maps_navigation": "Navigation Google Maps"
+        "google_maps_navigation": "Navigation Google Maps",
+        "verification_date": "Date de l’enquête"
     },
     "form": {
         "optional_field": "Champ facultatif",
