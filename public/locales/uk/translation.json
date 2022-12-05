@@ -36,7 +36,8 @@
         "caption_info": "AED",
         "download_title": "Завантажте дані AED, додані в OSM",
         "map_legend_title": "Легенда карти",
-        "note": "Примітка"
+        "note": "Примітка",
+        "verification_date": "Дата опитування"
     },
     "form": {
         "inside": "Всередині",
