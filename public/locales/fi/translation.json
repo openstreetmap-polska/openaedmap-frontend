@@ -60,7 +60,8 @@
         "add_defibrillator": "Lisää defibrillaattori",
         "operator": "Operaattori",
         "google_maps_navigation": "Google Maps-navigointi",
-        "openstreetmap_navigation": "OpenStreetMap-navigointi"
+        "openstreetmap_navigation": "OpenStreetMap-navigointi",
+        "verification_date": "Tutkimuksen päivämäärä"
     },
     "footer": {
         "add": "Lisää",
