@@ -56,7 +56,8 @@
         "view": "Visualizza in OSM",
         "copy_url": "Copia l'URL",
         "openstreetmap_navigation": "Navigazione OpenStreetMap",
-        "google_maps_navigation": "Navigazione Google Maps"
+        "google_maps_navigation": "Navigazione Google Maps",
+        "verification_date": "Data dell’indagine"
     },
     "osmp": "OpenStreetMap Polonia",
     "modal": {
