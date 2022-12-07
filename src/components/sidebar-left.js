@@ -15,6 +15,7 @@ import {
   GoogleMapsNavigationButton
 } from './sidebar/buttons';
 import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumber";
+import { CheckDateFormField, CheckDateField } from "./sidebar/verificationDate"
 import { DescriptionField } from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
 import { LocationField, LocationFormField } from "./sidebar/location";
@@ -56,6 +57,9 @@ const parseForm = (formElements) => {
   const phone = formElements.aedPhone;
   if (phone.value.trim()) tags["phone"] = phone.value.trim();
 
+  const checkDate = formElements.aedCheckDate;
+  if (checkDate.value.trim()) tags["check_date"] = checkDate.value.trim();
+
   return tags
 };
 
@@ -81,7 +85,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             </span>
             <CloseSidebarButton closeSidebarFunction={closeSidebar} />
           </Card.Header>
-          <Card.Content p={4} className="content">
+          <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
             <Columns vCentered="1" className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><IndoorField indoor={data.indoor} /></Columns.Column>
             </Columns>
@@ -97,9 +101,10 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             <Columns vCentered="1" className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiAccountSupervisorOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><OperatorField operator={data.operator} /></Columns.Column>
             </Columns>
-            <Columns vCentered="1" className="is-mobile">
+            <Columns vCentered="1" className="is-mobile pb-0 mb-0">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiInformationOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><DescriptionField description={data[`description_${i18n.resolvedLanguage}`] || data["description"]} /></Columns.Column>
             </Columns>
+            <CheckDateField check_date={data.check_date}></CheckDateField>
           </Card.Content>
           <Card.Footer>
             <Card.Footer.Item className="has-background-white-ter">
@@ -166,6 +171,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
               <IndoorFormField />
               <LocationFormField lang={i18n.resolvedLanguage} />
               <ContactPhoneFormField />
+              <CheckDateFormField />
               </form>
             </Card.Content>
             <Card.Footer>

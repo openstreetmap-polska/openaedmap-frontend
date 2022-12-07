@@ -36,7 +36,8 @@
         "location": "位置",
         "description": "描述",
         "operator": "營運者",
-        "openstreetmap_navigation": "開放街圖導航"
+        "openstreetmap_navigation": "開放街圖導航",
+        "verification_date": "調查日期"
     },
     "form": {
         "optional_field": "可選欄位",

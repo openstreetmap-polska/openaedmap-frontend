@@ -15,7 +15,7 @@ export const DescriptionField: FC<DescriptionProps> = ({ description }) => {
 
     return (
         <div>
-        <p className="has-text-weight-light has-text-grey mb-1">
+        <p className="has-text-weight-light has-text-grey mb-0 pb-0">
             {t('sidebar.description') + ": "}
         </p>
         <DescriptionText description={description} />

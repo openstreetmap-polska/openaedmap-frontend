@@ -1,0 +1,29 @@
+{
+    "access": {
+        "yes": "Публичный доступ",
+        "customers": "Доступно в часы работы",
+        "no": "Недоступно",
+        "private": "Доступно с разрешением владельца",
+        "unknown": "Неизвестный статус доступа"
+    },
+    "navbar": {
+        "visit_osmp_website": "Посетите сайт польского OpenStreetMap",
+        "created_with_<3_by": "Создано с любовью",
+        "visit_github": "Посетите наше хранилище GitHub",
+        "login": "Войти с помощью аккаунта OSM",
+        "logout": "Выйти из аккаунта",
+        "about": "О"
+    },
+    "sidebar": {
+        "close": "Закрыть боковую панель",
+        "download_title": "Скачать данные AED, добавленные в OSM",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Легенда карты",
+        "no_data": "Нет данных",
+        "indoor": "Внутри здания",
+        "location": "Местоположение",
+        "opening_hours": "Часы работы",
+        "description": "Описание",
+        "contact_number": "Номер телефона"
+    }
+}

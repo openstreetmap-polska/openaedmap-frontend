@@ -34,6 +34,13 @@ jobs:
         REACT_APP_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         REACT_APP_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
       run: npm run build
+    - name: Create robots.txt
+      run: |
+        cat << 'EOF' >> build/robots.txt
+        # https://www.robotstxt.org/robotstxt.html
+        User-agent: *
+        Disallow: /
+        EOF
     - name: Send to AWS S3 bucket and invalidate cache
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
