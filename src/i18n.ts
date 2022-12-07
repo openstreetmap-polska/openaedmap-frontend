@@ -18,6 +18,7 @@ const languages: { [index: string]: {nativeName: string} } = {
   ko: { nativeName: '한국어' },
   nl: { nativeName: 'Nederlands' },
   pl: { nativeName: 'Polski' },
+  ru: { nativeName: 'Русский язык' },
   sk: { nativeName: 'Slovenčina' },
   sl: { nativeName: 'Slovenščina' },
   sr: { nativeName: 'Српски / Srpski' },
