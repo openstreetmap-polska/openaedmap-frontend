@@ -2,7 +2,7 @@
     "access": {
         "yes": "Publiek toegankelijk",
         "private": "Toegankelijk met vergunning van de eigenaar",
-        "customers": "Toegankelijk tijdens de openingstijden",
+        "customers": "Toegankelijk tijdens werkuren",
         "no": "Niet toegankelijk",
         "permissive": "Toegang vrijgegeven",
         "unknown": "Toegang onbekend"
@@ -36,7 +36,8 @@
         "copy_url": "URL kopiëren",
         "add_defibrillator": "Defibrillator toevoegen",
         "openstreetmap_navigation": "OpenStreetMap-navigatie",
-        "google_maps_navigation": "Google Maps-navigatie"
+        "google_maps_navigation": "Google Maps-navigatie",
+        "verification_date": "Datum van bevestiging"
     },
     "footer": {
         "add": "Toevoegen",
