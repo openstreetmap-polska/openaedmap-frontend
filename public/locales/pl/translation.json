@@ -13,7 +13,8 @@
         "visit_osmp_website": "Odwiedź stronę OpenStreetMap Polska",
         "login": "Zaloguj się kontem OSM",
         "logout": "Wyloguj",
-        "about": "O projekcie"
+        "about": "O projekcie",
+        "hosted_by": "hosting dzięki"
     },
     "sidebar": {
         "close": "Zamknij panel boczny",

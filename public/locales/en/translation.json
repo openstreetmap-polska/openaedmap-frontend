@@ -13,7 +13,8 @@
         "visit_osmp_website": "Visit OpenStreetMap Poland's website",
         "login": "Log in using OSM account",
         "logout": "Log out",
-        "about": "About"
+        "about": "About",
+        "hosted_by": "hosted by"
     },
     "sidebar": {
         "close": "Close sidebar",
