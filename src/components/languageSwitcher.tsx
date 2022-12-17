@@ -4,10 +4,11 @@ import { languages } from '../i18n';
 import { Navbar } from 'react-bulma-components';
 import Icon from '@mdi/react'
 import { mdiEarth } from '@mdi/js';
-
+import { useTranslation } from 'react-i18next';
 
 
 export function LanguageSwitcher() {
+    const { t } = useTranslation();
     return (
         <Navbar.Item touch={{ display: 'hidden' }} desktop={{ only: true, }} hoverable={true} >
             <Navbar.Link className="has-text-white" key={i18n.resolvedLanguage}>
@@ -24,8 +25,9 @@ export function LanguageSwitcher() {
                         );
                     } else return null;
                 }).filter(x => x)}
-                <Navbar.Item>
-                <a href ="https://github.com/openstreetmap-polska/openaedmap-frontend#translating" rel="noreferrer" target="_blank"> 🖋 Help in translation</a>
+                <Navbar.Divider/>
+                <Navbar.Item href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating" rel="noreferrer" target="_blank">
+                    🖋&nbsp;{t('navbar.help_translating')}
                 </Navbar.Item>
             </Navbar.Dropdown>
         </Navbar.Item>
