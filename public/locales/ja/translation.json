@@ -1,0 +1,79 @@
+{
+    "sidebar": {
+        "map_legend_title": "地図の凡例",
+        "excel": "Excel",
+        "close": "サイドバーを閉じる",
+        "caption_info": "AED",
+        "add_defibrillator": "除細動器(AED)を追加",
+        "view": "OSMで表示",
+        "edit": "OSMで編集",
+        "copy_url": "URLをコピー",
+        "description": "説明",
+        "opening_hours": "営業時間",
+        "no_data": "データなし",
+        "geojson": "GeoJSON",
+        "verification_date": "調査日",
+        "google_maps_navigation": "Google Mapsのナビゲーション",
+        "openstreetmap_navigation": "OpenStreetMapのナビゲーション",
+        "operator": "管理者",
+        "contact_number": "電話番号",
+        "note": "メモ",
+        "download_title": "OSMに追加されたAEDデータをダウンロード",
+        "csv": "CSV",
+        "indoor": "建物内",
+        "location": "位置"
+    },
+    "footer": {
+        "add": "追加",
+        "cancel": "キャンセル",
+        "add_aed": "AEDを追加"
+    },
+    "navbar": {
+        "about": "概要",
+        "logout": "ログアウト",
+        "login": "OSMアカウントでログイン",
+        "created_with_<3_by": "作成者 ❤️",
+        "visit_osmp_website": "OpenStreetMap ポーランドのウェブサイトに訪れる",
+        "visit_github": "GitHubリポジトリに訪れる"
+    },
+    "indoor": {
+        "yes": "はい",
+        "no": "いいえ"
+    },
+    "form": {
+        "location": "位置の説明",
+        "location_example": "例:入口付近の壁",
+        "inside": "内側",
+        "outside": "外側",
+        "marker_popup_text": "マーカーをAEDの位置に移動",
+        "accessibility": "利用可能状況",
+        "is_indoor": "建物内にありますか？",
+        "optional_field": "任意の項目"
+    },
+    "opening_hours": {
+        "24_7": "24時間年中無休",
+        "closed": "閉鎖中",
+        "open": "営業中"
+    },
+    "modal": {
+        "aed_added_successfully": "AEDの追加に成功しました。",
+        "available_in_osm": "次のURLでOpenStreetMapで利用可能です:",
+        "current_zoom": "現在のズーム:",
+        "error_occurred": "エラーが発生しました",
+        "title": "情報",
+        "click_login_button": "このウィンドウを閉じて上部のログインボタンからログインしてください。",
+        "need_more_zoom": "地物を追加するには、指定する場所が正確になるようにズームして拡大する必要があります。",
+        "need_to_login": "地物を追加するにはOpenStreetMapアカウントにログインする必要があります。",
+        "zoom_need_to_be": "ズームレベルは最低でも15である必要があります。",
+        "should_appear_soon": "オブジェクトは60分以内にマップに表示されます。",
+        "create_account": "無料のアカウントを作成することで、あなたも貢献できます！ "
+    },
+    "osmp": "OpenStreetMap ポーランド",
+    "access": {
+        "yes": "誰でも利用可能",
+        "no": "利用不可",
+        "unknown": "利用可能状況が不明",
+        "customers": "営業時間内は利用可能",
+        "private": "所有者の許可があれば利用可能"
+    }
+}
