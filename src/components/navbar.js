@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import { Button, Image, Navbar } from 'react-bulma-components';
+import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher, LanguageSwitcherMobile } from './languageSwitcher';
 import Icon from '@mdi/react';
@@ -29,14 +29,15 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                     <span className="has-text-weight-light is-size-6 pl-0">
                         {t('navbar.created_with_<3_by')}
                         &nbsp;
-                        <a className="has-text-weight-medium navbarUrl"
-                        href="https://openstreetmap.org.pl/" rel="noreferrer" target="_blank"
-                        title={t('navbar.visit_osmp_website')}>{t('osmp')}</a>
+                        <a className="has-text-weight-medium navbarUrl" href="https://openstreetmap.org.pl/" rel="noreferrer" target="_blank"
+                            title={t('navbar.visit_osmp_website')}>
+                            {t('osmp')}
+                        </a>
                     </span>
                 </Navbar.Item>
                 <Navbar.Item className='is-hidden-touch' renderAs='div' pl={0} pr={0}>
-                    <span className='has-text-weight-light is-size-7 pr-1'>{t('navbar.hosted_by')} </span>
-                    <Image alt='CloudFerro' src='img/cloudferro_logo.png'></Image>
+                    <span className='has-text-weight-light is-size-6 pr-1'>{t('navbar.hosted_by')} </span>
+                    <img alt='CloudFerro' src='img/cloudferro_logo.png'></img>
                 </Navbar.Item>
                 <LanguageSwitcherMobile/>
                 <Navbar.Burger
@@ -75,7 +76,7 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                     </Navbar.Item>
                     <Navbar.Item className='is-hidden-desktop' textColor='white' renderAs='div' pl={0} pr={0}>
                         <span color='white' className='has-text-weight-light is-size-6 pr-1'>{t('navbar.hosted_by')} </span>
-                        <img renderAs='div' alt='CloudFerro' src='img/cloudferro_logo.png'></img>
+                        <img alt='CloudFerro' src='img/cloudferro_logo.png'></img>
                     </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>
