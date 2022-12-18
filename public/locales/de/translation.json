@@ -13,7 +13,9 @@
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
         "login": "Mit OSM-Konto anmelden",
         "logout": "Abmelden",
-        "about": "Über"
+        "about": "Über",
+        "hosted_by": "gehostet von",
+        "help_translating": "Helfe beim übersetzen"
     },
     "sidebar": {
         "close": "Seitenleiste schließen",
