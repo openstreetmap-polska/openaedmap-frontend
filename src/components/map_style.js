@@ -1,5 +1,9 @@
-var getUrl = window.location;
-var baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname;
+const getUrl = window.location;
+const baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname;
+const spriteUrl = (new URL("sprite", baseUrl)).href;
+const isProduction = process.env.REACT_APP_ENV === 'production';
+const tilesBaseUrl = isProduction ? "https://openaedmap.openstreetmap.org.pl" : "https://openaedmap-dev.openstreetmap.org.pl";
+const tilesUrl = tilesBaseUrl + "/api/v1/tile/{z}/{x}/{y}.mvt"; // can't use URL class since this is a template not literal url
 
 const style = {
     "version": 8,
@@ -15,11 +19,11 @@ const style = {
         },
         "aed-locations": {
           "type": "vector",
-          "tiles": ["https://aed.openstreetmap.org.pl/mvt/{z}/{x}/{y}.pbf"],
+          "tiles": [tilesUrl],
           "maxzoom": 13
         }
     },
-    "sprite": new URL("sprite", baseUrl).href,
+    "sprite": spriteUrl,
     "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
     "layers": [
         {
@@ -29,6 +33,17 @@ const style = {
             "layout": {
                 "visibility": "visible"
             }
+        },
+        {
+          "id": "borders",
+          "type": "line",
+          "source": "aed-locations",
+          "source-layer": "countries",
+          "paint": {
+            "line-color": "#c30000",
+            "line-width": 4,
+            "line-blur": 1
+          }
         },
         {
             "id": "unclustered",
@@ -51,7 +66,8 @@ const style = {
           "type": "circle",
           "source": "aed-locations",
           "source-layer": "defibrillators",
-          "filter": ["has", "point_count"],
+          "minzoom": 6,
+          "filter": [">", "point_count", 0],
           "layout": {"visibility": "visible"},
           "paint": {
             "circle-color": "rgba(0,145,64, 0.85)",
@@ -73,16 +89,38 @@ const style = {
           "type": "symbol",
           "source": "aed-locations",
           "source-layer": "defibrillators",
-          "filter": ["has", "point_count"],
+          "minzoom": 6,
+          "filter": [">", "point_count", 0],
           "layout": {
             "text-allow-overlap": true,
-            "text-field": "{point_count}",
+            "text-field": "{point_count_abbreviated}",
             "text-font": ["Open Sans Bold"],
             "text-size": 10,
             "text-letter-spacing": 0.05,
             "visibility": "visible"
           },
           "paint": {"text-color": "#f5f5f5"}
+        },
+        {
+          "id": "countries-label",
+          "type": "symbol",
+          "source": "aed-locations",
+          "source-layer": "defibrillators",
+          "maxzoom": 6,
+          "layout": {
+            "text-allow-overlap": true,
+            "text-field": "{country_name}\n{point_count_abbreviated}",
+            "text-font": ["Open Sans Bold"],
+            "text-size": 14,
+            "text-letter-spacing": 0.05,
+            "visibility": "visible"
+          },
+          "paint": {
+            "text-halo-width": 3,
+            "text-halo-color": "#f5f5f5",
+            "text-halo-blur": 1
+            // "text-color": "#f5f5f5"
+          }
         }
     ],
     "id": "style"
