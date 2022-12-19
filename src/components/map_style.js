@@ -161,12 +161,13 @@ const style = {
           "source-layer": "defibrillators",
           "maxzoom": 6,
           "layout": {
-            "text-allow-overlap": true,
+            "text-allow-overlap": false,
             "text-field": "{country_name}\n{point_count_abbreviated}",
             "text-font": ["Open Sans Bold"],
             "text-size": 14,
             "text-letter-spacing": 0.05,
-            "visibility": "visible"
+            "visibility": "visible",
+            "symbol-sort-key": ["*", ["get", "point_count"], -1]
           },
           "paint": {
             "text-halo-width": 3,
