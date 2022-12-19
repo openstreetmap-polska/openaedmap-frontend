@@ -35,13 +35,23 @@ const style = {
             }
         },
         {
+          "id": "borders-fill",
+          "type": "fill",
+          "source": "aed-locations",
+          "source-layer": "countries",
+          "paint": {
+            "fill-color": "#7a7a7a",
+            "fill-opacity": 0.5
+          }
+        },
+        {
           "id": "borders",
           "type": "line",
           "source": "aed-locations",
           "source-layer": "countries",
           "paint": {
-            "line-color": "#c30000",
-            "line-width": 4,
+            "line-color": "#ff3333",
+            "line-width": 2,
             "line-blur": 1
           }
         },
@@ -50,6 +60,7 @@ const style = {
             "type": "symbol",
             "source": "aed-locations",
             "source-layer": "defibrillators",
+            "minzoom": 9,
             "filter": ["!has", "point_count"],
             "layout": {
                 "icon-image": [
@@ -62,11 +73,28 @@ const style = {
             }
         },
         {
+          "id": "unclustered-low-zoom",
+          "type": "symbol",
+          "source": "aed-locations",
+          "source-layer": "defibrillators",
+          "maxzoom": 9,
+          "filter": ["!has", "point_count"],
+          "layout": {
+              "icon-image": [
+                "coalesce",
+                ["image", ["concat", "marker_", ["get", "access"]]],
+                ["image", "marker_unknown"]
+              ],
+              "icon-size": 0.3,
+              "icon-allow-overlap": true
+          }
+      },
+        {
           "id": "clustered-circle",
           "type": "circle",
           "source": "aed-locations",
           "source-layer": "defibrillators",
-          "minzoom": 6,
+          "minzoom": 8,
           "filter": [">", "point_count", 0],
           "layout": {"visibility": "visible"},
           "paint": {
@@ -79,6 +107,30 @@ const style = {
               16,
               999,
               20
+              ],
+            "circle-stroke-color": "rgba(245, 245, 245, 0.88)",
+            "circle-stroke-width": 2
+          }
+        },
+        {
+          "id": "clustered-circle-low-zoom",
+          "type": "circle",
+          "source": "aed-locations",
+          "source-layer": "defibrillators",
+          "minzoom": 6,
+          "maxzoom": 8,
+          "filter": [">", "point_count", 0],
+          "layout": {"visibility": "visible"},
+          "paint": {
+            "circle-color": "rgba(0,145,64, 0.85)",
+            'circle-radius': [
+              'step',
+              ['get', 'point_count'],
+              8,
+              100,
+              11,
+              999,
+              14
               ],
             "circle-stroke-color": "rgba(245, 245, 245, 0.88)",
             "circle-stroke-width": 2
