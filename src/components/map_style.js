@@ -77,6 +77,7 @@ const style = {
           "type": "symbol",
           "source": "aed-locations",
           "source-layer": "defibrillators",
+          "minzoom": 6,
           "maxzoom": 9,
           "filter": ["!has", "point_count"],
           "layout": {
