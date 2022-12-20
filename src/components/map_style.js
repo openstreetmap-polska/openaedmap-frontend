@@ -2,7 +2,7 @@ const getUrl = window.location;
 const baseUrl = getUrl.protocol + "//" + getUrl.host + getUrl.pathname;
 const spriteUrl = (new URL("sprite", baseUrl)).href;
 const isProduction = process.env.REACT_APP_ENV === 'production';
-const tilesBaseUrl = isProduction ? "https://openaedmap.openstreetmap.org.pl" : "https://openaedmap-dev.openstreetmap.org.pl";
+const tilesBaseUrl = isProduction ? "https://dobyw8yo1q0s2.cloudfront.net" : "https://openaedmap-dev.openstreetmap.org.pl";
 const tilesUrl = tilesBaseUrl + "/api/v1/tile/{z}/{x}/{y}.mvt"; // can't use URL class since this is a template not literal url
 
 const style = {
