@@ -25,7 +25,9 @@
         "login": "Accedi usando un account OSM",
         "visit_github": "Visita il nostro repository GitHub",
         "visit_osmp_website": "Visita il sito web di OpenStreetMap Polonia",
-        "logout": "Esci"
+        "logout": "Esci",
+        "hosted_by": "ospitato da",
+        "help_translating": "Aiuta a tradurre"
     },
     "access": {
         "no": "Non disponibile",
