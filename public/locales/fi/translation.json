@@ -12,7 +12,8 @@
         "visit_osmp_website": "Vieraile OpenStreetMap Puolan verkkosivusto",
         "login": "Kirjaudu sisään OSM-tilin avulla",
         "logout": "Kirjaudu ulos",
-        "about": "Tietoja"
+        "about": "Tietoja",
+        "help_translating": "Auta kääntämään"
     },
     "form": {
         "location_example": "Esimerkiksi: Seinällä lähellä sisäänkäyntiä",

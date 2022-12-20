@@ -68,7 +68,9 @@
         "visit_github": "Visitez notre dépôt GitHub",
         "visit_osmp_website": "Visiter le site web d'OpenStreetMap Pologne",
         "login": "Se connecter en utilisant un compte OSM",
-        "logout": "Se déconnecter"
+        "logout": "Se déconnecter",
+        "hosted_by": "hébergé par",
+        "help_translating": "Aidez à traduire"
     },
     "indoor": {
         "yes": "Oui",

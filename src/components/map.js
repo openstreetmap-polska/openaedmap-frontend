@@ -261,7 +261,7 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         map.current.on('click', 'unclustered', function (e) {
             console.log("Clicked on object with properties: ", e.features[0].properties);
             if (e.features[0].properties !== undefined) {
-                const osm_node_id = e.features[0].properties.osm_id;
+                const osm_node_id = e.features[0].properties.node_id;
                 console.log("Clicked on object with osm_id: ", osm_node_id);
                 // show sidebar
                 fillSidebarWithOsmDataAndShow(osm_node_id, map.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);
