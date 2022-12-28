@@ -39,7 +39,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
-    "sprites": "spritezero ./public/sprite ./src/marker_icons; spritezero --ratio=2 ./public/sprite@2 ./src/marker_icons"
+    "sprites": "spritezero ./public/sprite ./src/marker_icons; spritezero --ratio=2 ./public/sprite@2x ./src/marker_icons"
   },
   "eslintConfig": {
     "extends": [
