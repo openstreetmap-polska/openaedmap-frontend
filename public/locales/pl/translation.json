@@ -5,7 +5,7 @@
         "customers": "Dostępny tylko w godzinach pracy",
         "no": "Niedostępny",
         "unknown": "Dostęp nieznany",
-        "permissive": "permissive"
+        "permissive": "Dostępny publicznie do odwołania"
     },
     "navbar": {
         "created_with_<3_by": "tworzona z ❤️ przez",
