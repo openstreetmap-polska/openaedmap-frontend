@@ -4,6 +4,7 @@ import MarkerCustomers from "../marker_icons/marker_customers.svg";
 import MarkerDefault from "../marker_icons/marker_yes.svg";
 import MarkerNo from "../marker_icons/marker_no.svg";
 import MarkerPrivate from "../marker_icons/marker_private.svg";
+import MarkerPermissive from "../marker_icons/marker_permissive.svg";
 import MarkerUnknown from "../marker_icons/marker_unknown.svg";
 import Icon from "@mdi/react";
 import {mdiMapLegend} from "@mdi/js";
@@ -26,6 +27,11 @@ export default function MapLegend() {
             "key": "private",
             "icon": MarkerPrivate,
             "text": t("access.private")
+        },
+        {
+            "key": "permissive",
+            "icon": MarkerPermissive,
+            "text": t("access.permissive")
         },
         {
             "key": "no",
