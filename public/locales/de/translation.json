@@ -4,7 +4,7 @@
         "private": "Zugang mit Erlaubnis der Eigentümer",
         "customers": "Zugang während der Öffnungszeiten",
         "no": "Kein Zugang",
-        "permissive": "Zugang bis auf Widerruf",
+        "permissive": "Bis auf Weiteres öffentlich zugänglich",
         "unknown": "Unbekannter Zugang"
     },
     "navbar": {
