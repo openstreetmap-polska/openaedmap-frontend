@@ -4,7 +4,8 @@
         "customers": "Доступно в часы работы",
         "no": "Недоступно",
         "private": "Доступно с разрешением владельца",
-        "unknown": "Неизвестный статус доступа"
+        "unknown": "Неизвестный статус доступа",
+        "permissive": "Общедоступно до дальнейшего уведомления"
     },
     "navbar": {
         "visit_osmp_website": "Посетите сайт польского OpenStreetMap",
@@ -12,7 +13,8 @@
         "visit_github": "Посетите наше хранилище GitHub",
         "login": "Войти с помощью аккаунта OSM",
         "logout": "Выйти из аккаунта",
-        "about": "О"
+        "about": "О",
+        "help_translating": "Помогите перевести"
     },
     "sidebar": {
         "close": "Закрыть боковую панель",
@@ -24,6 +26,50 @@
         "location": "Местоположение",
         "opening_hours": "Часы работы",
         "description": "Описание",
-        "contact_number": "Номер телефона"
+        "contact_number": "Номер телефона",
+        "excel": "Excel",
+        "operator": "Оператор",
+        "note": "Примечание",
+        "csv": "CSV",
+        "edit": "Редактировать в ОSМ",
+        "copy_url": "Скопируйте URL",
+        "view": "Посмотреть в ОСМ",
+        "google_maps_navigation": "Навигация Google Maps",
+        "add_defibrillator": "Добавить дефибриллятор",
+        "openstreetmap_navigation": "Навигация OpenStreetMap"
+    },
+    "form": {
+        "accessibility": "Доступ",
+        "location": "Опишите местоположение",
+        "location_example": "Например: На стене возле входа",
+        "inside": "Внутри",
+        "outside": "Вне",
+        "optional_field": "Необязательное поле",
+        "is_indoor": "Внутри здания?"
+    },
+    "footer": {
+        "add": "Добавлять",
+        "add_aed": "Добавить дефибриллятор",
+        "cancel": "Отмена",
+        "continue": "Продолжать"
+    },
+    "opening_hours": {
+        "open": "Открытым",
+        "closed": "Закрыто",
+        "24_7": "24/7"
+    },
+    "indoor": {
+        "yes": "Да",
+        "no": "Нет"
+    },
+    "osmp": "OpenStreetMap Польша",
+    "modal": {
+        "aed_added_successfully": "Дефибриллятор успешно добавлен.",
+        "available_in_osm": "Доступно в OpenStreetMap по адресу:",
+        "should_appear_soon": "Он должен появиться на карте в течение 60 минут.",
+        "error_occurred": "Ошибка",
+        "title": "Информация",
+        "need_to_login": "Чтобы добавить дефибриллятор, войдите в OpenStreetMap.",
+        "click_login_button": "Закройте это окно и нажмите кнопку входа вверху, чтобы войти."
     }
 }

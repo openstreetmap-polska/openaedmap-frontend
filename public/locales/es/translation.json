@@ -4,7 +4,7 @@
         "private": "Accesible con permiso del propietario",
         "customers": "Accesible en horario laboral",
         "no": "No disponible",
-        "permissive": "Permisivo",
+        "permissive": "Disponible al público hasta nuevo aviso",
         "unknown": "Acceso desconocido"
     },
     "navbar": {

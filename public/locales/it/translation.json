@@ -32,7 +32,7 @@
     "access": {
         "no": "Non disponibile",
         "yes": "Accessibile al pubblico",
-        "permissive": "permissivo",
+        "permissive": "Disponibile al pubblico fino a nuovo avviso",
         "private": "Accessibile con il permesso del proprietario",
         "customers": "Accessibile durante l'orario di lavoro",
         "unknown": "Accesso sconosciuto"

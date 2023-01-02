@@ -5,7 +5,7 @@
         "private": "僅限獲得業主同意後進入",
         "yes": "一般人可及",
         "unknown": "未知可用性",
-        "permissive": "一般情況下默認"
+        "permissive": "公開可用，直到另行通知"
     },
     "navbar": {
         "created_with_<3_by": "由_用 ❤️ 製作",

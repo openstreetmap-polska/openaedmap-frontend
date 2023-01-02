@@ -79,6 +79,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Creates sprites from marker icons.
 
+Make sure dev dependencies are installed.
+
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
 
@@ -94,5 +96,7 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [React Bulma Components](https://react-bulma.dev/en/storybook)
 - [Material Design Icons](https://dev.materialdesignicons.com/getting-started/react)
 - [spritezero-cli](https://gitlab.com/beyondtracks/spritezero-cli)
+- [i18next](https://github.com/i18next/i18next)
+- [React-Select](https://react-select.com/home)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

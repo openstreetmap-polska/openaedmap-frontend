@@ -4,7 +4,8 @@
         "private": "Pääsy omistajan luvalla",
         "customers": "Pääsy työaikana",
         "no": "Ei käytettävissä",
-        "unknown": "Tuntematon pääsy"
+        "unknown": "Tuntematon pääsy",
+        "permissive": "Yleisesti saatavilla, kunnes lisäilmoitus"
     },
     "navbar": {
         "created_with_<3_by": "luonut ❤️:lla tekijältä",
