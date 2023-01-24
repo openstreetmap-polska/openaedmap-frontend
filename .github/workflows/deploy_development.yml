@@ -50,6 +50,4 @@ jobs:
         EOF
     - name: Run deploy script on host
       run: |
-        ls -la
-        ls -la build
-        scp -rp -P${{ secrets.SSH_HOST_NEW_PORT }} build/ ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/ 
+        scp -rp -P${{ secrets.SSH_HOST_NEW_PORT }} build ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static
