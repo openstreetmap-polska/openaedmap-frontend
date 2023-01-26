@@ -51,3 +51,4 @@ jobs:
     - name: Run deploy script on host
       run: |
         scp -rp -P${{ secrets.SSH_HOST_NEW_PORT }} build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
+        
