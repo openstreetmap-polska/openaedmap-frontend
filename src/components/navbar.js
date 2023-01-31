@@ -25,29 +25,34 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                     Open<span className="has-text-weight-semibold">AED</span>Map
                     </span>
                 </Navbar.Item>
-                <Navbar.Item className='is-hidden-touch' renderAs='div' pl={1}>
+                <Navbar.Item className='is-hidden-touch' renderAs='div' pl={1} pr={1}>
                     <span className="has-text-weight-light is-size-6 pl-0">
                         {t('navbar.created_with_<3_by')}
                         &nbsp;
-                        <a className="has-text-weight-medium navbarUrl"
-                        href="https://openstreetmap.org.pl/" rel="noreferrer" target="_blank"
-                        title={t('navbar.visit_osmp_website')}>{t('osmp')}</a>
+                        <a className="has-text-weight-medium navbarUrl" href="https://openstreetmap.org.pl/" rel="noreferrer" target="_blank"
+                            title={t('navbar.visit_osmp_website')}>
+                            {t('osmp')}
+                        </a>
                     </span>
+                </Navbar.Item>
+                <Navbar.Item className='is-hidden-touch' renderAs='div' pl={0} pr={0}>
+                    <span className='has-text-weight-light is-size-6 pr-1'>{t('navbar.hosted_by')} </span>
+                    <img alt='CloudFerro' src='img/cloudferro_logo.png'></img>
                 </Navbar.Item>
                 <LanguageSwitcherMobile/>
                 <Navbar.Burger
-                        id='navbarBurger'
-                        onClick={() => {
-                            setIsActive(!isActive);
-                        }}
-                        className={`${isActive ? "is-active" : ""}`}
-                        aria-label="menu"
-                        aria-expanded="false"
-                        data-target="navbarMenu"
-                    >
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
+                    id='navbarBurger'
+                    onClick={() => {
+                        setIsActive(!isActive);
+                    }}
+                    className={`${isActive ? "is-active" : ""}`}
+                    aria-label="menu"
+                    aria-expanded="false"
+                    data-target="navbarMenu"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </Navbar.Burger>
             </Navbar.Brand> 
             <Navbar.Menu className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`} id='navbarMenu'>
@@ -60,14 +65,18 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                         </Button>
                     </Navbar.Item>
                     <Navbar.Item renderAs='div' p={1}>
+                        <Button onClick={() => toggleSidebarShown()} color={'white'} outlined={true}>
+                            <Icon path={mdiMapLegend} size='2rem' />
+                        </Button>
+                    </Navbar.Item>
+                    <Navbar.Item renderAs='div' p={1}>
                         <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noreferrer' className='is-white is-outlined button'>
                             <Icon title={t('navbar.visit_github')} alt='GitHub' path={mdiGithub} size='2rem'/>
                         </a>
                     </Navbar.Item>
-                    <Navbar.Item renderAs='div' p={1}>
-                        <Button onClick={() => toggleSidebarShown()} color={'white'} outlined={true}>
-                            <Icon path={mdiMapLegend} size='2rem' />
-                        </Button>
+                    <Navbar.Item className='is-hidden-desktop' textColor='white' renderAs='div' pl={0} pr={0}>
+                        <span color='white' className='has-text-weight-light is-size-6 pr-1'>{t('navbar.hosted_by')} </span>
+                        <img alt='CloudFerro' src='img/cloudferro_logo.png'></img>
                     </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>
