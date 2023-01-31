@@ -5,7 +5,7 @@
         "private": "僅限獲得業主同意後進入",
         "yes": "一般人可及",
         "unknown": "未知可用性",
-        "permissive": "一般情況下默認"
+        "permissive": "公開可用，直到另行通知"
     },
     "navbar": {
         "created_with_<3_by": "由_用 ❤️ 製作",
@@ -13,7 +13,9 @@
         "login": "使用 OSM 帳號登入",
         "logout": "登出",
         "about": "關於",
-        "visit_osmp_website": "造訪開放街圖波蘭的社群網站"
+        "visit_osmp_website": "造訪開放街圖波蘭的社群網站",
+        "help_translating": "協助翻譯",
+        "hosted_by": "託管於"
     },
     "sidebar": {
         "close": "關閉側邊欄",

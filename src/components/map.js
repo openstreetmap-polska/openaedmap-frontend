@@ -5,7 +5,7 @@ import styleJson from './map_style';
 import SidebarLeft from './sidebar-left';
 import FooterDiv from './footer';
 import { useTranslation } from 'react-i18next';
-import { fetchNodeDataFromOsm } from '../osm';
+import { fetchNodeDataFromBackend } from '../backend';
 import {ButtonsType} from "../model/buttonsType";
 
 // -------------------------------------------------------------------
@@ -23,7 +23,7 @@ maplibregl.workerClass = maplibreglWorker;
 
 
 function fillSidebarWithOsmDataAndShow(nodeId, mapInstance, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, jumpInsteadOfEaseTo) {
-    const result = fetchNodeDataFromOsm(nodeId);
+    const result = fetchNodeDataFromBackend(nodeId);
     result.then(data => {
         if (data) {
             const zoomLevelForDetailedView = 17;
@@ -245,6 +245,18 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         map.current.on('mouseleave', 'unclustered', () => {
             map.current.getCanvas().style.cursor = '';
         });
+        map.current.on('mouseenter', 'clustered-circle-low-zoom', () => {
+            map.current.getCanvas().style.cursor = 'pointer';
+        });
+        map.current.on('mouseleave', 'clustered-circle-low-zoom', () => {
+            map.current.getCanvas().style.cursor = '';
+        });
+        map.current.on('mouseenter', 'unclustered-low-zoom', () => {
+            map.current.getCanvas().style.cursor = 'pointer';
+        });
+        map.current.on('mouseleave', 'unclustered-low-zoom', () => {
+            map.current.getCanvas().style.cursor = '';
+        });
 
         // zoom to cluster on click
         map.current.on('click', 'clustered-circle', function (e) {
@@ -257,11 +269,37 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
                 zoom: zoom + 2
             });
         });
+        map.current.on('click', 'clustered-circle-low-zoom', function (e) {
+            var features = map.current.queryRenderedFeatures(e.point, {
+                layers: ['clustered-circle-low-zoom']
+            });
+            var zoom = map.current.getZoom();
+            map.current.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom + 2
+            });
+        });
         // show sidebar on single element click
         map.current.on('click', 'unclustered', function (e) {
             console.log("Clicked on object with properties: ", e.features[0].properties);
             if (e.features[0].properties !== undefined) {
-                const osm_node_id = e.features[0].properties.osm_id;
+                const osm_node_id = e.features[0].properties.node_id;
+                console.log("Clicked on object with osm_id: ", osm_node_id);
+                // show sidebar
+                fillSidebarWithOsmDataAndShow(osm_node_id, map.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);
+                // update hash
+                const params = {
+                    ...parseHash(),
+                    node_id: osm_node_id,
+                };
+                console.log("new hash params", params);
+                window.location.hash = getNewHashString(params);
+            }
+        });
+        map.current.on('click', 'unclustered-low-zoom', function (e) {
+            console.log("Clicked on object with properties: ", e.features[0].properties);
+            if (e.features[0].properties !== undefined) {
+                const osm_node_id = e.features[0].properties.node_id;
                 console.log("Clicked on object with osm_id: ", osm_node_id);
                 // show sidebar
                 fillSidebarWithOsmDataAndShow(osm_node_id, map.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);

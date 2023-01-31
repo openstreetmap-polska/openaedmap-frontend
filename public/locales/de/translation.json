@@ -4,7 +4,7 @@
         "private": "Zugang mit Erlaubnis der Eigentümer",
         "customers": "Zugang während der Öffnungszeiten",
         "no": "Kein Zugang",
-        "permissive": "Zugang bis auf Widerruf",
+        "permissive": "Bis auf Weiteres öffentlich zugänglich",
         "unknown": "Unbekannter Zugang"
     },
     "navbar": {
@@ -13,7 +13,9 @@
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
         "login": "Mit OSM-Konto anmelden",
         "logout": "Abmelden",
-        "about": "Über"
+        "about": "Über",
+        "hosted_by": "gehostet von",
+        "help_translating": "Helfe beim übersetzen"
     },
     "sidebar": {
         "close": "Seitenleiste schließen",

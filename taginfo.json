@@ -3,7 +3,7 @@
   "data_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/raw/main/taginfo.json",
   "project": {
     "name": "Open AED Map",
-    "description": "Map of defibrillators",
+    "description": "Map of defibrillators that allows adding them using OSM account",
     "project_url": "https://openaedmap.org",
     "doc_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/",
     "icon_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/raw/main/taginfo-node-icon.png",
@@ -18,7 +18,7 @@
         "node"
       ],
       "icon_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/raw/main/taginfo-node-icon.png",
-      "description": "Map showing defibrillators"
+      "description": "Map of defibrillators that allows adding them using OSM account"
     }
   ]
 }

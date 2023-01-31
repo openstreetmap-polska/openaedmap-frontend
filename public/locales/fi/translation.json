@@ -4,7 +4,8 @@
         "private": "Pääsy omistajan luvalla",
         "customers": "Pääsy työaikana",
         "no": "Ei käytettävissä",
-        "unknown": "Tuntematon pääsy"
+        "unknown": "Tuntematon pääsy",
+        "permissive": "Yleisesti saatavilla, kunnes lisäilmoitus"
     },
     "navbar": {
         "created_with_<3_by": "luonut ❤️:lla tekijältä",
@@ -12,7 +13,8 @@
         "visit_osmp_website": "Vieraile OpenStreetMap Puolan verkkosivusto",
         "login": "Kirjaudu sisään OSM-tilin avulla",
         "logout": "Kirjaudu ulos",
-        "about": "Tietoja"
+        "about": "Tietoja",
+        "help_translating": "Auta kääntämään"
     },
     "form": {
         "location_example": "Esimerkiksi: Seinällä lähellä sisäänkäyntiä",

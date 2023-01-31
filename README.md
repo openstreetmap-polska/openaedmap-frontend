@@ -45,6 +45,7 @@ Create .env file and put these variables there:
 SKIP_PREFLIGHT_CHECK=true
 REACT_APP_VERSION=$npm_package_version
 REACT_APP_OSM_API_URL=https://master.apis.dev.openstreetmap.org
+REACT_APP_BACKEND_API_URL=https://openaedmap-dev.openstreetmap.org.pl
 REACT_APP_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
 REACT_APP_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
 HOST=127.0.0.1
@@ -78,6 +79,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Creates sprites from marker icons.
 
+Make sure dev dependencies are installed.
+
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
 
@@ -93,5 +96,7 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [React Bulma Components](https://react-bulma.dev/en/storybook)
 - [Material Design Icons](https://dev.materialdesignicons.com/getting-started/react)
 - [spritezero-cli](https://gitlab.com/beyondtracks/spritezero-cli)
+- [i18next](https://github.com/i18next/i18next)
+- [React-Select](https://react-select.com/home)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
