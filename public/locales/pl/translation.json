@@ -5,6 +5,7 @@
         "customers": "Dostępny tylko w godzinach pracy",
         "no": "Niedostępny",
         "unknown": "Dostęp nieznany",
+        "unknownTag": "Brak tagu access lub niepasujący do powyższych",
         "permissive": "Dostępny publicznie do odwołania"
     },
     "navbar": {

@@ -16,32 +16,38 @@ export default function MapLegend() {
         {
             "key": "default",
             "icon": MarkerDefault,
-            "text": t("access.yes")
+            "text": t("access.yes"),
+            "tag": "access=yes"
         },
         {
             "key": "customers",
             "icon": MarkerCustomers,
-            "text": t("access.customers")
+            "text": t("access.customers"),
+            "tag": "access=customers"
         },
         {
             "key": "private",
             "icon": MarkerPrivate,
-            "text": t("access.private")
+            "text": t("access.private"),
+            "tag": "access=private"
         },
         {
             "key": "permissive",
             "icon": MarkerPermissive,
-            "text": t("access.permissive")
+            "text": t("access.permissive"),
+            "tag": "access=permissive"
         },
         {
             "key": "no",
             "icon": MarkerNo,
-            "text": t("access.no")
+            "text": t("access.no"),
+            "tag": "access=no"
         },
         {
             "key": "unknown",
             "icon": MarkerUnknown,
-            "text": t("access.unknown")
+            "text": t("access.unknown"),
+            "tag": t("access.unknownTag")
         },
     ];
     return (
@@ -50,9 +56,9 @@ export default function MapLegend() {
         <Icon path={mdiMapLegend} size={1.3} className='icon mr-2' color='#7a7a7a' />
         <p className='legend-header has-text-weight-medium has-text-grey'>{t('sidebar.map_legend_title')}</p>
         </div>
-        {markers.map(({ icon, key, text }) =>
+        {markers.map(({ icon, key, text, tag }) =>
             <div className="columns is-mobile px-4 py-1 is-flex is-vcentered" key={`legend-div-${key}`}>
-                <img key={`legend-image-${key}`} alt={text} src={icon.toString()} className="legend-image image is-32x32"/>
+                <img key={`legend-image-${key}`} title={tag} alt={text} src={icon.toString()} className="legend-image image is-32x32"/>
                 <p key={`legend-text-${key}`} className="has-text-weight-light legend-text pl-2">{text}</p>
             </div>
         )}
