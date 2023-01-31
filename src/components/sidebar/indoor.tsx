@@ -59,7 +59,7 @@ export function IndoorFormField() {
                     </>
                 ))}
             </div>
-            {indoor == "yes" && (
+            {indoor === "yes" && (
                 <div className="field">
                     <label className="label has-text-weight-semibold pt-2">{t("form.level")}</label>
                     <div className="control">
