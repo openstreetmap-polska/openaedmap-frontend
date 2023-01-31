@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
+    - name: Check JSON syntax errors in translations via jq
+      run: jq . public/locales/*/translation.json > /dev/null
     - name: Setup Node JS
       uses: actions/setup-node@v3
       with:
