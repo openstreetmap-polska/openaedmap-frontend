@@ -41,7 +41,7 @@ export function IndoorFormField() {
             <label className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</label>
             <div className="field">
                 {indoorOptions.map(({value, label}) => (
-                    <>
+                    <React.Fragment key={value}>
                         <input
                             key={`radio-${value}-input`}
                             className="is-checkradio is-success mr-1"
@@ -56,7 +56,7 @@ export function IndoorFormField() {
                             onClick={() => setIndoor(value)}>
                             {label}
                         </label>
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
             {indoor === "yes" && (
