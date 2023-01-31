@@ -45,7 +45,7 @@ Create .env file and put these variables there:
 SKIP_PREFLIGHT_CHECK=true
 REACT_APP_VERSION=$npm_package_version
 REACT_APP_OSM_API_URL=https://master.apis.dev.openstreetmap.org
-REACT_APP_BACKEND_API_URL=https://openaedmap-dev.openstreetmap.org.pl
+REACT_APP_BACKEND_API_URL=https://backdev.openaedmap.org
 REACT_APP_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
 REACT_APP_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
 HOST=127.0.0.1
