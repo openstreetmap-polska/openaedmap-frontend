@@ -50,6 +50,9 @@ const parseForm = (formElements) => {
   //indoor
   const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked);
   if (indoor.length === 1) tags["indoor"] = indoor[0].attributes.value.value;
+  // level
+  const level = formElements.level;
+  if (level.value.trim()) tags["level"] = level.value.trim();
   // location
   const location = formElements.aedLocation;
   if (location.value.trim()) tags[location.attributes.tag.value] = location.value.trim();
@@ -87,7 +90,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
           </Card.Header>
           <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
             <Columns vCentered="1" className="is-mobile">
-              <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><IndoorField indoor={data.indoor} /></Columns.Column>
+              <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><IndoorField indoor={data.indoor} level={data.level} /></Columns.Column>
             </Columns>
             <Columns vCentered="1" className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiMapMarkerOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} /></Columns.Column>

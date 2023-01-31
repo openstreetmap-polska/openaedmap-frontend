@@ -3,17 +3,19 @@ import SpanNoData from "./spanNoData";
 import {FC, useState} from "react";
 import React from "react";
 
-const IndoorDescription: FC<IndoorProps> = ({ indoor }) => {
+const IndoorDescription: FC<IndoorProps> = ({ indoor, level }) => {
     const { t } = useTranslation();
 
     if (indoor) {
-        return <span className="has-text-weight-medium">{t(`indoor.${indoor}`)}</span>
+        const levelText = level ? ` (${t('sidebar.level')}: ${level})` : "";
+        const indoorText = t(`indoor.${indoor}`) + levelText;
+        return <span className="has-text-weight-medium">{indoorText}</span>
     } else {
         return <SpanNoData />
     }
 };
 
-export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
+export const IndoorField: FC<IndoorProps> = ({ indoor, level }) => {
     const { t } = useTranslation();
 
     return (
@@ -21,7 +23,7 @@ export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
         <p className="has-text-weight-light has-text-grey mb-1">
         {t('sidebar.indoor') + "?: "}
         </p>
-        <IndoorDescription indoor={indoor} />
+        <IndoorDescription indoor={indoor} level={level} />
         </div>
     )
 };
@@ -57,10 +59,19 @@ export function IndoorFormField() {
                     </>
                 ))}
             </div>
+            {indoor == "yes" && (
+                <div className="field">
+                    <label className="label has-text-weight-semibold pt-2">{t("form.level")}</label>
+                    <div className="control">
+                      <input className="input is-success" type="number" placeholder="13" name="level" />
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
 
 interface IndoorProps {
     indoor: string,
+    level: string,
 }
