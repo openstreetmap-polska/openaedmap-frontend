@@ -98,14 +98,10 @@ export function addDefibrillatorToOSM(auth, changesetId, data) {
         node.setAttribute("changeset", changesetId);
         node.setAttribute("lat", data.lat);
         node.setAttribute("lon", data.lng);
-        var emergency = document.createElementNS(null, "tag");
-        emergency.setAttribute("k", "emergency");
-        emergency.setAttribute("v", "defibrillator");
-        node.appendChild(emergency);
-        Object.entries(data.tags).map(arr => {
+        Object.entries(data.tags).map(([key, value]) => {
             var tag = document.createElementNS(null, "tag");
-            tag.setAttribute("k", arr[0]);
-            tag.setAttribute("v", arr[1]);
+            tag.setAttribute("k", key);
+            tag.setAttribute("v", value);
             return tag;
         }).forEach(el => {
             node.appendChild(el);

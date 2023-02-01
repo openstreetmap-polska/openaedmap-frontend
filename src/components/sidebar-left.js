@@ -43,7 +43,7 @@ function accessColourClass(access) {
 }
 
 const parseForm = (formElements) => {
-  let tags = {};
+  let tags = {"emergency": "defibrillator"};
   // access
   const access = Array.from(formElements.aedAccess).filter(x => x.checked);
   if (access.length === 1) tags["access"] = access[0].attributes.value.value;
