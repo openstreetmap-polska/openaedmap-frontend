@@ -51,7 +51,7 @@ const parseForm = (formElements) => {
   const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked);
   if (indoor.length === 1) tags["indoor"] = indoor[0].attributes.value.value;
   // level
-  const level = formElements.level;
+  const level = formElements.level || {value: ""};
   if (level.value.trim()) tags["level"] = level.value.trim();
   // location
   const location = formElements.aedLocation;
