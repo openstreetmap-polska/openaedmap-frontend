@@ -7,19 +7,19 @@ import './footer.css'
 import {ButtonsType} from "../model/buttonsType";
 
 
-const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, mobileStepTwo, buttonsConfiguration }) => {
+const FooterDiv: FC<FooterDivProps> = ({ startAEDAdding, mobileCancel, showFormMobile, buttonsConfiguration }) => {
     const { t } = useTranslation();
 
     const addAedButtons = (
         <>
         <div className='is-hidden-mobile'>
-            <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={openForm}>
+            <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={() => startAEDAdding(false)}>
                 <Icon path={mdiMapMarkerPlus} className='icon mr-2' />
                 {t('footer.add_aed')}
             </Button>
         </div>
         <div className='is-hidden-tablet'>
-            <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={mobileStepOne}>
+            <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={() => startAEDAdding(true)}>
                 <Icon path={mdiMapMarkerPlus} className='icon mr-2' />
                 {t('footer.add')}
             </Button>
@@ -32,7 +32,7 @@ const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, 
                 <Icon path={mdiCancel} className='icon mr-2' />
                 {t('footer.cancel')}
             </Button>
-            <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={mobileStepTwo}>
+            <Button color={'success'} mt={1} ml={2} className='has-text-weight-light' onClick={showFormMobile}>
                 <Icon path={mdiArrowRightBold} className='icon mr-2' />
                 {t('footer.continue')}
             </Button>
@@ -57,10 +57,9 @@ const FooterDiv: FC<FooterDivProps> = ({ openForm, mobileStepOne, mobileCancel, 
 };
 
 interface FooterDivProps {
-    openForm: () => void,
-    mobileStepOne: () => void,
+    startAEDAdding: (mobile: boolean) => void,
     mobileCancel: () => void,
-    mobileStepTwo: () => void,
+    showFormMobile: () => void,
     buttonsConfiguration: number,
 }
 

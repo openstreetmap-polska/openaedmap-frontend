@@ -139,47 +139,24 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         else callable()
     }
 
-    const mobileStepOne = () => {
-        deleteMarker();
-        removeNodeIdFromHash();
-        setSidebarLeftData({});
-        setSidebarLeftAction("addNode");
-        setSidebarLeftShown(false); // hide sidebar so marker is visible
-        setFooterButtonType(ButtonsType.MobileStep1);
-        // add marker
-        const markerColour = "#e81224";
-        const mapCenter = map.current.getCenter();
-        const initialCoordinates = [mapCenter.lng, mapCenter.lat];
-        setMarker(
-            new maplibregl.Marker({
-                draggable: true,
-                color: markerColour,
-            })
-            .setLngLat(initialCoordinates)
-            .setPopup(new maplibregl.Popup().setHTML(t("form.marker_popup_text")))
-            .addTo(map.current)
-            .togglePopup()
-        );
-    }
-
     const mobileCancel = () => {
         deleteMarker();
         setSidebarLeftShown(false);
         setFooterButtonType(ButtonsType.AddAED);
     }
 
-    const mobileStepTwo = () => {
+    const showFormMobile = () => {
         setSidebarLeftShown(true);
         setFooterButtonType(ButtonsType.None);
     }
 
-    const openForm = () => {
+    const startAEDAdding = (mobile) => {
         deleteMarker();
         removeNodeIdFromHash();
         setSidebarLeftData({});
         setSidebarLeftAction("addNode");
-        setSidebarLeftShown(true);
-        setFooterButtonType(ButtonsType.None);
+        setSidebarLeftShown(!mobile); // for mobile hide sidebar so marker is visible
+        setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
         // add marker
         const markerColour = "#e81224";
         const mapCenter = map.current.getCenter();
@@ -333,10 +310,9 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
             <div ref={mapContainer} className="map" />
         </div>
         <FooterDiv
-            openForm={() => checkConditionsThenCall(openForm)}
-            mobileStepOne={() => checkConditionsThenCall(mobileStepOne)}
+            startAEDAdding={(mobile) => checkConditionsThenCall(() => startAEDAdding(mobile))}
             mobileCancel={mobileCancel}
-            mobileStepTwo={mobileStepTwo}
+            showFormMobile={showFormMobile}
             buttonsConfiguration={footerButtonType}
         />
         </>
