@@ -24,7 +24,7 @@ export async function fetchNodeDataFromOsm(nodeId: string) {
         });
 }
 
-export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUsername: (username: string | null) => void) {
+export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUsername: (username: string) => void) {
     auth.xhr(
         { method: "GET", path: "/api/0.6/user/details" },
         function (err: Error, result: XMLDocument) {
@@ -34,7 +34,8 @@ export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUser
                 throw err;
             }
             const userObject = result.getElementsByTagName('user')[0];
-            setOsmUsername(userObject.getAttribute('display_name'));
+            const username = userObject.getAttribute('display_name');
+            if (username !== null) setOsmUsername(username);
         }
     );
 }

@@ -6,11 +6,13 @@ import SiteNavbar from './components/navbar';
 import SidebarRight from './components/sidebar-right';
 import Map from './components/map';
 
+// @ts-ignore
 import { osmAuth } from 'osm-auth';
 import {initialModalState, ModalType} from './model/modal'
 import {AppContext} from './appContext';
 import {CustomModal} from "./components/modal";
 import {updateOsmUsernameState} from "./osm";
+import {AuthState} from "./model/auth";
 
 
 function Main() {
@@ -26,19 +28,18 @@ function Main() {
 
     const { REACT_APP_OSM_API_URL, REACT_APP_OSM_OAUTH2_CLIENT_ID, REACT_APP_OSM_OAUTH2_CLIENT_SECRET } = process.env;
     const redirectPath = window.location.origin + window.location.pathname;
-    // eslint-disable-next-line no-unused-vars
-    const [auth, setAuth] = useState(
-        osmAuth({
+    const [auth] = useState(
+        osmAuth ({
             url: REACT_APP_OSM_API_URL,
-            client_id: REACT_APP_OSM_OAUTH2_CLIENT_ID,
-            client_secret: REACT_APP_OSM_OAUTH2_CLIENT_SECRET,
+            client_id: REACT_APP_OSM_OAUTH2_CLIENT_ID || "",
+            client_secret: REACT_APP_OSM_OAUTH2_CLIENT_SECRET || "",
             redirect_uri: redirectPath + "land.html",
             scope: "read_prefs write_api",
             auto: false,
             singlepage: false,
         })
     );
-    const [osmUsername, setOsmUsername] = useState("");
+    const [osmUsername, setOsmUsername] = useState<string>("");
     const [openChangesetId, setOpenChangesetId] = useState(null);
 
     const handleLogIn = () => {
@@ -55,7 +56,7 @@ function Main() {
         setOsmUsername("");
     };
 
-    const authState = { auth, osmUsername };
+    const authState: AuthState = { auth, osmUsername };
 
     const appContext = {authState, modalState, setModalState, handleLogIn, handleLogOut};
     useEffect(() => {
