@@ -39,6 +39,13 @@ export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUser
     );
 }
 
+function createTagElement(key: string, value: string): Element {
+    const tag = document.createElementNS(null, "tag");
+    tag.setAttribute("k", key);
+    tag.setAttribute("v", value);
+    return tag;
+}
+
 export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetId: string, openChangesetIdSetter: (changesetId: string) => void, lang: string) {
     return new Promise((resolve, reject) => {
         if (openChangesetId) {
@@ -47,25 +54,13 @@ export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetI
         } else {
             const root = document.implementation.createDocument(null, "osm");
             const changeset = document.createElementNS(null, "changeset");
-            const comment = document.createElementNS(null, "tag");
-            comment.setAttribute("k", "comment");
-            comment.setAttribute("v", "Defibrillator added via https://openaedmap.org #aed");
-            const created_by = document.createElementNS(null, "tag");
-            created_by.setAttribute("k", "created_by");
-            created_by.setAttribute("v", "https://openaedmap.org");
-            const locale = document.createElementNS(null, "tag");
-            locale.setAttribute("k", "locale");
-            locale.setAttribute("v", lang);
-            const hashtags = document.createElementNS(null, "tag");
-            hashtags.setAttribute("k", "hashtags");
-            hashtags.setAttribute("v", "#aed");
-            changeset.appendChild(comment);
-            changeset.appendChild(created_by);
-            changeset.appendChild(locale);
-            changeset.appendChild(hashtags);
+            changeset.appendChild(createTagElement("comment", "Defibrillator added via https://openaedmap.org #aed"));
+            changeset.appendChild(createTagElement("created_by", "https://openaedmap.org"));
+            changeset.appendChild(createTagElement("locale", lang));
+            changeset.appendChild(createTagElement("hashtags", "#aed"));
             root.documentElement.appendChild(changeset);
-            let serializer = new XMLSerializer();
-            let data = serializer.serializeToString(root);
+            const serializer = new XMLSerializer();
+            const data = serializer.serializeToString(root);
 
             auth.xhr({
                 method: 'PUT',
@@ -97,13 +92,8 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
         node.setAttribute("changeset", changesetId);
         node.setAttribute("lat", data.lat);
         node.setAttribute("lon", data.lng);
-        Object.entries(data.tags).map(([key, value]) => {
-            const tag = document.createElementNS(null, "tag");
-            tag.setAttribute("k", key);
-            tag.setAttribute("v", value);
-            return tag;
-        }).forEach(el => {
-            node.appendChild(el);
+        Object.entries(data.tags).forEach(([key, value]) => {
+            node.appendChild(createTagElement(key, value));
         });
         root.documentElement.appendChild(node);
         let serializer = new XMLSerializer();
