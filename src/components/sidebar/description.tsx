@@ -1,13 +1,12 @@
-import React, {FC} from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { FC } from "react";
+import { useTranslation } from "react-i18next";
 import SpanNoData from "./spanNoData";
 
-const DescriptionText: FC<DescriptionProps> =({ description }) => {
+const DescriptionText: FC<DescriptionProps> = ({ description }) => {
     if (description) {
-        return <span className="has-text-weight-medium">{description}</span>
-    } else {
-        return <SpanNoData />
+        return <span className="has-text-weight-medium">{description}</span>;
     }
+    return <SpanNoData />;
 };
 
 export const DescriptionField: FC<DescriptionProps> = ({ description }) => {
@@ -15,14 +14,13 @@ export const DescriptionField: FC<DescriptionProps> = ({ description }) => {
 
     return (
         <div>
-        <p className="has-text-weight-light has-text-grey mb-0 pb-0">
-            {t('sidebar.description') + ": "}
-        </p>
-        <DescriptionText description={description} />
+            <p className="has-text-weight-light has-text-grey mb-0 pb-0">
+                {`${t("sidebar.description")}: `}
+            </p>
+            <DescriptionText description={description} />
         </div>
-    )
+    );
 };
-
 
 interface DescriptionProps {
     description: string,
