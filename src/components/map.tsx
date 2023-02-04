@@ -1,18 +1,20 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { FC, useRef, useEffect, useState } from 'react';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './map.css';
 import styleJson from './map_style';
 import SidebarLeft from './sidebar-left';
 import FooterDiv from './footer';
 import { useTranslation } from 'react-i18next';
-import { fetchNodeDataFromBackend } from '../backend';
+import {fetchNodeDataFromBackend, NodeData} from '../backend';
 import {ButtonsType} from "../model/buttonsType";
 
 // -------------------------------------------------------------------
 // https://github.com/maplibre/maplibre-gl-js/issues/1011
 
+// @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import maplibregl from '!maplibre-gl';      // ! is important here
+// @ts-ignore
 import maplibreglWorker from 'maplibre-gl/dist/maplibre-gl-csp-worker';
 import {initialModalState, ModalType} from "../model/modal";
 import {useAppContext} from "../appContext";
@@ -22,7 +24,7 @@ maplibregl.workerClass = maplibreglWorker;
 
 
 
-function fillSidebarWithOsmDataAndShow(nodeId, mapInstance, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, jumpInsteadOfEaseTo) {
+function fillSidebarWithOsmDataAndShow(nodeId: string, mapInstance: maplibregl.Map, setSidebarLeftAction: (action: string) => void, setSidebarLeftData: (data: NodeData) => void, setSidebarLeftShown: (sidebarLeftShown: boolean) => void, jumpInsteadOfEaseTo: boolean) {
     const result = fetchNodeDataFromBackend(nodeId);
     result.then(data => {
         if (data) {
@@ -61,8 +63,8 @@ function fillSidebarWithOsmDataAndShow(nodeId, mapInstance, setSidebarLeftAction
     })
 }
 
-function parseHash() {
-    let parameters = {};
+function parseHash(): Record<string, string> {
+    const parameters: Record<string, string> = {};
     window.location.hash.slice(1).split('&').forEach(part => {
         const [key, value] = part.split("=", 2);
         parameters[key] = value;
@@ -70,14 +72,14 @@ function parseHash() {
     return parameters
 }
 
-function getNewHashString(parameters) {
+function getNewHashString(parameters: Record<string, string>) {
     return Object
         .entries(parameters)
         .map(([key, value]) => `${key}=${value}`)
         .join("&")
 }
 
-export default function Map({ openChangesetId, setOpenChangesetId }) {
+const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const { authState: { auth }, setModalState } = useAppContext();
     const { t } = useTranslation();
 
@@ -85,22 +87,19 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
 
     const paramsFromHash = parseHash();
 
-    let initialMapLongitude = -8;
-    let initialMapLatitude = 47.74;
-    let initialMapZoom = 3;
+    let longitude = -8;
+    let latitude = 47.74;
+    let zoom = 3;
 
     if (paramsFromHash[hash4MapName]) {
-        [initialMapZoom, initialMapLatitude, initialMapLongitude] = paramsFromHash[hash4MapName].split("/");
+        [zoom, latitude, longitude] = paramsFromHash[hash4MapName].split("/").map(Number);
     }
 
     const mapContainer = useRef(null);
-    const map = useRef(null);
-    const [lng] = useState(initialMapLongitude);
-    const [lat] = useState(initialMapLatitude);
-    const [zoom] = useState(initialMapZoom);
+    const mapRef = useRef(null);
     const controlsLocation = 'bottom-right';
 
-    const [marker, setMarker] = useState(null);
+    const [marker, setMarker] = useState<maplibregl.Marker>(null);
 
     const [sidebarLeftData, setSidebarLeftData] = useState({});
     const [sidebarLeftAction, setSidebarLeftAction] = useState("init");
@@ -128,11 +127,13 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         setFooterButtonType(ButtonsType.AddAED);
     };
 
-    const checkConditionsThenCall = (callable) => {
-        if (!auth.authenticated())
+    const checkConditionsThenCall = (callable: () => void) => {
+        const map: maplibregl.Map = mapRef.current;
+        if (map === null) return;
+        if (auth !== null && !auth.authenticated())
             setModalState({...initialModalState, visible: true, type: ModalType.NeedToLogin});
-        else if (map.current.getZoom() < 15)
-            setModalState({...initialModalState, visible: true, type: ModalType.NeedMoreZoom, currentZoom: map.current.getZoom()})
+        else if (map.getZoom() < 15)
+            setModalState({...initialModalState, visible: true, type: ModalType.NeedMoreZoom, currentZoom: map.getZoom()})
         else callable()
     }
 
@@ -147,7 +148,9 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         setFooterButtonType(ButtonsType.None);
     }
 
-    const startAEDAdding = (mobile) => {
+    const startAEDAdding = (mobile: boolean) => {
+        const map: maplibregl.Map = mapRef.current;
+        if (map === null) return;
         deleteMarker();
         removeNodeIdFromHash();
         setSidebarLeftData({});
@@ -156,7 +159,7 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
         // add marker
         const markerColour = "#e81224";
-        const mapCenter = map.current.getCenter();
+        const mapCenter = map.getCenter();
         const initialCoordinates = [mapCenter.lng, mapCenter.lat];
         setMarker(
             new maplibregl.Marker({
@@ -165,32 +168,33 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
             })
             .setLngLat(initialCoordinates)
             .setPopup(new maplibregl.Popup().setHTML(t("form.marker_popup_text")))
-            .addTo(map.current)
+            .addTo(mapRef.current)
             .togglePopup()
         );
     }
 
     useEffect(() => {
-        if (map.current) return; //stops map from initializing more than once
-        map.current = new maplibregl.Map({
+        if (mapRef.current) return; //stops map from initializing more than once
+        const map = new maplibregl.Map({
           container: mapContainer.current,
           hash: hash4MapName,
           style: styleJson,
-          center: [lng, lat],
+          center: [longitude, latitude],
           zoom: zoom,
           minZoom: 3,
           maxZoom: 19,
           maplibreLogo: false,
         });
+        mapRef.current = map
 
         // how fast mouse scroll wheel zooms
-        map.current.scrollZoom.setWheelZoomRate(1);
+        map.scrollZoom.setWheelZoomRate(1);
 
         // disable map rotation using right click + drag
-        map.current.dragRotate.disable();
+        map.dragRotate.disable();
 
         // disable map rotation using touch rotation gesture
-        map.current.touchZoomRotate.disableRotation();
+        map.touchZoomRotate.disableRotation();
 
         let control = new maplibregl.NavigationControl({
             showCompass: false
@@ -203,94 +207,83 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         });
 
         // Map controls
-        map.current.addControl(control, controlsLocation);
-        map.current.addControl(geolocate, controlsLocation);
+        map.addControl(control, controlsLocation);
+        map.addControl(geolocate, controlsLocation);
 
         // Map interaction
-        map.current.on('mouseenter', 'clustered-circle', () => {
-            map.current.getCanvas().style.cursor = 'pointer';
+        map.on('mouseenter', 'clustered-circle', () => {
+            map.getCanvas().style.cursor = 'pointer';
         });
-        map.current.on('mouseleave', 'clustered-circle', () => {
-            map.current.getCanvas().style.cursor = '';
+        map.on('mouseleave', 'clustered-circle', () => {
+            map.getCanvas().style.cursor = '';
         });
-        map.current.on('mouseenter', 'unclustered', () => {
-            map.current.getCanvas().style.cursor = 'pointer';
+        map.on('mouseenter', 'unclustered', () => {
+            map.getCanvas().style.cursor = 'pointer';
         });
-        map.current.on('mouseleave', 'unclustered', () => {
-            map.current.getCanvas().style.cursor = '';
+        map.on('mouseleave', 'unclustered', () => {
+            map.getCanvas().style.cursor = '';
         });
-        map.current.on('mouseenter', 'clustered-circle-low-zoom', () => {
-            map.current.getCanvas().style.cursor = 'pointer';
+        map.on('mouseenter', 'clustered-circle-low-zoom', () => {
+            map.getCanvas().style.cursor = 'pointer';
         });
-        map.current.on('mouseleave', 'clustered-circle-low-zoom', () => {
-            map.current.getCanvas().style.cursor = '';
+        map.on('mouseleave', 'clustered-circle-low-zoom', () => {
+            map.getCanvas().style.cursor = '';
         });
-        map.current.on('mouseenter', 'unclustered-low-zoom', () => {
-            map.current.getCanvas().style.cursor = 'pointer';
+        map.on('mouseenter', 'unclustered-low-zoom', () => {
+            map.getCanvas().style.cursor = 'pointer';
         });
-        map.current.on('mouseleave', 'unclustered-low-zoom', () => {
-            map.current.getCanvas().style.cursor = '';
+        map.on('mouseleave', 'unclustered-low-zoom', () => {
+            map.getCanvas().style.cursor = '';
         });
 
+        // TODO: event type
+        type MapEventType = any
         // zoom to cluster on click
-        map.current.on('click', 'clustered-circle', function (e) {
-            var features = map.current.queryRenderedFeatures(e.point, {
+        map.on('click', 'clustered-circle', function (e: MapEventType) {
+            const features = map.queryRenderedFeatures(e.point, {
                 layers: ['clustered-circle']
             });
-            var zoom = map.current.getZoom();
-            map.current.easeTo({
+            const zoom = map.getZoom();
+            map.easeTo({
                 center: features[0].geometry.coordinates,
                 zoom: zoom + 2
             });
         });
-        map.current.on('click', 'clustered-circle-low-zoom', function (e) {
-            var features = map.current.queryRenderedFeatures(e.point, {
+        map.on('click', 'clustered-circle-low-zoom', function (e: MapEventType) {
+            const features = map.queryRenderedFeatures(e.point, {
                 layers: ['clustered-circle-low-zoom']
             });
-            var zoom = map.current.getZoom();
-            map.current.easeTo({
+            const zoom = map.getZoom();
+            map.easeTo({
                 center: features[0].geometry.coordinates,
                 zoom: zoom + 2
             });
         });
+        function showObjectWithProperties(e: MapEventType) {
+            console.log("Clicked on object with properties: ", e.features[0].properties);
+            if (e.features[0].properties !== undefined) {
+                const osm_node_id = e.features[0].properties.node_id;
+                console.log("Clicked on object with osm_id: ", osm_node_id);
+                // show sidebar
+                fillSidebarWithOsmDataAndShow(osm_node_id, mapRef.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);
+                // update hash
+                const params = {
+                    ...parseHash(),
+                    node_id: osm_node_id,
+                };
+                console.log("new hash params", params);
+                window.location.hash = getNewHashString(params);
+            }
+        }
+
         // show sidebar on single element click
-        map.current.on('click', 'unclustered', function (e) {
-            console.log("Clicked on object with properties: ", e.features[0].properties);
-            if (e.features[0].properties !== undefined) {
-                const osm_node_id = e.features[0].properties.node_id;
-                console.log("Clicked on object with osm_id: ", osm_node_id);
-                // show sidebar
-                fillSidebarWithOsmDataAndShow(osm_node_id, map.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);
-                // update hash
-                const params = {
-                    ...parseHash(),
-                    node_id: osm_node_id,
-                };
-                console.log("new hash params", params);
-                window.location.hash = getNewHashString(params);
-            }
-        });
-        map.current.on('click', 'unclustered-low-zoom', function (e) {
-            console.log("Clicked on object with properties: ", e.features[0].properties);
-            if (e.features[0].properties !== undefined) {
-                const osm_node_id = e.features[0].properties.node_id;
-                console.log("Clicked on object with osm_id: ", osm_node_id);
-                // show sidebar
-                fillSidebarWithOsmDataAndShow(osm_node_id, map.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);
-                // update hash
-                const params = {
-                    ...parseHash(),
-                    node_id: osm_node_id,
-                };
-                console.log("new hash params", params);
-                window.location.hash = getNewHashString(params);
-            }
-        });
+        map.on('click', 'unclustered', showObjectWithProperties);
+        map.on('click', 'unclustered-low-zoom', showObjectWithProperties);
 
         // if direct link to osm node then get its data and zoom in
         const paramsFromHash = parseHash();
-        if (paramsFromHash["node_id"]) fillSidebarWithOsmDataAndShow(paramsFromHash["node_id"], map.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, true);
-    }, [lat, lng, zoom, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown]);
+        if (paramsFromHash["node_id"]) fillSidebarWithOsmDataAndShow(paramsFromHash["node_id"], mapRef.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, true);
+    }, [latitude, longitude, zoom, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown]);
 
     return (
         <>
@@ -315,3 +308,10 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
         </>
     );
 }
+
+interface MapProps {
+    openChangesetId: string,
+    setOpenChangesetId: (openChangesetId: string) => void,
+}
+
+export default Map

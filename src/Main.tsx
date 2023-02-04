@@ -39,8 +39,8 @@ function Main() {
             singlepage: false,
         })
     );
-    const [osmUsername, setOsmUsername] = useState<string>("");
-    const [openChangesetId, setOpenChangesetId] = useState(null);
+    const [osmUsername, setOsmUsername] = useState("");
+    const [openChangesetId, setOpenChangesetId] = useState("");
 
     const handleLogIn = () => {
         auth.authenticate(() => {

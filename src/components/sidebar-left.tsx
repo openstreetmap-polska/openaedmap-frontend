@@ -48,7 +48,7 @@ function accessColourClass(access: string): string {
 }
 
 const parseForm = (formElements: HTMLFormControlsCollection, language: string) => {
-  let tags: { [key: string]: string } = {"emergency": "defibrillator"};
+  const tags: Record<string, string> = {"emergency": "defibrillator"};
   const access = (formElements.namedItem("aedAccess") as RadioNodeList).value;
   if (access.length > 0) tags["access"] = access;
   const indoor = (formElements.namedItem("aedIndoor") as RadioNodeList).value;

@@ -1,4 +1,6 @@
-export async function fetchNodeDataFromOsm(nodeId: string) {
+import {NodeData} from "./backend";
+
+export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | null> {
     const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetch(url)
@@ -20,7 +22,7 @@ export async function fetchNodeDataFromOsm(nodeId: string) {
         })
         .catch(error => {
             console.error('Error:', error);
-            return {};
+            return null;
         });
 }
 
@@ -120,5 +122,5 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
 interface DefibrillatorData {
     lng: number,
     lat: number,
-    tags: { [key: string]: string },
+    tags: Record<string, string>,
 };
