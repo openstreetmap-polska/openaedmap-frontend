@@ -1,6 +1,6 @@
 import 'bulma/css/bulma.min.css';
 import i18n from 'i18next';
-import React from "react";
+import React, { FC, MouseEventHandler } from "react";
 import { Card, Image, Columns } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
 import '../Main.css';
@@ -27,6 +27,7 @@ import Icon from '@mdi/react'
 import { mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof } from '@mdi/js';
 import { initialModalState, ModalType } from '../model/modal';
 import { useAppContext } from "../appContext";
+import { Marker } from 'maplibre-gl';
 
 
 const accessToColourMapping = {
@@ -38,35 +39,32 @@ const accessToColourMapping = {
   'default': 'has-background-gray has-text-white-ter',
 };
 
-function accessColourClass(access) {
-  return accessToColourMapping[access] || accessToColourMapping['default'];
+function accessColourClass(access: string): string {
+  if (access in accessToColourMapping) {
+    return accessToColourMapping[access as keyof typeof accessToColourMapping];
+  } else {
+    return accessToColourMapping['default'];
+  }
 }
 
-const parseForm = (formElements, language) => {
-  let tags = {"emergency": "defibrillator"};
-  // access
-  const access = Array.from(formElements.aedAccess).filter(x => x.checked);
-  if (access.length === 1) tags["access"] = access[0].attributes.value.value;
-  //indoor
-  const indoor = Array.from(formElements.aedIndoor).filter(x => x.checked);
-  if (indoor.length === 1) tags["indoor"] = indoor[0].attributes.value.value;
-  // level
-  const level = formElements.level || {value: ""};
+const parseForm = (formElements: HTMLFormControlsCollection, language: string) => {
+  let tags: { [key: string]: string } = {"emergency": "defibrillator"};
+  const access = (formElements.namedItem("aedAccess") as RadioNodeList).value;
+  if (access.length > 0) tags["access"] = access;
+  const indoor = (formElements.namedItem("aedIndoor") as RadioNodeList).value;
+  if (indoor.length > 0) tags["indoor"] = indoor;
+  const level = (formElements.namedItem("level") as HTMLInputElement) || {value: ""} ;
   if (level.value.trim()) tags["level"] = level.value.trim();
-  // location
-  const location = formElements.aedLocation;
+  const location = formElements.namedItem("aedLocation") as HTMLInputElement;
   if (location.value.trim()) tags[`defibrillator:location:${language}`] = location.value.trim();
-  //phone
-  const phone = formElements.aedPhone;
+  const phone = formElements.namedItem("aedPhone") as HTMLInputElement;
   if (phone.value.trim()) tags["phone"] = phone.value.trim();
-
-  const checkDate = formElements.aedCheckDate;
+  const checkDate = formElements.namedItem("aedCheckDate") as HTMLInputElement;
   if (checkDate.value.trim()) tags["check_date"] = checkDate.value.trim();
-
   return tags
 };
 
-export default function SidebarLeft({ action, data, closeSidebar, visible, marker, openChangesetId, setOpenChangesetId }) {
+const SidebarLeft: FC<SidebarLeftProps> = ({ action, data, closeSidebar, visible, marker, openChangesetId, setOpenChangesetId }) => {
   const { t, i18n: { resolvedLanguage } } = useTranslation();
   const { authState: { auth }, setModalState } = useAppContext();
 
@@ -79,7 +77,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
         <Card>
-          <Card.Header id="sidebar-header" shadowless="1" className={accessColourClass(data.access)} alignItems="center">
+          <Card.Header id="sidebar-header" shadowless={true} className={accessColourClass(data.access)} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span
               className="is-size-5 py-2 has-text-weight-light"
@@ -89,22 +87,22 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             <CloseSidebarButton closeSidebarFunction={closeSidebar} />
           </Card.Header>
           <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
-            <Columns vCentered="1" className="is-mobile">
+            <Columns vCentered={true} className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><IndoorField indoor={data.indoor} level={data.level} /></Columns.Column>
             </Columns>
-            <Columns vCentered="1" className="is-mobile">
+            <Columns vCentered={true} className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiMapMarkerOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data["defibrillator_location"]} /></Columns.Column>
             </Columns>
-            <Columns vCentered="1" className="is-mobile">
+            <Columns vCentered={true} className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiClockOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><OpeningHoursField openingHours={data.opening_hours} /></Columns.Column>
             </Columns>
-            <Columns vCentered="1" className="is-mobile">
+            <Columns vCentered={true} className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiPhoneOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><ContactNumberField contactNumber={data.phone} /></Columns.Column>
             </Columns>
-            <Columns vCentered="1" className="is-mobile">
+            <Columns vCentered={true} className="is-mobile">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiAccountSupervisorOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><OperatorField operator={data.operator} /></Columns.Column>
             </Columns>
-            <Columns vCentered="1" className="is-mobile pb-0 mb-0">
+            <Columns vCentered={true} className="is-mobile pb-0 mb-0">
               <Columns.Column textAlign="center" size={2}><Icon path={mdiInformationOutline} size={1.15} className='icon' color='#028955' /></Columns.Column><Columns.Column className="py-1"><DescriptionField description={data[`description_${i18n.resolvedLanguage}`] || data["description"]} /></Columns.Column>
             </Columns>
             <CheckDateField check_date={data.check_date}></CheckDateField>
@@ -127,11 +125,16 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     )
   } else if (action === "addNode") {
 
-    const sendFormData = (event) => {
+    const sendFormData = (event: Event) => {
       event.preventDefault();
-      event.target.classList.add("is-loading");
+      if (event.target === null) {
+        console.error("Form target null");
+        return;
+      }
+      const button = event.target as HTMLFormElement;
+      button.classList.add("is-loading");
       const lngLat = marker.getLngLat();
-      const tags = parseForm(event.target.form.elements, resolvedLanguage);
+      const tags = parseForm(button.form.elements, resolvedLanguage);
       const data = {
         lng: lngLat.lng,
         lat: lngLat.lat,
@@ -139,18 +142,19 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
       };
       console.log(lngLat);
       console.log(tags);
+      if (auth === null) return;
       getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, i18n.resolvedLanguage)
         .then(changesetId => {
           return addDefibrillatorToOSM(auth, changesetId, data);
         })
         .then(newNodeId => {
-          event.target.classList.remove("is-loading");
+          button.classList.remove("is-loading");
           closeSidebar();
           console.log("created new node with id: ", newNodeId);
           setModalState({ ...initialModalState, visible: true, type: ModalType.NodeAddedSuccessfully, nodeId: newNodeId });
         })
         .catch(err => {
-          event.target.classList.remove("is-loading");
+          button.classList.remove("is-loading");
           closeSidebar();
           console.log(err);
           const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`;
@@ -160,7 +164,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return (
       <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
         <Card>
-          <Card.Header id="sidebar-header" className="has-background-grey" shadowless="1" alignItems="center">
+          <Card.Header id="sidebar-header" className="has-background-grey" shadowless={true} alignItems="center">
             <Image m={2} className='icon' src="./img/logo-aed.svg" color="white" alt="" size={48} />
             <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
               {t('sidebar.add_defibrillator')}
@@ -179,7 +183,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             </Card.Content>
             <Card.Footer>
               <Card.Footer.Item className="has-background-white-ter">
-                <AddAedButton type="submit" nextStep={sendFormData}/>
+                <AddAedButton nextStep={sendFormData}/>
               </Card.Footer.Item>
             </Card.Footer>
         </Card>
@@ -189,5 +193,18 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
     return <div id="sidebar-div" />
   } else {
     console.log(`Unknown action: '${action}'.`)
+    return null;
   }
 }
+
+interface SidebarLeftProps {
+  action: string,
+  data: any, // TODO: type
+  closeSidebar: () => void,
+  visible: boolean,
+  marker: Marker,
+  openChangesetId: string,
+  setOpenChangesetId: (changesetId: string) => void,
+}
+
+export default SidebarLeft

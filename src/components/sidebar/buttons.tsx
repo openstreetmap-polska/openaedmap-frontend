@@ -4,7 +4,7 @@ import { Button } from "react-bulma-components";
 import { useTranslation } from 'react-i18next';
 import {OSM_DOMAIN} from "../../constants";
 import {mdiGoogleMaps} from "@mdi/js/commonjs/mdi";
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler } from "react";
 
 type OsmId = string
 
@@ -51,8 +51,10 @@ export function CloseSidebarButton({ closeSidebarFunction }: { closeSidebarFunct
     />
 }
 
-export function AddAedButton({ nextStep }: { nextStep: () => void }) {
+export function AddAedButton({ nextStep }: { nextStep: (event: Event) => void }) {
     const { t } = useTranslation();
+    // TODO type
+    // @ts-ignore
     return <Button color={'success'} fullwidth={true} form="add_aed" onClick={nextStep}>
         <Icon path={mdiMapMarkerPlus} className='icon mr-2' />
         {t('footer.add_aed')}

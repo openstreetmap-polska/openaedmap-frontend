@@ -85,9 +85,6 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
 
     const paramsFromHash = parseHash();
 
-    let initialSidebarData = {};
-    let initialSidebarAction = "init";
-    let initialSidebarVisibility = false;
     let initialMapLongitude = -8;
     let initialMapLatitude = 47.74;
     let initialMapZoom = 3;
@@ -105,9 +102,9 @@ export default function Map({ openChangesetId, setOpenChangesetId }) {
 
     const [marker, setMarker] = useState(null);
 
-    const [sidebarLeftData, setSidebarLeftData] = useState(initialSidebarData);
-    const [sidebarLeftAction, setSidebarLeftAction] = useState(initialSidebarAction);
-    const [sidebarLeftShown, setSidebarLeftShown] = useState(initialSidebarVisibility);
+    const [sidebarLeftData, setSidebarLeftData] = useState({});
+    const [sidebarLeftAction, setSidebarLeftAction] = useState("init");
+    const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
     const [footerButtonType, setFooterButtonType] = useState(ButtonsType.AddAED);
 

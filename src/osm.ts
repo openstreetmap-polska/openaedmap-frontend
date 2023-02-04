@@ -46,7 +46,7 @@ function createTagElement(key: string, value: string): Element {
     return tag;
 }
 
-export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetId: string, openChangesetIdSetter: (changesetId: string) => void, lang: string) {
+export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetId: string, openChangesetIdSetter: (changesetId: string) => void, lang: string): Promise<string> {
     return new Promise((resolve, reject) => {
         if (openChangesetId) {
             console.log("Open changeset exists:", openChangesetId);
@@ -82,16 +82,15 @@ export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetI
     });
 }
 
-export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData) {
-    console.log(data);
+export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData): Promise<string> {
     return new Promise((resolve, reject) => {
         console.log('sending request to create node in changeset: ' + changesetId);
 
         const root = document.implementation.createDocument(null, "osm");
         const node = document.createElementNS(null, "node");
         node.setAttribute("changeset", changesetId);
-        node.setAttribute("lat", data.lat);
-        node.setAttribute("lon", data.lng);
+        node.setAttribute("lat", data.lat.toString());
+        node.setAttribute("lon", data.lng.toString());
         Object.entries(data.tags).forEach(([key, value]) => {
             node.appendChild(createTagElement(key, value));
         });
@@ -118,7 +117,7 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
 }
 
 interface DefibrillatorData {
-    lng: string,
-    lat: string,
+    lng: number,
+    lat: number,
     tags: { [key: string]: string },
 };
