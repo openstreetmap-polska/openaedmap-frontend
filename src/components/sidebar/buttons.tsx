@@ -4,7 +4,7 @@ import { Button } from "react-bulma-components";
 import { useTranslation } from 'react-i18next';
 import {OSM_DOMAIN} from "../../constants";
 import {mdiGoogleMaps} from "@mdi/js/commonjs/mdi";
-import React, { FC, MouseEventHandler } from "react";
+import React, { FC } from "react";
 
 type OsmId = string
 
