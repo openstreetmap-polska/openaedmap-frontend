@@ -1,8 +1,8 @@
+import React, {FC} from 'react';
 import { useTranslation } from 'react-i18next';
 import SpanNoData from "./spanNoData";
-import React from "react";
 
-function LocationDescription({ description }) {
+const LocationDescription: FC<LocationProps> = ({ description }) => {
     if (description) {
         return <span className="has-text-weight-medium">{description}</span>
     } else {
@@ -10,7 +10,7 @@ function LocationDescription({ description }) {
     }
 }
 
-export function LocationField({ description }) {
+export const LocationField: FC<LocationProps> = ({ description }) => {
     const { t } = useTranslation();
 
     return (
@@ -23,16 +23,19 @@ export function LocationField({ description }) {
     )
 }
 
-export function LocationFormField({ lang }) {
-    const { t } = useTranslation();
+export const LocationFormField = () => {
+    const { t, i18n: { resolvedLanguage } } = useTranslation();
 
     return (
         <div className="field pt-2">
-            <label className="label has-text-weight-semibold">{t('form.location') + ` (${lang}):`}</label>
+            <label className="label has-text-weight-semibold">{`${t('form.location')} (${resolvedLanguage}):`}</label>
             <div className="control">
-                <textarea tag={"defibrillator:location" + (lang ? ":" + lang : "")} name="aedLocation" className="textarea is-success" rows="2"
-                    placeholder={t("form.location_example")}></textarea>
+                <textarea name="aedLocation" className="textarea is-success" rows={2} placeholder={t("form.location_example")}></textarea>
             </div>
         </div>
     )
+}
+
+interface LocationProps {
+    description: string,
 }

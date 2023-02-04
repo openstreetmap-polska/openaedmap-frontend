@@ -42,7 +42,7 @@ function accessColourClass(access) {
   return accessToColourMapping[access] || accessToColourMapping['default'];
 }
 
-const parseForm = (formElements) => {
+const parseForm = (formElements, language) => {
   let tags = {"emergency": "defibrillator"};
   // access
   const access = Array.from(formElements.aedAccess).filter(x => x.checked);
@@ -55,7 +55,7 @@ const parseForm = (formElements) => {
   if (level.value.trim()) tags["level"] = level.value.trim();
   // location
   const location = formElements.aedLocation;
-  if (location.value.trim()) tags[location.attributes.tag.value] = location.value.trim();
+  if (location.value.trim()) tags[`defibrillator:location:${language}`] = location.value.trim();
   //phone
   const phone = formElements.aedPhone;
   if (phone.value.trim()) tags["phone"] = phone.value.trim();
@@ -67,7 +67,7 @@ const parseForm = (formElements) => {
 };
 
 export default function SidebarLeft({ action, data, closeSidebar, visible, marker, openChangesetId, setOpenChangesetId }) {
-  const { t } = useTranslation();
+  const { t, i18n: { resolvedLanguage } } = useTranslation();
   const { authState: { auth }, setModalState } = useAppContext();
 
   console.log("Opening left sidebar with action: ", action, " and data:", data);
@@ -131,7 +131,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
       event.preventDefault();
       event.target.classList.add("is-loading");
       const lngLat = marker.getLngLat();
-      const tags = parseForm(event.target.form.elements);
+      const tags = parseForm(event.target.form.elements, resolvedLanguage);
       const data = {
         lng: lngLat.lng,
         lat: lngLat.lat,
@@ -172,7 +172,7 @@ export default function SidebarLeft({ action, data, closeSidebar, visible, marke
             <form id="add_aed">
               <AccessFormField />
               <IndoorFormField />
-              <LocationFormField lang={i18n.resolvedLanguage} />
+              <LocationFormField />
               <ContactPhoneFormField />
               <CheckDateFormField />
               </form>

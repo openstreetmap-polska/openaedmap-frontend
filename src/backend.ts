@@ -1,6 +1,6 @@
 export const backendBaseUrl = process.env.REACT_APP_BACKEND_API_URL;
 
-export async function fetchNodeDataFromBackend(nodeId) {
+export async function fetchNodeDataFromBackend(nodeId: string) {
     const url = `${backendBaseUrl}/api/v1/node/${nodeId}`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetch(url)
