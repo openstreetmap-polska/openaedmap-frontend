@@ -13,7 +13,7 @@ const LogInButton: FC<LogInButtonProps> = ({inNavBar}) => {
     const { t } = useTranslation();
     const { authState: { auth, osmUsername }, handleLogIn, handleLogOut } = useAppContext();
 
-    if (auth.authenticated()) {
+    if (auth != null && auth.authenticated()) {
         return (
             <Navbar.Item className="has-text-white" hoverable={true}>
                 <Navbar.Item>

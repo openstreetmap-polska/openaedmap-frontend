@@ -6,7 +6,6 @@ import SiteNavbar from './components/navbar';
 import SidebarRight from './components/sidebar-right';
 import Map from './components/map';
 
-// Type declaration in this package is broken. I had to disable it.
 import { osmAuth } from 'osm-auth';
 import {initialModalState, ModalType} from './model/modal'
 import {AppContext} from './appContext';

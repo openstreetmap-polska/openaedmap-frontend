@@ -1,5 +1,5 @@
 export interface AuthState {
-    auth: any, // TODO: typing
+    auth: OSMAuth.OSMAuthInstance | null,
     osmUsername: string,
 }
 
