@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './navbar.css';
 import { Button, Navbar } from 'react-bulma-components';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,7 @@ import {initialModalState, ModalType} from "../model/modal";
 import {useAppContext} from "../appContext";
 
 
-export default function SiteNavbar({ toggleSidebarShown }) {
+const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
     const {setModalState} = useAppContext();
     const [isActive, setIsActive] = React.useState(false);
     const { t } = useTranslation();
@@ -71,7 +71,7 @@ export default function SiteNavbar({ toggleSidebarShown }) {
                     </Navbar.Item>
                     <Navbar.Item renderAs='div' p={1}>
                         <a href='https://github.com/openstreetmap-polska/openaedmap-frontend' target='_blank' rel='noreferrer' className='is-white is-outlined button'>
-                            <Icon title={t('navbar.visit_github')} alt='GitHub' path={mdiGithub} size='2rem'/>
+                            <Icon title={t('navbar.visit_github')} description='GitHub' path={mdiGithub} size='2rem'/>
                         </a>
                     </Navbar.Item>
                     <Navbar.Item className='is-hidden-desktop' textColor='white' renderAs='div' pl={0} pr={0}>
@@ -83,3 +83,9 @@ export default function SiteNavbar({ toggleSidebarShown }) {
         </Navbar>
     );
 }
+
+interface SiteNavbarProps {
+    toggleSidebarShown: () => void
+}
+
+export default SiteNavbar
