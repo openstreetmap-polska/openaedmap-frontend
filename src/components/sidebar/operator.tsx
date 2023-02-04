@@ -1,13 +1,12 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import React, { FC } from "react";
 import SpanNoData from "./spanNoData";
-import React, {FC} from "react";
 
 const OperatorDescription: FC<OperatorProps> = ({ operator }) => {
     if (operator) {
-        return <span className="has-text-weight-medium">{operator}</span>
-    } else {
-        return <SpanNoData />
+        return <span className="has-text-weight-medium">{operator}</span>;
     }
+    return <SpanNoData />;
 };
 
 export const OperatorField: FC<OperatorProps> = ({ operator }) => {
@@ -16,11 +15,11 @@ export const OperatorField: FC<OperatorProps> = ({ operator }) => {
     return (
         <div>
             <p className="has-text-weight-light has-text-grey mb-1">
-                {t('sidebar.operator') + ": "}
+                {`${t("sidebar.operator")}: `}
             </p>
             <OperatorDescription operator={operator} />
         </div>
-    )
+    );
 };
 
 interface OperatorProps {

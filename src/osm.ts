@@ -1,27 +1,27 @@
-import {NodeData} from "./backend";
+import { NodeData } from "./backend";
 
 export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | null> {
     const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetch(url)
-        .then(response => response.json())
-        .then(response => {
-            const node = response["elements"][0];
+        .then((response) => response.json())
+        .then((response) => {
+            const node = response.elements[0];
             const tags = Object.fromEntries(
-                Object.entries(node["tags"]).map(([key, val]) => [key.replaceAll(":", "_"), val])
+                Object.entries(node.tags).map(([key, val]) => [key.replaceAll(":", "_"), val]),
             );
-            const {lon, lat} = node;
+            const { lon, lat } = node;
 
             return {
-                osm_id: node["id"],
+                osm_id: node.id,
                 osm_type: "node",
-                lat: lat,
-                lon: lon,
+                lat,
+                lon,
                 ...tags,
-            }
+            };
         })
-        .catch(error => {
-            console.error('Error:', error);
+        .catch((error) => {
+            console.error("Error:", error);
             return null;
         });
 }
@@ -29,16 +29,16 @@ export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | n
 export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUsername: (username: string) => void) {
     auth.xhr(
         { method: "GET", path: "/api/0.6/user/details" },
-        function (err: Error, result: XMLDocument) {
+        (err: Error, result: XMLDocument) => {
             // result is an XML DOM containing the user details
             if (err) {
                 console.log(err);
                 throw err;
             }
-            const userObject = result.getElementsByTagName('user')[0];
-            const username = userObject.getAttribute('display_name');
+            const userObject = result.getElementsByTagName("user")[0];
+            const username = userObject.getAttribute("display_name");
             if (username !== null) setOsmUsername(username);
-        }
+        },
     );
 }
 
@@ -66,18 +66,18 @@ export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetI
             const data = serializer.serializeToString(root);
 
             auth.xhr({
-                method: 'PUT',
-                path: '/api/0.6/changeset/create',
+                method: "PUT",
+                path: "/api/0.6/changeset/create",
                 content: data,
                 headers: {
-                    "Content-Type": "text/xml"
+                    "Content-Type": "text/xml",
                 },
             }, (err: Error, res) => {
                 if (err) {
                     reject(err);
                 } else {
                     openChangesetIdSetter(res);
-                    console.log('Api returned changeset id: ' + res);
+                    console.log(`Api returned changeset id: ${res}`);
                     resolve(res);
                 }
             });
@@ -87,7 +87,7 @@ export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetI
 
 export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData): Promise<string> {
     return new Promise((resolve, reject) => {
-        console.log('sending request to create node in changeset: ' + changesetId);
+        console.log(`sending request to create node in changeset: ${changesetId}`);
 
         const root = document.implementation.createDocument(null, "osm");
         const node = document.createElementNS(null, "node");
@@ -98,16 +98,16 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
             node.appendChild(createTagElement(key, value));
         });
         root.documentElement.appendChild(node);
-        let serializer = new XMLSerializer();
-        let xml = serializer.serializeToString(root);
+        const serializer = new XMLSerializer();
+        const xml = serializer.serializeToString(root);
 
-        console.log('payload: ' + xml);
+        console.log(`payload: ${xml}`);
         auth.xhr({
-            method: 'PUT',
-            path: '/api/0.6/node/create',
+            method: "PUT",
+            path: "/api/0.6/node/create",
             content: xml,
             headers: {
-                "Content-Type": "text/xml"
+                "Content-Type": "text/xml",
             },
         }, (err: Error, res: string) => {
             if (err) reject(err);
@@ -123,4 +123,4 @@ interface DefibrillatorData {
     lng: number,
     lat: number,
     tags: Record<string, string>,
-};
+}

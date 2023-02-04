@@ -1,5 +1,5 @@
 export enum ButtonsType {
     None,
     AddAED,
-    MobileStep1
+    MobileStep1,
 }

@@ -1,5 +1,5 @@
-test('works', () => {
-  expect(2 + 2).toEqual(4)
+test("works", () => {
+    expect(2 + 2).toEqual(4);
 });
 
-export {}
+export {};

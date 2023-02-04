@@ -1,7 +1,7 @@
 import * as React from "react";
-import {useContext} from "react";
-import {initialModalState, ModalState} from "./model/modal";
-import {AuthState, initialAuthState} from "./model/auth";
+import { useContext } from "react";
+import { initialModalState, ModalState } from "./model/modal";
+import { AuthState, initialAuthState } from "./model/auth";
 
 interface AppContextType {
     authState: AuthState,

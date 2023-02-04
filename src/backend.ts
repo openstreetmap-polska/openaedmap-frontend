@@ -4,24 +4,24 @@ export async function fetchNodeDataFromBackend(nodeId: string): Promise<NodeData
     const url = `${backendBaseUrl}/api/v1/node/${nodeId}`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetch(url)
-        .then(response => response.json())
-        .then(response => {
-            const node = response["elements"][0];
+        .then((response) => response.json())
+        .then((response) => {
+            const node = response.elements[0];
             const tags = Object.fromEntries(
-                Object.entries(node["tags"]).map(([key, val]) => [key.replaceAll(":", "_"), val])
+                Object.entries(node.tags).map(([key, val]) => [key.replaceAll(":", "_"), val]),
             );
-            const {lon, lat} = node;
+            const { lon, lat } = node;
 
             return {
-                osm_id: node["id"],
+                osm_id: node.id,
                 osm_type: "node",
-                lat: lat,
-                lon: lon,
+                lat,
+                lon,
                 ...tags,
-            }
+            };
         })
-        .catch(error => {
-            console.error('Error:', error);
+        .catch((error) => {
+            console.error("Error:", error);
             return null;
         });
 }
