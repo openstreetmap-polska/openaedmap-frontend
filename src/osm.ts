@@ -1,4 +1,4 @@
-export async function fetchNodeDataFromOsm(nodeId) {
+export async function fetchNodeDataFromOsm(nodeId: string) {
     const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetch(url)
@@ -24,10 +24,10 @@ export async function fetchNodeDataFromOsm(nodeId) {
         });
 }
 
-export function updateOsmUsernameState(auth, setOsmUsername) {
+export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUsername: (username: string | null) => void) {
     auth.xhr(
         { method: "GET", path: "/api/0.6/user/details" },
-        function (err, result) {
+        function (err: Error, result: XMLDocument) {
             // result is an XML DOM containing the user details
             if (err) {
                 console.log(err);
@@ -39,24 +39,24 @@ export function updateOsmUsernameState(auth, setOsmUsername) {
     );
 }
 
-export function getOpenChangesetId(auth, openChangesetId, openChangesetIdSetter, lang) {
+export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetId: string, openChangesetIdSetter: (changesetId: string) => void, lang: string) {
     return new Promise((resolve, reject) => {
         if (openChangesetId) {
             console.log("Open changeset exists:", openChangesetId);
             resolve(openChangesetId);
         } else {
-            var root = document.implementation.createDocument(null, "osm");
-            var changeset = document.createElementNS(null, "changeset");
-            var comment = document.createElementNS(null, "tag");
+            const root = document.implementation.createDocument(null, "osm");
+            const changeset = document.createElementNS(null, "changeset");
+            const comment = document.createElementNS(null, "tag");
             comment.setAttribute("k", "comment");
             comment.setAttribute("v", "Defibrillator added via https://openaedmap.org #aed");
-            var created_by = document.createElementNS(null, "tag");
+            const created_by = document.createElementNS(null, "tag");
             created_by.setAttribute("k", "created_by");
             created_by.setAttribute("v", "https://openaedmap.org");
-            var locale = document.createElementNS(null, "tag");
+            const locale = document.createElementNS(null, "tag");
             locale.setAttribute("k", "locale");
             locale.setAttribute("v", lang);
-            var hashtags = document.createElementNS(null, "tag");
+            const hashtags = document.createElementNS(null, "tag");
             hashtags.setAttribute("k", "hashtags");
             hashtags.setAttribute("v", "#aed");
             changeset.appendChild(comment);
@@ -71,12 +71,10 @@ export function getOpenChangesetId(auth, openChangesetId, openChangesetIdSetter,
                 method: 'PUT',
                 path: '/api/0.6/changeset/create',
                 content: data,
-                options: {
-                    header: {
-                        "Content-Type": "text/xml"
-                    }
+                headers: {
+                    "Content-Type": "text/xml"
                 },
-            }, (err, res) => {
+            }, (err: Error, res) => {
                 if (err) {
                     reject(err);
                 } else {
@@ -89,17 +87,18 @@ export function getOpenChangesetId(auth, openChangesetId, openChangesetIdSetter,
     });
 }
 
-export function addDefibrillatorToOSM(auth, changesetId, data) {
+export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData) {
+    console.log(data);
     return new Promise((resolve, reject) => {
         console.log('sending request to create node in changeset: ' + changesetId);
 
-        var root = document.implementation.createDocument(null, "osm");
-        var node = document.createElementNS(null, "node");
+        const root = document.implementation.createDocument(null, "osm");
+        const node = document.createElementNS(null, "node");
         node.setAttribute("changeset", changesetId);
         node.setAttribute("lat", data.lat);
         node.setAttribute("lon", data.lng);
         Object.entries(data.tags).map(([key, value]) => {
-            var tag = document.createElementNS(null, "tag");
+            const tag = document.createElementNS(null, "tag");
             tag.setAttribute("k", key);
             tag.setAttribute("v", value);
             return tag;
@@ -115,12 +114,10 @@ export function addDefibrillatorToOSM(auth, changesetId, data) {
             method: 'PUT',
             path: '/api/0.6/node/create',
             content: xml,
-            options: {
-                header: {
-                    "Content-Type": "text/xml"
-                }
+            headers: {
+                "Content-Type": "text/xml"
             },
-        }, (err, res) => {
+        }, (err: Error, res: string) => {
             if (err) reject(err);
             else {
                 console.log(`API returned node id: ${res}`);
@@ -129,3 +126,9 @@ export function addDefibrillatorToOSM(auth, changesetId, data) {
         });
     });
 }
+
+interface DefibrillatorData {
+    lng: string,
+    lat: string,
+    tags: { [key: string]: string },
+};
