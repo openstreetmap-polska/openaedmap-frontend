@@ -9,7 +9,7 @@ import maplibreglWorker from "maplibre-gl/dist/maplibre-gl-csp-worker";
 import styleJson from "./map_style";
 import SidebarLeft from "./sidebar-left";
 import FooterDiv from "./footer";
-import { fetchNodeDataFromBackend, NodeData } from "../backend";
+import { NodeData } from "../backend";
 import ButtonsType from "../model/buttonsType";
 
 // -------------------------------------------------------------------
@@ -22,6 +22,7 @@ import maplibregl from "!maplibre-gl"; // ! is important here
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import SidebarAction from "../model/sidebarAction";
+import { fetchNodeDataFromOsm } from "../osm";
 
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
@@ -34,7 +35,7 @@ function fillSidebarWithOsmDataAndShow(
     setSidebarLeftShown: (sidebarLeftShown: boolean) => void,
     jumpInsteadOfEaseTo: boolean,
 ) {
-    const result = fetchNodeDataFromBackend(nodeId);
+    const result = fetchNodeDataFromOsm(nodeId);
     result.then((data) => {
         if (data) {
             const zoomLevelForDetailedView = 17;
