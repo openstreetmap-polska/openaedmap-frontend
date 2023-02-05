@@ -1,14 +1,12 @@
 import { NodeData } from "./backend";
 
-export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | null> {
-    const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
-    console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
+export async function fetchNodeData(url: string): Promise<NodeData | null> {
     return fetch(url)
         .then((response) => response.json())
         .then((response) => {
             const node = response.elements[0];
             const tags = Object.fromEntries(
-                Object.entries(node.tags).map(([key, val]) => [key.replaceAll(":", "_"), val]),
+                Object.entries(node.tags).map(([key, val]) => [key.replaceAll(":", "_"), String(val)]),
             );
             const { lon, lat } = node;
 
@@ -17,13 +15,19 @@ export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | n
                 osm_type: "node",
                 lat,
                 lon,
-                ...tags,
+                tags,
             };
         })
         .catch((error) => {
             console.error("Error:", error);
             return null;
         });
+}
+
+export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | null> {
+    const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
+    console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
+    return fetchNodeData(url);
 }
 
 export function updateOsmUsernameState(auth: OSMAuth.OSMAuthInstance, setOsmUsername: (username: string) => void) {

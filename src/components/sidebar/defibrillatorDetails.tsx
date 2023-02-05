@@ -23,7 +23,7 @@ import { ContactNumberField } from "./contactNumber";
 import OperatorField from "./operator";
 import DescriptionField from "./description";
 import { CheckDateField } from "./verificationDate";
-import i18n from "../../i18n";
+import { NodeData } from "../../backend";
 
 const accessToColourMapping = {
     yes: "has-background-green has-text-white-ter",
@@ -46,16 +46,17 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
     const {
         data, closeSidebar,
     } = props;
-    const accessText = data.access ? ` - ${t(`access.${data.access}`)}` : "";
-    const defibrillatorLocation = data[`defibrillator_location_${resolvedLanguage}`]
-        || data.defibrillator_location;
+    if (data === null) return null;
+    const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
+    const defibrillatorLocation = data.tags[`defibrillator_location_${resolvedLanguage}`]
+        || data.tags.defibrillator_location;
     return (
         <div className="sidebar" id="sidebar-div">
             <Card>
                 <Card.Header
                     id="sidebar-header"
                     shadowless
-                    className={accessColourClass(data.access)}
+                    className={accessColourClass(data.tags.access)}
                     alignItems="center"
                 >
                     <Image m={2} className="icon" src="./img/logo-aed.svg" color="white" alt="" size={48} />
@@ -73,7 +74,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <IndoorField indoor={data.indoor} level={data.level} />
+                            <IndoorField indoor={data.tags.indoor} level={data.tags.level} />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">
@@ -89,7 +90,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiClockOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <OpeningHoursField openingHours={data.opening_hours} />
+                            <OpeningHoursField openingHours={data.tags.opening_hours} />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">
@@ -97,7 +98,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiPhoneOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <ContactNumberField contactNumber={data.phone} />
+                            <ContactNumberField contactNumber={data.tags.phone} />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">
@@ -105,7 +106,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiAccountSupervisorOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <OperatorField operator={data.operator} />
+                            <OperatorField operator={data.tags.operator} />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile pb-0 mb-0">
@@ -114,11 +115,11 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                         </Columns.Column>
                         <Columns.Column className="py-1">
                             <DescriptionField
-                                description={data[`description_${i18n.resolvedLanguage}`] || data.description}
+                                description={data.tags[`description_${resolvedLanguage}`] || data.tags.description}
                             />
                         </Columns.Column>
                     </Columns>
-                    <CheckDateField check_date={data.check_date} />
+                    <CheckDateField check_date={data.tags.check_date} />
                 </Card.Content>
                 <Card.Footer>
                     <Card.Footer.Item className="has-background-white-ter">
@@ -139,7 +140,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 };
 
 interface DefibrillatorDetailsProps {
-    data: any, // TODO: type
+    data: NodeData | null,
     closeSidebar: () => void,
 }
 

@@ -6,6 +6,7 @@ import { Marker } from "maplibre-gl";
 import DefibrillatorDetails from "./sidebar/defibrillatorDetails";
 import SidebarAction from "../model/sidebarAction";
 import DefibrillatorEditor from "./sidebar/defibrillatorEditor";
+import { NodeData } from "../backend";
 
 const SidebarLeft: FC<SidebarLeftProps> = (props) => {
     const {
@@ -37,7 +38,7 @@ const SidebarLeft: FC<SidebarLeftProps> = (props) => {
 
 interface SidebarLeftProps {
     action: SidebarAction,
-    data: any, // TODO: type
+    data: NodeData | null,
     closeSidebar: () => void,
     visible: boolean,
     marker: Marker,

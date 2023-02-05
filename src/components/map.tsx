@@ -109,7 +109,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const [marker, setMarker] = useState<maplibregl.Marker>(null);
 
-    const [sidebarLeftData, setSidebarLeftData] = useState({});
+    const [sidebarLeftData, setSidebarLeftData] = useState<NodeData | null>(null);
     const [sidebarLeftAction, setSidebarLeftAction] = useState(SidebarAction.init);
     const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
@@ -163,7 +163,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         if (map === null) return;
         deleteMarker();
         removeNodeIdFromHash();
-        setSidebarLeftData({});
+        setSidebarLeftData(null);
         setSidebarLeftAction(SidebarAction.addNode);
         setSidebarLeftShown(!mobile); // for mobile hide sidebar so marker is visible
         setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
