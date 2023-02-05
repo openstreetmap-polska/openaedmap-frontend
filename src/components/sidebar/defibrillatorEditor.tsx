@@ -89,10 +89,12 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                     button.classList.remove("is-loading");
                     closeSidebar();
                     console.log("updated node with id: ", newVersion);
-                    // TODO: update success modal?
-                    /* setModalState({
-                        ...initialModalState, visible: true, type: ModalType.NodeAddedSuccessfully, nodeId: data.osmId,
-                    }); */
+                    setModalState({
+                        ...initialModalState,
+                        visible: true,
+                        type: ModalType.NodeUpdatedSuccessfully,
+                        nodeId: data.osmId,
+                    });
                 })
                 .catch(handleError);
         }

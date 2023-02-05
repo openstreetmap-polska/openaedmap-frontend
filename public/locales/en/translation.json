@@ -75,6 +75,7 @@
     "osmp": "OpenStreetMap Poland",
     "modal": {
         "aed_added_successfully": "AED added successfully.",
+        "aed_updated_successfully": "AED updated successfully.",
         "available_in_osm": "Available in OpenStreetMap with the url:",
         "should_appear_soon": "Object should appear on the map within 60 minutes.",
         "error_occurred": "Error occurred",

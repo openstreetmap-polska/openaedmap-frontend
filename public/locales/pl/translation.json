@@ -75,6 +75,7 @@
     "osmp": "OpenStreetMap Polska",
     "modal": {
         "aed_added_successfully": "AED został dodany.",
+        "aed_updated_successfully": "Edycja AED się powiodła.",
         "available_in_osm": "Dostępny w OpenStreetMap pod adresem URL:",
         "should_appear_soon": "Obiekt powinien być widoczny na mapie w ciągu 60 minut.",
         "error_occurred": "Wystąpił błąd",
