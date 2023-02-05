@@ -54,6 +54,7 @@ export function getOpenChangesetId(
     openChangesetId: string,
     openChangesetIdSetter: (changesetId: string) => void,
     lang: string,
+    newAED: boolean,
 ): Promise<string> {
     return new Promise((resolve, reject) => {
         if (openChangesetId) {
@@ -62,7 +63,8 @@ export function getOpenChangesetId(
         } else {
             const root = document.implementation.createDocument(null, "osm");
             const changeset = document.createElementNS(null, "changeset");
-            changeset.appendChild(createTagElement("comment", "Defibrillator added via https://openaedmap.org #aed"));
+            const changesetComment = `Defibrillator ${newAED ? "added" : "modified"} via https://openaedmap.org #aed`;
+            changeset.appendChild(createTagElement("comment", changesetComment));
             changeset.appendChild(createTagElement("created_by", "https://openaedmap.org"));
             changeset.appendChild(createTagElement("locale", lang));
             changeset.appendChild(createTagElement("hashtags", "#aed"));

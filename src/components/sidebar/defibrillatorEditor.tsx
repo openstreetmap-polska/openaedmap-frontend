@@ -67,7 +67,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                 lat: lngLat.lat,
                 tags,
             };
-            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage)
+            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage, newAED)
                 .then((changesetId) => addDefibrillatorToOSM(auth, changesetId, newDefibrillatorData))
                 .then((newNodeId) => {
                     button.classList.remove("is-loading");
@@ -83,7 +83,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                 ...data,
                 tags,
             };
-            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage)
+            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage, newAED)
                 .then((changesetId) => editDefibrillatorInOSM(auth, changesetId, defibrillatorData))
                 .then((newVersion) => {
                     button.classList.remove("is-loading");
