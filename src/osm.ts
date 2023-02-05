@@ -1,4 +1,4 @@
-import { NodeData } from "./backend";
+import { NodeData } from "./model/nodeData";
 
 export async function fetchNodeData(url: string): Promise<NodeData | null> {
     return fetch(url)
