@@ -44,8 +44,8 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
     } = props;
     if (data === null) return null;
     const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
-    const defibrillatorLocation = data.tags[`defibrillator_location_${resolvedLanguage}`]
-        || data.tags.defibrillator_location;
+    const defibrillatorLocation = data.tags[`defibrillator:location:${resolvedLanguage}`]
+        || data.tags["defibrillator:location"];
     const levelText = data.tags.level ? ` (${t("sidebar.level")}: ${data.tags.level})` : "";
     const indoorText = data.tags.indoor ? t(`indoor.${data.tags.indoor}`) + levelText : "";
     return (
@@ -113,7 +113,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                         </Columns.Column>
                         <Columns.Column className="py-1">
                             <DetailTextRow
-                                text={data.tags[`description_${resolvedLanguage}`] || data.tags.description}
+                                text={data.tags[`description:${resolvedLanguage}`] || data.tags.description}
                                 translationId="sidebar.description"
                             />
                         </Columns.Column>

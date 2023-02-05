@@ -24,7 +24,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
     const [indoor, setIndoor] = useState<string>(initialTags.indoor || "");
     const [level, setLevel] = useState<string>(initialTags.level || "");
     const [location, setLocation] = useState<string>(
-        initialTags[`defibrillator:location:${resolvedLanguage}`] || initialTags["defibrillator:location"] || "",
+        initialTags[`defibrillator:location:${resolvedLanguage}`] || "",
     );
     const [phoneNumber, setPhoneNumber] = useState<string>(initialTags.phone || initialTags["contact:phone"] || "");
     const [checkDate, setCheckDate] = useState<string>(new Date().toISOString().substring(0, 10));
