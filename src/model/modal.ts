@@ -1,5 +1,6 @@
 export enum ModalType {
     NodeAddedSuccessfully,
+    NodeUpdatedSuccessfully,
     NeedToLogin,
     NeedMoreZoom,
     About,

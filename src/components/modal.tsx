@@ -30,6 +30,19 @@ const ModalContent: FC<{}> = () => {
                 </div>
             );
         }
+        case ModalType.NodeUpdatedSuccessfully: {
+            const nodeUrl = `${process.env.REACT_APP_OSM_API_URL}/node/${nodeId}/`;
+            return (
+                <div>
+                    <p className="pb-2">{t("modal.aed_updated_successfully")}</p>
+                    <p className="pb-4">
+                        {t("modal.available_in_osm")}
+                        &nbsp;
+                        <a target="_blank" rel="noreferrer" href={nodeUrl}>{nodeUrl}</a>
+                    </p>
+                </div>
+            );
+        }
         case ModalType.NeedToLogin:
             return (
                 <div>
