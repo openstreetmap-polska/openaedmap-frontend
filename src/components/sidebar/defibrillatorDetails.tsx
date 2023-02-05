@@ -23,7 +23,7 @@ import { ContactNumberField } from "./contactNumber";
 import OperatorField from "./operator";
 import DescriptionField from "./description";
 import { CheckDateField } from "./verificationDate";
-import { NodeData } from "../../backend";
+import { NodeData } from "../../model/nodeData";
 
 const accessToColourMapping = {
     yes: "has-background-green has-text-white-ter",

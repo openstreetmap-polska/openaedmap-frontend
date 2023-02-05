@@ -6,7 +6,7 @@ import { Marker } from "maplibre-gl";
 import DefibrillatorDetails from "./sidebar/defibrillatorDetails";
 import SidebarAction from "../model/sidebarAction";
 import DefibrillatorEditor from "./sidebar/defibrillatorEditor";
-import { NodeData } from "../backend";
+import { NodeData } from "../model/nodeData";
 
 const SidebarLeft: FC<SidebarLeftProps> = (props) => {
     const {

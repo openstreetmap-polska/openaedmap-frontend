@@ -9,7 +9,6 @@ import maplibreglWorker from "maplibre-gl/dist/maplibre-gl-csp-worker";
 import styleJson from "./map_style";
 import SidebarLeft from "./sidebar-left";
 import FooterDiv from "./footer";
-import { NodeData } from "../backend";
 import ButtonsType from "../model/buttonsType";
 
 // -------------------------------------------------------------------
@@ -23,6 +22,7 @@ import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import SidebarAction from "../model/sidebarAction";
 import { fetchNodeDataFromOsm } from "../osm";
+import { NodeData } from "../model/nodeData";
 
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
