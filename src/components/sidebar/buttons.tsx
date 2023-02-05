@@ -21,7 +21,7 @@ export function EditButton({ osmId }: { osmId: OsmId }) {
             target="_blank"
         >
             <Icon path={mdiPencil} size={1.0} className="icon" color="#fff" />
-            <span>{t("sidebar.edit")}</span>
+            <span>{t("sidebar.edit_in_osm")}</span>
         </a>
     );
 }

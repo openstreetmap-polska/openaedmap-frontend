@@ -46,7 +46,7 @@
         "opening_hours": "开放时间",
         "contact_number": "联系电话",
         "note": "注记",
-        "edit": "在OSM中编辑",
+        "edit_in_osm": "在OSM中编辑",
         "google_maps_navigation": "谷歌地图导航",
         "no_data": "无数据",
         "indoor": "在建筑物内",

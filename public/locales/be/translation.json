@@ -18,7 +18,7 @@
         "map_legend_title": "Легенда",
         "openstreetmap_navigation": "Навігацыя OpenStreetMap",
         "no_data": "Няма дадзеных",
-        "edit": "Рэдагаваць у OSM",
+        "edit_in_osm": "Рэдагаваць у OSM",
         "indoor": "Унутры будынка"
     },
     "access": {

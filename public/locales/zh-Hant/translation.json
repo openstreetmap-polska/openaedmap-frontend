@@ -28,7 +28,7 @@
         "indoor": "在建築物內",
         "opening_hours": "開放時間",
         "note": "註解",
-        "edit": "在 OSM 中編輯",
+        "edit_in_osm": "在 OSM 中編輯",
         "view": "在 OSM 中察看",
         "copy_url": "複製網址",
         "add_defibrillator": "新增除顫器 (AED)",

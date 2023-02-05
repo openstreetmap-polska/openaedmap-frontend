@@ -56,7 +56,7 @@
         "add_defibrillator": "Aggiungi un defibrillatore",
         "opening_hours": "Orari di apertura",
         "note": "Nota",
-        "edit": "Modifica in OSM",
+        "edit_in_osm": "Modifica in OSM",
         "view": "Visualizza in OSM",
         "copy_url": "Copia l'URL",
         "openstreetmap_navigation": "Navigazione OpenStreetMap",

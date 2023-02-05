@@ -6,7 +6,7 @@
         "caption_info": "AED",
         "add_defibrillator": "除細動器(AED)を追加",
         "view": "OSMで表示",
-        "edit": "OSMで編集",
+        "edit_in_osm": "OSMで編集",
         "copy_url": "URLをコピー",
         "description": "説明",
         "opening_hours": "営業時間",

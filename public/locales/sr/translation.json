@@ -31,7 +31,7 @@
         "operator": "Оператор",
         "note": "Напомена",
         "copy_url": "Копирај URL",
-        "edit": "Уреди у OSM",
+        "edit_in_osm": "Уреди у OSM",
         "add_defibrillator": "Додај дефибрилатор",
         "openstreetmap_navigation": "OpenStreetMap навигација",
         "google_maps_navigation": "Google Maps навигација",
