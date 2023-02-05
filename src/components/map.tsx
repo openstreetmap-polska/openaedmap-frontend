@@ -22,7 +22,7 @@ import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import SidebarAction from "../model/sidebarAction";
 import { fetchNodeDataFromOsm } from "../osm";
-import { NodeData } from "../model/nodeData";
+import { DefibrillatorData } from "../model/defibrillatorData";
 
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
@@ -30,8 +30,8 @@ maplibregl.workerClass = maplibreglWorker;
 function fillSidebarWithOsmDataAndShow(
     nodeId: string,
     mapInstance: maplibregl.Map,
-    setSidebarLeftAction: (action: SidebarAction) => void,
-    setSidebarLeftData: (data: NodeData) => void,
+    setSidebarAction: (action: SidebarAction) => void,
+    setSidebarData: (data: DefibrillatorData) => void,
     setSidebarLeftShown: (sidebarLeftShown: boolean) => void,
     jumpInsteadOfEaseTo: boolean,
 ) {
@@ -64,8 +64,8 @@ function fillSidebarWithOsmDataAndShow(
                     around: { lon: data.lon, lat: data.lat },
                 });
             }
-            setSidebarLeftData(data);
-            setSidebarLeftAction(SidebarAction.showDetails);
+            setSidebarData(data);
+            setSidebarAction(SidebarAction.showDetails);
             setSidebarLeftShown(true);
         }
     });
@@ -88,7 +88,9 @@ function getNewHashString(parameters: Record<string, string>) {
 }
 
 const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
-    const { authState: { auth }, setModalState } = useAppContext();
+    const {
+        authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData,
+    } = useAppContext();
     const { t } = useTranslation();
 
     const hash4MapName = "map";
@@ -109,8 +111,6 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const [marker, setMarker] = useState<maplibregl.Marker>(null);
 
-    const [sidebarLeftData, setSidebarLeftData] = useState<NodeData | null>(null);
-    const [sidebarLeftAction, setSidebarLeftAction] = useState(SidebarAction.init);
     const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
     const [footerButtonType, setFooterButtonType] = useState(ButtonsType.AddAED);
@@ -163,8 +163,8 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         if (map === null) return;
         deleteMarker();
         removeNodeIdFromHash();
-        setSidebarLeftData(null);
-        setSidebarLeftAction(SidebarAction.addNode);
+        setSidebarData(null);
+        setSidebarAction(SidebarAction.addNode);
         setSidebarLeftShown(!mobile); // for mobile hide sidebar so marker is visible
         setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
         // add marker
@@ -278,8 +278,8 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
                 fillSidebarWithOsmDataAndShow(
                     osmNodeId,
                     mapRef.current,
-                    setSidebarLeftAction,
-                    setSidebarLeftData,
+                    setSidebarAction,
+                    setSidebarData,
                     setSidebarLeftShown,
                     false,
                 );
@@ -303,20 +303,20 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             fillSidebarWithOsmDataAndShow(
                 newParamsFromHash.node_id,
                 mapRef.current,
-                setSidebarLeftAction,
-                setSidebarLeftData,
+                setSidebarAction,
+                setSidebarData,
                 setSidebarLeftShown,
                 true,
             );
         }
-    }, [initialLatitude, initialLongitude, initialZoom, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown]);
+    }, [initialLatitude, initialLongitude, initialZoom, setSidebarAction, setSidebarData, setSidebarLeftShown]);
 
     return (
         <>
             { sidebarLeftShown && (
                 <SidebarLeft
-                    action={sidebarLeftAction}
-                    data={sidebarLeftData}
+                    action={sidebarAction}
+                    data={sidebarData}
                     closeSidebar={closeSidebarLeft}
                     visible={sidebarLeftShown}
                     marker={marker}

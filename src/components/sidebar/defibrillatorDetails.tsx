@@ -10,15 +10,15 @@ import {
 import Icon from "@mdi/react";
 import {
     CloseSidebarButton,
-    CopyUrlButton,
-    EditButton,
+    CopyUrlButton, EditButton,
+    EditIdButton,
     GoogleMapsNavigationButton,
     OpenStreetMapNavigationButton,
     ViewButton,
 } from "./buttons";
 import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
-import { NodeData } from "../../model/nodeData";
+import { DefibrillatorData } from "../../model/defibrillatorData";
 import DetailTextRow from "./detailTextRow";
 
 const accessToColourMapping = {
@@ -123,8 +123,9 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                 <Card.Footer>
                     <Card.Footer.Item className="has-background-white-ter">
                         <CopyUrlButton />
-                        <ViewButton osmId={data.osm_id} />
-                        <EditButton osmId={data.osm_id} />
+                        <ViewButton osmId={data.osmId} />
+                        <EditButton osmId={data.osmId} />
+                        <EditIdButton osmId={data.osmId} />
                     </Card.Footer.Item>
                 </Card.Footer>
                 <Card.Footer>
@@ -139,7 +140,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 };
 
 interface DefibrillatorDetailsProps {
-    data: NodeData | null,
+    data: DefibrillatorData | null,
     closeSidebar: () => void,
 }
 

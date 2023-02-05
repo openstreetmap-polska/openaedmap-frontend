@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
-import React, { useState } from "react";
+import React from "react";
 
-export default function IndoorFormField() {
+export default function IndoorFormField({
+    indoor, setIndoor, level, setLevel,
+}: IndoorFormFieldProps) {
     const { t } = useTranslation();
     const groupName = "aedIndoor";
-    const [indoor, setIndoor] = useState("");
     const indoorOptions: Array<{ value: string, label: string }> = [
         { value: "no", label: t("form.outside") },
         { value: "yes", label: t("form.inside") },
@@ -38,10 +39,24 @@ export default function IndoorFormField() {
                 <div className="field">
                     <label htmlFor="level" className="label has-text-weight-semibold pt-2">{t("form.level")}</label>
                     <div className="control">
-                        <input className="input is-success" type="number" placeholder="13" name="level" />
+                        <input
+                            className="input is-success"
+                            type="number"
+                            placeholder="13"
+                            name="level"
+                            value={level}
+                            onChange={(event) => setLevel(event.target.value)}
+                        />
                     </div>
                 </div>
             )}
         </div>
     );
+}
+
+interface IndoorFormFieldProps {
+    indoor: string,
+    setIndoor: (indoor: string) => void,
+    level: string,
+    setLevel: (level: string) => void,
 }

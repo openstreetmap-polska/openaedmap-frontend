@@ -15,12 +15,16 @@ import { AppContext } from "./appContext";
 import CustomModal from "./components/modal";
 import { updateOsmUsernameState } from "./osm";
 import { AuthState } from "./model/auth";
+import SidebarAction from "./model/sidebarAction";
+import { DefibrillatorData } from "./model/defibrillatorData";
 
 function Main() {
     // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
     const defaultRightSidebarState = window.innerWidth > 1024;
 
     const [modalState, setModalState] = useState(initialModalState);
+    const [sidebarAction, setSidebarAction] = useState(SidebarAction.init);
+    const [sidebarData, setSidebarData] = useState<DefibrillatorData | null>(null);
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
 
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
@@ -60,7 +64,15 @@ function Main() {
 
     const appContext = useMemo(
         () => ({
-            authState, modalState, setModalState, handleLogIn, handleLogOut,
+            authState,
+            modalState,
+            setModalState,
+            handleLogIn,
+            handleLogOut,
+            sidebarAction,
+            setSidebarAction,
+            sidebarData,
+            setSidebarData,
         }),
         [authState],
     );

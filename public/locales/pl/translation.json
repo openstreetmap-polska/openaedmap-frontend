@@ -42,7 +42,8 @@
         "add_defibrillator": "Dodaj defibrylator",
         "openstreetmap_navigation": "OpenStreetMap Nawigacja",
         "google_maps_navigation": "Google Maps Nawigacja",
-        "verification_date": "Data weryfikacji"
+        "verification_date": "Data weryfikacji",
+        "edit_defibrillator": "Edytuj defibrylator"
     },
     "form": {
         "optional_field": "Pole opcjonalne",
@@ -59,7 +60,8 @@
         "add": "Dodaj",
         "add_aed": "Dodaj AED",
         "cancel": "Anuluj",
-        "continue": "Dalej"
+        "continue": "Dalej",
+        "save_aed": "Zapisz AED"
     },
     "opening_hours": {
         "24_7": "całodobowo",

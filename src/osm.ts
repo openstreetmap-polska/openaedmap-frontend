@@ -1,21 +1,17 @@
-import { NodeData } from "./model/nodeData";
+import { DefibrillatorData, NewDefibrillatorData } from "./model/defibrillatorData";
 
-export async function fetchNodeData(url: string): Promise<NodeData | null> {
+export async function fetchNodeData(url: string): Promise<DefibrillatorData | null> {
     return fetch(url)
         .then((response) => response.json())
         .then((response) => {
             const node = response.elements[0];
-            const tags = Object.fromEntries(
-                Object.entries(node.tags).map(([key, val]) => [key.replaceAll(":", "_"), String(val)]),
-            );
-            const { lon, lat } = node;
-
             return {
-                osm_id: node.id,
-                osm_type: "node",
-                lat,
-                lon,
-                tags,
+                osmId: node.id,
+                osmType: "node",
+                lat: node.lat,
+                lon: node.lon,
+                tags: node.tags,
+                version: node.version,
             };
         })
         .catch((error) => {
@@ -24,7 +20,7 @@ export async function fetchNodeData(url: string): Promise<NodeData | null> {
         });
 }
 
-export async function fetchNodeDataFromOsm(nodeId: string): Promise<NodeData | null> {
+export async function fetchNodeDataFromOsm(nodeId: string): Promise<DefibrillatorData | null> {
     const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetchNodeData(url);
@@ -94,7 +90,7 @@ export function getOpenChangesetId(
     });
 }
 
-export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData)
+export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: NewDefibrillatorData)
     : Promise<string> {
     return new Promise((resolve, reject) => {
         console.log(`sending request to create node in changeset: ${changesetId}`);
@@ -103,7 +99,7 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
         const node = document.createElementNS(null, "node");
         node.setAttribute("changeset", changesetId);
         node.setAttribute("lat", data.lat.toString());
-        node.setAttribute("lon", data.lng.toString());
+        node.setAttribute("lon", data.lon.toString());
         Object.entries(data.tags).forEach(([key, value]) => {
             node.appendChild(createTagElement(key, value));
         });
@@ -129,8 +125,41 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
     });
 }
 
-interface DefibrillatorData {
-    lng: number,
-    lat: number,
-    tags: Record<string, string>,
+export function editDefibrillatorInOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData)
+    : Promise<string> {
+    return new Promise((resolve, reject) => {
+        console.log(`sending request to edit node in changeset: ${changesetId}`);
+
+        const root = document.implementation.createDocument(null, "osm");
+        const node = document.createElementNS(null, "node");
+        node.setAttribute("changeset", changesetId);
+        node.setAttribute("lat", data.lat.toString());
+        node.setAttribute("lon", data.lon.toString());
+        const { osmId } = data;
+        node.setAttribute("id", osmId);
+        node.setAttribute("version", data.version);
+        node.setAttribute("visible", "true");
+        Object.entries(data.tags).forEach(([key, value]) => {
+            node.appendChild(createTagElement(key, value));
+        });
+        root.documentElement.appendChild(node);
+        const serializer = new XMLSerializer();
+        const xml = serializer.serializeToString(root);
+
+        console.log(`payload: ${xml}`);
+        auth.xhr({
+            method: "PUT",
+            path: `/api/0.6/node/${osmId}`,
+            content: xml,
+            headers: {
+                "Content-Type": "text/xml",
+            },
+        }, (err: Error, res: string) => {
+            if (err) reject(err);
+            else {
+                console.log(`API returned node version: ${res}`);
+                resolve(res);
+            }
+        });
+    });
 }

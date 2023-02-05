@@ -3,7 +3,7 @@ import React from "react";
 import { mdiPhone } from "@mdi/js";
 import Icon from "@mdi/react";
 
-export default function ContactPhoneFormField() {
+export default function ContactPhoneFormField({ phoneNumber, setPhoneNumber }: ContactPhoneFormFieldProps) {
     const { t } = useTranslation();
 
     const phoneRegex = "^[+][0-9]{2}[ ]?((?:[0-9]{9})|(?:[0-9]{3} [0-9]{3} "
@@ -16,6 +16,8 @@ export default function ContactPhoneFormField() {
                 <input
                     className="input is-success"
                     type="text"
+                    value={phoneNumber}
+                    onChange={(event) => setPhoneNumber(event.target.value)}
                     placeholder="+48 123 456 789"
                     name="aedPhone"
                     pattern={phoneRegex}
@@ -27,4 +29,9 @@ export default function ContactPhoneFormField() {
             <p className="help has-text-weight-light">{t("form.optional_field")}</p>
         </div>
     );
+}
+
+interface ContactPhoneFormFieldProps {
+    phoneNumber: string,
+    setPhoneNumber: (phoneNumber: string) => void,
 }
