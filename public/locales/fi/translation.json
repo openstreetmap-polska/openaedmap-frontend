@@ -5,7 +5,8 @@
         "customers": "Pääsy työaikana",
         "no": "Ei käytettävissä",
         "unknown": "Tuntematon pääsy",
-        "permissive": "Yleisesti saatavilla, kunnes lisäilmoitus"
+        "permissive": "Yleisesti saatavilla, kunnes lisäilmoitus",
+        "unknownTag": "Ei käyttöoikeustunnistetta tai ei vastaa edellä mainittua"
     },
     "navbar": {
         "created_with_<3_by": "luonut ❤️:lla tekijältä",
@@ -24,7 +25,8 @@
         "marker_popup_text": "Siirrä merkki AED-sijaintiin",
         "optional_field": "Valinnainen kenttä",
         "is_indoor": "Onko rakennuksen sisällä?",
-        "inside": "Sisällä"
+        "inside": "Sisällä",
+        "level": "Taso"
     },
     "modal": {
         "need_more_zoom": "Ominaisuuksien lisäämiseksi sinun on suurennettava, jotta antamasi sijainti on tarkka.",
@@ -63,7 +65,8 @@
         "operator": "Operaattori",
         "google_maps_navigation": "Google Maps-navigointi",
         "openstreetmap_navigation": "OpenStreetMap-navigointi",
-        "verification_date": "Tutkimuksen päivämäärä"
+        "verification_date": "Tutkimuksen päivämäärä",
+        "level": "taso"
     },
     "footer": {
         "add": "Lisää",
