@@ -25,7 +25,11 @@ export function LanguageSwitcher() {
                     } return null;
                 }).filter((x) => x)}
                 <Navbar.Divider />
-                <Navbar.Item href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating" rel="noreferrer" target="_blank">
+                <Navbar.Item
+                    href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating"
+                    rel="noreferrer"
+                    target="_blank"
+                >
                     🖋&nbsp;
                     {t("navbar.help_translating")}
                 </Navbar.Item>

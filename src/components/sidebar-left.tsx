@@ -7,7 +7,8 @@ import "../Main.css";
 import "./sidebar.css";
 import Icon from "@mdi/react";
 import {
-    mdiMapMarkerOutline, mdiClockOutline, mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof,
+    mdiMapMarkerOutline, mdiClockOutline,
+    mdiPhoneOutline, mdiAccountSupervisorOutline, mdiInformationOutline, mdiHomeRoof,
 } from "@mdi/js";
 import { Marker } from "maplibre-gl";
 import {
@@ -21,12 +22,12 @@ import {
 } from "./sidebar/buttons";
 import { ContactNumberField, ContactPhoneFormField } from "./sidebar/contactNumber";
 import { CheckDateFormField, CheckDateField } from "./sidebar/verificationDate";
-import { DescriptionField } from "./sidebar/description";
+import DescriptionField from "./sidebar/description";
 import { IndoorField, IndoorFormField } from "./sidebar/indoor";
 import { LocationField, LocationFormField } from "./sidebar/location";
 import { OpeningHoursField } from "./sidebar/openingHours";
-import { OperatorField } from "./sidebar/operator";
-import { AccessFormField } from "./sidebar/access";
+import OperatorField from "./sidebar/operator";
+import AccessFormField from "./sidebar/access";
 import { getOpenChangesetId, addDefibrillatorToOSM } from "../osm";
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
@@ -74,11 +75,18 @@ const SidebarLeft: FC<SidebarLeftProps> = ({
 
     if (action === "showDetails") {
         const accessText = data.access ? ` - ${t(`access.${data.access}`)}` : "";
+        const defibrillatorLocation = data[`defibrillator_location_${i18n.resolvedLanguage}`]
+            || data.defibrillator_location;
 
         return (
             <div className={visible ? "sidebar" : "sidebar is-invisible"} id="sidebar-div">
                 <Card>
-                    <Card.Header id="sidebar-header" shadowless className={accessColourClass(data.access)} alignItems="center">
+                    <Card.Header
+                        id="sidebar-header"
+                        shadowless
+                        className={accessColourClass(data.access)}
+                        alignItems="center"
+                    >
                         <Image m={2} className="icon" src="./img/logo-aed.svg" color="white" alt="" size={48} />
                         <span
                             className="is-size-5 py-2 has-text-weight-light"
@@ -90,28 +98,54 @@ const SidebarLeft: FC<SidebarLeftProps> = ({
                     </Card.Header>
                     <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
                         <Columns vCentered className="is-mobile">
-                            <Columns.Column textAlign="center" size={2}><Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" /></Columns.Column>
-                            <Columns.Column className="py-1"><IndoorField indoor={data.indoor} level={data.level} /></Columns.Column>
+                            <Columns.Column textAlign="center" size={2}>
+                                <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />
+                            </Columns.Column>
+                            <Columns.Column className="py-1">
+                                <IndoorField indoor={data.indoor} level={data.level} />
+                            </Columns.Column>
                         </Columns>
                         <Columns vCentered className="is-mobile">
-                            <Columns.Column textAlign="center" size={2}><Icon path={mdiMapMarkerOutline} size={1.15} className="icon" color="#028955" /></Columns.Column>
-                            <Columns.Column className="py-1"><LocationField description={data[`defibrillator_location_${i18n.resolvedLanguage}`] || data.defibrillator_location} /></Columns.Column>
+                            <Columns.Column textAlign="center" size={2}>
+                                <Icon path={mdiMapMarkerOutline} size={1.15} className="icon" color="#028955" />
+                            </Columns.Column>
+                            <Columns.Column className="py-1">
+                                <LocationField description={defibrillatorLocation} />
+                            </Columns.Column>
                         </Columns>
                         <Columns vCentered className="is-mobile">
-                            <Columns.Column textAlign="center" size={2}><Icon path={mdiClockOutline} size={1.15} className="icon" color="#028955" /></Columns.Column>
-                            <Columns.Column className="py-1"><OpeningHoursField openingHours={data.opening_hours} /></Columns.Column>
+                            <Columns.Column textAlign="center" size={2}>
+                                <Icon path={mdiClockOutline} size={1.15} className="icon" color="#028955" />
+                            </Columns.Column>
+                            <Columns.Column className="py-1">
+                                <OpeningHoursField openingHours={data.opening_hours} />
+                            </Columns.Column>
                         </Columns>
                         <Columns vCentered className="is-mobile">
-                            <Columns.Column textAlign="center" size={2}><Icon path={mdiPhoneOutline} size={1.15} className="icon" color="#028955" /></Columns.Column>
-                            <Columns.Column className="py-1"><ContactNumberField contactNumber={data.phone} /></Columns.Column>
+                            <Columns.Column textAlign="center" size={2}>
+                                <Icon path={mdiPhoneOutline} size={1.15} className="icon" color="#028955" />
+                            </Columns.Column>
+                            <Columns.Column className="py-1">
+                                <ContactNumberField contactNumber={data.phone} />
+                            </Columns.Column>
                         </Columns>
                         <Columns vCentered className="is-mobile">
-                            <Columns.Column textAlign="center" size={2}><Icon path={mdiAccountSupervisorOutline} size={1.15} className="icon" color="#028955" /></Columns.Column>
-                            <Columns.Column className="py-1"><OperatorField operator={data.operator} /></Columns.Column>
+                            <Columns.Column textAlign="center" size={2}>
+                                <Icon path={mdiAccountSupervisorOutline} size={1.15} className="icon" color="#028955" />
+                            </Columns.Column>
+                            <Columns.Column className="py-1">
+                                <OperatorField operator={data.operator} />
+                            </Columns.Column>
                         </Columns>
                         <Columns vCentered className="is-mobile pb-0 mb-0">
-                            <Columns.Column textAlign="center" size={2}><Icon path={mdiInformationOutline} size={1.15} className="icon" color="#028955" /></Columns.Column>
-                            <Columns.Column className="py-1"><DescriptionField description={data[`description_${i18n.resolvedLanguage}`] || data.description} /></Columns.Column>
+                            <Columns.Column textAlign="center" size={2}>
+                                <Icon path={mdiInformationOutline} size={1.15} className="icon" color="#028955" />
+                            </Columns.Column>
+                            <Columns.Column className="py-1">
+                                <DescriptionField
+                                    description={data[`description_${i18n.resolvedLanguage}`] || data.description}
+                                />
+                            </Columns.Column>
                         </Columns>
                         <CheckDateField check_date={data.check_date} />
                     </Card.Content>
@@ -142,7 +176,7 @@ const SidebarLeft: FC<SidebarLeftProps> = ({
             button.classList.add("is-loading");
             const lngLat = marker.getLngLat();
             const tags = parseForm(button.form.elements, resolvedLanguage);
-            const data = {
+            const defibrillatorData = {
                 lng: lngLat.lng,
                 lat: lngLat.lat,
                 tags,
@@ -151,7 +185,7 @@ const SidebarLeft: FC<SidebarLeftProps> = ({
             console.log(tags);
             if (auth === null) return;
             getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, i18n.resolvedLanguage)
-                .then((changesetId) => addDefibrillatorToOSM(auth, changesetId, data))
+                .then((changesetId) => addDefibrillatorToOSM(auth, changesetId, defibrillatorData))
                 .then((newNodeId) => {
                     button.classList.remove("is-loading");
                     closeSidebar();

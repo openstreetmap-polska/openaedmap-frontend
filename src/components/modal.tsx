@@ -16,19 +16,20 @@ const ModalContent: FC<{}> = () => {
     } = useAppContext();
 
     switch (type) {
-        case ModalType.NodeAddedSuccessfully:
+        case ModalType.NodeAddedSuccessfully: {
             const nodeUrl = `${process.env.REACT_APP_OSM_API_URL}/node/${nodeId}/`;
             return (
                 <div>
                     <p className="pb-2">{t("modal.aed_added_successfully")}</p>
                     <p className="pb-4">
                         {t("modal.available_in_osm")}
-&nbsp;
-                    <a target="_blank" rel="noreferrer" href={nodeUrl}>{nodeUrl}</a>
+                        &nbsp;
+                        <a target="_blank" rel="noreferrer" href={nodeUrl}>{nodeUrl}</a>
                     </p>
                     <p className="pb-2">{t("modal.should_appear_soon")}</p>
                 </div>
             );
+        }
         case ModalType.NeedToLogin:
             return (
                 <div>
@@ -41,11 +42,11 @@ const ModalContent: FC<{}> = () => {
                 <div>
                     <p className="pb-2">{t("modal.need_more_zoom")}</p>
                     <p className="pb-2">
-                    {t("modal.current_zoom")}
-                    {" "}
-                    <span className="has-text-weight-semibold">{currentZoom.toFixed(0)}</span>
-                    .
-</p>
+                        {t("modal.current_zoom")}
+                        {" "}
+                        <span className="has-text-weight-semibold">{currentZoom.toFixed(0)}</span>
+                        .
+                    </p>
                     <p className="pb-2">{t("modal.zoom_need_to_be")}</p>
                 </div>
             );
@@ -63,24 +64,33 @@ const ModalContent: FC<{}> = () => {
         case ModalType.Error:
             return (
                 <p className="pb-2">
-                {t("modal.error_occurred")}
-                : $
-{errorMessage}
-            </p>
+                    {t("modal.error_occurred")}
+                    : $
+                    {errorMessage}
+                </p>
             );
+        default:
+            return null;
     }
 };
 
-export const CustomModal: FC<{}> = () => {
+const CustomModal: FC<{}> = () => {
     const { t } = useTranslation();
     const { modalState, setModalState } = useAppContext();
 
     return (
-        <Modal show={modalState.visible} onClose={() => { setModalState({ ...modalState, visible: false }); }} closeOnEsc closeOnBlur>
+        <Modal
+            show={modalState.visible}
+            onClose={() => { setModalState({ ...modalState, visible: false }); }}
+            closeOnEsc
+            closeOnBlur
+        >
             <Modal.Card radiusless>
                 <Modal.Card.Header showClose className="has-background-green has-text-white-ter">
                     <Icon path={mdiInformationOutline} size={1} className="icon mr-2" />
-                    <Modal.Card.Title className="has-text-white-ter has-text-weight-light">{t("modal.title")}</Modal.Card.Title>
+                    <Modal.Card.Title className="has-text-white-ter has-text-weight-light">
+                        {t("modal.title")}
+                    </Modal.Card.Title>
                 </Modal.Card.Header>
                 <Modal.Card.Body>
                     { modalState.visible && <ModalContent /> }
@@ -89,3 +99,5 @@ export const CustomModal: FC<{}> = () => {
         </Modal>
     );
 };
+
+export default CustomModal;

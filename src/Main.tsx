@@ -1,6 +1,9 @@
-import React, { useEffect, Suspense, useState } from "react";
+import React, {
+    useEffect, Suspense, useState, useMemo,
+} from "react";
 import "./Main.css";
 import "bulma/css/bulma.min.css";
+// @ts-ignore
 import { osmAuth } from "osm-auth";
 import SiteNavbar from "./components/navbar";
 import SidebarRight from "./components/sidebar-right";
@@ -9,7 +12,7 @@ import Map from "./components/map";
 // @ts-ignore
 import { initialModalState, ModalType } from "./model/modal";
 import { AppContext } from "./appContext";
-import { CustomModal } from "./components/modal";
+import CustomModal from "./components/modal";
 import { updateOsmUsernameState } from "./osm";
 import { AuthState } from "./model/auth";
 
@@ -55,9 +58,12 @@ function Main() {
 
     const authState: AuthState = { auth, osmUsername };
 
-    const appContext = {
-        authState, modalState, setModalState, handleLogIn, handleLogOut,
-    };
+    const appContext = useMemo(
+        () => ({
+            authState, modalState, setModalState, handleLogIn, handleLogOut,
+        }),
+        [authState],
+    );
     useEffect(() => {
         if (auth.authenticated()) updateOsmUsernameState(auth, setOsmUsername);
     }, [auth]);

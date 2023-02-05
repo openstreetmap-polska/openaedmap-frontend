@@ -3,7 +3,8 @@ import { backendBaseUrl } from "../backend";
 const getUrl = window.location;
 const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;
 const spriteUrl = (new URL("sprite", baseUrl)).href;
-const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`; // can't use URL class since this is a template not literal url
+// can't use URL class since this is a template not literal url
+const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
 
 const style = {
     version: 8,
@@ -15,7 +16,8 @@ const style = {
             tileSize: 256,
             minzoom: 0,
             maxzoom: 19,
-            attribution: "© <a target=\"_blank\" rel=\"noopener\" href=\"https://openstreetmap.org/copyright\">OpenStreetMap contributors</a>",
+            attribution: "© <a target=\"_blank\" rel=\"noopener\" href=\"https://openstreetmap.org/copyright\">"
+                + "OpenStreetMap contributors</a>",
         },
         "aed-locations": {
             type: "vector",

@@ -20,10 +20,11 @@ function openingHoursConfig(language: string): argument_hash {
     };
 }
 
-function parseOpeningHours(openingHours: string) {
+function parseOpeningHours(openingHours: string): string | null {
     if (openingHours) {
         let hoursPrettified;
         try {
+            // eslint-disable-next-line new-cap
             const oh = new opening_hours(openingHours, undefined, 2);
             // @ts-ignore
             hoursPrettified = oh.prettifyValue({ conf: openingHoursConfig(i18n.resolvedLanguage) });
@@ -34,9 +35,10 @@ function parseOpeningHours(openingHours: string) {
             return openingHours;
         }
     }
+    return null;
 }
 
-function isCurrentlyOpen(openingHours: string) {
+function isCurrentlyOpen(openingHours: string): boolean | null {
     if (openingHours) {
         if (openingHours === "24/7") {
             return true;
@@ -46,6 +48,7 @@ function isCurrentlyOpen(openingHours: string) {
         }
 
         try {
+            // eslint-disable-next-line new-cap
             const oh = new opening_hours(openingHours, undefined, 2);
             return oh.getState();
         } catch (error) {
@@ -53,6 +56,7 @@ function isCurrentlyOpen(openingHours: string) {
             return null;
         }
     }
+    return null;
 }
 
 export const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({ openingHours }) => {
@@ -75,11 +79,12 @@ export const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({ openingHours }) => 
 export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours }) => {
     const { t } = useTranslation();
 
-    const is24_7 = openingHours === "24/7";
     if (openingHours) {
         return (
             <span>
-                <span className="has-text-weight-medium">{is24_7 ? t("opening_hours.24_7") : parseOpeningHours(openingHours)}</span>
+                <span className="has-text-weight-medium">
+                    {openingHours === "24/7" ? t("opening_hours.24_7") : parseOpeningHours(openingHours)}
+                </span>
                 <CurrentlyOpenStatus openingHours={openingHours} />
             </span>
         );

@@ -20,13 +20,13 @@ module.exports = {
   ],
   rules: {
     'max-len': ['error', { code: 120 }],
-    "indent": ["error", 4],
+    "indent": "off",
     "@typescript-eslint/indent": ["error", 4],
     "react/jsx-indent": ["error", 4],
     "react/jsx-indent-props": ["error", 4],
     "@typescript-eslint/quotes": ["error", "double"],
     'no-console': 'off',
-    'react/jsx-filename-extension': 'off',
+    'react/function-component-definition': 'off',
     'eol-last': 'off',
   },
 };

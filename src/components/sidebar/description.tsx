@@ -9,7 +9,7 @@ const DescriptionText: FC<DescriptionProps> = ({ description }) => {
     return <SpanNoData />;
 };
 
-export const DescriptionField: FC<DescriptionProps> = ({ description }) => {
+const DescriptionField: FC<DescriptionProps> = ({ description }) => {
     const { t } = useTranslation();
 
     return (
@@ -25,3 +25,5 @@ export const DescriptionField: FC<DescriptionProps> = ({ description }) => {
 interface DescriptionProps {
     description: string,
 }
+
+export default DescriptionField;

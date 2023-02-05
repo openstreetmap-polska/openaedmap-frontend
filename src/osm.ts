@@ -49,7 +49,12 @@ function createTagElement(key: string, value: string): Element {
     return tag;
 }
 
-export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetId: string, openChangesetIdSetter: (changesetId: string) => void, lang: string): Promise<string> {
+export function getOpenChangesetId(
+    auth: OSMAuth.OSMAuthInstance,
+    openChangesetId: string,
+    openChangesetIdSetter: (changesetId: string) => void,
+    lang: string,
+): Promise<string> {
     return new Promise((resolve, reject) => {
         if (openChangesetId) {
             console.log("Open changeset exists:", openChangesetId);
@@ -85,7 +90,8 @@ export function getOpenChangesetId(auth: OSMAuth.OSMAuthInstance, openChangesetI
     });
 }
 
-export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData): Promise<string> {
+export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId: string, data: DefibrillatorData)
+    : Promise<string> {
     return new Promise((resolve, reject) => {
         console.log(`sending request to create node in changeset: ${changesetId}`);
 
