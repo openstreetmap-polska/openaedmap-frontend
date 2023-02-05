@@ -61,14 +61,10 @@ const ModalContent: FC<{}> = () => {
                     </p>
                 </div>
             );
-        case ModalType.Error:
-            return (
-                <p className="pb-2">
-                    {t("modal.error_occurred")}
-                    : $
-                    {errorMessage}
-                </p>
-            );
+        case ModalType.Error: {
+            const errorText = `${t("modal.error_occurred")}: $${errorMessage}`;
+            return <p className="pb-2">{errorText}</p>;
+        }
         default:
             return null;
     }

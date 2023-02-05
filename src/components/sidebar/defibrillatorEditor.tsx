@@ -6,9 +6,9 @@ import { addDefibrillatorToOSM, getOpenChangesetId } from "../../osm";
 import { initialModalState, ModalType } from "../../model/modal";
 import { AddAedButton, CloseSidebarButton } from "./buttons";
 import AccessFormField from "./access";
-import { IndoorFormField } from "./indoor";
-import { LocationFormField } from "./location";
-import { ContactPhoneFormField } from "./contactNumber";
+import IndoorFormField from "./indoor";
+import LocationFormField from "./location";
+import ContactPhoneFormField from "./contactNumber";
 import { CheckDateFormField } from "./verificationDate";
 import { useAppContext } from "../../appContext";
 

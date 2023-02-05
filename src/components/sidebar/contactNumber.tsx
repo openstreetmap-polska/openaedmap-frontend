@@ -1,30 +1,9 @@
 import { useTranslation } from "react-i18next";
-import React, { FC } from "react";
+import React from "react";
 import { mdiPhone } from "@mdi/js";
 import Icon from "@mdi/react";
-import SpanNoData from "./spanNoData";
 
-const ContactNumberDescription: FC<ContactNumberProps> = ({ contactNumber }) => {
-    if (contactNumber) {
-        return <span className="has-text-weight-medium">{contactNumber}</span>;
-    }
-    return <SpanNoData />;
-};
-
-export const ContactNumberField: FC<ContactNumberProps> = ({ contactNumber }) => {
-    const { t } = useTranslation();
-
-    return (
-        <div>
-            <p className="has-text-weight-light has-text-grey mb-1">
-                {`${t("sidebar.contact_number")}: `}
-            </p>
-            <ContactNumberDescription contactNumber={contactNumber} />
-        </div>
-    );
-};
-
-export function ContactPhoneFormField() {
+export default function ContactPhoneFormField() {
     const { t } = useTranslation();
 
     const phoneRegex = "^[+][0-9]{2}[ ]?((?:[0-9]{9})|(?:[0-9]{3} [0-9]{3} "
@@ -48,8 +27,4 @@ export function ContactPhoneFormField() {
             <p className="help has-text-weight-light">{t("form.optional_field")}</p>
         </div>
     );
-}
-
-interface ContactNumberProps {
-    contactNumber: string,
 }

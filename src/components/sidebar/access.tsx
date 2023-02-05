@@ -10,9 +10,10 @@ export default function AccessFormField() {
         { value: "private", label: t("access.private") },
         { value: "customers", label: t("access.customers") },
     ];
+    const accessLabelText = `${t("form.accessibility")}:`;
     return (
         <div>
-            <span className="label has-text-weight-semibold">{`${t("form.accessibility")}:`}</span>
+            <span className="label has-text-weight-semibold">{accessLabelText}</span>
             {accessOptions.map(({ value, label }) => (
                 <div key={`radio-${value}-field`} className="field">
                     <input

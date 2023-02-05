@@ -65,12 +65,11 @@ export const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({ openingHours }) => 
     if (isOpen === null) {
         return <sup />;
     }
+    const currentlyOpenText = `• ${t(isOpen ? "opening_hours.open" : "opening_hours.closed")}`;
     return (
         <sup className="pl-1 is-lowercase">
             <span className={isOpen ? "has-text-primary-dark" : "has-text-danger-dark"}>
-                •
-                {" "}
-                {t(isOpen ? "opening_hours.open" : "opening_hours.closed")}
+                {currentlyOpenText}
             </span>
         </sup>
     );
@@ -94,12 +93,10 @@ export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours })
 
 export const OpeningHoursField: FC<OpeningHoursProps> = ({ openingHours }) => {
     const { t } = useTranslation();
-
+    const openingHoursLabelText = `${t("sidebar.opening_hours")}: `;
     return (
         <div>
-            <p className="has-text-weight-light has-text-grey mb-1">
-                {`${t("sidebar.opening_hours")}: `}
-            </p>
+            <p className="has-text-weight-light has-text-grey mb-1">{openingHoursLabelText}</p>
             <OpeningHoursDescription openingHours={openingHours} />
         </div>
     );

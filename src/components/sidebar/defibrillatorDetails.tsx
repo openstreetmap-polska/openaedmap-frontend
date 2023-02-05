@@ -16,14 +16,10 @@ import {
     OpenStreetMapNavigationButton,
     ViewButton,
 } from "./buttons";
-import { IndoorField } from "./indoor";
-import { LocationField } from "./location";
 import { OpeningHoursField } from "./openingHours";
-import { ContactNumberField } from "./contactNumber";
-import OperatorField from "./operator";
-import DescriptionField from "./description";
 import { CheckDateField } from "./verificationDate";
 import { NodeData } from "../../model/nodeData";
+import DetailTextRow from "./detailTextRow";
 
 const accessToColourMapping = {
     yes: "has-background-green has-text-white-ter",
@@ -50,6 +46,8 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
     const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
     const defibrillatorLocation = data.tags[`defibrillator_location_${resolvedLanguage}`]
         || data.tags.defibrillator_location;
+    const levelText = data.tags.level ? ` (${t("sidebar.level")}: ${data.tags.level})` : "";
+    const indoorText = data.tags.indoor ? t(`indoor.${data.tags.indoor}`) + levelText : "";
     return (
         <div className="sidebar" id="sidebar-div">
             <Card>
@@ -74,7 +72,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <IndoorField indoor={data.tags.indoor} level={data.tags.level} />
+                            <DetailTextRow text={indoorText} translationId="sidebar.indoor" />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">
@@ -82,7 +80,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiMapMarkerOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <LocationField description={defibrillatorLocation} />
+                            <DetailTextRow text={defibrillatorLocation} translationId="sidebar.location" />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">
@@ -98,7 +96,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiPhoneOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <ContactNumberField contactNumber={data.tags.phone} />
+                            <DetailTextRow text={data.tags.phone} translationId="sidebar.contact_number" />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">
@@ -106,7 +104,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiAccountSupervisorOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <OperatorField operator={data.tags.operator} />
+                            <DetailTextRow text={data.tags.operator} translationId="sidebar.operator" />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile pb-0 mb-0">
@@ -114,8 +112,9 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiInformationOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <DescriptionField
-                                description={data.tags[`description_${resolvedLanguage}`] || data.tags.description}
+                            <DetailTextRow
+                                text={data.tags[`description_${resolvedLanguage}`] || data.tags.description}
+                                translationId="sidebar.description"
                             />
                         </Columns.Column>
                     </Columns>

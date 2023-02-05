@@ -8,6 +8,7 @@ import { languages } from "../i18n";
 
 export function LanguageSwitcher() {
     const { t } = useTranslation();
+    const helpTranslationText = `🖋&nbsp;${t("navbar.help_translating")}`;
     return (
         <Navbar.Item touch={{ display: "hidden" }} desktop={{ only: true }} hoverable>
             <Navbar.Link className="has-text-white" key={i18n.resolvedLanguage}>
@@ -30,8 +31,7 @@ export function LanguageSwitcher() {
                     rel="noreferrer"
                     target="_blank"
                 >
-                    🖋&nbsp;
-                    {t("navbar.help_translating")}
+                    { helpTranslationText}
                 </Navbar.Item>
             </Navbar.Dropdown>
         </Navbar.Item>

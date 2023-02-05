@@ -1,32 +1,7 @@
 import { useTranslation } from "react-i18next";
-import React, { FC, useState } from "react";
-import SpanNoData from "./spanNoData";
+import React, { useState } from "react";
 
-const IndoorDescription: FC<IndoorProps> = ({ indoor, level }) => {
-    const { t } = useTranslation();
-
-    if (indoor) {
-        const levelText = level ? ` (${t("sidebar.level")}: ${level})` : "";
-        const indoorText = t(`indoor.${indoor}`) + levelText;
-        return <span className="has-text-weight-medium">{indoorText}</span>;
-    }
-    return <SpanNoData />;
-};
-
-export const IndoorField: FC<IndoorProps> = ({ indoor, level }) => {
-    const { t } = useTranslation();
-
-    return (
-        <div>
-            <p className="has-text-weight-light has-text-grey mb-1">
-                {`${t("sidebar.indoor")}?: `}
-            </p>
-            <IndoorDescription indoor={indoor} level={level} />
-        </div>
-    );
-};
-
-export function IndoorFormField() {
+export default function IndoorFormField() {
     const { t } = useTranslation();
     const groupName = "aedIndoor";
     const [indoor, setIndoor] = useState("");
@@ -69,9 +44,4 @@ export function IndoorFormField() {
             )}
         </div>
     );
-}
-
-interface IndoorProps {
-    indoor: string,
-    level: string,
 }
