@@ -1,3 +1,4 @@
+import React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiDownload, mdiEarth } from "@mdi/js";
@@ -12,7 +13,14 @@ export default function DownloadCard() {
                     <Icon path={mdiDownload} size={1} className="icon mr-1" color="#7a7a7a" />
                     {t("sidebar.download_title")}
                 </p>
-                <a className="button is-success mr-1" href="/data/world.geojson" target="_blank" rel="noreferrer" download key={t("sidebar.geojson")}>
+                <a
+                    className="button is-success mr-1"
+                    href="/data/world.geojson"
+                    target="_blank"
+                    rel="noreferrer"
+                    download
+                    key={t("sidebar.geojson")}
+                >
                     <Icon path={mdiEarth} size={1} className="icon mr-2" />
                     {t("sidebar.geojson")}
                 </a>

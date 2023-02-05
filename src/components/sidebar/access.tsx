@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
 
-export function AccessFormField() {
+export default function AccessFormField() {
     const { t } = useTranslation();
     const groupName = "aedAccess";
     const [access, setAccess] = useState("");
@@ -12,7 +12,7 @@ export function AccessFormField() {
     ];
     return (
         <div>
-            <label className="label has-text-weight-semibold">{`${t("form.accessibility")}:`}</label>
+            <span className="label has-text-weight-semibold">{`${t("form.accessibility")}:`}</span>
             {accessOptions.map(({ value, label }) => (
                 <div key={`radio-${value}-field`} className="field">
                     <input
@@ -20,13 +20,14 @@ export function AccessFormField() {
                         className="is-checkradio is-success mr-1"
                         type="radio"
                         name={groupName}
+                        id={`access-${value}`}
                         value={value}
                         checked={access === value}
                         onChange={() => setAccess(value)}
                     />
                     <label
+                        htmlFor={`access-${value}`}
                         key={`radio-${value}-label`}
-                        onClick={() => setAccess(value)}
                     >
                         {label}
                     </label>

@@ -59,7 +59,13 @@ export default function MapLegend() {
                 icon, key, text, tag,
             }) => (
                 <div className="columns is-mobile px-4 py-1 is-flex is-vcentered" key={`legend-div-${key}`}>
-                    <img key={`legend-image-${key}`} title={tag} alt={text} src={icon.toString()} className="legend-image image is-32x32" />
+                    <img
+                        key={`legend-image-${key}`}
+                        title={tag}
+                        alt={text}
+                        src={icon.toString()}
+                        className="legend-image image is-32x32"
+                    />
                     <p key={`legend-text-${key}`} className="has-text-weight-light legend-text pl-2">{text}</p>
                 </div>
             ))}

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiCancel, mdiArrowRightBold, mdiMapMarkerPlus } from "@mdi/js";
 import "./footer.css";
-import { ButtonsType } from "../model/buttonsType";
+import ButtonsType from "../model/buttonsType";
 
 const FooterDiv: FC<FooterDivProps> = ({
     startAEDAdding, mobileCancel, showFormMobile, buttonsConfiguration,
@@ -14,13 +14,25 @@ const FooterDiv: FC<FooterDivProps> = ({
     const addAedButtons = (
         <>
             <div className="is-hidden-mobile">
-                <Button color="success" mt={1} ml={2} className="has-text-weight-light" onClick={() => startAEDAdding(false)}>
+                <Button
+                    color="success"
+                    mt={1}
+                    ml={2}
+                    className="has-text-weight-light"
+                    onClick={() => startAEDAdding(false)}
+                >
                     <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
                     {t("footer.add_aed")}
                 </Button>
             </div>
             <div className="is-hidden-tablet">
-                <Button color="success" mt={1} ml={2} className="has-text-weight-light" onClick={() => startAEDAdding(true)}>
+                <Button
+                    color="success"
+                    mt={1}
+                    ml={2}
+                    className="has-text-weight-light"
+                    onClick={() => startAEDAdding(true)}
+                >
                     <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
                     {t("footer.add")}
                 </Button>
@@ -41,13 +53,14 @@ const FooterDiv: FC<FooterDivProps> = ({
     );
     function getFooterButtons(buttonConfigurationType: ButtonsType) {
         switch (buttonConfigurationType) {
-        case ButtonsType.None: return null;
-        case ButtonsType.AddAED: return addAedButtons;
-        case ButtonsType.MobileStep1: return mobileStepOneButtons;
+            case ButtonsType.None: return null;
+            case ButtonsType.AddAED: return addAedButtons;
+            case ButtonsType.MobileStep1: return mobileStepOneButtons;
+            default: return null;
         }
     }
 
-    if (buttonsConfiguration === ButtonsType.None) return <></>;
+    if (buttonsConfiguration === ButtonsType.None) return null;
     return (
         <Footer className="footer-div">
             <div className="bottom-bar-buttons">

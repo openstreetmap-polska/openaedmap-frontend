@@ -56,7 +56,7 @@ i18n
         },
     }, (err, t) => {
         if (err) return console.log("something went wrong loading", err);
-        t("key");
+        return t("key");
     });
 
 export default i18n;

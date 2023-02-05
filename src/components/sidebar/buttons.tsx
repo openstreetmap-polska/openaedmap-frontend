@@ -64,15 +64,16 @@ export function CloseSidebarButton({ closeSidebarFunction }: { closeSidebarFunct
             aria-label={t("sidebar.close")}
             className="delete is-large is-pulled-right"
             onClick={closeSidebarFunction}
+            type="button"
         />
     );
 }
 
 export function AddAedButton({ nextStep }: { nextStep: (event: Event) => void }) {
     const { t } = useTranslation();
-    // TODO type
-    // @ts-ignore
     return (
+        // TODO type
+        // @ts-ignore
         <Button color="success" fullwidth form="add_aed" onClick={nextStep}>
             <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
             {t("footer.add_aed")}

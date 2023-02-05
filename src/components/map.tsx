@@ -4,12 +4,13 @@ import React, {
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./map.css";
 import { useTranslation } from "react-i18next";
+// @ts-ignore
 import maplibreglWorker from "maplibre-gl/dist/maplibre-gl-csp-worker";
 import styleJson from "./map_style";
 import SidebarLeft from "./sidebar-left";
 import FooterDiv from "./footer";
 import { fetchNodeDataFromBackend, NodeData } from "../backend";
-import { ButtonsType } from "../model/buttonsType";
+import ButtonsType from "../model/buttonsType";
 
 // -------------------------------------------------------------------
 // https://github.com/maplibre/maplibre-gl-js/issues/1011
@@ -24,7 +25,14 @@ import { useAppContext } from "../appContext";
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
 
-function fillSidebarWithOsmDataAndShow(nodeId: string, mapInstance: maplibregl.Map, setSidebarLeftAction: (action: string) => void, setSidebarLeftData: (data: NodeData) => void, setSidebarLeftShown: (sidebarLeftShown: boolean) => void, jumpInsteadOfEaseTo: boolean) {
+function fillSidebarWithOsmDataAndShow(
+    nodeId: string,
+    mapInstance: maplibregl.Map,
+    setSidebarLeftAction: (action: string) => void,
+    setSidebarLeftData: (data: NodeData) => void,
+    setSidebarLeftShown: (sidebarLeftShown: boolean) => void,
+    jumpInsteadOfEaseTo: boolean,
+) {
     const result = fetchNodeDataFromBackend(nodeId);
     result.then((data) => {
         if (data) {
@@ -85,12 +93,12 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const paramsFromHash = parseHash();
 
-    let longitude = -8;
-    let latitude = 47.74;
-    let zoom = 3;
+    let initialLongitude = -8;
+    let initialLatitude = 47.74;
+    let initialZoom = 3;
 
     if (paramsFromHash[hash4MapName]) {
-        [zoom, latitude, longitude] = paramsFromHash[hash4MapName].split("/").map(Number);
+        [initialZoom, initialLatitude, initialLongitude] = paramsFromHash[hash4MapName].split("/").map(Number);
     }
 
     const mapContainer = useRef(null);
@@ -128,8 +136,9 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const checkConditionsThenCall = (callable: () => void) => {
         const map: maplibregl.Map = mapRef.current;
         if (map === null) return;
-        if (auth !== null && !auth.authenticated()) setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
-        else if (map.getZoom() < 15) {
+        if (auth !== null && !auth.authenticated()) {
+            setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
+        } else if (map.getZoom() < 15) {
             setModalState({
                 ...initialModalState, visible: true, type: ModalType.NeedMoreZoom, currentZoom: map.getZoom(),
             });
@@ -178,8 +187,8 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             container: mapContainer.current,
             hash: hash4MapName,
             style: styleJson,
-            center: [longitude, latitude],
-            zoom,
+            center: [initialLongitude, initialLatitude],
+            zoom: initialZoom,
             minZoom: 3,
             maxZoom: 19,
             maplibreLogo: false,
@@ -261,14 +270,21 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         function showObjectWithProperties(e: MapEventType) {
             console.log("Clicked on object with properties: ", e.features[0].properties);
             if (e.features[0].properties !== undefined) {
-                const osm_node_id = e.features[0].properties.node_id;
-                console.log("Clicked on object with osm_id: ", osm_node_id);
+                const osmNodeId = e.features[0].properties.node_id;
+                console.log("Clicked on object with osm_id: ", osmNodeId);
                 // show sidebar
-                fillSidebarWithOsmDataAndShow(osm_node_id, mapRef.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, false);
+                fillSidebarWithOsmDataAndShow(
+                    osmNodeId,
+                    mapRef.current,
+                    setSidebarLeftAction,
+                    setSidebarLeftData,
+                    setSidebarLeftShown,
+                    false,
+                );
                 // update hash
                 const params = {
                     ...parseHash(),
-                    node_id: osm_node_id,
+                    node_id: osmNodeId,
                 };
                 console.log("new hash params", params);
                 window.location.hash = getNewHashString(params);
@@ -280,9 +296,18 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         map.on("click", "unclustered-low-zoom", showObjectWithProperties);
 
         // if direct link to osm node then get its data and zoom in
-        const paramsFromHash = parseHash();
-        if (paramsFromHash.node_id) fillSidebarWithOsmDataAndShow(paramsFromHash.node_id, mapRef.current, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown, true);
-    }, [latitude, longitude, zoom, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown]);
+        const newParamsFromHash = parseHash();
+        if (newParamsFromHash.node_id) {
+            fillSidebarWithOsmDataAndShow(
+                newParamsFromHash.node_id,
+                mapRef.current,
+                setSidebarLeftAction,
+                setSidebarLeftData,
+                setSidebarLeftShown,
+                true,
+            );
+        }
+    }, [initialLatitude, initialLongitude, initialZoom, setSidebarLeftAction, setSidebarLeftData, setSidebarLeftShown]);
 
     return (
         <>

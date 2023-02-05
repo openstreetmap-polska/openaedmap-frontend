@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "react-bulma-components";
 import DownloadCard from "./downloadCard";
 import MapLegend from "./legend";

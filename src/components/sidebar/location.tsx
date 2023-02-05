@@ -27,9 +27,16 @@ export function LocationFormField() {
 
     return (
         <div className="field pt-2">
-            <label className="label has-text-weight-semibold">{`${t("form.location")} (${resolvedLanguage}):`}</label>
+            <label htmlFor="aedLocation" className="label has-text-weight-semibold">
+                {`${t("form.location")} (${resolvedLanguage}):`}
+            </label>
             <div className="control">
-                <textarea name="aedLocation" className="textarea is-success" rows={2} placeholder={t("form.location_example")} />
+                <textarea
+                    name="aedLocation"
+                    className="textarea is-success"
+                    rows={2}
+                    placeholder={t("form.location_example")}
+                />
             </div>
         </div>
     );
