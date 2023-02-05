@@ -34,7 +34,7 @@
         "contact_number": "Número de contacto",
         "operator": "Operador",
         "note": "Nota",
-        "edit": "Editar en OSM",
+        "edit_in_osm": "Editar en OSM",
         "view": "Ver en OSM",
         "copy_url": "Copiar URL",
         "add_defibrillator": "Añadir desfibrilador",

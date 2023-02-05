@@ -30,7 +30,7 @@
         "contact_number": "Kontaktna številka",
         "operator": "Operater",
         "note": "Opomba",
-        "edit": "Uredi v OSM",
+        "edit_in_osm": "Uredi v OSM",
         "view": "Prikaži v OSM",
         "copy_url": "Kopiraj URL",
         "add_defibrillator": "Dodaj defibrillator"

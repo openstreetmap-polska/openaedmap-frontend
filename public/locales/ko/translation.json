@@ -27,7 +27,7 @@
         "csv": "CSV",
         "indoor": "건물 안",
         "download_title": "오픈스트리트맵에 있는 제세동기 정보 내려받기",
-        "edit": "오픈스트리트맵에서 수정하기",
+        "edit_in_osm": "오픈스트리트맵에서 수정하기",
         "copy_url": "URL 복사"
     },
     "navbar": {

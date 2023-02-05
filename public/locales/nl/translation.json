@@ -31,7 +31,7 @@
         "contact_number": "Contactnummer",
         "operator": "Uitbatende organisatie",
         "note": "Aantekening",
-        "edit": "Bewerken in OSM",
+        "edit_in_osm": "Bewerken in OSM",
         "view": "Bekijken in OSM",
         "copy_url": "URL kopiëren",
         "add_defibrillator": "Defibrillator toevoegen",

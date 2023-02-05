@@ -24,7 +24,7 @@
         "contact_number": "Numéro de contact",
         "operator": "Opérateur",
         "note": "Note",
-        "edit": "Modifier dans OSM",
+        "edit_in_osm": "Modifier dans OSM",
         "view": "Voir dans OSM",
         "close": "Fermer la barre latérale",
         "copy_url": "Copier l'URL",
