@@ -20,10 +20,7 @@ export const CheckDateField: FC<CheckDateProps> = ({ check_date }) => {
     );
 };
 
-export function CheckDateFormField() {
-    const curr = new Date();
-    const date = curr.toISOString().substring(0, 10);
-
+export function CheckDateFormField({ checkDate, setCheckDate }: CheckDateFormFieldProps) {
     const { t } = useTranslation();
 
     return (
@@ -35,10 +32,11 @@ export function CheckDateFormField() {
                 <input
                     className="input is-success py-0 datepicker-input"
                     type="date"
-                    defaultValue={date}
-                    placeholder={date}
-                    max={date}
+                    defaultValue={checkDate}
+                    placeholder={checkDate}
+                    max={checkDate}
                     name="aedCheckDate"
+                    onChange={(event) => setCheckDate(event.target.value)}
                     required
                     pattern="\d{4}-\d{2}-\d{2}"
                 />
@@ -52,4 +50,9 @@ export function CheckDateFormField() {
 
 interface CheckDateProps {
     check_date: string,
+}
+
+interface CheckDateFormFieldProps {
+    checkDate: string,
+    setCheckDate: (checkDate: string) => void,
 }

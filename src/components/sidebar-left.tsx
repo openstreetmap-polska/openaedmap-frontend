@@ -6,7 +6,7 @@ import { Marker } from "maplibre-gl";
 import DefibrillatorDetails from "./sidebar/defibrillatorDetails";
 import SidebarAction from "../model/sidebarAction";
 import DefibrillatorEditor from "./sidebar/defibrillatorEditor";
-import { NodeData } from "../model/nodeData";
+import { DefibrillatorData } from "../model/defibrillatorData";
 
 const SidebarLeft: FC<SidebarLeftProps> = (props) => {
     const {
@@ -29,6 +29,17 @@ const SidebarLeft: FC<SidebarLeftProps> = (props) => {
                     marker={marker}
                     openChangesetId={openChangesetId}
                     setOpenChangesetId={setOpenChangesetId}
+                    data={data}
+                />
+            );
+        case SidebarAction.editNode:
+            return (
+                <DefibrillatorEditor
+                    closeSidebar={closeSidebar}
+                    marker={marker}
+                    openChangesetId={openChangesetId}
+                    setOpenChangesetId={setOpenChangesetId}
+                    data={data}
                 />
             );
         default:
@@ -38,7 +49,7 @@ const SidebarLeft: FC<SidebarLeftProps> = (props) => {
 
 interface SidebarLeftProps {
     action: SidebarAction,
-    data: NodeData | null,
+    data: DefibrillatorData | null,
     closeSidebar: () => void,
     visible: boolean,
     marker: Marker,

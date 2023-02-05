@@ -7,10 +7,33 @@ import { useTranslation } from "react-i18next";
 import { mdiGoogleMaps } from "@mdi/js/commonjs/mdi";
 import React, { FC } from "react";
 import { OSM_DOMAIN } from "../../constants";
+import { useAppContext } from "../../appContext";
+import SidebarAction from "../../model/sidebarAction";
+import { fetchNodeDataFromOsm } from "../../osm";
 
 type OsmId = string;
 
 export function EditButton({ osmId }: { osmId: OsmId }) {
+    const { t } = useTranslation();
+    const { setSidebarData, setSidebarAction } = useAppContext();
+    const startEdit = () => {
+        fetchNodeDataFromOsm(osmId).then((data) => {
+            setSidebarData(data);
+            setSidebarAction(SidebarAction.editNode);
+        });
+    };
+    return (
+        <Button
+            className="button is-small is-success mx-1"
+            onClick={startEdit}
+        >
+            <Icon path={mdiPencil} size={1.0} className="icon" color="#fff" />
+            <span>{t("sidebar.edit")}</span>
+        </Button>
+    );
+}
+
+export function EditIdButton({ osmId }: { osmId: OsmId }) {
     const { t } = useTranslation();
     return (
         <a
@@ -77,6 +100,18 @@ export function AddAedButton({ nextStep }: { nextStep: (event: Event) => void })
         <Button color="success" fullwidth form="add_aed" onClick={nextStep}>
             <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
             {t("footer.add_aed")}
+        </Button>
+    );
+}
+
+export function SaveAedButton({ nextStep }: { nextStep: (event: Event) => void }) {
+    const { t } = useTranslation();
+    return (
+        // TODO type
+        // @ts-ignore
+        <Button color="success" fullwidth form="save_aed" onClick={nextStep}>
+            <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
+            {t("footer.save_aed")}
         </Button>
     );
 }

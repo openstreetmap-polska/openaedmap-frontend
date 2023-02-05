@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
-import React, { useState } from "react";
+import React from "react";
 
-export default function AccessFormField() {
+export default function AccessFormField({ access, setAccess }: AccessFormFieldProps) {
     const { t } = useTranslation();
     const groupName = "aedAccess";
-    const [access, setAccess] = useState("");
     const accessOptions: Array<{ value: string, label: string }> = [
         { value: "yes", label: t("access.yes") },
         { value: "private", label: t("access.private") },
@@ -36,4 +35,9 @@ export default function AccessFormField() {
             ))}
         </div>
     );
+}
+
+interface AccessFormFieldProps {
+    access: string,
+    setAccess: (access: string) => void,
 }

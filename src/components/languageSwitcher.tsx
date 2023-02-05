@@ -53,11 +53,11 @@ export function LanguageSwitcherMobile() {
                 <span className="is-uppercase">{i18n.resolvedLanguage}</span>
             </Navbar.Link>
             <Navbar.Dropdown className={`has-background-green navbarUrl ${isActive ? "is-hidden" : ""}`}>
-                {Object.keys(languages).map((lng) => {
-                    if (i18n.resolvedLanguage !== lng) {
+                {Object.keys(languages).map((language) => {
+                    if (i18n.resolvedLanguage !== language) {
                         return (
-                            <Navbar.Item key={lng} onClick={() => { i18n.changeLanguage(lng); }}>
-                                {languages[lng].nativeName}
+                            <Navbar.Item key={language} onClick={() => { i18n.changeLanguage(language); }}>
+                                {languages[language].nativeName}
                             </Navbar.Item>
                         );
                     } return null;

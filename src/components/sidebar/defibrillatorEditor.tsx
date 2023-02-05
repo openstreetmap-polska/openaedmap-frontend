@@ -1,39 +1,44 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Image, Card } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { Marker } from "maplibre-gl";
-import { addDefibrillatorToOSM, getOpenChangesetId } from "../../osm";
+import { addDefibrillatorToOSM, editDefibrillatorInOSM, getOpenChangesetId } from "../../osm";
 import { initialModalState, ModalType } from "../../model/modal";
-import { AddAedButton, CloseSidebarButton } from "./buttons";
+import { AddAedButton, CloseSidebarButton, SaveAedButton } from "./buttons";
 import AccessFormField from "./access";
 import IndoorFormField from "./indoor";
 import LocationFormField from "./location";
 import ContactPhoneFormField from "./contactNumber";
 import { CheckDateFormField } from "./verificationDate";
 import { useAppContext } from "../../appContext";
-
-const parseForm = (formElements: HTMLFormControlsCollection, language: string) => {
-    const tags: Record<string, string> = { emergency: "defibrillator" };
-    const access = (formElements.namedItem("aedAccess") as RadioNodeList).value;
-    if (access.length > 0) tags.access = access;
-    const indoor = (formElements.namedItem("aedIndoor") as RadioNodeList).value;
-    if (indoor.length > 0) tags.indoor = indoor;
-    const level = (formElements.namedItem("level") as HTMLInputElement) || { value: "" };
-    if (level.value.trim()) tags.level = level.value.trim();
-    const location = formElements.namedItem("aedLocation") as HTMLInputElement;
-    if (location.value.trim()) tags[`defibrillator:location:${language}`] = location.value.trim();
-    const phone = formElements.namedItem("aedPhone") as HTMLInputElement;
-    if (phone.value.trim()) tags.phone = phone.value.trim();
-    const checkDate = formElements.namedItem("aedCheckDate") as HTMLInputElement;
-    if (checkDate.value.trim()) tags.check_date = checkDate.value.trim();
-    return tags;
-};
+import { DefibrillatorData } from "../../model/defibrillatorData";
 
 const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
-    closeSidebar, marker, openChangesetId, setOpenChangesetId,
+    closeSidebar, marker, openChangesetId, setOpenChangesetId, data,
 }) => {
     const { t, i18n: { resolvedLanguage } } = useTranslation();
     const { authState: { auth }, setModalState } = useAppContext();
+    const newAED = data === null;
+    const initialTags = data !== null ? data.tags : { emergency: "defibrillator" };
+    const [access, setAccess] = useState<string>(initialTags.access || "");
+    const [indoor, setIndoor] = useState<string>(initialTags.indoor || "");
+    const [level, setLevel] = useState<string>(initialTags.level || "");
+    const [location, setLocation] = useState<string>(
+        initialTags[`defibrillator:location:${resolvedLanguage}`] || initialTags["defibrillator:location"] || "",
+    );
+    const [phoneNumber, setPhoneNumber] = useState<string>(initialTags.phone || initialTags["contact:phone"] || "");
+    const [checkDate, setCheckDate] = useState<string>(new Date().toISOString().substring(0, 10));
+
+    const parseTags: () => Record<string, string> = () => {
+        const tags = { ...initialTags };
+        if (access.length > 0) tags.access = access;
+        if (indoor.length > 0) tags.indoor = indoor;
+        if (level.length > 0) tags.level = level.trim();
+        if (location.trim().length > 0) tags[`defibrillator:location:${resolvedLanguage}`] = location.trim();
+        if (phoneNumber.trim().length > 0) tags.phone = phoneNumber.trim();
+        if (checkDate.trim().length > 0) tags.check_date = checkDate.trim();
+        return tags;
+    };
 
     const sendFormData = (event: Event) => {
         event.preventDefault();
@@ -43,35 +48,54 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
         }
         const button = event.target as HTMLFormElement;
         button.classList.add("is-loading");
-        const lngLat = marker.getLngLat();
-        const tags = parseForm(button.form.elements, resolvedLanguage);
-        const defibrillatorData = {
-            lng: lngLat.lng,
-            lat: lngLat.lat,
-            tags,
-        };
-        console.log(lngLat);
+        const tags = parseTags();
         console.log(tags);
         if (auth === null) return;
-        getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage)
-            .then((changesetId) => addDefibrillatorToOSM(auth, changesetId, defibrillatorData))
-            .then((newNodeId) => {
-                button.classList.remove("is-loading");
-                closeSidebar();
-                console.log("created new node with id: ", newNodeId);
-                setModalState({
-                    ...initialModalState, visible: true, type: ModalType.NodeAddedSuccessfully, nodeId: newNodeId,
-                });
-            })
-            .catch((err) => {
-                button.classList.remove("is-loading");
-                closeSidebar();
-                console.log(err);
-                const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`;
-                setModalState({
-                    ...initialModalState, visible: true, type: ModalType.Error, errorMessage,
-                });
+        const handleError = (err: XMLHttpRequest) => {
+            button.classList.remove("is-loading");
+            closeSidebar();
+            console.log(err);
+            const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`;
+            setModalState({
+                ...initialModalState, visible: true, type: ModalType.Error, errorMessage,
             });
+        };
+        if (newAED) {
+            const lngLat = marker.getLngLat();
+            const newDefibrillatorData = {
+                lon: lngLat.lng,
+                lat: lngLat.lat,
+                tags,
+            };
+            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage)
+                .then((changesetId) => addDefibrillatorToOSM(auth, changesetId, newDefibrillatorData))
+                .then((newNodeId) => {
+                    button.classList.remove("is-loading");
+                    closeSidebar();
+                    console.log("created new node with id: ", newNodeId);
+                    setModalState({
+                        ...initialModalState, visible: true, type: ModalType.NodeAddedSuccessfully, nodeId: newNodeId,
+                    });
+                })
+                .catch(handleError);
+        } else {
+            const defibrillatorData: DefibrillatorData = {
+                ...data,
+                tags,
+            };
+            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage)
+                .then((changesetId) => editDefibrillatorInOSM(auth, changesetId, defibrillatorData))
+                .then((newVersion) => {
+                    button.classList.remove("is-loading");
+                    closeSidebar();
+                    console.log("updated node with id: ", newVersion);
+                    // TODO: update success modal?
+                    /* setModalState({
+                        ...initialModalState, visible: true, type: ModalType.NodeAddedSuccessfully, nodeId: data.osmId,
+                    }); */
+                })
+                .catch(handleError);
+        }
     };
     return (
         <div className="sidebar" id="sidebar-div">
@@ -79,23 +103,25 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                 <Card.Header id="sidebar-header" className="has-background-grey" shadowless alignItems="center">
                     <Image m={2} className="icon" src="./img/logo-aed.svg" color="white" alt="" size={48} />
                     <span className="is-size-5 mr-3 has-text-white-ter has-text-weight-light">
-                        {t("sidebar.add_defibrillator")}
+                        {t(newAED ? "sidebar.add_defibrillator" : "sidebar.edit_defibrillator")}
                     </span>
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
 
                 <Card.Content py={3} marginless className="content">
                     <form id="add_aed">
-                        <AccessFormField />
-                        <IndoorFormField />
-                        <LocationFormField />
-                        <ContactPhoneFormField />
-                        <CheckDateFormField />
+                        <AccessFormField access={access} setAccess={setAccess} />
+                        <IndoorFormField indoor={indoor} setIndoor={setIndoor} level={level} setLevel={setLevel} />
+                        <LocationFormField location={location} setLocation={setLocation} />
+                        <ContactPhoneFormField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
+                        <CheckDateFormField checkDate={checkDate} setCheckDate={setCheckDate} />
                     </form>
                 </Card.Content>
                 <Card.Footer>
                     <Card.Footer.Item className="has-background-white-ter">
-                        <AddAedButton nextStep={sendFormData} />
+                        {newAED
+                            ? <AddAedButton nextStep={sendFormData} />
+                            : <SaveAedButton nextStep={sendFormData} />}
                     </Card.Footer.Item>
                 </Card.Footer>
             </Card>
@@ -108,6 +134,7 @@ interface DefibrillatorEditorProps {
     marker: Marker,
     openChangesetId: string,
     setOpenChangesetId: (changesetId: string) => void,
+    data: DefibrillatorData | null,
 }
 
 export default DefibrillatorEditor;
