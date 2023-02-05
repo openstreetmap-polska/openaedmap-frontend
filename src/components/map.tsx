@@ -21,6 +21,7 @@ import maplibregl from "!maplibre-gl"; // ! is important here
 // @ts-ignore
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
+import SidebarAction from "../model/sidebarAction";
 
 maplibregl.workerClass = maplibreglWorker;
 // -------------------------------------------------------------------
@@ -28,7 +29,7 @@ maplibregl.workerClass = maplibreglWorker;
 function fillSidebarWithOsmDataAndShow(
     nodeId: string,
     mapInstance: maplibregl.Map,
-    setSidebarLeftAction: (action: string) => void,
+    setSidebarLeftAction: (action: SidebarAction) => void,
     setSidebarLeftData: (data: NodeData) => void,
     setSidebarLeftShown: (sidebarLeftShown: boolean) => void,
     jumpInsteadOfEaseTo: boolean,
@@ -63,7 +64,7 @@ function fillSidebarWithOsmDataAndShow(
                 });
             }
             setSidebarLeftData(data);
-            setSidebarLeftAction("showDetails");
+            setSidebarLeftAction(SidebarAction.showDetails);
             setSidebarLeftShown(true);
         }
     });
@@ -108,7 +109,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const [marker, setMarker] = useState<maplibregl.Marker>(null);
 
     const [sidebarLeftData, setSidebarLeftData] = useState({});
-    const [sidebarLeftAction, setSidebarLeftAction] = useState("init");
+    const [sidebarLeftAction, setSidebarLeftAction] = useState(SidebarAction.init);
     const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
     const [footerButtonType, setFooterButtonType] = useState(ButtonsType.AddAED);
@@ -162,7 +163,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         deleteMarker();
         removeNodeIdFromHash();
         setSidebarLeftData({});
-        setSidebarLeftAction("addNode");
+        setSidebarLeftAction(SidebarAction.addNode);
         setSidebarLeftShown(!mobile); // for mobile hide sidebar so marker is visible
         setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
         // add marker
