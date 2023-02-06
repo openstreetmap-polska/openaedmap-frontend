@@ -9,7 +9,7 @@ export const CheckDateField: FC<CheckDateProps> = ({ check_date }) => {
     const verificationDateText = `${t("sidebar.verification_date")}: `;
     return (
         <span className={"is-pulled-right is-flex has-text-grey-dark has-text-weight-light"
-            + "is-size-7 p-0 is-justify-content-center"}
+            + " is-size-7 p-0 is-justify-content-center"}
         >
             <Icon path={mdiCalendar} size={0.7} color="#dbdbdb" className="mr-1" />
             {verificationDateText}
