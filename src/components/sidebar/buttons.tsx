@@ -10,16 +10,23 @@ import { OSM_DOMAIN } from "../../constants";
 import { useAppContext } from "../../appContext";
 import SidebarAction from "../../model/sidebarAction";
 import { fetchNodeDataFromOsm } from "../../osm";
+import { initialModalState, ModalType } from "../../model/modal";
 
 type OsmId = string;
 
 export function EditButton({ osmId }: { osmId: OsmId }) {
     const { t } = useTranslation();
-    const { setSidebarData, setSidebarAction } = useAppContext();
+    const {
+        setSidebarData, setSidebarAction, setModalState, authState: { auth },
+    } = useAppContext();
     const startEdit = () => {
         fetchNodeDataFromOsm(osmId).then((data) => {
             setSidebarData(data);
-            setSidebarAction(SidebarAction.editNode);
+            if (auth === null || !auth.authenticated()) {
+                setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
+            } else {
+                setSidebarAction(SidebarAction.editNode);
+            }
         });
     };
     return (

@@ -138,7 +138,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const checkConditionsThenCall = (callable: () => void) => {
         const map: maplibregl.Map = mapRef.current;
         if (map === null) return;
-        if (auth !== null && !auth.authenticated()) {
+        if (auth === null || !auth.authenticated()) {
             setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
         } else if (map.getZoom() < 15) {
             setModalState({
