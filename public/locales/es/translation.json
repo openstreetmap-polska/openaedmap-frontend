@@ -41,7 +41,9 @@
         "openstreetmap_navigation": "Navegación con OpenStreetMap",
         "google_maps_navigation": "Navegación con Google Maps",
         "verification_date": "Fecha de la encuesta",
-        "level": "nivel"
+        "level": "nivel",
+        "edit": "Editar",
+        "edit_defibrillator": "Editar desfibrilador"
     },
     "form": {
         "optional_field": "Campo opcional",
@@ -58,7 +60,8 @@
         "add": "Añadir",
         "add_aed": "Añadir DEA",
         "cancel": "Cancelar",
-        "continue": "Continuar"
+        "continue": "Continuar",
+        "save_aed": "Guardar AED"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -72,7 +75,7 @@
     "osmp": "OpenStreetMap Polonia",
     "modal": {
         "aed_added_successfully": "DEA añadido con éxito.",
-        "available_in_osm": "Disponible en OpenStreetMap con el URL:",
+        "available_in_osm": "Disponible en OpenStreetMap con la URL:",
         "should_appear_soon": "El objeto debería aparecer en el mapa en 60 minutos.",
         "error_occurred": "Ha ocurrido un error",
         "title": "Información",
@@ -83,6 +86,7 @@
         "zoom_need_to_be": "El zum mínimo debe de ser de nivel 15 por lo menos.",
         "about_osm": "OpenStreetMap (OSM) es como la Wikipedia de los mapas. Está disponible para todo el mundo y cualquiera puede añadir objetos al mapa. Puede utilizar su cuenta de OSM para añadir ubicaciones de la DEA directamente desde este sitio mediante un sencillo formulario.",
         "create_account": "¡Usted también puede contribuir! Basta con crearse una cuenta gratuita en ",
-        "about_project": "OpenAEDMap es un proyecto de datos abiertos que muestra todos los Desfibriladores Externos Automáticos (DEA) del mundo. El sitio web se basa en datos de OpenStreetMap y es el logro de esfuerzos de la asociación OpenStreetMap Polonia. Fue creado en 2022 tras cambiar el AED Mapa del sitio web polaco por un nuevo diseño."
+        "about_project": "OpenAEDMap es un proyecto de datos abiertos que muestra todos los Desfibriladores Externos Automáticos (DEA) del mundo. El sitio web se basa en datos de OpenStreetMap y es el logro de esfuerzos de la asociación OpenStreetMap Polonia. Fue creado en 2022 tras cambiar el AED Mapa del sitio web polaco por un nuevo diseño.",
+        "aed_updated_successfully": "AED actualizado con éxito."
     }
 }
