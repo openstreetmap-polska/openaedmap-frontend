@@ -1,5 +1,6 @@
 export enum ModalType {
     NodeAddedSuccessfully,
+    NodeUpdatedSuccessfully,
     NeedToLogin,
     NeedMoreZoom,
     About,
@@ -8,7 +9,7 @@ export enum ModalType {
 
 export interface ModalState {
     type: ModalType,
-    nodeId: number,
+    nodeId: string,
     currentZoom: number,
     errorMessage: string,
     visible: boolean,
@@ -17,7 +18,7 @@ export interface ModalState {
 export const initialModalState: ModalState = {
     visible: false,
     type: ModalType.About,
-    nodeId: 0,
+    nodeId: "0",
     currentZoom: 0,
     errorMessage: "",
 };

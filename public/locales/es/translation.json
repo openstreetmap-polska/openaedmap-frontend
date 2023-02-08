@@ -5,7 +5,8 @@
         "customers": "Accesible en horario laboral",
         "no": "No disponible",
         "permissive": "Disponible al público hasta nuevo aviso",
-        "unknown": "Acceso desconocido"
+        "unknown": "Acceso desconocido",
+        "unknownTag": "No hay etiqueta de acceso o no coincide con la anterior"
     },
     "navbar": {
         "created_with_<3_by": "creado con ❤️ por",
@@ -33,13 +34,14 @@
         "contact_number": "Número de contacto",
         "operator": "Operador",
         "note": "Nota",
-        "edit": "Editar en OSM",
+        "edit_in_osm": "Editar en OSM",
         "view": "Ver en OSM",
         "copy_url": "Copiar URL",
         "add_defibrillator": "Añadir desfibrilador",
         "openstreetmap_navigation": "Navegación con OpenStreetMap",
         "google_maps_navigation": "Navegación con Google Maps",
-        "verification_date": "Fecha de la encuesta"
+        "verification_date": "Fecha de la encuesta",
+        "level": "nivel"
     },
     "form": {
         "optional_field": "Campo opcional",
@@ -49,7 +51,8 @@
         "outside": "Fuera",
         "accessibility": "Accesibilidad",
         "location": "Describa la localización",
-        "location_example": "Por ejemplo: En la pared al lado de la entrada"
+        "location_example": "Por ejemplo: En la pared al lado de la entrada",
+        "level": "Nivel"
     },
     "footer": {
         "add": "Añadir",

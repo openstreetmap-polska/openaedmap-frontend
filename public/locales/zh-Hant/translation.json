@@ -5,7 +5,8 @@
         "private": "僅限獲得業主同意後進入",
         "yes": "一般人可及",
         "unknown": "未知可用性",
-        "permissive": "公開可用，直到另行通知"
+        "permissive": "公開可用，直到另行通知",
+        "unknownTag": "無 access 標籤或不符合上述條件"
     },
     "navbar": {
         "created_with_<3_by": "由_用 ❤️ 製作",
@@ -27,7 +28,7 @@
         "indoor": "在建築物內",
         "opening_hours": "開放時間",
         "note": "註解",
-        "edit": "在 OSM 中編輯",
+        "edit_in_osm": "在 OSM 中編輯",
         "view": "在 OSM 中察看",
         "copy_url": "複製網址",
         "add_defibrillator": "新增除顫器 (AED)",
@@ -39,7 +40,8 @@
         "description": "描述",
         "operator": "營運者",
         "openstreetmap_navigation": "開放街圖導航",
-        "verification_date": "調查日期"
+        "verification_date": "調查日期",
+        "level": "樓層"
     },
     "form": {
         "optional_field": "可選欄位",
@@ -49,7 +51,8 @@
         "outside": "外面",
         "accessibility": "無障礙",
         "location": "描述位置",
-        "location_example": "例如：在入口附近的牆上"
+        "location_example": "例如：在入口附近的牆上",
+        "level": "樓層"
     },
     "footer": {
         "add": "新增",

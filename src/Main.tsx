@@ -1,25 +1,30 @@
-import React, {useEffect} from 'react';
-import { Suspense, useState } from 'react';
-import './Main.css';
-import 'bulma/css/bulma.min.css';
-import SiteNavbar from './components/navbar';
-import SidebarRight from './components/sidebar-right';
-import Map from './components/map';
+import React, {
+    useEffect, Suspense, useState, useMemo,
+} from "react";
+import "./Main.css";
+import "bulma/css/bulma.min.css";
+// @ts-ignore
+import { osmAuth } from "osm-auth";
+import SiteNavbar from "./components/navbar";
+import SidebarRight from "./components/sidebar-right";
+import Map from "./components/map";
 
-// Type declaration in this package is broken. I had to disable it.
-import { osmAuth } from 'osm-auth';
-import {initialModalState, ModalType} from './model/modal'
-import {AppContext} from './appContext';
-import {CustomModal} from "./components/modal";
-import {updateOsmUsernameState} from "./osm";
-
+// @ts-ignore
+import { initialModalState, ModalType } from "./model/modal";
+import { AppContext } from "./appContext";
+import CustomModal from "./components/modal";
+import { updateOsmUsernameState } from "./osm";
+import { AuthState } from "./model/auth";
+import SidebarAction from "./model/sidebarAction";
+import { DefibrillatorData } from "./model/defibrillatorData";
 
 function Main() {
-
     // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
     const defaultRightSidebarState = window.innerWidth > 1024;
 
     const [modalState, setModalState] = useState(initialModalState);
+    const [sidebarAction, setSidebarAction] = useState(SidebarAction.init);
+    const [sidebarData, setSidebarData] = useState<DefibrillatorData | null>(null);
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
 
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
@@ -27,20 +32,19 @@ function Main() {
 
     const { REACT_APP_OSM_API_URL, REACT_APP_OSM_OAUTH2_CLIENT_ID, REACT_APP_OSM_OAUTH2_CLIENT_SECRET } = process.env;
     const redirectPath = window.location.origin + window.location.pathname;
-    // eslint-disable-next-line no-unused-vars
-    const [auth, setAuth] = useState(
+    const [auth] = useState(
         osmAuth({
             url: REACT_APP_OSM_API_URL,
-            client_id: REACT_APP_OSM_OAUTH2_CLIENT_ID,
-            client_secret: REACT_APP_OSM_OAUTH2_CLIENT_SECRET,
-            redirect_uri: redirectPath + "land.html",
+            client_id: REACT_APP_OSM_OAUTH2_CLIENT_ID || "",
+            client_secret: REACT_APP_OSM_OAUTH2_CLIENT_SECRET || "",
+            redirect_uri: `${redirectPath}land.html`,
             scope: "read_prefs write_api",
             auto: false,
             singlepage: false,
-        })
+        }),
     );
     const [osmUsername, setOsmUsername] = useState("");
-    const [openChangesetId, setOpenChangesetId] = useState(null);
+    const [openChangesetId, setOpenChangesetId] = useState("");
 
     const handleLogIn = () => {
         auth.authenticate(() => {
@@ -48,7 +52,7 @@ function Main() {
             if (modalState.type === ModalType.NeedToLogin) {
                 setModalState(initialModalState);
             }
-        })
+        });
     };
 
     const handleLogOut = () => {
@@ -56,9 +60,22 @@ function Main() {
         setOsmUsername("");
     };
 
-    const authState = { auth, osmUsername };
+    const authState: AuthState = { auth, osmUsername };
 
-    const appContext = {authState, modalState, setModalState, handleLogIn, handleLogOut};
+    const appContext = useMemo(
+        () => ({
+            authState,
+            modalState,
+            setModalState,
+            handleLogIn,
+            handleLogOut,
+            sidebarAction,
+            setSidebarAction,
+            sidebarData,
+            setSidebarData,
+        }),
+        [authState],
+    );
     useEffect(() => {
         if (auth.authenticated()) updateOsmUsernameState(auth, setOsmUsername);
     }, [auth]);
@@ -72,7 +89,9 @@ function Main() {
     );
 }
 
-const Fallback = () => <div className="fallback"><div className="fallback-header"></div></div>;
+function Fallback() {
+    return <div className="fallback"><div className="fallback-header" /></div>;
+}
 
 export default function WrappedApp() {
     return (

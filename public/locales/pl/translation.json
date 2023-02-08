@@ -5,6 +5,7 @@
         "customers": "Dostępny tylko w godzinach pracy",
         "no": "Niedostępny",
         "unknown": "Dostęp nieznany",
+        "unknownTag": "Brak tagu access lub niepasujący do powyższych",
         "permissive": "Dostępny publicznie do odwołania"
     },
     "navbar": {
@@ -27,25 +28,29 @@
         "caption_info": "AED",
         "no_data": "Brak danych",
         "indoor": "Wewnątrz budynku",
+        "level": "piętro",
         "location": "Dokładna lokalizacja",
         "opening_hours": "Godziny otwarcia",
         "description": "Opis",
         "contact_number": "Numer kontaktowy",
         "operator": "Operator",
         "note": "Notatka",
-        "edit": "Edytuj w OSM",
+        "edit": "Edytuj",
+        "edit_in_osm": "Edytuj w OSM",
         "view": "Zobacz w OSM",
         "copy_url": "Skopiuj URL",
         "add_defibrillator": "Dodaj defibrylator",
         "openstreetmap_navigation": "OpenStreetMap Nawigacja",
         "google_maps_navigation": "Google Maps Nawigacja",
-        "verification_date": "Data weryfikacji"
+        "verification_date": "Data weryfikacji",
+        "edit_defibrillator": "Edytuj defibrylator"
     },
     "form": {
         "optional_field": "Pole opcjonalne",
         "marker_popup_text": "Przesuń marker w miejsce AED",
         "is_indoor": "Czy wewnątrz budynku?",
         "inside": "Wewnątrz",
+        "level": "Piętro",
         "outside": "Na zewnątrz",
         "accessibility": "Rodzaj dostępności",
         "location": "Opisz dokładną lokalizację",
@@ -55,7 +60,8 @@
         "add": "Dodaj",
         "add_aed": "Dodaj AED",
         "cancel": "Anuluj",
-        "continue": "Dalej"
+        "continue": "Dalej",
+        "save_aed": "Zapisz AED"
     },
     "opening_hours": {
         "24_7": "całodobowo",
@@ -69,6 +75,7 @@
     "osmp": "OpenStreetMap Polska",
     "modal": {
         "aed_added_successfully": "AED został dodany.",
+        "aed_updated_successfully": "Edycja AED się powiodła.",
         "available_in_osm": "Dostępny w OpenStreetMap pod adresem URL:",
         "should_appear_soon": "Obiekt powinien być widoczny na mapie w ciągu 60 minut.",
         "error_occurred": "Wystąpił błąd",

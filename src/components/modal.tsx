@@ -1,29 +1,48 @@
-import { mdiInformationOutline } from '@mdi/js';
-import Icon from '@mdi/react'
-import { useTranslation } from 'react-i18next';
-import { Modal } from 'react-bulma-components';
-import React, {FC} from "react";
-import {ModalType} from "../model/modal";
-import {useAppContext} from "../appContext";
+import { mdiInformationOutline } from "@mdi/js";
+import Icon from "@mdi/react";
+import { useTranslation } from "react-i18next";
+import { Modal } from "react-bulma-components";
+import React, { FC } from "react";
+import { ModalType } from "../model/modal";
+import { useAppContext } from "../appContext";
 import LogInButton from "./logInButton";
 
 const ModalContent: FC<{}> = () => {
     const { t } = useTranslation();
-    const { modalState: { type, currentZoom, errorMessage, nodeId } } = useAppContext();
+    const {
+        modalState: {
+            type, currentZoom, errorMessage, nodeId,
+        },
+    } = useAppContext();
 
     switch (type) {
-        case ModalType.NodeAddedSuccessfully:
+        case ModalType.NodeAddedSuccessfully: {
             const nodeUrl = `${process.env.REACT_APP_OSM_API_URL}/node/${nodeId}/`;
             return (
                 <div>
                     <p className="pb-2">{t("modal.aed_added_successfully")}</p>
                     <p className="pb-4">
-                        {t("modal.available_in_osm")}&nbsp;
+                        {t("modal.available_in_osm")}
+                        &nbsp;
                         <a target="_blank" rel="noreferrer" href={nodeUrl}>{nodeUrl}</a>
                     </p>
                     <p className="pb-2">{t("modal.should_appear_soon")}</p>
                 </div>
             );
+        }
+        case ModalType.NodeUpdatedSuccessfully: {
+            const nodeUrl = `${process.env.REACT_APP_OSM_API_URL}/node/${nodeId}/`;
+            return (
+                <div>
+                    <p className="pb-2">{t("modal.aed_updated_successfully")}</p>
+                    <p className="pb-4">
+                        {t("modal.available_in_osm")}
+                        &nbsp;
+                        <a target="_blank" rel="noreferrer" href={nodeUrl}>{nodeUrl}</a>
+                    </p>
+                </div>
+            );
+        }
         case ModalType.NeedToLogin:
             return (
                 <div>
@@ -35,7 +54,12 @@ const ModalContent: FC<{}> = () => {
             return (
                 <div>
                     <p className="pb-2">{t("modal.need_more_zoom")}</p>
-                    <p className="pb-2">{t("modal.current_zoom")} <span className="has-text-weight-semibold">{currentZoom.toFixed(0)}</span>.</p>
+                    <p className="pb-2">
+                        {t("modal.current_zoom")}
+                        {" "}
+                        <span className="has-text-weight-semibold">{currentZoom.toFixed(0)}</span>
+                        .
+                    </p>
                     <p className="pb-2">{t("modal.zoom_need_to_be")}</p>
                 </div>
             );
@@ -50,28 +74,39 @@ const ModalContent: FC<{}> = () => {
                     </p>
                 </div>
             );
-        case ModalType.Error:
-            return (
-                <p className="pb-2">{t("modal.error_occurred")}: ${errorMessage}</p>
-            )
+        case ModalType.Error: {
+            const errorText = `${t("modal.error_occurred")}: $${errorMessage}`;
+            return <p className="pb-2">{errorText}</p>;
+        }
+        default:
+            return null;
     }
 };
 
-export const CustomModal: FC<{}> = () => {
+const CustomModal: FC<{}> = () => {
     const { t } = useTranslation();
     const { modalState, setModalState } = useAppContext();
 
     return (
-        <Modal show={modalState.visible} onClose={() => { setModalState({ ...modalState, visible: false }) }} closeOnEsc={true} closeOnBlur={true}>
-            <Modal.Card radiusless={true}>
-                <Modal.Card.Header showClose={true} className="has-background-green has-text-white-ter">
-                    <Icon path={mdiInformationOutline} size={1} className='icon mr-2' />
-                    <Modal.Card.Title className='has-text-white-ter has-text-weight-light'>{t("modal.title")}</Modal.Card.Title>
+        <Modal
+            show={modalState.visible}
+            onClose={() => { setModalState({ ...modalState, visible: false }); }}
+            closeOnEsc
+            closeOnBlur
+        >
+            <Modal.Card radiusless>
+                <Modal.Card.Header showClose className="has-background-green has-text-white-ter">
+                    <Icon path={mdiInformationOutline} size={1} className="icon mr-2" />
+                    <Modal.Card.Title className="has-text-white-ter has-text-weight-light">
+                        {t("modal.title")}
+                    </Modal.Card.Title>
                 </Modal.Card.Header>
                 <Modal.Card.Body>
                     { modalState.visible && <ModalContent /> }
                 </Modal.Card.Body>
             </Modal.Card>
         </Modal>
-    )
+    );
 };
+
+export default CustomModal;

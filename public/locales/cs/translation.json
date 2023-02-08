@@ -27,7 +27,7 @@
         "contact_number": "Kontaktní číslo",
         "operator": "Provozovatel",
         "note": "Poznámka",
-        "edit": "Upravit v OSM",
+        "edit_in_osm": "Upravit v OSM",
         "view": "Zobrazit v OSM",
         "copy_url": "Zkopírovat URL",
         "add_defibrillator": "Přidat defibrilátor",

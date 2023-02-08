@@ -5,7 +5,8 @@
         "permissive": "Accessible au public jusqu'à nouvel ordre",
         "customers": "Accessible pendant les heures d'ouverture",
         "private": "Accessible avec la permission du propriétaire",
-        "unknown": "Accès inconnu"
+        "unknown": "Accès inconnu",
+        "unknownTag": "Pas de balise d'accès ou ne correspondant pas à ce qui précède"
     },
     "sidebar": {
         "csv": "CSV",
@@ -23,13 +24,14 @@
         "contact_number": "Numéro de contact",
         "operator": "Opérateur",
         "note": "Note",
-        "edit": "Modifier dans OSM",
+        "edit_in_osm": "Modifier dans OSM",
         "view": "Voir dans OSM",
         "close": "Fermer la barre latérale",
         "copy_url": "Copier l'URL",
         "openstreetmap_navigation": "Navigation OpenStreetMap",
         "google_maps_navigation": "Navigation Google Maps",
-        "verification_date": "Date de l’enquête"
+        "verification_date": "Date de l’enquête",
+        "level": "niveau"
     },
     "form": {
         "optional_field": "Champ facultatif",
@@ -39,7 +41,8 @@
         "inside": "À l'intérieur",
         "accessibility": "Accessibilité",
         "location": "Décrivez l'emplacement",
-        "outside": "À l'extérieur"
+        "outside": "À l'extérieur",
+        "level": "Niveau"
     },
     "footer": {
         "add_aed": "Ajouter un DAE",

@@ -5,6 +5,7 @@
         "customers": "Accessible during work hours",
         "no": "Unavailable",
         "unknown": "Unknown access",
+        "unknownTag": "No access tag or not matching above",
         "permissive": "Publicly available until further notice"
     },
     "navbar": {
@@ -27,25 +28,29 @@
         "caption_info": "AED",
         "no_data": "No data",
         "indoor": "Inside building",
+        "level": "level",
         "location": "Location",
         "opening_hours": "Opening hours",
         "description": "Description",
         "contact_number": "Contact number",
         "operator": "Operator",
         "note": "Note",
-        "edit": "Edit in OSM",
+        "edit": "Edit",
+        "edit_in_osm": "Edit in OSM",
         "view": "View in OSM",
         "copy_url": "Copy URL",
         "add_defibrillator": "Add defibrillator",
         "openstreetmap_navigation": "OpenStreetMap Navigation",
         "google_maps_navigation": "Google Maps Navigation",
-        "verification_date": "Date of survey"
+        "verification_date": "Date of survey",
+        "edit_defibrillator": "Edit defibrillator"
     },
     "form": {
         "optional_field": "Field optional",
         "marker_popup_text": "Move marker to AED location",
         "is_indoor": "Is inside building?",
         "inside": "Inside",
+        "level": "Level",
         "outside": "Outside",
         "accessibility": "Accessibility",
         "location": "Describe location",
@@ -55,7 +60,8 @@
         "add": "Add",
         "add_aed": "Add AED",
         "cancel": "Cancel",
-        "continue": "Continue"
+        "continue": "Continue",
+        "save_aed": "Save AED"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -69,6 +75,7 @@
     "osmp": "OpenStreetMap Poland",
     "modal": {
         "aed_added_successfully": "AED added successfully.",
+        "aed_updated_successfully": "AED updated successfully.",
         "available_in_osm": "Available in OpenStreetMap with the url:",
         "should_appear_soon": "Object should appear on the map within 60 minutes.",
         "error_occurred": "Error occurred",

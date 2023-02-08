@@ -23,7 +23,7 @@
     "i18next-http-backend": "^1.4.1",
     "maplibre-gl": "^2.4.0",
     "opening_hours": "^3.8.0",
-    "osm-auth": "^2.0.0",
+    "osm-auth": "^2.0.1",
     "react": "^18.1.0",
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.1.0",
@@ -39,7 +39,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
-    "sprites": "spritezero ./public/sprite ./src/marker_icons; spritezero --ratio=2 ./public/sprite@2x ./src/marker_icons"
+    "sprites": "spritezero ./public/sprite ./src/marker_icons; spritezero --ratio=2 ./public/sprite@2x ./src/marker_icons",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint-fix": "eslint . --ext .ts,.tsx --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +67,15 @@
     }
   },
   "devDependencies": {
-    "@beyondtracks/spritezero-cli": "^2.3.1"
+    "@beyondtracks/spritezero-cli": "^2.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }

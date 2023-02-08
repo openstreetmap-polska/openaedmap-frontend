@@ -7,7 +7,8 @@
         "marker_popup_text": "Sposta il marcatore sulla posizione del DAE",
         "is_indoor": "È all'interno dell'edificio?",
         "inside": "Dentro",
-        "outside": "Fuori"
+        "outside": "Fuori",
+        "level": "Livello"
     },
     "footer": {
         "add": "Aggiungi",
@@ -35,7 +36,8 @@
         "permissive": "Disponibile al pubblico fino a nuovo avviso",
         "private": "Accessibile con il permesso del proprietario",
         "customers": "Accessibile durante l'orario di lavoro",
-        "unknown": "Accesso sconosciuto"
+        "unknown": "Accesso sconosciuto",
+        "unknownTag": "Nessun'etichetta di accesso o non corrispondente a quanto sopra"
     },
     "sidebar": {
         "download_title": "Scarica i dati DAE aggiunti a OSM",
@@ -54,12 +56,13 @@
         "add_defibrillator": "Aggiungi un defibrillatore",
         "opening_hours": "Orari di apertura",
         "note": "Nota",
-        "edit": "Modifica in OSM",
+        "edit_in_osm": "Modifica in OSM",
         "view": "Visualizza in OSM",
         "copy_url": "Copia l'URL",
         "openstreetmap_navigation": "Navigazione OpenStreetMap",
         "google_maps_navigation": "Navigazione Google Maps",
-        "verification_date": "Data dell’indagine"
+        "verification_date": "Data dell’indagine",
+        "level": "livello"
     },
     "osmp": "OpenStreetMap Polonia",
     "modal": {

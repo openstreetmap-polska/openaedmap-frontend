@@ -1,66 +1,62 @@
-import { useTranslation } from 'react-i18next';
-import SpanNoData from "./spanNoData";
-import {FC, useState} from "react";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
-const IndoorDescription: FC<IndoorProps> = ({ indoor }) => {
-    const { t } = useTranslation();
-
-    if (indoor) {
-        return <span className="has-text-weight-medium">{t(`indoor.${indoor}`)}</span>
-    } else {
-        return <SpanNoData />
-    }
-};
-
-export const IndoorField: FC<IndoorProps> = ({ indoor }) => {
-    const { t } = useTranslation();
-
-    return (
-        <div>
-        <p className="has-text-weight-light has-text-grey mb-1">
-        {t('sidebar.indoor') + "?: "}
-        </p>
-        <IndoorDescription indoor={indoor} />
-        </div>
-    )
-};
-
-export function IndoorFormField() {
+export default function IndoorFormField({
+    indoor, setIndoor, level, setLevel,
+}: IndoorFormFieldProps) {
     const { t } = useTranslation();
     const groupName = "aedIndoor";
-    const [indoor, setIndoor] = useState("");
-    const indoorOptions: Array<{value: string, label: string}> = [
-        {"value": "no", "label": t("form.outside")},
-        {"value": "yes", "label": t("form.inside")},
+    const indoorOptions: Array<{ value: string, label: string }> = [
+        { value: "no", label: t("form.outside") },
+        { value: "yes", label: t("form.inside") },
     ];
     return (
         <div>
-            <label className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</label>
+            <span className="label has-text-weight-semibold pt-2">{t("form.is_indoor")}</span>
             <div className="field">
-                {indoorOptions.map(({value, label}) => (
-                    <>
+                {indoorOptions.map(({ value, label }) => (
+                    <React.Fragment key={value}>
                         <input
                             key={`radio-${value}-input`}
                             className="is-checkradio is-success mr-1"
                             type="radio"
                             name={groupName}
                             value={value}
+                            id={`indoor-${value}`}
                             checked={indoor === value}
                             onChange={() => setIndoor(value)}
                         />
                         <label
+                            htmlFor={`indoor-${value}`}
                             key={`radio-${value}-label`}
-                            onClick={() => setIndoor(value)}>
+                        >
                             {label}
                         </label>
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
+            {indoor === "yes" && (
+                <div className="field">
+                    <label htmlFor="level" className="label has-text-weight-semibold pt-2">{t("form.level")}</label>
+                    <div className="control">
+                        <input
+                            className="input is-success"
+                            type="number"
+                            placeholder="13"
+                            name="level"
+                            value={level}
+                            onChange={(event) => setLevel(event.target.value)}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
-    )
+    );
 }
 
-interface IndoorProps {
+interface IndoorFormFieldProps {
     indoor: string,
+    setIndoor: (indoor: string) => void,
+    level: string,
+    setLevel: (level: string) => void,
 }
