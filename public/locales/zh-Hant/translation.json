@@ -29,7 +29,7 @@
         "opening_hours": "開放時間",
         "note": "註解",
         "edit_in_osm": "在 OSM 中編輯",
-        "view": "在 OSM 中察看",
+        "view": "在 OSM 中檢視",
         "copy_url": "複製網址",
         "add_defibrillator": "新增除顫器 (AED)",
         "google_maps_navigation": "Google 地圖導航",
@@ -41,7 +41,8 @@
         "operator": "營運者",
         "openstreetmap_navigation": "開放街圖導航",
         "verification_date": "調查日期",
-        "level": "樓層"
+        "level": "樓層",
+        "edit": "編輯"
     },
     "form": {
         "optional_field": "可選欄位",
