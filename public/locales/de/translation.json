@@ -10,13 +10,13 @@
     },
     "navbar": {
         "created_with_<3_by": "erstellt mit ❤️ von",
-        "visit_github": "Besuche unser GitHub-Repositorium",
+        "visit_github": "Besuche unser GitHub-Projekt",
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
         "login": "Mit OSM-Konto anmelden",
         "logout": "Abmelden",
         "about": "Über",
         "hosted_by": "gehostet von",
-        "help_translating": "Helfe beim übersetzen"
+        "help_translating": "Helfe beim Übersetzen"
     },
     "sidebar": {
         "close": "Seitenleiste schließen",
@@ -41,12 +41,14 @@
         "openstreetmap_navigation": "OpenStreetMap-Navigation",
         "google_maps_navigation": "Google Maps-Navigation",
         "verification_date": "Datum der Erhebung",
-        "level": "Ebene"
+        "level": "Ebene",
+        "edit": "Bearbeiten",
+        "edit_defibrillator": "Defibrillator bearbeiten"
     },
     "form": {
         "optional_field": "Optionales Feld",
         "marker_popup_text": "Bewege den Pin zur AED-Position",
-        "is_indoor": "Wo im Gebäude befindet sich dieser Defibrillator?",
+        "is_indoor": "Im Gebäude?",
         "inside": "Innenbereich",
         "outside": "Außenbereich",
         "accessibility": "Zugänglichkeit",
@@ -58,7 +60,8 @@
         "add": "Hinzufügen",
         "add_aed": "AED hinzufügen",
         "cancel": "Abbrechen",
-        "continue": "Weiter"
+        "continue": "Weiter",
+        "save_aed": "AED speichern"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -76,13 +79,14 @@
         "should_appear_soon": "Objekt sollte auf der Karte innerhalb von 60 Minuten sichtbar werden.",
         "error_occurred": "Fehler aufgetreten",
         "title": "Information",
-        "need_to_login": "Um Features hinzuzufügen, musst du dich mit deinem OpenStreetMap-Account einloggen.",
+        "need_to_login": "Um Features hinzuzufügen, musst du dich mit deinem OpenStreetMap-Konto anmelden.",
         "click_login_button": "Schließe dieses Fenster und klicke oben auf die Anmelden-Schaltfläche, um dich anzumelden.",
         "need_more_zoom": "Um Features hinzuzufügen, musst du zu dem Zielort hineinzoomen, sodass die Position genau wird.",
-        "current_zoom": "Aktuelles Zoomlevel:",
-        "zoom_need_to_be": "Zoomlevel muss mindestens 15 sein.",
-        "about_osm": "OpenStreetMap (OSM) ist eine Art Wikipedia für Karten. Sie ist für jedermann zugänglich und jeder kann der Karte Objekte hinzufügen. Sie können Ihr OSM-Konto verwenden, um AED-Standorte direkt von dieser Website über ein einfaches Formular hinzuzufügen.",
+        "current_zoom": "Aktuelle Zoomstufe:",
+        "zoom_need_to_be": "Zoomstufe muss mindestens 15 sein.",
+        "about_osm": "OpenStreetMap (OSM) ist eine Art Wikipedia für Karten. Sie ist für jedermann zugänglich und jeder kann der Karte Objekte hinzufügen. Du kannst dein OSM-Konto verwenden, um AED-Standorte direkt von dieser Website über ein einfaches Formular hinzuzufügen.",
         "create_account": "Auch Sie können mitmachen! Erstellen Sie einfach ein kostenloses Konto auf ",
-        "about_project": "OpenAEDMap ist ein Offene-Daten-Projekt, das alle automatisierten externen Defibrillatoren (AED) auf der ganzen Welt zeigt. Die Website basiert auf Daten von OpenStreetMap und ist das Ergebnis der Bemühungen der Vereinigung OpenStreetMap Polen. Sie wurde im Jahr 2022 erstellt, nachdem die polnische Website AED Mapa auf ein neues Design umgestellt wurde."
+        "about_project": "OpenAEDMap ist ein Offene-Daten-Projekt, das alle automatisierten externen Defibrillatoren (AED) auf der ganzen Welt zeigt. Die Website basiert auf Daten von OpenStreetMap und ist das Ergebnis der Bemühungen der Vereinigung OpenStreetMap Polen. Sie wurde im Jahr 2022 erstellt, nachdem die polnische Website AED Mapa auf ein neues Design umgestellt wurde.",
+        "aed_updated_successfully": "AED erfolgreich aktualisiert."
     }
 }
