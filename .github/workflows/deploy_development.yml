@@ -33,13 +33,15 @@ jobs:
       run: npm run typecheck
     - name: Run tests
       run: npm run test
+    - name: Set git commit
+      run: echo "REACT_APP_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
     - name: Build app
       env:
         REACT_APP_ENV: development
         REACT_APP_OSM_API_URL: ${{ secrets.REACT_APP_OSM_API_URL }}
         REACT_APP_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         REACT_APP_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
-        REACT_APP_BACKEND_API_URL: ${{ secrets. REACT_APP_BACKEND_API_URL_NEW }}
+        REACT_APP_BACKEND_API_URL: ${{ secrets.REACT_APP_BACKEND_API_URL_NEW }}
       run: npm run build
     - name: Create robots.txt
       run: |
