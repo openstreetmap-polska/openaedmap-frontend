@@ -6,6 +6,41 @@
     "sidebar": {
         "no_data": "ⵡⴰⵍⵓ ⵜⵉⵎⵓⵛⴰ",
         "map_legend_title": "ⵜⴰⵏⴰⵙⵜ ⵏ ⵜⴽⴰⵕⴹⴰ",
-        "caption_info": "AED"
-    }
+        "caption_info": "AED",
+        "csv": "CSV",
+        "excel": "ⵉⴽⵙⵉⵍ",
+        "geojson": "GeoJSON",
+        "download_title": "ⴰⴳⴰⵎ ⵏ ⵜⵎⵓⵛⴰ ⵏ AED ⵉⵜⵜⵡⴰⵔⵏⵓⵏ ⵖⵔ OSM"
+    },
+    "navbar": {
+        "logout": "ⴼⴼⵖ",
+        "about": "ⵅⴼ",
+        "hosted_by": "ⵙ ⵓⵙⴷⵓⵙ ⵏ",
+        "help_translating": "ⴰⵡⵙ ⴳ ⵓⵙⵓⵖⵍ"
+    },
+    "form": {
+        "optional_field": "ⵉⴳⵔ ⴰⵔⵓⵛⵛⵉⵍ",
+        "inside": "ⴰⴳⵏⵙⵓ",
+        "level": "ⴰⵙⵡⵉⵔ",
+        "outside": "ⴱⵕⵕⴰ",
+        "location": "ⴳⵍⵎ ⴰⵏⵙⴰ",
+        "location_example": "ⵙ ⵓⵎⴷⵢⴰ: ⴳ ⵓⵖⵔⴰⴱ ⵜⴰⵎⴰ ⵏ ⵓⵙⴰⴷⴼ"
+    },
+    "footer": {
+        "add": "ⵔⵏⵓ",
+        "add_aed": "ⵔⵏⵓ AED",
+        "cancel": "ⵙⵙⵔ",
+        "continue": "ⵙⵓⵍ",
+        "save_aed": "ⵃⴹⵓ AED"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "ⴰⴷⴼ",
+        "closed": "ⵉⵇⵇⵏ"
+    },
+    "indoor": {
+        "yes": "ⵡⴰⵀ",
+        "no": "ⵓⵀⵓ"
+    },
+    "osmp": "OpenStreetMap ⵏ ⴱⵓⵍⴰⵏⴷⴰ"
 }
