@@ -31,7 +31,8 @@
         "openstreetmap_navigation": "Navigation OpenStreetMap",
         "google_maps_navigation": "Navigation Google Maps",
         "verification_date": "Date de l’enquête",
-        "level": "niveau"
+        "level": "niveau",
+        "edit": "Modifier"
     },
     "form": {
         "optional_field": "Champ facultatif",
