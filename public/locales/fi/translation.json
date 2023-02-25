@@ -41,7 +41,8 @@
         "need_to_login": "Lisätäksesi ominaisuuksia sinun on kirjauduttava sisään OpenStreetMap-tilillä.",
         "current_zoom": "Nykyinen zoom:",
         "title": "Tiedot",
-        "about_project": "OpenAEDMap on avoimen datan projekti, joka näyttää kaikki automaattiset ulkoiset defibrillaattorit (AED) ympäri maailmaa. Sivusto perustuu OpenStreetMapin tietoihin, ja se on OpenStreetMap Polandin yhdistystoiminnan tulos. Se luotiin vuonna 2022 sen jälkeen, kun puolalainen AED Mapa -sivusto muutettiin uuteen ulkoasuun."
+        "about_project": "OpenAEDMap on avoimen datan projekti, joka näyttää kaikki automaattiset ulkoiset defibrillaattorit (AED) ympäri maailmaa. Sivusto perustuu OpenStreetMapin tietoihin, ja se on OpenStreetMap Polandin yhdistystoiminnan tulos. Se luotiin vuonna 2022 sen jälkeen, kun puolalainen AED Mapa -sivusto muutettiin uuteen ulkoasuun.",
+        "aed_updated_successfully": "AED päivitetty onnistuneesti."
     },
     "sidebar": {
         "view": "Näytä OSM:ssä",
@@ -66,13 +67,16 @@
         "google_maps_navigation": "Google Maps-navigointi",
         "openstreetmap_navigation": "OpenStreetMap-navigointi",
         "verification_date": "Tutkimuksen päivämäärä",
-        "level": "taso"
+        "level": "taso",
+        "edit": "Muokkaa",
+        "edit_defibrillator": "Muokkaa defibrillaattoria"
     },
     "footer": {
         "add": "Lisää",
         "add_aed": "Lisää AED",
         "cancel": "Peruuta",
-        "continue": "Jatka"
+        "continue": "Jatka",
+        "save_aed": "Tallenna AED"
     },
     "opening_hours": {
         "24_7": "24/7",
