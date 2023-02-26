@@ -7,27 +7,35 @@ import { fetchCountriesData } from "../backend";
 
 export default function DownloadCard() {
     const { t, i18n: { resolvedLanguage } } = useTranslation();
-    const world: Country = {
-        code: "",
-        names: { default: t("sidebar.world") },
-        featureCount: 0,
-        dataPath: "/data/world.geojson",
-    };
-    const [countries, setCountries] = useState<Array<Country>>([world]);
+    function resolvedLanguageToBackendLanguage(language: string): string {
+        let result = language;
+        if (result.includes("-")) [result] = result.split("-");
+        result = result.toUpperCase();
+        return result;
+    }
+    function worldAsCountry(language: string): Country {
+        return {
+            code: "",
+            names: { default: t("sidebar.world"), [resolvedLanguageToBackendLanguage(language)]: t("sidebar.world") },
+            featureCount: 0,
+            dataPath: "/data/world.geojson",
+        };
+    }
+    const world = worldAsCountry(resolvedLanguage);
+    const [countries, setCountries] = useState<Array<Country>>([]);
+    const countriesAndWorld = [world].concat(countries);
     const [selectedCountry, setSelectedCountry] = useState<Country>(world);
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchCountriesData();
-            if (data !== null) setCountries([world].concat(data));
+            if (data !== null) setCountries(data);
         };
         fetchData().catch(console.error);
     }, []);
     function countryName(country: Country, language: string) {
-        let lang = language;
-        if (lang.includes("-")) [lang] = lang.split("-");
-        lang = lang.toUpperCase();
-        if (Object.hasOwn(country.names, lang)) {
-            return country.names[lang];
+        const backendLanguage = resolvedLanguageToBackendLanguage(language);
+        if (Object.hasOwn(country.names, backendLanguage)) {
+            return country.names[backendLanguage];
         }
         return country.names.default;
     }
@@ -41,12 +49,12 @@ export default function DownloadCard() {
                 <select
                     className="select"
                     onChange={(e) => {
-                        const selected = countries
+                        const selected = countriesAndWorld
                             .find((country) => countryName(country, resolvedLanguage) === e.target.value);
                         if (selected !== undefined) setSelectedCountry(selected);
                     }}
                 >
-                    { countries.map((country) => (
+                    { countriesAndWorld.map((country) => (
                         <option key={country.code}>{countryName(country, resolvedLanguage)}</option>
                     ))}
                 </select>
@@ -59,7 +67,11 @@ export default function DownloadCard() {
                     download
                     key={t("sidebar.geojson")}
                 >
-                    <Icon path={selectedCountry === world ? mdiEarth : mdiFlag} size={1} className="icon mr-2" />
+                    <Icon
+                        path={mdiDownload}
+                        size={1}
+                        className="icon mr-2"
+                    />
                     {t("sidebar.geojson")}
                 </a>
                 <hr className="my-3" />
