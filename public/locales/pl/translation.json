@@ -43,7 +43,8 @@
         "openstreetmap_navigation": "OpenStreetMap Nawigacja",
         "google_maps_navigation": "Google Maps Nawigacja",
         "verification_date": "Data weryfikacji",
-        "edit_defibrillator": "Edytuj defibrylator"
+        "edit_defibrillator": "Edytuj defibrylator",
+        "world": "Świat"
     },
     "form": {
         "optional_field": "Pole opcjonalne",
