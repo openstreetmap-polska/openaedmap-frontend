@@ -50,7 +50,7 @@ export default function DownloadCard() {
                     {t("sidebar.download_title")}
                 </p>
                 <select
-                    className="select"
+                    className="select mb-2"
                     onChange={(e) => {
                         const selected = countriesAndWorld
                             .find((country) => countryName(country) === e.target.value);
@@ -61,7 +61,6 @@ export default function DownloadCard() {
                         <option key={country.code}>{countryName(country)}</option>
                     ))}
                 </select>
-                <br />
                 <a
                     className="button is-success mr-1"
                     href={selectedCountry.dataPath}
