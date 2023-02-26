@@ -6,24 +6,34 @@ import { Country } from "../model/country";
 import { fetchCountriesData } from "../backend";
 
 export default function DownloadCard() {
-    const { t, i18n: { resolvedLanguage } } = useTranslation();
-    function resolvedLanguageToBackendLanguage(language: string): string {
+    const { t, i18n: { resolvedLanguage: language } } = useTranslation();
+    function resolvedLanguageToBackendLanguage(): string {
         let result = language;
         if (result.includes("-")) [result] = result.split("-");
         result = result.toUpperCase();
         return result;
     }
-    function worldAsCountry(language: string): Country {
+    function worldAsCountry(): Country {
         return {
             code: "",
-            names: { default: t("sidebar.world"), [resolvedLanguageToBackendLanguage(language)]: t("sidebar.world") },
+            names: { default: t("sidebar.world"), [resolvedLanguageToBackendLanguage()]: t("sidebar.world") },
             featureCount: 0,
             dataPath: "/data/world.geojson",
         };
     }
-    const world = worldAsCountry(resolvedLanguage);
+    function countryName(country: Country) {
+        const backendLanguage = resolvedLanguageToBackendLanguage();
+        if (Object.hasOwn(country.names, backendLanguage)) {
+            return country.names[backendLanguage];
+        }
+        return country.names.default;
+    }
+
+    const world = worldAsCountry();
     const [countries, setCountries] = useState<Array<Country>>([]);
-    const countriesAndWorld = [world].concat(countries);
+    const sortedCountriesByName = countries
+        .sort((a: Country, b: Country) => ((countryName(a) < countryName(b)) ? -1 : 1));
+    const countriesAndWorld = [world].concat(sortedCountriesByName);
     const [selectedCountry, setSelectedCountry] = useState<Country>(world);
     useEffect(() => {
         const fetchData = async () => {
@@ -32,13 +42,6 @@ export default function DownloadCard() {
         };
         fetchData().catch(console.error);
     }, []);
-    function countryName(country: Country, language: string) {
-        const backendLanguage = resolvedLanguageToBackendLanguage(language);
-        if (Object.hasOwn(country.names, backendLanguage)) {
-            return country.names[backendLanguage];
-        }
-        return country.names.default;
-    }
     return (
         <div className="px-4 pt-5">
             <div className="content has-text-weight-light">
@@ -50,12 +53,12 @@ export default function DownloadCard() {
                     className="select"
                     onChange={(e) => {
                         const selected = countriesAndWorld
-                            .find((country) => countryName(country, resolvedLanguage) === e.target.value);
+                            .find((country) => countryName(country) === e.target.value);
                         if (selected !== undefined) setSelectedCountry(selected);
                     }}
                 >
                     { countriesAndWorld.map((country) => (
-                        <option key={country.code}>{countryName(country, resolvedLanguage)}</option>
+                        <option key={country.code}>{countryName(country)}</option>
                     ))}
                 </select>
                 <br />
