@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
-import { mdiDownload, mdiEarth, mdiFlag } from "@mdi/js";
+import { mdiDownload } from "@mdi/js";
 import { Country } from "../model/country";
 import { fetchCountriesData } from "../backend";
 
