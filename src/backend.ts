@@ -26,7 +26,7 @@ export async function fetchCountriesData(): Promise<Array<Country> | null> {
             names: country.country_names,
             featureCount: country.feature_count,
             dataPath: country.data_path,
-        })).sort((a: Country, b: Country) => ((a.names.default < b.names.default) ? -1 : 1)))
+        })))
         .catch((error) => {
             console.error("Error:", error);
             return null;
