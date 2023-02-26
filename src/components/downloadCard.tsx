@@ -13,11 +13,11 @@ export default function DownloadCard() {
         result = result.toUpperCase();
         return result;
     }
-    function worldAsCountry(): Country {
+    function worldAsCountry(count: number): Country {
         return {
             code: "",
             names: { default: t("sidebar.world"), [resolvedLanguageToBackendLanguage()]: t("sidebar.world") },
-            featureCount: 0,
+            featureCount: count,
             dataPath: "/data/world.geojson",
         };
     }
@@ -28,9 +28,8 @@ export default function DownloadCard() {
         }
         return country.names.default;
     }
-
-    const world = worldAsCountry();
     const [countries, setCountries] = useState<Array<Country>>([]);
+    const world = worldAsCountry(countries.reduce((acc, country) => acc + country.featureCount, 0));
     const sortedCountriesByName = countries
         .sort((a: Country, b: Country) => ((countryName(a) < countryName(b)) ? -1 : 1));
     const countriesAndWorld = [world].concat(sortedCountriesByName);
@@ -42,6 +41,10 @@ export default function DownloadCard() {
         };
         fetchData().catch(console.error);
     }, []);
+
+    function countryLabel(country: Country) {
+        return `${countryName(country)} (${country.featureCount})`;
+    }
     return (
         <div className="px-4 pt-5">
             <div className="content has-text-weight-light">
@@ -53,12 +56,12 @@ export default function DownloadCard() {
                     className="select mb-2"
                     onChange={(e) => {
                         const selected = countriesAndWorld
-                            .find((country) => countryName(country) === e.target.value);
+                            .find((country) => country.code === e.target.value);
                         if (selected !== undefined) setSelectedCountry(selected);
                     }}
                 >
                     { countriesAndWorld.map((country) => (
-                        <option key={country.code}>{countryName(country)}</option>
+                        <option key={country.code} value={country.code}>{countryLabel(country)}</option>
                     ))}
                 </select>
                 <a
