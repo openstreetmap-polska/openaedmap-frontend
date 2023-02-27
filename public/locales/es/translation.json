@@ -43,7 +43,8 @@
         "verification_date": "Fecha de la encuesta",
         "level": "nivel",
         "edit": "Editar",
-        "edit_defibrillator": "Editar desfibrilador"
+        "edit_defibrillator": "Editar desfibrilador",
+        "world": "Mundo"
     },
     "form": {
         "optional_field": "Campo opcional",
