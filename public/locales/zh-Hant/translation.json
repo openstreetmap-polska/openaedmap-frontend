@@ -43,7 +43,8 @@
         "verification_date": "調查日期",
         "level": "樓層",
         "edit": "編輯",
-        "edit_defibrillator": "編輯除顫器"
+        "edit_defibrillator": "編輯除顫器",
+        "world": "世界"
     },
     "form": {
         "optional_field": "可選欄位",
