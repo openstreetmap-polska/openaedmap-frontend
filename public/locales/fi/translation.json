@@ -69,7 +69,8 @@
         "verification_date": "Tutkimuksen päivämäärä",
         "level": "taso",
         "edit": "Muokkaa",
-        "edit_defibrillator": "Muokkaa defibrillaattoria"
+        "edit_defibrillator": "Muokkaa defibrillaattoria",
+        "world": "Maailma"
     },
     "footer": {
         "add": "Lisää",
