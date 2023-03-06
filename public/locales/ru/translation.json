@@ -36,7 +36,8 @@
         "view": "Посмотреть в ОСМ",
         "google_maps_navigation": "Навигация Google Maps",
         "add_defibrillator": "Добавить дефибриллятор",
-        "openstreetmap_navigation": "Навигация OpenStreetMap"
+        "openstreetmap_navigation": "Навигация OpenStreetMap",
+        "world": "Мир"
     },
     "form": {
         "accessibility": "Доступ",
