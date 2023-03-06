@@ -33,7 +33,8 @@
         "verification_date": "Date de l’enquête",
         "level": "niveau",
         "edit": "Modifier",
-        "edit_defibrillator": "Modifier le défibrillateur"
+        "edit_defibrillator": "Modifier le défibrillateur",
+        "world": "Monde"
     },
     "form": {
         "optional_field": "Champ facultatif",
