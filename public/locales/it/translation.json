@@ -65,7 +65,8 @@
         "verification_date": "Data dell’indagine",
         "level": "livello",
         "edit": "Modifica",
-        "edit_defibrillator": "Modifica defibrillatore"
+        "edit_defibrillator": "Modifica defibrillatore",
+        "world": "Mondo"
     },
     "osmp": "OpenStreetMap Polonia",
     "modal": {
