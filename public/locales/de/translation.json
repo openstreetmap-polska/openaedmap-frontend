@@ -43,7 +43,8 @@
         "verification_date": "Datum der Erhebung",
         "level": "Ebene",
         "edit": "Bearbeiten",
-        "edit_defibrillator": "Defibrillator bearbeiten"
+        "edit_defibrillator": "Defibrillator bearbeiten",
+        "world": "Welt"
     },
     "form": {
         "optional_field": "Optionales Feld",
