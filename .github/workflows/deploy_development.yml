@@ -45,7 +45,7 @@ jobs:
         Disallow: /
         EOF
     - name: test different tranfer
-      uses: appleboy/scp-action@v0.1.6
+      uses: appleboy/scp-action@v0.1.3
       with:
         host: ${{ secrets.SSH_HOST_NEW_IP }}
         username: ${{ secrets.SSH_USER_NEW }}
