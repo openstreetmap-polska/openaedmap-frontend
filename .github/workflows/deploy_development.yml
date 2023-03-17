@@ -45,12 +45,12 @@ jobs:
         Disallow: /
         EOF
     - name: test different tranfer
-      uses: appleboy/scp-action@master
+      uses: appleboy/scp-action@v0.1.6
       with:
         host: ${{ secrets.SSH_HOST_NEW_IP }}
         username: ${{ secrets.SSH_USER_NEW }}
         port: ${{ secrets.SSH_HOST_NEW_PORT }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "build/*"
-        target: "~/prod-static/"
+        target: "~/dev-static/"
         
