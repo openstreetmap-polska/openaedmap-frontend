@@ -4,7 +4,8 @@
         "private": "Dostopen z dovoljenjem lastnika",
         "customers": "Dostopen v obratovalnem času",
         "no": "Nedostopen",
-        "permissive": "Z dovoljenjem"
+        "permissive": "Javno dostopno do nadaljnega",
+        "unknown": "Dostopnost ni znana"
     },
     "navbar": {
         "created_with_<3_by": "z ❤️ ustvaril",
@@ -12,7 +13,9 @@
         "visit_osmp_website": "Obiščite spletno stran OpenStreetMap Poljska",
         "login": "Vpis z računom OSM",
         "logout": "Odjava",
-        "about": "O aplikaciji"
+        "about": "O aplikaciji",
+        "help_translating": "Pomagajte s prevodi",
+        "hosted_by": "gostuje pri"
     },
     "sidebar": {
         "close": "Zapri okno",
@@ -33,7 +36,14 @@
         "edit_in_osm": "Uredi v OSM",
         "view": "Prikaži v OSM",
         "copy_url": "Kopiraj URL",
-        "add_defibrillator": "Dodaj defibrillator"
+        "add_defibrillator": "Dodaj defibrillator",
+        "google_maps_navigation": "Navigacija z Google zemljevidom",
+        "edit": "Uredi",
+        "openstreetmap_navigation": "Navigacija z OpenStreetMap",
+        "verification_date": "Datum preverbe",
+        "world": "Svet",
+        "level": "Nadstropje",
+        "edit_defibrillator": "Uredi defibrilator"
     },
     "form": {
         "optional_field": "Če je znano",
@@ -43,13 +53,15 @@
         "outside": "Zunaj",
         "accessibility": "Dostopnost",
         "location": "Opišite lokacijo",
-        "location_example": "Na primer: Na steni ob vhodu"
+        "location_example": "Na primer: Na steni ob vhodu",
+        "level": "Nadstropje"
     },
     "footer": {
         "add": "Dodaj",
         "add_aed": "Dodaj AED",
         "cancel": "Prekliči",
-        "continue": "Nadaljuj"
+        "continue": "Nadaljuj",
+        "save_aed": "Shrani AED"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -72,7 +84,9 @@
         "need_more_zoom": "Za natančnejše dodajanje elementov morate bolj povečati zemljevid.",
         "current_zoom": "Trenutna povečava:",
         "zoom_need_to_be": "Povečava mora biti vsaj na nivoju 15 ali višja.",
-        "about_osm": "OpenStreetMap (OSM) je kot Wikipedija za zemljevide. Tudi vi lahko prispevate.",
-        "create_account": "Tudi vi lahko prispevate! Ustvarite si brezplačen račun na "
+        "about_osm": "OpenStreetMap (OSM) je kot Wikipedija za zemljevide. Vsi ga lahko uporabljamo in vsak lahko prispeva elemente na zemjljevid. Za dodajanje novih lokacij AED naprav neposredno na tej spletni strani lahko uporabite svoj uporabniški račun OSM.",
+        "create_account": "Tudi vi lahko prispevate! Ustvarite si brezplačen račun na ",
+        "aed_updated_successfully": "AED uspešno posodobljen.",
+        "about_project": "OpenAEDMap je projekt zbiranja in prikaza odprtih podatkov vseh Avtomatskih eksternih defibrilatorjev (AED) po svetu. Ta spletna stran sloni na podatkih OpenStreetMap in je rezultat dela združenja OpenStreetMap Poljske. Narejena je bila leta 2022 kot oblikovna prenova Poljske spletne strani AED Mapa."
     }
 }
