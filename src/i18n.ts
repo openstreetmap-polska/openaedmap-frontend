@@ -59,5 +59,9 @@ i18n
         return t("key");
     });
 
+i18n.on("languageChanged", (lang: string) => {
+    document.documentElement.setAttribute("lang", lang);
+});
+
 export default i18n;
 export { languages, languagesIsoCodes };
