@@ -89,5 +89,8 @@
         "about_project": "OpenAEDMap jest otwartym projektem, który ukazuje wszystkie automatyczne defibrylatory zewnętrzne (AED) na całym świecie. Strona jest oparta na danych z OpenStreetMap. Strona powstała w wyniku starań stowarzyszenia OpenStreetMap Polska. Wprowadzona została w 2022 roku po przekształceniu polskiej Mapy AED na nowy design.",
         "about_osm": "OpenStreetMap (OSM) jest jak Wikipedia dla map. Jest dostępny dla każdego i każdy może dodawać obiekty do mapy. Możesz użyć swojego konta OSM, aby dodać lokalizacje AED bezpośrednio z tej strony za pomocą prostego formularza.",
         "create_account": "Ty również możesz ją współtworzyć! Stwórz darmowe konto "
+    },
+    "common": {
+        "loading": "Ładowanie..."
     }
 }
