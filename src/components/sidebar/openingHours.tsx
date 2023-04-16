@@ -90,6 +90,10 @@ export const CurrentlyOpenStatus: FC<OpeninHoursPreparedData> = ({ openingHours,
 };
 
 export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, lat, lon }) => {
+    if (!openingHours) {
+        return <SpanNoData />;
+    }
+
     const { t } = useTranslation();
     const [
         nominatimData,
@@ -111,17 +115,14 @@ export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, l
         );
     }
 
-    if (openingHours) {
-        return (
-            <span>
-                <span className="has-text-weight-medium">
-                    {openingHours === "24/7" ? t("opening_hours.24_7") : parseOpeningHours(openingHours, nominatimData)}
-                </span>
-                <CurrentlyOpenStatus openingHours={openingHours} nominatimData={nominatimData} />
+    return (
+        <span>
+            <span className="has-text-weight-medium">
+                {openingHours === "24/7" ? t("opening_hours.24_7") : parseOpeningHours(openingHours, nominatimData)}
             </span>
-        );
-    }
-    return <SpanNoData />;
+            <CurrentlyOpenStatus openingHours={openingHours} nominatimData={nominatimData} />
+        </span>
+    );
 };
 
 export const OpeningHoursField: FC<OpeningHoursProps> = ({ openingHours, lat, lon }) => {
