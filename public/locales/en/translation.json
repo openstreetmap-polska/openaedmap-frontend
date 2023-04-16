@@ -89,5 +89,8 @@
         "about_project": "OpenAEDMap is an open-data project which shows all Automated External Defibrillators (AED) around the world. The website is based on data from OpenStreetMap and is the result of OpenStreetMap Poland's association efforts. It was created in 2022 after changing the Polish website AED Mapa to a new design.",
         "about_osm": "OpenStreetMap (OSM) is like a Wikipedia for maps. It's available to use for everyone and anybody can add objects to the map. You can use your OSM account to add AED locations directly from this site using a simple form.",
         "create_account": "You can contribute too! Just create a free account on "
+    },
+    "common": {
+        "loading": "Loading..."
     }
 }
