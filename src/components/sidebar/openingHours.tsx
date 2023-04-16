@@ -40,56 +40,45 @@ function getOpeningHoursConfig(language: string): argument_hash {
 }
 
 function parseOpeningHours(openingHours: string, nominatimData: NominatimData | null): string | null {
-    if (openingHours) {
-        let hoursPrettified;
-        try {
-            const oh = new OpeningHours(openingHours, nominatimData, 2);
-            // @ts-ignore
-            hoursPrettified = oh.prettifyValue({ conf: getOpeningHoursConfig(i18n.resolvedLanguage) });
-            console.log("hoursPrettified:", hoursPrettified);
-            return hoursPrettified;
-        } catch (error) {
-            console.log("Error when parsing opening hours");
-            console.log(error);
-            return openingHours;
-        }
+    if (!openingHours) return null;
+
+    try {
+        const oh = new OpeningHours(openingHours, nominatimData, 2);
+        const config = getOpeningHoursConfig(i18n.resolvedLanguage);
+        // @ts-ignore
+        return oh.prettifyValue({ conf: config });
+    } catch (error) {
+        console.log(`Error when parsing opening hours: ${error}`);
+        return openingHours;
     }
-    return null;
 }
 
 function isCurrentlyOpen(openingHours: string, nominatimData: NominatimData | null): boolean | null {
-    console.log("openingHours:", openingHours);
-    if (openingHours) {
-        if (openingHours === "24/7") {
-            return true;
-        }
-        if (openingHours.startsWith("\"") && openingHours.endsWith("\"")) {
-            return null;
-        }
+    if (!openingHours) return null;
 
-        try {
-            const oh = new OpeningHours(openingHours, nominatimData, 2);
-            const nowTimestamp = Date.now();
-            let time;
-            if (nominatimData) {
-                time = getFuzzyLocalTimeFromPoint(nowTimestamp, [nominatimData.lat, nominatimData.lon]);
-            }
-            // eslint-disable-next-line no-underscore-dangle
-            return oh.getState(time?._d);
-        } catch (error) {
-            console.log(`Error while parsing opening hours: ${error}`);
-            return null;
-        }
+    if (openingHours === "24/7") return true;
+
+    if (openingHours.startsWith("\"") && openingHours.endsWith("\"")) return null;
+
+    try {
+        const oh = new OpeningHours(openingHours, nominatimData, 2);
+        const time = nominatimData
+            ? getFuzzyLocalTimeFromPoint(Date.now(), [nominatimData.lat, nominatimData.lon])
+            : null;
+        // eslint-disable-next-line no-underscore-dangle
+        return oh.getState(time?._d);
+    } catch (error) {
+        console.log(`Error while parsing opening hours: ${error}`);
+        return null;
     }
-    return null;
 }
 
 export const CurrentlyOpenStatus: FC<OpeninHoursPreparedData> = ({ openingHours, nominatimData }) => {
     const { t } = useTranslation();
     const isOpen = isCurrentlyOpen(openingHours, nominatimData);
-    if (isOpen === null) {
-        return <sup />;
-    }
+
+    if (isOpen === null) return <sup />;
+
     const currentlyOpenText = `• ${t(isOpen ? "opening_hours.open" : "opening_hours.closed")}`;
     return (
         <sup className="pl-1 is-lowercase">
@@ -100,11 +89,12 @@ export const CurrentlyOpenStatus: FC<OpeninHoursPreparedData> = ({ openingHours,
     );
 };
 
-// http://127.0.0.1:3000/#map=4.71/27.12/105.6&node_id=9126380737
 export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, lat, lon }) => {
     const { t } = useTranslation();
-    const [nominatimData,
-        setNominatimData] = useState<NominatimData | null>(null);
+    const [
+        nominatimData,
+        setNominatimData,
+    ] = useState<NominatimData | null>(null);
 
     useEffect(() => {
         async function fetchData() {
