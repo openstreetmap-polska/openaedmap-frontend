@@ -32,6 +32,10 @@ const openingHoursDefaultConfig = {
     zero_pad_month_and_week_numbers: true,
 };
 
+function convertMinutesToMilliseconds(minutes: number): number {
+    return minutes * 60 * 1000;
+}
+
 function getOpeningHoursConfig(language: string): argument_hash {
     return {
         ...openingHoursDefaultConfig,
@@ -62,8 +66,10 @@ function isCurrentlyOpen(openingHours: string, nominatimData: NominatimData | nu
 
     try {
         const oh = new OpeningHours(openingHours, nominatimData, 2);
+        // Not sure why, but getFuzzyLocalTimeFromPoint was returning wrong date so I had to fix it by adding offset
+        const epochFixed = Date.now() + convertMinutesToMilliseconds(new Date().getTimezoneOffset());
         const time = nominatimData
-            ? getFuzzyLocalTimeFromPoint(Date.now(), [nominatimData.lat, nominatimData.lon])
+            ? getFuzzyLocalTimeFromPoint(epochFixed, [nominatimData.lon, nominatimData.lat])
             : null;
         // eslint-disable-next-line no-underscore-dangle
         return oh.getState(time?._d);
