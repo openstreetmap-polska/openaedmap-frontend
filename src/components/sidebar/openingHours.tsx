@@ -4,8 +4,8 @@ import i18n from "i18next";
 import React, { FC, useEffect, useState } from "react";
 import { getFuzzyLocalTimeFromPoint } from "@mapbox/timespace";
 
-import { getNominatimDataForLatLon } from "src/backend";
-import { NominatimData } from "src/model/Nominatim";
+import { getNominatimReverseGeocodingState } from "src/backend";
+import { NominatimStateData } from "src/model/Nominatim";
 import SpanNoData from "./spanNoData";
 
 interface OpeningHoursProps {
@@ -14,9 +14,9 @@ interface OpeningHoursProps {
     lon: number
 }
 
-interface OpeninHoursPreparedData {
+interface OpeningHoursPreparedData {
     openingHours: string,
-    nominatimData: NominatimData | null
+    nominatimStateData: NominatimStateData | null
 }
 
 const openingHoursDefaultConfig = {
@@ -43,11 +43,11 @@ function getOpeningHoursConfig(language: string): argument_hash {
     };
 }
 
-function parseOpeningHours(openingHours: string, nominatimData: NominatimData | null): string | null {
+function parseOpeningHours(openingHours: string, nominatimStateData: NominatimStateData | null): string | null {
     if (!openingHours) return null;
 
     try {
-        const oh = new OpeningHours(openingHours, nominatimData, 2);
+        const oh = new OpeningHours(openingHours, nominatimStateData, 2);
         const config = getOpeningHoursConfig(i18n.resolvedLanguage);
         // @ts-ignore
         return oh.prettifyValue({ conf: config });
@@ -57,7 +57,7 @@ function parseOpeningHours(openingHours: string, nominatimData: NominatimData | 
     }
 }
 
-function isCurrentlyOpen(openingHours: string, nominatimData: NominatimData | null): boolean | null {
+function isCurrentlyOpen(openingHours: string, nominatimStateData: NominatimStateData | null): boolean | null {
     if (!openingHours) return null;
 
     if (openingHours === "24/7") return true;
@@ -65,11 +65,11 @@ function isCurrentlyOpen(openingHours: string, nominatimData: NominatimData | nu
     if (openingHours.startsWith("\"") && openingHours.endsWith("\"")) return null;
 
     try {
-        const oh = new OpeningHours(openingHours, nominatimData, 2);
+        const oh = new OpeningHours(openingHours, nominatimStateData, 2);
         // Not sure why, but getFuzzyLocalTimeFromPoint was returning wrong date so I had to fix it by adding offset
         const epochFixed = Date.now() + convertMinutesToMilliseconds(new Date().getTimezoneOffset());
-        const time = nominatimData
-            ? getFuzzyLocalTimeFromPoint(epochFixed, [nominatimData.lon, nominatimData.lat])
+        const time = nominatimStateData
+            ? getFuzzyLocalTimeFromPoint(epochFixed, [nominatimStateData.lon, nominatimStateData.lat])
             : null;
         // eslint-disable-next-line no-underscore-dangle
         return oh.getState(time?._d);
@@ -79,9 +79,9 @@ function isCurrentlyOpen(openingHours: string, nominatimData: NominatimData | nu
     }
 }
 
-export const CurrentlyOpenStatus: FC<OpeninHoursPreparedData> = ({ openingHours, nominatimData }) => {
+export const CurrentlyOpenStatus: FC<OpeningHoursPreparedData> = ({ openingHours, nominatimStateData }) => {
     const { t } = useTranslation();
-    const isOpen = isCurrentlyOpen(openingHours, nominatimData);
+    const isOpen = isCurrentlyOpen(openingHours, nominatimStateData);
 
     if (isOpen === null) return <sup />;
 
@@ -101,20 +101,17 @@ export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, l
     }
 
     const { t } = useTranslation();
-    const [
-        nominatimData,
-        setNominatimData,
-    ] = useState<NominatimData | null>(null);
+    const [nominatimStateData, setNominatimStateData] = useState<NominatimStateData | null>(null);
 
     useEffect(() => {
         async function fetchData() {
-            const data = await getNominatimDataForLatLon(lat, lon);
-            setNominatimData(data);
+            const data = await getNominatimReverseGeocodingState(lat, lon);
+            setNominatimStateData(data);
         }
         fetchData();
     }, [lat, lon]);
 
-    if (!nominatimData) {
+    if (!nominatimStateData) {
         const loadingText = t("common.loading");
         return (
             <span>{loadingText}</span>
@@ -124,9 +121,11 @@ export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, l
     return (
         <span>
             <span className="has-text-weight-medium">
-                {openingHours === "24/7" ? t("opening_hours.24_7") : parseOpeningHours(openingHours, nominatimData)}
+                {openingHours === "24/7"
+                    ? t("opening_hours.24_7")
+                    : parseOpeningHours(openingHours, nominatimStateData)}
             </span>
-            <CurrentlyOpenStatus openingHours={openingHours} nominatimData={nominatimData} />
+            <CurrentlyOpenStatus openingHours={openingHours} nominatimStateData={nominatimStateData} />
         </span>
     );
 };
