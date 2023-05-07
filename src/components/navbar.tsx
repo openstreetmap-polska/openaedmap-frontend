@@ -4,6 +4,7 @@ import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiMapLegend, mdiGithub } from "@mdi/js";
+import ReactStoreBadges from "react-store-badges";
 import { LanguageSwitcher, LanguageSwitcherMobile } from "./languageSwitcher";
 import LogInButton from "./logInButton";
 import { initialModalState, ModalType } from "../model/modal";
@@ -12,7 +13,7 @@ import { useAppContext } from "../appContext";
 const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
     const { setModalState } = useAppContext();
     const [isActive, setIsActive] = React.useState(false);
-    const { t } = useTranslation();
+    const { t, i18n: { resolvedLanguage } } = useTranslation();
     return (
         <Navbar color="success" className="has-background-green">
             <Navbar.Brand>
@@ -102,6 +103,22 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
                         >
                             <Icon title={t("navbar.visit_github")} description="GitHub" path={mdiGithub} size="2rem" />
                         </a>
+                    </Navbar.Item>
+                    <Navbar.Item className="p-0" renderAs="div">
+                        <ReactStoreBadges
+                            platform="android"
+                            url="https://play.google.com/store/apps/details?id=pl.enteam.aed_map"
+                            locale={resolvedLanguage}
+                            width={100}
+                        />
+                    </Navbar.Item>
+                    <Navbar.Item className="p-0" renderAs="div">
+                        <ReactStoreBadges
+                            platform="ios"
+                            url="https://apps.apple.com/app/mapa-aed/id1638495701"
+                            locale={resolvedLanguage}
+                            width={100}
+                        />
                     </Navbar.Item>
                     <Navbar.Item className="is-hidden-desktop" textColor="white" renderAs="div" pl={0} pr={0}>
                         <span color="white" className="has-text-weight-light is-size-6 pr-1">
