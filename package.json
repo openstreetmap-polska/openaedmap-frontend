@@ -31,7 +31,6 @@
     "react-i18next": "^11.16.9",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.0",
-    "react-store-badges": "^1.5.1",
     "typescript": "^4.8.3",
     "web-vitals": "^2.1.4"
   },
