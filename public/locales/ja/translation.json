@@ -21,12 +21,17 @@
         "download_title": "OSMに追加されたAEDデータをダウンロード",
         "csv": "CSV",
         "indoor": "建物内",
-        "location": "位置"
+        "location": "位置",
+        "level": "フロア番号（日本の1階は0）",
+        "world": "世界",
+        "edit": "編集",
+        "edit_defibrillator": "除細動器(AED)を編集"
     },
     "footer": {
         "add": "追加",
         "cancel": "キャンセル",
-        "add_aed": "AEDを追加"
+        "add_aed": "AEDを追加",
+        "save_aed": "AEDを保存"
     },
     "navbar": {
         "about": "概要",
@@ -34,7 +39,8 @@
         "login": "OSMアカウントでログイン",
         "created_with_<3_by": "作成者 ❤️",
         "visit_osmp_website": "OpenStreetMap ポーランドのウェブサイトに訪れる",
-        "visit_github": "GitHubリポジトリに訪れる"
+        "visit_github": "GitHubリポジトリに訪れる",
+        "help_translating": "翻訳に協力する"
     },
     "indoor": {
         "yes": "はい",
@@ -48,7 +54,8 @@
         "marker_popup_text": "マーカーをAEDの位置に移動",
         "accessibility": "利用可能状況",
         "is_indoor": "建物内にありますか？",
-        "optional_field": "任意の項目"
+        "optional_field": "任意の項目",
+        "level": "フロア番号（日本の1階は0）"
     },
     "opening_hours": {
         "24_7": "24時間年中無休",
