@@ -89,5 +89,8 @@
         "create_account": "Auch Sie können mitmachen! Erstellen Sie einfach ein kostenloses Konto auf ",
         "about_project": "OpenAEDMap ist ein Offene-Daten-Projekt, das alle automatisierten externen Defibrillatoren (AED) auf der ganzen Welt zeigt. Die Website basiert auf Daten von OpenStreetMap und ist das Ergebnis der Bemühungen der Vereinigung OpenStreetMap Polen. Sie wurde im Jahr 2022 erstellt, nachdem die polnische Website AED Mapa auf ein neues Design umgestellt wurde.",
         "aed_updated_successfully": "AED erfolgreich aktualisiert."
+    },
+    "common": {
+        "loading": "Lade..."
     }
 }
