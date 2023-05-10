@@ -89,5 +89,8 @@
         "create_account": "¡Usted también puede contribuir! Basta con crearse una cuenta gratuita en ",
         "about_project": "OpenAEDMap es un proyecto de datos abiertos que muestra todos los Desfibriladores Externos Automáticos (DEA) del mundo. El sitio web se basa en datos de OpenStreetMap y es el logro de esfuerzos de la asociación OpenStreetMap Polonia. Fue creado en 2022 tras cambiar el AED Mapa del sitio web polaco por un nuevo diseño.",
         "aed_updated_successfully": "AED actualizado con éxito."
+    },
+    "common": {
+        "loading": "Cargando..."
     }
 }
