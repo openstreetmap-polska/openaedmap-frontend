@@ -89,5 +89,8 @@
         "closed": "Chiuso",
         "24_7": "24/7",
         "open": "Aperto"
+    },
+    "common": {
+        "loading": "Caricamento…"
     }
 }
