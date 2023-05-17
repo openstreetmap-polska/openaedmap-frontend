@@ -62,7 +62,8 @@
         "add_aed": "Dodaj AED",
         "cancel": "Anuluj",
         "continue": "Dalej",
-        "save_aed": "Zapisz AED"
+        "save_aed": "Zapisz AED",
+        "partners": "Patroni projektu"
     },
     "opening_hours": {
         "24_7": "całodobowo",
@@ -88,7 +89,26 @@
         "zoom_need_to_be": "Powiększenie musi być na poziomie minimum 15.",
         "about_project": "OpenAEDMap jest otwartym projektem, który ukazuje wszystkie automatyczne defibrylatory zewnętrzne (AED) na całym świecie. Strona jest oparta na danych z OpenStreetMap. Strona powstała w wyniku starań stowarzyszenia OpenStreetMap Polska. Wprowadzona została w 2022 roku po przekształceniu polskiej Mapy AED na nowy design.",
         "about_osm": "OpenStreetMap (OSM) jest jak Wikipedia dla map. Jest dostępny dla każdego i każdy może dodawać obiekty do mapy. Możesz użyć swojego konta OSM, aby dodać lokalizacje AED bezpośrednio z tej strony za pomocą prostego formularza.",
-        "create_account": "Ty również możesz ją współtworzyć! Stwórz darmowe konto "
+        "create_account": "Ty również możesz ją współtworzyć! Stwórz darmowe konto ",
+        "become_openaedmap_partner": "Chcesz objąć patronatem projekt Mapy AED?",
+        "contact_us": "Skontaktuj się z nami"
+    },
+    "partners": {
+        "aed_foundation": "Fundacja Powszechnego Dostępu do Defibrylacji w Polsce",
+        "honorary_patronage": "Patronat honorowy",
+        "gugik": "Główny Urząd Geodezji i Kartografii",
+        "acting": "p. o.",
+        "chief_geodesist": "Główny Geodeza Kraju",
+        "polish_society_for_emergency_medicine": "Polskie Towarzystwo Medycyny Ratunkowej",
+        "national_consultant_of_emergency_medicine": "Konsultant Krajowy w dziedzinie medycyny ratunkowej",
+        "for_voivodeship": "Województwo",
+        "phd_in_medicine": "dr n. med.",
+        "medical_doctor": "lek. med.",
+        "doctor_of_science": "dr hab. n. med.",
+        "professor_doctor_of_science": "prof. dr hab. n. med.",
+        "consultant_of_cardiology": "Konsultant ds. Kardiologii",
+        "consultant_of_emergency_medicine": "Konsultant ds. Medycyny Ratunkowej",
+        "consultant_of_public_health": "Konsultant ds. Zdrowia Publicznego"
     },
     "common": {
         "loading": "Ładowanie..."

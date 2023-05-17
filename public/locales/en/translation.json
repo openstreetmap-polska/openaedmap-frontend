@@ -62,7 +62,8 @@
         "add_aed": "Add AED",
         "cancel": "Cancel",
         "continue": "Continue",
-        "save_aed": "Save AED"
+        "save_aed": "Save AED",
+        "partners": "Project's partners"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -88,7 +89,26 @@
         "zoom_need_to_be": "Zoom needs to be at level 15 minimum.",
         "about_project": "OpenAEDMap is an open-data project which shows all Automated External Defibrillators (AED) around the world. The website is based on data from OpenStreetMap and is the result of OpenStreetMap Poland's association efforts. It was created in 2022 after changing the Polish website AED Mapa to a new design.",
         "about_osm": "OpenStreetMap (OSM) is like a Wikipedia for maps. It's available to use for everyone and anybody can add objects to the map. You can use your OSM account to add AED locations directly from this site using a simple form.",
-        "create_account": "You can contribute too! Just create a free account on "
+        "create_account": "You can contribute too! Just create a free account on ",
+        "become_openaedmap_partner": "Do you want to become OpenAEDMap partner?",
+        "contact_us": "Contact us"
+    },
+    "partners": {
+        "aed_foundation": "Foundation for Universal Access to Defibrillation in Poland",
+        "honorary_patronage": "Honorary patronage",
+        "gugik": "Head Office of Geodesy and Cartography in Poland",
+        "acting": "acting",
+        "chief_geodesist": "Chief Geodesist of Poland",
+        "polish_society_for_emergency_medicine": "Polish Society for Emergency Medicine",
+        "national_consultant_of_emergency_medicine": "National Consultant of Emergency Medicine of Poland",
+        "for_voivodeship": "for Voivodeship",
+        "phd_in_medicine": "PhD in Medicine",
+        "medical_doctor": "M.D.",
+        "doctor_of_science": "PhD, DSc in Medicine",
+        "professor_doctor_of_science": "PhD, DSc, ProfTit in Medicine",
+        "consultant_of_cardiology": "Consultant of Cardiology",
+        "consultant_of_emergency_medicine": "Consultant of Emergency Medicine",
+        "consultant_of_public_health": "Consultant of Public Health"
     },
     "common": {
         "loading": "Loading..."

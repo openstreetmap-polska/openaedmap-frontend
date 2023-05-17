@@ -113,7 +113,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
-    const [footerButtonType, setFooterButtonType] = useState(ButtonsType.AddAED);
+    const [footerButtonType, setFooterButtonType] = useState(ButtonsType.Basic);
 
     const removeNodeIdFromHash = () => {
         const hashParams = parseHash();
@@ -132,7 +132,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         setSidebarLeftShown(false);
         deleteMarker();
         removeNodeIdFromHash();
-        setFooterButtonType(ButtonsType.AddAED);
+        setFooterButtonType(ButtonsType.Basic);
     };
 
     const checkConditionsThenCall = (callable: () => void) => {
@@ -150,7 +150,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const mobileCancel = () => {
         deleteMarker();
         setSidebarLeftShown(false);
-        setFooterButtonType(ButtonsType.AddAED);
+        setFooterButtonType(ButtonsType.Basic);
     };
 
     const showFormMobile = () => {
@@ -166,7 +166,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         setSidebarData(null);
         setSidebarAction(SidebarAction.addNode);
         setSidebarLeftShown(!mobile); // for mobile hide sidebar so marker is visible
-        setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
+        setFooterButtonType(mobile ? ButtonsType.MobileAddAed : ButtonsType.None);
         // add marker
         const markerColour = "#e81224";
         const mapCenter = map.getCenter();

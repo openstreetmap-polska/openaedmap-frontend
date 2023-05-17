@@ -2,18 +2,22 @@ import React, { FC } from "react";
 import { Button, Footer } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
-import { mdiCancel, mdiArrowRightBold, mdiMapMarkerPlus } from "@mdi/js";
+import {
+    mdiCancel, mdiArrowRightBold, mdiMapMarkerPlus, mdiAccountGroup,
+} from "@mdi/js";
 import "./footer.css";
 import ButtonsType from "../model/buttonsType";
+import { useAppContext } from "../appContext";
+import { initialModalState, ModalType } from "../model/modal";
 
 const FooterDiv: FC<FooterDivProps> = ({
     startAEDAdding, mobileCancel, showFormMobile, buttonsConfiguration,
 }) => {
     const { t } = useTranslation();
-
-    const addAedButtons = (
-        <>
-            <div className="is-hidden-mobile">
+    const { setModalState } = useAppContext();
+    const basicButtons = (
+        <div>
+            <span className="is-hidden-mobile">
                 <Button
                     color="success"
                     mt={1}
@@ -24,8 +28,8 @@ const FooterDiv: FC<FooterDivProps> = ({
                     <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
                     {t("footer.add_aed")}
                 </Button>
-            </div>
-            <div className="is-hidden-tablet">
+            </span>
+            <span className="is-hidden-tablet">
                 <Button
                     color="success"
                     mt={1}
@@ -36,10 +40,20 @@ const FooterDiv: FC<FooterDivProps> = ({
                     <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
                     {t("footer.add")}
                 </Button>
-            </div>
-        </>
+            </span>
+            <Button
+                color="info"
+                mt={1}
+                ml={2}
+                className="has-text-weight-light"
+                onClick={() => setModalState({ ...initialModalState, visible: true, type: ModalType.Partners })}
+            >
+                <Icon path={mdiAccountGroup} className="icon mr-2" />
+                {t("footer.partners")}
+            </Button>
+        </div>
     );
-    const mobileStepOneButtons = (
+    const mobileAddAedButtons = (
         <>
             <Button color="error" mt={1} ml={2} className="has-text-weight-light" onClick={mobileCancel}>
                 <Icon path={mdiCancel} className="icon mr-2" />
@@ -54,8 +68,8 @@ const FooterDiv: FC<FooterDivProps> = ({
     function getFooterButtons(buttonConfigurationType: ButtonsType) {
         switch (buttonConfigurationType) {
             case ButtonsType.None: return null;
-            case ButtonsType.AddAED: return addAedButtons;
-            case ButtonsType.MobileStep1: return mobileStepOneButtons;
+            case ButtonsType.Basic: return basicButtons;
+            case ButtonsType.MobileAddAed: return mobileAddAedButtons;
             default: return null;
         }
     }
