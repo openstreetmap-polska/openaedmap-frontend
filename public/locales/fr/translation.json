@@ -92,5 +92,8 @@
     },
     "common": {
         "loading": "Chargement…"
+    },
+    "partners": {
+        "wroclaw_medical_university": "Université de médecine de Wrocław"
     }
 }

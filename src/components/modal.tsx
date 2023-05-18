@@ -96,11 +96,11 @@ const CustomModal: FC<{}> = () => {
             closeOnEsc
             closeOnBlur
         >
-            <Modal.Card radiusless style={modalState.type === ModalType.Partners ? { width: "1000px" } : {}}>
+            <Modal.Card radiusless>
                 <Modal.Card.Header showClose className="has-background-green has-text-white-ter">
                     <Icon path={mdiInformationOutline} size={1} className="icon mr-2" />
                     <Modal.Card.Title className="has-text-white-ter has-text-weight-light">
-                        {modalState.type === ModalType.Partners ? t("footer.partners") : t("modal.title")}
+                        {modalState.type === ModalType.Partners ? t("partners.honorary_patronage") : t("modal.title")}
                     </Modal.Card.Title>
                 </Modal.Card.Header>
                 <Modal.Card.Body>

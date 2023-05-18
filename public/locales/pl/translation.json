@@ -94,21 +94,12 @@
         "contact_us": "Skontaktuj się z nami"
     },
     "partners": {
-        "aed_foundation": "Fundacja Powszechnego Dostępu do Defibrylacji w Polsce",
         "honorary_patronage": "Patronat honorowy",
         "gugik": "Główny Urząd Geodezji i Kartografii",
         "acting": "p. o.",
         "chief_geodesist": "Główny Geodeta Kraju",
-        "polish_society_for_emergency_medicine": "Polskie Towarzystwo Medycyny Ratunkowej",
-        "national_consultant_of_emergency_medicine": "Konsultant Krajowy w dziedzinie medycyny ratunkowej",
-        "for_voivodeship": "Województwo",
-        "phd_in_medicine": "dr n. med.",
-        "medical_doctor": "lek. med.",
-        "doctor_of_science": "dr hab. n. med.",
-        "professor_doctor_of_science": "prof. dr hab. n. med.",
-        "consultant_of_cardiology": "Konsultant ds. Kardiologii",
-        "consultant_of_emergency_medicine": "Konsultant ds. Medycyny Ratunkowej",
-        "consultant_of_public_health": "Konsultant ds. Zdrowia Publicznego"
+        "main_scientific_partner": "Główny Partner Naukowy",
+        "wroclaw_medical_university": "Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu"
     },
     "common": {
         "loading": "Ładowanie..."

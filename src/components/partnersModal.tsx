@@ -3,59 +3,10 @@ import { useTranslation } from "react-i18next";
 
 const PartnersModal: FC<{}> = () => {
     const { t } = useTranslation();
+    const cloudFerro = "CloudFerro";
     return (
         <>
             <section className="modal-card-body has-text-weight-light" id="partners-modal">
-                <div className="p-5 box">
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image">
-                                <img
-                                    height="55px"
-                                    alt={t("osmp")}
-                                    src="./img/logo-osm-poland.svg"
-                                    style={{ height: "55px" }}
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6 has-text-weight-semibold">
-                                <a
-                                    href="https://openstreetmap.org.pl/"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    {t("osmp")}
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image">
-                                <img
-                                    alt="Logo Fundacji Powszechnego Dostępu do Defibrylacji w Polsce"
-                                    src="./img/logo-fundacja-aed.png"
-                                    style={{ width: "200px" }}
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6 has-text-weight-semibold">
-                                {t("partners.aed_foundation")}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <section className="hero is-small has-background-green">
-                    <div className="hero-body p-4">
-                        <h2 className="title is-4 has-text-weight-light has-text-white-ter">
-                            {t("partners.honorary_patronage")}
-                        </h2>
-                    </div>
-                </section>
-
                 <div className="pb-3 pt-5 pl-5 box">
                     <div className="media">
                         <div className="media-left">
@@ -83,203 +34,44 @@ const PartnersModal: FC<{}> = () => {
                             </span>
                         </div>
                     </div>
+
                     <div className="media">
                         <div className="media-left">
                             <figure className="image">
                                 <img
-                                    alt={t("partners.polish_society_for_emergency_medicine")}
-                                    src="./img/logo-ptmr.webp"
-                                    style={{ height: "65px" }}
+                                    // TODO: vector logo
+                                    src="./img/logo-umw.jpg"
+                                    alt={t("partners.wroclaw_medical_university")}
+                                    style={{ height: "40px" }}
                                 />
                             </figure>
                         </div>
                         <div className="media-content">
-                            <a href="http://www.medycynaratunkowa.wroc.pl/" rel="noopener noreferrer" target="_blank">
-                                {t("partners.polish_society_for_emergency_medicine")}
+                            <a href="https://www.umw.edu.pl" rel="noopener noreferrer" target="_blank">
+                                {t("partners.wroclaw_medical_university")}
                             </a>
+                            <p className="is-size-6">
+                                <span className="has-text-weight-light has-text-grey is-size-6">
+                                    {t("partners.main_scientific_partner")}
+                                </span>
+                            </p>
                         </div>
                     </div>
 
                     <div className="media">
                         <div className="media-left">
-                            <figure className="image is-64x64">
+                            <figure className="image">
                                 <img
-                                    alt=""
-                                    src="./img/logo-konsultant-krajowy.png"
+                                    alt={cloudFerro}
+                                    src="./img/cloudferro_logo-dark.png"
+                                    style={{ height: "55px" }}
                                 />
                             </figure>
                         </div>
                         <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.professor_doctor_of_science")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Jerzy Robert Ładny</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.national_consultant_of_emergency_medicine")}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img
-                                    alt=""
-                                    src="./img/star-of-life.svg"
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.professor_doctor_of_science")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Marianna Janion</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.consultant_of_cardiology")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                {t("partners.for_voivodeship")}
-                                &nbsp;
-                                Świętokrzyskie
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img
-                                    alt=""
-                                    src="./img/star-of-life.svg"
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.professor_doctor_of_science")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Andrzej Wysokiński</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.consultant_of_cardiology")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                {t("partners.for_voivodeship")}
-                                &nbsp;
-                                Lubelskie
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img
-                                    alt=""
-                                    src="./img/star-of-life.svg"
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.professor_doctor_of_science")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Adam Nogalski</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.consultant_of_emergency_medicine")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                {t("partners.for_voivodeship")}
-                                &nbsp;
-                                Lubelskie
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img
-                                    alt=""
-                                    src="./img/star-of-life.svg"
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.doctor_of_science")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Łukasz Balwicki</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.consultant_of_public_health")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                {t("partners.for_voivodeship")}
-                                Pomorskie
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img
-                                    alt=""
-                                    src="./img/star-of-life.svg"
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.phd_in_medicine")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Wiktor Kuliczkowski</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.consultant_of_cardiology")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                {t("partners.for_voivodeship")}
-                                &nbsp;
-                                Dolnośląskie
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img
-                                    alt=""
-                                    src="./img/star-of-life.svg"
-                                />
-                            </figure>
-                        </div>
-                        <div className="media-content">
-                            <p className="is-size-6">
-                                {t("partners.medical_doctor")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                <span className="has-text-weight-semibold">Dorota Konaszczuk</span>
-                            </p>
-                            <span className="has-text-weight-light has-text-grey is-size-6">
-                                {t("partners.consultant_of_public_health")}
-                                &nbsp;
-                                {/* eslint-disable-next-line react/jsx-no-literals */}
-                                {t("partners.for_voivodeship")}
-                                &nbsp;
-                                Lubuskie
-                            </span>
+                            <a href="https://cloudferro.com/" rel="noopener noreferrer" target="_blank">
+                                {cloudFerro}
+                            </a>
                         </div>
                     </div>
                 </div>

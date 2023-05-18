@@ -94,21 +94,12 @@
         "contact_us": "Contact us"
     },
     "partners": {
-        "aed_foundation": "Foundation for Universal Access to Defibrillation in Poland",
         "honorary_patronage": "Honorary patronage",
         "gugik": "Head Office of Geodesy and Cartography in Poland",
         "acting": "acting",
         "chief_geodesist": "Chief Geodesist of Poland",
-        "polish_society_for_emergency_medicine": "Polish Society for Emergency Medicine",
-        "national_consultant_of_emergency_medicine": "National Consultant of Emergency Medicine of Poland",
-        "for_voivodeship": "for Voivodeship",
-        "phd_in_medicine": "PhD in Medicine",
-        "medical_doctor": "M.D.",
-        "doctor_of_science": "PhD, DSc in Medicine",
-        "professor_doctor_of_science": "PhD, DSc, ProfTit in Medicine",
-        "consultant_of_cardiology": "Consultant of Cardiology",
-        "consultant_of_emergency_medicine": "Consultant of Emergency Medicine",
-        "consultant_of_public_health": "Consultant of Public Health"
+        "main_scientific_partner": "The Main Scientific Partner",
+        "wroclaw_medical_university": "Wroclaw Medical University"
     },
     "common": {
         "loading": "Loading..."

@@ -92,5 +92,8 @@
     },
     "common": {
         "loading": "Wird geladen …"
+    },
+    "partners": {
+        "wroclaw_medical_university": "Medizinische Universität Breslau"
     }
 }
