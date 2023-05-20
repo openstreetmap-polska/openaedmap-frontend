@@ -62,7 +62,8 @@
         "add_aed": "Añadir DEA",
         "cancel": "Cancelar",
         "continue": "Continuar",
-        "save_aed": "Guardar AED"
+        "save_aed": "Guardar AED",
+        "partners": "Colaboradores del proyecto"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -88,9 +89,19 @@
         "about_osm": "OpenStreetMap (OSM) es como la Wikipedia de los mapas. Está disponible para todo el mundo y cualquiera puede añadir objetos al mapa. Puede utilizar su cuenta de OSM para añadir ubicaciones de la DEA directamente desde este sitio mediante un sencillo formulario.",
         "create_account": "¡Usted también puede contribuir! Basta con crearse una cuenta gratuita en ",
         "about_project": "OpenAEDMap es un proyecto de datos abiertos que muestra todos los Desfibriladores Externos Automáticos (DEA) del mundo. El sitio web se basa en datos de OpenStreetMap y es el logro de esfuerzos de la asociación OpenStreetMap Polonia. Fue creado en 2022 tras cambiar el AED Mapa del sitio web polaco por un nuevo diseño.",
-        "aed_updated_successfully": "AED actualizado con éxito."
+        "aed_updated_successfully": "AED actualizado con éxito.",
+        "become_openaedmap_partner": "¿Quieres convertirte en colaborador de OpenAEDMap?",
+        "contact_us": "Contacta con nosotros"
     },
     "common": {
         "loading": "Cargando..."
+    },
+    "partners": {
+        "honorary_patronage": "Patrocinador honorífico",
+        "main_scientific_partner": "El principal colaborador científico",
+        "wroclaw_medical_university": "Universidad de Médicina de Breslavia",
+        "gugik": "Sede de Geodesia y Cartografía en Polonia",
+        "acting": "interino",
+        "chief_geodesist": "Jefe Geodésico de Polonia"
     }
 }
