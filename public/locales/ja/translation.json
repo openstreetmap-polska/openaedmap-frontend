@@ -22,7 +22,7 @@
         "csv": "CSV",
         "indoor": "建物内",
         "location": "位置",
-        "level": "フロア番号（日本の1階は0）",
+        "level": "フロア番号",
         "world": "世界",
         "edit": "編集",
         "edit_defibrillator": "除細動器(AED)を編集"
@@ -31,15 +31,16 @@
         "add": "追加",
         "cancel": "キャンセル",
         "add_aed": "AEDを追加",
-        "save_aed": "AEDを保存"
+        "save_aed": "AEDを保存",
+        "partners": "プロジェクトパートナー"
     },
     "navbar": {
         "about": "概要",
         "logout": "ログアウト",
         "login": "OSMアカウントでログイン",
         "created_with_<3_by": "作成者 ❤️",
-        "visit_osmp_website": "OpenStreetMap ポーランドのウェブサイトに訪れる",
-        "visit_github": "GitHubリポジトリに訪れる",
+        "visit_osmp_website": "OpenStreetMap ポーランドのウェブサイトを訪れる",
+        "visit_github": "GitHubリポジトリを訪れる",
         "help_translating": "翻訳に協力する"
     },
     "indoor": {
@@ -73,14 +74,18 @@
         "need_to_login": "地物を追加するにはOpenStreetMapアカウントでログインする必要があります。",
         "zoom_need_to_be": "ズームレベルは最低でも15である必要があります。",
         "should_appear_soon": "オブジェクトは60分以内にマップに表示されます。",
-        "create_account": "無料のアカウントを作成することで、あなたも貢献できます！ "
+        "create_account": "無料のアカウントを作成することで、あなたも貢献できます！ ",
+        "aed_updated_successfully": "AEDの更新に成功しました。"
     },
     "osmp": "OpenStreetMap ポーランド",
     "access": {
         "yes": "誰でも利用可能",
         "no": "利用不可",
         "unknown": "利用可能状況が不明",
-        "customers": "営業時間内は利用可能",
+        "customers": "勤務時間内は利用可能",
         "private": "所有者の許可があれば利用可能"
+    },
+    "common": {
+        "loading": "読み込み中…"
     }
 }
