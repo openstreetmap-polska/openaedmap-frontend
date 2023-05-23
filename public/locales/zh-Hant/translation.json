@@ -62,7 +62,8 @@
         "add_aed": "新增 AED",
         "continue": "繼續",
         "cancel": "取消",
-        "save_aed": "儲存 AED"
+        "save_aed": "儲存 AED",
+        "partners": "專案合作夥伴"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -88,9 +89,15 @@
         "zoom_need_to_be": "最小所需的縮放等級是 15。",
         "about_project": "開放 AED 地圖是能夠顯示全球去顫器 (AED) 的開放資料專案。網站的資料來源是開放街圖以及開放街圖波蘭的共同協力。網站的創立時間是波蘭網站原先的 AED Mapa 改版，而在 2022 年推出新設計。",
         "about_osm": "開放街圖 (OpenStreetMap, OSM) 就是地圖版的維基百科，能夠被任何人使用，任何人都可以在地圖新增物件。你可以用你的 OSM 帳號，透過簡單的表單輸入來直接新增 AED 的位置。",
-        "aed_updated_successfully": "成功更新 AED。"
+        "aed_updated_successfully": "成功更新 AED。",
+        "become_openaedmap_partner": "您想要變成 OpenAEDMap 的合作夥伴嗎？",
+        "contact_us": "聯絡我們"
     },
     "common": {
         "loading": "正在載入……"
+    },
+    "partners": {
+        "honorary_patronage": "榮譽贊助",
+        "gugik": "波藍大地測量與製圖總部"
     }
 }
