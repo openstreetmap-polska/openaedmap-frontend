@@ -62,7 +62,8 @@
         "add_aed": "AED hinzufügen",
         "cancel": "Abbrechen",
         "continue": "Weiter",
-        "save_aed": "AED speichern"
+        "save_aed": "AED speichern",
+        "partners": "Projektpartner"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -88,12 +89,19 @@
         "about_osm": "OpenStreetMap (OSM) ist eine Art Wikipedia für Karten. Sie ist für jedermann zugänglich und jeder kann der Karte Objekte hinzufügen. Du kannst dein OSM-Konto verwenden, um AED-Standorte direkt von dieser Website über ein einfaches Formular hinzuzufügen.",
         "create_account": "Auch Sie können mitmachen! Erstellen Sie einfach ein kostenloses Konto auf ",
         "about_project": "OpenAEDMap ist ein Offene-Daten-Projekt, das alle automatisierten externen Defibrillatoren (AED) auf der ganzen Welt zeigt. Die Website basiert auf Daten von OpenStreetMap und ist das Ergebnis der Bemühungen der Vereinigung OpenStreetMap Polen. Sie wurde im Jahr 2022 erstellt, nachdem die polnische Website AED Mapa auf ein neues Design umgestellt wurde.",
-        "aed_updated_successfully": "AED erfolgreich aktualisiert."
+        "aed_updated_successfully": "AED erfolgreich aktualisiert.",
+        "become_openaedmap_partner": "Möchten Sie OpenAEDMap-Partner werden?",
+        "contact_us": "Kontakt aufnehmen"
     },
     "common": {
         "loading": "Wird geladen …"
     },
     "partners": {
-        "wroclaw_medical_university": "Medizinische Universität Breslau"
+        "wroclaw_medical_university": "Medizinische Universität Breslau",
+        "chief_geodesist": "Leitender Geodät von Polen",
+        "main_scientific_partner": "Wichtigster wissenschaftlicher Partner",
+        "honorary_patronage": "Ehrenamtliche Unterstützung",
+        "gugik": "Hauptamt für Geodäsie und Kartographie in Polen",
+        "acting": "handelnd"
     }
 }
