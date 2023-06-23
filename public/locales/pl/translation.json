@@ -40,8 +40,8 @@
         "view": "Zobacz w OSM",
         "copy_url": "Skopiuj URL",
         "add_defibrillator": "Dodaj defibrylator",
-        "openstreetmap_navigation": "OpenStreetMap Nawigacja",
-        "google_maps_navigation": "Google Maps Nawigacja",
+        "openstreetmap_navigation": "Nawigacja OpenStreetMap",
+        "google_maps_navigation": "Nawigacja Google Maps",
         "verification_date": "Data weryfikacji",
         "edit_defibrillator": "Edytuj defibrylator",
         "world": "Świat"
@@ -49,7 +49,7 @@
     "form": {
         "optional_field": "Pole opcjonalne",
         "marker_popup_text": "Przesuń marker w miejsce AED",
-        "is_indoor": "Czy wewnątrz budynku?",
+        "is_indoor": "Czy znajduje się wewnątrz budynku?",
         "inside": "Wewnątrz",
         "level": "Piętro",
         "outside": "Na zewnątrz",
