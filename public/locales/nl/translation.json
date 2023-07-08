@@ -41,7 +41,7 @@
         "openstreetmap_navigation": "OpenStreetMap-navigatie",
         "google_maps_navigation": "Google Maps-navigatie",
         "verification_date": "Datum van bevestiging",
-        "level": "Verdieping",
+        "level": "verdieping",
         "world": "Wereld",
         "edit": "Bewerken",
         "edit_defibrillator": "Defibrillator bewerken"
@@ -51,7 +51,8 @@
         "add_aed": "AED toevoegen",
         "cancel": "Annuleren",
         "continue": "Verder",
-        "save_aed": "AED opslaan"
+        "save_aed": "AED opslaan",
+        "partners": "Projectpartners"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -88,9 +89,19 @@
         "about_osm": "OpenStreetMap (OSM) is als een Wikipedia voor kaarten. Het is beschikbaar voor gebruik voor iedereen en iedereen kan objecten aan de kaart toevoegen. U kunt uw OSM-account gebruiken om AED-locaties direct vanaf deze website toe te voegen met een simpel invulformulier.",
         "create_account": "Ook u kunt bijdragen! Maak een gratis account aan op ",
         "about_project": "OpenAEDMap is een open-data project dat alle Automatische Externe Defibrillatoren (AED) over de hele wereld toont. De website is gebaseerd op gegevens van OpenStreetMap en is het resultaat van het werk van OpenStreetMap Polen's vereniging. De website is gemaakt in 2022 na het veranderen van de Poolse website AED Mapa naar een nieuw design.",
-        "aed_updated_successfully": "AED bijgewerkt."
+        "aed_updated_successfully": "AED bijgewerkt.",
+        "become_openaedmap_partner": "Wil je partner worden van OpenAEDMap?",
+        "contact_us": "Neem contact met ons op"
     },
     "common": {
         "loading": "Laden..."
+    },
+    "partners": {
+        "honorary_patronage": "Erepatronaat",
+        "chief_geodesist": "Hoofd-Geodeet van Polen",
+        "wroclaw_medical_university": "Medische Universiteit van Wroclaw",
+        "acting": "handelend",
+        "gugik": "Hoofdkantoor van Geodesie en Cartografie in Polen",
+        "main_scientific_partner": "De Wetenschappelijke Hoofdpartner"
     }
 }
