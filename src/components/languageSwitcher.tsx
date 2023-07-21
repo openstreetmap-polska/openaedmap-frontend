@@ -39,30 +39,25 @@ export function LanguageSwitcher() {
 }
 
 export function LanguageSwitcherMobile() {
-    const [isActive, setIsActive] = React.useState(true);
     return (
-        <Navbar.Item desktop={{ display: "hidden" }} hoverable>
-            <Navbar.Link
-                className="has-text-white"
-                key={i18n.resolvedLanguage}
-                onClick={() => {
-                    setIsActive(!isActive);
-                }}
-            >
-                <Icon path={mdiEarth} size={0.8} className="icon mr-2" />
-                <span className="is-uppercase">{i18n.resolvedLanguage}</span>
-            </Navbar.Link>
-            <Navbar.Dropdown className={`has-background-green navbarUrl ${isActive ? "is-hidden" : ""}`}>
-                {Object.keys(languages).map((language) => {
-                    if (i18n.resolvedLanguage !== language) {
-                        return (
-                            <Navbar.Item key={language} onClick={() => { i18n.changeLanguage(language); }}>
-                                {languages[language].nativeName}
-                            </Navbar.Item>
-                        );
-                    } return null;
-                }).filter((x) => x)}
-            </Navbar.Dropdown>
+        <Navbar.Item desktop={{ display: "hidden" }}>
+            <div className="select">
+                <select
+                    value={i18n.resolvedLanguage}
+                    onChange={(e) => {
+                        i18n.changeLanguage(e.target.value);
+                    }}
+                >
+                    {Object.keys(languages).map((language) => (
+                        <option
+                            key={language}
+                            value={language}
+                        >
+                            {languages[language].nativeName}
+                        </option>
+                    ))}
+                </select>
+            </div>
         </Navbar.Item>
     );
 }
