@@ -31,8 +31,11 @@ export default function DownloadCard() {
     const [countries, setCountries] = useState<Array<Country>>([]);
     const world = worldAsCountry(countries.reduce((acc, country) => acc + country.featureCount, 0));
     const sortedCountriesByName = countries
-        .sort((a: Country, b: Country) => ((countryName(a) < countryName(b)) ? -1 : 1));
-    const countriesAndWorld = [world].concat(sortedCountriesByName);
+        .sort((a: Country, b: Country) => {
+            if (a.code === "WORLD") return -1;
+            if (b.code === "WORLD") return 1;
+            return countryName(a) < countryName(b) ? -1 : 1;
+        });
     const [selectedCountry, setSelectedCountry] = useState<Country>(world);
     useEffect(() => {
         const fetchData = async () => {
@@ -55,12 +58,12 @@ export default function DownloadCard() {
                 <select
                     className="select mb-2"
                     onChange={(e) => {
-                        const selected = countriesAndWorld
+                        const selected = sortedCountriesByName
                             .find((country) => country.code === e.target.value);
                         if (selected !== undefined) setSelectedCountry(selected);
                     }}
                 >
-                    { countriesAndWorld.map((country) => (
+                    { sortedCountriesByName.map((country) => (
                         <option key={country.code} value={country.code}>{countryLabel(country)}</option>
                     ))}
                 </select>
