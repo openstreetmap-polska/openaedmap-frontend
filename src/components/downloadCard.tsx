@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
 import { Country } from "../model/country";
-import { fetchCountriesData } from "../backend";
+import { backendBaseUrl, fetchCountriesData } from "../backend";
 
 export default function DownloadCard() {
     const { t, i18n: { resolvedLanguage: language } } = useTranslation();
@@ -61,7 +61,7 @@ export default function DownloadCard() {
                 </select>
                 <a
                     className="button is-success mr-1"
-                    href={selectedCountry?.dataPath}
+                    href={selectedCountry ? backendBaseUrl + selectedCountry.dataPath : ""}
                     target="_blank"
                     rel="noreferrer"
                     download
