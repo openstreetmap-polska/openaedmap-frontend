@@ -3,7 +3,7 @@ import { Button, Footer } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import {
-    mdiCancel, mdiArrowRightBold, mdiMapMarkerPlus, {/* mdiAccountGroup, */}
+    mdiCancel, mdiArrowRightBold, mdiMapMarkerPlus, /* mdiAccountGroup, */
 } from "@mdi/js";
 import "./footer.css";
 import ButtonsType from "../model/buttonsType";
