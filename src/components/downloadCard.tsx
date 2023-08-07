@@ -13,14 +13,6 @@ export default function DownloadCard() {
         result = result.toUpperCase();
         return result;
     }
-    function worldAsCountry(count: number): Country {
-        return {
-            code: "",
-            names: { default: t("sidebar.world"), [resolvedLanguageToBackendLanguage()]: t("sidebar.world") },
-            featureCount: count,
-            dataPath: "/data/world.geojson",
-        };
-    }
     function countryName(country: Country) {
         const backendLanguage = resolvedLanguageToBackendLanguage();
         if (Object.hasOwn(country.names, backendLanguage)) {
@@ -29,14 +21,14 @@ export default function DownloadCard() {
         return country.names.default;
     }
     const [countries, setCountries] = useState<Array<Country>>([]);
-    const world = worldAsCountry(countries.reduce((acc, country) => acc + country.featureCount, 0));
     const sortedCountriesByName = countries
         .sort((a: Country, b: Country) => {
             if (a.code === "WORLD") return -1;
             if (b.code === "WORLD") return 1;
             return countryName(a) < countryName(b) ? -1 : 1;
         });
-    const [selectedCountry, setSelectedCountry] = useState<Country>(world);
+    const [selectedCountryCode, setSelectedCountryCode] = useState<string>("WORLD");
+    const selectedCountry = countries.find((country) => country.code === selectedCountryCode);
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchCountriesData();
@@ -60,7 +52,7 @@ export default function DownloadCard() {
                     onChange={(e) => {
                         const selected = sortedCountriesByName
                             .find((country) => country.code === e.target.value);
-                        if (selected !== undefined) setSelectedCountry(selected);
+                        if (selected !== undefined) setSelectedCountryCode(selected.code);
                     }}
                 >
                     { sortedCountriesByName.map((country) => (
@@ -69,7 +61,7 @@ export default function DownloadCard() {
                 </select>
                 <a
                     className="button is-success mr-1"
-                    href={selectedCountry.dataPath}
+                    href={selectedCountry?.dataPath}
                     target="_blank"
                     rel="noreferrer"
                     download
