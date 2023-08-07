@@ -5,6 +5,8 @@ import { mdiDownload } from "@mdi/js";
 import { Country } from "../model/country";
 import { backendBaseUrl, fetchCountriesData } from "../backend";
 
+const worldCountryCode = "WORLD";
+
 export default function DownloadCard() {
     const { t, i18n: { resolvedLanguage: language } } = useTranslation();
     function resolvedLanguageToBackendLanguage(): string {
@@ -14,6 +16,7 @@ export default function DownloadCard() {
         return result;
     }
     function countryName(country: Country) {
+        if (country.code === worldCountryCode) return t("sidebar.world");
         const backendLanguage = resolvedLanguageToBackendLanguage();
         if (Object.hasOwn(country.names, backendLanguage)) {
             return country.names[backendLanguage];
@@ -23,11 +26,11 @@ export default function DownloadCard() {
     const [countries, setCountries] = useState<Array<Country>>([]);
     const sortedCountriesByName = countries
         .sort((a: Country, b: Country) => {
-            if (a.code === "WORLD") return -1;
-            if (b.code === "WORLD") return 1;
+            if (a.code === worldCountryCode) return -1;
+            if (b.code === worldCountryCode) return 1;
             return countryName(a) < countryName(b) ? -1 : 1;
         });
-    const [selectedCountryCode, setSelectedCountryCode] = useState<string>("WORLD");
+    const [selectedCountryCode, setSelectedCountryCode] = useState<string>(worldCountryCode);
     const selectedCountry = countries.find((country) => country.code === selectedCountryCode);
     useEffect(() => {
         const fetchData = async () => {
