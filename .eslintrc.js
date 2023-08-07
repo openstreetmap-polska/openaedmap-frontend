@@ -30,6 +30,7 @@ module.exports = {
         ignoreProps: true,
         noAttributeStrings: false
     }],
+    "react/require-default-props": "off",
     "@typescript-eslint/quotes": ["error", "double"],
     'no-console': 'off',
     'react/function-component-definition': 'off',

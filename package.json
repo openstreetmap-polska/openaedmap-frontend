@@ -6,6 +6,7 @@
   "dependencies": {
     "@creativebulma/bulma-collapsible": "^1.0.4",
     "@creativebulma/bulma-tooltip": "^1.2.0",
+    "@mapbox/timespace": "^2.0.4",
     "@mdi/js": "^6.7.96",
     "@mdi/react": "^1.6.0",
     "@testing-library/jest-dom": "^5.16.4",

@@ -40,8 +40,8 @@
         "view": "Zobacz w OSM",
         "copy_url": "Skopiuj URL",
         "add_defibrillator": "Dodaj defibrylator",
-        "openstreetmap_navigation": "OpenStreetMap Nawigacja",
-        "google_maps_navigation": "Google Maps Nawigacja",
+        "openstreetmap_navigation": "Nawigacja OpenStreetMap",
+        "google_maps_navigation": "Nawigacja Google Maps",
         "verification_date": "Data weryfikacji",
         "edit_defibrillator": "Edytuj defibrylator",
         "world": "Świat"
@@ -49,7 +49,7 @@
     "form": {
         "optional_field": "Pole opcjonalne",
         "marker_popup_text": "Przesuń marker w miejsce AED",
-        "is_indoor": "Czy wewnątrz budynku?",
+        "is_indoor": "Czy znajduje się wewnątrz budynku?",
         "inside": "Wewnątrz",
         "level": "Piętro",
         "outside": "Na zewnątrz",
@@ -62,7 +62,8 @@
         "add_aed": "Dodaj AED",
         "cancel": "Anuluj",
         "continue": "Dalej",
-        "save_aed": "Zapisz AED"
+        "save_aed": "Zapisz AED",
+        "partners": "Patroni projektu"
     },
     "opening_hours": {
         "24_7": "całodobowo",
@@ -88,6 +89,19 @@
         "zoom_need_to_be": "Powiększenie musi być na poziomie minimum 15.",
         "about_project": "OpenAEDMap jest otwartym projektem, który ukazuje wszystkie automatyczne defibrylatory zewnętrzne (AED) na całym świecie. Strona jest oparta na danych z OpenStreetMap. Strona powstała w wyniku starań stowarzyszenia OpenStreetMap Polska. Wprowadzona została w 2022 roku po przekształceniu polskiej Mapy AED na nowy design.",
         "about_osm": "OpenStreetMap (OSM) jest jak Wikipedia dla map. Jest dostępny dla każdego i każdy może dodawać obiekty do mapy. Możesz użyć swojego konta OSM, aby dodać lokalizacje AED bezpośrednio z tej strony za pomocą prostego formularza.",
-        "create_account": "Ty również możesz ją współtworzyć! Stwórz darmowe konto "
+        "create_account": "Ty również możesz ją współtworzyć! Stwórz darmowe konto ",
+        "become_openaedmap_partner": "Chcesz objąć patronatem projekt Mapy AED?",
+        "contact_us": "Skontaktuj się z nami"
+    },
+    "partners": {
+        "honorary_patronage": "Patronat honorowy",
+        "gugik": "Główny Urząd Geodezji i Kartografii",
+        "acting": "p. o.",
+        "chief_geodesist": "Główny Geodeta Kraju",
+        "main_scientific_partner": "Główny Partner Naukowy",
+        "wroclaw_medical_university": "Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu"
+    },
+    "common": {
+        "loading": "Ładowanie..."
     }
 }

@@ -5,6 +5,7 @@ export enum ModalType {
     NeedMoreZoom,
     About,
     Error,
+    Partners,
 }
 
 export interface ModalState {

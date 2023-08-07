@@ -1,7 +1,7 @@
 enum ButtonsType {
     None,
-    AddAED,
-    MobileStep1,
+    Basic,
+    MobileAddAed,
 }
 
 export default ButtonsType;

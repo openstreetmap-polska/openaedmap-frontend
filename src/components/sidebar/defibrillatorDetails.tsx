@@ -88,7 +88,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                             <Icon path={mdiClockOutline} size={1.15} className="icon" color="#028955" />
                         </Columns.Column>
                         <Columns.Column className="py-1">
-                            <OpeningHoursField openingHours={data.tags.opening_hours} />
+                            <OpeningHoursField openingHours={data.tags.opening_hours} lat={data.lat} lon={data.lon} />
                         </Columns.Column>
                     </Columns>
                     <Columns vCentered className="is-mobile">

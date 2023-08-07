@@ -6,6 +6,7 @@ import React, { FC } from "react";
 import { ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import LogInButton from "./logInButton";
+import PartnersModal from "./partnersModal";
 
 const ModalContent: FC<{}> = () => {
     const { t } = useTranslation();
@@ -78,6 +79,7 @@ const ModalContent: FC<{}> = () => {
             const errorText = `${t("modal.error_occurred")}: $${errorMessage}`;
             return <p className="pb-2">{errorText}</p>;
         }
+        case ModalType.Partners: return <PartnersModal />;
         default:
             return null;
     }
@@ -98,7 +100,7 @@ const CustomModal: FC<{}> = () => {
                 <Modal.Card.Header showClose className="has-background-green has-text-white-ter">
                     <Icon path={mdiInformationOutline} size={1} className="icon mr-2" />
                     <Modal.Card.Title className="has-text-white-ter has-text-weight-light">
-                        {t("modal.title")}
+                        {modalState.type === ModalType.Partners ? t("partners.honorary_patronage") : t("modal.title")}
                     </Modal.Card.Title>
                 </Modal.Card.Header>
                 <Modal.Card.Body>

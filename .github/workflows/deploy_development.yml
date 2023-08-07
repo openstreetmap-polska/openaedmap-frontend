@@ -27,6 +27,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
+        cache: 'npm'
     - name: Install dependencies
       run: npm install
     - name: Run TypeScript typecheck
@@ -53,4 +54,3 @@ jobs:
     - name: Run deploy script on host
       run: |
         scp -rp -P${{ secrets.SSH_HOST_NEW_PORT }} build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
-        

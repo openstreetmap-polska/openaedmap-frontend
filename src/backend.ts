@@ -1,6 +1,7 @@
 import { fetchNodeData } from "./osm";
 import { DefibrillatorData } from "./model/defibrillatorData";
 import { Country } from "./model/country";
+import { NominatimStateData } from "./model/Nominatim";
 
 export const backendBaseUrl = process.env.REACT_APP_BACKEND_API_URL;
 
@@ -31,4 +32,28 @@ export async function fetchCountriesData(): Promise<Array<Country> | null> {
             console.error("Error:", error);
             return null;
         });
+}
+/*
+   Uses Nominatim reverse geocoding API.
+   Returns centroid of the state where AED is located.
+   TODO(openstreetmap-polska/openaedmap-backend#11): move timezone calculation to the backend
+*/
+export async function getNominatimReverseGeocodingState(lat: number, lon: number)
+    : Promise<NominatimStateData | null> {
+    try {
+        const data = await (await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lon=${lon}&lat=${lat}&zoom=5&addressdetails=1`,
+        )).json();
+        return {
+            lat: data.lat,
+            lon: data.lon,
+            address: {
+                country_code: data.address.country_code,
+                state: data.address.state,
+            },
+        };
+    } catch (error) {
+        console.error("Error:", error);
+        throw new Error("Failed to fetch data from API");
+    }
 }

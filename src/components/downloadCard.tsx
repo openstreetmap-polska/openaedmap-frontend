@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
 import { Country } from "../model/country";
-import { fetchCountriesData } from "../backend";
+import { backendBaseUrl, fetchCountriesData } from "../backend";
+
+const worldCountryCode = "WORLD";
 
 export default function DownloadCard() {
     const { t, i18n: { resolvedLanguage: language } } = useTranslation();
@@ -13,15 +15,8 @@ export default function DownloadCard() {
         result = result.toUpperCase();
         return result;
     }
-    function worldAsCountry(count: number): Country {
-        return {
-            code: "",
-            names: { default: t("sidebar.world"), [resolvedLanguageToBackendLanguage()]: t("sidebar.world") },
-            featureCount: count,
-            dataPath: "/data/world.geojson",
-        };
-    }
     function countryName(country: Country) {
+        if (country.code === worldCountryCode) return t("sidebar.world");
         const backendLanguage = resolvedLanguageToBackendLanguage();
         if (Object.hasOwn(country.names, backendLanguage)) {
             return country.names[backendLanguage];
@@ -29,11 +24,14 @@ export default function DownloadCard() {
         return country.names.default;
     }
     const [countries, setCountries] = useState<Array<Country>>([]);
-    const world = worldAsCountry(countries.reduce((acc, country) => acc + country.featureCount, 0));
     const sortedCountriesByName = countries
-        .sort((a: Country, b: Country) => ((countryName(a) < countryName(b)) ? -1 : 1));
-    const countriesAndWorld = [world].concat(sortedCountriesByName);
-    const [selectedCountry, setSelectedCountry] = useState<Country>(world);
+        .sort((a: Country, b: Country) => {
+            if (a.code === worldCountryCode) return -1;
+            if (b.code === worldCountryCode) return 1;
+            return countryName(a) < countryName(b) ? -1 : 1;
+        });
+    const [selectedCountryCode, setSelectedCountryCode] = useState<string>(worldCountryCode);
+    const selectedCountry = countries.find((country) => country.code === selectedCountryCode);
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchCountriesData();
@@ -55,18 +53,18 @@ export default function DownloadCard() {
                 <select
                     className="select mb-2"
                     onChange={(e) => {
-                        const selected = countriesAndWorld
+                        const selected = sortedCountriesByName
                             .find((country) => country.code === e.target.value);
-                        if (selected !== undefined) setSelectedCountry(selected);
+                        if (selected !== undefined) setSelectedCountryCode(selected.code);
                     }}
                 >
-                    { countriesAndWorld.map((country) => (
+                    { sortedCountriesByName.map((country) => (
                         <option key={country.code} value={country.code}>{countryLabel(country)}</option>
                     ))}
                 </select>
                 <a
                     className="button is-success mr-1"
-                    href={selectedCountry.dataPath}
+                    href={selectedCountry ? backendBaseUrl + selectedCountry.dataPath : ""}
                     target="_blank"
                     rel="noreferrer"
                     download

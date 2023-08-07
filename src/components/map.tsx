@@ -21,7 +21,7 @@ import maplibregl from "!maplibre-gl"; // ! is important here
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import SidebarAction from "../model/sidebarAction";
-import { fetchNodeDataFromOsm } from "../osm";
+import { fetchNodeDataFromBackend } from "../backend";
 import { DefibrillatorData } from "../model/defibrillatorData";
 
 maplibregl.workerClass = maplibreglWorker;
@@ -35,7 +35,7 @@ function fillSidebarWithOsmDataAndShow(
     setSidebarLeftShown: (sidebarLeftShown: boolean) => void,
     jumpInsteadOfEaseTo: boolean,
 ) {
-    const result = fetchNodeDataFromOsm(nodeId);
+    const result = fetchNodeDataFromBackend(nodeId);
     result.then((data) => {
         if (data) {
             const zoomLevelForDetailedView = 17;
@@ -113,7 +113,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
-    const [footerButtonType, setFooterButtonType] = useState(ButtonsType.AddAED);
+    const [footerButtonType, setFooterButtonType] = useState(ButtonsType.Basic);
 
     const removeNodeIdFromHash = () => {
         const hashParams = parseHash();
@@ -132,7 +132,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         setSidebarLeftShown(false);
         deleteMarker();
         removeNodeIdFromHash();
-        setFooterButtonType(ButtonsType.AddAED);
+        setFooterButtonType(ButtonsType.Basic);
     };
 
     const checkConditionsThenCall = (callable: () => void) => {
@@ -150,7 +150,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const mobileCancel = () => {
         deleteMarker();
         setSidebarLeftShown(false);
-        setFooterButtonType(ButtonsType.AddAED);
+        setFooterButtonType(ButtonsType.Basic);
     };
 
     const showFormMobile = () => {
@@ -166,7 +166,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         setSidebarData(null);
         setSidebarAction(SidebarAction.addNode);
         setSidebarLeftShown(!mobile); // for mobile hide sidebar so marker is visible
-        setFooterButtonType(mobile ? ButtonsType.MobileStep1 : ButtonsType.None);
+        setFooterButtonType(mobile ? ButtonsType.MobileAddAed : ButtonsType.None);
         // add marker
         const markerColour = "#e81224";
         const mapCenter = map.getCenter();

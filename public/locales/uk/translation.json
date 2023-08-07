@@ -80,5 +80,8 @@
     "indoor": {
         "no": "Ні",
         "yes": "Так"
+    },
+    "partners": {
+        "wroclaw_medical_university": "Вроцлавський медичний університет"
     }
 }

@@ -70,3 +70,11 @@ code {
 {
   border-radius: 4px;
 }
+
+a.navbar-item:focus-within, a.navbar-item:hover {
+  background-color: #028955 !important;
+}
+
+#language-switcher {
+  max-width: 120px;
+}
