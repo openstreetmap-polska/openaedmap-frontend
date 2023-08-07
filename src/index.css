@@ -75,6 +75,6 @@ a.navbar-item:focus-within, a.navbar-item:hover {
   background-color: #028955 !important;
 }
 
-.select {
-  max-width: 120px !important;
+#language-switcher {
+  max-width: 120px;
 }

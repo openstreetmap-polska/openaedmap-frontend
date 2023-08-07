@@ -43,6 +43,7 @@ export function LanguageSwitcherMobile() {
         <Navbar.Item desktop={{ display: "hidden" }}>
             <div className="select">
                 <select
+                    id="language-switcher"
                     value={i18n.resolvedLanguage}
                     onChange={(e) => {
                         i18n.changeLanguage(e.target.value);
