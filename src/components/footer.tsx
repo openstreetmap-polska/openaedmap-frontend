@@ -41,7 +41,7 @@ const FooterDiv: FC<FooterDivProps> = ({
                     {t("footer.add")}
                 </Button>
             </span>
-            <Button
+            {/*<Button
                 color="info"
                 mt={1}
                 ml={2}
@@ -50,7 +50,7 @@ const FooterDiv: FC<FooterDivProps> = ({
             >
                 <Icon path={mdiAccountGroup} className="icon mr-2" />
                 {t("footer.partners")}
-            </Button>
+            </Button>*/}
         </div>
     );
     const mobileAddAedButtons = (
