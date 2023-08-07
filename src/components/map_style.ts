@@ -22,7 +22,8 @@ const style = {
         "aed-locations": {
             type: "vector",
             tiles: [tilesUrl],
-            maxzoom: 13,
+            minzoom: 3,
+            maxzoom: 16,
         },
     },
     sprite: spriteUrl,

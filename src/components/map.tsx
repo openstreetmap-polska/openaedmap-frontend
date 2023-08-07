@@ -21,7 +21,7 @@ import maplibregl from "!maplibre-gl"; // ! is important here
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import SidebarAction from "../model/sidebarAction";
-import { fetchNodeDataFromOsm } from "../osm";
+import { fetchNodeDataFromBackend } from "../backend";
 import { DefibrillatorData } from "../model/defibrillatorData";
 
 maplibregl.workerClass = maplibreglWorker;
@@ -35,7 +35,7 @@ function fillSidebarWithOsmDataAndShow(
     setSidebarLeftShown: (sidebarLeftShown: boolean) => void,
     jumpInsteadOfEaseTo: boolean,
 ) {
-    const result = fetchNodeDataFromOsm(nodeId);
+    const result = fetchNodeDataFromBackend(nodeId);
     result.then((data) => {
         if (data) {
             const zoomLevelForDetailedView = 17;
