@@ -9,6 +9,7 @@ const languages: { [index: string]: { nativeName: string } } = {
     be: { nativeName: "беларуская мова" },
     ca: { nativeName: "Català" },
     cs: { nativeName: "Čeština" },
+    cy: { nativeName: "Cymraeg" },
     de: { nativeName: "Deutsch" },
     en: { nativeName: "English" },
     es: { nativeName: "Español" },
