@@ -78,3 +78,7 @@ a.navbar-item:focus-within, a.navbar-item:hover {
 #language-switcher {
   max-width: 120px;
 }
+
+.maplibregl-ctrl-geocoder {
+  min-width: 300px !important;
+}
