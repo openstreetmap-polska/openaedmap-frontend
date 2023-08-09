@@ -18,11 +18,6 @@
     min-width: 90px;
 }
 
-.mapboxgl-ctrl-top-right,
-.maplibregl-ctrl-top-right {
-    top: 60px !important;
-}
-
 .mapboxgl-ctrl-group button,
 .maplibregl-ctrl-group button {
     width: 44px !important;
