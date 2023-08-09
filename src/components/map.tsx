@@ -201,6 +201,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
         const maplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
             maplibregl,
+            placeholder: t("sidebar.find_location"),
         });
         maplibreGeocoder.setLanguage(resolvedLanguage);
 
