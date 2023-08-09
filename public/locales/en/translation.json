@@ -44,7 +44,8 @@
         "google_maps_navigation": "Google Maps Navigation",
         "verification_date": "Date of survey",
         "edit_defibrillator": "Edit defibrillator",
-        "world": "World"
+        "world": "World",
+        "find_location": "Find location"
     },
     "form": {
         "optional_field": "Field optional",

@@ -44,7 +44,8 @@
         "google_maps_navigation": "Nawigacja Google Maps",
         "verification_date": "Data weryfikacji",
         "edit_defibrillator": "Edytuj defibrylator",
-        "world": "Świat"
+        "world": "Świat",
+        "find_location": "Znajdź lokalizację"
     },
     "form": {
         "optional_field": "Pole opcjonalne",
