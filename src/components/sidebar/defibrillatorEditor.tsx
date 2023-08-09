@@ -27,7 +27,8 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
         initialTags[`defibrillator:location:${resolvedLanguage}`] || "",
     );
     const [phoneNumber, setPhoneNumber] = useState<string>(initialTags.phone || initialTags["contact:phone"] || "");
-    const [checkDate, setCheckDate] = useState<string>(new Date().toISOString().substring(0, 10));
+    const todayDate = new Date().toISOString().substring(0, 10);
+    const [checkDate, setCheckDate] = useState<string>(todayDate);
 
     const parseTags: () => Record<string, string> = () => {
         const tags = { ...initialTags };
@@ -116,7 +117,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                         <IndoorFormField indoor={indoor} setIndoor={setIndoor} level={level} setLevel={setLevel} />
                         <LocationFormField location={location} setLocation={setLocation} />
                         <ContactPhoneFormField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
-                        <CheckDateFormField checkDate={checkDate} setCheckDate={setCheckDate} />
+                        <CheckDateFormField checkDate={checkDate} setCheckDate={setCheckDate} todayDate={todayDate} />
                     </form>
                 </Card.Content>
                 <Card.Footer>
