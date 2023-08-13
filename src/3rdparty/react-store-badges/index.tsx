@@ -35,7 +35,7 @@ function shortCodeFromLanguage(language: string): string {
         case "uk": return "ua";
         case "zh-Hans": return "zh-cn";
         case "zh-Hant": return "zh-tw";
-        default: return defaultLocale;
+        default: return "en";
     }
 }
 
