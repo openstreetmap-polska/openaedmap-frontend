@@ -5,7 +5,8 @@ import React, { useState, useLayoutEffect, FC } from "react";
 const HEIGHT_RATIO = 3.375;
 const getImage = (locale: string, language: string) => ({
     ios: `https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/${locale}.svg`,
-    android: `https://raw.github.com/yjb94/google-play-badge-svg/master/img/${language}_get.svg?sanitize=true`,
+    android:
+        `https://raw.githubusercontent.com/yjb94/google-play-badge-svg/master/img/${language}_get.svg?sanitize=true`,
 });
 
 export interface ReactStoreBadgesProps {
