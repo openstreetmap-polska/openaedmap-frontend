@@ -68,6 +68,8 @@
 .card-footer
 {
     flex: 1;
+    max-width: 100%;
+    overflow: auto;
 }
 
 #sidebar-card-image {
