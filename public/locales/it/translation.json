@@ -15,7 +15,8 @@
         "cancel": "Annulla",
         "add_aed": "Aggiungi un DAE",
         "continue": "Continua",
-        "save_aed": "Salva DAE"
+        "save_aed": "Salva DAE",
+        "partners": "Partner del progetto"
     },
     "indoor": {
         "no": "No",
@@ -66,7 +67,8 @@
         "level": "livello",
         "edit": "Modifica",
         "edit_defibrillator": "Modifica defibrillatore",
-        "world": "Mondo"
+        "world": "Mondo",
+        "find_location": "Trova la posizione"
     },
     "osmp": "OpenStreetMap Polonia",
     "modal": {
@@ -83,7 +85,9 @@
         "zoom_need_to_be": "Lo zoom deve essere almeno al livello 15.",
         "create_account": "Anche tu puoi contribuire! Basta creare un account gratuito su ",
         "about_project": "OpenAEDMap è un progetto dati aperti che mostra tutti i defibrillatori automatici esterni (DAE) nel mondo. Il sito web è basato sui dati di OpenStreetMap ed è il risultato degli sforzi dell'associazione OpenStreetMap Polonia. È stato creato nel 2022 dopo aver cambiato il sito web polacco AED Mapa con un nuovo design.",
-        "aed_updated_successfully": "DAE aggiornato con successo."
+        "aed_updated_successfully": "DAE aggiornato con successo.",
+        "contact_us": "Contattaci",
+        "become_openaedmap_partner": "Vuoi diventare partner di OpenAEDMap?"
     },
     "opening_hours": {
         "closed": "Chiuso",
@@ -92,5 +96,12 @@
     },
     "common": {
         "loading": "Caricamento…"
+    },
+    "partners": {
+        "honorary_patronage": "Sostengo onorario",
+        "gugik": "Sede centrale di geodesia e cartografia in Polonia",
+        "chief_geodesist": "Capo geodeta della Polonia",
+        "main_scientific_partner": "Il principale partner scientifico",
+        "wroclaw_medical_university": "Università di medicina di Breslavia"
     }
 }
