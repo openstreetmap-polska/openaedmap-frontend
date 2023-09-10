@@ -8,6 +8,8 @@ import {
     mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 import {
     CloseSidebarButton,
     CopyUrlButton, EditButton,
@@ -20,6 +22,21 @@ import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
 import { DefibrillatorData } from "../../model/defibrillatorData";
 import DetailTextRow from "./detailTextRow";
+
+const images = [
+    {
+        original: "https://picsum.photos/id/1018/1000/600/",
+        thumbnail: "https://picsum.photos/id/1018/250/150/",
+    },
+    {
+        original: "https://picsum.photos/id/1015/1000/600/",
+        thumbnail: "https://picsum.photos/id/1015/250/150/",
+    },
+    {
+        original: "https://picsum.photos/id/1019/1000/600/",
+        thumbnail: "https://picsum.photos/id/1019/250/150/",
+    },
+];
 
 const accessToColourMapping = {
     yes: "has-background-green has-text-white-ter",
@@ -67,6 +84,8 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
                 <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
+                    <ImageGallery items={images} />
+                    <hr />
                     <Columns vCentered className="is-mobile">
                         <Columns.Column textAlign="center" size={2}>
                             <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />
