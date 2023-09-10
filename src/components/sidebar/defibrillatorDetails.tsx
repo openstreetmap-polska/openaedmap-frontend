@@ -8,7 +8,7 @@ import {
     mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import ImageGallery from "react-image-gallery";
+import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import {
     CloseSidebarButton,
@@ -23,7 +23,7 @@ import { CheckDateField } from "./verificationDate";
 import { DefibrillatorData } from "../../model/defibrillatorData";
 import DetailTextRow from "./detailTextRow";
 
-const images = [
+const testImages: Array<ReactImageGalleryItem> = [
     {
         original: "https://picsum.photos/id/1018/1000/600/",
         thumbnail: "https://picsum.photos/id/1018/250/150/",
@@ -54,6 +54,18 @@ function accessColourClass(access: string): string {
     return accessToColourMapping.default;
 }
 
+function photoGallery(images: Array<ReactImageGalleryItem>) {
+    if (images.length > 0) {
+        return (
+            <div>
+                <ImageGallery items={images} showPlayButton={false} showThumbnails={images.length > 1} />
+                <hr />
+            </div>
+        );
+    }
+    return null;
+}
+
 const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
     const { t, i18n: { resolvedLanguage } } = useTranslation();
     const {
@@ -65,6 +77,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
         || data.tags["defibrillator:location"];
     const levelText = data.tags.level ? ` (${t("sidebar.level")}: ${data.tags.level})` : "";
     const indoorText = data.tags.indoor ? t(`indoor.${data.tags.indoor}`) + levelText : "";
+
     return (
         <div className="sidebar" id="sidebar-div">
             <Card>
@@ -84,8 +97,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
                 <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
-                    <ImageGallery items={images} />
-                    <hr />
+                    {photoGallery(testImages)}
                     <Columns vCentered className="is-mobile">
                         <Columns.Column textAlign="center" size={2}>
                             <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />
