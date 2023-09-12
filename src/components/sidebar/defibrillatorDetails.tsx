@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import {
+    Button,
     Card, Columns, Image,
 } from "react-bulma-components";
 import {
@@ -10,6 +11,7 @@ import {
 import Icon from "@mdi/react";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import SidebarAction from "src/model/sidebarAction";
 import {
     CloseSidebarButton,
     CopyUrlButton, EditButton,
@@ -22,48 +24,71 @@ import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
 import { DefibrillatorData } from "../../model/defibrillatorData";
 import DetailTextRow from "./detailTextRow";
+import { useAppContext } from "../../appContext";
+import { accessColourClass } from "./access";
+import { backendBaseUrl } from "../../backend";
+import { initialModalState, ModalType } from "../../model/modal";
 
-const testImages: Array<ReactImageGalleryItem> = [
-    {
-        original: "https://picsum.photos/id/1018/1000/600/",
-        thumbnail: "https://picsum.photos/id/1018/250/150/",
-    },
-    {
-        original: "https://picsum.photos/id/1015/1000/600/",
-        thumbnail: "https://picsum.photos/id/1015/250/150/",
-    },
-    {
-        original: "https://picsum.photos/id/1019/1000/600/",
-        thumbnail: "https://picsum.photos/id/1019/250/150/",
-    },
-];
-
-const accessToColourMapping = {
-    yes: "has-background-green has-text-white-ter",
-    no: "has-background-red has-text-white-ter",
-    private: "has-background-blue has-text-white-ter",
-    permissive: "has-background-blue has-text-white-ter",
-    customers: "has-background-yellow has-text-black-ter",
-    default: "has-background-gray has-text-white-ter",
-};
-
-function accessColourClass(access: string): string {
-    if (access in accessToColourMapping) {
-        return accessToColourMapping[access as keyof typeof accessToColourMapping];
+function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
+    const { t } = useTranslation();
+    const { authState: { auth }, setSidebarAction, setModalState } = useAppContext();
+    let images: ReactImageGalleryItem[] = [];
+    // Currently only one photo allowed
+    if (data.photoRelativeUrl !== undefined && data.photoRelativeUrl !== null) {
+        images = [
+            {
+                original: backendBaseUrl + data.photoRelativeUrl,
+            },
+        ];
     }
-    return accessToColourMapping.default;
-}
-
-function photoGallery(images: Array<ReactImageGalleryItem>) {
     if (images.length > 0) {
+        const refImg = useRef<ImageGallery>(null);
+        const renderCustomControls = () => (
+            <Button
+                outlined
+                inverted
+                p={2}
+                className="image-gallery-custom-icon"
+                onClick={() => setSidebarAction(SidebarAction.reportPhoto)}
+            >
+                {
+                    t("photo.report")
+                    // refImg !== null && refImg.current !== null ? refImg.current.getCurrentIndex() : "nulllllll"
+                }
+            </Button>
+        );
+
         return (
             <div>
-                <ImageGallery items={images} showPlayButton={false} showThumbnails={images.length > 1} />
-                <hr />
+                <ImageGallery
+                    ref={refImg}
+                    items={images}
+                    lazyLoad
+                    showPlayButton={false}
+                    showThumbnails={images.length > 1}
+                    renderCustomControls={renderCustomControls}
+                />
+                <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
             </div>
         );
     }
-    return null;
+    return (
+        <div>
+            <Button
+                m={1}
+                onClick={() => {
+                    if (auth === null || !auth.authenticated()) {
+                        closeSidebar();
+                        setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
+                    }
+                    setSidebarAction(SidebarAction.uploadPhoto);
+                }}
+            >
+                {t("photo.upload")}
+            </Button>
+            <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
+        </div>
+    );
 }
 
 const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
@@ -97,7 +122,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
                 <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
-                    {photoGallery(testImages)}
+                    {photoGallery(data, closeSidebar)}
                     <Columns vCentered className="is-mobile">
                         <Columns.Column textAlign="center" size={2}>
                             <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />

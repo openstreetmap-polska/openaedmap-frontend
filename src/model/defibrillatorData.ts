@@ -7,5 +7,7 @@ export interface NewDefibrillatorData {
 export interface DefibrillatorData extends NewDefibrillatorData {
     osmId: string,
     osmType: string,
+    photoId: string | undefined,
+    photoRelativeUrl: string | undefined,
     version: string,
 }
