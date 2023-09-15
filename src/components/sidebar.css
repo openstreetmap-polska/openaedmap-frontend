@@ -132,3 +132,19 @@
 .legend-text {
     font-size: calc(100% - 1px);
 }
+
+.image-gallery-custom-icon {
+    color:#fff;
+    /* transition:all .3s ease-out; */
+    /* appearance:none; */
+    background-color:transparent;
+    /* border:0; */
+    cursor:pointer;
+    /* outline:none; */
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    /* padding: 4; */
+    z-index:4;
+    filter:drop-shadow(0 2px 2px #1a1a1a)
+}

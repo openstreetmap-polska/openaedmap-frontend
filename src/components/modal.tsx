@@ -80,6 +80,22 @@ const ModalContent: FC<{}> = () => {
             return <p className="pb-2">{errorText}</p>;
         }
         case ModalType.Partners: return <PartnersModal />;
+        case ModalType.ThanksForPhoto:
+            return (
+                <div>
+                    <p className="pb-4">
+                        {t("modal.thanks_for_photo")}
+                    </p>
+                </div>
+            );
+        case ModalType.ThanksForReport:
+            return (
+                <div>
+                    <p className="pb-4">
+                        {t("modal.thanks_for_report")}
+                    </p>
+                </div>
+            );
         default:
             return null;
     }

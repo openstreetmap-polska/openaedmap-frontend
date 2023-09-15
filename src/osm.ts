@@ -10,6 +10,8 @@ export async function fetchNodeData(url: string): Promise<DefibrillatorData | nu
                 osmType: "node",
                 lat: node.lat,
                 lon: node.lon,
+                photoId: node["@photo_id"],
+                photoRelativeUrl: node["@photo_url"],
                 tags: node.tags,
                 version: node.version,
             };
