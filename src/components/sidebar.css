@@ -133,10 +133,6 @@
     font-size: calc(100% - 1px);
 }
 
-.image-gallery-slide {
-    max-height: 300px;
-}
-
 .image-gallery-custom-icon {
     color:#fff;
     /* transition:all .3s ease-out; */

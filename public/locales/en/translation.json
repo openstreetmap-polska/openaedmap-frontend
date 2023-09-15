@@ -92,7 +92,9 @@
         "about_osm": "OpenStreetMap (OSM) is like a Wikipedia for maps. It's available to use for everyone and anybody can add objects to the map. You can use your OSM account to add AED locations directly from this site using a simple form.",
         "create_account": "You can contribute too! Just create a free account on ",
         "become_openaedmap_partner": "Do you want to become OpenAEDMap partner?",
-        "contact_us": "Contact us"
+        "contact_us": "Contact us",
+        "thanks_for_photo": "Thank you for uploading the photo. It should be visible soon.",
+        "thanks_for_report": "Thank you for sending a report. It will be reviewed by the site administrators."
     },
     "partners": {
         "honorary_patronage": "Honorary patronage",
@@ -104,5 +106,14 @@
     },
     "common": {
         "loading": "Loading..."
+    },
+    "photo": {
+        "upload": "Upload photo",
+        "remove": "Remove photo",
+        "report": "Report photo",
+        "send_report": "Send report",
+        "report_long_text": "You can report the photo if it's bad quality, does not show the AEDs location or is inapropriate in any way. Administrators of the site will review the report.",
+        "license": "All AED photos hosted by us are licensed under Creative Commons Zero (CC0 v1.0). By uploading your photo you agree to this license terms.",
+        "license_short_description": "In short this means that the photo can be used by anyone for any purpose. No attribution is necessary."
     }
 }

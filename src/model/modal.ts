@@ -6,6 +6,8 @@ export enum ModalType {
     About,
     Error,
     Partners,
+    ThanksForPhoto,
+    ThanksForReport,
 }
 
 export interface ModalState {

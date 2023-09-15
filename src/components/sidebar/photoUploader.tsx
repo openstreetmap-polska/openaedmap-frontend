@@ -1,8 +1,14 @@
 import React, { FC, useState } from "react";
-import { Button, Card, Image } from "react-bulma-components";
+import {
+    Button, Card, Image,
+} from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { DefibrillatorData } from "src/model/defibrillatorData";
 import SidebarAction from "src/model/sidebarAction";
+import store from "store";
+import { initialModalState, ModalType } from "src/model/modal";
+import { mdiArrowLeftBold, mdiFileDocumentRemove, mdiFileSend } from "@mdi/js";
+import Icon from "@mdi/react";
 import { CloseSidebarButton } from "./buttons";
 import { accessColourClass } from "./access";
 import { useAppContext } from "../../appContext";
@@ -18,7 +24,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
     const {
         data, closeSidebar,
     } = props;
-    const { authState: { auth }, setSidebarAction } = useAppContext();
+    const { authState: { auth }, setSidebarAction, setModalState } = useAppContext();
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
     if (data === null) return null;
     const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
@@ -42,8 +48,16 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
                 <Card.Content>
-                    <Button m={2} onClick={() => setSidebarAction(SidebarAction.showDetails)}>{t("cancel")}</Button>
-                    {selectedImage !== null && (
+                    <Button
+                        mb={2}
+                        onClick={() => setSidebarAction(SidebarAction.showDetails)}
+                    >
+                        <Icon path={mdiArrowLeftBold} size={0.8} className="icon" />
+                        <span>{t("footer.cancel")}</span>
+                    </Button>
+                    <p className="block">{t("photo.license")}</p>
+                    <p className="block">{t("photo.license_short_description")}</p>
+                    {(selectedImage !== null && (
                         <div>
                             <img
                                 alt="not found"
@@ -51,40 +65,91 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                                 src={URL.createObjectURL(selectedImage)}
                             />
                             <br />
-                            <Button onClick={() => setSelectedImage(null)}>{t("photo.remove")}</Button>
-                            <Button
-                                m={2}
-                                onClick={() => {
-                                    console.log(selectedImage);
-                                    const fd = new FormData();
-                                    fd.append("node_id", data.osmId);
-                                    fd.append("file_license", "CC0");
-                                    fd.append(
-                                        "oauth2_credentials",
-                                        JSON.stringify({ access_token: auth?.options().access_token || "test" }),
-                                    );
-                                    fd.append("file", selectedImage);
-                                    fetch(`${backendBaseUrl}/api/v1/photos/upload`, {
-                                        method: "POST",
-                                        body: fd,
-                                    })
-                                        .then(() => console.log("uploaded")) // todo: add error handling
-                                        .catch((error) => console.log(error));
-                                }}
-                            >
-                                {t("photo.upload_photo")}
-                            </Button>
+                            <div>
+                                <Button
+                                    m={2}
+                                    color="danger"
+                                    onClick={() => setSelectedImage(null)}
+                                >
+                                    <Icon path={mdiFileDocumentRemove} size={0.8} className="icon" />
+                                    <span>{t("photo.remove")}</span>
+                                </Button>
+                                <Button
+                                    m={2}
+                                    color="success"
+                                    onClick={() => {
+                                        const url = auth?.options().url;
+                                        const storageKey = `${url}oauth2_access_token`;
+                                        const oauth2AccessToken = store.get(storageKey);
+                                        if (!oauth2AccessToken || !auth || !auth.authenticated()) {
+                                            const errorMessage = `auth.authenticated()=${auth?.authenticated()} `
+                                                + `<br> oauth2AccessToken=${oauth2AccessToken}`;
+                                            closeSidebar();
+                                            setModalState({
+                                                ...initialModalState,
+                                                visible: true,
+                                                type: ModalType.Error,
+                                                errorMessage,
+                                            });
+                                        }
+                                        const fd = new FormData();
+                                        fd.append("node_id", data.osmId);
+                                        fd.append("file_license", "CC0");
+                                        fd.append(
+                                            "oauth2_credentials",
+                                            JSON.stringify({
+                                                access_token: oauth2AccessToken,
+                                                token_type: "Bearer",
+                                                scope: "read_prefs",
+                                            }),
+                                        );
+                                        fd.append("file", selectedImage);
+                                        fetch(`${backendBaseUrl}/api/v1/photos/upload`, {
+                                            method: "POST",
+                                            body: fd,
+                                        })
+                                            .then((response) => {
+                                                if (response.ok) {
+                                                    closeSidebar();
+                                                    setModalState({
+                                                        ...initialModalState,
+                                                        visible: true,
+                                                        type: ModalType.ThanksForPhoto,
+                                                    });
+                                                } else {
+                                                    const errorMessage = `${response} <br> status: ${response.status} `
+                                                    + `${response.statusText} <br> ${response.body}`;
+                                                    throw Error(errorMessage);
+                                                }
+                                            })
+                                            .catch((error) => {
+                                                closeSidebar();
+                                                setModalState({
+                                                    ...initialModalState,
+                                                    visible: true,
+                                                    type: ModalType.Error,
+                                                    errorMessage: error,
+                                                });
+                                            });
+                                    }}
+                                >
+                                    <Icon path={mdiFileSend} size={0.8} className="icon" />
+                                    <span>{t("photo.upload")}</span>
+                                </Button>
+                            </div>
                         </div>
+                    )) || (
+                        <input
+                            type="file"
+                            accept=".jpeg,.jpg,.png,.webp"
+                            name="myImage"
+                            onChange={(event) => {
+                                const { files } = event.target;
+                                console.log(files);
+                                setSelectedImage(files !== null && files.length > 0 ? files[0] : null);
+                            }}
+                        />
                     )}
-                    <input
-                        type="file"
-                        name="myImage"
-                        onChange={(event) => {
-                            const { files } = event.target;
-                            console.log(files);
-                            setSelectedImage(files !== null && files.length > 0 ? files[0] : null);
-                        }}
-                    />
                 </Card.Content>
             </Card>
         </div>

@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import {
     Button,
@@ -7,6 +7,7 @@ import {
 import {
     mdiAccountSupervisorOutline, mdiClockOutline, mdiHomeRoof,
     mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
+    mdiPlus,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
@@ -38,11 +39,13 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
         images = [
             {
                 original: backendBaseUrl + data.photoRelativeUrl,
+                thumbnail: backendBaseUrl + data.photoRelativeUrl,
             },
         ];
     }
     if (images.length > 0) {
-        const refImg = useRef<ImageGallery>(null);
+        // ref would be used if there were more photos to see which one is selected
+        // const refImg = useRef<ImageGallery>(null);
         const renderCustomControls = () => (
             <Button
                 outlined
@@ -53,7 +56,6 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
             >
                 {
                     t("photo.report")
-                    // refImg !== null && refImg.current !== null ? refImg.current.getCurrentIndex() : "nulllllll"
                 }
             </Button>
         );
@@ -61,7 +63,7 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
         return (
             <div>
                 <ImageGallery
-                    ref={refImg}
+                    // ref={refImg}
                     items={images}
                     lazyLoad
                     showPlayButton={false}
@@ -75,7 +77,9 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
     return (
         <div>
             <Button
-                m={1}
+                mb={1}
+                mt={0}
+                className="button is-small is-success mx-1"
                 onClick={() => {
                     if (auth === null || !auth.authenticated()) {
                         closeSidebar();
@@ -84,7 +88,8 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
                     setSidebarAction(SidebarAction.uploadPhoto);
                 }}
             >
-                {t("photo.upload")}
+                <Icon path={mdiPlus} size={1.15} className="icon" color="#fff" />
+                <span>{t("photo.upload")}</span>
             </Button>
             <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
         </div>
@@ -121,7 +126,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                     </span>
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
-                <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
+                <Card.Content pl={3} pr={3} mb={1} pt={2} className="content pb-0">
                     {photoGallery(data, closeSidebar)}
                     <Columns vCentered className="is-mobile">
                         <Columns.Column textAlign="center" size={2}>
