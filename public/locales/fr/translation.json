@@ -34,7 +34,8 @@
         "level": "niveau",
         "edit": "Modifier",
         "edit_defibrillator": "Modifier le défibrillateur",
-        "world": "Monde"
+        "world": "Monde",
+        "find_location": "Trouver un emplacement"
     },
     "form": {
         "optional_field": "Champ facultatif",

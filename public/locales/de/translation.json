@@ -44,7 +44,8 @@
         "level": "Ebene",
         "edit": "Bearbeiten",
         "edit_defibrillator": "Defibrillator bearbeiten",
-        "world": "Welt"
+        "world": "Welt",
+        "find_location": "Standort finden"
     },
     "form": {
         "optional_field": "Optionales Feld",
