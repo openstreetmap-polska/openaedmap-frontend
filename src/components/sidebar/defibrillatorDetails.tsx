@@ -5,9 +5,8 @@ import {
     Card, Columns, Image,
 } from "react-bulma-components";
 import {
-    mdiAccountSupervisorOutline, mdiClockOutline, mdiHomeRoof,
+    mdiAccountSupervisorOutline, mdiCameraPlus, mdiClockOutline, mdiHomeRoof,
     mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
-    mdiPlus,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
@@ -88,7 +87,7 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
                     setSidebarAction(SidebarAction.uploadPhoto);
                 }}
             >
-                <Icon path={mdiPlus} size={1.15} className="icon" color="#fff" />
+                <Icon path={mdiCameraPlus} size={1.15} className="icon" color="#fff" />
                 <span>{t("photo.upload")}</span>
             </Button>
             <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
