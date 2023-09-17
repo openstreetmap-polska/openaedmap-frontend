@@ -40,22 +40,6 @@ export function EditButton({ osmId }: { osmId: OsmId }) {
     );
 }
 
-export function EditIdButton({ osmId }: { osmId: OsmId }) {
-    const { t } = useTranslation();
-    return (
-        <a
-            key={`edit_url_${osmId}`}
-            href={`https://www.openstreetmap.org/edit?node=${osmId}`}
-            className="button is-small is-success mx-1"
-            rel="noreferrer"
-            target="_blank"
-        >
-            <Icon path={mdiPencil} size={1.0} className="icon" color="#fff" />
-            <span>{t("sidebar.edit_in_osm")}</span>
-        </a>
-    );
-}
-
 export function ViewButton({ osmId }: { osmId: OsmId }) {
     const { t } = useTranslation();
     return (
