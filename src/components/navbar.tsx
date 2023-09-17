@@ -17,8 +17,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
     return (
         <Navbar color="success" className="has-background-green">
             <Navbar.Brand>
-                <Navbar.Item renderAs="div" pr={1}>
-                  <a href="/">
+                <Navbar.Item renderAs="a" href="/" pr={1}>
                     <svg className="navbarLogo" viewBox="0 0 60 60" role="presentation">
                         {/* TODO: extract svg logo */}
                         {/* eslint-disable-next-line max-len */}
@@ -29,7 +28,6 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
                         <span className="has-text-weight-semibold">AED</span>
                         Map
                     </span>
-                  </a>
                 </Navbar.Item>
                 <Navbar.Item className="is-hidden-touch" renderAs="div" pl={1} pr={1}>
                     <span className="has-text-weight-light is-size-6 pl-0">
