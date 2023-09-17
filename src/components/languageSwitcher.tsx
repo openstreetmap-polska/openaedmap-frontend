@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
 
 export function LanguageSwitcherMobile() {
     return (
-        <Navbar.Item desktop={{ display: "hidden" }}>
+        <Navbar.Item px={1} desktop={{ display: "hidden" }}>
             <div className="select">
                 <select
                     id="language-switcher"
