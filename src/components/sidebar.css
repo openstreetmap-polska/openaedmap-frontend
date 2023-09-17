@@ -148,3 +148,8 @@
     z-index:4;
     filter:drop-shadow(0 2px 2px #1a1a1a)
 }
+
+.image-gallery-content:not(.fullscreen) .image-gallery-slides img {
+    max-height: 250px;
+    object-fit: cover;
+}
