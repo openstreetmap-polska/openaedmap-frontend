@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "/",
   "dependencies": {
-    "@creativebulma/bulma-collapsible": "^1.0.4",
     "@mapbox/timespace": "^2.0.4",
     "@maplibre/maplibre-gl-geocoder": "^1.5.0",
     "@mdi/js": "^6.7.96",
