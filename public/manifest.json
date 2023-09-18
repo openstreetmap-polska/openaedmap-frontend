@@ -21,5 +21,15 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=pl.enteam.aed_map",
+      "id": "pl.enteam.aed_map"
+    }, {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/mapa-aed/id1638495701"
+    }
+  ]
 }
