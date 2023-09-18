@@ -1,6 +1,4 @@
-import "bulma/css/bulma.min.css";
 import React, { FC } from "react";
-import "../Main.css";
 import "./sidebar.css";
 import { Marker } from "maplibre-gl";
 import DefibrillatorDetails from "./sidebar/defibrillatorDetails";
