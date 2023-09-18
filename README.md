@@ -93,8 +93,6 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [React](https://reactjs.org/docs/getting-started.html)
 - [Bulma](https://bulma.io/) 
 - [Bulma Checkradio](https://wikiki.github.io/form/checkradio/)
-- [Bulma Tooltip](https://bulma-tooltip.netlify.app/)
-- [Bulma Collapsible](https://bulma-collapsible.netlify.app/)
 - [React Bulma Components](https://react-bulma.dev/en/storybook)
 - [Material Design Icons](https://dev.materialdesignicons.com/getting-started/react)
 - [spritezero-cli](https://gitlab.com/beyondtracks/spritezero-cli)

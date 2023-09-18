@@ -3,8 +3,8 @@ import "./navbar.css";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
-import { mdiMapLegend, mdiGithub } from "@mdi/js";
-import { LanguageSwitcher, LanguageSwitcherMobile } from "./languageSwitcher";
+import { mdiMapLegend } from "@mdi/js";
+import LanguageSwitcher from "./languageSwitcher";
 import LogInButton from "./logInButton";
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
@@ -58,7 +58,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
                         <img alt="CloudFerro" src="img/cloudferro_logo.png" />
                     </a>
                 </Navbar.Item>
-                <LanguageSwitcherMobile />
+                <LanguageSwitcher />
                 <Navbar.Burger
                     id="navbarBurger"
                     onClick={() => {
@@ -76,7 +76,6 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
             </Navbar.Brand>
             <Navbar.Menu className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`} id="navbarMenu">
                 <Navbar.Container align="right">
-                    <LanguageSwitcher />
                     <LogInButton inNavBar />
                     <Navbar.Item renderAs="div" p={1}>
                         <Button
@@ -94,29 +93,34 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
                             <Icon path={mdiMapLegend} size="2rem" />
                         </Button>
                     </Navbar.Item>
-                    <Navbar.Item renderAs="div" p={1}>
-                        <a
-                            href="https://github.com/openstreetmap-polska/openaedmap-frontend"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="is-white is-outlined button"
-                        >
-                            <Icon title={t("navbar.visit_github")} description="GitHub" path={mdiGithub} size="2rem" />
-                        </a>
-                    </Navbar.Item>
-                    <Navbar.Item className="p-0" renderAs="div">
+                    <Navbar.Item p={1} renderAs="div">
                         <ReactStoreBadges
                             platform="android"
                             url="https://play.google.com/store/apps/details?id=pl.enteam.aed_map"
                             language={resolvedLanguage}
                         />
                     </Navbar.Item>
-                    <Navbar.Item className="p-0" renderAs="div">
+                    <Navbar.Item p={1} renderAs="div">
                         <ReactStoreBadges
                             platform="ios"
                             url="https://apps.apple.com/app/mapa-aed/id1638495701"
                             language={resolvedLanguage}
                         />
+                    </Navbar.Item>
+                    <Navbar.Item className="is-hidden-desktop" textColor="white" renderAs="div" pl={0} pr={0}>
+                        <span className="has-text-weight-light is-size-6 pl-0">
+                            {t("navbar.created_with_<3_by")}
+                            &nbsp;
+                            <a
+                                className="has-text-weight-medium navbarUrl"
+                                href="https://openstreetmap.org.pl/"
+                                rel="noreferrer"
+                                target="_blank"
+                                title={t("navbar.visit_osmp_website")}
+                            >
+                                {t("osmp")}
+                            </a>
+                        </span>
                     </Navbar.Item>
                     <Navbar.Item className="is-hidden-desktop" textColor="white" renderAs="div" pl={0} pr={0}>
                         <span color="white" className="has-text-weight-light is-size-6 pr-1">

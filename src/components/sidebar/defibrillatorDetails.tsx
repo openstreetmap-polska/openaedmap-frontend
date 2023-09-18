@@ -15,7 +15,6 @@ import SidebarAction from "src/model/sidebarAction";
 import {
     CloseSidebarButton,
     CopyUrlButton, EditButton,
-    EditIdButton,
     GoogleMapsNavigationButton,
     OpenStreetMapNavigationButton,
     ViewButton,
@@ -185,7 +184,6 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                         <CopyUrlButton />
                         <ViewButton osmId={data.osmId} />
                         <EditButton osmId={data.osmId} />
-                        <EditIdButton osmId={data.osmId} />
                     </Card.Footer.Item>
                 </Card.Footer>
                 <Card.Footer>

@@ -18,6 +18,7 @@
 			"extensions": [
 				"dbaeumer.vscode-eslint",
 				"dsznajder.es7-react-js-snippets",
+				"esbenp.prettier-vscode",
 				"lukas-tr.materialdesignicons-intellisense",
 				"jock.svg"
 			]
@@ -28,7 +29,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "npm install",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"

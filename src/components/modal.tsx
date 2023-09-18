@@ -1,7 +1,7 @@
-import { mdiInformationOutline } from "@mdi/js";
+import { mdiInformationOutline, mdiGithub } from "@mdi/js";
 import Icon from "@mdi/react";
 import { useTranslation } from "react-i18next";
-import { Modal } from "react-bulma-components";
+import { Button, Modal } from "react-bulma-components";
 import React, { FC } from "react";
 import { ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
@@ -15,6 +15,7 @@ const ModalContent: FC<{}> = () => {
             type, currentZoom, errorMessage, nodeId,
         },
     } = useAppContext();
+    const helpTranslationText = `🖋 ${t("navbar.help_translating")}`;
 
     switch (type) {
         case ModalType.NodeAddedSuccessfully: {
@@ -67,8 +68,29 @@ const ModalContent: FC<{}> = () => {
         case ModalType.About:
             return (
                 <div>
-                    <p className="pb-2">{t("modal.about_project")}</p>
-                    <p className="pb-2">{t("modal.about_osm")}</p>
+                    <p className="block">{t("modal.about_project")}</p>
+                    <p className="block">
+                        <Button
+                            mr={2}
+                            renderAs="a"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating"
+                        >
+                            {helpTranslationText}
+                        </Button>
+                        <Button
+                            mr={2}
+                            renderAs="a"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://github.com/openstreetmap-polska/openaedmap-frontend"
+                        >
+                            <Icon path={mdiGithub} size="2rem" />
+                            <span>{t("navbar.visit_github")}</span>
+                        </Button>
+                    </p>
+                    <p className="block">{t("modal.about_osm")}</p>
                     <p>
                         {t("modal.create_account")}
                         <a href="https://osm.org" rel="noreferrer" target="_blank">osm.org</a>
