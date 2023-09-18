@@ -1,8 +1,6 @@
 import React, {
     useEffect, Suspense, useState, useMemo,
 } from "react";
-import "./Main.css";
-import "bulma/css/bulma.min.css";
 // @ts-ignore
 import { osmAuth } from "osm-auth";
 import SiteNavbar from "./components/navbar";
