@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "img/logo192.png",
+      "src": "img/logo-aed-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "img/logo512.png",
+      "src": "img/logo-aed-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
