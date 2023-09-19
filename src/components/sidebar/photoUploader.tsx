@@ -148,8 +148,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                     )) || (
                         <input
                             type="file"
-                            accept="image/jpeg,image/jpg,image/png,image/webp"
-                            capture
+                            accept="capture=camera,image/jpeg,image/jpg,image/png,image/webp"
                             onChange={(event) => {
                                 const { files } = event.target;
                                 console.log(files);
