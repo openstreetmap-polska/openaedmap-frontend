@@ -1,0 +1,44 @@
+{
+  "marker_customers": {
+    "height": 200,
+    "pixelRatio": 4,
+    "width": 200,
+    "x": 0,
+    "y": 0
+  },
+  "marker_no": {
+    "height": 200,
+    "pixelRatio": 4,
+    "width": 200,
+    "x": 200,
+    "y": 0
+  },
+  "marker_permissive": {
+    "height": 200,
+    "pixelRatio": 4,
+    "width": 200,
+    "x": 0,
+    "y": 200
+  },
+  "marker_private": {
+    "height": 200,
+    "pixelRatio": 4,
+    "width": 200,
+    "x": 200,
+    "y": 200
+  },
+  "marker_unknown": {
+    "height": 200,
+    "pixelRatio": 4,
+    "width": 200,
+    "x": 400,
+    "y": 0
+  },
+  "marker_yes": {
+    "height": 200,
+    "pixelRatio": 4,
+    "width": 200,
+    "x": 600,
+    "y": 0
+  }
+}
