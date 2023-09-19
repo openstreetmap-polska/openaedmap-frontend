@@ -24,42 +24,18 @@ const PhotoReport: FC<DefibrillatorDetailsProps> = (props) => {
     const { setSidebarAction, setModalState } = useAppContext();
     if (data === null) return null;
     const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
-    const sendReport = (photoId: string | undefined) => {
+    const sendReport = (photoId: string | undefined): Promise<Response> => {
         if (photoId === undefined) {
-            console.error("Photo id is undefined. Report issue to the maintainers.");
-            return;
+            throw Error("Photo id is undefined. Report issue to the maintainers.");
         }
         console.log("Reported photo:", photoId);
-        fetch(`${backendBaseUrl}/api/v1/photos/report`, {
+        return fetch(`${backendBaseUrl}/api/v1/photos/report`, {
             method: "POST",
             body: `id=${encodeURIComponent(photoId)}`,
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
             },
-        })
-            .then((response) => {
-                if (response.ok) {
-                    closeSidebar();
-                    setModalState({
-                        ...initialModalState,
-                        visible: true,
-                        type: ModalType.ThanksForReport,
-                    });
-                } else {
-                    const errorMessage = `${response} <br> status: ${response.status} `
-                    + `${response.statusText} <br> ${response.body}`;
-                    throw Error(errorMessage);
-                }
-            })
-            .catch((error) => {
-                closeSidebar();
-                setModalState({
-                    ...initialModalState,
-                    visible: true,
-                    type: ModalType.Error,
-                    errorMessage: error,
-                });
-            });
+        });
     };
 
     return (
@@ -91,7 +67,42 @@ const PhotoReport: FC<DefibrillatorDetailsProps> = (props) => {
                         <Icon path={mdiArrowLeftBold} size={0.8} className="icon" />
                         <span>{t("footer.cancel")}</span>
                     </Button>
-                    <Button m={2} onClick={() => sendReport(data.photoId)}>
+                    <Button
+                        m={2}
+                        onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+                            event.preventDefault();
+                            const button: HTMLButtonElement = event.currentTarget;
+                            button.classList.add("is-loading");
+
+                            sendReport(data.photoId)
+                                .then((response) => {
+                                    if (response.ok) {
+                                        button.classList.remove("is-loading");
+                                        closeSidebar();
+                                        setModalState({
+                                            ...initialModalState,
+                                            visible: true,
+                                            type: ModalType.ThanksForReport,
+                                        });
+                                    } else {
+                                        const responseJson = JSON.stringify(response.json(), null, 2);
+                                        const errorMessage = `Response status: ${response.status} `
+                                        + `${response.statusText} <br> ${responseJson}`;
+                                        throw Error(errorMessage);
+                                    }
+                                })
+                                .catch((error) => {
+                                    button.classList.remove("is-loading");
+                                    closeSidebar();
+                                    setModalState({
+                                        ...initialModalState,
+                                        visible: true,
+                                        type: ModalType.Error,
+                                        errorMessage: error,
+                                    });
+                                });
+                        }}
+                    >
                         <Icon path={mdiSend} size={0.8} className="icon" />
                         <span>{t("photo.send_report")}</span>
                     </Button>

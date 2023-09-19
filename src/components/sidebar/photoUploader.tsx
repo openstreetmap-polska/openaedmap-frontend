@@ -77,7 +77,11 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                                 <Button
                                     m={2}
                                     color="success"
-                                    onClick={() => {
+                                    onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+                                        event.preventDefault();
+                                        const button: HTMLButtonElement = event.currentTarget;
+                                        button.classList.add("is-loading");
+
                                         const url = auth?.options().url;
                                         const storageKey = `${url}oauth2_access_token`;
                                         const oauth2AccessToken = store.get(storageKey);
@@ -110,6 +114,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                                         })
                                             .then((response) => {
                                                 if (response.ok) {
+                                                    button.classList.remove("is-loading");
                                                     closeSidebar();
                                                     setModalState({
                                                         ...initialModalState,
@@ -117,12 +122,14 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                                                         type: ModalType.ThanksForPhoto,
                                                     });
                                                 } else {
-                                                    const errorMessage = `${response} <br> status: ${response.status} `
-                                                    + `${response.statusText} <br> ${response.body}`;
+                                                    const responseJson = JSON.stringify(response.json(), null, 2);
+                                                    const errorMessage = `Response status: ${response.status} `
+                                                    + `${response.statusText} <br> ${responseJson}`;
                                                     throw Error(errorMessage);
                                                 }
                                             })
                                             .catch((error) => {
+                                                button.classList.remove("is-loading");
                                                 closeSidebar();
                                                 setModalState({
                                                     ...initialModalState,
@@ -141,8 +148,8 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
                     )) || (
                         <input
                             type="file"
-                            accept=".jpeg,.jpg,.png,.webp"
-                            name="myImage"
+                            accept="image/jpeg,image/jpg,image/png,image/webp"
+                            capture="environment"
                             onChange={(event) => {
                                 const { files } = event.target;
                                 console.log(files);
