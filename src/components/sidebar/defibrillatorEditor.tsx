@@ -56,7 +56,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
             button.classList.remove("is-loading");
             closeSidebar();
             console.log(err);
-            const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.response}`;
+            const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.responseText}`;
             setModalState({
                 ...initialModalState, visible: true, type: ModalType.Error, errorMessage,
             });

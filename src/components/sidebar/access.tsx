@@ -1,6 +1,22 @@
 import { useTranslation } from "react-i18next";
 import React from "react";
 
+const accessToColourMapping = {
+    yes: "has-background-green has-text-white-ter",
+    no: "has-background-red has-text-white-ter",
+    private: "has-background-blue has-text-white-ter",
+    permissive: "has-background-blue has-text-white-ter",
+    customers: "has-background-yellow has-text-black-ter",
+    default: "has-background-gray has-text-white-ter",
+};
+
+export function accessColourClass(access: string): string {
+    if (access in accessToColourMapping) {
+        return accessToColourMapping[access as keyof typeof accessToColourMapping];
+    }
+    return accessToColourMapping.default;
+}
+
 export default function AccessFormField({ access, setAccess }: AccessFormFieldProps) {
     const { t } = useTranslation();
     const groupName = "aedAccess";

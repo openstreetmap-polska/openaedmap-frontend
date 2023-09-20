@@ -8,12 +8,37 @@
       "type": "image/x-icon"
     },
     {
-      "src": "img/logo192.png",
+      "src": "img/logo-aed-120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "img/logo-aed-144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "img/logo-aed-152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "img/logo-aed-180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "img/logo-aed-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "img/logo512.png",
+      "src": "img/logo-aed-384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "img/logo-aed-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -21,5 +46,15 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=pl.enteam.aed_map",
+      "id": "pl.enteam.aed_map"
+    }, {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/mapa-aed/id1638495701"
+    }
+  ]
 }

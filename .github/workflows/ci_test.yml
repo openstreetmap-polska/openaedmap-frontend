@@ -1,16 +1,12 @@
 name: Test CI test
 
 on:
-  push:
-    branches-ignore:
-    - main
-    - dev
+  pull_request:
     paths:
     - src/**
     - public/**
     - package*.json
     - .github/workflows/ci_test.yml
-  pull_request:
     types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:

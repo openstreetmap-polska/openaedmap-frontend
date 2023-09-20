@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+// https://bulma.io/documentation/customize/concepts/
+// https://bulma.io/documentation/customize/with-node-sass/
+
+// below this window.innerWidth navbar menu will be rolled into burger
+$navbar-breakpoint: 1344px;
+
+@import "../node_modules/bulma/bulma.sass";
+// Update Bulma's derived variables
+// @import "../node_modules/bulma/sass/utilities/initial-variables.sass";

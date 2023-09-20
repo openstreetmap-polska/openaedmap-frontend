@@ -53,6 +53,8 @@ REACT_APP_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
 HOST=127.0.0.1
 ```
 
+*Note: You can use Github Codespaces to develop.*
+
 ### Available Scripts
 
 In the project directory, you can run:
@@ -83,6 +85,16 @@ Creates sprites from marker icons.
 
 Make sure dev dependencies are installed.
 
+#### `npm run css-build`
+
+Build `sass/mystyles.scss` file into `src/mystyles.css` which is included in `index.tsc` and has the adjusted bulma css for the entire app.
+
+Run this if changed e.g. navbar breakpoint or customized bulma further in `sass/mystyles.css`.
+
+#### `npm run css-watch`
+
+Watches `sass/mystyles.scss` for changes and runs `npm run css-build` if it detects any.
+
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
 
@@ -91,10 +103,8 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [OSM Auth](https://github.com/osmlab/osm-auth)
 - [OSM opening_hours](https://github.com/opening-hours/opening_hours.js/)
 - [React](https://reactjs.org/docs/getting-started.html)
-- [Bulma](https://bulma.io/) 
+- [Bulma](https://bulma.io/)
 - [Bulma Checkradio](https://wikiki.github.io/form/checkradio/)
-- [Bulma Tooltip](https://bulma-tooltip.netlify.app/)
-- [Bulma Collapsible](https://bulma-collapsible.netlify.app/)
 - [React Bulma Components](https://react-bulma.dev/en/storybook)
 - [Material Design Icons](https://dev.materialdesignicons.com/getting-started/react)
 - [spritezero-cli](https://gitlab.com/beyondtracks/spritezero-cli)

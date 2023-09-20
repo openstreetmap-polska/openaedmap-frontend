@@ -1,17 +1,20 @@
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import {
+    Button,
     Card, Columns, Image,
 } from "react-bulma-components";
 import {
-    mdiAccountSupervisorOutline, mdiClockOutline, mdiHomeRoof,
+    mdiAccountSupervisorOutline, mdiImagePlus, mdiClockOutline, mdiHomeRoof,
     mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+import SidebarAction from "src/model/sidebarAction";
 import {
     CloseSidebarButton,
     CopyUrlButton, EditButton,
-    EditIdButton,
     GoogleMapsNavigationButton,
     OpenStreetMapNavigationButton,
     ViewButton,
@@ -20,21 +23,75 @@ import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
 import { DefibrillatorData } from "../../model/defibrillatorData";
 import DetailTextRow from "./detailTextRow";
+import { useAppContext } from "../../appContext";
+import { accessColourClass } from "./access";
+import { backendBaseUrl } from "../../backend";
+import { initialModalState, ModalType } from "../../model/modal";
 
-const accessToColourMapping = {
-    yes: "has-background-green has-text-white-ter",
-    no: "has-background-red has-text-white-ter",
-    private: "has-background-blue has-text-white-ter",
-    permissive: "has-background-blue has-text-white-ter",
-    customers: "has-background-yellow has-text-black-ter",
-    default: "has-background-gray has-text-white-ter",
-};
-
-function accessColourClass(access: string): string {
-    if (access in accessToColourMapping) {
-        return accessToColourMapping[access as keyof typeof accessToColourMapping];
+function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
+    const { t } = useTranslation();
+    const { authState: { auth }, setSidebarAction, setModalState } = useAppContext();
+    let images: ReactImageGalleryItem[] = [];
+    // Currently only one photo allowed
+    if (data.photoRelativeUrl !== undefined && data.photoRelativeUrl !== null) {
+        images = [
+            {
+                original: backendBaseUrl + data.photoRelativeUrl,
+                thumbnail: backendBaseUrl + data.photoRelativeUrl,
+            },
+        ];
     }
-    return accessToColourMapping.default;
+    if (images.length > 0) {
+        // ref would be used if there were more photos to see which one is selected
+        // const refImg = useRef<ImageGallery>(null);
+        const renderCustomControls = () => (
+            <Button
+                outlined
+                inverted
+                p={2}
+                className="image-gallery-custom-icon"
+                onClick={() => setSidebarAction(SidebarAction.reportPhoto)}
+            >
+                {
+                    t("photo.report")
+                }
+            </Button>
+        );
+
+        return (
+            <div>
+                <ImageGallery
+                    // ref={refImg}
+                    items={images}
+                    lazyLoad
+                    showPlayButton={false}
+                    showThumbnails={images.length > 1}
+                    renderCustomControls={renderCustomControls}
+                />
+                <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
+            </div>
+        );
+    }
+    return (
+        <div>
+            <Button
+                mb={1}
+                mt={0}
+                className="button is-small is-success mx-1"
+                onClick={() => {
+                    if (auth === null || !auth.authenticated()) {
+                        closeSidebar();
+                        setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
+                    }
+                    setSidebarAction(SidebarAction.uploadPhoto);
+                }}
+            >
+                <Icon path={mdiImagePlus} size={1.15} className="icon" color="#fff" />
+                <span>{t("photo.upload")}</span>
+            </Button>
+            <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
+        </div>
+    );
 }
 
 const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
@@ -48,6 +105,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
         || data.tags["defibrillator:location"];
     const levelText = data.tags.level ? ` (${t("sidebar.level")}: ${data.tags.level})` : "";
     const indoorText = data.tags.indoor ? t(`indoor.${data.tags.indoor}`) + levelText : "";
+
     return (
         <div className="sidebar" id="sidebar-div">
             <Card>
@@ -66,7 +124,8 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                     </span>
                     <CloseSidebarButton closeSidebarFunction={closeSidebar} />
                 </Card.Header>
-                <Card.Content pl={3} pr={3} mb={1} pt={4} className="content pb-0">
+                <Card.Content pl={3} pr={3} mb={1} pt={2} className="content pb-0">
+                    {photoGallery(data, closeSidebar)}
                     <Columns vCentered className="is-mobile">
                         <Columns.Column textAlign="center" size={2}>
                             <Icon path={mdiHomeRoof} size={1.15} className="icon" color="#028955" />
@@ -125,7 +184,6 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                         <CopyUrlButton />
                         <ViewButton osmId={data.osmId} />
                         <EditButton osmId={data.osmId} />
-                        <EditIdButton osmId={data.osmId} />
                     </Card.Footer.Item>
                 </Card.Footer>
                 <Card.Footer>
