@@ -92,7 +92,9 @@
         "about_osm": "開放街圖 (OpenStreetMap, OSM) 就是地圖版的維基百科，能夠被任何人使用，任何人都可以在地圖新增物件。你可以用你的 OSM 帳號，透過簡單的表單輸入來直接新增 AED 的位置。",
         "aed_updated_successfully": "成功更新 AED。",
         "become_openaedmap_partner": "您想要變成 OpenAEDMap 的合作夥伴嗎？",
-        "contact_us": "聯絡我們"
+        "contact_us": "聯絡我們",
+        "thanks_for_report": "感謝您傳送回報。其將由網站管理員進行審閱。",
+        "thanks_for_photo": "感謝您上傳照片。應該很快就能看到。"
     },
     "common": {
         "loading": "正在載入……"
@@ -104,5 +106,14 @@
         "wroclaw_medical_university": "弗羅茨瓦夫醫科大學",
         "chief_geodesist": "波蘭首席大地測量工程師",
         "acting": "作用"
+    },
+    "photo": {
+        "license": "我們託管的所有 AED 照片都以 Creative Commons Zero (CC0 v1.0) 授權。上傳您的照片即表示同意這些授權條款。",
+        "remove": "移除照片",
+        "upload": "上傳照片",
+        "license_short_description": "簡而言之，這代表任何人都可以將照片用於任何目的。不需要署名。",
+        "send_report": "傳送回報",
+        "report": "回報照片",
+        "report_long_text": "若照片品質不佳、未顯示 AED 位置或有任何不當之處。您可以回報該照片。網站管理員將會審閱報告。"
     }
 }
