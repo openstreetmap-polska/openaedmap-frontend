@@ -92,7 +92,9 @@
         "about_project": "OpenAEDMap ist ein Offene-Daten-Projekt, das alle automatisierten externen Defibrillatoren (AED) auf der ganzen Welt zeigt. Die Website basiert auf Daten von OpenStreetMap und ist das Ergebnis der Bemühungen der Vereinigung OpenStreetMap Polen. Sie wurde im Jahr 2022 erstellt, nachdem die polnische Website AED Mapa auf ein neues Design umgestellt wurde.",
         "aed_updated_successfully": "AED erfolgreich aktualisiert.",
         "become_openaedmap_partner": "Möchten Sie OpenAEDMap-Partner werden?",
-        "contact_us": "Kontakt aufnehmen"
+        "contact_us": "Kontakt aufnehmen",
+        "thanks_for_report": "Vielen Dank für das Senden eines Berichts. Dieser wird von den Seitenadministratoren überprüft.",
+        "thanks_for_photo": "Vielen Dank für das Hochladen des Fotos. Es sollte in Kürze sichtbar sein."
     },
     "common": {
         "loading": "Wird geladen …"
@@ -104,5 +106,14 @@
         "honorary_patronage": "Ehrenamtliche Unterstützung",
         "gugik": "Hauptamt für Geodäsie und Kartographie in Polen",
         "acting": "handelnd"
+    },
+    "photo": {
+        "license": "Alle von uns gehosteten AED-Fotos sind unter der Creative Commons Zero-Lizenz (CC0 v1.0) lizenziert. Durch das Hochladen deines Fotos stimmst du diesen Lizenzbedingungen zu.",
+        "remove": "Foto entfernen",
+        "upload": "Foto hochladen",
+        "license_short_description": "Kurz gesagt bedeutet dies, dass das Foto von jedem für jeden Zweck verwendet werden kann. Eine Namensnennung ist nicht erforderlich.",
+        "send_report": "Bericht senden",
+        "report": "Foto melden",
+        "report_long_text": "Du kannst das Foto melden, wenn es von schlechter Qualität ist, den Standort des AEDs nicht zeigt oder aus irgendeinem Grund unangemessen ist. Die Administratoren der Website werden den Bericht prüfen."
     }
 }
