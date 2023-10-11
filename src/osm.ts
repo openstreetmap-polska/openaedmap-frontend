@@ -23,7 +23,7 @@ export async function fetchNodeData(url: string): Promise<DefibrillatorData | nu
 }
 
 export async function fetchNodeDataFromOsm(nodeId: string): Promise<DefibrillatorData | null> {
-    const url = `https://www.openstreetmap.org/api/0.6/node/${nodeId}.json`;
+    const url = `https://api.openstreetmap.org/api/0.6/node/${nodeId}.json`;
     console.log("Request object info for node with osm id:", nodeId, " via url: ", url);
     return fetchNodeData(url);
 }
