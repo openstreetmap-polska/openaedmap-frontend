@@ -4,7 +4,9 @@
         "no": "Nedostupný",
         "unknown": "Neznámy prístup",
         "yes": "Verejne prístupný",
-        "private": "Prístupný s povolením vlastníka"
+        "private": "Prístupný s povolením vlastníka",
+        "unknownTag": "Žiadny prístupový tag alebo nie je uvedený vyššie",
+        "permissive": "Verejné k dispozícii až do odvolania"
     },
     "navbar": {
         "login": "Prihlásiť sa cez OSM účet",
@@ -12,7 +14,9 @@
         "logout": "Odhlásiť sa",
         "visit_github": "Navštívte náš GitHub repozitár",
         "created_with_<3_by": "vytvorené s ❤️",
-        "visit_osmp_website": "Navštíviť stránku OpenStreetMap Poľsko"
+        "visit_osmp_website": "Navštíviť stránku OpenStreetMap Poľsko",
+        "help_translating": "Pomoc prekladanie",
+        "hosted_by": "hostil"
     },
     "sidebar": {
         "csv": "CSV",
@@ -35,7 +39,13 @@
         "note": "Poznámka",
         "openstreetmap_navigation": "Navigácia OpenStreetMap",
         "google_maps_navigation": "Navigácia v Mapách Google",
-        "close": "Zavrieť bočný panel"
+        "close": "Zavrieť bočný panel",
+        "level": "úroveň",
+        "edit": "Upraviť",
+        "find_location": "Nájsť lokalitu",
+        "edit_defibrillator": "Upraviť defibrilátor",
+        "world": "Sveta",
+        "verification_date": "Dátum prieskumu"
     },
     "form": {
         "optional_field": "Nepovinné pole",
@@ -44,13 +54,17 @@
         "accessibility": "Prístupnosť",
         "location": "Popíšte umiestnenie",
         "inside": "Vnútri",
-        "location_example": "Napríklad: Na stene blízko vchodu"
+        "location_example": "Napríklad: Na stene blízko vchodu",
+        "marker_popup_text": "Presuňte marker na AED umiestnenie",
+        "level": "Úroveň"
     },
     "footer": {
         "add": "Pridať",
         "add_aed": "Pridať AED",
         "cancel": "Zrušiť",
-        "continue": "Pokračovať"
+        "continue": "Pokračovať",
+        "partners": "Partneri projektu",
+        "save_aed": "Uložiť AED"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -69,7 +83,37 @@
         "current_zoom": "Aktuálne priblíženie:",
         "zoom_need_to_be": "Priblíženie musí byť aspoň na úrovni 15.",
         "need_to_login": "Pre pridanie objektov sa musíte prihlásiť pomocou svojho účtu OpenStreetMap.",
-        "about_project": "OpenAEDMap je open-data projekt, ktorý zobrazuje všetky automatizované externé defibrilátory (AED) po celom svete. Webová stránka je založená na údajoch z OpenStreetMap a je výsledkom práce združenia OpenStreetMap Poľsko. Bola vytvorená v roku 2022 po zmene poľskej webovej stránky AED Mapa na nový dizajn."
+        "about_project": "OpenAEDMap je open-data projekt, ktorý zobrazuje všetky automatizované externé defibrilátory (AED) po celom svete. Webová stránka je založená na údajoch z OpenStreetMap a je výsledkom práce združenia OpenStreetMap Poľsko. Bola vytvorená v roku 2022 po zmene poľskej webovej stránky AED Mapa na nový dizajn.",
+        "need_more_zoom": "Ak chcete pridať funkcie, musíte zoom, takže umiestnenie, ktoré poskytnete, je presné.",
+        "aed_updated_successfully": "Úspešne aktualizované.",
+        "thanks_for_report": "Ďakujeme za zaslanie správy. Bude preskúmaná administrátormi webu.",
+        "available_in_osm": "K dispozícii v OpenStreet Mapa s URL:",
+        "become_openaedmap_partner": "Chcete sa stať partnerom OpenAEDMap?",
+        "click_login_button": "Zatvorte toto okno a kliknite na tlačidlo pre prihlásenie v hornej časti prihlásiť.",
+        "contact_us": "Kontaktujte nás",
+        "about_osm": "OpenStreetMap (OSM) je ako Wikipédia pre mapy. Je k dispozícii pre každého a niekto môže pridať objekty na mapu. Môžete použiť svoj účet OSM na pridanie AED priamo z tejto stránky pomocou jednoduchého formulára.",
+        "thanks_for_photo": "Ďakujem za nahrávanie fotografie. Čoskoro by malo byť viditeľné.",
+        "create_account": "Môžete tiež prispieť! Stačí vytvoriť bezplatný účet "
     },
-    "osmp": "OpenStreetMap Poľsko"
+    "osmp": "OpenStreetMap Poľsko",
+    "partners": {
+        "gugik": "Vedúci úrad geodesy a kartografie v Poľsku",
+        "main_scientific_partner": "Hlavný vedecký partner",
+        "wroclaw_medical_university": "Wroclaw Medical University",
+        "chief_geodesist": "Hlavný geodesist Poľsko",
+        "acting": "herectvo",
+        "honorary_patronage": "Čestný patrón"
+    },
+    "photo": {
+        "license": "Všetky AED fotografie hostili nás sú licencované pod Creative Commons Zero (CC0 v1.0). Nahraním vašej fotografie súhlasíte s podmienkami licencie.",
+        "remove": "Odstráňte fotografiu",
+        "upload": "Nahrať fotografiu",
+        "license_short_description": "Stručne to znamená, že fotografia môže byť použitá pre každý účel. Nie je potrebný žiadny attribution.",
+        "send_report": "Odoslať správu",
+        "report": "Nahlásiť fotografiu",
+        "report_long_text": "Môžete nahlásiť fotografiu, ak je to zlá kvalita, nezobrazuje umiestnenie AEDs alebo je inapropriate v žiadnom prípade. Správcovia stránky preveria správu."
+    },
+    "common": {
+        "loading": "Načítanie..."
+    }
 }
