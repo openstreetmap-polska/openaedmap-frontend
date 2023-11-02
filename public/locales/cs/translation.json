@@ -4,7 +4,9 @@
         "no": "Nedostupný",
         "private": "Přístupný s povolením vlastníka",
         "yes": "Veřejně přístupný",
-        "unknown": "Neznámý přístup"
+        "unknown": "Neznámý přístup",
+        "unknownTag": "Žádná přístupová značka nebo neodpovídá výše uvedenému",
+        "permissive": "Veřejně přístupné až do odvolání"
     },
     "navbar": {
         "created_with_<3_by": "vytvořeno s ❤️",
@@ -12,7 +14,9 @@
         "visit_osmp_website": "Navštívit stránku OpenStreetMap Polsko",
         "login": "Přihlásit se přes OSM účet",
         "logout": "Odhlásit se",
-        "about": "O projektu"
+        "about": "O projektu",
+        "help_translating": "Pomoc s překladem",
+        "hosted_by": "hostováno"
     },
     "sidebar": {
         "csv": "CSV",
@@ -35,7 +39,13 @@
         "google_maps_navigation": "Navigace Google Maps",
         "close": "Zavřít boční panel",
         "geojson": "GeoJSON",
-        "indoor": "Uvnitř budovy"
+        "indoor": "Uvnitř budovy",
+        "level": "patro",
+        "edit": "Upravit",
+        "find_location": "Vyhledat umístění",
+        "edit_defibrillator": "Upravit defibrilátor",
+        "world": "Svět",
+        "verification_date": "Datum průzkumu"
     },
     "form": {
         "optional_field": "Nepovinné pole",
@@ -45,13 +55,16 @@
         "location": "Popište umístění",
         "location_example": "Například: Na stěně blízko vchodu",
         "is_indoor": "Nachází se uvnitř budovy?",
-        "inside": "Uvnitř"
+        "inside": "Uvnitř",
+        "level": "Patro"
     },
     "footer": {
         "add": "Přidat",
         "add_aed": "Přidat AED",
         "continue": "Pokračovat",
-        "cancel": "Zrušit"
+        "cancel": "Zrušit",
+        "partners": "Partneři projektu",
+        "save_aed": "Uložit AED"
     },
     "indoor": {
         "no": "Ne",
@@ -71,11 +84,36 @@
         "zoom_need_to_be": "Přiblížení musí být alespoň na úrovni 15.",
         "about_osm": "OpenStreetMap (OSM) je něco jako Wikipedie pro mapy. Je k dispozici všem a každý může do mapy přidávat objekty. Pomocí jednoduchého formuláře a svého OSM účtu můžete přidat umístění AED přímo z této stránky.",
         "create_account": "Přispějte také! Vytvořte si účet na ",
-        "about_project": "OpenAEDMap je open-data projekt, který zobrazuje všechny automatické externí defibrilátory (AED) na světě. Webová stránka je založena na datech z OpenStreetMap a je výsledkem práce sdružení OpenStreetMap Polsko. Byla vytvořena v roce 2022 po redesignu polské stránky AED Mapa."
+        "about_project": "OpenAEDMap je open-data projekt, který zobrazuje všechny automatické externí defibrilátory (AED) na světě. Webová stránka je založena na datech z OpenStreetMap a je výsledkem práce sdružení OpenStreetMap Polsko. Byla vytvořena v roce 2022 po redesignu polské stránky AED Mapa.",
+        "aed_updated_successfully": "AED úspěšně aktualizován.",
+        "thanks_for_report": "Děkujeme za zaslání reportu. Správci stránek ji přezkoumají.",
+        "become_openaedmap_partner": "Chcete se stát partnerem OpenAEDMap?",
+        "contact_us": "Kontaktujte nás",
+        "thanks_for_photo": "Děkujeme za nahrání fotografie. Měla by být brzy viditelná."
     },
     "opening_hours": {
         "24_7": "24/7",
         "open": "Otevřeno",
         "closed": "Zavřeno"
+    },
+    "partners": {
+        "gugik": "Hlavní úřad geodézie a kartografie v Polsku",
+        "main_scientific_partner": "Hlavní vědecký partner",
+        "wroclaw_medical_university": "Wroclawská lékařská univerzita",
+        "chief_geodesist": "Hlavní geodet Polska",
+        "acting": "působící",
+        "honorary_patronage": "Čestný patron"
+    },
+    "photo": {
+        "license": "Všechny fotografie AED, které hostujeme, jsou licencovány podle Creative Commons Zero (CC0 v1.0). Nahráním své fotografie souhlasíte s těmito licenčními podmínkami.",
+        "remove": "Odstranit fotku",
+        "upload": "Nahrát fotku",
+        "license_short_description": "Stručně řečeno to znamená, že fotografii může kdokoli použít k jakémukoli účelu. Není nutné uvádět autora.",
+        "send_report": "Odeslat report",
+        "report": "Nahlásit fotku",
+        "report_long_text": "Fotografii můžete nahlásit, pokud je nekvalitní, neukazuje umístění AED nebo je jakýmkoli způsobem nevhodná. Správci webu zprávu posoudí."
+    },
+    "common": {
+        "loading": "Nahrávám..."
     }
 }
