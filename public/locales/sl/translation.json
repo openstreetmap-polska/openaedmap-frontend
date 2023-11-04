@@ -5,7 +5,8 @@
         "customers": "Dostopen v obratovalnem času",
         "no": "Nedostopen",
         "permissive": "Javno dostopno do nadaljnega",
-        "unknown": "Dostopnost ni znana"
+        "unknown": "Dostopnost ni znana",
+        "unknownTag": "Ni oznake dostopnosti ali pa ni ena od zgoraj naštetih"
     },
     "navbar": {
         "created_with_<3_by": "z ❤️ ustvaril",
@@ -43,7 +44,8 @@
         "verification_date": "Datum preverbe",
         "world": "Svet",
         "level": "Nadstropje",
-        "edit_defibrillator": "Uredi defibrilator"
+        "edit_defibrillator": "Uredi defibrilator",
+        "find_location": "Išči lokacijo"
     },
     "form": {
         "optional_field": "Če je znano",
@@ -61,7 +63,8 @@
         "add_aed": "Dodaj AED",
         "cancel": "Prekliči",
         "continue": "Nadaljuj",
-        "save_aed": "Shrani AED"
+        "save_aed": "Shrani AED",
+        "partners": "Partnerji projekta"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -87,6 +90,22 @@
         "about_osm": "OpenStreetMap (OSM) je kot Wikipedija za zemljevide. Vsi ga lahko uporabljamo in vsak lahko prispeva elemente na zemjljevid. Za dodajanje novih lokacij AED naprav neposredno na tej spletni strani lahko uporabite svoj uporabniški račun OSM.",
         "create_account": "Tudi vi lahko prispevate! Ustvarite si brezplačen račun na ",
         "aed_updated_successfully": "AED uspešno posodobljen.",
-        "about_project": "OpenAEDMap je projekt zbiranja in prikaza odprtih podatkov vseh Avtomatskih eksternih defibrilatorjev (AED) po svetu. Ta spletna stran sloni na podatkih OpenStreetMap in je rezultat dela združenja OpenStreetMap Poljske. Narejena je bila leta 2022 kot oblikovna prenova Poljske spletne strani AED Mapa."
+        "about_project": "OpenAEDMap je projekt zbiranja in prikaza odprtih podatkov vseh Avtomatskih eksternih defibrilatorjev (AED) po svetu. Ta spletna stran sloni na podatkih OpenStreetMap in je rezultat dela združenja OpenStreetMap Poljske. Narejena je bila leta 2022 kot oblikovna prenova Poljske spletne strani AED Mapa.",
+        "become_openaedmap_partner": "Ali želite postati partner projekta OpenAEDMap?",
+        "contact_us": "Kontaktirajte nas",
+        "thanks_for_photo": "Hvala za poslano fotografijo. Kmalu bi morala biti vidna."
+    },
+    "photo": {
+        "license": "Vse fotograije defibrilatorjev AED pri nas imajo dovoljenje Creative Commons Zero (CC0 v1.0). S tem, ko nam pošljete vašo fotografijo se strinjate s temi licenčnimi pogoji.",
+        "remove": "Odstrani fotografijo",
+        "upload": "Pošlji fotografijo",
+        "license_short_description": "Skratka, to pomeni, da fotografije lahko uporablja kdorkoli za kakršenkoli namen. Navedba vira ni potrebna.",
+        "report": "Prijavi fotografijo"
+    },
+    "partners": {
+        "honorary_patronage": "Častni pokrovitelj"
+    },
+    "common": {
+        "loading": "Nalaganje..."
     }
 }
