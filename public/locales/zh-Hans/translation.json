@@ -5,15 +5,18 @@
         "outside": "外部",
         "optional_field": "可选字段",
         "inside": "内部",
-        "accessibility": "无障碍",
-        "location": "描述位置",
-        "location_example": "例如：在入口旁边的墙上"
+        "accessibility": "可达性",
+        "location": "位置描述",
+        "location_example": "例如：在入口旁边的墙上",
+        "level": "层"
     },
     "footer": {
         "add_aed": "添加AED",
         "cancel": "取消",
         "add": "添加",
-        "continue": "继续"
+        "continue": "继续",
+        "partners": "项目合作伙伴",
+        "save_aed": "保存AED"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -26,14 +29,19 @@
         "title": "信息",
         "error_occurred": "发生错误",
         "click_login_button": "关闭本窗口并点击在顶部的登录按钮。",
-        "need_to_login": "要添加要素您需要使用OpenStreetMap账号登录。",
+        "need_to_login": "要添加地图要素，您需要使用OpenStreetMap账号登录。",
         "should_appear_soon": "对象应于60分钟内显示在地图上。",
-        "create_account": "您也可以参与贡献！只需要一个 上免费注册一个账号。 ",
+        "create_account": "只需在此免费注册一个账号！您也可以参与贡献！ ",
         "about_osm": "OpenStreetMap (OSM)如同地图领域的维基百科。它可被所有人使用且所有人均可向其添加对象。您可以用您的OSM账号借助这一简单表格直接从本站上传AED位置。",
         "current_zoom": "当前缩放等级：",
         "zoom_need_to_be": "缩放等级最小应为15。",
-        "need_more_zoom": "要添加要素您需要放大地图以保证您提供的位置准确无误。",
-        "about_project": "OpenAEDMap是一个显示世界各地自动体外除颤器 (AED)的一个开放数据项目。该网站基于OpenStreetMap数据，由OpenStreetMap波兰社区主导，是在2022年重新设计波兰网站AED Mapa后所创建的。"
+        "need_more_zoom": "要添加地图要素，您需要放大地图以保证您提供的位置准确无误。",
+        "about_project": "OpenAEDMap是一个显示世界各地自动体外除颤器 (AED)的一个开放数据项目。该网站基于OpenStreetMap数据，由OpenStreetMap波兰社区主导，是在2022年重新设计波兰网站AED Mapa后所创建的。",
+        "aed_updated_successfully": "AED成功更新。",
+        "thanks_for_report": "感谢您发送报告。它将被站点管理员审核。",
+        "become_openaedmap_partner": "您想成为OpenAEDMap合作伙伴吗？",
+        "contact_us": "联系我们",
+        "thanks_for_photo": "谢谢您上传照片。它将很快可见。"
     },
     "sidebar": {
         "view": "在OSM中查看",
@@ -57,23 +65,29 @@
         "operator": "运营者",
         "add_defibrillator": "添加除颤器",
         "openstreetmap_navigation": "OpenStreetMap 导航",
-        "verification_date": "寻访日期"
+        "verification_date": "寻访日期",
+        "level": "楼层",
+        "edit": "编辑",
+        "find_location": "查找位置",
+        "edit_defibrillator": "编辑除颤器",
+        "world": "世界"
     },
     "osmp": "OpenStreetMap波兰社区",
     "access": {
-        "private": "仅限所有者同意时可进入",
+        "private": "仅在所有者同意时可用",
         "yes": "可被公众使用",
         "customers": "仅在上班时间可用",
         "no": "不可用",
-        "unknown": "是否可进入未知",
-        "permissive": "除另有通知时一般开放"
+        "unknown": "是否可使用未知",
+        "permissive": "除另有通知时均可被公众使用",
+        "unknownTag": "无可用性标签或与上述均不匹配"
     },
     "navbar": {
         "visit_github": "查看我们的GItHub仓库",
         "login": "使用OSM账号登录",
         "logout": "登出",
         "about": "关于",
-        "created_with_<3_by": "由__用❤️创造",
+        "created_with_<3_by": "用❤️创造 - 来自",
         "visit_osmp_website": "查看OpenStreetMap波兰社区网站",
         "hosted_by": "托管于",
         "help_translating": "协助翻译"
@@ -81,5 +95,25 @@
     "indoor": {
         "no": "否",
         "yes": "是"
+    },
+    "partners": {
+        "gugik": "波兰大地测量学和制图学总部",
+        "main_scientific_partner": "主要科学合作伙伴",
+        "wroclaw_medical_university": "弗罗茨瓦夫医科大学",
+        "chief_geodesist": "波兰首席大地测量师",
+        "acting": "代行",
+        "honorary_patronage": "荣誉赞助"
+    },
+    "photo": {
+        "license": "我们托管的所有AED照片均以Creative Commons Zero (CC0 v1.0)许可。上传您的照片即表示您同意此许可条款。",
+        "remove": "移除照片",
+        "upload": "上传照片",
+        "license_short_description": "简而言之，这意味着任何人皆可出于任何目的使用这些照片而无需署名。",
+        "send_report": "发送报告",
+        "report": "提报照片",
+        "report_long_text": "如果照片质量差、未展示AED位置或有任何不当之处，您可以举报该照片。站点管理员将审核此报告。"
+    },
+    "common": {
+        "loading": "加载中……"
     }
 }
