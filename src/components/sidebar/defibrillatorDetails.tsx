@@ -66,8 +66,7 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
                     lazyLoad
                     showPlayButton={false}
                     showThumbnails={images.length > 1}
-                    // eslint-disable-next-line eqeqeq
-                    renderCustomControls={data.photoId == null ? undefined : renderCustomControls}
+                    renderCustomControls={data.photoId === null ? undefined : renderCustomControls}
                 />
                 <hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
             </div>
