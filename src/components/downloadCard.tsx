@@ -34,11 +34,11 @@ export default function DownloadCard() {
     const selectedCountry = countries.find((country) => country.code === selectedCountryCode);
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetchCountriesData();
+            const data = await fetchCountriesData(language);
             if (data !== null) setCountries(data);
         };
         fetchData().catch(console.error);
-    }, []);
+    }, [language]);
 
     function countryLabel(country: Country) {
         return `${countryName(country)} (${country.featureCount})`;
