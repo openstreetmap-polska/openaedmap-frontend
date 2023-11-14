@@ -18,8 +18,8 @@ interface BackendCountry {
     data_path: string;
 }
 
-export async function fetchCountriesData(): Promise<Array<Country> | null> {
-    const url = `${backendBaseUrl}/api/v1/countries/names`;
+export async function fetchCountriesData(language: string): Promise<Array<Country> | null> {
+    const url = `${backendBaseUrl}/api/v1/countries/names?language=${language.toUpperCase()}`;
     return fetch(url)
         .then((response) => response.json())
         .then((response: Array<BackendCountry>) => response.map((country: BackendCountry) => ({
