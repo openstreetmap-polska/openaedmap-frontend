@@ -9,17 +9,17 @@ const worldCountryCode = "WORLD";
 
 export default function DownloadCard() {
     const { t, i18n: { resolvedLanguage: language } } = useTranslation();
-    function resolvedLanguageToBackendLanguage(): string {
-        let result = language;
-        if (result.includes("-")) [result] = result.split("-");
-        result = result.toUpperCase();
-        return result;
-    }
     function countryName(country: Country) {
         if (country.code === worldCountryCode) return t("sidebar.world");
-        const backendLanguage = resolvedLanguageToBackendLanguage();
-        if (Object.hasOwn(country.names, backendLanguage)) {
-            return country.names[backendLanguage];
+        const backendLanguageUppercase = language.toUpperCase();
+        if (Object.hasOwn(country.names, backendLanguageUppercase)) {
+            return country.names[backendLanguageUppercase];
+        }
+        if (backendLanguageUppercase.includes("-")) {
+            const basicLanguage = backendLanguageUppercase.split("-")[0];
+            if (Object.hasOwn(country.names, basicLanguage)) {
+                return country.names[basicLanguage];
+            }
         }
         return country.names.default;
     }
