@@ -1,7 +1,8 @@
 import {
     mdiArrowRightBold,
     mdiCancel,
-    mdiMapMarkerPlus, /* mdiAccountGroup, */
+    mdiMapMarkerPlus,
+    mdiAccountGroup,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { FC } from "react";
@@ -9,14 +10,14 @@ import { Button, Footer } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import ButtonsType from "../model/buttonsType";
 import "./footer.css";
-/* import { useAppContext } from "../appContext"; */
-/* import { initialModalState, ModalType } from "../model/modal"; */
+import { useAppContext } from "../appContext";
+import { initialModalState, ModalType } from "../model/modal";
 
 const FooterDiv: FC<FooterDivProps> = ({
     startAEDAdding, mobileCancel, showFormMobile, buttonsConfiguration,
 }) => {
     const { t } = useTranslation();
-    /* const { setModalState } = useAppContext(); */
+    const { setModalState } = useAppContext();
     const basicButtons = (
         <div>
             <span className="is-hidden-mobile">
@@ -43,7 +44,7 @@ const FooterDiv: FC<FooterDivProps> = ({
                     {t("footer.add")}
                 </Button>
             </span>
-            {/* <Button
+            <Button
                 color="info"
                 mt={1}
                 ml={2}
@@ -52,7 +53,7 @@ const FooterDiv: FC<FooterDivProps> = ({
             >
                 <Icon path={mdiAccountGroup} className="icon mr-2" />
                 {t("footer.partners")}
-            </Button> */}
+            </Button>
         </div>
     );
     const mobileAddAedButtons = (
