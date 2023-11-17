@@ -8,7 +8,7 @@ const PartnersModal: FC<{}> = () => {
         <>
             <section className="modal-card-body has-text-weight-light" id="partners-modal">
                 <div className="pb-3 pt-5 pl-5 box">
-                    <div className="media">
+                    <div className="media partner-row">
                         <div className="media-left">
                             <figure className="image">
                                 <img
@@ -35,7 +35,7 @@ const PartnersModal: FC<{}> = () => {
                         </div>
                     </div>
 
-                    <div className="media">
+                    <div className="media partner-row">
                         <div className="media-left">
                             <figure className="image">
                                 <img
@@ -58,7 +58,7 @@ const PartnersModal: FC<{}> = () => {
                         </div>
                     </div>
 
-                    <div className="media">
+                    <div className="media partner-row">
                         <div className="media-left">
                             <figure className="image">
                                 <img
