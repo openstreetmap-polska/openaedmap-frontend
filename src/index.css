@@ -84,5 +84,6 @@ a.navbar-item:focus-within, a.navbar-item:hover {
 }
 
 .partner-row {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center !important;
 }
