@@ -97,11 +97,13 @@
         "thanks_for_report": "Thank you for sending a report. It will be reviewed by the site administrators."
     },
     "partners": {
+        "e_health_centre": "e-Health Centre",
         "honorary_patronage": "Honorary patronage",
         "gugik": "Head Office of Geodesy and Cartography in Poland",
         "acting": "acting",
         "chief_geodesist": "Chief Geodesist of Poland",
         "main_scientific_partner": "The Main Scientific Partner",
+        "warsaw_university_of_technology": "Warsaw University of Technology",
         "wroclaw_medical_university": "Wroclaw Medical University"
     },
     "common": {

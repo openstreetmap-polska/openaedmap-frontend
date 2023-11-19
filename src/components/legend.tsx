@@ -19,6 +19,12 @@ export default function MapLegend() {
             tag: "access=yes",
         },
         {
+            key: "permissive",
+            icon: MarkerPermissive,
+            text: t("access.permissive"),
+            tag: "access=permissive",
+        },
+        {
             key: "customers",
             icon: MarkerCustomers,
             text: t("access.customers"),
@@ -29,12 +35,6 @@ export default function MapLegend() {
             icon: MarkerPrivate,
             text: t("access.private"),
             tag: "access=private",
-        },
-        {
-            key: "permissive",
-            icon: MarkerPermissive,
-            text: t("access.permissive"),
-            tag: "access=permissive",
         },
         {
             key: "no",

@@ -82,3 +82,8 @@ a.navbar-item:focus-within, a.navbar-item:hover {
 .maplibregl-ctrl-geocoder {
   min-width: 300px !important;
 }
+
+.partner-row {
+  flex-wrap: wrap;
+  align-items: center !important;
+}

@@ -97,11 +97,13 @@
         "thanks_for_report": "Dziękujemy za wysłanie zgłoszenia. Zostanieono przeanalizowane przez administratorów strony."
     },
     "partners": {
+        "e_health_centre": "Centrum e-Zdrowia",
         "honorary_patronage": "Patronat honorowy",
         "gugik": "Główny Urząd Geodezji i Kartografii",
         "acting": "p. o.",
         "chief_geodesist": "Główny Geodeta Kraju",
         "main_scientific_partner": "Główny Partner Naukowy",
+        "warsaw_university_of_technology": "Politechnika Warszawska",
         "wroclaw_medical_university": "Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu"
     },
     "common": {
