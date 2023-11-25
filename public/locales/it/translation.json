@@ -87,7 +87,9 @@
         "about_project": "OpenAEDMap è un progetto dati aperti che mostra tutti i defibrillatori automatici esterni (DAE) nel mondo. Il sito web è basato sui dati di OpenStreetMap ed è il risultato degli sforzi dell'associazione OpenStreetMap Polonia. È stato creato nel 2022 dopo aver cambiato il sito web polacco AED Mapa con un nuovo design.",
         "aed_updated_successfully": "DAE aggiornato con successo.",
         "contact_us": "Contattaci",
-        "become_openaedmap_partner": "Vuoi diventare partner di OpenAEDMap?"
+        "become_openaedmap_partner": "Vuoi diventare partner di OpenAEDMap?",
+        "thanks_for_report": "Grazie per aver inviato un rapporto. Verrà rivisto dagli amministratori del sito.",
+        "thanks_for_photo": "Grazie per aver caricato la foto. Dovrebbe essere visibile presto."
     },
     "opening_hours": {
         "closed": "Chiuso",
@@ -102,6 +104,18 @@
         "gugik": "Sede centrale di geodesia e cartografia in Polonia",
         "chief_geodesist": "Capo geodeta della Polonia",
         "main_scientific_partner": "Il principale partner scientifico",
-        "wroclaw_medical_university": "Università di medicina di Breslavia"
+        "wroclaw_medical_university": "Università di medicina di Breslavia",
+        "acting": "come",
+        "e_health_centre": "Centro di salute digitale",
+        "warsaw_university_of_technology": "Università della Tecnologia di Varsavia"
+    },
+    "photo": {
+        "license": "Tutte le foto di DAE ospitate da noi sono sotto licenza Creative Commons Zero (CC0 v1.0). Caricando la tua foto accetti questi termini di licenza.",
+        "remove": "Rimuovi la foto",
+        "upload": "Carica una foto",
+        "license_short_description": "In breve questo significa che la foto può essere utilizzata da chiunque per qualsiasi scopo. Nessuna attribuzione è necessaria.",
+        "send_report": "Invia il rapporto",
+        "report": "Segnala la foto",
+        "report_long_text": "È possibile segnalare la foto se è di cattiva qualità, non mostra la posizione dei DAE o è inappropriato in alcun modo. Gli amministratori del sito esamineranno il rapporto."
     }
 }
