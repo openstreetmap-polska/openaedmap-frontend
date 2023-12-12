@@ -1,7 +1,10 @@
 {
     "access": {
         "yes": "ⴷ ⴰⴳⴷⵓⴷⴰⵏ",
-        "no": "ⵢⴰⴳⵓⵎ"
+        "no": "ⵢⴰⴳⵓⵎ",
+        "private": "ⴰⴷ ⵉⵜⵜⵓⵙⴰⴳⴰ ⵖⴰⵙ ⵙ ⵜⵓⵔⴰⴳⵜ ⵏ ⴱⴰⴱ ⵏⵏⵙ",
+        "unknown": "ⵓⵔ ⵉⵜⵜⵡⴰⵙⵙⵏ ⵡⵓⴹⵓⴼ",
+        "customers": "ⴰⴷ ⵉⵜⵜⵓⵙⴰⴳⴰ ⴳ ⵜⵙⵔⴰⴳⵉⵏ ⵏ ⵜⵡⵓⵔⵉ"
     },
     "sidebar": {
         "no_data": "ⵡⴰⵍⵓ ⵜⵉⵎⵓⵛⴰ",
@@ -10,13 +13,27 @@
         "csv": "CSV",
         "excel": "ⵉⴽⵙⵉⵍ",
         "geojson": "GeoJSON",
-        "download_title": "ⴰⴳⴰⵎ ⵏ ⵜⵎⵓⵛⴰ ⵏ AED ⵉⵜⵜⵡⴰⵔⵏⵓⵏ ⵖⵔ OSM"
+        "download_title": "ⴰⴳⴰⵎ ⵏ ⵜⵎⵓⵛⴰ ⵏ AED ⵉⵜⵜⵡⴰⵔⵏⵓⵏ ⵖⵔ OSM",
+        "level": "ⴰⵙⵡⵉⵔ",
+        "edit": "ⵙⴳⴳⴷ",
+        "contact_number": "ⵓⵟⵟⵓⵏ ⵏ ⵡⴰⵡⴰⴹ",
+        "find_location": "ⴰⴼ ⴰⴷⵖⴰⵔ",
+        "google_maps_navigation": "ⵜⴰⵙⵖⵏⵣⵉⵜ ⵜⴰⵢⵍⴰⵏⵜ ⵏ Google Maps",
+        "edit_in_osm": "ⵙⴳⴳⴷ ⴳ OSM",
+        "description": "ⴰⴳⵍⴰⵎ",
+        "world": "ⴰⵎⴰⴹⴰⵍ",
+        "copy_url": "ⵙⵙⵏⵖⵍ URL",
+        "location": "ⴰⴷⵖⴰⵔ",
+        "note": "ⵜⵉⵏⵥⵉ",
+        "verification_date": "ⴰⵙⴰⴽⵓⴷ ⵏ ⵓⵔⵣⵣⵓ",
+        "operator": "ⴰⵎⵡⵓⵔⵉ"
     },
     "navbar": {
         "logout": "ⴼⴼⵖ",
         "about": "ⵅⴼ",
         "hosted_by": "ⵙ ⵓⵙⴷⵓⵙ ⵏ",
-        "help_translating": "ⴰⵡⵙ ⴳ ⵓⵙⵓⵖⵍ"
+        "help_translating": "ⴰⵡⵙ ⴳ ⵓⵙⵓⵖⵍ",
+        "created_with_<3_by": "ⵉⵜⵜⴰⵡⵙⴽⴰⵔ ⵙⴳ ⵜⵏⵉⵍⴰ ⵏ ❤️ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ"
     },
     "form": {
         "optional_field": "ⵉⴳⵔ ⴰⵔⵓⵛⵛⵉⵍ",
@@ -24,14 +41,16 @@
         "level": "ⴰⵙⵡⵉⵔ",
         "outside": "ⴱⵕⵕⴰ",
         "location": "ⴳⵍⵎ ⴰⵏⵙⴰ",
-        "location_example": "ⵙ ⵓⵎⴷⵢⴰ: ⴳ ⵓⵖⵔⴰⴱ ⵜⴰⵎⴰ ⵏ ⵓⵙⴰⴷⴼ"
+        "location_example": "ⵙ ⵓⵎⴷⵢⴰ: ⴳ ⵓⵖⵔⴰⴱ ⵜⴰⵎⴰ ⵏ ⵓⵙⴰⴷⴼ",
+        "is_indoor": "ⵉⵙ ⵉⵍⵍⴰ ⵊⴰⵊ ⵏ ⵜⵓⵚⴽⴰ?"
     },
     "footer": {
         "add": "ⵔⵏⵓ",
         "add_aed": "ⵔⵏⵓ AED",
         "cancel": "ⵙⵙⵔ",
         "continue": "ⵙⵓⵍ",
-        "save_aed": "ⵃⴹⵓ AED"
+        "save_aed": "ⵃⴹⵓ AED",
+        "partners": "ⵉⵎⴷⵔⴰⵡⵏ ⵏ ⵓⵙⵏⵜⵉ"
     },
     "opening_hours": {
         "24_7": "24/7",
@@ -42,5 +61,12 @@
         "yes": "ⵡⴰⵀ",
         "no": "ⵓⵀⵓ"
     },
-    "osmp": "OpenStreetMap ⵏ ⴱⵓⵍⴰⵏⴷⴰ"
+    "osmp": "OpenStreetMap ⵏ ⴱⵓⵍⴰⵏⴷⴰ",
+    "modal": {
+        "error_occurred": "ⵜⵙⴰⵔ ⵢⴰⵜ ⵜⵣⴳⵍⵜ",
+        "title": "ⵓⵎⵍⴰⵏ"
+    },
+    "common": {
+        "loading": "ⴰⵔ ⵉⵜⵜⵡⴰⴳⴰⵎ..."
+    }
 }
