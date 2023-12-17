@@ -4,7 +4,9 @@
         "no": "ⵢⴰⴳⵓⵎ",
         "private": "ⴰⴷ ⵉⵜⵜⵓⵙⴰⴳⴰ ⵖⴰⵙ ⵙ ⵜⵓⵔⴰⴳⵜ ⵏ ⴱⴰⴱ ⵏⵏⵙ",
         "unknown": "ⵓⵔ ⵉⵜⵜⵡⴰⵙⵙⵏ ⵡⵓⴹⵓⴼ",
-        "customers": "ⴰⴷ ⵉⵜⵜⵓⵙⴰⴳⴰ ⴳ ⵜⵙⵔⴰⴳⵉⵏ ⵏ ⵜⵡⵓⵔⵉ"
+        "customers": "ⴰⴷ ⵉⵜⵜⵓⵙⴰⴳⴰ ⴳ ⵜⵙⵔⴰⴳⵉⵏ ⵏ ⵜⵡⵓⵔⵉ",
+        "unknownTag": "ⵓⵔ ⵜⵍⵍⵉ ⵜⵎⴰⵜⴰⵔⵜ ⵏ ⵡⴰⵡⴰⴹ ⵏⵉⵖ ⵓⵔ ⵜⵎⵙⴰⵙⴰ ⴳ ⵓⴼⵍⵍⴰ",
+        "permissive": "ⴰⴷ ⵉⵏⵏⵓⵕⵥⵎ ⵅⴼ ⵓⵎⴰⵜⴰ ⴳ ⵓⵙⵎⴰⵍ ⵢⴰⴹⵏ"
     },
     "sidebar": {
         "no_data": "ⵡⴰⵍⵓ ⵜⵉⵎⵓⵛⴰ",
@@ -26,14 +28,24 @@
         "location": "ⴰⴷⵖⴰⵔ",
         "note": "ⵜⵉⵏⵥⵉ",
         "verification_date": "ⴰⵙⴰⴽⵓⴷ ⵏ ⵓⵔⵣⵣⵓ",
-        "operator": "ⴰⵎⵡⵓⵔⵉ"
+        "operator": "ⴰⵎⵡⵓⵔⵉ",
+        "close": "ⵇⵇⵏ ⵜⵉⴼⵍⵓⵜ",
+        "opening_hours": "ⵜⵉⵙⵔⴰⴳⵉⵏ ⵏ ⵓⵕⵥⵥⵓⵎ",
+        "edit_defibrillator": "ⵙⴳⴳⴷ ⵎⴳⵍ ⴰⵔⵎⵉⵎⵎⵉ",
+        "add_defibrillator": "ⵔⵏⵓ ⵎⴳⵍ ⴰⵔⵎⵉⵎⵎⵉ",
+        "view": "ⵥⵕ ⴳ OSM",
+        "openstreetmap_navigation": "ⵜⴰⵙⵖⵏⵣⵉⵜ ⵏ OpenStreetMap",
+        "indoor": "ⵊⴰⵊ ⵏ ⵜⵓⵚⴽⴰ"
     },
     "navbar": {
         "logout": "ⴼⴼⵖ",
         "about": "ⵅⴼ",
         "hosted_by": "ⵙ ⵓⵙⴷⵓⵙ ⵏ",
         "help_translating": "ⴰⵡⵙ ⴳ ⵓⵙⵓⵖⵍ",
-        "created_with_<3_by": "ⵉⵜⵜⴰⵡⵙⴽⴰⵔ ⵙⴳ ⵜⵏⵉⵍⴰ ⵏ ❤️ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ"
+        "created_with_<3_by": "ⵉⵜⵜⴰⵡⵙⴽⴰⵔ ⵙⴳ ⵜⵏⵉⵍⴰ ⵏ ❤️ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ",
+        "visit_osmp_website": "ⵥⵕ ⴰⵙⵉⵜ ⵏ OpenStreetMap ⵏ ⴱⵓⵍⴰⵏⴷⴰ",
+        "visit_github": "ⵥⵕ ⵜⵉⵙⴳⵉⵜ ⵏⵏⵖ ⵏ GitHub",
+        "login": "ⴽⵛⵎ ⵙ ⵓⵙⵎⵔⵙ ⵏ ⵓⵎⵉⴹⴰⵏ ⵏ OSM"
     },
     "form": {
         "optional_field": "ⵉⴳⵔ ⴰⵔⵓⵛⵛⵉⵍ",
@@ -42,7 +54,9 @@
         "outside": "ⴱⵕⵕⴰ",
         "location": "ⴳⵍⵎ ⴰⵏⵙⴰ",
         "location_example": "ⵙ ⵓⵎⴷⵢⴰ: ⴳ ⵓⵖⵔⴰⴱ ⵜⴰⵎⴰ ⵏ ⵓⵙⴰⴷⴼ",
-        "is_indoor": "ⵉⵙ ⵉⵍⵍⴰ ⵊⴰⵊ ⵏ ⵜⵓⵚⴽⴰ?"
+        "is_indoor": "ⵉⵙ ⵉⵍⵍⴰ ⵊⴰⵊ ⵏ ⵜⵓⵚⴽⴰ?",
+        "marker_popup_text": "ⵙⵎⵓⵜⵜⵉ ⵜⴰⵎⴰⵜⴰⵔⵜ ⵖⵔ ⵓⵔⴰⵇ ⵏ AED",
+        "accessibility": "ⴰⵏⵏⵓⵕⵥⵎ"
     },
     "footer": {
         "add": "ⵔⵏⵓ",
@@ -64,9 +78,44 @@
     "osmp": "OpenStreetMap ⵏ ⴱⵓⵍⴰⵏⴷⴰ",
     "modal": {
         "error_occurred": "ⵜⵙⴰⵔ ⵢⴰⵜ ⵜⵣⴳⵍⵜ",
-        "title": "ⵓⵎⵍⴰⵏ"
+        "title": "ⵓⵎⵍⴰⵏ",
+        "about_project": "OpenAEDMap ⵉⴳⴰ ⵢⴰⵏ ⵓⵙⵏⵜⵉ ⵏ ⵜⵎⵓⵛⴰ ⵉⵏⵏⵓⵕⵥⵎⵏ ⴰⵔ ⵉⵙⵏⵄⴰⵜ ⵇⴰⵃ ⵉⴷ ⵎⴳⵍ ⴰⵔⴳⵉⴳⴳⵉ ⵉⵡⵓⵔⵎⴰⵏⵏ ⵏ ⴱⵕⵕⴰ (AED) ⴳ ⵓⵎⴰⴹⴰⵍ. ⴰⵔ ⵉⵜⵜⴱⴷⴰⴷ ⵡⴰⵙⵉⵜ ⵅⴼ ⵜⵎⵓⵛⴰ ⵙⴳ OpenStreetMap ⴰⵀⴰ ⵉⴳⴰ ⵜⴰⵢⴰⴼⵓⵜ ⵏ ⵜⵣⵎⵎⴰⵔ ⵏ ⵜⵎⵙⵎⵓⵏⵜ ⵏ OpenStreetMap ⴳ ⴱⵓⵍⴰⵏⴷⴰ. ⵉⵜⵜⴰⵡⵙⴽⴰⵔ ⴳ 2022 ⵍⵍⵉⴳ ⵉⵜⵜⴰⵡⵙⵏⴼⴰⵍ ⵡⴰⵙⵉⵜ ⵏ AED ⴰⴱⵓⵍⴰⵏⴷⵉ ⵖⵔ ⵢⴰⵏ ⵓⵎⴰⵎⴽ ⵢⴰⴹⵏ.",
+        "need_more_zoom": "ⵃⵎⴰ ⴰⴷ ⵜⵔⵏⵓⴷ ⵜⵉⴱⵖⵓⵔⵉⵏ, ⵉⵅⵚⵚⴰ ⴰⴽ ⴰⴷ ⵜⵙⵙⵎⵖⵔⴷ ⵃⵎⴰ ⴰⴷ ⴷ ⵢⵓⵎⴰⵏ ⵎⵍⵉⵃ ⵓⴷⵖⴰⵔ ⵏⵏⴰ ⵜⵔⵉⴷ.",
+        "current_zoom": "ⵓⵣⵓⵎ ⵏ ⴷⵖⵉ:",
+        "aed_updated_successfully": "ⵉⵜⵜⵓⵙⴷⵖⵉ AED ⵙ ⵓⵎⵓⵔⵙ.",
+        "thanks_for_report": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵅⴼ ⵡⴰⵣⴰⵏ ⵏ ⵜⴰⵏⴰⴹⵜ. ⵔⴰⴷ ⵉⵜⵜⴰⵡⵖⵔⴰ ⵙⴳ ⵜⵏⵉⵍⴰ ⵏ ⵉⵎⵙⵜⴳⴳⴰⵔⵏ ⵏ ⵡⴰⵙⵉⵜ.",
+        "available_in_osm": "ⵉⵍⵍⴰ ⴳ OpenStreetMap ⵙ URL:",
+        "become_openaedmap_partner": "ⵉⵙ ⵜⵔⵉⴷ ⴰⴷ ⵜⴳⴷ ⴰⵛⵔⵉⴽ ⵏ OpenAEDMap partner?",
+        "click_login_button": "ⵇⵇⵏ ⴰⵙⵕⵥⵎ ⴰⴷ, ⵜⴽⵍⵉⴽⵉⴷ ⵅⴼ ⵜⴳⵎⵎⵓⵜ ⵏ ⵓⴽⵛⵛⵓⵎ ⴳ ⵓⴼⵍⵍⴰ ⵃⵎⴰ ⴰⴷ ⵜⴽⵛⵎⴷ.",
+        "zoom_need_to_be": "ⵉⵅⵚⵚⴰ ⴰⴷ ⵢⵉⵍⵉ ⵡⵓⵣⵓⵎ ⴰⵏⴰⴷⴷⴰⵡ ⵖⵔ ⵓⵙⵡⵉⵔ ⵡⵉⵙ 15.",
+        "contact_us": "ⵎⵢⴰⵡⴰⴹ ⴰⴽⵉⴷⵏⵖ",
+        "about_osm": "OpenStreetMap (OSM) ⵉⵔⵡⴰⵙ ⵡⵉⴽⵉⴱⵉⴷⵢⴰ ⵏ ⵜⴽⴰⵕⴹⵉⵡⵉⵏ. ⵉⵏⵏⵓⵕⵥⵎ ⵅⴼ ⵓⵎⴰⵜⴰ, ⴽⵓ ⵢⴰⵏ ⵉⵥⴹⴰⵕ ⴰⴷ ⵉⵔⵏⵓ ⵉⵙⴽⴽⵉⵏⵏ ⴳ ⵜⴽⴰⵕⴹⴰ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵙⵙⵎⵔⵙⴷ ⴰⵎⵉⴹⴰⵏ ⵏⵏⴽ ⵏ OSM ⵃⵎⴰ ⴰⴷ ⵜⵔⵏⵓⴷ ⵉⴷⵖⴰⵔⵏ ⵏ AED ⵏⵉⵛⴰⵏ ⵙⴳ ⵡⴰⵙⵉⵜ ⴰⴷⵙ ⵓⵙⵎⵔⵙ ⵏ ⵢⴰⵏ ⵓⵣⵓⵔⵜ ⴰⴼⵔⴰⵔ.",
+        "should_appear_soon": "ⵉⵅⵚⵚⴰ ⴰⴷ ⵢⵓⵎⴰⵏ ⵓⵙⴽⴽⵉⵏ ⵅⴼ ⵜⴽⴰⵕⴹⴰ ⴳ 60 ⵏ ⵜⵓⵙⴷⵉⴷⵜ.",
+        "aed_added_successfully": "ⵉⵜⵜⵡⴰⵔⵏⴰ AED ⵙ ⵓⵎⵓⵔⵙ.",
+        "thanks_for_photo": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵅⴼ ⵡⴰⴳⴰⵎ ⵏ ⵜⵡⵍⴰⴼⵜ. ⵔⴰⴷ ⵜⵓⵎⴰⵏ ⴷⵖⵉ.",
+        "create_account": "ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴱⵣⵔⴷ ⴰⵡⴷ ⴽⵢⵢ! ⵙⴽⵔ ⵖⴰⵙ ⵢⴰⵏ ⵓⵎⵉⴹⴰⵏ ⴱⴰⵟⵍ ⴳ ",
+        "need_to_login": "ⵃⵎⴰ ⴰⴷ ⵜⵔⵏⵓⴷ ⵜⵉⴱⵖⵓⵔⵉⵏ, ⵉⵅⵚⵚⴰ ⴰⴽ ⴰⴷ ⵜⴽⵛⵎⴷ ⵙ ⵓⵙⵎⵔⵙ ⵏ ⵓⵎⵉⴹⴰⵏ ⵏ OpenStreetMap."
     },
     "common": {
         "loading": "ⴰⵔ ⵉⵜⵜⵡⴰⴳⴰⵎ..."
+    },
+    "partners": {
+        "gugik": "ⴰⵎⵎⴰⵙ ⵏ ⵜⵢⵓⵊⵉⴷⵉⵙⵉⵜ ⴷ ⵜⴽⴰⵕⵟⵓⴳⵕⴰⴼⵜ ⴳ ⴱⵓⵍⴰⵏⴷⴰ",
+        "main_scientific_partner": "ⴰⵛⵔⵉⴽ ⴰⵎⴰⵙⵙⴰⵏ ⴰⵎⵇⵔⴰⵏ",
+        "wroclaw_medical_university": "ⵜⴰⵙⴷⴰⵡⵉⵜ ⵜⴰⵎⵙⵏⵉⵊⵊⵉⵜ ⵏ ⴼⵔⵓⵜⵙⵡⴰⴼ",
+        "chief_geodesist": "ⴰⵏⵙⵙⵉⵅⴼ ⵏ ⵉⵊⵉⴷⵢⵓⵙⵉⵢⵏ ⴳ ⴱⵓⵍⴰⵏⴷⴰ",
+        "acting": "ⴰⵎⵙⴽⴰⵔ",
+        "e_health_centre": "ⴰⵎⵎⴰⵙ ⴰⵍⵉⴽⵟⵕⵓⵏⵉ ⵏ ⵜⴷⵓⵙⵉ",
+        "honorary_patronage": "ⵉⵡⵉⵣ ⴰⵏⵍⵓⵎⵎⵜ",
+        "warsaw_university_of_technology": "ⵜⴰⵙⴷⴰⵡⵉⵜ ⵏ ⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ ⵏ ⵡⴰⵔⵙⵓ"
+    },
+    "photo": {
+        "license": "ⵇⴰⵃ ⵜⵉⵡⵍⴰⴼⵉⵏ ⵏ AED ⵏⵏⴰ ⵏⵜⵜⴰⵎⵥ ⵖⵔⵙⵏⵜ ⵜⵓⵔⴰⴳⵜ ⵏ Creative Commons Zero (CC0 v1.0). ⵉⵖ ⵜⵓⴳⵎⴷ ⵜⴰⵡⵍⴰⴼⵜ ⵏⵏⴽ ⵔⴰⴷ ⵜⵎⵙⴰⵙⴰⴷ ⵅⴼ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴰⴷ ⵏ ⵜⵓⵔⴰⴳⵜ.",
+        "remove": "ⴽⴽⵙ ⵜⴰⵡⵍⴰⴼⵜ",
+        "upload": "ⴰⴳⵎ ⵜⴰⵡⵍⴰⴼⵜ",
+        "license_short_description": "ⵙ ⵓⵣⴳⵣⵍ ⵉⴳⴰ ⵓⵏⴰⵎⴽ ⵏ ⵓⵢⴰⴷ ⵎⴰⵙ ⵉⵥⴹⴰⵕ ⴽⵓ ⵢⴰⵏ ⴰⴷ ⵉⵙⵙⵎⵔⵙ ⵜⴰⵡⵍⴰⴼⵜ ⴷⵉ ⴽⵓ ⴰⵙⴽⴽⵉⵏ. ⵓⵔ ⵜⵍⵍⵉ ⴽⵔⴰ ⵏ ⵜⵉⴽⴽⵉ ⵉⵍⴰⵣⵎ.",
+        "send_report": "ⴰⵣⵏ ⵜⴰⵏⴰⴹⵜ",
+        "report": "ⵙⴽⵔ ⵜⴰⵏⴰⴹⵜ ⵉ ⵜⵡⵍⴰⴼⵜ",
+        "report_long_text": "ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵣⵏⴷ ⵜⴰⵏⴰⴹⵜ ⵅⴼ ⵜⵡⵍⴰⴼⵜ ⵎⵛ ⵖⵔⵙ ⴳⴰⵔ ⵜⵉⵕⵡⵉ, ⵏⵉⵖ ⵓⵔ ⵜⵙⵙⵓⵎⴰⵏ ⴰⵔⴰⵇ ⵏ AED ⵏⵉⵖ ⵓⵔ ⵜⵎⵙⴰⵙⴰ ⵇⴰⵃ. ⵔⴰⴷ ⵖⵔⵏ ⵉⵎⵙⵜⴳⴳⴰⵔⵏ ⵏ ⵡⴰⵙⵉⵜ ⵜⴰⵏⴰⴹⵜ."
     }
 }
