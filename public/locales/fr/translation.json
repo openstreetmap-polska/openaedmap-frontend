@@ -72,7 +72,9 @@
         "about_project": "OpenAEDMap est un projet de données ouvertes qui montre tous les défibrillateurs externes automatisés (DEA) dans le monde. Le site Web est basé sur les données d'OpenStreetMap et est le résultat des efforts de l'association OpenStreetMap Pologne. Il a été créé en 2022 après le changement de design du site polonais AED Mapa.",
         "aed_updated_successfully": "Le DAE a été mis à jour avec succès.",
         "contact_us": "Nous contacter",
-        "become_openaedmap_partner": "Voulez-vous devenir partenaire d'OpenAEDMap ?"
+        "become_openaedmap_partner": "Voulez-vous devenir partenaire d'OpenAEDMap ?",
+        "thanks_for_report": "Merci d'avoir envoyé un signalement. Il sera examiné par les administrateurs du site.",
+        "thanks_for_photo": "Merci d'avoir téléversé la photo. Elle devrait être visible bientôt."
     },
     "navbar": {
         "created_with_<3_by": "créé avec ❤️ par",
@@ -103,6 +105,17 @@
         "main_scientific_partner": "Le principal partenaire scientifique",
         "gugik": "Siège de la géodésie et de la cartographie en Pologne",
         "chief_geodesist": "Géodésien en chef de la Pologne",
-        "honorary_patronage": "Soutiens mis à l'honneur"
+        "honorary_patronage": "Soutiens mis à l'honneur",
+        "e_health_centre": "Centre de santé numérique",
+        "warsaw_university_of_technology": "Université de technologie de Varsovie"
+    },
+    "photo": {
+        "license": "Toutes les photos de DAE hébergées par nous sont sous licence Creative Commons Zero (CC0 v1.0). En téléchargeant votre photo, vous acceptez ces conditions de licence.",
+        "remove": "Retirer la photo",
+        "upload": "Téléverser une photo",
+        "license_short_description": "En bref, ceci signifie que la photo peut être utilisée par n'importe qui dans n'importe quel but. Aucune attribution n'est nécessaire.",
+        "send_report": "Envoyer le signalement",
+        "report": "Signaler la photo",
+        "report_long_text": "Vous pouvez signaler la photo si elle est de mauvaise qualité, ne montre pas l'emplacement des DAE ou est inappropriée d'une manière ou d'une autre. Les administrateurs du site examineront le signalement."
     }
 }

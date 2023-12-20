@@ -102,7 +102,9 @@
         "chief_geodesist": "Επικεφαλής Γεωδαίτης της Πολωνίας",
         "main_scientific_partner": "Ο Κύριος Επιστημονικός Συνεργάτης",
         "wroclaw_medical_university": "Ιατρικό Πανεπιστήμιο Wroclaw",
-        "acting": "ενεργούντες"
+        "acting": "ενεργούντες",
+        "e_health_centre": "Κέντρο Ηλεκτρονικής Υγείας",
+        "warsaw_university_of_technology": "Τεχνολογικό Πανεπιστήμιο Βαρσοβίας"
     },
     "common": {
         "loading": "Φόρτωση..."

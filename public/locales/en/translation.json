@@ -114,7 +114,7 @@
         "remove": "Remove photo",
         "report": "Report photo",
         "send_report": "Send report",
-        "report_long_text": "You can report the photo if it's bad quality, does not show the AEDs location or is inapropriate in any way. Administrators of the site will review the report.",
+        "report_long_text": "You can report the photo if it's bad quality, does not show the AED's location or is inappropriate in any way. Administrators of the site will review the report.",
         "license": "All AED photos hosted by us are licensed under Creative Commons Zero (CC0 v1.0). By uploading your photo you agree to this license terms.",
         "license_short_description": "In short this means that the photo can be used by anyone for any purpose. No attribution is necessary."
     }
