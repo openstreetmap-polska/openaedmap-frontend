@@ -23,7 +23,7 @@ jobs:
         node-version: 20
         cache: 'npm'
     - name: Install dependencies
-      run: npm install
+      run: npm ci
     - name: Run TypeScript typecheck
       run: npm run typecheck
     - name: Run linter
