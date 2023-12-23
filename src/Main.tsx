@@ -6,8 +6,6 @@ import { osmAuth } from "osm-auth";
 import SiteNavbar from "./components/navbar";
 import SidebarRight from "./components/sidebar-right";
 import Map from "./components/map";
-
-// @ts-ignore
 import { initialModalState, ModalType } from "./model/modal";
 import { AppContext } from "./appContext";
 import CustomModal from "./components/modal";
@@ -28,18 +26,18 @@ function Main() {
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
     const closeRightSidebar = () => setRightSidebarShown(false);
 
-    const { REACT_APP_OSM_API_URL, REACT_APP_OSM_OAUTH2_CLIENT_ID, REACT_APP_OSM_OAUTH2_CLIENT_SECRET } = process.env;
+    const { VITE_OSM_API_URL, VITE_OSM_OAUTH2_CLIENT_ID, VITE_OSM_OAUTH2_CLIENT_SECRET } = import.meta.env;
     const redirectPath = window.location.origin + window.location.pathname;
     const [auth] = useState(
         osmAuth({
-            url: REACT_APP_OSM_API_URL,
-            client_id: REACT_APP_OSM_OAUTH2_CLIENT_ID || "",
-            client_secret: REACT_APP_OSM_OAUTH2_CLIENT_SECRET || "",
+            url: VITE_OSM_API_URL,
+            client_id: VITE_OSM_OAUTH2_CLIENT_ID ?? "",
+            client_secret: VITE_OSM_OAUTH2_CLIENT_SECRET ?? "",
             redirect_uri: `${redirectPath}land.html`,
             scope: "read_prefs write_api",
             auto: false,
             singlepage: false,
-            apiUrl: REACT_APP_OSM_API_URL,
+            apiUrl: VITE_OSM_API_URL,
         }),
     );
     const [osmUsername, setOsmUsername] = useState("");

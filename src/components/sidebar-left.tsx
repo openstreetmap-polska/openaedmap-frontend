@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import "./sidebar.css";
 import { Marker } from "maplibre-gl";
+import SidebarAction from "~/model/sidebarAction";
+import { DefibrillatorData } from "~/model/defibrillatorData";
 import DefibrillatorDetails from "./sidebar/defibrillatorDetails";
-import SidebarAction from "../model/sidebarAction";
 import DefibrillatorEditor from "./sidebar/defibrillatorEditor";
-import { DefibrillatorData } from "../model/defibrillatorData";
 import PhotoReport from "./sidebar/photoReporter";
 import PhotoUpload from "./sidebar/photoUploader";
 

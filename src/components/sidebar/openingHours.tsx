@@ -4,8 +4,8 @@ import i18n from "i18next";
 import React, { FC, useEffect, useState } from "react";
 import { getFuzzyLocalTimeFromPoint } from "@mapbox/timespace";
 
-import { getNominatimReverseGeocodingState } from "src/backend";
-import { NominatimStateData } from "src/model/Nominatim";
+import { getNominatimReverseGeocodingState } from "~/backend";
+import { NominatimStateData } from "~/model/Nominatim";
 import SpanNoData from "./spanNoData";
 
 interface OpeningHoursProps {

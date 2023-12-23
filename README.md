@@ -45,11 +45,11 @@ Second way is if you are using VS Code and have Docker installed you can use dev
 Create .env file and put these variables there:
 ```
 SKIP_PREFLIGHT_CHECK=true
-REACT_APP_VERSION=$npm_package_version
-REACT_APP_OSM_API_URL=https://master.apis.dev.openstreetmap.org
-REACT_APP_BACKEND_API_URL=https://backdev.openaedmap.org
-REACT_APP_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
-REACT_APP_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
+VITE_VERSION=$npm_package_version
+VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
+VITE_BACKEND_API_URL=https://backdev.openaedmap.org
+VITE_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
+VITE_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
 HOST=127.0.0.1
 ```
 
@@ -67,17 +67,9 @@ Open [http://127.0.0.1:3000](http://127.0.0.1:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.
-
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 #### `npm run build`
 
 Builds the app for production to the `build` folder.
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 #### `npm run sprites`
 
@@ -110,5 +102,3 @@ Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/cop
 - [spritezero-cli](https://gitlab.com/beyondtracks/spritezero-cli)
 - [i18next](https://github.com/i18next/i18next)
 - [React-Select](https://react-select.com/home)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

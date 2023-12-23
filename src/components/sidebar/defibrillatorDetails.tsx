@@ -11,7 +11,10 @@ import {
 import Icon from "@mdi/react";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import SidebarAction from "src/model/sidebarAction";
+import SidebarAction from "~/model/sidebarAction";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { useAppContext } from "~/appContext";
+import { backendBaseUrl } from "~/backend";
 import {
     CloseSidebarButton,
     CopyUrlButton, EditButton,
@@ -21,11 +24,8 @@ import {
 } from "./buttons";
 import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
-import { DefibrillatorData } from "../../model/defibrillatorData";
 import DetailTextRow from "./detailTextRow";
-import { useAppContext } from "../../appContext";
 import { accessColourClass } from "./access";
-import { backendBaseUrl } from "../../backend";
 import { initialModalState, ModalType } from "../../model/modal";
 
 function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
@@ -102,7 +102,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
     if (data === null) return null;
     const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
     const defibrillatorLocation = data.tags[`defibrillator:location:${resolvedLanguage}`]
-        || data.tags["defibrillator:location"];
+        ?? data.tags["defibrillator:location"];
     const levelText = data.tags.level ? ` (${t("sidebar.level")}: ${data.tags.level})` : "";
     const indoorText = data.tags.indoor ? t(`indoor.${data.tags.indoor}`) + levelText : "";
 
@@ -172,7 +172,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                         </Columns.Column>
                         <Columns.Column className="py-1">
                             <DetailTextRow
-                                text={data.tags[`description:${resolvedLanguage}`] || data.tags.description}
+                                text={data.tags[`description:${resolvedLanguage}`] ?? data.tags.description}
                                 translationId="sidebar.description"
                             />
                         </Columns.Column>

@@ -68,8 +68,8 @@ export function getOpenChangesetId(
             const changesetComment = `Defibrillator ${newAED ? "added" : "modified"} via https://openaedmap.org #aed`;
             changeset.appendChild(createTagElement("comment", changesetComment));
             changeset.appendChild(createTagElement("created_by", "https://openaedmap.org"));
-            if (process.env.REACT_APP_GIT_COMMIT) {
-                changeset.appendChild(createTagElement("git_commit", process.env.REACT_APP_GIT_COMMIT));
+            if (import.meta.env.VITE_GIT_COMMIT) {
+                changeset.appendChild(createTagElement("git_commit", import.meta.env.VITE_GIT_COMMIT));
             }
             changeset.appendChild(createTagElement("locale", lang));
             changeset.appendChild(createTagElement("hashtags", "#aed"));

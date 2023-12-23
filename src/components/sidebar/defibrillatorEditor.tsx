@@ -2,8 +2,8 @@ import React, { FC, useState } from "react";
 import { Image, Card } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { Marker } from "maplibre-gl";
+import { initialModalState, ModalType } from "~/model/modal";
 import { addDefibrillatorToOSM, editDefibrillatorInOSM, getOpenChangesetId } from "../../osm";
-import { initialModalState, ModalType } from "../../model/modal";
 import { AddAedButton, CloseSidebarButton, SaveAedButton } from "./buttons";
 import AccessFormField from "./access";
 import IndoorFormField from "./indoor";
@@ -21,13 +21,13 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
     const { authState: { auth }, setModalState } = useAppContext();
     const newAED = data === null;
     const initialTags = data !== null ? data.tags : { emergency: "defibrillator" };
-    const [access, setAccess] = useState<string>(initialTags.access || "");
-    const [indoor, setIndoor] = useState<string>(initialTags.indoor || "");
-    const [level, setLevel] = useState<string>(initialTags.level || "");
+    const [access, setAccess] = useState<string>(initialTags.access ?? "");
+    const [indoor, setIndoor] = useState<string>(initialTags.indoor ?? "");
+    const [level, setLevel] = useState<string>(initialTags.level ?? "");
     const [location, setLocation] = useState<string>(
-        initialTags[`defibrillator:location:${language}`] || "",
+        initialTags[`defibrillator:location:${language}`] ?? "",
     );
-    const [phoneNumber, setPhoneNumber] = useState<string>(initialTags.phone || initialTags["contact:phone"] || "");
+    const [phoneNumber, setPhoneNumber] = useState<string>(initialTags.phone ?? initialTags["contact:phone"] ?? "");
     const todayDate = new Date().toISOString().substring(0, 10);
     const [checkDate, setCheckDate] = useState<string>(todayDate);
 

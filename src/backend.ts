@@ -3,7 +3,7 @@ import { DefibrillatorData } from "./model/defibrillatorData";
 import { Country } from "./model/country";
 import { NominatimStateData } from "./model/Nominatim";
 
-export const backendBaseUrl = process.env.REACT_APP_BACKEND_API_URL;
+export const backendBaseUrl = import.meta.env.VITE_BACKEND_API_URL;
 
 export async function fetchNodeDataFromBackend(nodeId: string): Promise<DefibrillatorData | null> {
     const url = `${backendBaseUrl}/api/v1/node/${nodeId}`;

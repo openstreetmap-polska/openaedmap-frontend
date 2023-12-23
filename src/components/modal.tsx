@@ -19,7 +19,7 @@ const ModalContent: FC<{}> = () => {
 
     switch (type) {
         case ModalType.NodeAddedSuccessfully: {
-            const nodeUrl = `${process.env.REACT_APP_OSM_API_URL}/node/${nodeId}/`;
+            const nodeUrl = `${import.meta.env.VITE_OSM_API_URL}/node/${nodeId}/`;
             return (
                 <div>
                     <p className="pb-2">{t("modal.aed_added_successfully")}</p>
@@ -33,7 +33,7 @@ const ModalContent: FC<{}> = () => {
             );
         }
         case ModalType.NodeUpdatedSuccessfully: {
-            const nodeUrl = `${process.env.REACT_APP_OSM_API_URL}/node/${nodeId}/`;
+            const nodeUrl = `${import.meta.env.VITE_OSM_API_URL}/node/${nodeId}/`;
             return (
                 <div>
                     <p className="pb-2">{t("modal.aed_updated_successfully")}</p>
