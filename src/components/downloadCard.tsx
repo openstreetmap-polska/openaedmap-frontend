@@ -8,7 +8,8 @@ import { backendBaseUrl, fetchCountriesData } from "../backend";
 const worldCountryCode = "WORLD";
 
 export default function DownloadCard() {
-    const { t, i18n: { resolvedLanguage: language } } = useTranslation();
+    const { t, i18n: { resolvedLanguage } } = useTranslation();
+    const language = resolvedLanguage ?? "en";
     function countryName(country: Country) {
         if (country.code === worldCountryCode) return t("sidebar.world");
         const backendLanguageUppercase = language.toUpperCase();

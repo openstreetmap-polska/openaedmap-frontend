@@ -95,6 +95,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData,
     } = useAppContext();
     const { t, i18n: { resolvedLanguage } } = useTranslation();
+    const language = resolvedLanguage ?? "en";
 
     const hash4MapName = "map";
 
@@ -203,7 +204,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             maplibregl,
             placeholder: t("sidebar.find_location"),
         });
-        maplibreGeocoder.setLanguage(resolvedLanguage);
+        maplibreGeocoder.setLanguage(language);
 
         map.addControl(maplibreGeocoder);
         mapRef.current = map;
@@ -321,7 +322,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             );
         }
     }, [initialLatitude, initialLongitude, initialZoom,
-        setSidebarAction, setSidebarData, setSidebarLeftShown, resolvedLanguage]);
+        setSidebarAction, setSidebarData, setSidebarLeftShown, language]);
 
     return (
         <>

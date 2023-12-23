@@ -9,7 +9,7 @@ export default function LanguageSwitcher() {
             <div className="select">
                 <select
                     id="language-switcher"
-                    value={i18n.resolvedLanguage}
+                    value={i18n.resolvedLanguage ?? "en"}
                     onChange={(e) => {
                         i18n.changeLanguage(e.target.value);
                     }}

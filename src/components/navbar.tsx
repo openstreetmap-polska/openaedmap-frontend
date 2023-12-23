@@ -14,6 +14,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
     const { setModalState } = useAppContext();
     const [isActive, setIsActive] = React.useState(false);
     const { t, i18n: { resolvedLanguage } } = useTranslation();
+    const language = resolvedLanguage ?? "en";
     return (
         <Navbar color="success" className="has-background-green">
             <Navbar.Brand>
@@ -97,14 +98,14 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
                         <ReactStoreBadges
                             platform="android"
                             url="https://play.google.com/store/apps/details?id=pl.enteam.aed_map"
-                            language={resolvedLanguage}
+                            language={language}
                         />
                     </Navbar.Item>
                     <Navbar.Item p={1} renderAs="div">
                         <ReactStoreBadges
                             platform="ios"
                             url="https://apps.apple.com/app/mapa-aed/id1638495701"
-                            language={resolvedLanguage}
+                            language={language}
                         />
                     </Navbar.Item>
                     <Navbar.Item className="is-hidden-desktop" textColor="white" renderAs="div" pl={0} pr={0}>

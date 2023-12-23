@@ -48,7 +48,7 @@ function parseOpeningHours(openingHours: string, nominatimStateData: NominatimSt
 
     try {
         const oh = new OpeningHours(openingHours, nominatimStateData, 2);
-        const config = getOpeningHoursConfig(i18n.resolvedLanguage);
+        const config = getOpeningHoursConfig(i18n.resolvedLanguage ?? "en");
         // @ts-ignore
         return oh.prettifyValue({ conf: config });
     } catch (error) {

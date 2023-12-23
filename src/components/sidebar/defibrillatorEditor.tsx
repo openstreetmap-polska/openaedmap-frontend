@@ -17,6 +17,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
     closeSidebar, marker, openChangesetId, setOpenChangesetId, data,
 }) => {
     const { t, i18n: { resolvedLanguage } } = useTranslation();
+    const language = resolvedLanguage ?? "en";
     const { authState: { auth }, setModalState } = useAppContext();
     const newAED = data === null;
     const initialTags = data !== null ? data.tags : { emergency: "defibrillator" };
@@ -24,7 +25,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
     const [indoor, setIndoor] = useState<string>(initialTags.indoor || "");
     const [level, setLevel] = useState<string>(initialTags.level || "");
     const [location, setLocation] = useState<string>(
-        initialTags[`defibrillator:location:${resolvedLanguage}`] || "",
+        initialTags[`defibrillator:location:${language}`] || "",
     );
     const [phoneNumber, setPhoneNumber] = useState<string>(initialTags.phone || initialTags["contact:phone"] || "");
     const todayDate = new Date().toISOString().substring(0, 10);
@@ -35,7 +36,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
         if (access.length > 0) tags.access = access;
         if (indoor.length > 0) tags.indoor = indoor;
         if (level.length > 0) tags.level = level.trim();
-        if (location.trim().length > 0) tags[`defibrillator:location:${resolvedLanguage}`] = location.trim();
+        if (location.trim().length > 0) tags[`defibrillator:location:${language}`] = location.trim();
         if (phoneNumber.trim().length > 0) tags.phone = phoneNumber.trim();
         if (checkDate.trim().length > 0) tags.check_date = checkDate.trim();
         return tags;
@@ -68,7 +69,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                 lat: lngLat.lat,
                 tags,
             };
-            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage, newAED)
+            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, language, newAED)
                 .then((changesetId) => addDefibrillatorToOSM(auth, changesetId, newDefibrillatorData))
                 .then((newNodeId) => {
                     button.classList.remove("is-loading");
@@ -84,7 +85,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
                 ...data,
                 tags,
             };
-            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, resolvedLanguage, newAED)
+            getOpenChangesetId(auth, openChangesetId, setOpenChangesetId, language, newAED)
                 .then((changesetId) => editDefibrillatorInOSM(auth, changesetId, defibrillatorData))
                 .then((newVersion) => {
                     button.classList.remove("is-loading");
