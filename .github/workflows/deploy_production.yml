@@ -22,9 +22,9 @@ jobs:
         ssh-host: ${{ secrets.SSH_HOST_NEW_IP }}
         ssh-port: ${{ secrets.SSH_HOST_NEW_PORT }}
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup Node JS
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: 'npm'
