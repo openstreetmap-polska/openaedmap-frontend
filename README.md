@@ -37,7 +37,7 @@ Status:
 
 One way to set up is:
 1. Clone repo and open terminal in the project directory
-2. Install Node version 18 or use [Node version manager](https://github.com/nvm-sh/nvm)
+2. Install Node version 20 or use [Node version manager](https://github.com/nvm-sh/nvm)
 3. Run `npm install`
 
 Second way is if you are using VS Code and have Docker installed you can use devContainer extension.
