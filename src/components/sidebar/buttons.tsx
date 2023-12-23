@@ -1,16 +1,16 @@
 import {
     mdiMagnify, mdiPencil, mdiContentCopy, mdiMap, mdiMapMarkerPlus,
+    mdiGoogleMaps,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Button } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import { mdiGoogleMaps } from "@mdi/js/commonjs/mdi";
 import React, { FC } from "react";
-import { OSM_DOMAIN } from "../../constants";
-import { useAppContext } from "../../appContext";
-import SidebarAction from "../../model/sidebarAction";
-import { fetchNodeDataFromOsm } from "../../osm";
-import { initialModalState, ModalType } from "../../model/modal";
+import { OSM_DOMAIN } from "~/constants";
+import { useAppContext } from "~/appContext";
+import SidebarAction from "~/model/sidebarAction";
+import { fetchNodeDataFromOsm } from "~/osm";
+import { initialModalState, ModalType } from "~/model/modal";
 
 type OsmId = string;
 

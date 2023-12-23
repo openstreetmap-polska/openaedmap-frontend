@@ -1,5 +1,3 @@
-@import '~bulma-checkradio';
-
 html {
   overflow-y: hidden !important; /* Hide vertical scrollbar */
   overflow-x: hidden !important; /* Hide horizontal scrollbar */

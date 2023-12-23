@@ -1,4 +1,4 @@
-import { backendBaseUrl } from "../backend";
+import { backendBaseUrl } from "~/backend";
 
 const getUrl = window.location;
 const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;

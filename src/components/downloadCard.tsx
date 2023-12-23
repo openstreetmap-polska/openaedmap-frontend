@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
+import { backendBaseUrl, fetchCountriesData } from "~/backend";
 import { Country } from "../model/country";
-import { backendBaseUrl, fetchCountriesData } from "../backend";
 
 const worldCountryCode = "WORLD";
 

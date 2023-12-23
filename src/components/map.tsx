@@ -6,29 +6,18 @@ import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import "./map.css";
 import { useTranslation } from "react-i18next";
 // @ts-ignore
-import maplibreglWorker from "maplibre-gl/dist/maplibre-gl-csp-worker";
 import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
-import styleJson from "./map_style";
-import SidebarLeft from "./sidebar-left";
-import FooterDiv from "./footer";
-import ButtonsType from "../model/buttonsType";
-
-// -------------------------------------------------------------------
-// https://github.com/maplibre/maplibre-gl-js/issues/1011
-
-// @ts-ignore
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import maplibregl from "!maplibre-gl"; // ! is important here
-// @ts-ignore
-import { initialModalState, ModalType } from "../model/modal";
+import maplibregl from "maplibre-gl";
+import ButtonsType from "~/model/buttonsType";
+import { initialModalState, ModalType } from "~/model/modal";
+import SidebarAction from "~/model/sidebarAction";
+import { fetchNodeDataFromBackend } from "~/backend";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import nominatimGeocoder from "~/components/nominatimGeocoder";
 import { useAppContext } from "../appContext";
-import SidebarAction from "../model/sidebarAction";
-import { fetchNodeDataFromBackend } from "../backend";
-import { DefibrillatorData } from "../model/defibrillatorData";
-import nominatimGeocoder from "./nominatimGeocoder";
-
-maplibregl.workerClass = maplibreglWorker;
-// -------------------------------------------------------------------
+import FooterDiv from "./footer";
+import SidebarLeft from "./sidebar-left";
+import styleJson from "./map_style";
 
 function fillSidebarWithOsmDataAndShow(
     nodeId: string,
@@ -109,11 +98,11 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         [initialZoom, initialLatitude, initialLongitude] = paramsFromHash[hash4MapName].split("/").map(Number);
     }
 
-    const mapContainer = useRef(null);
-    const mapRef = useRef(null);
+    const mapContainer = useRef<HTMLDivElement | null>(null);
+    const mapRef = useRef<maplibregl.Map | null>(null);
     const controlsLocation = "bottom-right";
 
-    const [marker, setMarker] = useState<maplibregl.Marker>(null);
+    const [marker, setMarker] = useState<maplibregl.Marker | null>(null);
 
     const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
 
@@ -140,8 +129,8 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     };
 
     const checkConditionsThenCall = (callable: () => void) => {
-        const map: maplibregl.Map = mapRef.current;
-        if (map === null) return;
+        if (mapRef.current === null) return;
+        const map = mapRef.current;
         if (auth === null || !auth.authenticated()) {
             setModalState({ ...initialModalState, visible: true, type: ModalType.NeedToLogin });
         } else if (map.getZoom() < 15) {
@@ -163,8 +152,8 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     };
 
     const startAEDAdding = (mobile: boolean) => {
-        const map: maplibregl.Map = mapRef.current;
-        if (map === null) return;
+        if (mapRef.current === null) return;
+        const map = mapRef.current;
         deleteMarker();
         removeNodeIdFromHash();
         setSidebarData(null);
@@ -174,7 +163,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
         // add marker
         const markerColour = "#e81224";
         const mapCenter = map.getCenter();
-        const initialCoordinates = [mapCenter.lng, mapCenter.lat];
+        const initialCoordinates: [number, number] = [mapCenter.lng, mapCenter.lat];
         setMarker(
             new maplibregl.Marker({
                 draggable: true,
@@ -188,10 +177,11 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     };
 
     useEffect(() => {
-        if (mapRef.current) return; // stops map from initializing more than once
+        if (mapRef.current || mapContainer.current === null) return; // stops map from initializing more than once
         const map = new maplibregl.Map({
             container: mapContainer.current,
             hash: hash4MapName,
+            // @ts-ignore
             style: styleJson,
             center: [initialLongitude, initialLatitude],
             zoom: initialZoom,
@@ -267,6 +257,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             });
             const zoom = map.getZoom();
             map.easeTo({
+                // @ts-ignore
                 center: features[0].geometry.coordinates,
                 zoom: zoom + 2,
             });
@@ -277,13 +268,14 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             });
             const zoom = map.getZoom();
             map.easeTo({
+                // @ts-ignore
                 center: features[0].geometry.coordinates,
                 zoom: zoom + 2,
             });
         });
         function showObjectWithProperties(e: MapEventType) {
             console.log("Clicked on object with properties: ", e.features[0].properties);
-            if (e.features[0].properties !== undefined) {
+            if (e.features[0].properties !== undefined && mapRef.current !== null) {
                 const osmNodeId = e.features[0].properties.node_id;
                 console.log("Clicked on object with osm_id: ", osmNodeId);
                 // show sidebar
@@ -311,7 +303,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
         // if direct link to osm node then get its data and zoom in
         const newParamsFromHash = parseHash();
-        if (newParamsFromHash.node_id) {
+        if (newParamsFromHash.node_id && mapRef.current !== null) {
             fillSidebarWithOsmDataAndShow(
                 newParamsFromHash.node_id,
                 mapRef.current,
@@ -326,7 +318,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     return (
         <>
-            { sidebarLeftShown && (
+            { sidebarLeftShown && marker !== null && (
                 <SidebarLeft
                     action={sidebarAction}
                     data={sidebarData}

@@ -7,5 +7,7 @@
 $navbar-breakpoint: 1344px;
 
 @import "../node_modules/bulma/bulma.sass";
+// @import "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.sass";
+@import "../node_modules/bulma-checkradio/src/sass/index.sass";
 // Update Bulma's derived variables
 // @import "../node_modules/bulma/sass/utilities/initial-variables.sass";

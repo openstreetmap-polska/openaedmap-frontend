@@ -36,4 +36,12 @@ module.exports = {
     'react/function-component-definition': 'off',
     'eol-last': 'off',
   },
+    settings: {
+  'import/resolver': {
+     alias: {
+       map: [['~', './src/']],
+       extensions: ['.ts', '.js', '.tsx'],
+     },
+   },
+},
 };
