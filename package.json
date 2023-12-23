@@ -14,7 +14,7 @@
     "i18next": "^23.7.11",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.4.2",
-    "maplibre-gl": "^2.4.0",
+    "maplibre-gl": "^3.6.2",
     "opening_hours": "^3.8.0",
     "osm-auth": "^2.3.0",
     "react": "^18.1.0",
