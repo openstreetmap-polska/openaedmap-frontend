@@ -27,6 +27,9 @@
     "store": "^2.0.12",
     "typescript": "^4.8.3"
   },
+  "engines": {
+      "node": ">=20.0.0"
+  },
   "scripts": {
     "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
@@ -57,7 +60,7 @@
   },
   "devDependencies": {
     "@beyondtracks/spritezero-cli": "^2.3.1",
-    "@types/node": "^18.7.18",
+    "@types/node": "^20.10.5",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@types/react-image-gallery": "^1.2.0",
