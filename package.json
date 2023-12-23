@@ -38,7 +38,7 @@
     "sprites": "spritezero ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons",
     "lint": "eslint . --ext .ts,.tsx",
     "lint-fix": "eslint . --ext .ts,.tsx --fix",
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss src/mystyles.css",
+    "css-build": "sass sass/mystyles.scss src/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
   },
   "eslintConfig": {
@@ -74,6 +74,6 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "node-sass": "^7.0.3"
+    "sass": "^1.69.5"
   }
 }
