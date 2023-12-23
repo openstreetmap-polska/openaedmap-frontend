@@ -96,6 +96,7 @@ const ReactStoreBadges: FC<ReactStoreBadgesProps> = ({
             }}
             href={url}
             target={target}
+            aria-label="Badge"
         >
             <img
                 alt=""
