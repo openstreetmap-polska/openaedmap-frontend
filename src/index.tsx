@@ -4,7 +4,6 @@ import "./index.css";
 import "./mystyles.css";
 import Main from "./Main";
 import "./i18n";
-import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
@@ -12,5 +11,3 @@ root.render(
         <Main />
     </React.StrictMode>,
 );
-
-reportWebVitals(console.log);

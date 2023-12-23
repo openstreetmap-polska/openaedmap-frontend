@@ -39,6 +39,7 @@ function Main() {
             scope: "read_prefs write_api",
             auto: false,
             singlepage: false,
+            apiUrl: REACT_APP_OSM_API_URL,
         }),
     );
     const [osmUsername, setOsmUsername] = useState("");

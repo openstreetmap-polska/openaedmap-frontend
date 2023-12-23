@@ -16,7 +16,7 @@
     "i18next-http-backend": "^1.4.1",
     "maplibre-gl": "^2.4.0",
     "opening_hours": "^3.8.0",
-    "osm-auth": "^2.1.0",
+    "osm-auth": "^2.3.0",
     "react": "^18.1.0",
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.1.0",
@@ -25,13 +25,11 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.7.4",
     "store": "^2.0.12",
-    "typescript": "^4.8.3",
-    "web-vitals": "^3.4.0"
+    "typescript": "^4.8.3"
   },
   "scripts": {
     "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
     "sprites": "spritezero ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons",
@@ -42,8 +40,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -58,17 +55,8 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "moduleNameMapper": {
-      "!maplibre-gl": "maplibre-gl"
-    }
-  },
   "devDependencies": {
     "@beyondtracks/spritezero-cli": "^2.3.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
@@ -76,12 +64,12 @@
     "@types/store": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
-    "eslint": "^8.25.0",
+    "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "node-sass": "^7.0.3"
   }
