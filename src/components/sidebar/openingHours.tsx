@@ -1,22 +1,13 @@
 import { useTranslation } from "react-i18next";
 import OpeningHours, { argument_hash } from "opening_hours";
 import i18n from "i18next";
-import React, { FC, useEffect, useState } from "react";
-import { getFuzzyLocalTimeFromPoint } from "@mapbox/timespace";
+import React, { FC } from "react";
 
-import { getNominatimReverseGeocodingState } from "~/backend";
-import { NominatimStateData } from "~/model/Nominatim";
 import SpanNoData from "./spanNoData";
 
 interface OpeningHoursProps {
     openingHours: string,
-    lat: number,
-    lon: number
-}
-
-interface OpeningHoursPreparedData {
-    openingHours: string,
-    nominatimStateData: NominatimStateData | null
+    timezoneOffsetUTCMinutes: number,
 }
 
 const openingHoursDefaultConfig = {
@@ -43,21 +34,21 @@ function getOpeningHoursConfig(language: string): argument_hash {
     };
 }
 
-function parseOpeningHours(openingHours: string, nominatimStateData: NominatimStateData | null): string | null {
+function parseOpeningHours(openingHours: string): string | null {
     if (!openingHours) return null;
 
     try {
-        const oh = new OpeningHours(openingHours, nominatimStateData, 2);
+        const oh = new OpeningHours(openingHours, null, 2);
         const config = getOpeningHoursConfig(i18n.resolvedLanguage ?? "en");
         // @ts-ignore
         return oh.prettifyValue({ conf: config });
     } catch (error) {
-        console.log(`Error when parsing opening hours: ${error}`);
+        console.error(`Error when parsing opening hours: ${error}`);
         return openingHours;
     }
 }
 
-function isCurrentlyOpen(openingHours: string, nominatimStateData: NominatimStateData | null): boolean | null {
+function isCurrentlyOpen(openingHours: string, timezoneOffsetUTCMinutes: number): boolean | null {
     if (!openingHours) return null;
 
     if (openingHours === "24/7") return true;
@@ -65,22 +56,20 @@ function isCurrentlyOpen(openingHours: string, nominatimStateData: NominatimStat
     if (openingHours.startsWith("\"") && openingHours.endsWith("\"")) return null;
 
     try {
-        const oh = new OpeningHours(openingHours, nominatimStateData, 2);
-        // Not sure why, but getFuzzyLocalTimeFromPoint was returning wrong date so I had to fix it by adding offset
-        const epochFixed = Date.now() + convertMinutesToMilliseconds(new Date().getTimezoneOffset());
-        const time = nominatimStateData
-            ? getFuzzyLocalTimeFromPoint(epochFixed, [nominatimStateData.lon, nominatimStateData.lat])
-            : null;
-        return oh.getState(time?._d);
+        const oh = new OpeningHours(openingHours, null, 2);
+        const now = Date.now();
+        const minutesOffset = new Date(now).getTimezoneOffset() + timezoneOffsetUTCMinutes;
+        const time = new Date(now + convertMinutesToMilliseconds(minutesOffset));
+        return oh.getState(time);
     } catch (error) {
-        console.log(`Error while parsing opening hours: ${error}`);
+        console.error(`Error while parsing opening hours: ${error}`);
         return null;
     }
 }
 
-export const CurrentlyOpenStatus: FC<OpeningHoursPreparedData> = ({ openingHours, nominatimStateData }) => {
+export const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({ openingHours, timezoneOffsetUTCMinutes }) => {
     const { t } = useTranslation();
-    const isOpen = isCurrentlyOpen(openingHours, nominatimStateData);
+    const isOpen = isCurrentlyOpen(openingHours, timezoneOffsetUTCMinutes);
 
     if (isOpen === null) return <sup />;
 
@@ -94,48 +83,32 @@ export const CurrentlyOpenStatus: FC<OpeningHoursPreparedData> = ({ openingHours
     );
 };
 
-export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, lat, lon }) => {
+export const OpeningHoursDescription: FC<OpeningHoursProps> = ({ openingHours, timezoneOffsetUTCMinutes}) => {
     if (!openingHours) {
         return <SpanNoData />;
     }
 
     const { t } = useTranslation();
-    const [nominatimStateData, setNominatimStateData] = useState<NominatimStateData | null>(null);
-
-    useEffect(() => {
-        async function fetchData() {
-            const data = await getNominatimReverseGeocodingState(lat, lon);
-            setNominatimStateData(data);
-        }
-        fetchData();
-    }, [lat, lon]);
-
-    if (!nominatimStateData) {
-        const loadingText = t("common.loading");
-        return (
-            <span>{loadingText}</span>
-        );
-    }
 
     return (
         <span>
             <span className="has-text-weight-medium">
                 {openingHours === "24/7"
                     ? t("opening_hours.24_7")
-                    : parseOpeningHours(openingHours, nominatimStateData)}
+                    : parseOpeningHours(openingHours)}
             </span>
-            <CurrentlyOpenStatus openingHours={openingHours} nominatimStateData={nominatimStateData} />
+            <CurrentlyOpenStatus openingHours={openingHours} timezoneOffsetUTCMinutes={timezoneOffsetUTCMinutes} />
         </span>
     );
 };
 
-export const OpeningHoursField: FC<OpeningHoursProps> = ({ openingHours, lat, lon }) => {
+export const OpeningHoursField: FC<OpeningHoursProps> = ({ openingHours, timezoneOffsetUTCMinutes}) => {
     const { t } = useTranslation();
     const openingHoursLabelText = `${t("sidebar.opening_hours")}: `;
     return (
         <div>
             <p className="has-text-weight-light has-text-grey mb-1">{openingHoursLabelText}</p>
-            <OpeningHoursDescription openingHours={openingHours} lat={lat} lon={lon} />
+            <OpeningHoursDescription openingHours={openingHours} timezoneOffsetUTCMinutes={timezoneOffsetUTCMinutes} />
         </div>
     );
 };

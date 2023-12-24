@@ -253,7 +253,6 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
         type MapEventType = any;
         // zoom to cluster on click
         map.on("click", "clustered-circle", (e) => {
-            console.log(e);
             const features = map.queryRenderedFeatures(e.point, {
                 layers: ["clustered-circle"],
             });

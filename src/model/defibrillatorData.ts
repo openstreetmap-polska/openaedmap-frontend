@@ -9,5 +9,6 @@ export interface DefibrillatorData extends NewDefibrillatorData {
     osmType: string,
     photoId: string | undefined,
     photoRelativeUrl: string | undefined,
+    timezoneOffsetUTCMinutes: number,
     version: string,
 }

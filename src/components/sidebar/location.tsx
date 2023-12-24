@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 export default function LocationFormField({ location, setLocation }: LocationFormFieldProps) {
     const { t, i18n: { resolvedLanguage } } = useTranslation();
     const locationLabelText = `${t("form.location")} (${resolvedLanguage}):`;
-    console.log(location);
     return (
         <div className="field pt-2">
             <label htmlFor="aedLocation" className="label has-text-weight-semibold">{locationLabelText}</label>

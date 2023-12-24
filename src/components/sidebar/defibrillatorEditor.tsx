@@ -51,12 +51,11 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
         const button = event.target as HTMLFormElement;
         button.classList.add("is-loading");
         const tags = parseTags();
-        console.log(tags);
         if (auth === null) return;
         const handleError = (err: XMLHttpRequest) => {
             button.classList.remove("is-loading");
             closeSidebar();
-            console.log(err);
+            console.error(err);
             const errorMessage = `${err} <br> status: ${err.status} ${err.statusText} <br> ${err.responseText}`;
             setModalState({
                 ...initialModalState, visible: true, type: ModalType.Error, errorMessage,

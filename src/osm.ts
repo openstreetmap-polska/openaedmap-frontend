@@ -1,5 +1,13 @@
 import { DefibrillatorData, NewDefibrillatorData } from "./model/defibrillatorData";
 
+// Example: UTC+01:00 -> 60
+function parseTimezoneOffset(timezoneOffset: string): number {
+    const sign = timezoneOffset[3] === "+" ? 1 : -1;
+    const hours = parseInt(timezoneOffset.slice(4, 6), 10);
+    const minutes = parseInt(timezoneOffset.slice(7, 9), 10);
+    return sign * (hours * 60 + minutes);
+}
+
 export async function fetchNodeData(url: string): Promise<DefibrillatorData | null> {
     return fetch(url)
         .then((response) => response.json())
@@ -13,6 +21,7 @@ export async function fetchNodeData(url: string): Promise<DefibrillatorData | nu
                 photoId: node["@photo_id"],
                 photoRelativeUrl: node["@photo_url"],
                 tags: node.tags,
+                timezoneOffsetUTCMinutes: parseTimezoneOffset(node["@timezone_offset"]),
                 version: node.version,
             };
         })
