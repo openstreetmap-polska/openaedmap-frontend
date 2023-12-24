@@ -83,11 +83,9 @@ export function CloseSidebarButton({ closeSidebarFunction }: { closeSidebarFunct
     );
 }
 
-export function AddAedButton({ nextStep }: { nextStep: (event: Event) => void }) {
+export function AddAedButton({ nextStep }: { nextStep: (event: React.MouseEvent) => void }) {
     const { t } = useTranslation();
     return (
-        // TODO type
-        // @ts-ignore
         <Button color="success" fullwidth form="add_aed" onClick={nextStep}>
             <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
             {t("footer.add_aed")}
@@ -95,11 +93,9 @@ export function AddAedButton({ nextStep }: { nextStep: (event: Event) => void })
     );
 }
 
-export function SaveAedButton({ nextStep }: { nextStep: (event: Event) => void }) {
+export function SaveAedButton({ nextStep }: { nextStep: (event: React.MouseEvent) => void }) {
     const { t } = useTranslation();
     return (
-        // TODO type
-        // @ts-ignore
         <Button color="success" fullwidth form="save_aed" onClick={nextStep}>
             <Icon path={mdiMapMarkerPlus} className="icon mr-2" />
             {t("footer.save_aed")}

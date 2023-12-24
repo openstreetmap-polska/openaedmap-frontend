@@ -42,7 +42,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
         return tags;
     };
 
-    const sendFormData = (event: Event) => {
+    const sendFormData = (event: React.MouseEvent) => {
         event.preventDefault();
         if (event.target === null) {
             console.error("Form target null");
