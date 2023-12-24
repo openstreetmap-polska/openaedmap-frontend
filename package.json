@@ -35,15 +35,10 @@
     "build": "vite build",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
     "sprites": "spritezero ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint-fix": "eslint . --ext .ts,.tsx --fix",
+    "lint": "biome lint ./src",
+    "lint-fix": "biome lint ./src --apply",
     "css-build": "sass sass/mystyles.scss src/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
   },
   "browserslist": {
     "production": [
@@ -57,22 +52,13 @@
   },
   "devDependencies": {
     "@beyondtracks/spritezero-cli": "^2.3.1",
+    "@biomejs/biome": "1.4.1",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "@types/react-image-gallery": "^1.2.4",
     "@types/store": "^2.0.5",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "sass": "^1.69.5",
     "vite": "^5.0.10",
     "vite-plugin-commonjs": "^0.10.1"

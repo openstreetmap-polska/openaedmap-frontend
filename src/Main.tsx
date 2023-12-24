@@ -5,7 +5,7 @@ import React, {
 import { osmAuth } from "osm-auth";
 import SiteNavbar from "./components/navbar";
 import SidebarRight from "./components/sidebar-right";
-import Map from "./components/map";
+import MapView from "./components/map";
 import { initialModalState, ModalType } from "./model/modal";
 import { AppContext } from "./appContext";
 import CustomModal from "./components/modal";
@@ -71,7 +71,7 @@ function Main() {
             sidebarData,
             setSidebarData,
         }),
-        [authState],
+        [authState, sidebarData, sidebarAction, modalState, handleLogIn, handleLogOut],
     );
     useEffect(() => {
         if (auth.authenticated()) updateOsmUsernameState(auth, setOsmUsername);
@@ -81,7 +81,7 @@ function Main() {
             <SiteNavbar toggleSidebarShown={toggleRightSidebarShown} />
             <CustomModal />
             { rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
-            <Map openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} />
+            <MapView openChangesetId={openChangesetId} setOpenChangesetId={setOpenChangesetId} />
         </AppContext.Provider>
     );
 }

@@ -107,9 +107,9 @@ export function addDefibrillatorToOSM(auth: OSMAuth.OSMAuthInstance, changesetId
         node.setAttribute("changeset", changesetId);
         node.setAttribute("lat", data.lat.toString());
         node.setAttribute("lon", data.lon.toString());
-        Object.entries(data.tags).forEach(([key, value]) => {
+        for (const [key, value] of Object.entries(data.tags)) {
             node.appendChild(createTagElement(key, value));
-        });
+        };
         root.documentElement.appendChild(node);
         const serializer = new XMLSerializer();
         const xml = serializer.serializeToString(root);
@@ -146,9 +146,9 @@ export function editDefibrillatorInOSM(auth: OSMAuth.OSMAuthInstance, changesetI
         node.setAttribute("id", osmId);
         node.setAttribute("version", data.version);
         node.setAttribute("visible", "true");
-        Object.entries(data.tags).forEach(([key, value]) => {
+        for (const [key, value] of Object.entries(data.tags)) {
             node.appendChild(createTagElement(key, value));
-        });
+        };
         root.documentElement.appendChild(node);
         const serializer = new XMLSerializer();
         const xml = serializer.serializeToString(root);

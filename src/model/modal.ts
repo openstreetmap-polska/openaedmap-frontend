@@ -1,13 +1,13 @@
 export enum ModalType {
-    NodeAddedSuccessfully,
-    NodeUpdatedSuccessfully,
-    NeedToLogin,
-    NeedMoreZoom,
-    About,
-    Error,
-    Partners,
-    ThanksForPhoto,
-    ThanksForReport,
+    NodeAddedSuccessfully = 0,
+    NodeUpdatedSuccessfully = 1,
+    NeedToLogin = 2,
+    NeedMoreZoom = 3,
+    About = 4,
+    Error = 5,
+    Partners = 6,
+    ThanksForPhoto = 7,
+    ThanksForReport = 8,
 }
 
 export interface ModalState {

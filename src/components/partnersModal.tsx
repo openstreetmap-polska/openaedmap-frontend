@@ -10,7 +10,7 @@ interface Partner {
     url: string;
 }
 
-const PartnersModal: FC<{}> = () => {
+const PartnersModal: FC = () => {
     const { t } = useTranslation();
     const partners: Partner[] = [
         {

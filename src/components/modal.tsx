@@ -8,7 +8,7 @@ import { useAppContext } from "../appContext";
 import LogInButton from "./logInButton";
 import PartnersModal from "./partnersModal";
 
-const ModalContent: FC<{}> = () => {
+const ModalContent: FC = () => {
     const { t } = useTranslation();
     const {
         modalState: {
@@ -123,7 +123,7 @@ const ModalContent: FC<{}> = () => {
     }
 };
 
-const CustomModal: FC<{}> = () => {
+const CustomModal: FC = () => {
     const { t } = useTranslation();
     const { modalState, setModalState } = useAppContext();
 
