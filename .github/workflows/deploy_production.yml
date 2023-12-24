@@ -40,4 +40,4 @@ jobs:
       run: touch build/robots.txt
     - name: Run deploy script on host
       run: |
-        scp -rp -P${{ secrets.SSH_HOST_NEW_PORT }} build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/prod-static/
+        rsync -rp -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/prod-static/
