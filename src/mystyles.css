@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
+@import "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css";
 .pagination-previous,
 .pagination-next,
 .pagination-link,
