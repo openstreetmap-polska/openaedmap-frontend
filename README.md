@@ -12,13 +12,11 @@ Development environment: https://dev.openaedmap.org
 # Development
 ## Gitflow
 
-Branches:
-- main - for prod environment
-- dev - for dev environment
-
+`dev` is main branch. After pushing to it dev environment is autodeployed.
 Create branch off of `dev` branch and when finished make PR back to `dev` branch.
 
-Pushes to both branches result in auto deployment.
+To deploy to production create git tag.
+Use YYYY-MM-DD format with optional suffix with description.
 
 ## Translating
 We are using [Weblate](https://weblate.org) to manage translations.
@@ -38,7 +36,7 @@ Status:
 One way to set up is:
 1. Clone repo and open terminal in the project directory
 2. Install Node version 20 or use [Node version manager](https://github.com/nvm-sh/nvm)
-3. Run `npm install`
+3. Run `npm install --include dev`
 
 Second way is if you are using VS Code and have Docker installed you can use devContainer extension.
 
@@ -74,8 +72,6 @@ Builds the app for production to the `build` folder.
 #### `npm run sprites`
 
 Creates sprites from marker icons.
-
-Make sure dev dependencies are installed.
 
 #### `npm run css-build`
 

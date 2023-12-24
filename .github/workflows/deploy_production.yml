@@ -2,14 +2,8 @@ name: Deploy to production env
 
 on:
   push:
-    branches:
-    - main
-    paths:
-    - src/**
-    - public/**
-    - package*.json
-    - .github/workflows/deploy_production.yml
-
+    tags:
+      - '*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
