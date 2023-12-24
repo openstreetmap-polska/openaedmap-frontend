@@ -19,9 +19,8 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
         <Navbar color="success" className="has-background-green">
             <Navbar.Brand>
                 <Navbar.Item renderAs="a" href="/" pr={1} pl={1}>
-                    <svg className="navbarLogo" viewBox="0 0 60 60" role="presentation">
+                    <svg className="navbarLogo" viewBox="0 0 60 60" role="button">
                         {/* TODO: extract svg logo */}
-                        {/* eslint-disable-next-line max-len */}
                         <path d="M16.283 18.614c-6.594.058-12.469 6.32-10.7 14.606 1.35 6.317 8.359 14.53 20.587 22.493C38.4 47.75 45.41 39.537 46.758 33.22c1.77-8.286-4.106-14.548-10.7-14.606-3.39-.05-7.628 1.67-9.888 5.822-2.259-4.153-6.498-5.872-9.887-5.822zm4.996 2.292a9.981 9.981 0 013.966 3.995l.531.975-2.532 11.319 9.556-6.637-4.21 18.274h2.477l-4.956 5.287-2.956-6.61 2.478.835 1.374-10.172-7.972 5.516 2.244-22.782zM49.08 3.165v5.23h-5.434v5.228h5.435v5.23h5.434v-5.23h5.435V8.394h-5.435V3.165z" />
                     </svg>
                     <span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile p-1">

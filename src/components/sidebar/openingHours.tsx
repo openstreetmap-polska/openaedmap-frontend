@@ -71,7 +71,6 @@ function isCurrentlyOpen(openingHours: string, nominatimStateData: NominatimStat
         const time = nominatimStateData
             ? getFuzzyLocalTimeFromPoint(epochFixed, [nominatimStateData.lon, nominatimStateData.lat])
             : null;
-        // eslint-disable-next-line no-underscore-dangle
         return oh.getState(time?._d);
     } catch (error) {
         console.log(`Error while parsing opening hours: ${error}`);

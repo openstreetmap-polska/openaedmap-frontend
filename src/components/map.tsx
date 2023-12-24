@@ -65,10 +65,10 @@ function fillSidebarWithOsmDataAndShow(
 
 function parseHash(): Record<string, string> {
     const parameters: Record<string, string> = {};
-    window.location.hash.slice(1).split("&").forEach((part) => {
+    for (const part of window.location.hash.slice(1).split("&")) {
         const [key, value] = part.split("=", 2);
         parameters[key] = value;
-    });
+    };
     return parameters;
 }
 
@@ -79,7 +79,7 @@ function getNewHashString(parameters: Record<string, string>) {
         .join("&");
 }
 
-const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
+const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const {
         authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData,
     } = useAppContext();
@@ -110,6 +110,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const removeNodeIdFromHash = () => {
         const hashParams = parseHash();
+        // biome-ignore lint/performance/noDelete: using undefined assignment causes it to be part of url
         delete hashParams.node_id;
         window.location.hash = getNewHashString(hashParams);
     };
@@ -248,10 +249,11 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             map.getCanvas().style.cursor = "";
         });
 
-        // TODO: event type
+        // biome-ignore lint/suspicious/noExplicitAny: unknown type
         type MapEventType = any;
         // zoom to cluster on click
-        map.on("click", "clustered-circle", (e: MapEventType) => {
+        map.on("click", "clustered-circle", (e) => {
+            console.log(e);
             const features = map.queryRenderedFeatures(e.point, {
                 layers: ["clustered-circle"],
             });
@@ -314,7 +316,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
             );
         }
     }, [initialLatitude, initialLongitude, initialZoom,
-        setSidebarAction, setSidebarData, setSidebarLeftShown, language]);
+        setSidebarAction, setSidebarData, language, t]);
 
     return (
         <>
@@ -342,9 +344,9 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
     );
 };
 
-interface MapProps {
+interface MapViewProps {
     openChangesetId: string,
     setOpenChangesetId: (openChangesetId: string) => void,
 }
 
-export default Map;
+export default MapView;

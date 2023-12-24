@@ -34,8 +34,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && chmod g+s ${NPM_GLOBAL} \
     && npm config -g set prefix ${NPM_GLOBAL} \
     && sudo -u ${USERNAME} npm config -g set prefix ${NPM_GLOBAL} \
-    # Install eslint
-    && su ${USERNAME} -c "umask 0002 && npm install -g eslint" \
     && npm cache clean --force > /dev/null 2>&1 \
     # Install python-is-python3 on bullseye to prevent node-gyp regressions
     && . /etc/os-release \

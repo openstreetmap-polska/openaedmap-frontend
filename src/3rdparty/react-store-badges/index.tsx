@@ -85,7 +85,7 @@ const ReactStoreBadges: FC<ReactStoreBadgesProps> = ({
 
     useLayoutEffect(() => {
         setImage(getImage(locale, shortCode));
-    }, [locale]);
+    }, [locale, shortCode]);
 
     return (
         <a
