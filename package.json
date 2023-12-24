@@ -60,7 +60,6 @@
     "@types/store": "^2.0.5",
     "@vitejs/plugin-react": "^4.2.1",
     "sass": "^1.69.5",
-    "vite": "^5.0.10",
-    "vite-plugin-commonjs": "^0.10.1"
+    "vite": "^5.0.10"
   }
 }
