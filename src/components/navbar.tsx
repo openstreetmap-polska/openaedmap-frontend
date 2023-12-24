@@ -9,12 +9,13 @@ import LogInButton from "./logInButton";
 import { initialModalState, ModalType } from "../model/modal";
 import { useAppContext } from "../appContext";
 import ReactStoreBadges from "../3rdparty/react-store-badges";
+import {useLanguage} from "~/i18n";
 
 const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
     const { setModalState } = useAppContext();
     const [isActive, setIsActive] = React.useState(false);
-    const { t, i18n: { resolvedLanguage } } = useTranslation();
-    const language = resolvedLanguage ?? "en";
+    const { t} = useTranslation();
+    const language = useLanguage();
     return (
         <Navbar color="success" className="has-background-green">
             <Navbar.Brand>

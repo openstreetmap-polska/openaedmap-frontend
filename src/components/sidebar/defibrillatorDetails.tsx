@@ -27,6 +27,7 @@ import { CheckDateField } from "./verificationDate";
 import DetailTextRow from "./detailTextRow";
 import { accessColourClass } from "./access";
 import { initialModalState, ModalType } from "../../model/modal";
+import {useLanguage} from "~/i18n";
 
 function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
     const { t } = useTranslation();
@@ -95,13 +96,14 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
 }
 
 const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
-    const { t, i18n: { resolvedLanguage } } = useTranslation();
+    const { t} = useTranslation();
+    const language = useLanguage();
     const {
         data, closeSidebar,
     } = props;
     if (data === null) return null;
     const accessText = data.tags.access ? ` - ${t(`access.${data.tags.access}`)}` : "";
-    const defibrillatorLocation = data.tags[`defibrillator:location:${resolvedLanguage}`]
+    const defibrillatorLocation = data.tags[`defibrillator:location:${language}`]
         ?? data.tags["defibrillator:location"];
     const levelText = data.tags.level ? ` (${t("sidebar.level")}: ${data.tags.level})` : "";
     const indoorText = data.tags.indoor ? t(`indoor.${data.tags.indoor}`) + levelText : "";
@@ -172,7 +174,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
                         </Columns.Column>
                         <Columns.Column className="py-1">
                             <DetailTextRow
-                                text={data.tags[`description:${resolvedLanguage}`] ?? data.tags.description}
+                                text={data.tags[`description:${language}`] ?? data.tags.description}
                                 translationId="sidebar.description"
                             />
                         </Columns.Column>

@@ -28,6 +28,8 @@ jobs:
       run: npm run typecheck
     - name: Set git commit
       run: echo "VITE_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+    - name: Create robots.txt
+      run: touch public/robots.txt
     - name: Build app
       env:
         VITE_ENV: production
@@ -35,9 +37,7 @@ jobs:
         VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         VITE_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
         VITE_BACKEND_API_URL: ${{ secrets.REACT_APP_BACKEND_API_URL_NEW }}
-      run: npm run build
-    - name: Create robots.txt
-      run: touch build/robots.txt
+      run: npm run build && ./scripts/build_every_lang.sh
     - name: Run deploy script on host
       run: |
         rsync -rp -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/prod-static/

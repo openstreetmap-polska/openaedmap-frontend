@@ -4,12 +4,13 @@ import Icon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
 import { backendBaseUrl, fetchCountriesData } from "~/backend";
 import { Country } from "../model/country";
+import {useLanguage} from "~/i18n";
 
 const worldCountryCode = "WORLD";
 
 export default function DownloadCard() {
-    const { t, i18n: { resolvedLanguage } } = useTranslation();
-    const language = resolvedLanguage ?? "en";
+    const { t} = useTranslation();
+    const language = useLanguage();
     function countryName(country: Country) {
         if (country.code === worldCountryCode) return t("sidebar.world");
         const backendLanguageUppercase = language.toUpperCase();

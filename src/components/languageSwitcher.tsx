@@ -1,15 +1,16 @@
 import React from "react";
 import i18n from "i18next";
 import { Navbar } from "react-bulma-components";
-import { languages } from "../i18n";
+import {languages, useLanguage} from "../i18n";
 
 export default function LanguageSwitcher() {
+    const language = useLanguage();
     return (
         <Navbar.Item px={1}>
             <div className="select">
                 <select
                     id="language-switcher"
-                    value={i18n.resolvedLanguage ?? "en"}
+                    value={language}
                     onChange={(e) => {
                         i18n.changeLanguage(e.target.value);
                     }}
