@@ -318,7 +318,7 @@ const Map: FC<MapProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     return (
         <>
-            { sidebarLeftShown && marker !== null && (
+            { sidebarLeftShown && (
                 <SidebarLeft
                     action={sidebarAction}
                     data={sidebarData}

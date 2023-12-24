@@ -63,6 +63,10 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
             });
         };
         if (newAED) {
+            if (marker === null) {
+                console.error("Marker shouldn't be null");
+                return null;
+            }
             const lngLat = marker.getLngLat();
             const newDefibrillatorData = {
                 lon: lngLat.lng,
@@ -135,7 +139,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
 
 interface DefibrillatorEditorProps {
     closeSidebar: () => void,
-    marker: Marker,
+    marker: Marker | null,
     openChangesetId: string,
     setOpenChangesetId: (changesetId: string) => void,
     data: DefibrillatorData | null,

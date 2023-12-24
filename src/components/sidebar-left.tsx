@@ -23,6 +23,10 @@ const SidebarLeft: FC<SidebarLeftProps> = (props) => {
         case SidebarAction.showDetails:
             return <DefibrillatorDetails data={data} closeSidebar={closeSidebar} />;
         case SidebarAction.addNode:
+            if (marker === null) {
+                console.error("Marker shouldn't be null");
+                return null;
+            }
             return (
                 <DefibrillatorEditor
                     closeSidebar={closeSidebar}
@@ -60,7 +64,7 @@ interface SidebarLeftProps {
     data: DefibrillatorData | null,
     closeSidebar: () => void,
     visible: boolean,
-    marker: Marker,
+    marker: Marker | null,
     openChangesetId: string,
     setOpenChangesetId: (changesetId: string) => void,
 }
