@@ -42,8 +42,8 @@ Second way is if you are using VS Code and have Docker installed you can use dev
 
 Create .env file and put these variables there:
 ```
-SKIP_PREFLIGHT_CHECK=true
 VITE_VERSION=$npm_package_version
+VITE_DEFAULT_LANGUAGE=en
 VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
 VITE_BACKEND_API_URL=https://backdev.openaedmap.org
 VITE_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
