@@ -33,6 +33,7 @@ jobs:
     - name: Build app
       env:
         VITE_ENV: production
+        VITE_DEFAULT_LANG: en
         VITE_OSM_API_URL: ${{ secrets.REACT_APP_OSM_API_URL }}
         VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         VITE_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
