@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import { initReactI18next, useTranslation } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 
@@ -33,6 +33,7 @@ if (!isProduction) {
     languages.debug = { nativeName: "--debug--" };
 }
 const languagesIsoCodes = Object.keys(languages);
+const defaultLanguage = import.meta.env.VITE_DEFAULT_LANGUAGE ?? "en";
 
 i18n
 // i18next-http-backend
@@ -49,13 +50,20 @@ i18n
     .init({
         debug: !isProduction,
         supportedLngs: languagesIsoCodes,
-        fallbackLng: isProduction ? "en" : "debug",
+        fallbackLng: isProduction ? defaultLanguage : "debug",
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
         backend: {
             loadPath: "./locales/{{lng}}/{{ns}}.json",
         },
+        detection: {
+            order: ['localStorage', 'path', 'navigator', 'htmlTag'],
+            lookupLocalStorage: 'i18nextLng',
+            // cache user language
+            caches: ['localStorage'],
+            excludeCacheFor: ['cimode'],
+        }
     }, (err, t) => {
         if (err) return console.log("something went wrong loading", err);
         return t("key");
@@ -65,5 +73,10 @@ i18n.on("languageChanged", (lang: string) => {
     document.documentElement.setAttribute("lang", lang);
 });
 
+function useLanguage(): string {
+    const { i18n: { resolvedLanguage } } = useTranslation();
+    return resolvedLanguage ?? defaultLanguage;
+}
+
 export default i18n;
-export { languages, languagesIsoCodes };
+export { languages, languagesIsoCodes, useLanguage };

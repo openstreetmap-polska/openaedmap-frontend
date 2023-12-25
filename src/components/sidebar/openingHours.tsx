@@ -4,6 +4,7 @@ import i18n from "i18next";
 import React, { FC } from "react";
 
 import SpanNoData from "./spanNoData";
+import {useLanguage} from "~/i18n";
 
 interface OpeningHoursProps {
     openingHours: string,
@@ -39,7 +40,8 @@ function parseOpeningHours(openingHours: string): string | null {
 
     try {
         const oh = new OpeningHours(openingHours, null, 2);
-        const config = getOpeningHoursConfig(i18n.resolvedLanguage ?? "en");
+        const language = useLanguage();
+        const config = getOpeningHoursConfig(language);
         // @ts-ignore
         return oh.prettifyValue({ conf: config });
     } catch (error) {

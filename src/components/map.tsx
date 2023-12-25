@@ -18,6 +18,7 @@ import { useAppContext } from "../appContext";
 import FooterDiv from "./footer";
 import SidebarLeft from "./sidebar-left";
 import styleJson from "./map_style";
+import {useLanguage} from "~/i18n";
 
 function fillSidebarWithOsmDataAndShow(
     nodeId: string,
@@ -83,8 +84,8 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const {
         authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData,
     } = useAppContext();
-    const { t, i18n: { resolvedLanguage } } = useTranslation();
-    const language = resolvedLanguage ?? "en";
+    const { t} = useTranslation();
+    const language = useLanguage();
 
     const hash4MapName = "map";
 

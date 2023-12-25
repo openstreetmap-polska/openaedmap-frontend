@@ -12,12 +12,13 @@ import ContactPhoneFormField from "./contactNumber";
 import { CheckDateFormField } from "./verificationDate";
 import { useAppContext } from "../../appContext";
 import { DefibrillatorData } from "../../model/defibrillatorData";
+import {useLanguage} from "~/i18n";
 
 const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
     closeSidebar, marker, openChangesetId, setOpenChangesetId, data,
 }) => {
-    const { t, i18n: { resolvedLanguage } } = useTranslation();
-    const language = resolvedLanguage ?? "en";
+    const { t } = useTranslation();
+    const language = useLanguage();
     const { authState: { auth }, setModalState } = useAppContext();
     const newAED = data === null;
     const initialTags = data !== null ? data.tags : { emergency: "defibrillator" };
