@@ -86,6 +86,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
     } = useAppContext();
     const { t} = useTranslation();
     const language = useLanguage();
+    const [mapLanguage, setMapLanguage] = useState<string>("");
 
     const hash4MapName = "map";
 
@@ -179,18 +180,23 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
     };
 
     useEffect(() => {
-        if (mapRef.current || mapContainer.current === null) return; // stops map from initializing more than once
+        if (mapContainer.current === null) return;
+        if (mapRef.current && mapLanguage === language) return; // stops map from initializing more than once
+
         const map = new maplibregl.Map({
             container: mapContainer.current,
             hash: hash4MapName,
             // @ts-ignore
-            style: styleJson,
+            // TODO: handle languages not supported by backend.
+            // Fallback should be either here or on the backend
+            style: styleJson(language.toUpperCase()),
             center: [initialLongitude, initialLatitude],
             zoom: initialZoom,
             minZoom: 3,
             maxZoom: 19,
             maplibreLogo: false,
         });
+        setMapLanguage(language);
 
         const maplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
             maplibregl,
@@ -316,7 +322,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
             );
         }
     }, [initialLatitude, initialLongitude, initialZoom,
-        setSidebarAction, setSidebarData, language, t]);
+        setSidebarAction, setSidebarData, language, mapLanguage, t]);
 
     return (
         <>
