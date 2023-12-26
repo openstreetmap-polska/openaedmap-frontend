@@ -1,12 +1,23 @@
 import { backendBaseUrl } from "~/backend";
+import {Country} from "~/model/country";
 
 const getUrl = window.location;
 const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;
 const spriteUrl = (new URL("img/sprite", baseUrl)).href;
 // can't use URL class since this is a template not literal url
 const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
+const TILE_COUNTRIES_MAX_ZOOM = 5;
 
-const style = {
+const mapStyle = (lang: string, countriesData: Array<Country>) => {
+    const countryCodeToName: Record<string, string> = countriesData.reduce((map: Record<string, string>, country) => {
+        if (country.names[lang.toUpperCase()] !== undefined) {
+            map[country.code] = country.names[lang];
+        } else if (country.names.default !== undefined) {
+            map[country.code] = country.names.default;
+        }
+        return map;
+    }, {});
+    return {
     version: 8,
     name: "Map style",
     sources: {
@@ -19,10 +30,16 @@ const style = {
             attribution: "© <a target=\"_blank\" rel=\"noopener\" href=\"https://openstreetmap.org/copyright\">"
                 + "OpenStreetMap contributors</a>",
         },
-        "aed-locations": {
+        countries: {
             type: "vector",
             tiles: [tilesUrl],
             minzoom: 3,
+            maxzoom: TILE_COUNTRIES_MAX_ZOOM,
+        },
+        "aed-locations": {
+            type: "vector",
+            tiles: [tilesUrl],
+            minzoom: TILE_COUNTRIES_MAX_ZOOM + 1,
             maxzoom: 16,
         },
     },
@@ -40,23 +57,25 @@ const style = {
         {
             id: "borders-fill",
             type: "fill",
-            source: "aed-locations",
+            source: "countries",
             "source-layer": "countries",
             paint: {
                 "fill-color": "#7a7a7a",
                 "fill-opacity": 0.5,
             },
+            maxzoom: TILE_COUNTRIES_MAX_ZOOM,
         },
         {
             id: "borders",
             type: "line",
-            source: "aed-locations",
+            source: "countries",
             "source-layer": "countries",
             paint: {
                 "line-color": "#ff3333",
                 "line-width": 2,
                 "line-blur": 1,
             },
+            maxzoom: TILE_COUNTRIES_MAX_ZOOM,
         },
         {
             id: "unclustered",
@@ -160,12 +179,21 @@ const style = {
         {
             id: "countries-label",
             type: "symbol",
-            source: "aed-locations",
+            source: "countries",
             "source-layer": "defibrillators",
-            maxzoom: 6,
+            maxzoom: TILE_COUNTRIES_MAX_ZOOM,
             layout: {
                 "text-allow-overlap": false,
-                "text-field": "{country_name}\n{point_count_abbreviated}",
+                "text-field": [
+                    "concat",
+                    [
+                        "coalesce",
+                        ["get", ["get", "country_code", ["properties"]], ["literal", countryCodeToName]],
+                        ["get", "country_name", ["properties"]],
+                    ],
+                    "\n",
+                    ["get", "point_count_abbreviated"],
+                ],
                 "text-font": ["Open Sans Bold"],
                 "text-size": 14,
                 "text-letter-spacing": 0.05,
@@ -182,5 +210,6 @@ const style = {
     ],
     id: "style",
 };
+}
 
-export default style;
+export default mapStyle;

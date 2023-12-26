@@ -3,14 +3,16 @@ import { useTranslation } from "react-i18next";
 import Icon from "@mdi/react";
 import { mdiDownload } from "@mdi/js";
 import { backendBaseUrl, fetchCountriesData } from "~/backend";
-import { Country } from "../model/country";
+import { Country } from "~/model/country";
 import {useLanguage} from "~/i18n";
+import {useAppContext} from "~/appContext";
 
 const worldCountryCode = "WORLD";
 
 export default function DownloadCard() {
     const { t} = useTranslation();
     const language = useLanguage();
+    const { countriesData} = useAppContext();
     function countryName(country: Country) {
         if (country.code === worldCountryCode) return t("sidebar.world");
         const backendLanguageUppercase = language.toUpperCase();
@@ -25,22 +27,14 @@ export default function DownloadCard() {
         }
         return country.names.default;
     }
-    const [countries, setCountries] = useState<Array<Country>>([]);
-    const sortedCountriesByName = countries
+    const sortedCountriesByName = countriesData
         .sort((a: Country, b: Country) => {
             if (a.code === worldCountryCode) return -1;
             if (b.code === worldCountryCode) return 1;
             return countryName(a) < countryName(b) ? -1 : 1;
         });
     const [selectedCountryCode, setSelectedCountryCode] = useState<string>(worldCountryCode);
-    const selectedCountry = countries.find((country) => country.code === selectedCountryCode);
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await fetchCountriesData(language);
-            if (data !== null) setCountries(data);
-        };
-        fetchData().catch(console.error);
-    }, [language]);
+    const selectedCountry = countriesData.find((country) => country.code === selectedCountryCode);
 
     function countryLabel(country: Country) {
         return `${countryName(country)} (${country.featureCount})`;

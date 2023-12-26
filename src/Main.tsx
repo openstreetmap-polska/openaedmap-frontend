@@ -6,13 +6,16 @@ import { osmAuth } from "osm-auth";
 import SiteNavbar from "./components/navbar";
 import SidebarRight from "./components/sidebar-right";
 import MapView from "./components/map";
-import { initialModalState, ModalType } from "./model/modal";
-import { AppContext } from "./appContext";
-import CustomModal from "./components/modal";
-import { updateOsmUsernameState } from "./osm";
-import { AuthState } from "./model/auth";
-import SidebarAction from "./model/sidebarAction";
-import { DefibrillatorData } from "./model/defibrillatorData";
+import { initialModalState, ModalType } from "~/model/modal";
+import { AppContext } from "~/appContext";
+import CustomModal from "~/components/modal";
+import { updateOsmUsernameState } from "~/osm";
+import { AuthState } from "~/model/auth";
+import SidebarAction from "~/model/sidebarAction";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import {Country} from "~/model/country";
+import {fetchCountriesData} from "~/backend";
+import {useLanguage} from "~/i18n";
 
 function Main() {
     // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
@@ -22,6 +25,8 @@ function Main() {
     const [sidebarAction, setSidebarAction] = useState(SidebarAction.init);
     const [sidebarData, setSidebarData] = useState<DefibrillatorData | null>(null);
     const [rightSidebarShown, setRightSidebarShown] = useState(defaultRightSidebarState);
+    const [countriesData, setCountriesData] = useState<Array<Country>>([]);
+    const [countriesDataLanguage, setCountriesDataLanguage] = useState<string>("");
 
     const toggleRightSidebarShown = () => setRightSidebarShown(!rightSidebarShown);
     const closeRightSidebar = () => setRightSidebarShown(false);
@@ -70,8 +75,12 @@ function Main() {
             setSidebarAction,
             sidebarData,
             setSidebarData,
+            countriesData,
+            setCountriesData,
+            countriesDataLanguage,
+            setCountriesDataLanguage,
         }),
-        [authState, sidebarData, sidebarAction, modalState, handleLogIn, handleLogOut],
+        [authState, sidebarData, sidebarAction, modalState, handleLogIn, handleLogOut, countriesDataLanguage, countriesData],
     );
     useEffect(() => {
         if (auth.authenticated()) updateOsmUsernameState(auth, setOsmUsername);
