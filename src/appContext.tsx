@@ -1,9 +1,10 @@
 import * as React from "react";
 import { useContext } from "react";
-import { initialModalState, ModalState } from "./model/modal";
-import { AuthState, initialAuthState } from "./model/auth";
+import { initialModalState, ModalState } from "~/model/modal";
+import { AuthState, initialAuthState } from "~/model/auth";
 import SidebarAction from "./model/sidebarAction";
-import { DefibrillatorData } from "./model/defibrillatorData";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { Country } from "~/model/country";
 
 interface AppContextType {
     authState: AuthState,
@@ -15,6 +16,10 @@ interface AppContextType {
     setSidebarData: (sidebarData: DefibrillatorData | null) => void,
     handleLogIn: () => void,
     handleLogOut: () => void,
+    countriesData: Array<Country>,
+    setCountriesData: (countriesData: Array<Country>) => void,
+    countriesDataLanguage: string,
+    setCountriesDataLanguage: (language: string) => void,
 }
 const defaultAppContext: AppContextType = {
     authState: initialAuthState,
@@ -26,6 +31,10 @@ const defaultAppContext: AppContextType = {
     setSidebarData: () => {},
     handleLogIn: () => {},
     handleLogOut: () => {},
+    countriesData: [],
+    setCountriesData: () => {},
+    countriesDataLanguage: "",
+    setCountriesDataLanguage: () => {},
 };
 export const AppContext = React.createContext(defaultAppContext);
 export const useAppContext = () => useContext(AppContext);

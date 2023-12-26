@@ -3,15 +3,15 @@ import { Image, Card } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { Marker } from "maplibre-gl";
 import { initialModalState, ModalType } from "~/model/modal";
-import { addDefibrillatorToOSM, editDefibrillatorInOSM, getOpenChangesetId } from "../../osm";
+import { addDefibrillatorToOSM, editDefibrillatorInOSM, getOpenChangesetId } from "~/osm";
 import { AddAedButton, CloseSidebarButton, SaveAedButton } from "./buttons";
 import AccessFormField from "./access";
 import IndoorFormField from "./indoor";
 import LocationFormField from "./location";
 import ContactPhoneFormField from "./contactNumber";
 import { CheckDateFormField } from "./verificationDate";
-import { useAppContext } from "../../appContext";
-import { DefibrillatorData } from "../../model/defibrillatorData";
+import { useAppContext } from "~/appContext";
+import { DefibrillatorData } from "~/model/defibrillatorData";
 import {useLanguage} from "~/i18n";
 
 const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({

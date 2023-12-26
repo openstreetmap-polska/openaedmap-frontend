@@ -11,13 +11,13 @@ import maplibregl from "maplibre-gl";
 import ButtonsType from "~/model/buttonsType";
 import { initialModalState, ModalType } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
-import { fetchNodeDataFromBackend } from "~/backend";
+import {fetchCountriesData, fetchNodeDataFromBackend} from "~/backend";
 import { DefibrillatorData } from "~/model/defibrillatorData";
 import nominatimGeocoder from "~/components/nominatimGeocoder";
-import { useAppContext } from "../appContext";
+import { useAppContext } from "~/appContext";
 import FooterDiv from "./footer";
 import SidebarLeft from "./sidebar-left";
-import styleJson from "./map_style";
+import mapStyle from "./map_style";
 import {useLanguage} from "~/i18n";
 
 function fillSidebarWithOsmDataAndShow(
@@ -82,11 +82,12 @@ function getNewHashString(parameters: Record<string, string>) {
 
 const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
     const {
-        authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData,
+        authState: { auth }, setModalState, sidebarAction, setSidebarAction, sidebarData, setSidebarData, countriesData, setCountriesData, countriesDataLanguage, setCountriesDataLanguage,
     } = useAppContext();
     const { t} = useTranslation();
     const language = useLanguage();
     const [mapLanguage, setMapLanguage] = useState<string>("");
+    const [mapCountryLanguage, setMapCountryLanguage] = useState<string>("");
 
     const hash4MapName = "map";
 
@@ -180,16 +181,25 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
     };
 
     useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchCountriesData(language);
+            if (data !== null) {
+                setCountriesData(data);
+                setCountriesDataLanguage(language);
+            }
+        };
+        fetchData().catch(console.error);
+    }, [language, setCountriesDataLanguage, setCountriesData]);
+
+    useEffect(() => {
         if (mapContainer.current === null) return;
         if (mapRef.current && mapLanguage === language) return; // stops map from initializing more than once
-
+        if (countriesDataLanguage !== language) return; // wait for countries data to be loaded
         const map = new maplibregl.Map({
             container: mapContainer.current,
             hash: hash4MapName,
             // @ts-ignore
-            // TODO: handle languages not supported by backend.
-            // Fallback should be either here or on the backend
-            style: styleJson(language.toUpperCase()),
+            style: mapStyle(language.toUpperCase(), countriesData),
             center: [initialLongitude, initialLatitude],
             zoom: initialZoom,
             minZoom: 3,
@@ -197,6 +207,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
             maplibreLogo: false,
         });
         setMapLanguage(language);
+        setMapCountryLanguage(countriesDataLanguage);
 
         const maplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
             maplibregl,
@@ -322,7 +333,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
             );
         }
     }, [initialLatitude, initialLongitude, initialZoom,
-        setSidebarAction, setSidebarData, language, mapLanguage, t]);
+        setSidebarAction, setSidebarData, language, mapLanguage, t, countriesData, countriesDataLanguage]);
 
     return (
         <>

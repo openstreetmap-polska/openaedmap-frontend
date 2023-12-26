@@ -1,4 +1,5 @@
 import { backendBaseUrl } from "~/backend";
+import {Country} from "~/model/country";
 
 const getUrl = window.location;
 const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;
@@ -7,7 +8,16 @@ const spriteUrl = (new URL("img/sprite", baseUrl)).href;
 const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
 const TILE_COUNTRIES_MAX_ZOOM = 5;
 
-const style = (lang: string) => ({
+const mapStyle = (lang: string, countriesData: Array<Country>) => {
+    const countryCodeToName: Record<string, string> = countriesData.reduce((map: Record<string, string>, country) => {
+        if (country.names[lang.toUpperCase()] !== undefined) {
+            map[country.code] = country.names[lang];
+        } else if (country.names.default !== undefined) {
+            map[country.code] = country.names.default;
+        }
+        return map;
+    }, {});
+    return {
     version: 8,
     name: "Map style",
     sources: {
@@ -22,7 +32,7 @@ const style = (lang: string) => ({
         },
         countries: {
             type: "vector",
-            tiles: [tilesUrl + `?lang=${lang}`],
+            tiles: [tilesUrl],
             minzoom: 3,
             maxzoom: TILE_COUNTRIES_MAX_ZOOM,
         },
@@ -174,7 +184,16 @@ const style = (lang: string) => ({
             maxzoom: TILE_COUNTRIES_MAX_ZOOM,
             layout: {
                 "text-allow-overlap": false,
-                "text-field": "{country_name}\n{point_count_abbreviated}",
+                "text-field": [
+                    "concat",
+                    [
+                        "coalesce",
+                        ["get", ["get", "country_code", ["properties"]], ["literal", countryCodeToName]],
+                        ["get", "country_name", ["properties"]],
+                    ],
+                    "\n",
+                    ["get", "point_count_abbreviated"],
+                ],
                 "text-font": ["Open Sans Bold"],
                 "text-size": 14,
                 "text-letter-spacing": 0.05,
@@ -190,6 +209,7 @@ const style = (lang: string) => ({
         },
     ],
     id: "style",
-});
+};
+}
 
-export default style;
+export default mapStyle;
