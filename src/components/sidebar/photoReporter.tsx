@@ -24,7 +24,7 @@ const PhotoReport: FC<DefibrillatorDetailsProps> = (props) => {
 	const accessText = data.tags.access
 		? ` - ${t(`access.${data.tags.access}`)}`
 		: "";
-	const sendReport = (photoId: string | undefined): Promise<Response> => {
+	const sendReport = (photoId?: string): Promise<Response> => {
 		if (photoId === undefined) {
 			throw Error("Photo id is undefined. Report issue to the maintainers.");
 		}

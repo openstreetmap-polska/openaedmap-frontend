@@ -7,8 +7,8 @@ export interface NewDefibrillatorData {
 export interface DefibrillatorData extends NewDefibrillatorData {
 	osmId: string;
 	osmType: string;
-	photoId: string | undefined;
-	photoRelativeUrl: string | undefined;
+	photoId?: string;
+	photoRelativeUrl?: string;
 	timezoneOffsetUTCMinutes: number;
 	version: string;
 }
