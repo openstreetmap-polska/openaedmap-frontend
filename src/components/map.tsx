@@ -1,7 +1,7 @@
 // @ts-ignore
 import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import maplibregl from "maplibre-gl";
+import maplibregl, { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +23,12 @@ import { ModalType, initialModalState } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import FooterDiv from "./footer";
 import "./map.css";
-import mapStyle from "./map_style";
+import mapStyle, {
+	LAYER_CLUSTERED_CIRCLE,
+	LAYER_CLUSTERED_CIRCLE_LOW_ZOOM,
+	LAYER_UNCLUSTERED,
+	LAYER_UNCLUSTERED_LOW_ZOOM,
+} from "./map_style";
 import SidebarLeft from "./sidebar-left";
 
 function fillSidebarWithOsmDataAndShow(
@@ -200,86 +205,62 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 			maxZoom: 19,
 			maplibreLogo: false,
 		});
-
 		addMaplibreGeocoder(map);
 		mapRef.current = map;
-
 		// how fast mouse scroll wheel zooms
 		map.scrollZoom.setWheelZoomRate(1);
-
 		// disable map rotation using right click + drag
 		map.dragRotate.disable();
-
 		// disable map rotation using touch rotation gesture
 		map.touchZoomRotate.disableRotation();
+		map.addControl(
+			new maplibregl.NavigationControl({
+				showCompass: false,
+			}),
+			controlsLocation,
+		);
+		map.addControl(
+			new maplibregl.GeolocateControl({
+				positionOptions: {
+					enableHighAccuracy: true,
+				},
+			}),
+			controlsLocation,
+		);
 
-		const control = new maplibregl.NavigationControl({
-			showCompass: false,
-		});
-
-		const geolocate = new maplibregl.GeolocateControl({
-			positionOptions: {
-				enableHighAccuracy: true,
-			},
-		});
-
-		// Map controls
-		map.addControl(control, controlsLocation);
-		map.addControl(geolocate, controlsLocation);
-
-		// Map interaction
-		map.on("mouseenter", "clustered-circle", () => {
-			map.getCanvas().style.cursor = "pointer";
-		});
-		map.on("mouseleave", "clustered-circle", () => {
-			map.getCanvas().style.cursor = "";
-		});
-		map.on("mouseenter", "unclustered", () => {
-			map.getCanvas().style.cursor = "pointer";
-		});
-		map.on("mouseleave", "unclustered", () => {
-			map.getCanvas().style.cursor = "";
-		});
-		map.on("mouseenter", "clustered-circle-low-zoom", () => {
-			map.getCanvas().style.cursor = "pointer";
-		});
-		map.on("mouseleave", "clustered-circle-low-zoom", () => {
-			map.getCanvas().style.cursor = "";
-		});
-		map.on("mouseenter", "unclustered-low-zoom", () => {
-			map.getCanvas().style.cursor = "pointer";
-		});
-		map.on("mouseleave", "unclustered-low-zoom", () => {
-			map.getCanvas().style.cursor = "";
-		});
+		for (const layer of [
+			LAYER_CLUSTERED_CIRCLE,
+			LAYER_UNCLUSTERED,
+			LAYER_CLUSTERED_CIRCLE_LOW_ZOOM,
+			LAYER_UNCLUSTERED_LOW_ZOOM,
+		]) {
+			map.on("mouseenter", layer, () => {
+				map.getCanvas().style.cursor = "pointer";
+			});
+			map.on("mouseleave", layer, () => {
+				map.getCanvas().style.cursor = "";
+			});
+		}
 		map.on("moveend", saveLocationToLocalStorage);
-
-		// biome-ignore lint/suspicious/noExplicitAny: unknown type
-		type MapEventType = any;
-		// zoom to cluster on click
-		map.on("click", "clustered-circle", (e) => {
-			const features = map.queryRenderedFeatures(e.point, {
-				layers: ["clustered-circle"],
+		type MapEventType = MapMouseEvent & { features?: MapGeoJSONFeature[] };
+		for (const layer of [
+			LAYER_CLUSTERED_CIRCLE,
+			LAYER_CLUSTERED_CIRCLE_LOW_ZOOM,
+		]) {
+			map.on("click", layer, (e: MapEventType) => {
+				const features = map.queryRenderedFeatures(e.point, {
+					layers: [layer],
+				});
+				const zoom = map.getZoom();
+				const point = features[0].geometry as GeoJSON.Point;
+				map.easeTo({
+					center: point.coordinates as [number, number],
+					zoom: zoom + 2,
+				});
 			});
-			const zoom = map.getZoom();
-			map.easeTo({
-				// @ts-ignore
-				center: features[0].geometry.coordinates,
-				zoom: zoom + 2,
-			});
-		});
-		map.on("click", "clustered-circle-low-zoom", (e: MapEventType) => {
-			const features = map.queryRenderedFeatures(e.point, {
-				layers: ["clustered-circle-low-zoom"],
-			});
-			const zoom = map.getZoom();
-			map.easeTo({
-				// @ts-ignore
-				center: features[0].geometry.coordinates,
-				zoom: zoom + 2,
-			});
-		});
+		}
 		function showObjectWithProperties(e: MapEventType) {
+			if (e.features === undefined) return;
 			if (e.features[0].properties !== undefined && mapRef.current !== null) {
 				const osmNodeId = e.features[0].properties.node_id;
 				fillSidebarWithOsmDataAndShow(
@@ -295,8 +276,8 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		}
 
 		// show sidebar on single element click
-		map.on("click", "unclustered", showObjectWithProperties);
-		map.on("click", "unclustered-low-zoom", showObjectWithProperties);
+		map.on("click", LAYER_UNCLUSTERED, showObjectWithProperties);
+		map.on("click", LAYER_UNCLUSTERED_LOW_ZOOM, showObjectWithProperties);
 
 		// if direct link to osm node then get its data and zoom in
 		const newParamsFromHash = parseParametersFromUrl();

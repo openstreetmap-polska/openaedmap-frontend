@@ -9,6 +9,11 @@ const spriteUrl = new URL("img/sprite", baseUrl).href;
 const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
 const TILE_COUNTRIES_MAX_ZOOM = 6;
 
+export const LAYER_CLUSTERED_CIRCLE = "clustered-circle";
+export const LAYER_CLUSTERED_CIRCLE_LOW_ZOOM = "clustered-circle-low-zoom";
+export const LAYER_UNCLUSTERED_LOW_ZOOM = "unclustered-low-zoom";
+export const LAYER_UNCLUSTERED = "unclustered";
+
 const mapStyle = (
 	lang: string,
 	countriesData: Array<Country>,
@@ -87,7 +92,7 @@ const mapStyle = (
 				maxzoom: TILE_COUNTRIES_MAX_ZOOM,
 			},
 			{
-				id: "unclustered",
+				id: LAYER_UNCLUSTERED,
 				type: "symbol",
 				source: "aed-locations",
 				"source-layer": "defibrillators",
@@ -104,7 +109,7 @@ const mapStyle = (
 				},
 			},
 			{
-				id: "unclustered-low-zoom",
+				id: LAYER_UNCLUSTERED_LOW_ZOOM,
 				type: "symbol",
 				source: "aed-locations",
 				"source-layer": "defibrillators",
@@ -122,7 +127,7 @@ const mapStyle = (
 				},
 			},
 			{
-				id: "clustered-circle",
+				id: LAYER_CLUSTERED_CIRCLE,
 				type: "circle",
 				source: "aed-locations",
 				"source-layer": "defibrillators",
@@ -145,7 +150,7 @@ const mapStyle = (
 				},
 			},
 			{
-				id: "clustered-circle-low-zoom",
+				id: LAYER_CLUSTERED_CIRCLE_LOW_ZOOM,
 				type: "circle",
 				source: "aed-locations",
 				"source-layer": "defibrillators",
