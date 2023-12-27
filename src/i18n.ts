@@ -33,7 +33,7 @@ if (!isProduction) {
     languages.debug = { nativeName: "--debug--" };
 }
 const languagesIsoCodes = Object.keys(languages);
-const defaultLanguage = import.meta.env.VITE_DEFAULT_LANGUAGE ?? "en";
+const defaultLanguage = import.meta.env.VITE_DEFAULT_LANG ?? "en";
 
 i18n
 // i18next-http-backend
