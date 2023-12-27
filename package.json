@@ -38,6 +38,8 @@
     "lint-fix": "biome lint . --apply",
     "format": "biome format . --write",
     "check": "biome ci .",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "css-build": "sass sass/mystyles.scss src/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
   },
@@ -60,7 +62,9 @@
     "@types/react-image-gallery": "^1.2.4",
     "@types/store": "^2.0.5",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^1.1.0",
     "sass": "^1.69.5",
-    "vite": "^5.0.10"
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0"
   }
 }

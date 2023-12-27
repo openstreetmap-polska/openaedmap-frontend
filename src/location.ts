@@ -79,3 +79,8 @@ export function saveLocationToLocalStorage() {
 		localStorage.setItem(locationParameter, location ?? "");
 	}
 }
+
+export const _private = {
+	serializeParametersToUrlTarget,
+	parseLocationFromString,
+};

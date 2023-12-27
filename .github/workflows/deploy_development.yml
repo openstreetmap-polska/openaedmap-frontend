@@ -32,6 +32,8 @@ jobs:
       run: npm ci
     - name: Run linter & formatter
       run: npm run check
+    - name: Run tests
+      run: npm test
     - name: Run TypeScript typecheck
       run: npm run typecheck
     - name: Set git commit
