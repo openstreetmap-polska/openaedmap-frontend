@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const accessToColourMapping = {
     yes: "has-background-green has-text-white-ter",

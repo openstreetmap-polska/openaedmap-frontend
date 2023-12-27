@@ -1,7 +1,7 @@
-import React from "react";
 import i18n from "i18next";
+import React from "react";
 import { Navbar } from "react-bulma-components";
-import {languages, useLanguage} from "../i18n";
+import {languages, useLanguage} from "~/i18n";
 
 export default function LanguageSwitcher() {
     const language = useLanguage();

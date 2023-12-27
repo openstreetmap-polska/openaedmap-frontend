@@ -1,18 +1,18 @@
+import { mdiArrowLeftBold, mdiFileDocumentRemove, mdiFileSend } from "@mdi/js";
+import Icon from "@mdi/react";
 import React, { FC, useState } from "react";
 import {
     Button, Card, Image,
 } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import store from "store";
-import { mdiArrowLeftBold, mdiFileDocumentRemove, mdiFileSend } from "@mdi/js";
-import Icon from "@mdi/react";
-import { DefibrillatorData } from "~/model/defibrillatorData";
-import SidebarAction from "~/model/sidebarAction";
-import { initialModalState, ModalType } from "~/model/modal";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
-import { CloseSidebarButton } from "./buttons";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { ModalType, initialModalState } from "~/model/modal";
+import SidebarAction from "~/model/sidebarAction";
 import { accessColourClass } from "./access";
+import { CloseSidebarButton } from "./buttons";
 
 interface DefibrillatorDetailsProps {
     data: DefibrillatorData | null,

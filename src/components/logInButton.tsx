@@ -1,9 +1,9 @@
+import { mdiAccount, mdiLogoutVariant } from "@mdi/js";
+import Icon from "@mdi/react";
 import React, { FC } from "react";
 import { Button, Navbar } from "react-bulma-components";
-import Icon from "@mdi/react";
-import { mdiAccount, mdiLogoutVariant } from "@mdi/js";
 import { useTranslation } from "react-i18next";
-import { useAppContext } from "../appContext";
+import { useAppContext } from "~/appContext";
 
 interface LogInButtonProps {
     inNavBar: boolean,

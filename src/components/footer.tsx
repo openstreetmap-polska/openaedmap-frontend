@@ -1,17 +1,17 @@
 import {
+    mdiAccountGroup,
     mdiArrowRightBold,
     mdiCancel,
     mdiMapMarkerPlus,
-    mdiAccountGroup,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { FC } from "react";
 import { Button, Footer } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import ButtonsType from "../model/buttonsType";
+import { useAppContext } from "~/appContext";
+import ButtonsType from "~/model/buttonsType";
+import { ModalType, initialModalState } from "~/model/modal";
 import "./footer.css";
-import { useAppContext } from "../appContext";
-import { initialModalState, ModalType } from "../model/modal";
 
 const FooterDiv: FC<FooterDivProps> = ({
     startAEDAdding, mobileCancel, showFormMobile, buttonsConfiguration,

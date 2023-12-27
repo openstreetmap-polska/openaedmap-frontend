@@ -1,11 +1,11 @@
+import { mdiDownload } from "@mdi/js";
+import Icon from "@mdi/react";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import Icon from "@mdi/react";
-import { mdiDownload } from "@mdi/js";
-import { backendBaseUrl, fetchCountriesData } from "~/backend";
-import { Country } from "~/model/country";
-import {useLanguage} from "~/i18n";
 import {useAppContext} from "~/appContext";
+import { backendBaseUrl, fetchCountriesData } from "~/backend";
+import {useLanguage} from "~/i18n";
+import { Country } from "~/model/country";
 
 const worldCountryCode = "WORLD";
 

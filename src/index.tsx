@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./mystyles.css";
+import "~/i18n";
+import "~/mystyles.css";
 import Main from "./Main";
-import "./i18n";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(

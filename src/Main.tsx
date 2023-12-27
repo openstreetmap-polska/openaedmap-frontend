@@ -1,21 +1,21 @@
-import React, {
-    useEffect, Suspense, useState, useMemo,
-} from "react";
 // @ts-ignore
 import { osmAuth } from "osm-auth";
+import React, {Suspense, 
+    useEffect, useMemo,useState, 
+} from "react";
+import { AppContext } from "~/appContext";
+import {fetchCountriesData} from "~/backend";
+import CustomModal from "~/components/modal";
+import {useLanguage} from "~/i18n";
+import { AuthState } from "~/model/auth";
+import {Country} from "~/model/country";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { ModalType, initialModalState } from "~/model/modal";
+import SidebarAction from "~/model/sidebarAction";
+import { updateOsmUsernameState } from "~/osm";
+import MapView from "./components/map";
 import SiteNavbar from "./components/navbar";
 import SidebarRight from "./components/sidebar-right";
-import MapView from "./components/map";
-import { initialModalState, ModalType } from "~/model/modal";
-import { AppContext } from "~/appContext";
-import CustomModal from "~/components/modal";
-import { updateOsmUsernameState } from "~/osm";
-import { AuthState } from "~/model/auth";
-import SidebarAction from "~/model/sidebarAction";
-import { DefibrillatorData } from "~/model/defibrillatorData";
-import {Country} from "~/model/country";
-import {fetchCountriesData} from "~/backend";
-import {useLanguage} from "~/i18n";
 
 function Main() {
     // some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile

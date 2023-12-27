@@ -1,18 +1,18 @@
-import React, { FC, useState } from "react";
-import { Image, Card } from "react-bulma-components";
-import { useTranslation } from "react-i18next";
 import { Marker } from "maplibre-gl";
-import { initialModalState, ModalType } from "~/model/modal";
+import React, { FC, useState } from "react";
+import { Card, Image } from "react-bulma-components";
+import { useTranslation } from "react-i18next";
+import { useAppContext } from "~/appContext";
+import {useLanguage} from "~/i18n";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { ModalType, initialModalState } from "~/model/modal";
 import { addDefibrillatorToOSM, editDefibrillatorInOSM, getOpenChangesetId } from "~/osm";
-import { AddAedButton, CloseSidebarButton, SaveAedButton } from "./buttons";
 import AccessFormField from "./access";
+import { AddAedButton, CloseSidebarButton, SaveAedButton } from "./buttons";
+import ContactPhoneFormField from "./contactNumber";
 import IndoorFormField from "./indoor";
 import LocationFormField from "./location";
-import ContactPhoneFormField from "./contactNumber";
 import { CheckDateFormField } from "./verificationDate";
-import { useAppContext } from "~/appContext";
-import { DefibrillatorData } from "~/model/defibrillatorData";
-import {useLanguage} from "~/i18n";
 
 const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
     closeSidebar, marker, openChangesetId, setOpenChangesetId, data,

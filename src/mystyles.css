@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "../src/index.css";
+@import "../src/components/map.css";
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 @import "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css";

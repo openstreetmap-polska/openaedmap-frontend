@@ -1,6 +1,6 @@
 // Based on https://github.com/yjb94/react-store-badges
 
-import React, { useState, useLayoutEffect, FC } from "react";
+import React, { FC, useLayoutEffect, useState } from "react";
 
 const HEIGHT_RATIO = 3.375;
 const getImage = (locale: string, language: string) => ({

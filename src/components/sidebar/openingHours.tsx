@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
-import OpeningHours, { argument_hash } from "opening_hours";
 import i18n from "i18next";
+import OpeningHours, { argument_hash } from "opening_hours";
 import React, { FC } from "react";
+import { useTranslation } from "react-i18next";
 
-import SpanNoData from "./spanNoData";
 import {useLanguage} from "~/i18n";
+import SpanNoData from "./spanNoData";
 
 interface OpeningHoursProps {
     openingHours: string,

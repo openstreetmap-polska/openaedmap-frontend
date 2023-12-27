@@ -1,24 +1,24 @@
-import React, {
-    FC, useRef, useEffect, useState,
-} from "react";
-import "maplibre-gl/dist/maplibre-gl.css";
-import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import "./map.css";
-import { useTranslation } from "react-i18next";
 // @ts-ignore
 import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
+import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import maplibregl from "maplibre-gl";
-import ButtonsType from "~/model/buttonsType";
-import { initialModalState, ModalType } from "~/model/modal";
-import SidebarAction from "~/model/sidebarAction";
-import {fetchCountriesData, fetchNodeDataFromBackend} from "~/backend";
-import { DefibrillatorData } from "~/model/defibrillatorData";
-import nominatimGeocoder from "~/components/nominatimGeocoder";
+import "maplibre-gl/dist/maplibre-gl.css";
+import React, {
+    FC, useEffect, useRef, useState,
+} from "react";
+import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
-import FooterDiv from "./footer";
-import SidebarLeft from "./sidebar-left";
-import mapStyle from "./map_style";
+import {fetchCountriesData, fetchNodeDataFromBackend} from "~/backend";
+import nominatimGeocoder from "~/components/nominatimGeocoder";
 import {useLanguage} from "~/i18n";
+import ButtonsType from "~/model/buttonsType";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { ModalType, initialModalState } from "~/model/modal";
+import SidebarAction from "~/model/sidebarAction";
+import FooterDiv from "./footer";
+import "./map.css";
+import mapStyle from "./map_style";
+import SidebarLeft from "./sidebar-left";
 
 function fillSidebarWithOsmDataAndShow(
     nodeId: string,

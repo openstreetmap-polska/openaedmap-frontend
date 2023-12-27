@@ -35,7 +35,7 @@
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
     "sprites": "spritezero ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons",
     "lint": "biome lint .",
-    "lint-fix": "biome lint .",
+    "lint-fix": "biome lint . --apply",
     "css-build": "sass sass/mystyles.scss src/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
   },

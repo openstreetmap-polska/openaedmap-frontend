@@ -1,10 +1,10 @@
-import { mdiInformationOutline, mdiGithub } from "@mdi/js";
+import { mdiGithub, mdiInformationOutline } from "@mdi/js";
 import Icon from "@mdi/react";
-import { useTranslation } from "react-i18next";
-import { Button, Modal } from "react-bulma-components";
 import React, { FC } from "react";
-import { ModalType } from "../model/modal";
-import { useAppContext } from "../appContext";
+import { Button, Modal } from "react-bulma-components";
+import { useTranslation } from "react-i18next";
+import { useAppContext } from "~/appContext";
+import { ModalType } from "~/model/modal";
 import LogInButton from "./logInButton";
 import PartnersModal from "./partnersModal";
 

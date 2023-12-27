@@ -1,13 +1,13 @@
+import { mdiMapLegend } from "@mdi/js";
+import Icon from "@mdi/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Icon from "@mdi/react";
-import { mdiMapLegend } from "@mdi/js";
-import MarkerCustomers from "../marker_icons/marker_customers.svg";
-import MarkerDefault from "../marker_icons/marker_yes.svg";
-import MarkerNo from "../marker_icons/marker_no.svg";
-import MarkerPrivate from "../marker_icons/marker_private.svg";
-import MarkerPermissive from "../marker_icons/marker_permissive.svg";
-import MarkerUnknown from "../marker_icons/marker_unknown.svg";
+import MarkerCustomers from "~/marker_icons/marker_customers.svg";
+import MarkerNo from "~/marker_icons/marker_no.svg";
+import MarkerPermissive from "~/marker_icons/marker_permissive.svg";
+import MarkerPrivate from "~/marker_icons/marker_private.svg";
+import MarkerUnknown from "~/marker_icons/marker_unknown.svg";
+import MarkerDefault from "~/marker_icons/marker_yes.svg";
 
 export default function MapLegend() {
     const { t } = useTranslation();

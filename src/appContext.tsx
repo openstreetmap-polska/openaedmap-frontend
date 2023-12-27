@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useContext } from "react";
-import { initialModalState, ModalState } from "~/model/modal";
 import { AuthState, initialAuthState } from "~/model/auth";
-import SidebarAction from "./model/sidebarAction";
-import { DefibrillatorData } from "~/model/defibrillatorData";
 import { Country } from "~/model/country";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { ModalState, initialModalState } from "~/model/modal";
+import SidebarAction from "./model/sidebarAction";
 
 interface AppContextType {
     authState: AuthState,

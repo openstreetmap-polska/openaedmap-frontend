@@ -1,20 +1,23 @@
+import {
+    mdiAccountSupervisorOutline, mdiClockOutline, mdiHomeRoof,mdiImagePlus, 
+    mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
+} from "@mdi/js";
+import Icon from "@mdi/react";
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import {
     Button,
     Card, Columns, Image,
 } from "react-bulma-components";
-import {
-    mdiAccountSupervisorOutline, mdiImagePlus, mdiClockOutline, mdiHomeRoof,
-    mdiInformationOutline, mdiMapMarkerOutline, mdiPhoneOutline,
-} from "@mdi/js";
-import Icon from "@mdi/react";
+import { useTranslation } from "react-i18next";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import SidebarAction from "~/model/sidebarAction";
-import { DefibrillatorData } from "~/model/defibrillatorData";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
+import {useLanguage} from "~/i18n";
+import { DefibrillatorData } from "~/model/defibrillatorData";
+import { ModalType, initialModalState } from "~/model/modal";
+import SidebarAction from "~/model/sidebarAction";
+import { accessColourClass } from "./access";
 import {
     CloseSidebarButton,
     CopyUrlButton, EditButton,
@@ -22,12 +25,9 @@ import {
     OpenStreetMapNavigationButton,
     ViewButton,
 } from "./buttons";
+import DetailTextRow from "./detailTextRow";
 import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
-import DetailTextRow from "./detailTextRow";
-import { accessColourClass } from "./access";
-import { initialModalState, ModalType } from "../../model/modal";
-import {useLanguage} from "~/i18n";
 
 function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
     const { t } = useTranslation();

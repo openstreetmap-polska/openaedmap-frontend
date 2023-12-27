@@ -1,15 +1,15 @@
+import { mdiMapLegend } from "@mdi/js";
+import Icon from "@mdi/react";
 import React, { FC } from "react";
-import "./navbar.css";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import Icon from "@mdi/react";
-import { mdiMapLegend } from "@mdi/js";
+import ReactStoreBadges from "~/3rdparty/react-store-badges";
+import { useAppContext } from "~/appContext";
+import {useLanguage} from "~/i18n";
+import { ModalType, initialModalState } from "~/model/modal";
 import LanguageSwitcher from "./languageSwitcher";
 import LogInButton from "./logInButton";
-import { initialModalState, ModalType } from "../model/modal";
-import { useAppContext } from "../appContext";
-import ReactStoreBadges from "../3rdparty/react-store-badges";
-import {useLanguage} from "~/i18n";
+import "./navbar.css";
 
 const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
     const { setModalState } = useAppContext();
