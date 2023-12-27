@@ -92,8 +92,6 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 	} = useAppContext();
 	const { t } = useTranslation();
 	const language = useLanguage();
-	const [mapLanguage, setMapLanguage] = useState<string>("");
-	const [mapCountryLanguage, setMapCountryLanguage] = useState<string>("");
 
 	const hash4MapName = "map";
 
@@ -236,8 +234,6 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 			maxZoom: 19,
 			maplibreLogo: false,
 		});
-		setMapLanguage(language);
-		setMapCountryLanguage(countriesDataLanguage);
 
 		addMaplibreGeocoder(map);
 		mapRef.current = map;
@@ -375,8 +371,6 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		const map = mapRef.current;
 		addMaplibreGeocoder(map);
 		if (countriesDataLanguage !== language) return; // wait for countries data to be loaded
-		setMapLanguage(language);
-		setMapCountryLanguage(countriesDataLanguage);
 		// @ts-ignore
 		map.setStyle(mapStyle(language.toUpperCase(), countriesData));
 	}, [countriesData, countriesDataLanguage, language]);
