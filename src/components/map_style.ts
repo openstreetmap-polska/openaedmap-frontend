@@ -6,7 +6,7 @@ const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;
 const spriteUrl = (new URL("img/sprite", baseUrl)).href;
 // can't use URL class since this is a template not literal url
 const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
-const TILE_COUNTRIES_MAX_ZOOM = 5;
+const TILE_COUNTRIES_MAX_ZOOM = 6;
 
 const mapStyle = (lang: string, countriesData: Array<Country>) => {
     const countryCodeToName: Record<string, string> = countriesData.reduce((map: Record<string, string>, country) => {
@@ -39,7 +39,7 @@ const mapStyle = (lang: string, countriesData: Array<Country>) => {
         "aed-locations": {
             type: "vector",
             tiles: [tilesUrl],
-            minzoom: TILE_COUNTRIES_MAX_ZOOM + 1,
+            minzoom: TILE_COUNTRIES_MAX_ZOOM,
             maxzoom: 16,
         },
     },
@@ -99,7 +99,7 @@ const mapStyle = (lang: string, countriesData: Array<Country>) => {
             type: "symbol",
             source: "aed-locations",
             "source-layer": "defibrillators",
-            minzoom: 6,
+            minzoom: TILE_COUNTRIES_MAX_ZOOM,
             maxzoom: 9,
             filter: ["!has", "point_count"],
             layout: {
@@ -140,7 +140,7 @@ const mapStyle = (lang: string, countriesData: Array<Country>) => {
             type: "circle",
             source: "aed-locations",
             "source-layer": "defibrillators",
-            minzoom: 6,
+            minzoom: TILE_COUNTRIES_MAX_ZOOM,
             maxzoom: 8,
             filter: [">", "point_count", 0],
             layout: { visibility: "visible" },
@@ -164,7 +164,7 @@ const mapStyle = (lang: string, countriesData: Array<Country>) => {
             type: "symbol",
             source: "aed-locations",
             "source-layer": "defibrillators",
-            minzoom: 6,
+            minzoom: TILE_COUNTRIES_MAX_ZOOM,
             filter: [">", "point_count", 0],
             layout: {
                 "text-allow-overlap": true,

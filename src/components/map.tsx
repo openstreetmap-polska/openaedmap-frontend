@@ -103,6 +103,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 
     const mapContainer = useRef<HTMLDivElement | null>(null);
     const mapRef = useRef<maplibregl.Map | null>(null);
+    const maplibreGeocoderRef = useRef<MaplibreGeocoder | null>(null);
     const controlsLocation = "bottom-right";
 
     const [marker, setMarker] = useState<maplibregl.Marker | null>(null);
@@ -191,10 +192,22 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
         fetchData().catch(console.error);
     }, [language, setCountriesDataLanguage, setCountriesData]);
 
+    function addMaplibreGeocoder(map: maplibregl.Map) {
+        if (maplibreGeocoderRef.current !== null) {
+            map.removeControl(maplibreGeocoderRef.current);
+        }
+        const newMaplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
+            maplibregl,
+            placeholder: t("sidebar.find_location"),
+        });
+        newMaplibreGeocoder.setLanguage(language);
+        map.addControl(newMaplibreGeocoder);
+        maplibreGeocoderRef.current = newMaplibreGeocoder;
+    }
+
     useEffect(() => {
         if (mapContainer.current === null) return;
-        if (mapRef.current && mapLanguage === language) return; // stops map from initializing more than once
-        if (countriesDataLanguage !== language) return; // wait for countries data to be loaded
+        if (mapRef.current !== null) return; // stops map from initializing more than once
         const map = new maplibregl.Map({
             container: mapContainer.current,
             hash: hash4MapName,
@@ -209,13 +222,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
         setMapLanguage(language);
         setMapCountryLanguage(countriesDataLanguage);
 
-        const maplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
-            maplibregl,
-            placeholder: t("sidebar.find_location"),
-        });
-        maplibreGeocoder.setLanguage(language);
-
-        map.addControl(maplibreGeocoder);
+        addMaplibreGeocoder(map);
         mapRef.current = map;
 
         // how fast mouse scroll wheel zooms
@@ -332,8 +339,18 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
                 true,
             );
         }
-    }, [initialLatitude, initialLongitude, initialZoom,
-        setSidebarAction, setSidebarData, language, mapLanguage, t, countriesData, countriesDataLanguage]);
+    }, [initialLatitude, initialLongitude, initialZoom, setSidebarAction, setSidebarData, language, countriesData, countriesDataLanguage]);
+
+    useEffect(() => {
+        if (mapRef.current === null) return;
+        const map = mapRef.current;
+        addMaplibreGeocoder(map);
+        if (countriesDataLanguage !== language) return; // wait for countries data to be loaded
+        setMapLanguage(language);
+        setMapCountryLanguage(countriesDataLanguage);
+        // @ts-ignore
+        map.setStyle(mapStyle(language.toUpperCase(), countriesData));
+    }, [countriesData, countriesDataLanguage, language]);
 
     return (
         <>
