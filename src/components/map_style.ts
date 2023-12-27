@@ -1,3 +1,4 @@
+import { StyleSpecification } from "maplibre-gl";
 import { backendBaseUrl } from "~/backend";
 import { Country } from "~/model/country";
 
@@ -8,7 +9,10 @@ const spriteUrl = new URL("img/sprite", baseUrl).href;
 const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
 const TILE_COUNTRIES_MAX_ZOOM = 6;
 
-const mapStyle = (lang: string, countriesData: Array<Country>) => {
+const mapStyle = (
+	lang: string,
+	countriesData: Array<Country>,
+): StyleSpecification => {
 	const countryCodeToName: Record<string, string> = countriesData.reduce(
 		(map: Record<string, string>, country) => {
 			if (country.names[lang.toUpperCase()] !== undefined) {
@@ -217,7 +221,6 @@ const mapStyle = (lang: string, countriesData: Array<Country>) => {
 				},
 			},
 		],
-		id: "style",
 	};
 };
 

@@ -9,6 +9,14 @@ import { useAppContext } from "~/appContext";
 import { fetchCountriesData, fetchNodeDataFromBackend } from "~/backend";
 import nominatimGeocoder from "~/components/nominatimGeocoder";
 import { useLanguage } from "~/i18n";
+import {
+	addNodeIdToHash,
+	getMapLocation,
+	locationParameter,
+	parseParametersFromUrl,
+	removeNodeIdFromHash,
+	saveLocationToLocalStorage,
+} from "~/location";
 import ButtonsType from "~/model/buttonsType";
 import { DefibrillatorData } from "~/model/defibrillatorData";
 import { ModalType, initialModalState } from "~/model/modal";
@@ -62,21 +70,6 @@ function fillSidebarWithOsmDataAndShow(
 	});
 }
 
-function parseHash(): Record<string, string> {
-	const parameters: Record<string, string> = {};
-	for (const part of window.location.hash.slice(1).split("&")) {
-		const [key, value] = part.split("=", 2);
-		parameters[key] = value;
-	}
-	return parameters;
-}
-
-function getNewHashString(parameters: Record<string, string>) {
-	return Object.entries(parameters)
-		.map(([key, value]) => `${key}=${value}`)
-		.join("&");
-}
-
 const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 	const {
 		authState: { auth },
@@ -92,40 +85,14 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 	} = useAppContext();
 	const { t } = useTranslation();
 	const language = useLanguage();
-
-	const hash4MapName = "map";
-
-	const paramsFromHash = parseHash();
-
-	let initialLongitude = -8;
-	let initialLatitude = 47.74;
-	let initialZoom = 3;
-
-	if (paramsFromHash[hash4MapName]) {
-		[initialZoom, initialLatitude, initialLongitude] = paramsFromHash[
-			hash4MapName
-		]
-			.split("/")
-			.map(Number);
-	}
-
+	const { longitude, latitude, zoom } = getMapLocation();
 	const mapContainer = useRef<HTMLDivElement | null>(null);
 	const mapRef = useRef<maplibregl.Map | null>(null);
 	const maplibreGeocoderRef = useRef<MaplibreGeocoder | null>(null);
 	const controlsLocation = "bottom-right";
-
 	const [marker, setMarker] = useState<maplibregl.Marker | null>(null);
-
 	const [sidebarLeftShown, setSidebarLeftShown] = useState(false);
-
 	const [footerButtonType, setFooterButtonType] = useState(ButtonsType.Basic);
-
-	const removeNodeIdFromHash = () => {
-		const hashParams = parseHash();
-		// biome-ignore lint/performance/noDelete: using undefined assignment causes it to be part of url
-		delete hashParams.node_id;
-		window.location.hash = getNewHashString(hashParams);
-	};
 
 	const deleteMarker = () => {
 		if (marker !== null) {
@@ -225,11 +192,10 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		if (mapRef.current !== null) return; // stops map from initializing more than once
 		const map = new maplibregl.Map({
 			container: mapContainer.current,
-			hash: hash4MapName,
-			// @ts-ignore
+			hash: locationParameter,
 			style: mapStyle(language.toUpperCase(), countriesData),
-			center: [initialLongitude, initialLatitude],
-			zoom: initialZoom,
+			center: [longitude, latitude],
+			zoom: zoom,
 			minZoom: 3,
 			maxZoom: 19,
 			maplibreLogo: false,
@@ -286,6 +252,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		map.on("mouseleave", "unclustered-low-zoom", () => {
 			map.getCanvas().style.cursor = "";
 		});
+		map.on("moveend", saveLocationToLocalStorage);
 
 		// biome-ignore lint/suspicious/noExplicitAny: unknown type
 		type MapEventType = any;
@@ -313,14 +280,8 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 			});
 		});
 		function showObjectWithProperties(e: MapEventType) {
-			console.log(
-				"Clicked on object with properties: ",
-				e.features[0].properties,
-			);
 			if (e.features[0].properties !== undefined && mapRef.current !== null) {
 				const osmNodeId = e.features[0].properties.node_id;
-				console.log("Clicked on object with osm_id: ", osmNodeId);
-				// show sidebar
 				fillSidebarWithOsmDataAndShow(
 					osmNodeId,
 					mapRef.current,
@@ -329,13 +290,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 					setSidebarLeftShown,
 					false,
 				);
-				// update hash
-				const params = {
-					...parseHash(),
-					node_id: osmNodeId,
-				};
-				console.log("new hash params", params);
-				window.location.hash = getNewHashString(params);
+				addNodeIdToHash(osmNodeId);
 			}
 		}
 
@@ -344,7 +299,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		map.on("click", "unclustered-low-zoom", showObjectWithProperties);
 
 		// if direct link to osm node then get its data and zoom in
-		const newParamsFromHash = parseHash();
+		const newParamsFromHash = parseParametersFromUrl();
 		if (newParamsFromHash.node_id && mapRef.current !== null) {
 			fillSidebarWithOsmDataAndShow(
 				newParamsFromHash.node_id,
@@ -356,9 +311,9 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 			);
 		}
 	}, [
-		initialLatitude,
-		initialLongitude,
-		initialZoom,
+		latitude,
+		longitude,
+		zoom,
 		setSidebarAction,
 		setSidebarData,
 		language,
@@ -371,7 +326,6 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		const map = mapRef.current;
 		addMaplibreGeocoder(map);
 		if (countriesDataLanguage !== language) return; // wait for countries data to be loaded
-		// @ts-ignore
 		map.setStyle(mapStyle(language.toUpperCase(), countriesData));
 	}, [countriesData, countriesDataLanguage, language]);
 
