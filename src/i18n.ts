@@ -6,76 +6,81 @@ import { initReactI18next, useTranslation } from "react-i18next";
 const isProduction = import.meta.env.VITE_ENV === "production";
 
 const languages: { [index: string]: { nativeName: string } } = {
-    be: { nativeName: "беларуская мова" },
-    ca: { nativeName: "Català" },
-    cs: { nativeName: "Čeština" },
-    cy: { nativeName: "Cymraeg" },
-    de: { nativeName: "Deutsch" },
-    en: { nativeName: "English" },
-    es: { nativeName: "Español" },
-    fi: { nativeName: "Suomi" },
-    fr: { nativeName: "Français" },
-    it: { nativeName: "Italiano" },
-    ja: { nativeName: "日本語" },
-    ko: { nativeName: "한국어" },
-    nl: { nativeName: "Nederlands" },
-    pl: { nativeName: "Polski" },
-    ru: { nativeName: "Русский язык" },
-    sk: { nativeName: "Slovenčina" },
-    sl: { nativeName: "Slovenščina" },
-    sr: { nativeName: "Српски / Srpski" },
-    uk: { nativeName: "українська мова" },
-    zgh: { nativeName: "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ" },
-    "zh-Hans": { nativeName: "简体中文" },
-    "zh-Hant": { nativeName: "繁体中文" },
+	be: { nativeName: "беларуская мова" },
+	ca: { nativeName: "Català" },
+	cs: { nativeName: "Čeština" },
+	cy: { nativeName: "Cymraeg" },
+	de: { nativeName: "Deutsch" },
+	en: { nativeName: "English" },
+	es: { nativeName: "Español" },
+	fi: { nativeName: "Suomi" },
+	fr: { nativeName: "Français" },
+	it: { nativeName: "Italiano" },
+	ja: { nativeName: "日本語" },
+	ko: { nativeName: "한국어" },
+	nl: { nativeName: "Nederlands" },
+	pl: { nativeName: "Polski" },
+	ru: { nativeName: "Русский язык" },
+	sk: { nativeName: "Slovenčina" },
+	sl: { nativeName: "Slovenščina" },
+	sr: { nativeName: "Српски / Srpski" },
+	uk: { nativeName: "українська мова" },
+	zgh: { nativeName: "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ" },
+	"zh-Hans": { nativeName: "简体中文" },
+	"zh-Hant": { nativeName: "繁体中文" },
 };
 if (!isProduction) {
-    languages.debug = { nativeName: "--debug--" };
+	languages.debug = { nativeName: "--debug--" };
 }
 const languagesIsoCodes = Object.keys(languages);
 const defaultLanguage = import.meta.env.VITE_DEFAULT_LANG ?? "en";
 
 i18n
-// i18next-http-backend
-// loads translations from your server
-// https://github.com/i18next/i18next-http-backend
-    .use(Backend)
-// detect user language
-// learn more: https://github.com/i18next/i18next-browser-languageDetector
-    .use(LanguageDetector)
-// pass the i18n instance to react-i18next.
-    .use(initReactI18next)
-// init i18next
-// for all options read: https://www.i18next.com/overview/configuration-options
-    .init({
-        debug: !isProduction,
-        supportedLngs: languagesIsoCodes,
-        fallbackLng: isProduction ? defaultLanguage : "debug",
-        interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
-        },
-        backend: {
-            loadPath: "./locales/{{lng}}/{{ns}}.json",
-        },
-        detection: {
-            order: ['localStorage', 'path', 'navigator', 'htmlTag'],
-            lookupLocalStorage: 'i18nextLng',
-            // cache user language
-            caches: ['localStorage'],
-            excludeCacheFor: ['cimode'],
-        }
-    }, (err, t) => {
-        if (err) return console.log("something went wrong loading", err);
-        return t("key");
-    });
+	// i18next-http-backend
+	// loads translations from your server
+	// https://github.com/i18next/i18next-http-backend
+	.use(Backend)
+	// detect user language
+	// learn more: https://github.com/i18next/i18next-browser-languageDetector
+	.use(LanguageDetector)
+	// pass the i18n instance to react-i18next.
+	.use(initReactI18next)
+	// init i18next
+	// for all options read: https://www.i18next.com/overview/configuration-options
+	.init(
+		{
+			debug: !isProduction,
+			supportedLngs: languagesIsoCodes,
+			fallbackLng: isProduction ? defaultLanguage : "debug",
+			interpolation: {
+				escapeValue: false, // not needed for react as it escapes by default
+			},
+			backend: {
+				loadPath: "./locales/{{lng}}/{{ns}}.json",
+			},
+			detection: {
+				order: ["localStorage", "path", "navigator", "htmlTag"],
+				lookupLocalStorage: "i18nextLng",
+				// cache user language
+				caches: ["localStorage"],
+				excludeCacheFor: ["cimode"],
+			},
+		},
+		(err, t) => {
+			if (err) return console.log("something went wrong loading", err);
+			return t("key");
+		},
+	);
 
 i18n.on("languageChanged", (lang: string) => {
-    document.documentElement.setAttribute("lang", lang);
+	document.documentElement.setAttribute("lang", lang);
 });
 
 function useLanguage(): string {
-    const { i18n: { resolvedLanguage } } = useTranslation();
-    return resolvedLanguage ?? defaultLanguage;
+	const {
+		i18n: { resolvedLanguage },
+	} = useTranslation();
+	return resolvedLanguage ?? defaultLanguage;
 }
 
 export default i18n;

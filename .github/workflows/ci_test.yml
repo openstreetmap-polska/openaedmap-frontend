@@ -26,7 +26,7 @@ jobs:
       run: npm ci
     - name: Run TypeScript typecheck
       run: npm run typecheck
-    - name: Run linter
-      run: npm run lint
+    - name: Run linter & formatter
+      run: npm run check
     - name: Build
       run: npm run build

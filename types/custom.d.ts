@@ -1,8 +1,11 @@
 declare module "*.svg" {
-    const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-    export default content;
+	const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+	export default content;
 }
 
 declare module "@mapbox/timespace" {
-    export function getFuzzyLocalTimeFromPoint(timestamp: number, point: number[]): { _d: Date };
+	export function getFuzzyLocalTimeFromPoint(
+		timestamp: number,
+		point: number[],
+	): { _d: Date };
 }

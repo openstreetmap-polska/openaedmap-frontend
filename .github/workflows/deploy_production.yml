@@ -24,6 +24,8 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm ci
+    - name: Run linter & formatter
+      run: npm run check
     - name: Run TypeScript typecheck
       run: npm run typecheck
     - name: Set git commit

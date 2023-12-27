@@ -1,9 +1,9 @@
 export interface AuthState {
-    auth: OSMAuth.OSMAuthInstance | null,
-    osmUsername: string,
+	auth: OSMAuth.OSMAuthInstance | null;
+	osmUsername: string;
 }
 
 export const initialAuthState: AuthState = {
-    auth: null,
-    osmUsername: "",
+	auth: null,
+	osmUsername: "",
 };
