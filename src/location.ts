@@ -76,7 +76,7 @@ export function addNodeIdToHash(nodeId: string) {
 export function saveLocationToLocalStorage() {
 	const location = getLocationStringFromUrl();
 	if (location !== null) {
-		localStorage.setItem(locationParameter, location ?? "");
+		localStorage.setItem(locationParameter, location);
 	}
 }
 
