@@ -1,5 +1,5 @@
 export interface AuthState {
-	auth: OSMAuth.OSMAuthInstance | null;
+	auth: OSMAuth.osmAuth | null;
 	osmUsername: string;
 }
 

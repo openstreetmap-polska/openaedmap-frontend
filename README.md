@@ -47,7 +47,6 @@ VITE_DEFAULT_LANG=en
 VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
 VITE_BACKEND_API_URL=https://dev.openaedmap.org
 VITE_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
-VITE_OSM_OAUTH2_CLIENT_SECRET=vSfLjZquQ5xlcD9Lq9rhyDuH1ItpakgY5DW59WrRtHY
 HOST=127.0.0.1
 ```
 

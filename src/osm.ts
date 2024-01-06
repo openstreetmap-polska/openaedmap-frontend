@@ -50,7 +50,7 @@ export async function fetchNodeDataFromOsm(
 }
 
 export function updateOsmUsernameState(
-	auth: OSMAuth.OSMAuthInstance,
+	auth: OSMAuth.osmAuth,
 	setOsmUsername: (username: string) => void,
 ) {
 	auth.xhr(
@@ -76,7 +76,7 @@ function createTagElement(key: string, value: string): Element {
 }
 
 export function getOpenChangesetId(
-	auth: OSMAuth.OSMAuthInstance,
+	auth: OSMAuth.osmAuth,
 	openChangesetId: string,
 	openChangesetIdSetter: (changesetId: string) => void,
 	lang: string,
@@ -131,7 +131,7 @@ export function getOpenChangesetId(
 }
 
 export function addDefibrillatorToOSM(
-	auth: OSMAuth.OSMAuthInstance,
+	auth: OSMAuth.osmAuth,
 	changesetId: string,
 	data: NewDefibrillatorData,
 ): Promise<string> {
@@ -172,7 +172,7 @@ export function addDefibrillatorToOSM(
 }
 
 export function editDefibrillatorInOSM(
-	auth: OSMAuth.OSMAuthInstance,
+	auth: OSMAuth.osmAuth,
 	changesetId: string,
 	data: DefibrillatorData,
 ): Promise<string> {

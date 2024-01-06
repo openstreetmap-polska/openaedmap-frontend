@@ -1,10 +1,7 @@
-// @ts-ignore
 import { osmAuth } from "osm-auth";
 import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { AppContext } from "~/appContext";
-import { fetchCountriesData } from "~/backend";
 import CustomModal from "~/components/modal";
-import { useLanguage } from "~/i18n";
 import { AuthState } from "~/model/auth";
 import { Country } from "~/model/country";
 import { DefibrillatorData } from "~/model/defibrillatorData";
@@ -35,21 +32,17 @@ function Main() {
 		setRightSidebarShown(!rightSidebarShown);
 	const closeRightSidebar = () => setRightSidebarShown(false);
 
-	const {
-		VITE_OSM_API_URL,
-		VITE_OSM_OAUTH2_CLIENT_ID,
-		VITE_OSM_OAUTH2_CLIENT_SECRET,
-	} = import.meta.env;
+	const { VITE_OSM_API_URL, VITE_OSM_OAUTH2_CLIENT_ID } = import.meta.env;
 	const redirectPath = window.location.origin + window.location.pathname;
 	const [auth] = useState(
-		osmAuth({
+		new osmAuth({
 			url: VITE_OSM_API_URL,
 			client_id: VITE_OSM_OAUTH2_CLIENT_ID ?? "",
-			client_secret: VITE_OSM_OAUTH2_CLIENT_SECRET ?? "",
 			redirect_uri: `${redirectPath}land.html`,
 			scope: "read_prefs write_api",
 			auto: false,
 			singlepage: false,
+			// @ts-ignore: https://github.com/osmlab/osm-auth/pull/127
 			apiUrl: VITE_OSM_API_URL,
 		}),
 	);

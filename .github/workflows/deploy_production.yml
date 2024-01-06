@@ -40,7 +40,6 @@ jobs:
         VITE_DEFAULT_LANG: en
         VITE_OSM_API_URL: 'https://api.openstreetmap.org'
         VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
-        VITE_OSM_OAUTH2_CLIENT_SECRET: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_SECRET }}
         VITE_BACKEND_API_URL: 'https://openaedmap.org'
       run: npm run build && ./scripts/build_every_lang.sh
     - name: Run deploy script on host
