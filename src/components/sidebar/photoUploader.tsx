@@ -3,7 +3,6 @@ import Icon from "@mdi/react";
 import React, { FC, useState } from "react";
 import { Button, Card, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import store from "store";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
 import { DefibrillatorData } from "~/model/defibrillatorData";
@@ -97,7 +96,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
 
 										const url = auth?.options().url;
 										const storageKey = `${url}oauth2_access_token`;
-										const oauth2AccessToken = store.get(storageKey);
+										const oauth2AccessToken = localStorage.getItem(storageKey);
 										if (!oauth2AccessToken || !auth || !auth.authenticated()) {
 											const errorMessage =
 												`auth.authenticated()=${auth?.authenticated()} ` +
