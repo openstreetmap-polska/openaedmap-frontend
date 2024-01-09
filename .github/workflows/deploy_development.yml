@@ -55,4 +55,4 @@ jobs:
       run: npm run build && ./scripts/build_every_lang.sh
     - name: Run deploy script on host
       run: |
-        rsync -rp -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
+        rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
