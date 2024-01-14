@@ -32,11 +32,12 @@ function Main() {
 		setRightSidebarShown(!rightSidebarShown);
 	const closeRightSidebar = () => setRightSidebarShown(false);
 
-	const { VITE_OSM_API_URL, VITE_OSM_OAUTH2_CLIENT_ID } = import.meta.env;
+	const { VITE_OSM_API_URL, VITE_OSM_AUTH_URL, VITE_OSM_OAUTH2_CLIENT_ID } =
+		import.meta.env;
 	const redirectPath = window.location.origin + window.location.pathname;
 	const [auth] = useState(
 		new osmAuth({
-			url: VITE_OSM_API_URL,
+			url: VITE_OSM_AUTH_URL ?? VITE_OSM_API_URL,
 			client_id: VITE_OSM_OAUTH2_CLIENT_ID ?? "",
 			redirect_uri: `${redirectPath}land.html`,
 			scope: "read_prefs write_api",
