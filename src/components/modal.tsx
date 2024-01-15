@@ -96,8 +96,8 @@ const ModalContent: FC = () => {
 					<p className="block">{t("modal.about_osm")}</p>
 					<p>
 						{t("modal.create_account")}
-						<a href="https://osm.org" rel="noreferrer" target="_blank">
-							osm.org
+						<a href="https://openstreetmap.org" rel="noreferrer" target="_blank">
+							OpenStreetMap.org
 						</a>
 					</p>
 				</div>
