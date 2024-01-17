@@ -1,6 +1,7 @@
 import { osmAuth } from "osm-auth";
 import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { AppContext } from "~/appContext";
+import { fixOsmAuthLocalStorageTokens } from "~/auth";
 import CustomModal from "~/components/modal";
 import { AuthState } from "~/model/auth";
 import { Country } from "~/model/country";
@@ -34,6 +35,9 @@ function Main() {
 
 	const { VITE_OSM_API_URL, VITE_OSM_AUTH_URL, VITE_OSM_OAUTH2_CLIENT_ID } =
 		import.meta.env;
+	useEffect(() => {
+		fixOsmAuthLocalStorageTokens();
+	}, []);
 	const redirectPath = window.location.origin + window.location.pathname;
 	const [auth] = useState(
 		new osmAuth({
