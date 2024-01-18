@@ -113,7 +113,7 @@
         "license_short_description": "Stručne to znamená, že fotografia môže byť použitá pre každý účel. Nie je potrebný žiadny attribution.",
         "send_report": "Odoslať správu",
         "report": "Nahlásiť fotografiu",
-        "report_long_text": "Môžete nahlásiť fotografiu, ak je to zlá kvalita, nezobrazuje umiestnenie AEDs alebo je inapropriate v žiadnom prípade. Správcovia stránky preveria správu."
+        "report_long_text": "Fotografiu môžete nahlásiť, ak je nekvalitná, neukazuje polohu AED alebo je akýmkoľvek spôsobom nevhodná. Správcovia stránky správu skontrolujú."
     },
     "common": {
         "loading": "Načítanie..."
