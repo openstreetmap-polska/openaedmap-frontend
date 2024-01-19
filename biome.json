@@ -1,7 +1,13 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"ignore": [".devcontainer", "build", "public/locales", "public/img"]
+		"ignore": [
+			".devcontainer",
+			"build",
+			"public/locales",
+			"public/img",
+			"coverage"
+		]
 	},
 	"organizeImports": {
 		"enabled": true
