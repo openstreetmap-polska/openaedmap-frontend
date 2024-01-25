@@ -32,7 +32,11 @@ import DetailTextRow from "./detailTextRow";
 import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
 
-function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
+const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
+	data,
+	closeSidebar,
+}) => {
+	if (data === null) return null;
 	const { t } = useTranslation();
 	const {
 		authState: { auth },
@@ -112,7 +116,7 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
 			<hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
 		</div>
 	);
-}
+};
 
 const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 	const { t } = useTranslation();
@@ -158,7 +162,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 					<CloseSidebarButton closeSidebarFunction={closeSidebar} />
 				</Card.Header>
 				<Card.Content pl={3} pr={3} mb={1} pt={2} className="content pb-0">
-					{photoGallery(data, closeSidebar)}
+					<PhotoGallery data={data} closeSidebar={closeSidebar} />
 					<Columns vCentered className="is-mobile">
 						<Columns.Column textAlign="center" size={2}>
 							<Icon
