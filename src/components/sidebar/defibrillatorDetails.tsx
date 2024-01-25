@@ -39,15 +39,19 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
 		setSidebarAction,
 		setModalState,
 	} = useAppContext();
+	const [imageError, setImageError] = React.useState("");
 	let images: ReactImageGalleryItem[] = [];
 	// Currently only one photo allowed
 	if (data.photoRelativeUrl !== undefined && data.photoRelativeUrl !== null) {
-		images = [
-			{
-				original: backendBaseUrl + data.photoRelativeUrl,
-				thumbnail: backendBaseUrl + data.photoRelativeUrl,
-			},
-		];
+		const imageUrl = backendBaseUrl + data.photoRelativeUrl;
+		if (imageUrl !== imageError) {
+			images = [
+				{
+					original: imageUrl,
+					thumbnail: imageUrl,
+				},
+			];
+		}
 	}
 	if (images.length > 0) {
 		// ref would be used if there were more photos to see which one is selected
@@ -75,6 +79,10 @@ function photoGallery(data: DefibrillatorData, closeSidebar: () => void) {
 					renderCustomControls={
 						data.photoId === null ? undefined : renderCustomControls
 					}
+					onImageError={(event: React.SyntheticEvent<HTMLImageElement>) => {
+						const target = event.target as HTMLImageElement;
+						setImageError(target.src);
+					}}
 				/>
 				<hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
 			</div>
