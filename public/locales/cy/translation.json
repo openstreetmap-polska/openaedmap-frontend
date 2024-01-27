@@ -7,19 +7,19 @@
         "private": "Ar gael gyda chaniatâd y perchennog",
         "no": "Ddim ar gael",
         "unknown": "Argaeledd anhysbys",
-        "unknownTag": "Dim tag argaeledd neu ddim yn cyfateb i'r uchod",
-        "permissive": "Ar gael yn gyhoeddus am gyfnod amhenodol",
+        "unknownTag": "Dim tag argaeledd neu ddim sy'n cyfateb i'r uchod",
+        "permissive": "Ar gael yn gyhoeddus nes clywir yn wahanol",
         "yes": "Ar gael yn gyhoeddus",
         "customers": "Ar gael yn ystod oriau gwaith"
     },
     "navbar": {
-        "created_with_<3_by": "Crëwyd gyda ❤️ gan",
+        "created_with_<3_by": "crëwyd gyda ❤️ gan",
         "login": "Mewngofnodi gyda chyfrif OSM",
         "logout": "Allgofnodi",
         "about": "Ynghylch",
-        "hosted_by": "darparwyd gan",
-        "visit_github": "Ymweld â'n hystorfa GitHub",
-        "visit_osmp_website": "Ymweld â gwefan OpenStreetMap Poland",
+        "hosted_by": "cynhaliwyd gan",
+        "visit_github": "Ymwelwch â'n hystorfa GitHub",
+        "visit_osmp_website": "Ymwelwch â gwefan OpenStreetMap Gwlad Pwyl",
         "help_translating": "Helpu i gyfieithu"
     },
     "sidebar": {
@@ -42,14 +42,14 @@
         "copy_url": "Copïo URL",
         "add_defibrillator": "Ychwanegu diffibriliwr",
         "openstreetmap_navigation": "Cyfeiriadau OpenStreetMap",
-        "verification_date": "Gwelwyd",
+        "verification_date": "Dyddiad arolwg",
         "edit_defibrillator": "Golygu diffibriliwr",
         "download_title": "Lawrlwytho data AED wedi'i hychwanegu at OSM",
         "geojson": "GeoJSON",
         "location": "Lleoliad",
         "google_maps_navigation": "Cyfeiriadau Google Maps",
         "world": "Byd",
-        "find_location": "Canfod lleoliad"
+        "find_location": "Chwilio am leoliad"
     },
     "form": {
         "optional_field": "Maes dewisol",
@@ -66,7 +66,7 @@
         "add": "Ychwanegu",
         "add_aed": "Ychwanegu AED",
         "save_aed": "Cadw AED",
-        "partners": "Partneriaid y prosiect",
+        "partners": "Partneriaid y brosiect",
         "cancel": "Canslo",
         "continue": "Parhau"
     },
@@ -75,13 +75,13 @@
         "open": "Ar agor",
         "closed": "Ar gau"
     },
-    "osmp": "OpenStreetMap Poland",
+    "osmp": "OpenStreetMap Gwlad Pwyl",
     "modal": {
         "aed_added_successfully": "Wedi ychwanegu AED yn llwyddiannus.",
         "aed_updated_successfully": "Wedi diweddaru AED yn llwyddiannus.",
         "available_in_osm": "Ar gael ar OpenStreetMap gyda'r URL:",
         "should_appear_soon": "Dylai'r gwrthrych fod ar y map o fewn 60 munud.",
-        "click_login_button": "Caewch y ffenestr hon a chliciwch ar y botwm i'r brig i fewngofnodi.",
+        "click_login_button": "Caewch y ffenestr hon a chliciwch ar y botwm mewngofnodi ar y brig i fewngofnodi.",
         "current_zoom": "Lefel chwyddo cyfredol:",
         "create_account": "Gallwch chi gyfrannu hefyd! Crëwch gyfrif am ddim ar ",
         "become_openaedmap_partner": "Hoffech chi fod yn bartner OpenAEDMap?",
@@ -89,20 +89,33 @@
         "need_to_login": "Er mwyn ychwanegu nodweddion, mae rhaid ichi fewngofnodi â chyfrif OpenStreetMap.",
         "need_more_zoom": "Rhaid ichi chwyddo i mewn cyn ychwanegu nodweddion fel bod y lleoliad yn gywir.",
         "zoom_need_to_be": "Rhaid i'r lefel chwyddo fod o leiaf lefel 15.",
-        "about_project": "Mae OpenAEDMap yn brosiect data agored sy'n dangos pob un gyfarpar diffibrilio allanol awtomatig (AED) ar draws y byd. Darperir y gwefan gan ddefnyddio data OpenStreetMap ac yn ffrwyth ymdrech OpenStreetMap Poland. Lansiwyd y gwefan yn 2022 ar ôl newid y gwefan Pwyleg AED Mapa i ddyluniad newydd.",
-        "about_osm": "Mae OpenStreetMap (OSM) yn fath o Wicipedia ar gyfer mapiau. Mae'n ar gael i bawb, ac mae croeso i bawb ychwanegu gwrthrychau i'r map. Gallwch chi ddefnyddio eich cyfrif OSM i ychwanegu lleoliadau AED yn uniongyrchol gan ddefnyddio ffurflen syml.",
+        "about_project": "Mae OpenAEDMap yn brosiect data agored sy'n dangos pob cyfarpar diffibrilio allanol awtomatig (AED) ar draws y byd. Darperir y gwefan gan ddefnyddio data OpenStreetMap ac yn ffrwyth ymdrech OpenStreetMap Gwlad Pwyl. Lansiwyd y gwefan yn 2022 ar ôl newid y wefan Bwyleg AED Mapa i ddyluniad newydd.",
+        "about_osm": "Mae OpenStreetMap (OSM) yn fath o Wicipedia ar gyfer mapiau. Mae'n ar gael i bawb, a gall pawb ychwanegu nodweddion i'r map. Gallwch chi ddefnyddio eich cyfrif OSM i ychwanegu lleoliadau AED yn uniongyrchol gan ddefnyddio ffurflen syml.",
         "error_occurred": "Digwyddodd gwall",
-        "title": "Gwybodaeth"
+        "title": "Gwybodaeth",
+        "thanks_for_photo": "Diolch am uwchlwytho'r ddelwedd. Dylai fod yn weladwy cyn bo hir.",
+        "thanks_for_report": "Diolch am anfon adroddiad. Bydd yn cael ei adolygu gan weinyddwyr y wefan."
     },
     "partners": {
-        "honorary_patronage": "Noddwr er anrhydedd",
-        "acting": "dros dro",
+        "honorary_patronage": "Noddwyr er anrhydedd",
+        "acting": "(Dros Dro)",
         "chief_geodesist": "Prif Geodesydd Gwlad Pwyl",
         "wroclaw_medical_university": "Prifysgol Meddygol Wroclaw",
         "gugik": "Prif Swyddfa Geodeseg a Chartograffeg yng Ngwlad Pwyl",
-        "main_scientific_partner": "Prif Partner Gwyddonol"
+        "main_scientific_partner": "Prif Partner Gwyddonol",
+        "e_health_centre": "e-Health Centre",
+        "warsaw_university_of_technology": "Prifysgol Technoleg Warsaw"
     },
     "common": {
         "loading": "Wrthi'n llwytho..."
+    },
+    "photo": {
+        "upload": "Uwchlwytho delwedd",
+        "remove": "Dileu delwedd",
+        "report": "Adrodd delwedd",
+        "report_long_text": "Gallwch chi adrodd y ddelwedd os yw'n ansawdd gwael, ddim yn dangos lleoliad yr AED neu'n amhriodol mewn unrhyw ffordd. Bydd gweinyddwyr y wefan yn adolygu'r adroddiad.",
+        "license": "Trwyddedir yr holl ddelweddau AED a gynhelir gennym o dan Creative Commons Zero (CC0 v1.0). Drwy uwchlwytho eich llun rydych chi'n cytuno i delerau'r drwydded hon.",
+        "license_short_description": "Yn syml, mae hyn yn golygu y gall unrhyw un ddefnyddio'r llun at unrhyw ddiben. Nid oes angen cydnabyddiaeth.",
+        "send_report": "Anfon adroddiad"
     }
 }
