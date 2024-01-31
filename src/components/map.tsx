@@ -299,7 +299,6 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		setSidebarData,
 		language,
 		countriesData,
-		countriesDataLanguage,
 	]);
 
 	useEffect(() => {
