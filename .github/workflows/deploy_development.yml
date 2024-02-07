@@ -48,7 +48,7 @@ jobs:
       run: ./scripts/build_every_lang.sh && npm run build
     - name: Create robots.txt
       run: |
-        cat << 'EOF' >> public/robots.txt
+        cat << 'EOF' >> build/robots.txt
         # https://www.robotstxt.org/robotstxt.html
         User-agent: *
         Disallow: /
