@@ -23,9 +23,9 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			react(),
 			Sitemap({
-				outDir: "./build",
+				outDir: "build",
 				hostname: env.VITE_BACKEND_API_URL,
-				exclude: "/land",
+				exclude: ["/land"],
 				dynamicRoutes: Object.keys(languages).map((lang) => `/${lang}`),
 			}),
 		],
