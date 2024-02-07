@@ -23,7 +23,7 @@ We are using [Weblate](https://weblate.org) to manage translations.
 
 If you want to help go to https://hosted.weblate.org/projects/openaedmap/ and start translating :)
 
-If new language is added then create an issue or make a PR adding it to `src/i18n.ts` with the 2 letter language [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) and native name (this is going to be displayed in dropdown).
+If new language is added then create an issue or make a PR adding it to `src/languages.ts` with the 2 letter language [ISO 639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) and native name (this is going to be displayed in dropdown).
 
 Language with multiple variants needs extra suffix e.g. zh-Hant for Traditional Chinese.
 
