@@ -3,7 +3,8 @@ pre-commit:
   parallel: true
   commands:
     biome:
-      run: biome check .
+      run: biome check --apply .
+      stage_fixed: true
     test:
       run: bun test
 
