@@ -32,3 +32,6 @@ jobs:
       run: npm test
     - name: Build
       run: npm run build
+      env:
+        VITE_DEFAULT_LANG: en
+        VITE_BACKEND_API_URL: "https://dev.openaedmap.org"
