@@ -15,7 +15,7 @@ const htmlPlugin = async (env) => {
 	const translationsEn = await getTranslatedStrings("en");
 	const translationsTarget = await getTranslatedStrings(
 		env.VITE_DEFAULT_LANG ?? "en",
-	);
+	).catch((e) => console.error(e));
 	const { meta_title, meta_description, website_title } = {
 		...translationsEn,
 		...translationsTarget,
