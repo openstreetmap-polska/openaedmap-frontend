@@ -9,6 +9,7 @@ on:
     - public/**
     - package*.json
     - .github/workflows/deploy_development.yml
+    - vite.config.js
 
 jobs:
   deploy:
