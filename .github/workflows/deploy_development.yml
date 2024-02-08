@@ -54,6 +54,16 @@ jobs:
         User-agent: *
         Disallow: /
         EOF
-    - name: Run deploy script on host
+    - name: Copy main build to server
+      run: |
+        rsync -rp -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
+    - name: Build app lang versions
+      env:
+        VITE_ENV: development
+        VITE_OSM_API_URL: 'https://master.apis.dev.openstreetmap.org'
+        VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
+        VITE_BACKEND_API_URL: 'https://dev.openaedmap.org'
+      run: ./scripts/build_every_lang.sh
+    - name: Copy lang version builds to server
       run: |
         rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
