@@ -39,14 +39,14 @@ jobs:
       run: npm run typecheck
     - name: Set git commit
       run: echo "VITE_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-    - name: Build app
+    - name: Build app (main)
       env:
         VITE_ENV: development
         VITE_DEFAULT_LANG: en
         VITE_OSM_API_URL: 'https://master.apis.dev.openstreetmap.org'
         VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         VITE_BACKEND_API_URL: 'https://dev.openaedmap.org'
-      run: ./scripts/build_every_lang.sh && npm run build
+      run: npm run build
     - name: Create robots.txt
       run: |
         cat << 'EOF' > build/robots.txt
