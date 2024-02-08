@@ -28,7 +28,7 @@ i18n
 		{
 			debug: !isProduction,
 			supportedLngs: languagesIsoCodes,
-			fallbackLng: isProduction ? defaultLanguage : "debug",
+			fallbackLng: isProduction ? "en" : "debug",
 			interpolation: {
 				escapeValue: false, // not needed for react as it escapes by default
 			},
