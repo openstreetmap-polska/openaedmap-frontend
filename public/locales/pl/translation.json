@@ -117,5 +117,10 @@
         "report_long_text": "Możesz zgłosić zdjęcie jeżeli ma słabą jakość, nie pokazuje położenia AEDa lub jest w jakikolwiek inny sposób niestosowne. Zgłoszenie zostanie przeanalizowane przez administratorów strony.",
         "license": "Wszystkie udostępniane przez nas zdjęcia AEDów są na licencji Creative Commons Zero (CC0 v1.0). Wysyłając zdjęcie zgadzasz się na warunki tej licencji.",
         "license_short_description": "W skrócie oznacza to, że zdjęcia mogą być potem wykorzystane przez kogokolwiek w dowolnym celu. Nie jest konieczne wskazanie autora."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Mapa Defibrylatorów",
+        "meta_title": "Otwarta mapa automatycznych defibrylatorów zewnętrznych (AED)",
+        "meta_description": "Mapa AED (automatycznych defibrylatorów zewnętrznych) oparta na danych OpenStreetMap. Nasza strona pozwala łatwo znaleźć AED blisko Ciebie, co może być bardzo pomocne w sytuacjach zagrożenia życia. AED to urządzenie używane do resuscytacji krążeniowo-oddechowej osób z nagłym zatrzymaniem krążenia. Z naszą mapą każdy może znaleźć najbliższy defibrylator i pomoć osobie w potrzebie."
     }
 }
