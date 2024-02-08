@@ -1,10 +1,15 @@
 import i18n from "i18next";
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar } from "react-bulma-components";
+import { useTranslation } from "react-i18next";
 import { languages, useLanguage } from "~/i18n";
 
 export default function LanguageSwitcher() {
+	const { t } = useTranslation();
 	const language = useLanguage();
+	useEffect(() => {
+		document.title = t("meta.website_title");
+	}, [t]);
 	return (
 		<Navbar.Item px={1}>
 			<div className="select">
