@@ -20,6 +20,16 @@ const htmlPlugin = async (env) => {
 		...translationsEn,
 		...translationsTarget,
 	};
+	const baseUrl = env.VITE_BASE_URL ?? "";
+	const canonicalLinks = `<link href="${env.VITE_BACKEND_API_URL}${baseUrl}" rel="canonical" />`;
+	const alternateLinks = Object.keys(languages)
+		.map(
+			(lang) =>
+				`\t<link href="${env.VITE_BACKEND_API_URL}/${lang}/" rel="alternate" hreflang="${lang}" />`,
+		)
+		.join("\n");
+	const defaultAlternateLink = `\t<link href="${env.VITE_BACKEND_API_URL}/" rel="alternate" hreflang="x-default" />`;
+	const seoLinks = `${canonicalLinks}\n${alternateLinks}\n${defaultAlternateLink}`;
 	return {
 		name: "html-transform",
 		transformIndexHtml(html) {
@@ -32,6 +42,10 @@ const htmlPlugin = async (env) => {
 				.replace(
 					/<meta content="(.*?)" name="description">/,
 					`<meta content="${meta_description}" name="description">`,
+				)
+				.replace(
+					/<link href="https:\/\/openaedmap.org" rel="canonical" \/>/,
+					seoLinks,
 				);
 		},
 	};

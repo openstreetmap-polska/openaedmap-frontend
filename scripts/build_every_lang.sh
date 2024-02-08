@@ -7,6 +7,7 @@ for lang in public/locales/*; do
         continue
     fi
     export VITE_DEFAULT_LANG=$lang
+    export VITE_BASE_URL="/$lang/"
     echo "Generating $lang"
     npm run build -- --outDir "build/$lang" --base "/$lang"
 done
