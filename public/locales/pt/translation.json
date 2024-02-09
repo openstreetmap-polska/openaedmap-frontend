@@ -1,1 +1,79 @@
-{}
+{
+    "sidebar": {
+        "verification_date": "Data do levantamento",
+        "find_location": "Encontrar a localização",
+        "edit_defibrillator": "Editar desfibrilador",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Legenda do mapa",
+        "caption_info": "DEA",
+        "no_data": "Sem dados",
+        "indoor": "Dentro do edifício",
+        "level": "andar",
+        "location": "Localização",
+        "opening_hours": "Horas de abertura",
+        "description": "Descrição",
+        "contact_number": "Número de contato",
+        "operator": "Operador",
+        "note": "Nota",
+        "edit": "Editar",
+        "edit_in_osm": "Editar no OSM",
+        "view": "Visualizar no OSM",
+        "copy_url": "Copiar URL",
+        "add_defibrillator": "Adicionar desfibrilador",
+        "openstreetmap_navigation": "Navegação OpenStreetMap",
+        "google_maps_navigation": "Navegação Google Maps",
+        "world": "Mundo",
+        "close": "Fechar menu lateral",
+        "download_title": "Transferir dados AED adicionados ao OSM",
+        "csv": "CSV"
+    },
+    "form": {
+        "marker_popup_text": "Mover o marcador para a localização do DEA",
+        "level": "Andar",
+        "optional_field": "Campo opcional",
+        "is_indoor": "Está dentro de um edifício?",
+        "inside": "Dentro",
+        "accessibility": "Acessibilidade",
+        "location": "Descreva a localização",
+        "location_example": "Por exemplo: na parede ao pé da entrada",
+        "outside": "Exterior"
+    },
+    "footer": {
+        "add": "Adicionar",
+        "add_aed": "Adicionar DEA",
+        "cancel": "Cancelar",
+        "continue": "Continuar",
+        "save_aed": "Guardar DEA",
+        "partners": "Parceiros do projeto"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Aberto",
+        "closed": "Fechado"
+    },
+    "indoor": {
+        "yes": "Sim",
+        "no": "Não"
+    },
+    "access": {
+        "yes": "Publicamente acessível",
+        "private": "Acessível com permissão do proprietário",
+        "customers": "Acessível durante um horário",
+        "no": "Indisponível",
+        "unknown": "Acesso desconhecido",
+        "permissive": "Publicamente acessível até nova indicação",
+        "unknownTag": "Sem etiqueta de acesso ou não corresponde às de cima"
+    },
+    "navbar": {
+        "created_with_<3_by": "criado com ❤️ por",
+        "visit_github": "Visite o nosso repositório GitHub",
+        "visit_osmp_website": "Visite o site do OpenStreetMap Polónia",
+        "login": "Autenticar com conta OSM",
+        "logout": "Terminar sessão",
+        "about": "Sobre",
+        "hosted_by": "hospedado por",
+        "help_translating": "Ajude a traduzir"
+    },
+    "osmp": "OpenStreetMap Polónia"
+}
