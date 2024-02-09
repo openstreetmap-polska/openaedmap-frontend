@@ -52,9 +52,9 @@ HOST=127.0.0.1
 
 *Note: You can use Github Codespaces to develop.*
 
-### Pre-commit
-It's recommended to use [pre-commit](https://pre-commit.com/)
-After installing pre-commit use `pre-commit install` to configure it.
+### Lefthook
+It's recommended to use [lefthook](https://github.com/evilmartians/lefthook)
+After installing lefthook use `lefthook install` to configure it.
 Formatter and linter will run before git commit.
 
 ### Available Scripts
