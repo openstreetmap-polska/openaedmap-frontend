@@ -117,5 +117,10 @@
         "send_report": "Bericht senden",
         "report": "Foto melden",
         "report_long_text": "Du kannst das Foto melden, wenn es von schlechter Qualität ist, den Standort des AEDs nicht zeigt oder aus irgendeinem Grund unangemessen ist. Die Administratoren der Website werden den Bericht prüfen."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Landkarte von Defibrillatoren",
+        "meta_description": "Karte der AEDs (Automatische Externe Defibrillatoren) basierend auf OpenStreetMap-Daten. Unsere Website macht es Ihnen leicht, einen AED-Defibrillator in Ihrer Nähe zu finden, der in lebensbedrohlichen Situationen sehr hilfreich sein kann. AED-Defibrillatoren sind Geräte zur Herz-Lungen-Wiederbelebung von Menschen mit Herzstillstand. Mit unserer Karte kann jeder schnell den nächsten Defibrillator finden und jemandem in Not helfen.",
+        "meta_title": "Offene Karte von Automatischen Externen Defibrillatoren (AEDs)"
     }
 }
