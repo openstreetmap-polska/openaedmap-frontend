@@ -117,5 +117,10 @@
         "send_report": "Enviar un informe",
         "report": "Informar de una foto",
         "report_long_text": "Puedes denunciar la foto si es de mala calidad, no muestra la ubicación del DEA o es inapropiada de algún modo. Los administradores del sitio revisarán la denuncia."
+    },
+    "meta": {
+        "meta_title": "Abrir mapa de Desfibriladores Externos Automáticos (DEA)",
+        "website_title": "OpenAEDMap - Mapa de Desfibriladores",
+        "meta_description": "Mapa de AED (Desfibriladores Externos Automáticos) basado en datos de OpenStreetMap. Nuestra página web hace que sea fácil encontrar un desfibrilador DEA cerca de usted, que puede ser muy útil en situaciones potencialmente mortales. Los desfibriladores de DEA son dispositivos que se utilizan para la reanimación cardiopulmonar de personas en paro cardíaco. Con nuestro mapa, cualquiera puede encontrar rápidamente el desfibrilador más cercano y ayudar a alguien necesitado."
     }
 }
