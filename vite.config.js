@@ -53,7 +53,9 @@ const htmlPlugin = async (env) => {
 
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd());
-	const isProduction = !env.VITE_BACKEND_API_URL.includes("dev");
+	const isProduction =
+		env.VITE_BACKEND_API_URL !== undefined &&
+		!env.VITE_BACKEND_API_URL.includes("dev");
 	const plugins = [react(), htmlPlugin(env)];
 	if (isProduction) {
 		plugins.push(
