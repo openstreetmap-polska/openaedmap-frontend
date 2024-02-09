@@ -40,7 +40,7 @@ jobs:
         VITE_OSM_API_URL: 'https://api.openstreetmap.org'
         VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
         VITE_BACKEND_API_URL: 'https://openaedmap.org'
-      run: ./scripts/build_every_lang.sh && npm run build
+      run: npm run build && ./scripts/build_every_lang.sh
     - name: Run deploy script on host
       run: |
         rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/main-static/
