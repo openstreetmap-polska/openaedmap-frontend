@@ -53,6 +53,18 @@ const htmlPlugin = async (env) => {
 
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd());
+	const isProduction = !env.VITE_BACKEND_API_URL.includes("dev");
+	const plugins = [react(), htmlPlugin(env)];
+	if (isProduction) {
+		plugins.push(
+			Sitemap({
+				outDir: "build",
+				hostname: env.VITE_BACKEND_API_URL,
+				exclude: ["/land"],
+				dynamicRoutes: Object.keys(languages).map((lang) => `/${lang}`),
+			}),
+		);
+	}
 	return {
 		// https://github.com/vitejs/vite/issues/1973#issuecomment-787571499
 		define: {
@@ -67,15 +79,6 @@ export default defineConfig(({ mode }) => {
 			target: "es2015",
 			outDir: "build",
 		},
-		plugins: [
-			react(),
-			Sitemap({
-				outDir: "build",
-				hostname: env.VITE_BACKEND_API_URL,
-				exclude: ["/land"],
-				dynamicRoutes: Object.keys(languages).map((lang) => `/${lang}`),
-			}),
-			htmlPlugin(env),
-		],
+		plugins: plugins,
 	};
 });
