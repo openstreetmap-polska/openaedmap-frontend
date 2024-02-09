@@ -25,7 +25,7 @@ const PartnersModal: FC = () => {
 			name: t("partners.wroclaw_medical_university"),
 			person: null,
 			role: t("partners.main_scientific_partner"),
-			image: "logo-umw.jpg", // TODO: vector logo
+			image: "logo-umw.png", // TODO: vector logo
 			imageHeight: 40,
 			url: "https://www.umw.edu.pl",
 		},
