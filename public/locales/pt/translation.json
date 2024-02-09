@@ -6,7 +6,7 @@
         "excel": "Excel",
         "geojson": "GeoJSON",
         "map_legend_title": "Legenda do mapa",
-        "caption_info": "DEA",
+        "caption_info": "DAE",
         "no_data": "Sem dados",
         "indoor": "Dentro do edifício",
         "level": "andar",
@@ -29,7 +29,7 @@
         "csv": "CSV"
     },
     "form": {
-        "marker_popup_text": "Mover o marcador para a localização do DEA",
+        "marker_popup_text": "Mover o marcador para a localização do DAE",
         "level": "Andar",
         "optional_field": "Campo opcional",
         "is_indoor": "Está dentro de um edifício?",
@@ -41,10 +41,10 @@
     },
     "footer": {
         "add": "Adicionar",
-        "add_aed": "Adicionar DEA",
+        "add_aed": "Adicionar DAE",
         "cancel": "Cancelar",
         "continue": "Continuar",
-        "save_aed": "Guardar DEA",
+        "save_aed": "Guardar DAE",
         "partners": "Parceiros do projeto"
     },
     "opening_hours": {
@@ -75,5 +75,51 @@
         "hosted_by": "hospedado por",
         "help_translating": "Ajude a traduzir"
     },
-    "osmp": "OpenStreetMap Polónia"
+    "osmp": "OpenStreetMap Polónia",
+    "photo": {
+        "license": "Todas as fotos de DAE são hospedadas por nós e licenciadas sobre a licença Creative Commons Zero (CC0 v1.0). Ao carregar uma fotografia, concorda com os termos desta licença.",
+        "license_short_description": "Resumindo, significa que a fotografia poderá ser usado por qualquer um para qualquer propósito. A atribuição não é necessária.",
+        "upload": "Carregar fotografia",
+        "remove": "Remover fotografia",
+        "report": "Reportar fotografia",
+        "send_report": "Enviar um reporte",
+        "report_long_text": "Pode reportar uma foto se esta for de má qualidade, não mostra a localização do DAE ou se é inapropriada de alguma forma. Os administradores do site vão verificar o reporte"
+    },
+    "meta": {
+        "meta_title": "Mapa aberto dos Desfibrilador Automático Externos (DAE)",
+        "website_title": "OpenAEDMap - Mapa de Desfibriladores",
+        "meta_description": "Mapa de DAEs (Desfibrilador Automático Externos) baseado nos dados OpenStreetMap. O nosso website torna fácil a procura de um desfibrilador perto de si que poderá ser muito útil numa situação de emergência. Os DAE são dispositivos utilizados para ressuscitação cardiopulmonar de pessoas com um ataque cardíaco. Com o nosso mapa, qualquer um pode encontrar o desfibrilador mais próxima e ajudar alguém em necessidade."
+    },
+    "modal": {
+        "aed_added_successfully": "DAE adicionado com sucesso.",
+        "aed_updated_successfully": "DAE atualizado com sucesso.",
+        "available_in_osm": "Disponível no OpenStreetMap com a hiperligação:",
+        "should_appear_soon": "O objeto deverá aparecer no mapa dentro de 60 minutos.",
+        "error_occurred": "Ocorreu um erro",
+        "title": "Informação",
+        "need_to_login": "Para adicionar pontos é preciso autenticação com a conta OpenStreetMap",
+        "click_login_button": "Feche esta janela e carregue no botão Autenticar-se no topo",
+        "need_more_zoom": "Para adicionar pontos, precisa de ampliar o mapa para que a localização seja exata.",
+        "current_zoom": "Nível de zoom atual:",
+        "zoom_need_to_be": "O zoom precisa de ser no mínimo no nível 15.",
+        "about_project": "OpenAEDMap é um projeto de dados abertos que mostra todos os Desfibrilador Automático Externos (DAE) em todo o mundo. O site é baseado nos dados do OpenStreetMap e o resultado da colaboração da associação do OpenStreetMap Polónia. Foi criado em 2022 depois da alteração do site polaco AED Mapa para um novo design.",
+        "about_osm": "O OpenStreetMap é como a Wikipédia para mapas. Está disponível a todos usar e qualquer pessoa pode adicionar pontos no mapa. Pode utilizar a sua conta OSM para adicionar localizações de DAE diretamente deste site com um simples formulário.",
+        "create_account": "Pode contribuir também! Crie uma conta gratuita no ",
+        "become_openaedmap_partner": "Quer tornar-se parceiro do OpenAEDMap?",
+        "contact_us": "Contate-nos",
+        "thanks_for_photo": "Obrigado por adicionar uma foto. Será visível em breve.",
+        "thanks_for_report": "Obrigado por enviares um relatório. Vai ser revisto pelos administradores do site."
+    },
+    "partners": {
+        "e_health_centre": "Centro e-Health",
+        "honorary_patronage": "Patrocínio honorário",
+        "gugik": "Escritório de Geodésia e Cartografia da Polónia",
+        "chief_geodesist": "Chefe Geodésia da Polónia",
+        "main_scientific_partner": "O Principal Parceiro Científico",
+        "warsaw_university_of_technology": "Universidade de Tecnologia de Warsaw",
+        "wroclaw_medical_university": "Universidade Médica de Wroclaw"
+    },
+    "common": {
+        "loading": "A carregar..."
+    }
 }
