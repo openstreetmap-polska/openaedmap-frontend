@@ -80,6 +80,7 @@ export default defineConfig(({ mode }) => {
 		build: {
 			target: "es2015",
 			outDir: "build",
+			chunkSizeWarningLimit: 1700,
 		},
 		plugins: plugins,
 	};
