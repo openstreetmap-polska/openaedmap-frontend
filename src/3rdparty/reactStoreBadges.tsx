@@ -3,9 +3,13 @@
 import React, { FC, useLayoutEffect, useState } from "react";
 
 const HEIGHT_RATIO = 3.375;
+
+export const googlePlayPath = (language: string) =>
+	`img/google-play/${language}.svg`;
+
 const getImage = (locale: string, language: string) => ({
 	ios: `https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/${locale}.svg`,
-	android: `https://raw.githubusercontent.com/yjb94/google-play-badge-svg/master/img/${language}_get.svg?sanitize=true`,
+	android: googlePlayPath(language),
 });
 
 export interface ReactStoreBadgesProps {
@@ -29,19 +33,6 @@ export interface ReactStoreBadgesProps {
 }
 
 const defaultLocale = "en-us";
-
-function shortCodeFromLanguage(language: string): string {
-	switch (language) {
-		case "uk":
-			return "ua";
-		case "zh-Hans":
-			return "zh-cn";
-		case "zh-Hant":
-			return "zh-tw";
-		default:
-			return "en";
-	}
-}
 
 function localeFromLanguage(language: string): string {
 	// available badges for App Store
@@ -98,17 +89,16 @@ const ReactStoreBadges: FC<ReactStoreBadgesProps> = ({
 	height = width / HEIGHT_RATIO,
 	target = "_self",
 }) => {
-	const shortCode = shortCodeFromLanguage(language);
 	const locale = localeFromLanguage(language);
-	const [image, setImage] = useState(getImage(locale, shortCode));
+	const [image, setImage] = useState(getImage(locale, language));
 
 	const setDefaultImage = () => {
 		setImage(getImage(defaultLocale, language));
 	};
 
 	useLayoutEffect(() => {
-		setImage(getImage(locale, shortCode));
-	}, [locale, shortCode]);
+		setImage(getImage(locale, language));
+	}, [locale, language]);
 
 	return (
 		<a

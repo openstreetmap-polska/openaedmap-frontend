@@ -3,7 +3,7 @@ import Icon from "@mdi/react";
 import React, { FC } from "react";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import ReactStoreBadges from "~/3rdparty/react-store-badges";
+import ReactStoreBadges from "~/3rdparty/reactStoreBadges";
 import { useAppContext } from "~/appContext";
 import { useLanguage } from "~/i18n";
 import { ModalType, initialModalState } from "~/model/modal";
