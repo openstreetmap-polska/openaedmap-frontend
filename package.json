@@ -32,7 +32,6 @@
     "start": "vite",
     "build": "vite build",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
-    "sprites": "spritezero ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons",
     "lint": "biome lint .",
     "lint-fix": "biome lint . --apply",
     "format": "biome format . --write",
@@ -53,7 +52,6 @@
     ]
   },
   "devDependencies": {
-    "@beyondtracks/spritezero-cli": "^2.3.1",
     "@biomejs/biome": "1.5.3",
     "@types/node": "^20.11.13",
     "@types/react": "^18.2.48",

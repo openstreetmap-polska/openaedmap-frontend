@@ -73,9 +73,9 @@ You may also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.
 
-#### `npm run sprites`
+#### Create sprites from marker icons
 
-Creates sprites from marker icons.
+Use `npx @beyondtracks/spritezero-cli ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons`
 
 #### `npm run css-build`
 
