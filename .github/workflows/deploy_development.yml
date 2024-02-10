@@ -4,13 +4,6 @@ on:
   push:
     branches:
     - dev
-    paths:
-    - src/**
-    - public/**
-    - package*.json
-    - .github/workflows/deploy_development.yml
-    - vite.config.js
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
