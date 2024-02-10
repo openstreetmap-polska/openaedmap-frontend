@@ -204,7 +204,13 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 			minZoom: 3,
 			maxZoom: 19,
 			maplibreLogo: false,
+			attributionControl: false,
 		});
+		map.addControl(
+			new maplibregl.AttributionControl({
+				customAttribution: "",
+			}),
+		);
 		addMaplibreGeocoder(map);
 		mapRef.current = map;
 		// how fast mouse scroll wheel zooms
