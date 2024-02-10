@@ -79,4 +79,6 @@ async function downloadAppleIcon(language: string) {
 }
 
 await Promise.all(Object.keys(languages).map(downloadAppleIcon));
-console.log("Please run svg optimizer:\nbunx svgo public/img/play-store/*");
+console.log(
+	"Please run svg optimizer:\nbunx svgo --disable=removeViewBox public/img/play-store/*.svg",
+);
