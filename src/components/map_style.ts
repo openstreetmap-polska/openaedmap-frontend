@@ -57,8 +57,7 @@ const mapStyle = (
 			},
 		},
 		sprite: spriteUrl,
-		glyphs:
-			"https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+		glyphs: "/fonts/{fontstack}/{range}.pbf",
 		layers: [
 			{
 				id: "background",
@@ -183,7 +182,7 @@ const mapStyle = (
 				layout: {
 					"text-allow-overlap": true,
 					"text-field": "{point_count_abbreviated}",
-					"text-font": ["Open Sans Bold"],
+					"text-font": ["OpenSansBold"],
 					"text-size": 10,
 					"text-letter-spacing": 0.05,
 					visibility: "visible",
@@ -212,7 +211,7 @@ const mapStyle = (
 						"\n",
 						["get", "point_count_abbreviated"],
 					],
-					"text-font": ["Open Sans Bold"],
+					"text-font": ["OpenSansBold"],
 					"text-size": 14,
 					"text-letter-spacing": 0.05,
 					visibility: "visible",
