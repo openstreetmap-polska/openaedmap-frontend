@@ -24,6 +24,5 @@ function shouldEnableSentry(): boolean {
 	const globalPrivacyControl =
 		navigator.globalPrivacyControl === true ||
 		navigator.globalPrivacyControl === "true";
-	// return !doNotTrack && !globalPrivacyControl;
-	return true;
+	return !doNotTrack && !globalPrivacyControl;
 }
