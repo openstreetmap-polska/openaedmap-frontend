@@ -4,7 +4,9 @@ import {
 } from "./model/defibrillatorData";
 
 // Example: UTC+01:00 -> 60
-function parseTimezoneOffset(timezoneOffset: string): number {
+function parseTimezoneOffset(timezoneOffset: string | undefined): number {
+	// TODO: remove check after fetching data from backend
+	if (timezoneOffset === undefined) return 0;
 	const sign = timezoneOffset[3] === "+" ? 1 : -1;
 	const hours = parseInt(timezoneOffset.slice(4, 6), 10);
 	const minutes = parseInt(timezoneOffset.slice(7, 9), 10);
@@ -36,6 +38,7 @@ export async function fetchNodeData(
 		});
 }
 
+// TODO: remove after fixing https://github.com/openstreetmap-polska/openaedmap-backend/issues/53
 export async function fetchNodeDataFromOsm(
 	nodeId: string,
 ): Promise<DefibrillatorData | null> {
