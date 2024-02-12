@@ -88,7 +88,7 @@ export function CloseSidebarButton({
 		<button
 			id="sidebar-card-close-button"
 			aria-label={t("sidebar.close")}
-			className="delete is-large is-pulled-right"
+			className="delete is-medium is-pulled-right"
 			onClick={closeSidebarFunction}
 			type="button"
 		/>

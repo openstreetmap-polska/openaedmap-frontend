@@ -1,8 +1,8 @@
 import {
 	mdiAccountSupervisorOutline,
 	mdiClockOutline,
+	mdiFileImagePlusOutline,
 	mdiHomeRoof,
-	mdiImagePlus,
 	mdiInformationOutline,
 	mdiMapMarkerOutline,
 	mdiPhoneOutline,
@@ -97,7 +97,7 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 			<Button
 				mb={1}
 				mt={0}
-				className="button is-small is-success mx-1"
+				className="is-small is-success mx-1"
 				onClick={() => {
 					if (auth === null || !auth.authenticated()) {
 						closeSidebar();
@@ -110,7 +110,12 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 					setSidebarAction(SidebarAction.uploadPhoto);
 				}}
 			>
-				<Icon path={mdiImagePlus} size={1.15} className="icon" color="#fff" />
+				<Icon
+					path={mdiFileImagePlusOutline}
+					size={1}
+					className="icon"
+					color="#fff"
+				/>
 				<span>{t("photo.upload")}</span>
 			</Button>
 			<hr style={{ marginTop: "0.5rem", marginBottom: "1rem" }} />
