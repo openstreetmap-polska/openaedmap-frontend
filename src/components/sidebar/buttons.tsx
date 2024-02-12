@@ -11,10 +11,10 @@ import React, { FC } from "react";
 import { Button } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
+import { fetchNodeDataFromBackend } from "~/backend";
 import { OSM_DOMAIN } from "~/constants";
 import { ModalType, initialModalState } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
-import { fetchNodeDataFromOsm } from "~/osm";
 
 type OsmId = string;
 
@@ -27,7 +27,7 @@ export function EditButton({ osmId }: { osmId: OsmId }) {
 		authState: { auth },
 	} = useAppContext();
 	const startEdit = () => {
-		fetchNodeDataFromOsm(osmId).then((data) => {
+		fetchNodeDataFromBackend(osmId).then((data) => {
 			setSidebarData(data);
 			if (auth === null || !auth.authenticated()) {
 				setModalState({
