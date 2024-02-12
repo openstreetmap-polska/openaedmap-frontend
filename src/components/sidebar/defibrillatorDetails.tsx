@@ -153,7 +153,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 					<Image
 						m={2}
 						className="icon"
-						src="./img/logo-aed.svg"
+						src="/img/logo-aed.svg"
 						color="white"
 						alt=""
 						size={48}

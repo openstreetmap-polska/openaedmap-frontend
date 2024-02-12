@@ -5,10 +5,10 @@ import React, { FC, useLayoutEffect, useState } from "react";
 const HEIGHT_RATIO = 3.375;
 
 export const googlePlayPath = (language: string) =>
-	`img/google-play/${language}.svg`;
+	`/img/google-play/${language}.svg`;
 
 export const appStorePath = (language: string) =>
-	`img/play-store/${language}.svg`;
+	`/img/play-store/${language}.svg`;
 
 const badgePath = (platform: "ios" | "android", language: string): string =>
 	platform === "android" ? googlePlayPath(language) : appStorePath(language);

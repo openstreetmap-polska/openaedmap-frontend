@@ -60,7 +60,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 						target="_blank"
 						title="CloudFerro"
 					>
-						<img alt="CloudFerro" src="img/cloudferro_logo.png" />
+						<img alt="CloudFerro" src="/img/cloudferro_logo.png" />
 					</a>
 				</Navbar.Item>
 				<LanguageSwitcher />
@@ -153,7 +153,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 						>
 							{t("navbar.hosted_by")}{" "}
 						</span>
-						<img alt="CloudFerro" src="img/cloudferro_logo.png" />
+						<img alt="CloudFerro" src="/img/cloudferro_logo.png" />
 					</Navbar.Item>
 				</Navbar.Container>
 			</Navbar.Menu>

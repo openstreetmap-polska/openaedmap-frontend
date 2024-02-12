@@ -67,7 +67,7 @@ const PartnersModal: FC = () => {
 								<figure className="image">
 									<img
 										alt={partner.name}
-										src={`./img/${partner.image}`}
+										src={`/img/${partner.image}`}
 										style={{ height: `${partner.imageHeight}px` }}
 									/>
 								</figure>

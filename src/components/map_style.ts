@@ -4,7 +4,7 @@ import { Country } from "~/model/country";
 
 const getUrl = window.location;
 const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;
-const spriteUrl = new URL("img/sprite", baseUrl).href;
+const spriteUrl = new URL("/img/sprite", baseUrl).href;
 // can't use URL class since this is a template not literal url
 const tilesUrl = `${backendBaseUrl}/api/v1/tile/{z}/{x}/{y}.mvt`;
 const TILE_COUNTRIES_MAX_ZOOM = 6;
