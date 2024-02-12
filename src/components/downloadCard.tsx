@@ -45,7 +45,7 @@ export default function DownloadCard() {
 		<div className="px-3 pt-5">
 			<div className="content">
 				<p className="has-text-weight-normal">
-				<Icon
+					<Icon
 						path={mdiDownload}
 						size={1}
 						className="icon mr-1"
@@ -54,21 +54,21 @@ export default function DownloadCard() {
 					{t("sidebar.download_title")}
 				</p>
 				<div className="select is-primary is-small mb-1">
-				<select
-					className="select mb-2"
-					onChange={(e) => {
-						const selected = sortedCountriesByName.find(
-							(country) => country.code === e.target.value,
-						);
-						if (selected !== undefined) setSelectedCountryCode(selected.code);
-					}}
-				>
-					{sortedCountriesByName.map((country) => (
-						<option key={country.code} value={country.code}>
-							{countryLabel(country)}
-						</option>
-					))}
-				</select>
+					<select
+						className="select mb-2"
+						onChange={(e) => {
+							const selected = sortedCountriesByName.find(
+								(country) => country.code === e.target.value,
+							);
+							if (selected !== undefined) setSelectedCountryCode(selected.code);
+						}}
+					>
+						{sortedCountriesByName.map((country) => (
+							<option key={country.code} value={country.code}>
+								{countryLabel(country)}
+							</option>
+						))}
+					</select>
 				</div>
 				<a
 					className="button is-success is-fullwidth is-small"
