@@ -117,5 +117,10 @@
         "send_report": "Invia il rapporto",
         "report": "Segnala la foto",
         "report_long_text": "È possibile segnalare la foto se è di cattiva qualità, non mostra la posizione dei DAE o è inappropriato in alcun modo. Gli amministratori del sito esamineranno il rapporto."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Mappa dei defibrillatori",
+        "meta_title": "Mappa aperta dei Defibrillatori Automatici Esterni (DAE)",
+        "meta_description": "Mappa dei DAE (Defibrillatori Auotmatici Esterni) basata su dati OpenStreetMap. Il nostro sito web rende facile trovare un DAE vicino a voi, che può essere molto utile in situazioni di pericolo di vita. I DAE sono dispositivi che vengono utilizzati per la rianimazione cardiopolmonare delle persone in arresto cardiaco. Con la nostra mappa, chiunque può trovare rapidamente il defibrillatore più vicino e aiutare qualcuno nel bisogno."
     }
 }
