@@ -1,4 +1,4 @@
-import { mdiDownload } from "@mdi/js";
+import { mdiDownload, mdiFileDownloadOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -42,10 +42,10 @@ export default function DownloadCard() {
 		return `${countryName(country)} (${country.featureCount})`;
 	}
 	return (
-		<div className="px-4 pt-5">
-			<div className="content has-text-weight-light">
+		<div className="px-3 pt-5">
+			<div className="content">
 				<p className="has-text-weight-normal">
-					<Icon
+				<Icon
 						path={mdiDownload}
 						size={1}
 						className="icon mr-1"
@@ -53,6 +53,7 @@ export default function DownloadCard() {
 					/>
 					{t("sidebar.download_title")}
 				</p>
+				<div className="select is-primary is-small mb-1">
 				<select
 					className="select mb-2"
 					onChange={(e) => {
@@ -68,8 +69,9 @@ export default function DownloadCard() {
 						</option>
 					))}
 				</select>
+				</div>
 				<a
-					className="button is-success mr-1"
+					className="button is-success is-fullwidth is-small"
 					href={
 						selectedCountry ? backendBaseUrl + selectedCountry.dataPath : ""
 					}
@@ -78,10 +80,10 @@ export default function DownloadCard() {
 					download
 					key={t("sidebar.geojson")}
 				>
-					<Icon path={mdiDownload} size={1} className="icon mr-2" />
+					<Icon path={mdiFileDownloadOutline} size={1} className="icon mr-2" />
 					{t("sidebar.geojson")}
 				</a>
-				<hr className="my-3" />
+				<hr className="my-4" />
 			</div>
 		</div>
 	);

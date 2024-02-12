@@ -50,15 +50,15 @@ export default function MapLegend() {
 		},
 	];
 	return (
-		<div className="px-3 pt-4 pb-5">
+		<div className="px-3 pb-5">
 			<div className="columns is-mobile is-flex is-vcentered p-3">
 				<Icon
 					path={mdiMapLegend}
-					size={1.3}
+					size={1}
 					className="icon mr-2"
 					color="#7a7a7a"
 				/>
-				<p className="legend-header has-text-weight-medium has-text-grey">
+				<p className="has-text-weight-normal">
 					{t("sidebar.map_legend_title")}
 				</p>
 			</div>
@@ -72,7 +72,7 @@ export default function MapLegend() {
 						title={tag}
 						alt={text}
 						src={icon.toString()}
-						className="legend-image image is-32x32"
+						className="legend-image image is-24x24"
 					/>
 					<p
 						key={`legend-text-${key}`}
