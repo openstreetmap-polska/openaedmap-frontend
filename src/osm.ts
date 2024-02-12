@@ -36,6 +36,19 @@ export async function fetchNodeData(
 		});
 }
 
+export async function fetchNodeDataFromOsm(
+	nodeId: string,
+): Promise<DefibrillatorData | null> {
+	const url = `https://api.openstreetmap.org/api/0.6/node/${nodeId}.json`;
+	console.log(
+		"Request object info for node with osm id:",
+		nodeId,
+		" via url: ",
+		url,
+	);
+	return fetchNodeData(url);
+}
+
 export function updateOsmUsernameState(
 	auth: OSMAuth.osmAuth,
 	setOsmUsername: (username: string) => void,
