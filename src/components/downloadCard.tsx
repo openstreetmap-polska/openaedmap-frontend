@@ -16,12 +16,12 @@ export default function DownloadCard() {
 	function countryName(country: Country) {
 		if (country.code === worldCountryCode) return t("sidebar.world");
 		const backendLanguageUppercase = language.toUpperCase();
-		if (Object.hasOwn(country.names, backendLanguageUppercase)) {
+		if (country.names[backendLanguageUppercase] !== undefined) {
 			return country.names[backendLanguageUppercase];
 		}
 		if (backendLanguageUppercase.includes("-")) {
 			const basicLanguage = backendLanguageUppercase.split("-")[0];
-			if (Object.hasOwn(country.names, basicLanguage)) {
+			if (country.names[basicLanguage] !== undefined) {
 				return country.names[basicLanguage];
 			}
 		}
