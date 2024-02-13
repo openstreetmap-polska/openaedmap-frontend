@@ -8,7 +8,7 @@ import {
 	mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Button, Card, Columns, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
@@ -36,14 +36,15 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 	data,
 	closeSidebar,
 }) => {
-	if (data === null) return null;
 	const { t } = useTranslation();
 	const {
 		authState: { auth },
 		setSidebarAction,
 		setModalState,
 	} = useAppContext();
-	const [imageError, setImageError] = React.useState("");
+	const [imageError, setImageError] = useState("");
+
+	if (data === null) return null;
 	let images: ReactImageGalleryItem[] = [];
 	// Currently only one photo allowed
 	if (data.photoRelativeUrl !== undefined && data.photoRelativeUrl !== null) {

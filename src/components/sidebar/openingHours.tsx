@@ -35,12 +35,14 @@ function getOpeningHoursConfig(language: string): argument_hash {
 	};
 }
 
-function parseOpeningHours(openingHours: string): string | null {
+function parseOpeningHours(
+	openingHours: string,
+	language: string,
+): string | null {
 	if (!openingHours) return null;
 
 	try {
 		const oh = new OpeningHours(openingHours, null, 2);
-		const language = useLanguage();
 		const config = getOpeningHoursConfig(language);
 		// @ts-ignore
 		return oh.prettifyValue({ conf: config });
@@ -100,18 +102,19 @@ export const OpeningHoursDescription: FC<OpeningHoursProps> = ({
 	openingHours,
 	timezoneOffsetUTCMinutes,
 }) => {
+	const language = useLanguage();
+	const { t } = useTranslation();
+
 	if (!openingHours) {
 		return <SpanNoData />;
 	}
-
-	const { t } = useTranslation();
 
 	return (
 		<span>
 			<span className="has-text-weight-medium">
 				{openingHours === "24/7"
 					? t("opening_hours.24_7")
-					: parseOpeningHours(openingHours)}
+					: parseOpeningHours(openingHours, language)}
 			</span>
 			<CurrentlyOpenStatus
 				openingHours={openingHours}
