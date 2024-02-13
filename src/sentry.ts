@@ -3,7 +3,7 @@ import * as Sentry from "@sentry/react";
 export default function initSentry() {
 	if (shouldEnableSentry()) {
 		Sentry.init({
-			dsn: "https://7f263ca9541cbb26b1fe3228e80a8b6f@o4506736017539072.ingest.sentry.io/4506736027959296",
+			dsn: "https://4499d52ff3734be1b204d9f13353ae4c@glitch.openaedmap.org/2",
 			integrations: [Sentry.browserTracingIntegration()],
 			// Performance Monitoring
 			tracesSampleRate: 1.0, //  Capture 100% of the transactions
