@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "openaedmap-frontend",
   "version": "0.1.0",
   "private": true,
@@ -41,16 +42,6 @@
     "coverage": "vitest run --coverage",
     "css-build": "sass sass/mystyles.scss src/mystyles.css",
     "css-watch": "npm run css-build -- --watch"
-  },
-  "browserslist": {
-    "production": [
-      "defaults"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
