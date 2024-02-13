@@ -11,12 +11,8 @@ export default function initSentry() {
 
 function shouldEnableSentry(): boolean {
 	const doNotTrack =
-		navigator.doNotTrack === "1" ||
-		navigator.doNotTrack === "yes" ||
-		navigator.doNotTrack === "true";
+		navigator.doNotTrack === "1" || navigator.doNotTrack === "true";
 	// @ts-ignore
-	const globalPrivacyControl = // @ts-ignore
-		navigator.globalPrivacyControl === true || // @ts-ignore
-		navigator.globalPrivacyControl === "true";
+	const globalPrivacyControl = navigator.globalPrivacyControl === true;
 	return !doNotTrack && !globalPrivacyControl;
 }
