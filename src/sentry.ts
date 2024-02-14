@@ -5,6 +5,7 @@ export default function initSentry() {
 		Sentry.init({
 			dsn: "https://df77ee799280152a4bc7b88a7a9ee6f4@sentry.openaedmap.org/2",
 			integrations: [],
+			environment: import.meta.env.VITE_ENV,
 		});
 	}
 }
