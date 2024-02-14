@@ -5,7 +5,6 @@ import {
 
 // Example: UTC+01:00 -> 60
 function parseTimezoneOffset(timezoneOffset: string | undefined): number {
-	// TODO: remove check after fetching data from backend
 	if (timezoneOffset === undefined) return 0;
 	const sign = timezoneOffset[3] === "+" ? 1 : -1;
 	const hours = parseInt(timezoneOffset.slice(4, 6), 10);
@@ -20,6 +19,7 @@ export async function fetchNodeData(
 		.then((response) => response.json())
 		.then((response) => {
 			const node = response.elements[0];
+			// Note: data here can be either from OSM or from the backend
 			return {
 				osmId: node.id,
 				osmType: "node",
@@ -38,7 +38,6 @@ export async function fetchNodeData(
 		});
 }
 
-// TODO: remove after fixing https://github.com/openstreetmap-polska/openaedmap-backend/issues/53
 export async function fetchNodeDataFromOsm(
 	nodeId: string,
 ): Promise<DefibrillatorData | null> {
