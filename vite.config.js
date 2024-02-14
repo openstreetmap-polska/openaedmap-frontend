@@ -64,6 +64,9 @@ export default defineConfig(({ mode }) => {
 				authToken: env.VITE_SENTRY_AUTH_TOKEN,
 				url: "https://sentry.monicz.dev",
 				telemetry: false,
+				release: {
+					dist: env.VITE_ENV,
+				},
 			}),
 		);
 	}
