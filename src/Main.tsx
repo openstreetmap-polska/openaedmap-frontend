@@ -42,10 +42,10 @@ function Main() {
 		new osmAuth({
 			url: VITE_OSM_AUTH_URL ?? VITE_OSM_API_URL,
 			client_id: VITE_OSM_OAUTH2_CLIENT_ID ?? "",
-			redirect_uri: `${window.location.origin}/land.html`,
+			redirect_uri: window.location.origin,
 			scope: "read_prefs write_api",
 			auto: false,
-			singlepage: false,
+			singlepage: true,
 			// @ts-ignore: https://github.com/osmlab/osm-auth/pull/127
 			apiUrl: VITE_OSM_API_URL,
 		}),
@@ -59,8 +59,26 @@ function Main() {
 			if (modalState.type === ModalType.NeedToLogin) {
 				setModalState(initialModalState);
 			}
+			window.history.pushState(
+				{},
+				"",
+				window.location.origin +
+					window.location.pathname +
+					window.location.hash,
+			);
 		});
 	};
+
+	useEffect(() => {
+		if (
+			window.location.search
+				.slice(1)
+				.split("&")
+				.some((p) => p.startsWith("code="))
+		) {
+			handleLogIn();
+		}
+	}, [handleLogIn]);
 
 	const handleLogOut = () => {
 		auth.logout();
