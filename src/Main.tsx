@@ -42,7 +42,9 @@ function Main() {
 		new osmAuth({
 			url: VITE_OSM_AUTH_URL ?? VITE_OSM_API_URL,
 			client_id: VITE_OSM_OAUTH2_CLIENT_ID ?? "",
-			redirect_uri: window.location.origin,
+			redirect_uri: window.location.origin.endsWith("/")
+				? window.location.origin
+				: `${window.location.origin}/`,
 			scope: "read_prefs write_api",
 			auto: false,
 			singlepage: true,
