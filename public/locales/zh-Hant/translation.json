@@ -117,5 +117,9 @@
         "send_report": "傳送回報",
         "report": "回報照片",
         "report_long_text": "若照片品質不佳、未顯示 AED 位置或有任何不當之處。您可以回報該照片。網站管理員將會審閱報告。"
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - 去顫器的地圖",
+        "meta_title": "去顫器 (AED) 的開放地圖"
     }
 }
