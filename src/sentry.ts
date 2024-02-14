@@ -3,7 +3,7 @@ import * as Sentry from "@sentry/react";
 export default function initSentry() {
 	if (shouldEnableSentry()) {
 		Sentry.init({
-			dsn: "https://4499d52ff3734be1b204d9f13353ae4c@glitch.openaedmap.org/2",
+			dsn: "https://df77ee799280152a4bc7b88a7a9ee6f4@sentry.openaedmap.org/2",
 			integrations: [],
 		});
 	}

@@ -3,44 +3,45 @@ name: Deploy to production env
 on:
   push:
     tags:
-      - '*'
+      - "*"
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - name: Install SSH Key
-      uses: kielabokkie/ssh-key-and-known-hosts-action@v1
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        ssh-host: ${{ secrets.SSH_HOST_NEW_IP }}
-        ssh-port: ${{ secrets.SSH_HOST_NEW_PORT }}
-    - name: Checkout repo
-      uses: actions/checkout@v4
-    - name: Setup Node JS
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
-    - name: Run linter & formatter
-      run: npm run check
-    - name: Run tests
-      run: npm test
-    - name: Run TypeScript typecheck
-      run: npm run typecheck
-    - name: Set git commit
-      run: echo "VITE_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-    - name: Build app
-      env:
-        VITE_ENV: production
-        VITE_DEFAULT_LANG: en
-        VITE_OSM_AUTH_URL: 'https://www.openstreetmap.org'
-        VITE_OSM_API_URL: 'https://api.openstreetmap.org'
-        VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
-        VITE_BACKEND_API_URL: 'https://openaedmap.org'
-      run: npm run build && ./scripts/build_every_lang.sh
-    - name: Run deploy script on host
-      run: |
-        rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/main-static/
+      - name: Install SSH Key
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-host: ${{ secrets.SSH_HOST_NEW_IP }}
+          ssh-port: ${{ secrets.SSH_HOST_NEW_PORT }}
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Run linter & formatter
+        run: npm run check
+      - name: Run tests
+        run: npm test
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+      - name: Set git commit
+        run: echo "VITE_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Build app
+        env:
+          VITE_ENV: production
+          VITE_DEFAULT_LANG: en
+          VITE_OSM_AUTH_URL: "https://www.openstreetmap.org"
+          VITE_OSM_API_URL: "https://api.openstreetmap.org"
+          VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
+          VITE_BACKEND_API_URL: "https://openaedmap.org"
+          VITE_SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        run: npm run build && ./scripts/build_every_lang.sh
+      - name: Run deploy script on host
+        run: |
+          rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/main-static/

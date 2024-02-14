@@ -3,60 +3,62 @@ name: Deploy to development env
 on:
   push:
     branches:
-    - dev
+      - dev
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: development
     steps:
-    - name: Install SSH Key
-      uses: kielabokkie/ssh-key-and-known-hosts-action@v1
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-        ssh-host: ${{ secrets.SSH_HOST_NEW_IP }}
-        ssh-port: ${{ secrets.SSH_HOST_NEW_PORT }}
-    - name: Checkout repo
-      uses: actions/checkout@v4
-    - name: Setup Node JS
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
-    - name: Run linter & formatter
-      run: npm run check
-    - name: Run tests
-      run: npm test
-    - name: Run TypeScript typecheck
-      run: npm run typecheck
-    - name: Set git commit
-      run: echo "VITE_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-    - name: Build app (main)
-      env:
-        VITE_ENV: development
-        VITE_DEFAULT_LANG: en
-        VITE_OSM_API_URL: 'https://master.apis.dev.openstreetmap.org'
-        VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
-        VITE_BACKEND_API_URL: 'https://dev.openaedmap.org'
-      run: npm run build
-    - name: Create robots.txt
-      run: |
-        cat << 'EOF' > build/robots.txt
-        # https://www.robotstxt.org/robotstxt.html
-        User-agent: *
-        Disallow: /
-        EOF
-    - name: Copy main build to server
-      run: |
-        rsync -rp -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
-    - name: Build app lang versions
-      env:
-        VITE_ENV: development
-        VITE_OSM_API_URL: 'https://master.apis.dev.openstreetmap.org'
-        VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
-        VITE_BACKEND_API_URL: 'https://dev.openaedmap.org'
-      run: ./scripts/build_every_lang.sh
-    - name: Copy lang version builds to server
-      run: |
-        rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
+      - name: Install SSH Key
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-host: ${{ secrets.SSH_HOST_NEW_IP }}
+          ssh-port: ${{ secrets.SSH_HOST_NEW_PORT }}
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Run linter & formatter
+        run: npm run check
+      - name: Run tests
+        run: npm test
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+      - name: Set git commit
+        run: echo "VITE_GIT_COMMIT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Build app (main)
+        env:
+          VITE_ENV: development
+          VITE_DEFAULT_LANG: en
+          VITE_OSM_API_URL: "https://master.apis.dev.openstreetmap.org"
+          VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
+          VITE_BACKEND_API_URL: "https://dev.openaedmap.org"
+          VITE_SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        run: npm run build
+      - name: Create robots.txt
+        run: |
+          cat << 'EOF' > build/robots.txt
+          # https://www.robotstxt.org/robotstxt.html
+          User-agent: *
+          Disallow: /
+          EOF
+      - name: Copy main build to server
+        run: |
+          rsync -rp -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/
+      - name: Build app lang versions
+        env:
+          VITE_ENV: development
+          VITE_OSM_API_URL: "https://master.apis.dev.openstreetmap.org"
+          VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
+          VITE_BACKEND_API_URL: "https://dev.openaedmap.org"
+          VITE_SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        run: ./scripts/build_every_lang.sh
+      - name: Copy lang version builds to server
+        run: |
+          rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/dev-static/

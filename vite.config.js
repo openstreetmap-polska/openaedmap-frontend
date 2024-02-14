@@ -1,5 +1,6 @@
-import path from "path";
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
+import path from "path";
 import { defineConfig, loadEnv } from "vite";
 import Sitemap from "vite-plugin-sitemap";
 import languages from "./src/languages";
@@ -53,10 +54,23 @@ const htmlPlugin = async (env) => {
 
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd());
+	const plugins = [react(), htmlPlugin(env)];
+
+	if (env.VITE_SENTRY_AUTH_TOKEN) {
+		plugins.push(
+			sentryVitePlugin({
+				org: "sentry",
+				project: "openaedmap-frontend",
+				authToken: env.VITE_SENTRY_AUTH_TOKEN,
+				url: "https://sentry.monicz.dev",
+				telemetry: false,
+			}),
+		);
+	}
+
 	const isProduction =
 		env.VITE_BACKEND_API_URL !== undefined &&
 		!env.VITE_BACKEND_API_URL.includes("dev");
-	const plugins = [react(), htmlPlugin(env)];
 	if (isProduction) {
 		plugins.push(
 			Sitemap({
@@ -67,6 +81,7 @@ export default defineConfig(({ mode }) => {
 			}),
 		);
 	}
+
 	return {
 		// https://github.com/vitejs/vite/issues/1973#issuecomment-787571499
 		define: {
