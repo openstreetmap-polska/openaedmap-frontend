@@ -117,5 +117,10 @@
         "license": "Trwyddedir yr holl ddelweddau AED a gynhelir gennym o dan Creative Commons Zero (CC0 v1.0). Drwy uwchlwytho eich llun rydych chi'n cytuno i delerau'r drwydded hon.",
         "license_short_description": "Yn syml, mae hyn yn golygu y gall unrhyw un ddefnyddio'r llun at unrhyw ddiben. Nid oes angen cydnabyddiaeth.",
         "send_report": "Anfon adroddiad"
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Map Diffibrilwyr",
+        "meta_title": "Map agored o Gyfarpar Diffibrilio Allanol Awtomatig (AEDs)",
+        "meta_description": "Map o bob AED (Cyfarpar Diffibrilio Allanol Awtomatig) yn ôl data OpenStreetMap. Mae ein gwefan yn hwyluso dod o hyd i ddiffibriliwr AED yn eich lleoliad chi, a all fod yn ddefnyddiol iawn mewn argyfwng. Mae diffibrilwyr AED yn ddyfeisiau a ddefnyddir ar gyfer adfywio cardio-pwlmonaidd ar bobl sydd ag ataliad ar y galon. Gyda'n map, gall unrhyw un ddod o hyd i'r diffibriliwr agosaf yn gyflym a helpu rhywun mewn angen."
     }
 }
