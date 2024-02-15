@@ -1,12 +1,12 @@
 {
 	"data_format": 1,
-	"data_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/raw/main/taginfo.json",
+	"data_url": "https://raw.githubusercontent.com/openstreetmap-polska/openaedmap-frontend/dev/taginfo.json",
 	"project": {
-		"name": "Open AED Map",
-		"description": "Map of defibrillators that allows adding them using OSM account",
+		"name": "OpenAEDMap",
+		"description": "Map of AEDs (Automatic External Defibrillators) based on OpenStreetMap data.",
 		"project_url": "https://openaedmap.org",
 		"doc_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/",
-		"icon_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/raw/main/taginfo-node-icon.png",
+		"icon_url": "https://raw.githubusercontent.com/openstreetmap-polska/openaedmap-frontend/dev/public/img/favicon.png",
 		"contact_name": "Włodzimierz Bartczak",
 		"contact_email": "zarzad@openstreetmap.pl"
 	},
@@ -14,9 +14,9 @@
 		{
 			"key": "emergency",
 			"value": "defibrillator",
-			"object_types": ["node"],
-			"icon_url": "https://github.com/openstreetmap-polska/openaedmap-frontend/raw/main/taginfo-node-icon.png",
-			"description": "Map of defibrillators that allows adding them using OSM account"
+			"object_types": [
+				"node"
+			]
 		}
 	]
 }
