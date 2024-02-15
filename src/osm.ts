@@ -57,11 +57,10 @@ export function updateOsmUsernameState(
 ) {
 	auth.xhr(
 		{ method: "GET", path: "/api/0.6/user/details" },
-		(err: Error, result: XMLDocument) => {
-			// result is an XML DOM containing the user details
-			if (err) {
-				console.log(err);
-				throw err;
+		(error: Error, result: XMLDocument) => {
+			if (error) {
+				if (String(error) !== "not authenticated") throw error;
+				return;
 			}
 			const userObject = result.getElementsByTagName("user")[0];
 			const username = userObject.getAttribute("display_name");
