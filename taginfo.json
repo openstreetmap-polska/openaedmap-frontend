@@ -14,9 +14,7 @@
 		{
 			"key": "emergency",
 			"value": "defibrillator",
-			"object_types": [
-				"node"
-			]
+			"object_types": ["node"]
 		}
 	]
 }
