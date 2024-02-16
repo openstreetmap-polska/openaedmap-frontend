@@ -1,1 +1,20 @@
-{}
+{
+    "access": {
+        "private": "Trettboa met de Iejendeema sienje Frieheit",
+        "customers": "Trettboa wäarent Oabeits Stunden",
+        "no": "Nich brukboa",
+        "unknown": "Onbekaunde Tootrett",
+        "permissive": "Auljemeen Frieheit bat aundasch jesaäjt waut",
+        "yes": "Auljemeen trettboa"
+    },
+    "navbar": {
+        "created_with_<3_by": "met ❤️ jemoakt von",
+        "visit_github": "Besieekj onze GitHub repository",
+        "visit_osmp_website": "Besieekj OpenStreetMap Poland äare Website",
+        "login": "Log nenn met dienje OSM account",
+        "logout": "Log ut",
+        "about": "Von om",
+        "hosted_by": "hosted von",
+        "help_translating": "Halp Äwasaten"
+    }
+}
