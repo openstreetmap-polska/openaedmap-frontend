@@ -12,6 +12,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	ja: { nativeName: "日本語" },
 	ko: { nativeName: "한국어" },
 	nl: { nativeName: "Nederlands" },
+	pdt: { nativeName: "Plautdietsch" },
 	pl: { nativeName: "Polski" },
 	pt: { nativeName: "Português" },
 	ru: { nativeName: "Русский язык" },
