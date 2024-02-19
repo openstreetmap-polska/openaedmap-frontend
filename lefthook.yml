@@ -3,10 +3,10 @@ pre-commit:
   parallel: true
   commands:
     biome:
-      run: biome check --apply .
+      run: npm run lint-fix
       stage_fixed: true
     test:
-      run: bun test
+      run: npm run test
 
 skip_output:
   - meta           # Skips lefthook version printing
