@@ -44,7 +44,8 @@
         "level": "verdieping",
         "world": "Wereld",
         "edit": "Bewerken",
-        "edit_defibrillator": "Defibrillator bewerken"
+        "edit_defibrillator": "Defibrillator bewerken",
+        "find_location": "Vind locatie"
     },
     "footer": {
         "add": "Toevoegen",
@@ -91,7 +92,9 @@
         "about_project": "OpenAEDMap is een open-data project dat alle Automatische Externe Defibrillatoren (AED) over de hele wereld toont. De website is gebaseerd op gegevens van OpenStreetMap en is het resultaat van het werk van OpenStreetMap Polen's vereniging. De website is gemaakt in 2022 na het veranderen van de Poolse website AED Mapa naar een nieuw design.",
         "aed_updated_successfully": "AED bijgewerkt.",
         "become_openaedmap_partner": "Wil je partner worden van OpenAEDMap?",
-        "contact_us": "Neem contact met ons op"
+        "contact_us": "Neem contact met ons op",
+        "thanks_for_photo": "Bedankt voor het opladen van de foto. Hij zal snel te zien zijn.",
+        "thanks_for_report": "Bedankt voor het versturen van het rapport. Het zal door de administratoren gelezen worden."
     },
     "common": {
         "loading": "Laden..."
@@ -102,6 +105,22 @@
         "wroclaw_medical_university": "Medische Universiteit van Wroclaw",
         "acting": "handelend",
         "gugik": "Hoofdkantoor van Geodesie en Cartografie in Polen",
-        "main_scientific_partner": "De Wetenschappelijke Hoofdpartner"
+        "main_scientific_partner": "De Wetenschappelijke Hoofdpartner",
+        "e_health_centre": "e-health centrum",
+        "warsaw_university_of_technology": "Technische Universiteit van Warschau"
+    },
+    "photo": {
+        "send_report": "Stuur rapport",
+        "license": "Alle AED foto's die door ons gehost worden vallen onder de Creative Commons Zero (CC0 v1.0) licentie. Door je foto op te laden ga je accoord met deze licentievoorwaarden.",
+        "report_long_text": "Je kunt de foto rapporteren als hij van slechte kwaliteit is, de AED lokatie niet laat zien of op een andere manier ongeschikt is. De administratoren zullen het rapport beoordelen.",
+        "upload": "Laad foto",
+        "remove": "Foto verwijderen",
+        "report": "Foto rapporteren",
+        "license_short_description": "In het kort betekent dit dat iedereen je foto voor elk doel gebruiken mag, zonder toeschrijving."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Kaart van defibrilators",
+        "meta_title": "Open kaart van Automatische Externe Defibrillators (AEDs)",
+        "meta_description": "Kaart van AED's (automatische externe defibrillators) op basis van OpenStreetMap-gegevens. Via onze website kunt u gemakkelijk een AED-defibrillator bij u in de buurt vinden, wat zeer nuttig kan zijn in levensbedreigende situaties. AED-defibrillators zijn apparaten die worden gebruikt voor reanimatie van mensen met een hartstilstand. Met onze kaart kan iedereen snel de dichtstbijzijnde defibrillator vinden en iemand in nood helpen."
     }
 }
