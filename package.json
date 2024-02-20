@@ -39,8 +39,7 @@
     "format": "biome format . --write",
     "check": "biome ci .",
     "test": "bun test",
-    "css-build": "sass sass/mystyles.scss src/mystyles.css",
-    "css-watch": "npm run css-build -- --watch"
+    "css-build": "sass sass/mystyles.scss src/mystyles.css"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
