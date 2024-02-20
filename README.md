@@ -10,6 +10,10 @@ Production environment: https://openaedmap.org \
 Development environment: https://dev.openaedmap.org
 
 # Development
+## Bun
+It's recommended to use bun instead of npm.
+See https://bun.sh/docs/installation for installation manual
+
 ## Gitflow
 
 `dev` is main branch. After pushing to it dev environment is autodeployed.
@@ -36,18 +40,17 @@ Status:
 One way to set up is:
 1. Clone repo and open terminal in the project directory
 2. Install Node version 20 or use [Node version manager](https://github.com/nvm-sh/nvm)
-3. Run `npm install --include dev`
+3. Install bun. See https://bun.sh/docs/installation
+4. Run `bun install`
 
 Second way is if you are using VS Code and have Docker installed you can use devContainer extension.
 
 Create .env file and put these variables there:
 ```
-VITE_VERSION=$npm_package_version
 VITE_DEFAULT_LANG=en
 VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
 VITE_BACKEND_API_URL=https://dev.openaedmap.org
 VITE_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
-HOST=127.0.0.1
 ```
 
 *Note: You can use Github Codespaces to develop.*
@@ -61,7 +64,7 @@ Formatter and linter will run before git commit.
 
 In the project directory, you can run:
 
-#### `npm start`
+#### `bun start`
 
 Runs the app in the development mode.\
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173) to view it in your browser.
@@ -69,7 +72,7 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-#### `npm run build`
+#### `bun run build`
 
 Builds the app for production to the `build` folder.
 
@@ -77,15 +80,11 @@ Builds the app for production to the `build` folder.
 
 Use `npx @beyondtracks/spritezero-cli ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons`
 
-#### `npm run css-build`
+#### `bun run css-build`
 
 Build `sass/mystyles.scss` file into `src/mystyles.css` which is included in `index.tsc` and has the adjusted bulma css for the entire app.
 
 Run this if changed e.g. navbar breakpoint or customized bulma further in `sass/mystyles.css`.
-
-#### `npm run css-watch`
-
-Watches `sass/mystyles.scss` for changes and runs `npm run css-build` if it detects any.
 
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
