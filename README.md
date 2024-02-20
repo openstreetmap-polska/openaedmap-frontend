@@ -10,6 +10,10 @@ Production environment: https://openaedmap.org \
 Development environment: https://dev.openaedmap.org
 
 # Development
+## Bun
+It's recommended to use bun instead of npm.
+See https://bun.sh/docs/installation for installation manual
+
 ## Gitflow
 
 `dev` is main branch. After pushing to it dev environment is autodeployed.
