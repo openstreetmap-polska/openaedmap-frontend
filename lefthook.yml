@@ -3,7 +3,7 @@ pre-commit:
   parallel: true
   commands:
     biome:
-      run: bun run lint-fix
+      run: bun lint-fix
       stage_fixed: true
     test:
       run: bun test
