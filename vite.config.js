@@ -102,8 +102,8 @@ export default defineConfig(({ mode }) => {
 			sourcemap: true,
 		},
 		plugins: plugins,
-        server: {
-            host: "127.0.0.1"
-        }
+		server: {
+			host: "127.0.0.1",
+		},
 	};
 });
