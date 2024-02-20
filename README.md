@@ -86,6 +86,9 @@ Build `sass/mystyles.scss` file into `src/mystyles.css` which is included in `in
 
 Run this if changed e.g. navbar breakpoint or customized bulma further in `sass/mystyles.css`.
 
+#### Upgrading dependencies
+`bunx npm-check-updates -ui` is recommended
+
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
 
