@@ -1,4 +1,4 @@
-import { mdiMapLegend, mdiInformationOutline } from "@mdi/js";
+import { mdiInformationOutline, mdiMapLegend } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { FC } from "react";
 import { Button, Navbar } from "react-bulma-components";

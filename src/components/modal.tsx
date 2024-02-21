@@ -1,4 +1,4 @@
-import { mdiTranslate, mdiGithub, mdiInformationOutline } from "@mdi/js";
+import { mdiGithub, mdiInformationOutline, mdiTranslate } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { FC } from "react";
 import { Button, Modal } from "react-bulma-components";
