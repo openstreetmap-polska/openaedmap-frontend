@@ -1,4 +1,4 @@
-import { mdiAccount, mdiLogoutVariant } from "@mdi/js";
+import { mdiAccount, mdiLoginVariant, mdiLogoutVariant } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { FC } from "react";
 import { Button, Navbar } from "react-bulma-components";
@@ -19,14 +19,14 @@ const LogInButton: FC<LogInButtonProps> = ({ inNavBar }) => {
 
 	if (auth?.authenticated()) {
 		return (
-			<Navbar.Item className="has-text-white" hoverable>
+			<Navbar.Item className="has-text-white is-fullwidth" hoverable>
 				<Navbar.Item>
 					<Icon className="icon mr-2" path={mdiAccount} size={1.0} />
 					{osmUsername}
 				</Navbar.Item>
-				<Navbar.Dropdown className="has-background-green">
+				<Navbar.Dropdown className="has-background-green is-fullwidth">
 					<Navbar.Item onClick={handleLogOut}>
-						<Icon path={mdiLogoutVariant} size={1.3} className="icon mr-2" />
+						<Icon path={mdiLogoutVariant} size={1.0} className="icon mr-2" />
 						{t("navbar.logout")}
 					</Navbar.Item>
 				</Navbar.Dropdown>
@@ -34,12 +34,14 @@ const LogInButton: FC<LogInButtonProps> = ({ inNavBar }) => {
 		);
 	}
 	return (
-		<Navbar.Item renderAs="div" p={1}>
+		<Navbar.Item renderAs="div" className="py-0" px={1}>
 			<Button
+				className="is-fullwidth"
 				color={inNavBar ? "white" : undefined}
 				outlined
 				onClick={handleLogIn}
 			>
+				<Icon path={mdiLoginVariant} size={1.0} className="icon mr-2" />
 				{t("navbar.login")}
 			</Button>
 		</Navbar.Item>

@@ -1,3 +1,5 @@
+import { mdiTranslate } from "@mdi/js";
+import Icon from "@mdi/react";
 import i18n from "i18next";
 import React, { useEffect } from "react";
 import { Navbar } from "react-bulma-components";
@@ -12,20 +14,31 @@ export default function LanguageSwitcher() {
 	}, [t]);
 	return (
 		<Navbar.Item px={1}>
-			<div className="select">
-				<select
-					id="language-switcher"
-					value={language}
-					onChange={(e) => {
-						i18n.changeLanguage(e.target.value);
-					}}
-				>
-					{Object.keys(languages).map((language) => (
-						<option key={language} value={language}>
-							{languages[language].nativeName}
-						</option>
-					))}
-				</select>
+			<div className="control has-icons-left">
+				<div className="select is-white">
+					<select
+						className="has-background-green has-text-white-bis"
+						id="language-switcher"
+						value={language}
+						onChange={(e) => {
+							i18n.changeLanguage(e.target.value);
+						}}
+					>
+						{Object.keys(languages).map((language) => (
+							<option key={language} value={language}>
+								{languages[language].nativeName}
+							</option>
+						))}
+					</select>
+				</div>
+				<span className="icon is-small is-left is-flex is-justify-content-center mt-3">
+					<Icon
+						path={mdiTranslate}
+						size={0.8}
+						className="icon"
+						color="#ffffff"
+					/>
+				</span>
 			</div>
 		</Navbar.Item>
 	);

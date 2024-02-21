@@ -98,7 +98,9 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 			<Button
 				mb={1}
 				mt={0}
-				className="is-small is-success mx-1"
+				mx={1}
+				p={4}
+				className="is-normal is-fullwidth has-text-success-dark"
 				onClick={() => {
 					if (auth === null || !auth.authenticated()) {
 						closeSidebar();
@@ -115,7 +117,7 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 					path={mdiFileImagePlusOutline}
 					size={1}
 					className="icon"
-					color="#fff"
+					color="#028955"
 				/>
 				<span>{t("photo.upload")}</span>
 			</Button>
