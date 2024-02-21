@@ -13,7 +13,6 @@ const ModalContent: FC = () => {
 	const {
 		modalState: { type, currentZoom, errorMessage, nodeId },
 	} = useAppContext();
-	const helpTranslationText = `${t("navbar.help_translating")}`;
 
 	switch (type) {
 		case ModalType.NodeAddedSuccessfully: {
@@ -81,7 +80,7 @@ const ModalContent: FC = () => {
 							href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating"
 						>
 							<Icon path={mdiTranslate} size={1.2} className="icon mr-2" />
-							{helpTranslationText}
+							{t("navbar.help_translating")}
 						</Button>
 						<Button
 							mr={2}

@@ -8,8 +8,6 @@ import DefibrillatorEditor from "./sidebar/defibrillatorEditor";
 import PhotoReport from "./sidebar/photoReporter";
 import PhotoUpload from "./sidebar/photoUploader";
 
-const DEBUG = false;
-
 const SidebarLeft: FC<SidebarLeftProps> = (props) => {
 	const {
 		action,
@@ -20,14 +18,6 @@ const SidebarLeft: FC<SidebarLeftProps> = (props) => {
 		openChangesetId,
 		setOpenChangesetId,
 	} = props;
-
-	DEBUG &&
-		console.log(
-			"Opening left sidebar with action: ",
-			action,
-			" and data:",
-			data,
-		);
 
 	if (!visible) return null;
 
