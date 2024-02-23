@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "bunx --bun vite",
-    "build": "vite build",
+    "build": "bunx --bun vite build",
     "typecheck": "tsc -p ./tsconfig.json --noEmit",
     "lint-fix": "biome check . --apply",
     "check": "biome ci .",
