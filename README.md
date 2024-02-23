@@ -47,7 +47,6 @@ Second way is if you are using VS Code and have Docker installed you can use dev
 
 Create .env file and put these variables there:
 ```
-VITE_DEFAULT_LANG=en
 VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
 VITE_BACKEND_API_URL=https://dev.openaedmap.org
 VITE_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo

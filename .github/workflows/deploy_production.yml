@@ -34,13 +34,12 @@ jobs:
       - name: Build app
         env:
           VITE_ENV: production
-          VITE_DEFAULT_LANG: en
           VITE_OSM_AUTH_URL: "https://www.openstreetmap.org"
           VITE_OSM_API_URL: "https://api.openstreetmap.org"
           VITE_OSM_OAUTH2_CLIENT_ID: ${{ secrets.REACT_APP_OSM_OAUTH2_CLIENT_ID }}
           VITE_BACKEND_API_URL: "https://openaedmap.org"
           VITE_SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-        run: bun run build && ./scripts/build_every_lang.sh
-      - name: Run deploy script on host
+        run: bun run build
+      - name: Copy result to server
         run: |
           rsync -rp --delete -e 'ssh -p ${{ secrets.SSH_HOST_NEW_PORT }}' build/* ${{ secrets.SSH_USER_NEW }}@${{ secrets.SSH_HOST_NEW_IP }}:~/main-static/

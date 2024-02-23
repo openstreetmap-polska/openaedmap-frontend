@@ -1,4 +1,6 @@
+import * as fs from "fs";
 import path from "path";
+import { resolve } from "path";
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
@@ -14,26 +16,28 @@ const getTranslatedStrings = async (languageCode) => {
 
 const htmlPlugin = async (env) => {
 	const translationsEn = await getTranslatedStrings("en");
-	const translationsTarget = await getTranslatedStrings(
-		env.VITE_DEFAULT_LANG ?? "en",
-	).catch((e) => console.error(e));
-	const { meta_title, meta_description, website_title } = {
-		...translationsEn,
-		...translationsTarget,
-	};
-	const baseUrl = env.VITE_BASE_URL ?? "";
-	const canonicalLinks = `<link href="${env.VITE_BACKEND_API_URL}${baseUrl}" rel="canonical" />`;
-	const alternateLinks = Object.keys(languages)
-		.map(
-			(lang) =>
-				`\t<link href="${env.VITE_BACKEND_API_URL}/${lang}/" rel="alternate" hreflang="${lang}" />`,
-		)
-		.join("\n");
-	const defaultAlternateLink = `\t<link href="${env.VITE_BACKEND_API_URL}/" rel="alternate" hreflang="x-default" />`;
-	const seoLinks = `${canonicalLinks}\n${alternateLinks}\n${defaultAlternateLink}`;
 	return {
 		name: "html-transform",
-		transformIndexHtml(html) {
+		async transformIndexHtml(html) {
+			const currentLang = html.match(/<html lang="([a-zA-Z-]+)">/)[1];
+			const translationsTarget = await getTranslatedStrings(currentLang).catch(
+				(e) => console.error(e),
+			);
+			const { meta_title, meta_description, website_title } = {
+				...translationsEn,
+				...translationsTarget,
+			};
+			const baseUrl = currentLang === "en" ? "" : `/${currentLang}/`;
+			const canonicalLinks = `<link href="${env.VITE_BACKEND_API_URL}${baseUrl}" rel="canonical" />`;
+			const alternateLinks = Object.keys(languages)
+				.filter((lang) => lang !== currentLang)
+				.map(
+					(lang) =>
+						`\t<link href="${env.VITE_BACKEND_API_URL}/${lang}/" rel="alternate" hreflang="${lang}" />`,
+				)
+				.join("\n");
+			const defaultAlternateLink = `\t<link href="${env.VITE_BACKEND_API_URL}/" rel="alternate" hreflang="x-default" />`;
+			const seoLinks = `${canonicalLinks}\n${alternateLinks}\n${defaultAlternateLink}`;
 			return html
 				.replace(/<title>(.*?)<\/title>/, `<title>${website_title}</title>`)
 				.replace(
@@ -48,6 +52,23 @@ const htmlPlugin = async (env) => {
 					/<link href="https:\/\/openaedmap.org" rel="canonical" \/>/,
 					seoLinks,
 				);
+		},
+		buildStart(options) {
+			const content = fs.readFileSync("index.html", "utf-8");
+			for (const lang of Object.keys(languages)) {
+				fs.mkdirSync(`langs/${lang}`, { recursive: true });
+				const contentLang = content.replace(
+					/<html lang="en">/,
+					`<html lang="${lang}">`,
+				);
+				fs.writeFileSync(`langs/${lang}/index.html`, contentLang);
+			}
+		},
+		writeBundle() {
+			for (const lang of Object.keys(languages)) {
+				fs.mkdirSync(`build/${lang}`, { recursive: true });
+				fs.renameSync(`build/langs/${lang}`, `build/${lang}`);
+			}
 		},
 	};
 };
@@ -85,6 +106,11 @@ export default defineConfig(({ mode }) => {
 		);
 	}
 
+	const rollupInputs = { main: resolve(__dirname, "index.html") };
+	for (const lang of Object.keys(languages)) {
+		rollupInputs[lang] = resolve(__dirname, `langs/${lang}/index.html`);
+	}
+
 	return {
 		// https://github.com/vitejs/vite/issues/1973#issuecomment-787571499
 		define: {
@@ -100,6 +126,9 @@ export default defineConfig(({ mode }) => {
 			outDir: "build",
 			chunkSizeWarningLimit: 1900,
 			sourcemap: true,
+			rollupOptions: {
+				input: rollupInputs,
+			},
 		},
 		plugins: plugins,
 		server: {
