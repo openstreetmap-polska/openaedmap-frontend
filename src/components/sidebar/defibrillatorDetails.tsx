@@ -8,7 +8,7 @@ import {
 	mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC, useState } from "react";
+import React, { FC, Suspense, useState } from "react";
 import { Button, Card, Columns, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
@@ -29,8 +29,9 @@ import {
 	ViewButton,
 } from "./buttons";
 import DetailTextRow from "./detailTextRow";
-import { OpeningHoursField } from "./openingHours";
 import { CheckDateField } from "./verificationDate";
+
+const OpeningHoursField = React.lazy(() => import("./openingHours"));
 
 const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 	data,
@@ -208,10 +209,12 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 							/>
 						</Columns.Column>
 						<Columns.Column className="py-1">
-							<OpeningHoursField
-								openingHours={data.tags.opening_hours}
-								timezoneOffsetUTCMinutes={data.timezoneOffsetUTCMinutes}
-							/>
+							<Suspense fallback={<div>Loading...</div>}>
+								<OpeningHoursField
+									openingHours={data.tags.opening_hours}
+									timezoneOffsetUTCMinutes={data.timezoneOffsetUTCMinutes}
+								/>
+							</Suspense>
 						</Columns.Column>
 					</Columns>
 					<Columns vCentered className="is-mobile">

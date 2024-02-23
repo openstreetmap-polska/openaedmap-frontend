@@ -1,4 +1,5 @@
-import OpeningHours, { argument_hash } from "opening_hours";
+import OpeningHours from "opening_hours";
+import type { argument_hash } from "opening_hours";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -74,7 +75,7 @@ function isCurrentlyOpen(
 	}
 }
 
-export const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({
+const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({
 	openingHours,
 	timezoneOffsetUTCMinutes,
 }) => {
@@ -97,7 +98,7 @@ export const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({
 	);
 };
 
-export const OpeningHoursDescription: FC<OpeningHoursProps> = ({
+const OpeningHoursDescription: FC<OpeningHoursProps> = ({
 	openingHours,
 	timezoneOffsetUTCMinutes,
 }) => {
@@ -123,7 +124,7 @@ export const OpeningHoursDescription: FC<OpeningHoursProps> = ({
 	);
 };
 
-export const OpeningHoursField: FC<OpeningHoursProps> = ({
+const OpeningHoursField: FC<OpeningHoursProps> = ({
 	openingHours,
 	timezoneOffsetUTCMinutes,
 }) => {
@@ -141,3 +142,5 @@ export const OpeningHoursField: FC<OpeningHoursProps> = ({
 		</div>
 	);
 };
+
+export default OpeningHoursField;
