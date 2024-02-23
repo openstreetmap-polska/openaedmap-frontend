@@ -53,7 +53,7 @@ const htmlPlugin = async (env) => {
 					seoLinks,
 				);
 		},
-		buildStart(options) {
+		buildStart() {
 			const content = fs.readFileSync("index.html", "utf-8");
 			for (const lang of Object.keys(languages)) {
 				fs.mkdirSync(`langs/${lang}`, { recursive: true });

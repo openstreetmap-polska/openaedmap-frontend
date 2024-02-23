@@ -1,6 +1,5 @@
 #!/usr/bin/env bun
 import * as fs from "fs";
-import { $ } from "bun";
 import { appStorePath } from "../src/3rdparty/reactStoreBadges";
 import languages from "../src/languages";
 

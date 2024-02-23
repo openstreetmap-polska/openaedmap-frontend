@@ -1,9 +1,9 @@
 import { mdiDownload, mdiFileDownloadOutline } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
-import { backendBaseUrl, fetchCountriesData } from "~/backend";
+import { backendBaseUrl } from "~/backend";
 import { useLanguage } from "~/i18n";
 import { Country } from "~/model/country";
 

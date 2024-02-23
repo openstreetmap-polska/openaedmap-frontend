@@ -41,6 +41,7 @@ function parseLocationFromString(locationString: string): MapLocation | null {
 		const [zoom, latitude, longitude] = locationString.split("/").map(Number);
 		return { zoom, latitude, longitude };
 	} catch (e) {
+		console.error(`Failed to parse location from string: ${e}`);
 		return null;
 	}
 }

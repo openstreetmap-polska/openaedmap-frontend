@@ -17,7 +17,8 @@
 		"rules": {
 			"recommended": true,
 			"correctness": {
-				"useHookAtTopLevel": "error"
+				"useHookAtTopLevel": "error",
+				"noUnusedVariables": "error"
 			}
 		}
 	}

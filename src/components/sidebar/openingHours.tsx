@@ -1,4 +1,3 @@
-import i18n from "i18next";
 import OpeningHours, { argument_hash } from "opening_hours";
 import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
