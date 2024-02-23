@@ -10,7 +10,6 @@ if (!isProduction) {
 	languages.debug = { nativeName: "--debug--" };
 }
 const languagesIsoCodes = Object.keys(languages);
-const defaultLanguage = import.meta.env.VITE_DEFAULT_LANG ?? "en";
 
 i18n
 	// i18next-http-backend
@@ -57,7 +56,8 @@ function useLanguage(): string {
 	const {
 		i18n: { resolvedLanguage },
 	} = useTranslation();
-	return resolvedLanguage ?? defaultLanguage;
+	const htmlLanguage = document.getElementsByTagName("html")[0].lang;
+	return resolvedLanguage ?? htmlLanguage ?? "en";
 }
 
 export default i18n;
