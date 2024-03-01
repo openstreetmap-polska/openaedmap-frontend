@@ -2,7 +2,7 @@
     "access": {
         "yes": "Publicznie dostępny",
         "private": "Dostępny za zgodą właściciela",
-        "customers": "Dostępny tylko w godzinach pracy",
+        "customers": "Dostępne tylko dla klientów",
         "no": "Niedostępny",
         "unknown": "Dostęp nieznany",
         "unknownTag": "Brak tagu access lub niepasujący do powyższych",
