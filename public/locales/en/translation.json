@@ -2,7 +2,7 @@
     "access": {
         "yes": "Publicly accessible",
         "private": "Accessible with owner's permit",
-        "customers": "Accessible during work hours",
+        "customers": "Accessible only for customers",
         "no": "Unavailable",
         "unknown": "Unknown access",
         "unknownTag": "No access tag or not matching above",
