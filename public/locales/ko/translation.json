@@ -4,7 +4,7 @@
         "permissive": "접근 제한 없음",
         "private": "소유주의 허락을 받아 사용 가능",
         "unknown": "사용 가능 여부 불분명",
-        "customers": "근무 시간 중 사용 가능",
+        "customers": "고객만 액세스 가능",
         "yes": "누구나 사용 가능"
     },
     "sidebar": {
