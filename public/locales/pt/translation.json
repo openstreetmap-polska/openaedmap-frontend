@@ -59,7 +59,7 @@
     "access": {
         "yes": "Publicamente acessível",
         "private": "Acessível com permissão do proprietário",
-        "customers": "Acessível durante um horário",
+        "customers": "Acessível apenas para clientes",
         "no": "Indisponível",
         "unknown": "Acesso desconhecido",
         "permissive": "Publicamente acessível até nova indicação",
