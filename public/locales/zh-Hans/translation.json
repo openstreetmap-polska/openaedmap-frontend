@@ -76,7 +76,7 @@
     "access": {
         "private": "仅在所有者同意时可用",
         "yes": "可被公众使用",
-        "customers": "仅在上班时间可用",
+        "customers": "只有客户才能访问",
         "no": "不可用",
         "unknown": "是否可使用未知",
         "permissive": "除另有通知时均可被公众使用",
