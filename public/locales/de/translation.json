@@ -2,7 +2,7 @@
     "access": {
         "yes": "Öffentlich zugänglich",
         "private": "Zugang mit Erlaubnis der Eigentümer",
-        "customers": "Zugang während der Öffnungszeiten",
+        "customers": "Nur für Kunden zugänglich",
         "no": "Kein Zugang",
         "permissive": "Bis auf Weiteres öffentlich zugänglich",
         "unknown": "Unbekannter Zugang",
