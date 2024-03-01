@@ -1,6 +1,6 @@
 {
     "access": {
-        "customers": "Přístupný během otvírací doby",
+        "customers": "Přístupné pouze pro zákazníky",
         "no": "Nedostupný",
         "private": "Přístupný s povolením vlastníka",
         "yes": "Veřejně přístupný",
