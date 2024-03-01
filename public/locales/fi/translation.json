@@ -2,7 +2,7 @@
     "access": {
         "yes": "Julkisesti saatavilla",
         "private": "Pääsy omistajan luvalla",
-        "customers": "Pääsy työaikana",
+        "customers": "Pääsy vain asiakkaille",
         "no": "Ei käytettävissä",
         "unknown": "Tuntematon pääsy",
         "permissive": "Yleisesti saatavilla, kunnes lisäilmoitus",
