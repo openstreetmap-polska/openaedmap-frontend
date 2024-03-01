@@ -3,7 +3,7 @@
         "yes": "Accessible au public",
         "no": "Indisponible",
         "permissive": "Accessible au public jusqu'à nouvel ordre",
-        "customers": "Accessible pendant les heures d'ouverture",
+        "customers": "Accessible uniquement aux clients",
         "private": "Accessible avec la permission du propriétaire",
         "unknown": "Accès inconnu",
         "unknownTag": "Pas de balise d'accès ou ne correspondant pas à ce qui précède"
@@ -117,5 +117,10 @@
         "send_report": "Envoyer le signalement",
         "report": "Signaler la photo",
         "report_long_text": "Vous pouvez signaler la photo si elle est de mauvaise qualité, ne montre pas l'emplacement des DAE ou est inappropriée d'une manière ou d'une autre. Les administrateurs du site examineront le signalement."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Carte des défibrillateurs",
+        "meta_title": "Carte ouverte des défibrillateurs externes automatiques (DEAs)",
+        "meta_description": "Carte des DEAs (défibrillateurs externes automatiques) basée sur les données d'OpenStreetMap. Notre site web permet de trouver facilement un défibrillateur près de chez vous, ce qui peut s'avérer très utile dans des situations où la vie est en danger. Les défibrillateurs sont des appareils utilisés pour la réanimation cardio-pulmonaire des personnes en arrêt cardiaque. Grâce à notre carte, chacun peut trouver rapidement le défibrillateur le plus proche et aider quelqu'un qui en a besoin."
     }
 }
