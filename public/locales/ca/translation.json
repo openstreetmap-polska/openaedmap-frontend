@@ -10,7 +10,7 @@
         "created_with_<3_by": "creat amb ❤️ per",
         "visit_github": "Visita el nostre repositori de GitHub",
         "visit_osmp_website": "Visita la web d'OpenStreetMap Polònia",
-		"login": "Entrar usant el compte d'OSM",
+        "login": "Entrar usant el compte d'OSM",
         "logout": "Sortir",
         "about": "Quant a"
     },
@@ -33,8 +33,8 @@
         "edit_in_osm": "Edita a OSM",
         "view": "Veure a OSM",
         "copy_url": "Copiar URL",
-		"add_defibrillator": "Afegir desfibril·lador"
-},
+        "add_defibrillator": "Afegir desfibril·lador"
+    },
     "form": {
         "optional_field": "Camp opcional",
         "marker_popup_text": "Mou el marcador a la localització del DEA",
@@ -48,7 +48,7 @@
     "footer": {
         "add": "Afegir",
         "add_aed": "Afegir DEA",
-		"cancel": "Cancel·lar",
+        "cancel": "Cancel·lar",
         "continue": "Continuar"
     },
     "opening_hours": {
@@ -61,7 +61,7 @@
         "no": "No"
     },
     "osmp": "OpenStreetMap Polònia",
-	"modal": {
+    "modal": {
         "aed_added_successfully": "DEA afegit amb èxit.",
         "available_in_osm": "Disponible en OpenStreetMap amb la url:",
         "should_appear_soon": "L'objecte hauria de sortir al mapa en 60 minuts.",
