@@ -2,7 +2,7 @@
     "access": {
         "yes": "Javno dostopen",
         "private": "Dostopen z dovoljenjem lastnika",
-        "customers": "Dostopen v obratovalnem času",
+        "customers": "Dostopno samo za stranke",
         "no": "Nedostopen",
         "permissive": "Javno dostopno do nadaljnega",
         "unknown": "Dostopnost ni znana",
