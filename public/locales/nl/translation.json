@@ -2,7 +2,7 @@
     "access": {
         "yes": "Publiek toegankelijk",
         "private": "Toegankelijk met vergunning van de eigenaar",
-        "customers": "Toegankelijk tijdens werkuren",
+        "customers": "Alleen toegankelijk voor klanten",
         "no": "Niet toegankelijk",
         "permissive": "Toegang vrijgegeven",
         "unknown": "Toegang onbekend",
