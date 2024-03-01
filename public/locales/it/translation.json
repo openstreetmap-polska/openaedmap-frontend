@@ -37,7 +37,7 @@
         "yes": "Accessibile al pubblico",
         "permissive": "Disponibile al pubblico fino a nuovo avviso",
         "private": "Accessibile con il permesso del proprietario",
-        "customers": "Accessibile durante l'orario di lavoro",
+        "customers": "Accessibile solo ai clienti",
         "unknown": "Accesso sconosciuto",
         "unknownTag": "Nessun'etichetta di accesso o non corrispondente a quanto sopra"
     },
