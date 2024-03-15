@@ -16,6 +16,24 @@ interface DefibrillatorDetailsProps {
 	closeSidebar: () => void;
 }
 
+// TODO: consider splitting cc0 part from translation
+const LicenceInfoBlock: FC = () => {
+	const { t } = useTranslation();
+	const cc0 = "Creative Commons Zero (CC0 v1.0)";
+	const licenseInfoText = t("photo.license");
+	if (!licenseInfoText.includes(cc0)) {
+		return <p className="block">{licenseInfoText}</p>;
+	}
+	const [before, after] = licenseInfoText.split(cc0);
+	return (
+		<p className="block">
+			{before}
+			<a href="https://creativecommons.org/publicdomain/zero/1.0/">{cc0}</a>
+			{after}
+		</p>
+	);
+};
+
 const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
 	const { t } = useTranslation();
 	const { data, closeSidebar } = props;
@@ -29,7 +47,6 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
 	const accessText = data.tags.access
 		? ` - ${t(`access.${data.tags.access}`)}`
 		: "";
-
 	return (
 		<div className="sidebar" id="sidebar-div">
 			<Card>
@@ -63,7 +80,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
 						<Icon path={mdiArrowLeftBold} size={0.8} className="icon" />
 						<span>{t("footer.cancel")}</span>
 					</Button>
-					<p className="block">{t("photo.license")}</p>
+					<LicenceInfoBlock />
 					<p className="block">{t("photo.license_short_description")}</p>
 					{(selectedImage !== null && (
 						<div>
