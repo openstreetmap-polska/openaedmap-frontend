@@ -1,10 +1,11 @@
-import { Marker } from "maplibre-gl";
-import React, { FC, useState } from "react";
+import type { Marker } from "maplibre-gl";
+import type React from "react";
+import { type FC, useState } from "react";
 import { Card, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { useLanguage } from "~/i18n";
-import { DefibrillatorData } from "~/model/defibrillatorData";
+import type { DefibrillatorData } from "~/model/defibrillatorData";
 import { ModalType, initialModalState } from "~/model/modal";
 import {
 	addDefibrillatorToOSM,

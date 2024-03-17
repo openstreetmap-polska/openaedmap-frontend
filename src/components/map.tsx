@@ -1,9 +1,12 @@
 // @ts-ignore
 import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import maplibregl, { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
+import maplibregl, {
+	type MapGeoJSONFeature,
+	type MapMouseEvent,
+} from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { type FC, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { fetchCountriesData, fetchNodeDataFromBackend } from "~/backend";
@@ -18,7 +21,7 @@ import {
 	saveLocationToLocalStorage,
 } from "~/location";
 import ButtonsType from "~/model/buttonsType";
-import { DefibrillatorData } from "~/model/defibrillatorData";
+import type { DefibrillatorData } from "~/model/defibrillatorData";
 import { ModalType, initialModalState } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import FooterDiv from "./footer";

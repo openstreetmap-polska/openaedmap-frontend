@@ -1,6 +1,6 @@
 import { mdiMapLegend } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC } from "react";
+import React, { type FC } from "react";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import ReactStoreBadges from "~/3rdparty/reactStoreBadges";

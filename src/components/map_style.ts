@@ -1,6 +1,6 @@
-import { StyleSpecification } from "maplibre-gl";
+import type { StyleSpecification } from "maplibre-gl";
 import { backendBaseUrl } from "~/backend";
-import { Country } from "~/model/country";
+import type { Country } from "~/model/country";
 
 const getUrl = window.location;
 const baseUrl = `${getUrl.protocol}//${getUrl.host}${getUrl.pathname}`;

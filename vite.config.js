@@ -1,6 +1,5 @@
-import * as fs from "fs";
-import path from "path";
-import { resolve } from "path";
+import * as fs from "node:fs";
+import path, { resolve } from "node:path";
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";

@@ -1,46 +1,30 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig.json",
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "typeRoots": [
-      "./types/",
-      "./node_modules/@types",
-      "./node_modules"
-    ],
-    "types": [
-        "vite/client",
-        "bun-types"
-    ],
-    "baseUrl": ".",
-    "paths": {
-        "~/*": ["./src/*"]
-    }
-  },
-  "include": [
-    "src",
-    "types/custom.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"$schema": "https://json.schemastore.org/tsconfig.json",
+	"compilerOptions": {
+		"target": "es5",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"strictNullChecks": true,
+		"noImplicitAny": true,
+		"typeRoots": ["./types/", "./node_modules/@types", "./node_modules"],
+		"types": ["vite/client", "bun-types"],
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./src/*"]
+		}
+	},
+	"include": ["src", "types/custom.d.ts"],
+	"exclude": ["node_modules"]
 }

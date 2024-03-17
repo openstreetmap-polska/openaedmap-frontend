@@ -7,7 +7,8 @@ import {
 	mdiPencil,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC } from "react";
+import type React from "react";
+import type { FC } from "react";
 import { Button } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";

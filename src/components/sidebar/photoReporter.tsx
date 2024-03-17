@@ -1,11 +1,12 @@
 import { mdiArrowLeftBold, mdiSend } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC } from "react";
+import type React from "react";
+import type { FC } from "react";
 import { Button, Card, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
-import { DefibrillatorData } from "~/model/defibrillatorData";
+import type { DefibrillatorData } from "~/model/defibrillatorData";
 import { ModalType, initialModalState } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import { accessColourClass } from "./access";

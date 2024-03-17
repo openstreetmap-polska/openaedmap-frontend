@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
 import { useLanguage } from "~/i18n";
-import { Country } from "~/model/country";
+import type { Country } from "~/model/country";
 
 const worldCountryCode = "WORLD";
 

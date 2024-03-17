@@ -1,6 +1,6 @@
 import OpeningHours from "opening_hours";
 import type { argument_hash } from "opening_hours";
-import React, { FC } from "react";
+import React, { type FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useLanguage } from "~/i18n";

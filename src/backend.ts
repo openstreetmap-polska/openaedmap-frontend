@@ -1,5 +1,5 @@
-import { Country } from "./model/country";
-import { DefibrillatorData } from "./model/defibrillatorData";
+import type { Country } from "./model/country";
+import type { DefibrillatorData } from "./model/defibrillatorData";
 import { fetchNodeData } from "./osm";
 
 export const backendBaseUrl = import.meta.env.VITE_BACKEND_API_URL;

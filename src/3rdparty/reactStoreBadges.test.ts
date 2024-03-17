@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import * as fs from "fs";
+import * as fs from "node:fs";
 import { appStorePath, googlePlayPath } from "~/3rdparty/reactStoreBadges";
 import languages from "~/languages";
 

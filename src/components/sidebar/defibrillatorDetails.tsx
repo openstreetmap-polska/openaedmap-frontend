@@ -8,15 +8,15 @@ import {
 	mdiPhoneOutline,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { FC, Suspense, useState } from "react";
+import React, { type FC, Suspense, useState } from "react";
 import { Button, Card, Columns, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
+import ImageGallery, { type ReactImageGalleryItem } from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
 import { useLanguage } from "~/i18n";
-import { DefibrillatorData } from "~/model/defibrillatorData";
+import type { DefibrillatorData } from "~/model/defibrillatorData";
 import { ModalType, initialModalState } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import { accessColourClass } from "./access";

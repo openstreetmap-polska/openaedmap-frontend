@@ -1,6 +1,6 @@
 // Based on https://github.com/yjb94/react-store-badges
 
-import React, { FC, useLayoutEffect, useState } from "react";
+import React, { type FC, useLayoutEffect, useState } from "react";
 
 const HEIGHT_RATIO = 3.375;
 

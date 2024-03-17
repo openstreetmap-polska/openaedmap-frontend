@@ -1,6 +1,6 @@
-import { Marker } from "maplibre-gl";
-import React, { FC } from "react";
-import { DefibrillatorData } from "~/model/defibrillatorData";
+import type { Marker } from "maplibre-gl";
+import React, { type FC } from "react";
+import type { DefibrillatorData } from "~/model/defibrillatorData";
 import SidebarAction from "~/model/sidebarAction";
 import "./sidebar.css";
 import DefibrillatorDetails from "./sidebar/defibrillatorDetails";
