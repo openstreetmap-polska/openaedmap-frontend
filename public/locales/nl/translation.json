@@ -111,7 +111,7 @@
     },
     "photo": {
         "send_report": "Stuur rapport",
-        "license": "Alle AED foto's die door ons gehost worden vallen onder de Creative Commons Zero (CC0 v1.0) licentie. Door je foto op te laden ga je accoord met deze licentievoorwaarden.",
+        "license": "Alle AED foto's worden door ons gehost en vallen onder de Creative Commons Zero (CC0 v1.0) licentie. Door je foto te uploaden ga je akkoord met deze licentievoorwaarden.",
         "report_long_text": "Je kunt de foto rapporteren als hij van slechte kwaliteit is, de AED lokatie niet laat zien of op een andere manier ongeschikt is. De administratoren zullen het rapport beoordelen.",
         "upload": "Laad foto",
         "remove": "Foto verwijderen",
