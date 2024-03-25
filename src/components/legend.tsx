@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import MarkerCustomers from "~/marker_icons/marker_customers.svg";
 import MarkerNo from "~/marker_icons/marker_no.svg";
 import MarkerPermissive from "~/marker_icons/marker_permissive.svg";
+import MarkerPermit from "~/marker_icons/marker_permit.svg";
 import MarkerPrivate from "~/marker_icons/marker_private.svg";
 import MarkerUnknown from "~/marker_icons/marker_unknown.svg";
 import MarkerDefault from "~/marker_icons/marker_yes.svg";
@@ -29,6 +30,12 @@ export default function MapLegend() {
 			icon: MarkerCustomers,
 			text: t("access.customers"),
 			tag: "access=customers",
+		},
+		{
+			key: "permit",
+			icon: MarkerPermit,
+			text: t("access.permit"),
+			tag: "access=permit",
 		},
 		{
 			key: "private",

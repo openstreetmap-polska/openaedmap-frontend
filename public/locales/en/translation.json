@@ -1,7 +1,8 @@
 {
     "access": {
         "yes": "Publicly accessible",
-        "private": "Accessible with owner's permit",
+        "permit": "Accessible with owner's permit",
+        "private": "Privately accessible",
         "customers": "Accessible only for customers",
         "no": "Unavailable",
         "unknown": "Unknown access",
