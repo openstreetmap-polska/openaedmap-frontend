@@ -1,6 +1,8 @@
 html {
-  overflow-y: hidden !important; /* Hide vertical scrollbar */
-  overflow-x: hidden !important; /* Hide horizontal scrollbar */
+  overflow-y: hidden !important;
+  /* Hide vertical scrollbar */
+  overflow-x: hidden !important;
+  /* Hide horizontal scrollbar */
 }
 
 body {
@@ -59,22 +61,21 @@ code {
   background-color: #7a7a7a !important;
 }
 
-.navbar-item a:hover
-{
+.navbar-item a:hover {
   color: #000000 !important;
 }
 
-.column
-{
+.column {
   border-radius: 4px;
 }
 
-a.navbar-item:focus-within, a.navbar-item:hover {
+a.navbar-item:focus-within,
+a.navbar-item:hover {
   background-color: #028955 !important;
 }
 
 #language-switcher {
-  max-width: 120px;
+  max-width: 130px;
 }
 
 .maplibregl-ctrl-geocoder {
@@ -84,4 +85,8 @@ a.navbar-item:focus-within, a.navbar-item:hover {
 .partner-row {
   flex-wrap: wrap;
   align-items: center !important;
+}
+
+.modal-card {
+  min-width: 30%;
 }

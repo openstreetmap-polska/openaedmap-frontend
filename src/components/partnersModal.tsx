@@ -93,8 +93,8 @@ const PartnersModal: FC = () => {
 					))}
 				</div>
 			</section>
-			<footer className="modal-card-foot p-2">
-				<div className="notification is-info is-light">
+			<footer className="modal-card-foot py-4 has-text-centered">
+				<p className="block py-3">
 					{t("modal.become_openaedmap_partner")}
 					&nbsp;
 					<a
@@ -104,7 +104,7 @@ const PartnersModal: FC = () => {
 						{t("modal.contact_us")}
 					</a>
 					.
-				</div>
+				</p>
 			</footer>
 		</>
 	);

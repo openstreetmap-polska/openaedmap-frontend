@@ -1,4 +1,4 @@
-import { mdiGithub, mdiInformationOutline } from "@mdi/js";
+import { mdiGithub, mdiInformationOutline, mdiTranslate } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { type FC } from "react";
 import { Button, Modal } from "react-bulma-components";
@@ -13,7 +13,6 @@ const ModalContent: FC = () => {
 	const {
 		modalState: { type, currentZoom, errorMessage, nodeId },
 	} = useAppContext();
-	const helpTranslationText = `🖋 ${t("navbar.help_translating")}`;
 
 	switch (type) {
 		case ModalType.NodeAddedSuccessfully: {
@@ -80,7 +79,8 @@ const ModalContent: FC = () => {
 							rel="noreferrer"
 							href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating"
 						>
-							{helpTranslationText}
+							<Icon path={mdiTranslate} size={1.2} className="icon mr-2" />
+							{t("navbar.help_translating")}
 						</Button>
 						<Button
 							mr={2}
@@ -89,7 +89,7 @@ const ModalContent: FC = () => {
 							rel="noreferrer"
 							href="https://github.com/openstreetmap-polska/openaedmap-frontend"
 						>
-							<Icon path={mdiGithub} size="2rem" />
+							<Icon path={mdiGithub} size={1.2} className="icon mr-2" />
 							<span>{t("navbar.visit_github")}</span>
 						</Button>
 					</p>
