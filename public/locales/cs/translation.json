@@ -102,18 +102,25 @@
         "wroclaw_medical_university": "Wroclawská lékařská univerzita",
         "chief_geodesist": "Hlavní geodet Polska",
         "acting": "působící",
-        "honorary_patronage": "Čestný patron"
+        "honorary_patronage": "Čestný patron",
+        "e_health_centre": "e-Health Centre",
+        "warsaw_university_of_technology": "Warsaw University of Technology"
     },
     "photo": {
-        "license": "Všechny fotografie AED, které hostujeme, jsou licencovány podle Creative Commons Zero (CC0 v1.0). Nahráním své fotografie souhlasíte s těmito licenčními podmínkami.",
+        "license": "Všechny fotografie AED jsou hostovány u nás a jsou licencovány pod licencí Creative Commons Zero (CC0 v1.0). Nahráním fotografie souhlasíte s těmito licenčními podmínkami.",
         "remove": "Odstranit fotku",
         "upload": "Nahrát fotku",
         "license_short_description": "Stručně řečeno to znamená, že fotografii může kdokoli použít k jakémukoli účelu. Není nutné uvádět autora.",
         "send_report": "Odeslat report",
         "report": "Nahlásit fotku",
-        "report_long_text": "Fotografii můžete nahlásit, pokud je nekvalitní, neukazuje umístění AED nebo je jakýmkoli způsobem nevhodná. Správci webu zprávu posoudí."
+        "report_long_text": "Fotografii můžete nahlásit, pokud je špatné kvality, nezobrazuje umístění AED nebo je jakkoli nevhodná. Správci webu hlášení přezkoumají."
     },
     "common": {
         "loading": "Nahrávám..."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Mapa defibrilátorů",
+        "meta_title": "Otevřená mapa automatických externích defibrilátorů (AED)",
+        "meta_description": "Mapa AED (automatických externích defibrilátorů) založená na datech OpenStreetMap. Naše webové stránky umožňují snadno najít defibrilátor AED ve vašem okolí, který může být velmi užitečný v situacích ohrožení života. Defibrilátory AED jsou přístroje, které se používají ke kardiopulmonální resuscitaci osob při zástavě srdce. Pomocí naší mapy může každý rychle najít nejbližší defibrilátor a pomoci někomu v nouzi."
     }
 }
