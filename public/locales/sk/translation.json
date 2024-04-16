@@ -2,7 +2,7 @@
     "access": {
         "customers": "Prístupné len pre zákazníkov",
         "no": "Nedostupný",
-        "unknown": "Neznámy prístup",
+        "unknown": "Neznáma prístupnosť",
         "yes": "Verejne prístupný",
         "private": "Prístupný s povolením vlastníka",
         "unknownTag": "Žiadny prístupový tag alebo nie je uvedený vyššie",
@@ -107,7 +107,7 @@
         "warsaw_university_of_technology": "Varšava University of Technology"
     },
     "photo": {
-        "license": "Všetky AED fotografie hostili nás sú licencované pod Creative Commons Zero (CC0 v1.0). Nahraním vašej fotografie súhlasíte s podmienkami licencie.",
+        "license": "Všetky fotografie AED sú uložené u nás, s licenciou Creative Commons Zero (CC0 v1.0). Nahraním vašej fotografie súhlasíte s podmienkami tejto licencie.",
         "remove": "Odstráňte fotografiu",
         "upload": "Nahrať fotografiu",
         "license_short_description": "Stručne to znamená, že fotografia môže byť použitá pre každý účel. Nie je potrebný žiadny attribution.",
@@ -119,8 +119,8 @@
         "loading": "Načítanie..."
     },
     "meta": {
-        "website_title": "OpenAEDMap - Mapa Defibrillátorov",
-        "meta_title": "Otvorte mapu automatických externých Defibrillátorov (AEDs)",
-        "meta_description": "Mapa AEDs (Automatic Externé Defibrillators) na základe údajov OpenStreetMap. Naša webová stránka umožňuje ľahko nájsť AED defibrilátor blízko vás, čo môže byť veľmi užitočné v život ohrozujúcich situáciách. AED defibrilátory sú zariadenia, ktoré sa používajú pre kardiopulmonárna resuscitácia ľudí v zástave srdca. S našou mapou, každý môže rýchlo nájsť najbližšie defibrilátor a pomôcť niekomu v núdzi."
+        "website_title": "OpenAEDMap - Mapa defibrilátorov",
+        "meta_title": "Otvorená mapa automatických externých defibrilátorov (AED)",
+        "meta_description": "Mapa AED (automatických externých defibrilátorov), podľa údajov OpenStreetMap. Naša webstránka umožňuje ľahko nájsť AED vo vašej blízkosti, čo môže byť veľmi nápomocné v život ohrozujúcich situáciách. AED sú zariadenia používané na kardiopulmonálnu resuscitáciu ľudí so zástavou srdca. S našou mapou môže každý rýchlo nájsť najbližší defibrilátor a pomôcť človeku v núdzi."
     }
 }
