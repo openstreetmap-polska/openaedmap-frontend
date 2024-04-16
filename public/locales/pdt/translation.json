@@ -16,5 +16,26 @@
         "about": "Von om",
         "hosted_by": "hosted von",
         "help_translating": "Halp Äwasaten"
+    },
+    "sidebar": {
+        "csv": "CSV",
+        "geojson": "GeoJSON",
+        "caption_info": "AED",
+        "description": "Beschriewung",
+        "world": "Welt",
+        "edit": "Omschriewen",
+        "edit_in_osm": "Omschriewen en OSM",
+        "view": "Bekjikjen en OSM",
+        "copy_url": "URL kopieren",
+        "openstreetmap_navigation": "OpenStreetMap Hanwiesunk",
+        "google_maps_navigation": "Google Maps Hanwiesunk",
+        "edit_defibrillator": "Defibrillator omschriewen"
+    },
+    "form": {
+        "is_indoor": "Es en Jebied?",
+        "inside": "Bennen"
+    },
+    "modal": {
+        "about_project": "OpenAEDMap es en open-data Projekt woat wiest aule Automated External Defibrillators (AED) rom de Welt. De Website Launtkoat kjemt von OpenStreetMap en halpt met OpenStreetMap Poland äare aunstrenjunk. It wie en 2022 jemaukt, noem design omendren oppe Polish AED Launtkoat."
     }
 }
