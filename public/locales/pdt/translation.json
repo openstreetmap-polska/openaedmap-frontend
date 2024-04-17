@@ -29,13 +29,44 @@
         "copy_url": "URL kopieren",
         "openstreetmap_navigation": "OpenStreetMap Hanwiesunk",
         "google_maps_navigation": "Google Maps Hanwiesunk",
-        "edit_defibrillator": "Defibrillator omschriewen"
+        "edit_defibrillator": "Defibrillator omschriewen",
+        "close": "Sied toomoakjen",
+        "excel": "Excel",
+        "no_data": "Kjeen data",
+        "indoor": "Em Jebied",
+        "contact_number": "Kontakt Numma",
+        "note": "Breef",
+        "add_defibrillator": "Defibrillator toovoegen"
     },
     "form": {
         "is_indoor": "Es en Jebied?",
-        "inside": "Bennen"
+        "inside": "Bennen",
+        "outside": "Buten"
     },
     "modal": {
-        "about_project": "OpenAEDMap es en open-data Projekt woat wiest aule Automated External Defibrillators (AED) rom de Welt. De Website Launtkoat kjemt von OpenStreetMap en halpt met OpenStreetMap Poland äare aunstrenjunk. It wie en 2022 jemaukt, noem design omendren oppe Polish AED Launtkoat."
+        "about_project": "OpenAEDMap es en open-data Projekt woat wiest aule Automated External Defibrillators (AED) rom de Welt. De Website Launtkoat kjemt von OpenStreetMap en halpt met OpenStreetMap Poland äare aunstrenjunk. It wie en 2022 jemaukt, noem design omendren oppe Polish AED Launtkoat.",
+        "title": "Informazion"
+    },
+    "footer": {
+        "add": "Opptalen",
+        "add_aed": "AED bietalen"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Op",
+        "closed": "Too"
+    },
+    "indoor": {
+        "yes": "Jo",
+        "no": "Nä"
+    },
+    "osmp": "OpenStreetMap Poland",
+    "photo": {
+        "send_report": "Bericht schekjen"
+    },
+    "meta": {
+        "meta_description": "Launtkoat von AEDs (Automatic External Defibrillators) jebased op OpenStreetMap. Derch onse website kjeen jie gauns eifach en AED-defibrillator dichtbie finjen, woat kaun jint sea halpen en Läwensjefoa. AED-defibrillators sent Apparaten waut wuarenn jebrukt toom en Mensch trigj brinjen von en Hoatschlach . Met onse koat kan jiedamaun bosich de dichtsta defibrillator finjen en jemand en Noot halpen.",
+        "website_title": "OpenAEDMap - Launtkoat von Defibrillators",
+        "meta_title": "Opne Launtkoat von Automatic External Defibrillators (AEDs)"
     }
 }
