@@ -1,29 +1,29 @@
 {
     "access": {
-        "customers": "Prístupné len pre zákazníkov",
+        "customers": "Prístupný len pre zákazníkov",
         "no": "Nedostupný",
         "unknown": "Neznáma prístupnosť",
         "yes": "Verejne prístupný",
         "private": "Prístupný s povolením vlastníka",
-        "unknownTag": "Žiadny prístupový tag alebo nie je uvedený vyššie",
-        "permissive": "Verejné k dispozícii až do odvolania"
+        "unknownTag": "Žiadna značka o prístupnosti, alebo nezodpovedá vyššie uvedenému",
+        "permissive": "Verejne prístupný až do odvolania"
     },
     "navbar": {
         "login": "Prihlásiť sa cez OSM účet",
         "about": "O projekte",
         "logout": "Odhlásiť sa",
-        "visit_github": "Navštívte náš GitHub repozitár",
-        "created_with_<3_by": "vytvorené s ❤️",
+        "visit_github": "Navštíviť náš GitHub repozitár",
+        "created_with_<3_by": "s ❤️ vytvorené v",
         "visit_osmp_website": "Navštíviť stránku OpenStreetMap Poľsko",
-        "help_translating": "Pomoc prekladanie",
-        "hosted_by": "hostil"
+        "help_translating": "Pomôcť s prekladom",
+        "hosted_by": "hosťované u"
     },
     "sidebar": {
         "csv": "CSV",
         "caption_info": "AED",
         "map_legend_title": "Legenda",
         "no_data": "Žiadne dáta",
-        "download_title": "Stiahnuť AED dáta pridané do OSM",
+        "download_title": "Stiahnuť AED údaje pridané do OSM",
         "opening_hours": "Otváracie hodiny",
         "contact_number": "Kontaktné číslo",
         "edit_in_osm": "Upraviť v OSM",
@@ -38,13 +38,13 @@
         "operator": "Prevádzkovateľ",
         "note": "Poznámka",
         "openstreetmap_navigation": "Navigácia OpenStreetMap",
-        "google_maps_navigation": "Navigácia v Mapách Google",
+        "google_maps_navigation": "Navigácia v mapách Google",
         "close": "Zavrieť bočný panel",
-        "level": "úroveň",
+        "level": "podlažie",
         "edit": "Upraviť",
-        "find_location": "Nájsť lokalitu",
+        "find_location": "Nájsť miesto",
         "edit_defibrillator": "Upraviť defibrilátor",
-        "world": "Sveta",
+        "world": "Svet",
         "verification_date": "Dátum prieskumu"
     },
     "form": {
@@ -54,9 +54,9 @@
         "accessibility": "Prístupnosť",
         "location": "Popíšte umiestnenie",
         "inside": "Vnútri",
-        "location_example": "Napríklad: Na stene blízko vchodu",
-        "marker_popup_text": "Presuňte marker na AED umiestnenie",
-        "level": "Úroveň"
+        "location_example": "Napríklad: Na stene, blízko vchodu",
+        "marker_popup_text": "Presuňte značku na umiestnenie AED",
+        "level": "Podlažie"
     },
     "footer": {
         "add": "Pridať",
@@ -77,46 +77,46 @@
     },
     "modal": {
         "aed_added_successfully": "AED úspešne pridaný.",
-        "should_appear_soon": "Objekt by sa mal objaviť na mape do 60 minút.",
+        "should_appear_soon": "Objekt by sa mal na mape objaviť do 60 minút.",
         "error_occurred": "Nastala chyba",
         "title": "Informácia",
         "current_zoom": "Aktuálne priblíženie:",
         "zoom_need_to_be": "Priblíženie musí byť aspoň na úrovni 15.",
-        "need_to_login": "Pre pridanie objektov sa musíte prihlásiť pomocou svojho účtu OpenStreetMap.",
-        "about_project": "OpenAEDMap je open-data projekt, ktorý zobrazuje všetky automatizované externé defibrilátory (AED) po celom svete. Webová stránka je založená na údajoch z OpenStreetMap a je výsledkom práce združenia OpenStreetMap Poľsko. Bola vytvorená v roku 2022 po zmene poľskej webovej stránky AED Mapa na nový dizajn.",
-        "need_more_zoom": "Ak chcete pridať funkcie, musíte zoom, takže umiestnenie, ktoré poskytnete, je presné.",
+        "need_to_login": "Pre pridanie objektov sa musíte prihlásiť pomocou svojho OpenStreetMap účtu.",
+        "about_project": "OpenAEDMap je projekt vužívajúci otvorené údaje, ktorý zobrazuje všetky automatické externé defibrilátory (AED), na celom svete. Webová stránka je založená na údajoch z OpenStreetMap a je výsledkom práce združenia OpenStreetMap Poľsko. Bola vytvorená v roku 2022 po prechode poľskej webovej stránky AED Mapa na nový dizajn.",
+        "need_more_zoom": "Ak chcete pridať objekt, musíte mapu priblížiť, aby bolo jeho umiestnenie presné.",
         "aed_updated_successfully": "Úspešne aktualizované.",
         "thanks_for_report": "Ďakujeme za zaslanie správy. Bude preskúmaná administrátormi webu.",
-        "available_in_osm": "K dispozícii v OpenStreet Mapa s URL:",
+        "available_in_osm": "K dispozícii na OpenStreetMap s URL:",
         "become_openaedmap_partner": "Chcete sa stať partnerom OpenAEDMap?",
-        "click_login_button": "Zatvorte toto okno a kliknite na tlačidlo pre prihlásenie v hornej časti prihlásiť.",
+        "click_login_button": "Zatvorte toto okno a kliknite na tlačidlo pre prihlásenie v hornej časti.",
         "contact_us": "Kontaktujte nás",
-        "about_osm": "OpenStreetMap (OSM) je ako Wikipédia pre mapy. Je k dispozícii pre každého a niekto môže pridať objekty na mapu. Môžete použiť svoj účet OSM na pridanie AED priamo z tejto stránky pomocou jednoduchého formulára.",
-        "thanks_for_photo": "Ďakujem za nahrávanie fotografie. Čoskoro by malo byť viditeľné.",
-        "create_account": "Môžete tiež prispieť! Stačí vytvoriť bezplatný účet "
+        "about_osm": "OpenStreetMap (OSM) je ako Wikipédia pre mapy. Je k dispozícii pre každého a ktokoľvek môže na mapu pridávať objekty. Môžete použiť svoj OSM účet na pridanie AED priamo z tejto stránky, pomocou jednoduchého formulára.",
+        "thanks_for_photo": "Ďakujeme za nahratie fotografie. Viditeľná by mala byť čoskoro.",
+        "create_account": "Prispieť môžete aj vy! Stačí si vytvoriť bezplatný účet na "
     },
     "osmp": "OpenStreetMap Poľsko",
     "partners": {
-        "gugik": "Vedúci úrad geodesy a kartografie v Poľsku",
+        "gugik": "Hlavný úrad geodézie a kartografie v Poľsku",
         "main_scientific_partner": "Hlavný vedecký partner",
-        "wroclaw_medical_university": "Wroclaw Medical University",
-        "chief_geodesist": "Hlavný geodesist Poľsko",
-        "acting": "herectvo",
-        "honorary_patronage": "Čestný patrón",
-        "e_health_centre": "e-zdravie centrum",
-        "warsaw_university_of_technology": "Varšava University of Technology"
+        "wroclaw_medical_university": "Vroclavská lekárska univerzita",
+        "chief_geodesist": "Hlavný geodet Poľska",
+        "acting": "poverený",
+        "honorary_patronage": "Čestný patronát",
+        "e_health_centre": "Centrum e-zdravia",
+        "warsaw_university_of_technology": "Varšavská technická univerzita"
     },
     "photo": {
         "license": "Všetky fotografie AED sú uložené u nás, s licenciou Creative Commons Zero (CC0 v1.0). Nahraním vašej fotografie súhlasíte s podmienkami tejto licencie.",
-        "remove": "Odstráňte fotografiu",
+        "remove": "Odstrániť fotografiu",
         "upload": "Nahrať fotografiu",
-        "license_short_description": "Stručne to znamená, že fotografia môže byť použitá pre každý účel. Nie je potrebný žiadny attribution.",
+        "license_short_description": "V skratke to znamená, že fotografia môže byť použitá na akýkoľvek účel, bez potreby uviesť autora.",
         "send_report": "Odoslať správu",
         "report": "Nahlásiť fotografiu",
-        "report_long_text": "Fotografiu môžete nahlásiť, ak je nekvalitná, neukazuje polohu AED alebo je akýmkoľvek spôsobom nevhodná. Správcovia stránky správu skontrolujú."
+        "report_long_text": "Fotografiu môžete nahlásiť ak je nekvalitná, neukazuje polohu AED alebo ak je akýmkoľvek spôsobom nevhodná. Správcovia stránky správu skontrolujú."
     },
     "common": {
-        "loading": "Načítanie..."
+        "loading": "Načítavam..."
     },
     "meta": {
         "website_title": "OpenAEDMap - Mapa defibrilátorov",
