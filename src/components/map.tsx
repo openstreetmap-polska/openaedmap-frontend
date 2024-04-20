@@ -308,6 +308,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		setSidebarData,
 		language,
 		countriesData,
+		addMaplibreGeocoder,
 	]);
 
 	useEffect(() => {
@@ -316,7 +317,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		addMaplibreGeocoder(map);
 		if (countriesDataLanguage !== language) return; // wait for countries data to be loaded
 		map.setStyle(mapStyle(language.toUpperCase(), countriesData));
-	}, [countriesData, countriesDataLanguage, language]);
+	}, [countriesData, countriesDataLanguage, language, addMaplibreGeocoder]);
 
 	return (
 		<>
