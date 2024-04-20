@@ -53,5 +53,5 @@
 		"vite": "^5.2.9",
 		"vite-plugin-sitemap": "^0.5.3"
 	},
-	"trustedDependencies": ["@biomejs/biome"]
+	"trustedDependencies": ["@biomejs/biome", "esbuild"]
 }
