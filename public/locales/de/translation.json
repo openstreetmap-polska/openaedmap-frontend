@@ -1,12 +1,13 @@
 {
     "access": {
         "yes": "Öffentlich zugänglich",
-        "private": "Zugang mit Erlaubnis der Eigentümer",
+        "private": "Privat zugänglich",
         "customers": "Nur für Kunden zugänglich",
         "no": "Kein Zugang",
         "permissive": "Bis auf Weiteres öffentlich zugänglich",
         "unknown": "Unbekannter Zugang",
-        "unknownTag": "Keine Zugangsbeschränkung oder keine Übereinstimmung"
+        "unknownTag": "Keine Zugangsbeschränkung oder keine Übereinstimmung",
+        "permit": "Zugang mit Erlaubnis der Eigentümer"
     },
     "navbar": {
         "created_with_<3_by": "erstellt mit ❤️ von",
