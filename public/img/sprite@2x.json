@@ -20,25 +20,32 @@
     "x": 0,
     "y": 100
   },
-  "marker_private": {
+  "marker_permit": {
     "height": 100,
     "pixelRatio": 2,
     "width": 100,
     "x": 100,
     "y": 100
   },
-  "marker_unknown": {
+  "marker_private": {
     "height": 100,
     "pixelRatio": 2,
     "width": 100,
     "x": 200,
     "y": 0
   },
-  "marker_yes": {
+  "marker_unknown": {
     "height": 100,
     "pixelRatio": 2,
     "width": 100,
     "x": 300,
     "y": 0
+  },
+  "marker_yes": {
+    "height": 100,
+    "pixelRatio": 2,
+    "width": 100,
+    "x": 200,
+    "y": 100
   }
 }
