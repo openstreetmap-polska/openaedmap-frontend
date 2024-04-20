@@ -1,7 +1,8 @@
 {
     "access": {
         "yes": "Publicznie dostępny",
-        "private": "Dostępny za zgodą właściciela",
+        "permit": "Dostępny za zgodą właściciela",
+        "private": "Dostępny prywatnie",
         "customers": "Dostępne tylko dla klientów",
         "no": "Niedostępny",
         "unknown": "Dostęp nieznany",
