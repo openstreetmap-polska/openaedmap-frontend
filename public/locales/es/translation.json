@@ -1,12 +1,13 @@
 {
     "access": {
         "yes": "Accesible públicamente",
-        "private": "Accesible con permiso del propietario",
+        "private": "Acceso privado",
         "customers": "Accesible sólo para clientes",
         "no": "No disponible",
         "permissive": "Disponible al público hasta nuevo aviso",
         "unknown": "Acceso desconocido",
-        "unknownTag": "No hay etiqueta de acceso o no coincide con la anterior"
+        "unknownTag": "No hay etiqueta de acceso o no coincide con la anterior",
+        "permit": "Accesible con permiso del propietario"
     },
     "navbar": {
         "created_with_<3_by": "creado con ❤️ por",
