@@ -2,11 +2,12 @@
     "access": {
         "no": "不可用",
         "customers": "僅供顧客使用",
-        "private": "僅限獲得業主同意後進入",
+        "private": "私人進入",
         "yes": "一般人可及",
         "unknown": "未知可用性",
         "permissive": "公開可用，直到另行通知",
-        "unknownTag": "無 access 標籤或不符合上述條件"
+        "unknownTag": "無 access 標籤或不符合上述條件",
+        "permit": "經擁有者許可即可進入"
     },
     "navbar": {
         "created_with_<3_by": "由_用 ❤️ 製作",
