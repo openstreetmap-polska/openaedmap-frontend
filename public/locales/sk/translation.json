@@ -4,9 +4,10 @@
         "no": "Nedostupný",
         "unknown": "Neznáma prístupnosť",
         "yes": "Verejne prístupný",
-        "private": "Prístupný s povolením vlastníka",
+        "private": "Súkromne prístupné",
         "unknownTag": "Žiadna značka o prístupnosti alebo nezodpovedá vyššie uvedenému",
-        "permissive": "Verejne prístupný až do odvolania"
+        "permissive": "Verejne prístupný až do odvolania",
+        "permit": "Prístupný s povolením vlastníka"
     },
     "navbar": {
         "login": "Prihlásiť sa cez OSM účet",
