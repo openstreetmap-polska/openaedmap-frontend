@@ -3,6 +3,7 @@ import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { AppContext } from "~/appContext";
 import { fixOsmAuthLocalStorageTokens } from "~/auth";
 import CustomModal from "~/components/modal";
+import WebGLMissingInfo from "~/components/webGLMissingInfo";
 import type { AuthState } from "~/model/auth";
 import type { Country } from "~/model/country";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
@@ -12,6 +13,7 @@ import { updateOsmUsernameState } from "~/osm";
 import MapView from "./components/map";
 import SiteNavbar from "./components/navbar";
 import SidebarRight from "./components/sidebar-right";
+import { webglSupported } from "./webgl";
 
 function Main() {
 	// some ui elements might depend on window size i.e. we don't want some stuff open by default on mobile
@@ -124,10 +126,14 @@ function Main() {
 			<SiteNavbar toggleSidebarShown={toggleRightSidebarShown} />
 			<CustomModal />
 			{rightSidebarShown && <SidebarRight closeSidebar={closeRightSidebar} />}
-			<MapView
-				openChangesetId={openChangesetId}
-				setOpenChangesetId={setOpenChangesetId}
-			/>
+			{webglSupported() ? (
+				<MapView
+					openChangesetId={openChangesetId}
+					setOpenChangesetId={setOpenChangesetId}
+				/>
+			) : (
+				<WebGLMissingInfo />
+			)}
 		</AppContext.Provider>
 	);
 }

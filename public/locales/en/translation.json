@@ -123,5 +123,10 @@
         "website_title": "OpenAEDMap - Map of Defibrillators",
         "meta_title": "Open map of Automatic External Defibrillators (AEDs)",
         "meta_description": "Map of AEDs (Automatic External Defibrillators) based on OpenStreetMap data. Our website makes it easy to find an AED defibrillator near you, which can be very helpful in life-threatening situations. AED defibrillators are devices that are used for cardiopulmonary resuscitation of people in cardiac arrest. With our map, anyone can quickly find the nearest defibrillator and help someone in need."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL is disabled or unsupported by your browser.",
+        "required_for_using_openaedmap": "WebGL is required for using OpenAEDMap.",
+        "please_check_instruction_at": "Please check instruction for enabling WebGL at"
     }
 }
