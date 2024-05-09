@@ -28,7 +28,6 @@ export async function fetchCountriesData(
 	language: string,
 ): Promise<Array<Country> | null> {
 	const url = `${backendBaseUrl}/api/v1/countries/names?language=${language.toUpperCase()}`;
-	// @ts-ignore: Priority merged in TypeScript: https://github.com/microsoft/TypeScript-DOM-lib-generator/pull/1572
 	return fetch(url, { priority: "high" })
 		.then((response) => response.json())
 		.then((response: Array<BackendCountry>) =>
