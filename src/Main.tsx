@@ -1,7 +1,6 @@
 import { osmAuth } from "osm-auth";
 import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { AppContext } from "~/appContext";
-import { fixOsmAuthLocalStorageTokens } from "~/auth";
 import CustomModal from "~/components/modal";
 import WebGLMissingInfo from "~/components/webGLMissingInfo";
 import type { AuthState } from "~/model/auth";
@@ -37,9 +36,6 @@ function Main() {
 
 	const { VITE_OSM_API_URL, VITE_OSM_AUTH_URL, VITE_OSM_OAUTH2_CLIENT_ID } =
 		import.meta.env;
-	useEffect(() => {
-		fixOsmAuthLocalStorageTokens();
-	}, []);
 	const [auth] = useState(
 		new osmAuth({
 			url: VITE_OSM_AUTH_URL ?? VITE_OSM_API_URL,
@@ -50,7 +46,6 @@ function Main() {
 			scope: "read_prefs write_api",
 			auto: false,
 			singlepage: true,
-			// @ts-ignore: https://github.com/osmlab/osm-auth/pull/127
 			apiUrl: VITE_OSM_API_URL,
 		}),
 	);
