@@ -49,7 +49,7 @@ Create .env file and put these variables there:
 ```
 VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
 VITE_BACKEND_API_URL=https://dev.openaedmap.org
-VITE_OSM_OAUTH2_CLIENT_ID=xXaPFXSLizLHuZzoLI1eebHncPdDdVH7nA917S9uFUo
+VITE_OSM_OAUTH2_CLIENT_ID=9MF6zlYwOE_FaFNZmhFcBpyx7BFtTSXcsikrQF0JM-8
 ```
 
 *Note: You can use Github Codespaces to develop.*
