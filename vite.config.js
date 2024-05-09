@@ -50,6 +50,22 @@ const htmlPlugin = async (env) => {
 				.replace(
 					/<link href="https:\/\/openaedmap.org" rel="canonical" \/>/,
 					seoLinks,
+				)
+				.replace(
+					/<meta name="twitter:title" content="(.*)">/,
+					`<meta name="twitter:title" content="${meta_title}">`,
+				)
+				.replace(
+					/<meta name="og:title" content="(.*)">/,
+					`<meta name="og:title" content="${meta_title}">`,
+				)
+				.replace(
+					/<meta name="twitter:description" content="(.*)">/,
+					`<meta name="twitter:description" content="${meta_description}">`,
+				)
+				.replace(
+					/<meta name="og:description" content="(.*)">/,
+					`<meta name="og:description" content="${meta_description}">`,
 				);
 		},
 		buildStart() {
