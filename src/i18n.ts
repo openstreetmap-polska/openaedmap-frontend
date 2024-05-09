@@ -50,7 +50,7 @@ i18n
 
 i18n.on("languageChanged", (lang: string) => {
 	document.documentElement.setAttribute("lang", lang);
-	const urlWithLang = `${window.location.origin}/${lang}/${window.location.hash}`;
+	const urlWithLang = `${window.location.origin}/${lang}/${window.location.search}${window.location.hash}`;
 	window.history.pushState({}, "", urlWithLang);
 });
 
