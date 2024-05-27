@@ -25,7 +25,8 @@
         "level": "フロア番号",
         "world": "世界",
         "edit": "編集",
-        "edit_defibrillator": "除細動器(AED)を編集"
+        "edit_defibrillator": "除細動器(AED)を編集",
+        "find_location": "場所を探す"
     },
     "footer": {
         "add": "追加",
@@ -81,11 +82,19 @@
     "access": {
         "yes": "誰でも利用可能",
         "no": "利用不可",
-        "unknown": "利用可能状況が不明",
-        "customers": "お客様のみアクセス可能",
-        "private": "所有者の許可があれば利用可能"
+        "unknown": "利用可能か不明",
+        "customers": "利用客のみ利用可能",
+        "private": "関係者のみ利用可能",
+        "permissive": "追って通知があるまで誰でも利用可能",
+        "permit": "所有者の許可があれば利用可能"
     },
     "common": {
         "loading": "読み込み中…"
+    },
+    "photo": {
+        "remove": "写真を削除",
+        "upload": "写真をアップロード",
+        "send_report": "報告を送信",
+        "report": "写真を報告"
     }
 }
