@@ -123,5 +123,10 @@
         "website_title": "OpenAEDMap – Mapa defibrilátorov",
         "meta_title": "Otvorená mapa automatických externých defibrilátorov (AED)",
         "meta_description": "Mapa AED (automatických externých defibrilátorov) podľa údajov OpenStreetMap. Naša webstránka umožňuje ľahko nájsť AED vo vašej blízkosti, čo môže byť veľmi nápomocné v život ohrozujúcich situáciách. AED sú zariadenia používané na kardiopulmonálnu resuscitáciu ľudí so zástavou srdca. S našou mapou môže každý rýchlo nájsť najbližší defibrilátor a pomôcť človeku v núdzi."
+    },
+    "webgl": {
+        "required_for_using_openaedmap": "WebGL je potrebný na použitie OpenAEDMap.",
+        "please_check_instruction_at": "Prosím skontrolujte návod na umožnenie WebGL na",
+        "disabled_or_unsupported": "WebGL je zakázaný alebo nepodporovaný vaším prehliadačom."
     }
 }
