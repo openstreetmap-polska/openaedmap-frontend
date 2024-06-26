@@ -36,10 +36,11 @@
         "no": "Non disponibile",
         "yes": "Accessibile al pubblico",
         "permissive": "Disponibile al pubblico fino a nuovo avviso",
-        "private": "Accessibile con il permesso del proprietario",
+        "private": "Accesso privato",
         "customers": "Accessibile solo ai clienti",
         "unknown": "Accesso sconosciuto",
-        "unknownTag": "Nessun'etichetta di accesso o non corrispondente a quanto sopra"
+        "unknownTag": "Nessun'etichetta di accesso o non corrispondente a quanto sopra",
+        "permit": "Accessibile con permesso del proprietario"
     },
     "sidebar": {
         "download_title": "Scarica i dati DAE aggiunti a OSM",
@@ -122,5 +123,10 @@
         "website_title": "OpenAEDMap - Mappa dei defibrillatori",
         "meta_title": "Mappa aperta dei Defibrillatori Automatici Esterni (DAE)",
         "meta_description": "Mappa dei DAE (Defibrillatori Auotmatici Esterni) basata su dati OpenStreetMap. Il nostro sito web rende facile trovare un DAE vicino a voi, che può essere molto utile in situazioni di pericolo di vita. I DAE sono dispositivi che vengono utilizzati per la rianimazione cardiopolmonare delle persone in arresto cardiaco. Con la nostra mappa, chiunque può trovare rapidamente il defibrillatore più vicino e aiutare qualcuno nel bisogno."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL è disabilitato o non supportato dal tuo browser.",
+        "required_for_using_openaedmap": "WebGL è necessario per l'utilizzo di OpenAEDMap.",
+        "please_check_instruction_at": "Si prega di controllare le istruzioni per abilitare WebGL su"
     }
 }
