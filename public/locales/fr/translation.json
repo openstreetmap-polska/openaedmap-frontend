@@ -4,9 +4,10 @@
         "no": "Indisponible",
         "permissive": "Accessible au public jusqu'à nouvel ordre",
         "customers": "Accessible uniquement aux clients",
-        "private": "Accessible avec la permission du propriétaire",
+        "private": "Accès privé",
         "unknown": "Accès inconnu",
-        "unknownTag": "Pas de balise d'accès ou ne correspondant pas à ce qui précède"
+        "unknownTag": "Pas de balise d'accès ou ne correspondant pas à ce qui précède",
+        "permit": "Accessible avec la permission du propriétaire"
     },
     "sidebar": {
         "csv": "CSV",
@@ -122,5 +123,10 @@
         "website_title": "OpenAEDMap - Carte des défibrillateurs",
         "meta_title": "Carte ouverte des défibrillateurs externes automatiques (DEAs)",
         "meta_description": "Carte des DEAs (défibrillateurs externes automatiques) basée sur les données d'OpenStreetMap. Notre site web permet de trouver facilement un défibrillateur près de chez vous, ce qui peut s'avérer très utile dans des situations où la vie est en danger. Les défibrillateurs sont des appareils utilisés pour la réanimation cardio-pulmonaire des personnes en arrêt cardiaque. Grâce à notre carte, chacun peut trouver rapidement le défibrillateur le plus proche et aider quelqu'un qui en a besoin."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL est désactivé ou non pris en charge par votre navigateur.",
+        "required_for_using_openaedmap": "WebGL est nécessaire pour utiliser OpenAEDMap.",
+        "please_check_instruction_at": "Veuillez consulter les instructions pour activer WebGL sur"
     }
 }
