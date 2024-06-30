@@ -34,7 +34,7 @@
 		"start": "bunx --bun vite",
 		"build": "vite build",
 		"typecheck": "tsc -p ./tsconfig.json --noEmit",
-		"lint-fix": "biome check . --apply",
+		"lint-fix": "biome check . --write",
 		"check": "biome ci .",
 		"test": "bun test",
 		"css-build": "sass sass/mystyles.scss src/mystyles.css"

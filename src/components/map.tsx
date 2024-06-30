@@ -6,7 +6,13 @@ import maplibregl, {
 	type MapMouseEvent,
 } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import React, { type FC, useEffect, useRef, useState } from "react";
+import React, {
+	type FC,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { fetchCountriesData, fetchNodeDataFromBackend } from "~/backend";
@@ -182,18 +188,21 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		fetchData().catch(console.error);
 	}, [language, setCountriesDataLanguage, setCountriesData]);
 
-	function addMaplibreGeocoder(map: maplibregl.Map) {
-		if (maplibreGeocoderRef.current !== null) {
-			map.removeControl(maplibreGeocoderRef.current);
-		}
-		const newMaplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
-			maplibregl,
-			placeholder: t("sidebar.find_location"),
-		});
-		newMaplibreGeocoder.setLanguage(language);
-		map.addControl(newMaplibreGeocoder);
-		maplibreGeocoderRef.current = newMaplibreGeocoder;
-	}
+	const addMaplibreGeocoder = useCallback(
+		(map: maplibregl.Map) => {
+			if (maplibreGeocoderRef.current !== null) {
+				map.removeControl(maplibreGeocoderRef.current);
+			}
+			const newMaplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
+				maplibregl,
+				placeholder: t("sidebar.find_location"),
+			});
+			newMaplibreGeocoder.setLanguage(language);
+			map.addControl(newMaplibreGeocoder);
+			maplibreGeocoderRef.current = newMaplibreGeocoder;
+		},
+		[t, language],
+	);
 
 	useEffect(() => {
 		if (mapContainer.current === null) return;

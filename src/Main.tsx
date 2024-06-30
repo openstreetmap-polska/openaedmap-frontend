@@ -1,5 +1,11 @@
 import { osmAuth } from "osm-auth";
-import React, { Suspense, useEffect, useMemo, useState } from "react";
+import React, {
+	Suspense,
+	useCallback,
+	useEffect,
+	useMemo,
+	useState,
+} from "react";
 import { AppContext } from "~/appContext";
 import CustomModal from "~/components/modal";
 import WebGLMissingInfo from "~/components/webGLMissingInfo";
@@ -52,7 +58,7 @@ function Main() {
 	const [osmUsername, setOsmUsername] = useState("");
 	const [openChangesetId, setOpenChangesetId] = useState("");
 
-	const handleLogIn = () => {
+	const handleLogIn = useCallback(() => {
 		auth.authenticate(() => {
 			updateOsmUsernameState(auth, setOsmUsername);
 			if (modalState.type === ModalType.NeedToLogin) {
@@ -66,7 +72,7 @@ function Main() {
 					window.location.hash,
 			);
 		});
-	};
+	}, [auth, modalState.type]);
 
 	useEffect(() => {
 		if (
@@ -79,12 +85,15 @@ function Main() {
 		}
 	}, [handleLogIn]);
 
-	const handleLogOut = () => {
+	const handleLogOut = useCallback(() => {
 		auth.logout();
 		setOsmUsername("");
-	};
+	}, [auth]);
 
-	const authState: AuthState = { auth, osmUsername };
+	const authState: AuthState = useMemo<AuthState>(
+		() => ({ auth, osmUsername }),
+		[osmUsername, auth],
+	);
 
 	const appContext = useMemo(
 		() => ({
