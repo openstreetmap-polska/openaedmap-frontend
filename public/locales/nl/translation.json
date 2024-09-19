@@ -1,12 +1,13 @@
 {
     "access": {
         "yes": "Publiek toegankelijk",
-        "private": "Toegankelijk met vergunning van de eigenaar",
+        "private": "Privé toegankelijk",
         "customers": "Alleen toegankelijk voor klanten",
         "no": "Niet toegankelijk",
         "permissive": "Publiek toegankelijk, tenzij anders aangegeven",
         "unknown": "Toegang onbekend",
-        "unknownTag": "Geen toegang tag ingesteld"
+        "unknownTag": "Geen toegang tag ingesteld",
+        "permit": "Toegankelijk met vergunning van de eigenaar"
     },
     "navbar": {
         "created_with_<3_by": "gemaakt met ❤️ door",
@@ -122,5 +123,10 @@
         "website_title": "OpenAEDMap - Kaart van defibrilators",
         "meta_title": "Open kaart van Automatische Externe Defibrillators (AEDs)",
         "meta_description": "Kaart van AED's (automatische externe defibrillators) op basis van OpenStreetMap-gegevens. Via onze website kunt u gemakkelijk een AED-defibrillator bij u in de buurt vinden, wat zeer nuttig kan zijn in levensbedreigende situaties. AED-defibrillators zijn apparaten die worden gebruikt voor reanimatie van mensen met een hartstilstand. Met onze kaart kan iedereen snel de dichtstbijzijnde defibrillator vinden en iemand in nood helpen."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL is uitgeschakeld of niet ondersteund door je browser.",
+        "required_for_using_openaedmap": "WebGL is vereist voor het gebruik van OpenAEDMap.",
+        "please_check_instruction_at": "Controleer de instructies voor het inschakelen van WebGL op"
     }
 }
