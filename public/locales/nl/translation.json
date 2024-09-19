@@ -4,7 +4,7 @@
         "private": "Toegankelijk met vergunning van de eigenaar",
         "customers": "Alleen toegankelijk voor klanten",
         "no": "Niet toegankelijk",
-        "permissive": "Toegang vrijgegeven",
+        "permissive": "Publiek toegankelijk, tenzij anders aangegeven",
         "unknown": "Toegang onbekend",
         "unknownTag": "Geen toegang tag ingesteld"
     },
