@@ -53,7 +53,7 @@ export default function DownloadCard() {
 					/>
 					{t("sidebar.download_title")}
 				</p>
-				<div className="select is-primary is-small mb-1">
+				<div className="select is-fullwidth is-success is-small mb-1">
 					<select
 						className="select mb-2"
 						onChange={(e) => {
@@ -63,11 +63,13 @@ export default function DownloadCard() {
 							if (selected !== undefined) setSelectedCountryCode(selected.code);
 						}}
 					>
-						{sortedCountriesByName.map((country) => (
-							<option key={country.code} value={country.code}>
-								{countryLabel(country)}
-							</option>
-						))}
+						{sortedCountriesByName
+							.filter((country) => country.featureCount > 0)
+							.map((country) => (
+								<option key={country.code} value={country.code}>
+									{countryLabel(country)}
+								</option>
+							))}
 					</select>
 				</div>
 				<a

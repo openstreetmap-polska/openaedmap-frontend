@@ -19,8 +19,6 @@ const SidebarLeft: FC<SidebarLeftProps> = (props) => {
 		setOpenChangesetId,
 	} = props;
 
-	console.log("Opening left sidebar with action: ", action, " and data:", data);
-
 	if (!visible) return null;
 
 	switch (action) {
