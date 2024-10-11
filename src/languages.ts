@@ -8,6 +8,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	es: { nativeName: "Español" },
 	fi: { nativeName: "Suomi" },
 	fr: { nativeName: "Français" },
+	hu: { nativeName: "Magyar" },
 	it: { nativeName: "Italiano" },
 	ja: { nativeName: "日本語" },
 	ko: { nativeName: "한국어" },
