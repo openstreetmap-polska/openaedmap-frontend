@@ -42,13 +42,13 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.3",
 		"@sentry/vite-plugin": "^2.22.5",
-		"@types/bun": "^1.1.6",
-		"@types/node": "^20.14.9",
-		"@types/react": "^18.3.3",
-		"@types/react-dom": "^18.3.0",
+		"@types/bun": "^1.1.11",
+		"@types/node": "^22.7.5",
+		"@types/react": "^18.3.11",
+		"@types/react-dom": "^18.3.1",
 		"@types/react-image-gallery": "^1.2.4",
 		"@vitejs/plugin-react": "^4.3.2",
-		"bun-types": "^1.1.17",
+		"bun-types": "^1.1.30",
 		"sass": "^1.77.6",
 		"vite": "^5.4.8",
 		"vite-plugin-sitemap": "^0.7.1"
