@@ -1,87 +1,86 @@
 html {
-  overflow-y: hidden !important; /* Hide vertical scrollbar */
-  overflow-x: hidden !important; /* Hide horizontal scrollbar */
+	overflow-y: hidden !important; /* Hide vertical scrollbar */
+	overflow-x: hidden !important; /* Hide horizontal scrollbar */
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f2efe9;
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #f2efe9;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
 }
 
 .fallback {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #f2efe9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #f2efe9;
 }
 
 .fallback-header {
-  background-color: #028955;
-  min-height: 3.25rem;
-  height: 60px;
-  width: 100%;
+	background-color: #028955;
+	min-height: 3.25rem;
+	height: 60px;
+	width: 100%;
 }
 
 .has-background-green {
-  background-color: #028955 !important;
+	background-color: #028955 !important;
 }
 
 .has-background-green a {
-  color: #effaf5 !important;
+	color: #effaf5 !important;
 }
 
 .has-background-yellow {
-  background-color: #ffcc00 !important;
+	background-color: #ffcc00 !important;
 }
 
 .has-background-blue {
-  background-color: #3e8ed0 !important;
+	background-color: #3e8ed0 !important;
 }
 
 .has-background-red {
-  background-color: #ff3333 !important;
+	background-color: #ff3333 !important;
 }
 
 .has-background-gray {
-  background-color: #7a7a7a !important;
+	background-color: #7a7a7a !important;
 }
 
-.navbar-item a:hover
-{
-  color: #000000 !important;
+.navbar-item a:hover {
+	color: #000000 !important;
 }
 
-.column
-{
-  border-radius: 4px;
+.column {
+	border-radius: 4px;
 }
 
-a.navbar-item:focus-within, a.navbar-item:hover {
-  background-color: #028955 !important;
+a.navbar-item:focus-within,
+a.navbar-item:hover {
+	background-color: #028955 !important;
 }
 
 #language-switcher {
-  max-width: 120px;
+	max-width: 120px;
 }
 
 .maplibregl-ctrl-geocoder {
-  min-width: 300px !important;
+	min-width: 300px !important;
 }
 
 .partner-row {
-  flex-wrap: wrap;
-  align-items: center !important;
+	flex-wrap: wrap;
+	align-items: center !important;
 }

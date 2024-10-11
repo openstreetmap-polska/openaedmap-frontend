@@ -1,35 +1,35 @@
 .map-wrap {
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 60px);
-    /* calculate height of the screen minus the heading */
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 60px);
+	/* calculate height of the screen minus the heading */
 }
 
 .map {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 .maplibregl-ctrl-logo {
-    position: fixed;
-    bottom: 64px !important;
-    min-width: 90px;
+	position: fixed;
+	bottom: 64px !important;
+	min-width: 90px;
 }
 
 .maplibregl-ctrl-group button {
-    width: 44px !important;
-    height: 44px !important;
+	width: 44px !important;
+	height: 44px !important;
 }
 
 .maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon,
 .maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon,
 .maplibregl-ctrl-attrib,
 .maplibregl-ctrl-geolocate {
-    filter: contrast(80%);
+	filter: contrast(80%);
 }
 
-.maplibregl-ctrl-group:not(:empty)
-{
-    box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02)
+.maplibregl-ctrl-group:not(:empty) {
+	box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, 0.1), 0 0 0 1px
+		rgba(10, 10, 10, 0.02);
 }
