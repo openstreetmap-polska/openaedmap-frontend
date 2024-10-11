@@ -1,1 +1,25 @@
-{}
+{
+    "access": {
+        "yes": "Nyilvánosan hozzáférhető",
+        "permit": "A tulajdonos engedélyével hozzáférhető",
+        "private": "Magántulajdon",
+        "customers": "Ügyfeleknek hozzáférhető",
+        "no": "Nem hozzáférheő",
+        "unknown": "Hozzáférhetősége ismeretlen",
+        "unknownTag": "Hozzáférhetőség nincs megadva vagy a fentiektől eltérő",
+        "permissive": "További értesítésig nyilvánosan hozzáférhető"
+    },
+    "navbar": {
+        "created_with_<3_by": "létrehozta ❤️-tel:",
+        "visit_github": "Látogass el a GitHub tárhelyünkre",
+        "visit_osmp_website": "Látogasd meg az OpenStreetMap lengyelországi weboldalát",
+        "login": "Bejelentkezés OSM-fiókkal",
+        "logout": "Kijelentkezés",
+        "about": "Névjegy",
+        "hosted_by": "tárhely:",
+        "help_translating": "Segíts a fordításban"
+    },
+    "sidebar": {
+        "close": "Oldalsáv bezárása"
+    }
+}
