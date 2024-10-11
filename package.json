@@ -47,11 +47,11 @@
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"@types/react-image-gallery": "^1.2.4",
-		"@vitejs/plugin-react": "^4.3.1",
+		"@vitejs/plugin-react": "^4.3.2",
 		"bun-types": "^1.1.17",
 		"sass": "^1.77.6",
-		"vite": "^5.3.2",
-		"vite-plugin-sitemap": "^0.6.2"
+		"vite": "^5.4.8",
+		"vite-plugin-sitemap": "^0.7.1"
 	},
 	"trustedDependencies": ["@biomejs/biome", "esbuild"]
 }
