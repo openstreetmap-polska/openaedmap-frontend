@@ -1,10 +1,10 @@
 {
     "access": {
         "yes": "Nyilvánosan hozzáférhető",
-        "permit": "A tulajdonos engedélyével hozzáférhető",
+        "permit": "Engedéllyel hozzáférhető",
         "private": "Magántulajdon",
         "customers": "Ügyfeleknek hozzáférhető",
-        "no": "Nem hozzáférheő",
+        "no": "Nem hozzáférhető",
         "unknown": "Hozzáférhetősége ismeretlen",
         "unknownTag": "Hozzáférhetőség nincs megadva vagy a fentiektől eltérő",
         "permissive": "További értesítésig nyilvánosan hozzáférhető"
@@ -42,6 +42,91 @@
         "description": "Leírás",
         "contact_number": "Telefonszám",
         "operator": "Üzemeltető",
-        "note": "Megjegyzés"
+        "note": "Megjegyzés",
+        "verification_date": "Felmérés dátuma",
+        "edit_defibrillator": "Defibrillátor szerkesztése",
+        "world": "Világ",
+        "find_location": "Hely keresése"
+    },
+    "form": {
+        "optional_field": "Nem kötelező mező",
+        "marker_popup_text": "Mozgasd a jelölőt a defibrillátor helyére",
+        "is_indoor": "Épületen belül van?",
+        "level": "Szint",
+        "inside": "Belül",
+        "outside": "Kívül",
+        "accessibility": "Hozzáférés",
+        "location": "Helyszín leírása",
+        "location_example": "Például: A bejárat melletti falon"
+    },
+    "modal": {
+        "click_login_button": "Zárd be ezt az ablakot, és kattints fönt a bejelentkezés gombra.",
+        "need_more_zoom": "Objektum hozzáadásához nagyítani kell, hogy a megadott hely pontos legyen.",
+        "current_zoom": "Jelenlegi nagyítási szint:",
+        "zoom_need_to_be": "A nagyítási szintnek legalább 15-nek kell lennie.",
+        "aed_added_successfully": "Defibrillátor sikeresen hozzáadva.",
+        "aed_updated_successfully": "Defibrillátor sikeresen frissítve.",
+        "available_in_osm": "Elérhető az OpenStreetMapen:",
+        "should_appear_soon": "Az objektumnak 60 percen belül meg kell jelennie a térképen.",
+        "error_occurred": "Hiba történt",
+        "title": "Információ",
+        "need_to_login": "Objektum hozzáadásához be kell jelentkezned az OpenStreetMap fiókoddal.",
+        "about_project": "Az OpenAEDMap egy nyíltadat-projekt, amelynek célja, hogy a világ összes automata külső defibrillátorát (AED) megjelenítse. A weboldal az OpenStreetMap adatain alapul, és a lengyel OpenStreetMap közösség által szorgalmazott összefogás eredménye. A honlap 2022-ben jött létre, miután a lengyel AED Mapa honlapot új dizájnra cserélték.",
+        "contact_us": "Írjon nekünk",
+        "thanks_for_photo": "Köszönjük a fénykép feltöltését. Hamarosan látható lesz.",
+        "thanks_for_report": "Köszönjük a bejelentést. Az oldal adminisztrátorai át fogják tekinteni.",
+        "about_osm": "Az OpenStreetMap (OSM) a térképek Wikipediája. Mindenkinek rendelkezésére áll, és bárki elhelyezhet objektumokat a térképen. Egy egyszerű űrlap és egy OSM-fiók segítségével közvetlenül erről az oldalról is felrajzolhatsz defibrillátor-helyszíneket a térképre.",
+        "create_account": "Igen, te is közreműködhetsz! Csak hozz létre egy ingyenes fiókot itt: ",
+        "become_openaedmap_partner": "Szeretnél az OpenAEDMap partnere lenni?"
+    },
+    "partners": {
+        "e_health_centre": "lengyel e-Egészségügyi Központ",
+        "honorary_patronage": "Tiszteletbeli védnökség",
+        "gugik": "A lengyelországi Geodéziai és Térképészeti Hivatal központja",
+        "acting": "megbízott",
+        "chief_geodesist": "lengyel vezető földmérő",
+        "main_scientific_partner": "Fő tudományos partner",
+        "warsaw_university_of_technology": "Varsói Műszaki Egyetem",
+        "wroclaw_medical_university": "Wroclawi Orvostudományi Egyetem"
+    },
+    "opening_hours": {
+        "open": "Nyitva",
+        "closed": "Zárva",
+        "24_7": "24/7 (nonstop)"
+    },
+    "indoor": {
+        "yes": "Igen",
+        "no": "Nem"
+    },
+    "osmp": "a lengyelországi OpenStreetMap-közösség",
+    "footer": {
+        "add": "Hozzáadás",
+        "add_aed": "Defibrillátor hozzáadása",
+        "cancel": "Mégse",
+        "continue": "Folytatás",
+        "save_aed": "Defibrillátor mentése",
+        "partners": "Projektpartnerek"
+    },
+    "common": {
+        "loading": "Betöltés…"
+    },
+    "photo": {
+        "upload": "Fénykép feltöltése",
+        "remove": "Fénykép eltávolítása",
+        "report": "Fénykép bejelentése",
+        "send_report": "Bejelentés elküldése",
+        "report_long_text": "Bejelenthetsz fényképet, ha az rossz minőségű, nem mutatja a defibrillátor helyét, vagy bármilyen módon nem megfelelő. Az oldal adminisztrátorai átnézik a jelentést.",
+        "license": "Az összes defibrillátor-fényképet mi tároljuk, és a Creative Commons Nulla (CC0 v1.0) licenc vonatkozik rájuk. A fénykép feltöltésével te is elfogadod a licencfeltételeket.",
+        "license_short_description": "Ez röviden azt jelenti, hogy a fényképet bárki bármilyen célra felhasználhatja. Nem szükséges az eredetét feltüntetni."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "A böngésződ letiltotta vagy nem támogatja a WebGL-t.",
+        "required_for_using_openaedmap": "Az OpenAEDMap használatához szükség van a WebGL-re.",
+        "please_check_instruction_at": "Kérjük, nézd meg a WebGL engedélyezésére vonatkozó útmutatót itt:"
+    },
+    "meta": {
+        "website_title": "OpenAEDMap – Defibrillátor-térkép",
+        "meta_title": "Automatikus külső defibrillátorok (AED) térképének megnyitása",
+        "meta_description": "Ez egy OpenStreetMap adatok alapján készült defibrillátor-térkép. (AED = Automatic External Defibrillator = automatikus külső defibrillátor.) A weboldal segítségével könnyen megtalálhatod a közeledben lévő AED-készülékeket, ami életet menthet. A defibrillátor olyan eszköz, amelyet a szívmegállásban lévő emberek kardiopulmonális újraélesztésére használnak. A térkép segítségével bárki gyorsan megtalálhatja a legközelebbi defibrillátort, és segíthet egy rászorulónak."
     }
 }
