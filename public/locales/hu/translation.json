@@ -20,6 +20,28 @@
         "help_translating": "Segíts a fordításban"
     },
     "sidebar": {
-        "close": "Oldalsáv bezárása"
+        "close": "Oldalsáv bezárása",
+        "csv": "CSV",
+        "excel": "Excel",
+        "google_maps_navigation": "Útvonaltervezés (Google térkép)",
+        "edit": "Szerkesztés",
+        "edit_in_osm": "Szerkesztés az OSM-ben",
+        "view": "Megtekintés az OSM-en",
+        "copy_url": "URL másolása",
+        "add_defibrillator": "Defibrillátor hozzáadása",
+        "openstreetmap_navigation": "Útvonaltervezés (OpenStreetMap)",
+        "download_title": "Az OSM-en feltüntettet defibrillátorok adatainak letöltése",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Jelmagyarázat",
+        "caption_info": "Defibrillátor (AED)",
+        "no_data": "Nincs adat",
+        "indoor": "Épületen belül",
+        "level": "szint",
+        "location": "Helyszín",
+        "opening_hours": "Nyitva tartás",
+        "description": "Leírás",
+        "contact_number": "Telefonszám",
+        "operator": "Üzemeltető",
+        "note": "Megjegyzés"
     }
 }
