@@ -6,7 +6,7 @@
 	"homepage": "/",
 	"type": "module",
 	"dependencies": {
-		"@maplibre/maplibre-gl-geocoder": "^1.5.0",
+		"@maplibre/maplibre-gl-geocoder": "^1.7.0",
 		"@mdi/js": "^7.4.47",
 		"@mdi/react": "^1.6.1",
 		"@sentry/react": "^8.34.0",
@@ -16,7 +16,7 @@
 		"i18next": "^23.15.2",
 		"i18next-browser-languagedetector": "^8.0.0",
 		"i18next-http-backend": "^2.6.2",
-		"maplibre-gl": "^4.5.0",
+		"maplibre-gl": "^4.7.1",
 		"opening_hours": "^3.8.0",
 		"osm-auth": "^2.5.0",
 		"react": "^18.3.1",
