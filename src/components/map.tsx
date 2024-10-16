@@ -1,5 +1,7 @@
 // @ts-ignore
-import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
+import MaplibreGeocoder, {
+	type MaplibreGeocoderOptions,
+} from "@maplibre/maplibre-gl-geocoder";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import maplibregl, {
 	type MapGeoJSONFeature,
@@ -196,7 +198,8 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 			const newMaplibreGeocoder = new MaplibreGeocoder(nominatimGeocoder, {
 				maplibregl,
 				placeholder: t("sidebar.find_location"),
-			});
+				reverseGeocode: false,
+			} as MaplibreGeocoderOptions);
 			newMaplibreGeocoder.setLanguage(language);
 			map.addControl(newMaplibreGeocoder);
 			maplibreGeocoderRef.current = newMaplibreGeocoder;
