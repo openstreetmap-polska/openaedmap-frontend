@@ -1,4 +1,3 @@
-// @ts-ignore
 import MaplibreGeocoder, {
 	type MaplibreGeocoderOptions,
 } from "@maplibre/maplibre-gl-geocoder";
