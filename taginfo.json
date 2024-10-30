@@ -15,6 +15,46 @@
 			"key": "emergency",
 			"value": "defibrillator",
 			"object_types": ["node"]
+		},
+		{
+			"key": "access",
+			"object_types": ["node"]
+		},
+		{
+			"key": "indoor",
+			"object_types": ["node"]
+		},
+		{
+			"key": "level",
+			"object_types": ["node"]
+		},
+		{
+			"key": "phone",
+			"object_types": ["node"]
+		},
+		{
+			"key": "contact:phone",
+			"object_types": ["node"]
+		},
+		{
+			"key": "check_date",
+			"object_types": ["node"]
+		},
+		{
+			"key": "defibrillator:location",
+			"object_types": ["node"]
+		},
+		{
+			"key": "image",
+			"object_types": ["node"]
+		},
+		{
+			"key": "wikimedia_commons",
+			"object_types": ["node"]
+		},
+		{
+			"key": "panoramax",
+			"object_types": ["node"]
 		}
 	]
 }
