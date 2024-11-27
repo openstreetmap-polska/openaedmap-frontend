@@ -58,12 +58,13 @@
     },
     "access": {
         "yes": "Publicamente acessível",
-        "private": "Acessível com permissão do proprietário",
+        "private": "Acessível de forma privada",
         "customers": "Acessível apenas para clientes",
         "no": "Indisponível",
         "unknown": "Acesso desconhecido",
         "permissive": "Publicamente acessível até nova indicação",
-        "unknownTag": "Sem etiqueta de acesso ou não corresponde às de cima"
+        "unknownTag": "Sem etiqueta de acesso ou não corresponde às de cima",
+        "permit": "Acessível com autorização do proprietário"
     },
     "navbar": {
         "created_with_<3_by": "criado com ❤️ por",
@@ -77,13 +78,13 @@
     },
     "osmp": "OpenStreetMap Polónia",
     "photo": {
-        "license": "Todas as fotos de DAE são hospedadas por nós e licenciadas sobre a licença Creative Commons Zero (CC0 v1.0). Ao carregar uma fotografia, concorda com os termos desta licença.",
+        "license": "Todas as fotos do AED são hospedadas por nós e licenciadas sob Creative Commons Zero (CC0 v1.0). Ao enviar sua foto, você concorda com estes termos de licença.",
         "license_short_description": "Resumindo, significa que a fotografia poderá ser usado por qualquer um para qualquer propósito. A atribuição não é necessária.",
         "upload": "Carregar fotografia",
         "remove": "Remover fotografia",
         "report": "Reportar fotografia",
         "send_report": "Enviar um reporte",
-        "report_long_text": "Pode reportar uma foto se esta for de má qualidade, não mostra a localização do DAE ou se é inapropriada de alguma forma. Os administradores do site vão verificar o reporte"
+        "report_long_text": "Você pode denunciar a foto se ela estiver de má qualidade, não mostrar a localização do DEA ou for de alguma forma inadequada. Os administradores do site revisarão o relatório."
     },
     "meta": {
         "meta_title": "Mapa aberto dos Desfibrilador Automático Externos (DAE)",
@@ -114,12 +115,18 @@
         "e_health_centre": "Centro e-Health",
         "honorary_patronage": "Patrocínio Honorário",
         "gugik": "Escritório de Geodésia e Cartografia da Polónia",
-        "chief_geodesist": "Chefe Geodésia da Polónia",
+        "chief_geodesist": "Geodesista Chefe da Polônia",
         "main_scientific_partner": "O Principal Parceiro Científico",
         "warsaw_university_of_technology": "Universidade de Tecnologia de Warsaw",
-        "wroclaw_medical_university": "Universidade Médica de Wroclaw"
+        "wroclaw_medical_university": "Universidade Médica de Wroclaw",
+        "acting": "atuando"
     },
     "common": {
         "loading": "A carregar..."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL está desativado ou não é compatível com seu navegador.",
+        "required_for_using_openaedmap": "WebGL é necessário para usar o OpenAEDMap.",
+        "please_check_instruction_at": "Verifique as instruções para ativar o WebGL em"
     }
 }
