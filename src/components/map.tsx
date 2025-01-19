@@ -233,6 +233,8 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 		map.dragRotate.disable();
 		// disable map rotation using touch rotation gesture
 		map.touchZoomRotate.disableRotation();
+		// disable map rotation using shift + arrows
+		map.keyboard.disableRotation();
 		map.addControl(
 			new maplibregl.NavigationControl({
 				showCompass: false,
