@@ -1,1 +1,76 @@
-{}
+{
+    "navbar": {
+        "help_translating": "Hjälp med att översätta",
+        "created_with_<3_by": "Skapad med ❤️ av",
+        "visit_osmp_website": "Besök OpenStreetMap Poland's hemsida",
+        "login": "Logga in med OSM-konto",
+        "logout": "Logga ut",
+        "about": "Om",
+        "hosted_by": "drivs av",
+        "visit_github": "Besök vårt GitHub-arkiv"
+    },
+    "sidebar": {
+        "csv": "CSV",
+        "close": "Stäng sidofältet",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Kartans teckenförklaring",
+        "caption_info": "AED",
+        "no_data": "Ingen data",
+        "indoor": "Inuti byggnaden",
+        "level": "nivå",
+        "location": "Plats",
+        "opening_hours": "Öppettider",
+        "description": "Beskrivning",
+        "contact_number": "Telefonnummer",
+        "operator": "Operatör",
+        "note": "Anteckning",
+        "edit": "Redigera",
+        "edit_in_osm": "Redigera med OSM",
+        "view": "Visa på OSM",
+        "copy_url": "Kopiera URL",
+        "add_defibrillator": "Lägg till defibrillator",
+        "openstreetmap_navigation": "OpenStreetMap Navigering",
+        "google_maps_navigation": "Google Map Navigering",
+        "download_title": "Ladda ner AED-data som lagts till i OSM",
+        "find_location": "Sök plats",
+        "edit_defibrillator": "Redigera defibrillator"
+    },
+    "access": {
+        "permit": "Tillgänglig med ägartillstånd",
+        "private": "Privat tillgänglig",
+        "customers": "Endast tillgänglig för kunder",
+        "no": "Ej tillgänglig",
+        "unknown": "Okänd åtkomst",
+        "unknownTag": "Ingen åtkomsttagg eller matchar inte ovan",
+        "permissive": "Tillgänglig för allmänheten tills vidare",
+        "yes": "Tillgänglig för allmänheten"
+    },
+    "form": {
+        "optional_field": "Valfritt fält",
+        "is_indoor": "Är inne i byggnaden?",
+        "inside": "Inuti",
+        "accessibility": "Tillgänglighet",
+        "location": "Beskriv plats",
+        "outside": "Utanför",
+        "marker_popup_text": "Flytta markören till AED-platsen",
+        "level": "Nivå",
+        "location_example": "Till exempel: På väggen nära entrén"
+    },
+    "footer": {
+        "cancel": "Avbryt",
+        "continue": "Fortsätt",
+        "save_aed": "Spara AED",
+        "partners": "Projektets partners",
+        "add": "Tillägg",
+        "add_aed": "Lägg till AED"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Öppen",
+        "closed": "Stängd"
+    },
+    "indoor": {
+        "yes": "Ja"
+    }
+}
