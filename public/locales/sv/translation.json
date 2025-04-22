@@ -34,7 +34,9 @@
         "google_maps_navigation": "Google Map Navigering",
         "download_title": "Ladda ner AED-data som lagts till i OSM",
         "find_location": "Sök plats",
-        "edit_defibrillator": "Redigera defibrillator"
+        "edit_defibrillator": "Redigera defibrillator",
+        "verification_date": "Undersökt",
+        "world": "Värld"
     },
     "access": {
         "permit": "Tillgänglig med ägartillstånd",
@@ -74,7 +76,7 @@
         "yes": "Ja",
         "no": "Nej"
     },
-    "osmp": "OpenStreetMap Poland",
+    "osmp": "OpenStreetMap Polen",
     "modal": {
         "aed_added_successfully": "AED har lagts till.",
         "aed_updated_successfully": "AED har uppdaterats.",
