@@ -71,6 +71,23 @@
         "closed": "Stängd"
     },
     "indoor": {
-        "yes": "Ja"
+        "yes": "Ja",
+        "no": "Nej"
+    },
+    "osmp": "OpenStreetMap Poland",
+    "modal": {
+        "aed_added_successfully": "AED har lagts till.",
+        "aed_updated_successfully": "AED har uppdaterats.",
+        "available_in_osm": "Tillgänglig i OpenStreetMap med URL:en:",
+        "should_appear_soon": "Objektet ska visas på kartan inom 60 minuter.",
+        "error_occurred": "Fel uppstod",
+        "title": "Information",
+        "click_login_button": "Stäng det här fönstret och klicka på inloggningsknappen längst upp för att logga in.",
+        "current_zoom": "Aktuell zoom:",
+        "zoom_need_to_be": "Zoom måste vara på nivå 15 minimum.",
+        "about_project": "OpenAEDMap är ett projekt med öppen data som visar alla Automated External Defibrillator (AED) runt om i världen. Webbplatsen är baserad på data från OpenStreetMap och är resultatet av OpenStreetMap Polens föreningssatsningar. Den skapades 2022 efter att ha ändrat den polska webbplatsen AED Mapa till en ny design.",
+        "need_more_zoom": "För att lägga till funktioner måste du zooma in så att platsen du anger är korrekt.",
+        "about_osm": "OpenStreetMap (OSM) är som en Wikipedia för kartor. Den är tillgänglig att använda för alla och vem som helst kan lägga till objekt på kartan. Du kan använda ditt OSM-konto för att lägga till AED-platser direkt från den här webbplatsen med ett enkelt formulär.",
+        "need_to_login": "För att lägga till funktioner måste du logga in med ett OpenStreetMap-konto."
     }
 }
