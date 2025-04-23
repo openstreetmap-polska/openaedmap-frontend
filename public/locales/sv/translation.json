@@ -13,7 +13,7 @@
         "csv": "CSV",
         "close": "Stäng sidofältet",
         "excel": "Excel",
-        "geojson": "GeoJSON",
+        "geojson": "",
         "map_legend_title": "Kartans teckenförklaring",
         "caption_info": "AED",
         "no_data": "Ingen data",
@@ -90,6 +90,43 @@
         "about_project": "OpenAEDMap är ett projekt med öppen data som visar alla Automated External Defibrillator (AED) runt om i världen. Webbplatsen är baserad på data från OpenStreetMap och är resultatet av OpenStreetMap Polens föreningssatsningar. Den skapades 2022 efter att ha ändrat den polska webbplatsen AED Mapa till en ny design.",
         "need_more_zoom": "För att lägga till funktioner måste du zooma in så att platsen du anger är korrekt.",
         "about_osm": "OpenStreetMap (OSM) är som en Wikipedia för kartor. Den är tillgänglig att använda för alla och vem som helst kan lägga till objekt på kartan. Du kan använda ditt OSM-konto för att lägga till AED-platser direkt från den här webbplatsen med ett enkelt formulär.",
-        "need_to_login": "För att lägga till funktioner måste du logga in med ett OpenStreetMap-konto."
+        "need_to_login": "För att lägga till funktioner måste du logga in med ett OpenStreetMap-konto.",
+        "create_account": "Du kan också bidra! Skapa bara ett gratiskonto på ",
+        "become_openaedmap_partner": "Vill du bli OpenAEDMap-partner?",
+        "contact_us": "Kontakta oss",
+        "thanks_for_photo": "Tack för att du laddade upp fotot. Det borde synas snart.",
+        "thanks_for_report": "Tack för att du rapporterar. Den kommer gås igenom av hemsideadministratörerna."
+    },
+    "partners": {
+        "e_health_centre": "e-hälsocenter",
+        "honorary_patronage": "Hedersbeskydd",
+        "acting": "ställföreträdande",
+        "main_scientific_partner": "Huvudsakliga vetenskapliga partnern",
+        "warsaw_university_of_technology": "Warsaw University of Technology",
+        "wroclaw_medical_university": "Wroclaw Medical University",
+        "chief_geodesist": "Polens chefsgeodesist",
+        "gugik": "Huvudkontor för geodesi och kartografi i Polen"
+    },
+    "common": {
+        "loading": "Laddar..."
+    },
+    "photo": {
+        "remove": "Ta bort foto",
+        "report": "Rapportera foto",
+        "license": "Alla AED-foton är värd hos oss och är licensierade under Creative Commons Zero (CC0 v1.0). Genom att ladda upp ditt foto godkänner du dessa licensvillkor.",
+        "report_long_text": "Du kan rapportera fotot om det är av dålig kvalitet, inte visar AED:ns plats eller är olämpligt på något sätt. Administratörer av webbplatsen kommer att granska rapporten.",
+        "send_report": "Rapportera",
+        "upload": "Ladda upp foto",
+        "license_short_description": "Kort sagt betyder detta att bilden kan användas av vem som helst för alla ändamål. Ingen tillskrivning är nödvändig."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Karta över defibrillatorer",
+        "meta_title": "Öppen karta över hjärtstartare",
+        "meta_description": "Karta över hjärtstartare baserad på OpenStreetMap-data. Vår hemsida gör det enkelt att hitta en hjärtstartare nära dig, vilket kan vara till stor hjälp i livshotande situationer. Hjärtstartare(AED på Engelska) är apparater som används för hjärt-lungräddning av personer med hjärtstopp. Med vår karta kan vem som helst snabbt hitta närmaste hjärtstartare och hjälpa någon i nöd."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL är inaktiverat eller stöds inte av din webbläsare.",
+        "required_for_using_openaedmap": "WebGL krävs för att använda OpenAEDMap.",
+        "please_check_instruction_at": "Se instruktionerna för hur du aktiverar WebGL på"
     }
 }
