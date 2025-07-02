@@ -144,8 +144,20 @@ function Main() {
 
 function Fallback() {
 	return (
-		<div className="fallback">
-			<div className="fallback-header" />
+		<div
+			style={{
+				position: "fixed",
+				top: 0,
+				left: 0,
+				right: 0,
+				bottom: 0,
+				backgroundColor: "#f2efe9",
+			}}
+		>
+			<div
+				className="has-background-success"
+				style={{ width: "100%", height: "60px" }}
+			/>
 		</div>
 	);
 }

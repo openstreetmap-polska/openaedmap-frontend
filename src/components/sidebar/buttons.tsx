@@ -42,8 +42,11 @@ export function EditButton({ osmId }: { osmId: OsmId }) {
 		});
 	};
 	return (
-		<Button className="button is-small is-success mx-1" onClick={startEdit}>
-			<Icon path={mdiPencil} size={1.0} className="icon" color="#fff" />
+		<Button
+			className="is-small is-success has-text-white mx-1"
+			onClick={startEdit}
+		>
+			<Icon path={mdiPencil} size={0.8} className="icon" color="#fff" />
 			<span>{t("sidebar.edit")}</span>
 		</Button>
 	);
@@ -55,11 +58,11 @@ export function ViewButton({ osmId }: { osmId: OsmId }) {
 		<a
 			key={`view_url_${osmId}`}
 			href={`https://www.openstreetmap.org/node/${osmId}`}
-			className="button is-small is-success mx-1"
+			className="button is-small is-success mx-1 has-text-white"
 			rel="noreferrer"
 			target="_blank"
 		>
-			<Icon path={mdiMagnify} size={1.0} className="icon" color="#fff" />
+			<Icon path={mdiMagnify} size={0.8} className="icon" color="#fff" />
 			<span>{t("sidebar.view")}</span>
 		</a>
 	);
@@ -69,7 +72,7 @@ export function CopyUrlButton() {
 	const { t } = useTranslation();
 	return (
 		<Button
-			className="button is-small is-success mx-1"
+			className="button is-small is-success mx-1 has-text-white"
 			onClick={() => {
 				navigator.clipboard.writeText(window.location.toString());
 			}}
@@ -101,7 +104,13 @@ export function AddAedButton({
 }: { nextStep: (event: React.MouseEvent) => void }) {
 	const { t } = useTranslation();
 	return (
-		<Button color="success" fullwidth form="add_aed" onClick={nextStep}>
+		<Button
+			color="success"
+			fullwidth
+			form="add_aed"
+			onClick={nextStep}
+			className="has-text-white"
+		>
 			<Icon path={mdiMapMarkerPlus} className="icon mr-2" />
 			{t("footer.add_aed")}
 		</Button>
@@ -113,7 +122,13 @@ export function SaveAedButton({
 }: { nextStep: (event: React.MouseEvent) => void }) {
 	const { t } = useTranslation();
 	return (
-		<Button color="success" fullwidth form="save_aed" onClick={nextStep}>
+		<Button
+			color="success"
+			fullwidth
+			form="save_aed"
+			onClick={nextStep}
+			className="has-text-white"
+		>
 			<Icon path={mdiMapMarkerPlus} className="icon mr-2" />
 			{t("footer.save_aed")}
 		</Button>
@@ -133,7 +148,7 @@ export const OpenStreetMapNavigationButton: FC<NavigationButtonProps> = ({
 	const OSM_NAVIGATION_ZOOM = 14;
 	return (
 		<a
-			className="button is-small is-info mx-1"
+			className="button is-small is-info mx-1 has-text-white"
 			href={`${OSM_DOMAIN}/directions?from=&to=${lat}%2C${lon}#map=${OSM_NAVIGATION_ZOOM}/${lat}/${lon}`}
 			rel="noreferrer"
 			target="_blank"
@@ -151,7 +166,7 @@ export const GoogleMapsNavigationButton: FC<NavigationButtonProps> = ({
 	const { t } = useTranslation();
 	return (
 		<a
-			className="button is-small is-info mx-1"
+			className="button is-small is-info mx-1 has-text-white"
 			href={`https://google.com/maps/dir/?api=1&destination=${lat}%2C${lon}`}
 			rel="noreferrer"
 			target="_blank"

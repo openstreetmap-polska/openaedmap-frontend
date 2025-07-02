@@ -81,9 +81,9 @@ Use `npx @beyondtracks/spritezero-cli ./public/img/sprite ./src/marker_icons; sp
 
 #### `bun css-build`
 
-Build `sass/mystyles.scss` file into `src/mystyles.css` which is included in `index.tsc` and has the adjusted bulma css for the entire app.
+Build `src/index.scss` file into `src/generated.css` which is included in `index.tsc` and has the adjusted bulma css for the entire app.
 
-Run this if changed e.g. navbar breakpoint or customized bulma further in `sass/mystyles.css`.
+Run this if changed e.g. navbar breakpoint or customized bulma further in `src/index.scss`.
 
 #### Upgrading dependencies
 `bunx npm-check-updates -ui` is recommended

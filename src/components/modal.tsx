@@ -1,4 +1,4 @@
-import { mdiGithub, mdiInformationOutline } from "@mdi/js";
+import { mdiBookEdit, mdiGithub, mdiInformationOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import React, { type FC } from "react";
 import { Button, Modal } from "react-bulma-components";
@@ -13,7 +13,6 @@ const ModalContent: FC = () => {
 	const {
 		modalState: { type, currentZoom, errorMessage, nodeId },
 	} = useAppContext();
-	const helpTranslationText = `🖋 ${t("navbar.help_translating")}`;
 
 	switch (type) {
 		case ModalType.NodeAddedSuccessfully: {
@@ -80,7 +79,8 @@ const ModalContent: FC = () => {
 							rel="noreferrer"
 							href="https://github.com/openstreetmap-polska/openaedmap-frontend#translating"
 						>
-							{helpTranslationText}
+							<Icon path={mdiBookEdit} size="2rem" />
+							{t("navbar.help_translating")}
 						</Button>
 						<Button
 							mr={2}
@@ -145,7 +145,7 @@ const CustomModal: FC = () => {
 			<Modal.Card radiusless>
 				<Modal.Card.Header
 					showClose
-					className="has-background-green has-text-white-ter"
+					className="has-background-success has-text-white-ter"
 				>
 					<Icon path={mdiInformationOutline} size={1} className="icon mr-2" />
 					<Modal.Card.Title className="has-text-white-ter has-text-weight-light">

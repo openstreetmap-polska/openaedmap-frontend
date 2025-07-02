@@ -71,7 +71,7 @@ export default function DownloadCard() {
 					</select>
 				</div>
 				<a
-					className="button is-success is-fullwidth is-small"
+					className="button is-success is-fullwidth is-small has-text-white"
 					href={
 						selectedCountry ? backendBaseUrl + selectedCountry.dataPath : ""
 					}

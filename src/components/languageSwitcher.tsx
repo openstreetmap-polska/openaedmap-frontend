@@ -14,11 +14,11 @@ export default function LanguageSwitcher() {
 		<Navbar.Item px={1}>
 			<div className="select">
 				<select
-					id="language-switcher"
 					value={language}
 					onChange={(e) => {
 						i18n.changeLanguage(e.target.value);
 					}}
+					style={{ maxWidth: "120px" }}
 				>
 					{Object.keys(languages).map((language) => (
 						<option key={language} value={language}>

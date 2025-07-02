@@ -2,13 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const accessToColourMapping = {
-	yes: "has-background-green has-text-white-ter",
-	no: "has-background-red has-text-white-ter",
-	private: "has-background-blue has-text-white-ter",
-	permit: "has-background-blue has-text-white-ter",
-	permissive: "has-background-green has-text-white-ter",
+	yes: "has-background-success has-text-white-ter",
+	no: "has-background-danger has-text-white-ter",
+	private: "has-background-info has-text-white-ter",
+	permit: "has-background-info has-text-white-ter",
+	permissive: "has-background-success has-text-white-ter",
 	customers: "has-background-yellow has-text-black-ter",
-	default: "has-background-gray has-text-white-ter",
+	default: "has-background-grey has-text-white-ter",
 };
 
 export function accessColourClass(access: string): string {

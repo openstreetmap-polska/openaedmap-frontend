@@ -20,12 +20,16 @@ const LogInButton: FC<LogInButtonProps> = ({ inNavBar }) => {
 	if (auth?.authenticated()) {
 		return (
 			<Navbar.Item className="has-text-white" hoverable>
-				<Navbar.Item>
+				<Navbar.Item className="has-text-white">
 					<Icon className="icon mr-2" path={mdiAccount} size={1.0} />
 					{osmUsername}
 				</Navbar.Item>
-				<Navbar.Dropdown className="has-background-green">
-					<Navbar.Item onClick={handleLogOut}>
+				<Navbar.Dropdown className="has-background-success">
+					<Navbar.Item
+						onClick={handleLogOut}
+						renderAs="a"
+						className="has-background-success has-text-white"
+					>
 						<Icon path={mdiLogoutVariant} size={1.3} className="icon mr-2" />
 						{t("navbar.logout")}
 					</Navbar.Item>

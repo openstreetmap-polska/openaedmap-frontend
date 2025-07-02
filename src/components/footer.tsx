@@ -11,7 +11,6 @@ import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import ButtonsType from "~/model/buttonsType";
 import { ModalType, initialModalState } from "~/model/modal";
-import "./footer.css";
 
 const FooterDiv: FC<FooterDivProps> = ({
 	startAEDAdding,
@@ -28,7 +27,7 @@ const FooterDiv: FC<FooterDivProps> = ({
 					color="success"
 					mt={1}
 					ml={2}
-					className="has-text-weight-light"
+					className="has-text-weight-light has-text-white"
 					onClick={() => startAEDAdding(false)}
 				>
 					<Icon path={mdiMapMarkerPlus} className="icon mr-2" />
@@ -40,7 +39,7 @@ const FooterDiv: FC<FooterDivProps> = ({
 					color="success"
 					mt={1}
 					ml={2}
-					className="has-text-weight-light"
+					className="has-text-weight-light has-text-white"
 					onClick={() => startAEDAdding(true)}
 				>
 					<Icon path={mdiMapMarkerPlus} className="icon mr-2" />
@@ -51,7 +50,7 @@ const FooterDiv: FC<FooterDivProps> = ({
 				color="info"
 				mt={1}
 				ml={2}
-				className="has-text-weight-light"
+				className="has-text-weight-light has-text-white"
 				onClick={() =>
 					setModalState({
 						...initialModalState,
@@ -104,10 +103,18 @@ const FooterDiv: FC<FooterDivProps> = ({
 
 	if (buttonsConfiguration === ButtonsType.None) return null;
 	return (
-		<Footer className="footer-div">
-			<div className="bottom-bar-buttons">
-				{getFooterButtons(buttonsConfiguration)}
-			</div>
+		<Footer
+			className="px-0 py-2"
+			style={{
+				position: "fixed",
+				left: 0,
+				right: 0,
+				bottom: 0,
+				minHeight: "3.0rem",
+				backgroundColor: "transparent",
+			}}
+		>
+			<div className="pl-2">{getFooterButtons(buttonsConfiguration)}</div>
 		</Footer>
 	);
 };

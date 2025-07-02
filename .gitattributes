@@ -1,3 +1,3 @@
 *.lockb binary diff=lockb
 * text=auto eol=lf
-src/mystyles.css linguist-generated=true
+src/index.css linguist-generated=true

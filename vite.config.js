@@ -18,7 +18,7 @@ const htmlPlugin = async (env) => {
 	return {
 		name: "html-transform",
 		async transformIndexHtml(html) {
-			const currentLang = html.match(/<html lang="([a-zA-Z-]+)">/)[1];
+			const currentLang = html.match(/<html lang="([a-zA-Z-]+)"/)[1];
 			const translationsTarget = await getTranslatedStrings(currentLang).catch(
 				(e) => console.error(e),
 			);
@@ -73,8 +73,8 @@ const htmlPlugin = async (env) => {
 			for (const lang of Object.keys(languages)) {
 				fs.mkdirSync(`langs/${lang}`, { recursive: true });
 				const contentLang = content.replace(
-					/<html lang="en">/,
-					`<html lang="${lang}">`,
+					/<html lang="en"/,
+					`<html lang="${lang}"`,
 				);
 				fs.writeFileSync(`langs/${lang}/index.html`, contentLang);
 			}

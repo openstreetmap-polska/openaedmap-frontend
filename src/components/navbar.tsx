@@ -17,7 +17,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 	const { t } = useTranslation();
 	const language = useLanguage();
 	return (
-		<Navbar color="success" className="has-background-green">
+		<Navbar color="success" className="has-background-success">
 			<Navbar.Brand>
 				<Navbar.Item renderAs="a" href="/" pr={1} pl={1}>
 					<svg
@@ -36,7 +36,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 					</span>
 				</Navbar.Item>
 				<Navbar.Item className="is-hidden-touch" renderAs="div" pl={1} pr={1}>
-					<span className="has-text-weight-light is-size-6 pl-0">
+					<span className="has-text-weight-light has-text-white is-size-6 pl-0">
 						{t("navbar.created_with_<3_by")}
 						&nbsp;
 						<a
@@ -51,7 +51,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 					</span>
 				</Navbar.Item>
 				<Navbar.Item className="is-hidden-touch" renderAs="div" pl={1} pr={1}>
-					<span className="has-text-weight-light is-size-6 pr-1">
+					<span className="has-text-weight-light has-text-white is-size-6 pr-1">
 						{t("navbar.hosted_by")}{" "}
 					</span>
 					<a
@@ -80,7 +80,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 				</Navbar.Burger>
 			</Navbar.Brand>
 			<Navbar.Menu
-				className={`pr-2 has-background-green ${isActive ? "is-active" : ""}`}
+				className={`pr-2 has-background-success ${isActive ? "is-active" : ""}`}
 				id="navbarMenu"
 			>
 				<Navbar.Container align="right">
@@ -102,7 +102,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 					</Navbar.Item>
 					<Navbar.Item renderAs="div" p={1}>
 						<Button onClick={() => toggleSidebarShown()} color="white" outlined>
-							<Icon path={mdiMapLegend} size="2rem" />
+							<Icon path={mdiMapLegend} size="1.6rem" />
 						</Button>
 					</Navbar.Item>
 					<Navbar.Item p={1} renderAs="div">
