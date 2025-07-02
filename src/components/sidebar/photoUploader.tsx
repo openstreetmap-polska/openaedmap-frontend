@@ -17,7 +17,6 @@ interface DefibrillatorDetailsProps {
 	closeSidebar: () => void;
 }
 
-// TODO: consider splitting cc0 part from translation
 const LicenceInfoBlock: FC = () => {
 	const { t } = useTranslation();
 	const cc0 = "Creative Commons Zero (CC0 v1.0)";
