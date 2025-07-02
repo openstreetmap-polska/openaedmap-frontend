@@ -192,7 +192,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
 					</form>
 				</Card.Content>
 				<Card.Footer>
-					<Card.Footer.Item className="has-background-white-ter">
+					<Card.Footer.Item className="has-background-main-ter">
 						{newAED ? (
 							<AddAedButton nextStep={sendFormData} />
 						) : (
