@@ -23,9 +23,10 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 					<img
 						alt="OpenAEDMap logo"
 						src="/img/logo-aed.svg"
-						height="28px"
-						width="28px"
 						className="ml-1"
+						width="35px"
+						height="35px"
+						style={{ maxHeight: "35px" }}
 					/>
 					<span className="has-text-weight-light has-text-white-ter is-size-4 is-size-5-mobile p-1">
 						Open
