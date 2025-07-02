@@ -31,8 +31,8 @@
 		"node": ">=20.0.0"
 	},
 	"scripts": {
-		"start": "bunx --bun vite",
-		"build": "vite build",
+		"dev": "bunx --bun vite",
+		"prod": "vite build",
 		"typecheck": "tsc -p ./tsconfig.json --noEmit",
 		"lint-fix": "biome check . --write",
 		"check": "biome ci .",
