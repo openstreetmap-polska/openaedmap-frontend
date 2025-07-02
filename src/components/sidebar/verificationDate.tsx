@@ -10,7 +10,7 @@ export const CheckDateField: FC<CheckDateProps> = ({ check_date }) => {
 	return (
 		<span
 			className={
-				"is-pulled-right is-flex has-text-grey-dark has-text-weight-light" +
+				"is-pulled-right is-flex has-text-grey has-text-weight-light" +
 				" is-size-7 p-0 is-justify-content-center"
 			}
 		>
