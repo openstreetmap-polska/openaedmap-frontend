@@ -90,13 +90,6 @@
 	right: 8px;
 }
 
-@media (min-width: 500px) {
-	#sidebar-header {
-		border: 4px solid hsl(0, 0%, 96%);
-		border-radius: 8px;
-	}
-}
-
 @media (max-width: 500px) {
 	#sidebar-header {
 		border-top: 0;
