@@ -39,7 +39,7 @@
 		"test": "bun test"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.0.6",
 		"@sentry/vite-plugin": "^3.5.0",
 		"@types/bun": "^1.1.13",
 		"@types/node": "^22.9.3",
@@ -52,5 +52,9 @@
 		"vite": "^7.0.0",
 		"vite-plugin-sitemap": "^0.8.2"
 	},
-	"trustedDependencies": ["@biomejs/biome", "@sentry/cli", "esbuild"]
+	"trustedDependencies": [
+		"@biomejs/biome",
+		"@sentry/cli",
+		"esbuild"
+	]
 }

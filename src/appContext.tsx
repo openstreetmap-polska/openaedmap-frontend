@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { type AuthState, initialAuthState } from "~/model/auth";
 import type { Country } from "~/model/country";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
-import { type ModalState, initialModalState } from "~/model/modal";
+import { initialModalState, type ModalState } from "~/model/modal";
 import SidebarAction from "./model/sidebarAction";
 
 interface AppContextType {

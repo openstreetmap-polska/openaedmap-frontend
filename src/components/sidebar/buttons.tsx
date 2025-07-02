@@ -13,7 +13,7 @@ import { Button } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { OSM_DOMAIN } from "~/constants";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import { fetchNodeDataFromOsm } from "~/osm";
 
@@ -85,7 +85,9 @@ export function CopyUrlButton() {
 
 export function CloseSidebarButton({
 	closeSidebarFunction,
-}: { closeSidebarFunction: () => void }) {
+}: {
+	closeSidebarFunction: () => void;
+}) {
 	const { t } = useTranslation();
 	// Button seems to have issues with delete class, using button instead
 	return (
@@ -101,7 +103,9 @@ export function CloseSidebarButton({
 
 export function AddAedButton({
 	nextStep,
-}: { nextStep: (event: React.MouseEvent) => void }) {
+}: {
+	nextStep: (event: React.MouseEvent) => void;
+}) {
 	const { t } = useTranslation();
 	return (
 		<Button
@@ -119,7 +123,9 @@ export function AddAedButton({
 
 export function SaveAedButton({
 	nextStep,
-}: { nextStep: (event: React.MouseEvent) => void }) {
+}: {
+	nextStep: (event: React.MouseEvent) => void;
+}) {
 	const { t } = useTranslation();
 	return (
 		<Button

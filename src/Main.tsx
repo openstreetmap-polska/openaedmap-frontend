@@ -1,18 +1,12 @@
 import { osmAuth } from "osm-auth";
-import React, {
-	Suspense,
-	useCallback,
-	useEffect,
-	useMemo,
-	useState,
-} from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { AppContext } from "~/appContext";
 import CustomModal from "~/components/modal";
 import WebGLMissingInfo from "~/components/webGLMissingInfo";
 import type { AuthState } from "~/model/auth";
 import type { Country } from "~/model/country";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import { updateOsmUsernameState } from "~/osm";
 import MapView from "./components/map";

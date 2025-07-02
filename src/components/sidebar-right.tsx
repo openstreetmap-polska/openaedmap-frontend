@@ -1,4 +1,3 @@
-import React from "react";
 import { Card } from "react-bulma-components";
 import DownloadCard from "./downloadCard";
 import MapLegend from "./legend";
@@ -7,7 +6,9 @@ import { CloseSidebarButton } from "./sidebar/buttons";
 
 export default function SidebarRight({
 	closeSidebar,
-}: { closeSidebar: () => void }) {
+}: {
+	closeSidebar: () => void;
+}) {
 	return (
 		<div className="sidebar-right">
 			<Card>

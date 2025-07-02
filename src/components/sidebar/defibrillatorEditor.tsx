@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { useLanguage } from "~/i18n";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import {
 	addDefibrillatorToOSM,
 	editDefibrillatorInOSM,

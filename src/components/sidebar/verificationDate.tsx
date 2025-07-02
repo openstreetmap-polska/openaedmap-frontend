@@ -1,6 +1,6 @@
 import { mdiCalendar } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { type FC } from "react";
+import type { FC } from "react";
 import { useTranslation } from "react-i18next";
 import SpanNoData from "./spanNoData";
 

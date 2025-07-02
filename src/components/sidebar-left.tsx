@@ -1,5 +1,5 @@
 import type { Marker } from "maplibre-gl";
-import React, { type FC } from "react";
+import type { FC } from "react";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
 import SidebarAction from "~/model/sidebarAction";
 import "./sidebar.css";

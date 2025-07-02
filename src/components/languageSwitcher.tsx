@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { languages, useLanguage } from "~/i18n";

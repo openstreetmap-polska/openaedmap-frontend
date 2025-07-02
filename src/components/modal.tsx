@@ -1,6 +1,6 @@
 import { mdiBookEdit, mdiGithub, mdiInformationOutline } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { type FC } from "react";
+import type { FC } from "react";
 import { Button, Modal } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";

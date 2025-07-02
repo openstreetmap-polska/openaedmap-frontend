@@ -63,7 +63,6 @@ function serializeParametersToUrlTarget(parameters: Record<string, string>) {
 
 export function removeNodeIdFromHash() {
 	const params = parseParametersFromUrl();
-	// biome-ignore lint/performance/noDelete: using undefined assignment causes it to be part of url
 	delete params.node_id;
 	window.location.hash = serializeParametersToUrlTarget(params);
 }

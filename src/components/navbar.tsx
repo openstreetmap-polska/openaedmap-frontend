@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import ReactStoreBadges from "~/3rdparty/reactStoreBadges";
 import { useAppContext } from "~/appContext";
 import { useLanguage } from "~/i18n";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import LanguageSwitcher from "./languageSwitcher";
 import LogInButton from "./logInButton";
 import "./navbar.css";

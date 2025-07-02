@@ -1,17 +1,16 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"ignore": [
-			".devcontainer",
-			"build",
-			"public/locales",
-			"public/img",
-			"coverage"
+		"includes": [
+			"**",
+			"!**/.devcontainer",
+			"!**/build",
+			"!**/public/locales",
+			"!**/public/img",
+			"!**/coverage"
 		]
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -19,6 +18,18 @@
 			"correctness": {
 				"useHookAtTopLevel": "error",
 				"noUnusedVariables": "error"
+			},
+			"style": {
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error"
 			}
 		}
 	}

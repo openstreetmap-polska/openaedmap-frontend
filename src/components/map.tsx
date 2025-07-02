@@ -7,13 +7,7 @@ import maplibregl, {
 	type MapMouseEvent,
 } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import React, {
-	type FC,
-	useCallback,
-	useEffect,
-	useRef,
-	useState,
-} from "react";
+import { type FC, useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { fetchCountriesData, fetchNodeDataFromBackend } from "~/backend";
@@ -29,7 +23,7 @@ import {
 } from "~/location";
 import ButtonsType from "~/model/buttonsType";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import FooterDiv from "./footer";
 import "./map.css";

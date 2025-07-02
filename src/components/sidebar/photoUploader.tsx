@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import { accessColourClass } from "./access";
 import { CloseSidebarButton } from "./buttons";

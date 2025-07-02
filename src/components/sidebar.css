@@ -4,8 +4,9 @@
 		margin: 0.5rem !important;
 		width: 450px;
 		border-radius: 10px;
-		box-shadow: 0 .5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px
-			rgba(10, 10, 10, 0.02);
+		box-shadow:
+			0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+			0 0 0 1px rgba(10, 10, 10, 0.02);
 		max-height: 85vh !important;
 		z-index: 10 !important;
 		overflow-y: hidden !important;
@@ -34,8 +35,9 @@
 		margin: 10px !important;
 		width: 300px;
 		border-radius: 10px;
-		box-shadow: 0 .5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px
-			rgba(10, 10, 10, 0.02);
+		box-shadow:
+			0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+			0 0 0 1px rgba(10, 10, 10, 0.02);
 		max-height: 90vh;
 		overflow: auto !important;
 	}
@@ -123,8 +125,9 @@
 
 .legend-image {
 	border-radius: 2px;
-	box-shadow: 0 .5em 1em -0.125em rgba(182, 182, 182, 0.1), 0 0 0 1px
-		rgba(121, 121, 121, 0.02);
+	box-shadow:
+		0 0.5em 1em -0.125em rgba(182, 182, 182, 0.1),
+		0 0 0 1px rgba(121, 121, 121, 0.02);
 }
 
 .image-gallery-custom-icon {

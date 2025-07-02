@@ -17,7 +17,7 @@ import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
 import { useLanguage } from "~/i18n";
 import type { DefibrillatorData } from "~/model/defibrillatorData";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 import SidebarAction from "~/model/sidebarAction";
 import { accessColourClass } from "./access";
 import {

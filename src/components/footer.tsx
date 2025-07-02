@@ -5,12 +5,12 @@ import {
 	mdiMapMarkerPlus,
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { type FC } from "react";
+import type { FC } from "react";
 import { Button, Footer } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
 import ButtonsType from "~/model/buttonsType";
-import { ModalType, initialModalState } from "~/model/modal";
+import { initialModalState, ModalType } from "~/model/modal";
 
 const FooterDiv: FC<FooterDivProps> = ({
 	startAEDAdding,
