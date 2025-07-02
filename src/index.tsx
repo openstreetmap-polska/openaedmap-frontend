@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "~/i18n";
+import "~/index.scss";
 import initSentry from "~/sentry";
 import Main from "./Main";
 

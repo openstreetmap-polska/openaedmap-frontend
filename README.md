@@ -79,12 +79,6 @@ Builds the app for production to the `build` folder.
 
 Use `npx @beyondtracks/spritezero-cli ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons`
 
-#### `bun css-build`
-
-Build `src/index.scss` file into `src/generated.css` which is included in `index.tsc` and has the adjusted bulma css for the entire app.
-
-Run this if changed e.g. navbar breakpoint or customized bulma further in `src/index.scss`.
-
 #### Upgrading dependencies
 `bunx npm-check-updates -ui` is recommended
 

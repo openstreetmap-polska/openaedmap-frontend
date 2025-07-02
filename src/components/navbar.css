@@ -1,6 +1,10 @@
 .navbarUrl {
-	color: #effaf5 !important;
+	color: white;
 }
+.navbarUrl:hover {
+	color: black;
+}
+
 .navbarLogo {
 	width: 35px;
 	height: 35px;

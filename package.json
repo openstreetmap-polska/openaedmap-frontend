@@ -36,9 +36,7 @@
 		"typecheck": "tsc -p ./tsconfig.json --noEmit",
 		"lint-fix": "biome check . --write",
 		"check": "biome ci .",
-		"test": "bun test",
-		"css-build": "sass --load-path=node_modules src/index.scss public/css/index.css",
-		"css-watch": "bun css-build --watch"
+		"test": "bun test"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
