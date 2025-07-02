@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 interface Partner {
 	name: string;
-	person: string | null;
 	role: string | null;
 	image: string;
 	imageHeight: number;
@@ -15,7 +14,6 @@ const PartnersModal: FC = () => {
 	const partners: Partner[] = [
 		{
 			name: "CloudFerro",
-			person: null,
 			role: null,
 			image: "cloudferro_logo-dark.png",
 			imageHeight: 55,
@@ -23,7 +21,6 @@ const PartnersModal: FC = () => {
 		},
 		{
 			name: t("partners.wroclaw_medical_university"),
-			person: null,
 			role: t("partners.main_scientific_partner"),
 			image: "logo-umw.png", // TODO: vector logo
 			imageHeight: 40,
@@ -31,7 +28,6 @@ const PartnersModal: FC = () => {
 		},
 		{
 			name: t("partners.e_health_centre"),
-			person: null,
 			role: null,
 			image: "logo-cez.png",
 			imageHeight: 67,
@@ -39,7 +35,6 @@ const PartnersModal: FC = () => {
 		},
 		{
 			name: t("partners.warsaw_university_of_technology"),
-			person: null,
 			role: null,
 			image: "logo-pw.png",
 			imageHeight: 80,
@@ -47,7 +42,6 @@ const PartnersModal: FC = () => {
 		},
 		{
 			name: t("partners.gugik"),
-			person: null,
 			role: t("partners.chief_geodesist"),
 			image: "logo-gugik-short.png",
 			imageHeight: 55,
@@ -76,13 +70,6 @@ const PartnersModal: FC = () => {
 								<a href={partner.url} rel="noopener noreferrer" target="_blank">
 									{partner.name}
 								</a>
-								{partner.person !== null && (
-									<p className="is-size-6">
-										<span className="has-text-weight-semibold">
-											{partner.person}
-										</span>
-									</p>
-								)}
 								{partner.role !== null && (
 									<div className="has-text-weight-light has-text-grey is-size-6">
 										{partner.role}
