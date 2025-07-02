@@ -39,7 +39,7 @@ Status:
 
 One way to set up is:
 1. Clone repo and open terminal in the project directory
-2. Install Node version 20 or use [Node version manager](https://github.com/nvm-sh/nvm)
+2. Install Node version 24 or use [Node version manager](https://github.com/nvm-sh/nvm)
 3. Install bun. See https://bun.sh/docs/installation
 4. Run `bun install`
 
