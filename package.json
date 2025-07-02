@@ -17,7 +17,7 @@
 		"i18next-browser-languagedetector": "^8.2.0",
 		"i18next-http-backend": "^3.0.2",
 		"maplibre-gl": "^5.6.1",
-		"opening_hours": "^3.8.0",
+		"opening_hours": "^3.9.0",
 		"osm-auth": "^2.5.0",
 		"react": "^19.1.0",
 		"react-bulma-components": "^4.1.0",
@@ -25,7 +25,7 @@
 		"react-i18next": "^15.5.3",
 		"react-image-gallery": "^1.4.0",
 		"react-select": "^5.10.1",
-		"typescript": "^5.7.2"
+		"typescript": "^5.8.3"
 	},
 	"engines": {
 		"node": ">=24.0.0"
@@ -47,7 +47,7 @@
 		"@types/react-dom": "^19.1.6",
 		"@types/react-image-gallery": "^1.2.4",
 		"@vitejs/plugin-react": "^4.6.0",
-		"bun-types": "^1.1.36",
+		"bun-types": "^1.2.17",
 		"sass": "^1.89.2",
 		"vite": "^7.0.0",
 		"vite-plugin-sitemap": "^0.8.2"
