@@ -67,7 +67,7 @@
         "permit": "Acessível com autorização do proprietário"
     },
     "navbar": {
-        "created_with_<3_by": "criado com ❤️ por",
+        "created_with_<3_by": "criado com ❤ por",
         "visit_github": "Visite o nosso repositório GitHub",
         "visit_osmp_website": "Visite o site do OpenStreetMap Polónia",
         "login": "Iniciar sessão com conta OSM",
@@ -118,8 +118,7 @@
         "chief_geodesist": "Geodesista Chefe da Polônia",
         "main_scientific_partner": "O Principal Parceiro Científico",
         "warsaw_university_of_technology": "Universidade de Tecnologia de Warsaw",
-        "wroclaw_medical_university": "Universidade Médica de Wroclaw",
-        "acting": "atuando"
+        "wroclaw_medical_university": "Universidade Médica de Wroclaw"
     },
     "common": {
         "loading": "A carregar..."

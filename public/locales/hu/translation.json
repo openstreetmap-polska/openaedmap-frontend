@@ -10,7 +10,7 @@
         "permissive": "További értesítésig nyilvánosan hozzáférhető"
     },
     "navbar": {
-        "created_with_<3_by": "létrehozta ❤️-tel:",
+        "created_with_<3_by": "létrehozta ❤-tel:",
         "visit_github": "Látogass el a GitHub tárhelyünkre",
         "visit_osmp_website": "Látogasd meg az OpenStreetMap lengyelországi weboldalát",
         "login": "Bejelentkezés OSM-fiókkal",
@@ -83,7 +83,6 @@
         "e_health_centre": "lengyel e-Egészségügyi Központ",
         "honorary_patronage": "Tiszteletbeli védnökség",
         "gugik": "A lengyelországi Geodéziai és Térképészeti Hivatal központja",
-        "acting": "megbízott",
         "chief_geodesist": "lengyel vezető földmérő",
         "main_scientific_partner": "Fő tudományos partner",
         "warsaw_university_of_technology": "Varsói Műszaki Egyetem",

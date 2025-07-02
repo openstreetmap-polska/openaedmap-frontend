@@ -24,7 +24,7 @@
     },
     "navbar": {
         "about": "Informazioni",
-        "created_with_<3_by": "creato con ❤️ da",
+        "created_with_<3_by": "creato con ❤ da",
         "login": "Accedi usando un account OSM",
         "visit_github": "Visita il nostro repository GitHub",
         "visit_osmp_website": "Visita il sito web di OpenStreetMap Polonia",
@@ -106,7 +106,6 @@
         "chief_geodesist": "Capo geodeta della Polonia",
         "main_scientific_partner": "Il principale partner scientifico",
         "wroclaw_medical_university": "Università di medicina di Breslavia",
-        "acting": "come",
         "e_health_centre": "Centro di salute digitale",
         "warsaw_university_of_technology": "Università della Tecnologia di Varsavia"
     },

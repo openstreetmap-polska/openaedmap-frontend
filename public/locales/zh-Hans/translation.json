@@ -87,7 +87,7 @@
         "login": "使用OSM账号登录",
         "logout": "登出",
         "about": "关于",
-        "created_with_<3_by": "用❤️创造 - 来自",
+        "created_with_<3_by": "用❤创造 - 来自",
         "visit_osmp_website": "查看OpenStreetMap波兰社区网站",
         "hosted_by": "托管于",
         "help_translating": "协助翻译"
@@ -101,7 +101,6 @@
         "main_scientific_partner": "主要科学合作伙伴",
         "wroclaw_medical_university": "弗罗茨瓦夫医科大学",
         "chief_geodesist": "波兰首席大地测量师",
-        "acting": "代行",
         "honorary_patronage": "荣誉赞助"
     },
     "photo": {

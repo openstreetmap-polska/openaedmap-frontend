@@ -14,7 +14,7 @@
         "permit": "Ar gael gyda chaniatâd y perchennog"
     },
     "navbar": {
-        "created_with_<3_by": "crëwyd gyda ❤️ gan",
+        "created_with_<3_by": "crëwyd gyda ❤ gan",
         "login": "Mewngofnodi gyda chyfrif OSM",
         "logout": "Allgofnodi",
         "about": "Ynghylch",
@@ -99,8 +99,7 @@
     },
     "partners": {
         "honorary_patronage": "Noddwyr er anrhydedd",
-        "acting": "Prif Geodesydd Gwlad Pwyl",
-        "chief_geodesist": "(Dros Dro)",
+        "chief_geodesist": "Prif Geodesydd Gwlad Pwyl",
         "wroclaw_medical_university": "Prifysgol Meddygol Wroclaw",
         "gugik": "Prif Swyddfa Geodeseg a Chartograffeg yng Ngwlad Pwyl",
         "main_scientific_partner": "Prif Partner Gwyddonol",

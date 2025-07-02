@@ -10,7 +10,7 @@
         "permit": "Προσβάσιμο με άδεια του ιδιοκτήτη"
     },
     "navbar": {
-        "created_with_<3_by": "δημιουργήθηκε με ❤️ από",
+        "created_with_<3_by": "δημιουργήθηκε με ❤ από",
         "visit_osmp_website": "Επισκεφθείτε τον ιστότοπο του OpenStreetMap Πολωνίας",
         "visit_github": "Επισκεφθείτε το GitHub repository μας",
         "about": "Σχετικά",
@@ -103,7 +103,6 @@
         "chief_geodesist": "Επικεφαλής Γεωδαίτης της Πολωνίας",
         "main_scientific_partner": "Ο Κύριος Επιστημονικός Συνεργάτης",
         "wroclaw_medical_university": "Ιατρικό Πανεπιστήμιο Wroclaw",
-        "acting": "ενεργούντες",
         "e_health_centre": "Κέντρο Ηλεκτρονικής Υγείας",
         "warsaw_university_of_technology": "Τεχνολογικό Πανεπιστήμιο Βαρσοβίας"
     },

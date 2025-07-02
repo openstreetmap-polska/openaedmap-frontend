@@ -10,7 +10,7 @@
         "permit": "Accesible con permiso del propietario"
     },
     "navbar": {
-        "created_with_<3_by": "creado con ❤️ por",
+        "created_with_<3_by": "creado con ❤ por",
         "visit_github": "Visite nuestro repositorio de GitHub",
         "visit_osmp_website": "Visitar sitio web de OpenStreetMap Polonia",
         "login": "Entrar usando la cuenta de OSM",
@@ -105,7 +105,6 @@
         "main_scientific_partner": "El principal colaborador científico",
         "wroclaw_medical_university": "Universidad de Médicina de Breslavia",
         "gugik": "Sede de Geodesia y Cartografía en Polonia",
-        "acting": "interino",
         "chief_geodesist": "Jefe Geodésico de Polonia",
         "e_health_centre": "Centro eSalud",
         "warsaw_university_of_technology": "Universidad Tecnológica de Varsovia"

@@ -10,7 +10,7 @@
         "permit": "Toegankelijk met vergunning van de eigenaar"
     },
     "navbar": {
-        "created_with_<3_by": "gemaakt met ❤️ door",
+        "created_with_<3_by": "gemaakt met ❤ door",
         "visit_github": "Bezoek onze GitHub-pagina",
         "visit_osmp_website": "Bezoek OpenStreetMap Poland's website",
         "login": "Aanmelden met OSM-account",
@@ -104,7 +104,6 @@
         "honorary_patronage": "Erepatronaat",
         "chief_geodesist": "Hoofd-Geodeet van Polen",
         "wroclaw_medical_university": "Medische Universiteit van Wroclaw",
-        "acting": "handelend",
         "gugik": "Hoofdkantoor van Geodesie en Cartografie in Polen",
         "main_scientific_partner": "De Wetenschappelijke Hoofdpartner",
         "e_health_centre": "e-health centrum",

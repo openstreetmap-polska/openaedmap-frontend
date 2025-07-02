@@ -47,8 +47,8 @@ const PartnersModal: FC = () => {
 		},
 		{
 			name: t("partners.gugik"),
-			person: "Alicja Kulka",
-			role: `${t("partners.acting")} ${t("partners.chief_geodesist")}`,
+			person: null,
+			role: t("partners.chief_geodesist"),
 			image: "logo-gugik-short.png",
 			imageHeight: 55,
 			url: "https://www.gov.pl/web/gugik",

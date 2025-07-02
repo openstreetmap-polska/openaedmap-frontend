@@ -78,7 +78,7 @@
         "thanks_for_photo": "Merci d'avoir téléversé la photo. Elle devrait être visible bientôt."
     },
     "navbar": {
-        "created_with_<3_by": "créé avec ❤️ par",
+        "created_with_<3_by": "créé avec ❤ par",
         "about": "À propos",
         "visit_github": "Visitez notre dépôt GitHub",
         "visit_osmp_website": "Visiter le site web d'OpenStreetMap Pologne",
@@ -102,7 +102,6 @@
     },
     "partners": {
         "wroclaw_medical_university": "Université de médecine de Wrocław",
-        "acting": "agissant",
         "main_scientific_partner": "Le principal partenaire scientifique",
         "gugik": "Siège de la géodésie et de la cartographie en Pologne",
         "chief_geodesist": "Géodésien en chef de la Pologne",

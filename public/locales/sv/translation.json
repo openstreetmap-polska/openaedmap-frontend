@@ -1,7 +1,7 @@
 {
     "navbar": {
         "help_translating": "Hjälp med att översätta",
-        "created_with_<3_by": "Skapad med ❤️ av",
+        "created_with_<3_by": "Skapad med ❤ av",
         "visit_osmp_website": "Besök OpenStreetMap Poland's hemsida",
         "login": "Logga in med OSM-konto",
         "logout": "Logga ut",
@@ -100,7 +100,6 @@
     "partners": {
         "e_health_centre": "e-hälsocenter",
         "honorary_patronage": "Hedersbeskydd",
-        "acting": "ställföreträdande",
         "main_scientific_partner": "Huvudsakliga vetenskapliga partnern",
         "warsaw_university_of_technology": "Warszawas tekniska universitet",
         "wroclaw_medical_university": "Wroclaw medicinska universitet",

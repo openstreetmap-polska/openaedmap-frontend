@@ -10,7 +10,7 @@
         "permit": "Zugang mit Erlaubnis der Eigentümer"
     },
     "navbar": {
-        "created_with_<3_by": "erstellt mit ❤️ von",
+        "created_with_<3_by": "erstellt mit ❤ von",
         "visit_github": "Besuche unser GitHub-Projekt",
         "visit_osmp_website": "OpenStreetMap Polens Website besuchen",
         "login": "Mit OSM-Konto anmelden",
@@ -106,7 +106,6 @@
         "main_scientific_partner": "Wichtigster wissenschaftlicher Partner",
         "honorary_patronage": "Ehrenamtliche Unterstützung",
         "gugik": "Hauptamt für Geodäsie und Kartographie in Polen",
-        "acting": "handelnd",
         "e_health_centre": "E-Gesundheitszentrum",
         "warsaw_university_of_technology": "Technische Universität Warschau"
     },
