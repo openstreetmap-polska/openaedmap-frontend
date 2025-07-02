@@ -6,7 +6,7 @@ const accessToColourMapping = {
 	private: "has-background-info has-text-white-ter",
 	permit: "has-background-info has-text-white-ter",
 	permissive: "has-background-success has-text-white-ter",
-	customers: "has-background-yellow has-text-black-ter",
+	customers: "has-background-warning has-text-black-ter",
 	default: "has-background-grey has-text-white-ter",
 };
 

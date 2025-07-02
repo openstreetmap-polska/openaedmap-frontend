@@ -20,6 +20,7 @@ interface AppContextType {
 	setCountriesData: (countriesData: Array<Country>) => void;
 	countriesDataLanguage: string;
 	setCountriesDataLanguage: (language: string) => void;
+	darkTheme: boolean;
 }
 const defaultAppContext: AppContextType = {
 	authState: initialAuthState,
@@ -35,6 +36,7 @@ const defaultAppContext: AppContextType = {
 	setCountriesData: () => {},
 	countriesDataLanguage: "",
 	setCountriesDataLanguage: () => {},
+	darkTheme: false,
 };
 export const AppContext = React.createContext(defaultAppContext);
 export const useAppContext = () => useContext(AppContext);

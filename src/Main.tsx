@@ -29,6 +29,7 @@ function Main() {
 	const [countriesData, setCountriesData] = useState<Array<Country>>([]);
 	const [countriesDataLanguage, setCountriesDataLanguage] =
 		useState<string>("");
+	const [darkTheme, setDarkTheme] = useState<boolean>(false);
 
 	const toggleRightSidebarShown = () =>
 		setRightSidebarShown(!rightSidebarShown);
@@ -79,6 +80,18 @@ function Main() {
 		}
 	}, [handleLogIn]);
 
+	useEffect(() => {
+		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		setDarkTheme(mediaQuery.matches);
+		const handleThemeChange = (event: MediaQueryListEvent) => {
+			setDarkTheme(event.matches);
+		};
+		mediaQuery.addEventListener("change", handleThemeChange);
+		return () => {
+			mediaQuery.removeEventListener("change", handleThemeChange);
+		};
+	}, []);
+
 	const handleLogOut = useCallback(() => {
 		auth.logout();
 		setOsmUsername("");
@@ -104,6 +117,7 @@ function Main() {
 			setCountriesData,
 			countriesDataLanguage,
 			setCountriesDataLanguage,
+			darkTheme,
 		}),
 		[
 			authState,
@@ -114,6 +128,7 @@ function Main() {
 			handleLogOut,
 			countriesDataLanguage,
 			countriesData,
+			darkTheme,
 		],
 	);
 	useEffect(() => {

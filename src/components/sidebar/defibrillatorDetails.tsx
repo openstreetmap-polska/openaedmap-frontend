@@ -270,14 +270,14 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 					<CheckDateField check_date={data.tags.check_date} />
 				</Card.Content>
 				<Card.Footer>
-					<Card.Footer.Item className="has-background-white-ter">
+					<Card.Footer.Item className="has-background-main-ter">
 						<CopyUrlButton />
 						<ViewButton osmId={data.osmId} />
 						<EditButton osmId={data.osmId} />
 					</Card.Footer.Item>
 				</Card.Footer>
 				<Card.Footer>
-					<Card.Footer.Item className="has-background-white-ter">
+					<Card.Footer.Item className="has-background-main-ter">
 						<OpenStreetMapNavigationButton lat={data.lat} lon={data.lon} />
 						<GoogleMapsNavigationButton lat={data.lat} lon={data.lon} />
 					</Card.Footer.Item>

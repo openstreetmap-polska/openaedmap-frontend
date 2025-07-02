@@ -17,7 +17,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 	const { t } = useTranslation();
 	const language = useLanguage();
 	return (
-		<Navbar color="success" className="has-background-success">
+		<Navbar className="has-background-success">
 			<Navbar.Brand>
 				<Navbar.Item renderAs="a" href="/" pr={1} pl={1}>
 					<img

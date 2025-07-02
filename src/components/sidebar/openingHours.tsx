@@ -2,7 +2,6 @@ import type { argument_hash } from "opening_hours";
 import OpeningHours from "opening_hours";
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
-
 import { useLanguage } from "~/i18n";
 import SpanNoData from "./spanNoData";
 
@@ -89,9 +88,7 @@ const CurrentlyOpenStatus: FC<OpeningHoursProps> = ({
 	)}`;
 	return (
 		<sup className="pl-1 is-lowercase">
-			<span
-				className={isOpen ? "has-text-primary-dark" : "has-text-danger-dark"}
-			>
+			<span className={isOpen ? "has-text-success" : "has-text-danger"}>
 				{currentlyOpenText}
 			</span>
 		</sup>

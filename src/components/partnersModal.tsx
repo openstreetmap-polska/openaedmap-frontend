@@ -58,7 +58,7 @@ const PartnersModal: FC = () => {
 					{partners.map((partner) => (
 						<div className="media partner-row" key={partner.name}>
 							<div className="media-left">
-								<figure className="image">
+								<figure className="image has-background-white">
 									<img
 										alt={partner.name}
 										src={`/img/${partner.image}`}
@@ -81,7 +81,7 @@ const PartnersModal: FC = () => {
 				</div>
 			</section>
 			<footer className="modal-card-foot p-2">
-				<div className="notification is-info is-light">
+				<div className="notification is-info is-light has-background-info">
 					{t("modal.become_openaedmap_partner")}
 					&nbsp;
 					<a

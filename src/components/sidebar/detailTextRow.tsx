@@ -7,7 +7,7 @@ const DetailTextRow: FC<DetailTextRowProps> = ({ translationId, text }) => {
 	const labelText = `${t(translationId)}: `;
 	return (
 		<div>
-			<p className="has-text-weight-light has-text-grey mb-1">{labelText}</p>
+			<p className="has-text-weight-light has-text-text mb-1">{labelText}</p>
 			{text ? (
 				<span className="has-text-weight-medium">{text}</span>
 			) : (
