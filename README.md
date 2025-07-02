@@ -79,7 +79,7 @@ Builds the app for production to the `build` folder.
 
 Use `npx @beyondtracks/spritezero-cli ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons`
 
-#### `bun run css-build`
+#### `bun css-build`
 
 Build `sass/mystyles.scss` file into `src/mystyles.css` which is included in `index.tsc` and has the adjusted bulma css for the entire app.
 

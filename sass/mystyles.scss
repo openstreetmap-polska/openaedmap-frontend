@@ -1,3 +1,4 @@
+@use "sass:meta";
 @charset "utf-8";
 
 // https://bulma.io/documentation/customize/concepts/
@@ -8,7 +9,7 @@ $navbar-breakpoint: 1344px;
 
 @import "../src/index.css";
 @import "../src/components/map.css";
-@import "../node_modules/bulma/bulma.sass";
+@include meta.load-css("../node_modules/bulma/bulma.scss");
 @import "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css";
 // Update Bulma's derived variables
 // @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
