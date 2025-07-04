@@ -1,15 +1,16 @@
 {
     "access": {
         "yes": "Javno dostopen",
-        "private": "Dostopen z dovoljenjem lastnika",
+        "private": "Zasebno dostopen",
         "customers": "Dostopno samo za stranke",
         "no": "Nedostopen",
         "permissive": "Javno dostopno do nadaljnega",
         "unknown": "Dostopnost ni znana",
-        "unknownTag": "Ni oznake dostopnosti ali pa ni ena od zgoraj naštetih"
+        "unknownTag": "Ni oznake dostopnosti ali pa ni ena od zgoraj naštetih",
+        "permit": "Dostopen z dovoljenjem lastnika"
     },
     "navbar": {
-        "created_with_<3_by": "z ❤️ ustvaril",
+        "created_with_<3_by": "z ❤ ustvaril",
         "visit_github": "Obiščite naš GitHub repozitorij",
         "visit_osmp_website": "Obiščite spletno stran OpenStreetMap Poljska",
         "login": "Vpis z računom OSM",
@@ -96,16 +97,22 @@
         "thanks_for_photo": "Hvala za poslano fotografijo. Kmalu bi morala biti vidna."
     },
     "photo": {
-        "license": "Vse fotograije defibrilatorjev AED pri nas imajo dovoljenje Creative Commons Zero (CC0 v1.0). S tem, ko nam pošljete vašo fotografijo se strinjate s temi licenčnimi pogoji.",
+        "license": "Vse fotograije defibrilatorjev AED gostujemo pri nas in imajo dovoljenje Creative Commons Zero (CC0 v1.0). S tem, ko nam pošljete vašo fotografijo se strinjate s temi licenčnimi pogoji.",
         "remove": "Odstrani fotografijo",
         "upload": "Pošlji fotografijo",
         "license_short_description": "Skratka, to pomeni, da fotografije lahko uporablja kdorkoli za kakršenkoli namen. Navedba vira ni potrebna.",
         "report": "Prijavi fotografijo"
     },
     "partners": {
-        "honorary_patronage": "Častni pokrovitelj"
+        "honorary_patronage": "Častni pokrovitelj",
+        "e_health_centre": "Center e-zdravja",
+        "chief_geodesist": "Glavni geodet Poljske",
+        "main_scientific_partner": "Glavni znanstveni partner"
     },
     "common": {
         "loading": "Nalaganje..."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - zemljevid defibrilatorjev"
     }
 }
