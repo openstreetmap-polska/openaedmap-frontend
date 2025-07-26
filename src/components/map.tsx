@@ -241,8 +241,8 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 					enableHighAccuracy: true,
 				},
 				fitBoundsOptions: {
-      				animate: false,
-    			}
+					animate: false,
+				},
 			}),
 			controlsLocation,
 		);
