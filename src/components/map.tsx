@@ -240,6 +240,9 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 				positionOptions: {
 					enableHighAccuracy: true,
 				},
+				fitBoundsOptions: {
+      				animate: false,
+    			}
 			}),
 			controlsLocation,
 		);
