@@ -65,7 +65,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 				<LanguageSwitcher />
 				<button
 					type="button"
-					tabIndex="0"
+					tabIndex={0}
 					aria-label="menu"
 					aria-expanded="false"
 					onClick={() => {
