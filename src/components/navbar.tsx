@@ -63,20 +63,22 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 					</a>
 				</Navbar.Item>
 				<LanguageSwitcher />
-				<Navbar.Burger
-					id="navbarBurger"
+				<button
+					type="button"
+					tabIndex="0"
+					aria-label="menu"
+					aria-expanded="false"
 					onClick={() => {
 						setIsActive(!isActive);
 					}}
-					className={`${isActive ? "is-active" : ""}`}
-					aria-label="menu"
-					aria-expanded="false"
+					className={`${isActive ? "is-active" : ""} navbar-burger`}
 					data-target="navbarMenu"
 				>
 					<span aria-hidden="true" />
 					<span aria-hidden="true" />
 					<span aria-hidden="true" />
-				</Navbar.Burger>
+					<span aria-hidden="true" />
+				</button>
 			</Navbar.Brand>
 			<Navbar.Menu
 				className={`pr-2 has-background-success ${isActive ? "is-active" : ""}`}
