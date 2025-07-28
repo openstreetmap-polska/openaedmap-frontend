@@ -35,3 +35,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #f2efe9;
 }
+
+a.navbar-item:hover {
+  --bulma-navbar-item-background-a: 0 !important;
+}
