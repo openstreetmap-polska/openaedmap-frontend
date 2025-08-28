@@ -16,7 +16,7 @@ export default function initSentry() {
 function shouldEnableSentry(): boolean {
 	const doNotTrack =
 		navigator.doNotTrack === "1" || navigator.doNotTrack === "true";
-	// @ts-ignore
+	// @ts-expect-error
 	const globalPrivacyControl = navigator.globalPrivacyControl === true;
 	return !doNotTrack && !globalPrivacyControl;
 }

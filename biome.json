@@ -30,6 +30,9 @@
 				"useNumberNamespace": "error",
 				"noInferrableTypes": "error",
 				"noUselessElse": "error"
+			},
+			"complexity": {
+				"noImportantStyles": "off"
 			}
 		}
 	}

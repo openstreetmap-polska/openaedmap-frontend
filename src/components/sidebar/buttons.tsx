@@ -92,9 +92,8 @@ export function CloseSidebarButton({
 	// Button seems to have issues with delete class, using button instead
 	return (
 		<button
-			id="sidebar-card-close-button"
 			aria-label={t("sidebar.close")}
-			className="delete is-medium is-pulled-right"
+			className="delete is-medium is-pulled-right sidebar-card-close-button"
 			onClick={closeSidebarFunction}
 			type="button"
 		/>
@@ -103,15 +102,17 @@ export function CloseSidebarButton({
 
 export function AddAedButton({
 	nextStep,
+	formId,
 }: {
 	nextStep: (event: React.MouseEvent) => void;
+	formId: string;
 }) {
 	const { t } = useTranslation();
 	return (
 		<Button
 			color="success"
 			fullwidth
-			form="add_aed"
+			form={formId}
 			onClick={nextStep}
 			className="has-text-white"
 		>

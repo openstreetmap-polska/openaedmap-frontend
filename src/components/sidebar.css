@@ -84,14 +84,14 @@
 	position: relative;
 }
 
-#sidebar-card-close-button {
+.sidebar-card-close-button {
 	position: absolute;
 	top: 8px;
 	right: 8px;
 }
 
 @media (max-width: 500px) {
-	#sidebar-header {
+	.sidebar-header {
 		border-top: 0;
 		border-left: 0;
 		border-right: 0;
@@ -99,7 +99,7 @@
 	}
 }
 
-#sidebar-caption {
+.sidebar-caption {
 	max-width: 78%;
 }
 

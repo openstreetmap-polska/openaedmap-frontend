@@ -144,12 +144,11 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 		: "";
 
 	return (
-		<div className="sidebar" id="sidebar-div">
+		<div className="sidebar sidebar-div">
 			<Card>
 				<Card.Header
-					id="sidebar-header"
 					shadowless
-					className={accessColourClass(data.tags.access)}
+					className={`sidebar-header ${accessColourClass(data.tags.access)}`}
 					alignItems="center"
 				>
 					<Image
@@ -160,10 +159,7 @@ const DefibrillatorDetails: FC<DefibrillatorDetailsProps> = (props) => {
 						alt=""
 						size={48}
 					/>
-					<span
-						className="is-size-5 py-2 has-text-weight-light"
-						id="sidebar-caption"
-					>
+					<span className="is-size-5 py-2 has-text-weight-light sidebar-caption">
 						{t("sidebar.caption_info") + accessText}
 					</span>
 					<CloseSidebarButton closeSidebarFunction={closeSidebar} />

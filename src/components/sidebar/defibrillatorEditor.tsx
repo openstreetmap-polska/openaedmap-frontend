@@ -1,6 +1,6 @@
 import type { Marker } from "maplibre-gl";
 import type React from "react";
-import { type FC, useState } from "react";
+import { type FC, useId, useState } from "react";
 import { Card, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";
@@ -46,6 +46,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
 	);
 	const todayDate = new Date().toISOString().substring(0, 10);
 	const [checkDate, setCheckDate] = useState<string>(todayDate);
+	const formId = useId();
 
 	const parseTags: () => Record<string, string> = () => {
 		const tags = { ...initialTags };
@@ -144,11 +145,10 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
 		}
 	};
 	return (
-		<div className="sidebar" id="sidebar-div">
+		<div className="sidebar sidebar-div">
 			<Card>
 				<Card.Header
-					id="sidebar-header"
-					className="has-background-grey"
+					className="has-background-grey sidebar-header"
 					shadowless
 					alignItems="center"
 				>
@@ -171,7 +171,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
 				</Card.Header>
 
 				<Card.Content py={3} marginless className="content">
-					<form id="add_aed">
+					<form id={formId}>
 						<AccessFormField access={access} setAccess={setAccess} />
 						<IndoorFormField
 							indoor={indoor}
@@ -194,7 +194,7 @@ const DefibrillatorEditor: FC<DefibrillatorEditorProps> = ({
 				<Card.Footer>
 					<Card.Footer.Item className="has-background-main-ter">
 						{newAED ? (
-							<AddAedButton nextStep={sendFormData} />
+							<AddAedButton nextStep={sendFormData} formId={formId} />
 						) : (
 							<SaveAedButton nextStep={sendFormData} />
 						)}

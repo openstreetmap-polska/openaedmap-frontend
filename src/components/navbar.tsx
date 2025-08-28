@@ -1,6 +1,6 @@
 import { mdiMapLegend } from "@mdi/js";
 import Icon from "@mdi/react";
-import React, { type FC } from "react";
+import React, { type FC, useId } from "react";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
 import ReactStoreBadges from "~/3rdparty/reactStoreBadges";
@@ -16,6 +16,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 	const [isActive, setIsActive] = React.useState(false);
 	const { t } = useTranslation();
 	const language = useLanguage();
+	const navbarMenuId = useId();
 	return (
 		<Navbar className="has-background-success">
 			<Navbar.Brand>
@@ -72,7 +73,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 						setIsActive(!isActive);
 					}}
 					className={`${isActive ? "is-active" : ""} navbar-burger`}
-					data-target="navbarMenu"
+					data-target={navbarMenuId}
 				>
 					<span aria-hidden="true" />
 					<span aria-hidden="true" />
@@ -82,7 +83,7 @@ const SiteNavbar: FC<SiteNavbarProps> = ({ toggleSidebarShown }) => {
 			</Navbar.Brand>
 			<Navbar.Menu
 				className={`pr-2 has-background-success ${isActive ? "is-active" : ""}`}
-				id="navbarMenu"
+				id={navbarMenuId}
 			>
 				<Navbar.Container align="right">
 					<LogInButton inNavBar />

@@ -43,7 +43,7 @@ function parseOpeningHours(
 	try {
 		const oh = new OpeningHours(openingHours, null, 2);
 		const config = getOpeningHoursConfig(language);
-		// @ts-ignore
+		// @ts-expect-error
 		return oh.prettifyValue({ conf: config });
 	} catch (error) {
 		console.error(`Error when parsing opening hours: ${error}`);
