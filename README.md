@@ -80,7 +80,7 @@ Builds the app for production to the `build` folder.
 Use `npx @beyondtracks/spritezero-cli ./public/img/sprite ./src/marker_icons; spritezero --ratio=2 ./public/img/sprite@2x ./src/marker_icons; spritezero --ratio=4 ./public/img/sprite@4x ./src/marker_icons`
 
 #### Upgrading dependencies
-`bunx npm-check-updates -ui` is recommended
+`bun update --interactive` is recommended
 
 # Data source
 Map and AED locations are from [OpenStreetMap](https://www.openstreetmap.org/copyright)
