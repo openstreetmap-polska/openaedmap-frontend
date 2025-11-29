@@ -94,25 +94,38 @@
         "about_project": "OpenAEDMap je projekt zbiranja in prikaza odprtih podatkov vseh Avtomatskih eksternih defibrilatorjev (AED) po svetu. Ta spletna stran sloni na podatkih OpenStreetMap in je rezultat dela združenja OpenStreetMap Poljske. Narejena je bila leta 2022 kot oblikovna prenova Poljske spletne strani AED Mapa.",
         "become_openaedmap_partner": "Ali želite postati partner projekta OpenAEDMap?",
         "contact_us": "Kontaktirajte nas",
-        "thanks_for_photo": "Hvala za poslano fotografijo. Kmalu bi morala biti vidna."
+        "thanks_for_photo": "Hvala za poslano fotografijo. Kmalu bi morala biti vidna.",
+        "thanks_for_report": "Hvala za prijavo. Administratorji jo bodo pregledali v kratkem."
     },
     "photo": {
         "license": "Vse fotograije defibrilatorjev AED gostujemo pri nas in imajo dovoljenje Creative Commons Zero (CC0 v1.0). S tem, ko nam pošljete vašo fotografijo se strinjate s temi licenčnimi pogoji.",
         "remove": "Odstrani fotografijo",
         "upload": "Pošlji fotografijo",
         "license_short_description": "Skratka, to pomeni, da fotografije lahko uporablja kdorkoli za kakršenkoli namen. Navedba vira ni potrebna.",
-        "report": "Prijavi fotografijo"
+        "report": "Prijavi fotografijo",
+        "send_report": "Pošlji prijavo",
+        "report_long_text": "Fotografijo lahko prijaviš če je slabe kvalitete, ne prikazuje lokacije AED ali je neprimerna na kakršenkoli način. Administratorji strani bodo pregledali prijavo."
     },
     "partners": {
         "honorary_patronage": "Častni pokrovitelj",
         "e_health_centre": "Center e-zdravja",
         "chief_geodesist": "Glavni geodet Poljske",
-        "main_scientific_partner": "Glavni znanstveni partner"
+        "main_scientific_partner": "Glavni znanstveni partner",
+        "gugik": "Glavna pisarna Geodezije in Kartografije na Poljskem",
+        "warsaw_university_of_technology": "Univerza za Tehnologijo Varšava",
+        "wroclaw_medical_university": "Zdravstvena Univerza Wroclaw"
     },
     "common": {
         "loading": "Nalaganje..."
     },
     "meta": {
-        "website_title": "OpenAEDMap - zemljevid defibrilatorjev"
+        "website_title": "OpenAEDMap - zemljevid defibrilatorjev",
+        "meta_title": "Odprt zemljevid Avtomatskih Eksternih Defibrilatorjev (AED)",
+        "meta_description": "Zemljevid AED naprav (Avtomatskih Eksternih Defibrilatorjev) osnovan na podatkih OpenStreetMap. Ta spletna stran olajša iskanje AED naprav v bližini, kar je lahko neprecenljivo v življensko-nevarnih situacijah. AED so naprave, ki pomagajo pri temeljnih postopkih oživljanja pri osebah v srčnem zastoju. S tem zemljevidom lahko vsak najde najbližji defibrilator in pomaga sočloveku v stiski."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL je izklopljen ali onemogočen v tem brskalniku.",
+        "required_for_using_openaedmap": "WebGL je potreben za uporabo OpenAEDMap zemljevida.",
+        "please_check_instruction_at": "Navodila za vklop WebGL so dostopna na"
     }
 }
