@@ -101,12 +101,12 @@
         "loading": "Cargando..."
     },
     "partners": {
-        "honorary_patronage": "Patrocinador honorífico",
+        "honorary_patronage": "Patrocinadores honoríficos",
         "main_scientific_partner": "El principal colaborador científico",
-        "wroclaw_medical_university": "Universidad de Médicina de Breslavia",
-        "gugik": "Sede de Geodesia y Cartografía en Polonia",
+        "wroclaw_medical_university": "Universidad de Medicina de Breslavia",
+        "gugik": "Oficina Central de Geodesia y Cartografía de Polonia",
         "chief_geodesist": "Jefe Geodésico de Polonia",
-        "e_health_centre": "Centro eSalud",
+        "e_health_centre": "Centro e-Salud",
         "warsaw_university_of_technology": "Universidad Tecnológica de Varsovia"
     },
     "photo": {
