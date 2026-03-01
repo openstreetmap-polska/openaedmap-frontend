@@ -1,1 +1,131 @@
-{}
+{
+    "access": {
+        "yes": "Offentlig tilgjengelig",
+        "permit": "Tilgjengelig med eiers tillatelse",
+        "customers": "Tilgjengelig kun for kunder",
+        "no": "Utilgjengelig",
+        "unknown": "Tilgang ukjent",
+        "unknownTag": "Ingen tilgangstag eller samsvarer ikke med alternativene over",
+        "permissive": "Offentlig tilgjengelig inntil videre",
+        "private": "Privat tilgjengelig"
+    },
+    "navbar": {
+        "created_with_<3_by": "laget med ❤ av",
+        "visit_github": "Besøk GitHub-repositoriet vårt",
+        "visit_osmp_website": "Besøk nettstedet til OpenStreetMap Polen",
+        "login": "Logg inn med OSM-konto",
+        "logout": "Logg ut",
+        "about": "Om",
+        "help_translating": "Bidra med oversettelser",
+        "hosted_by": "på infrastruktur fra"
+    },
+    "sidebar": {
+        "close": "Lukk sidepanelet",
+        "csv": "CSV",
+        "download_title": "Last ned AED-data registrert i OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Kartforklaring",
+        "caption_info": "AED",
+        "no_data": "Ingen data",
+        "indoor": "Plassert innendørs",
+        "level": "Etasje",
+        "location": "Plassering",
+        "opening_hours": "Åpningstider",
+        "description": "Beskrivelse",
+        "contact_number": "Telefonnummer",
+        "operator": "Driftsansvarlig",
+        "note": "Merknad",
+        "edit": "Rediger",
+        "edit_in_osm": "Rediger i OSM",
+        "view": "Vis i OSM",
+        "copy_url": "Kopier URL",
+        "add_defibrillator": "Legg til hjertestarter",
+        "openstreetmap_navigation": "Navigasjon i OpenStreetMap",
+        "google_maps_navigation": "Navigasjon i Google Maps",
+        "edit_defibrillator": "Rediger hjertestarter",
+        "world": "Verden",
+        "find_location": "Finn sted",
+        "verification_date": "Befaringsdato"
+    },
+    "form": {
+        "optional_field": "Valgfritt felt",
+        "marker_popup_text": "Flytt markøren til hjertestarterens plassering",
+        "is_indoor": "Er den plassert innendørs?",
+        "inside": "Innendørs",
+        "level": "Etasje",
+        "outside": "Utendørs",
+        "location": "Beskriv plasseringen",
+        "location_example": "For eksempel: På veggen ved inngangen",
+        "accessibility": "Tilgang"
+    },
+    "footer": {
+        "add": "Legg til",
+        "add_aed": "Legg til AED",
+        "cancel": "Avbryt",
+        "continue": "Fortsett",
+        "save_aed": "Lagre AED",
+        "partners": "Prosjektets samarbeidspartnere"
+    },
+    "opening_hours": {
+        "24_7": "Døgnåpent",
+        "open": "Åpen",
+        "closed": "Stengt"
+    },
+    "indoor": {
+        "yes": "Ja",
+        "no": "Nei"
+    },
+    "osmp": "OpenStreetMap Polen",
+    "modal": {
+        "aed_added_successfully": "AED er lagt til.",
+        "aed_updated_successfully": "AED oppdatert.",
+        "available_in_osm": "Tilgjengelig i OpenStreetMap via denne URL-en:",
+        "should_appear_soon": "Objektet vil vises på kartet innen 60 minutter.",
+        "error_occurred": "Det oppstod en feil",
+        "title": "Informasjon",
+        "need_to_login": "For å legge til objekter må du logge inn med en OpenStreetMap-konto.",
+        "click_login_button": "Lukk dette vinduet og klikk på innloggingsknappen øverst for å logge inn.",
+        "need_more_zoom": "For å legge til objekter må du zoome inn slik at plasseringen du angir er nøyaktig.",
+        "current_zoom": "Nåværende zoomnivå:",
+        "zoom_need_to_be": "Zoomnivået må være minst 15.",
+        "about_project": "OpenAEDMap er et åpent dataprosjekt som viser alle automatiske hjertestartere (AED) rundt om i verden. Nettstedet er basert på data fra OpenStreetMap og er et resultat av arbeidet til OpenStreetMap Polen. Det ble opprettet i 2022 etter at den polske nettsiden AED Mapa fikk et nytt design.",
+        "about_osm": "OpenStreetMap (OSM) er som Wikipedia for kart. Det er fritt tilgjengelig for alle, og hvem som helst kan legge til objekter på kartet. Du kan bruke OSM-kontoen din til å legge til hjertestartere direkte fra denne siden ved hjelp av et enkelt skjema.",
+        "create_account": "Du kan også bidra! Bare opprett en gratis konto på ",
+        "become_openaedmap_partner": "Vil du bli en samarbeidspartner med OpenAEDMap?",
+        "contact_us": "Kontakt oss",
+        "thanks_for_photo": "Takk for at du lastet opp bildet. Det vil snart være synlig.",
+        "thanks_for_report": "Takk for at du sendte en rapport. Den vil bli gjennomgått av nettstedets administratorer."
+    },
+    "common": {
+        "loading": "Laster..."
+    },
+    "photo": {
+        "upload": "Last opp bilde",
+        "remove": "Fjern bilde",
+        "report": "Rapporter bilde",
+        "send_report": "Send rapport",
+        "report_long_text": "Du kan rapportere bildet hvis det er av dårlig kvalitet, ikke viser hvor hjertestarteren er, eller på annen måte er upassende. Administratorene på nettstedet vil gjennomgå rapporten.",
+        "license": "Alle bilder av hjertestartere hostes av oss og er lisensiert under Creative Commons Zero (CC0 v1.0). Ved å laste opp et bilde godtar du vilkårene i denne lisensen.",
+        "license_short_description": "Kort sagt betyr dette at bildet kan brukes av hvem som helst til hvilket som helst formål. Kreditering er ikke nødvendig."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap – Kart over hjertestartere",
+        "meta_title": "Åpent kart over automatiske hjertestartere (AED)",
+        "meta_description": "Kart over hjertestartere (AED - automatiske eksterne defibrillatorer) basert på data fra OpenStreetMap. Nettstedet vårt gjør det enkelt å finne en hjertestarter i nærheten av deg, noe som kan være svært nyttig i livstruende situasjoner. Hjertestartere er apparater som brukes ved hjerte- og lungeredning av personer med hjertestans. Med kartet vårt kan hvem som helst raskt finne nærmeste hjertestarter og hjelpe noen i nød."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL er deaktivert eller støttes ikke av nettleseren din.",
+        "required_for_using_openaedmap": "WebGL er nødvendig for å bruke OpenAEDMap.",
+        "please_check_instruction_at": "Se veiledningen for hvordan du aktiverer WebGL på"
+    },
+    "partners": {
+        "e_health_centre": "E-helsesenter",
+        "honorary_patronage": "Ærespatronat",
+        "gugik": "Polens hovedkontor for geodesi og kartografi",
+        "chief_geodesist": "Polens sjefgeodet",
+        "main_scientific_partner": "Hovedvitenskapelig partner",
+        "warsaw_university_of_technology": "Warsaw University of Technology",
+        "wroclaw_medical_university": "Wroclaw Medical University"
+    }
+}
