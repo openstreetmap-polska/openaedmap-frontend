@@ -13,7 +13,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	ja: { nativeName: "日本語" },
 	ko: { nativeName: "한국어" },
 	nl: { nativeName: "Nederlands" },
-	nb: { nativeName: "Norsk (Bokmål)" },
+	'nb_NO': { nativeName: "Norsk (Bokmål)" },
 	pdt: { nativeName: "Plautdietsch" },
 	pl: { nativeName: "Polski" },
 	pt: { nativeName: "Português" },
