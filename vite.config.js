@@ -18,7 +18,7 @@ const htmlPlugin = async (env) => {
 	return {
 		name: "html-transform",
 		async transformIndexHtml(html) {
-			const currentLang = html.match(/<html lang="([a-zA-Z-]+)"/)[1];
+			const currentLang = html.match(/<html lang="([a-zA-Z_-]+)"/)[1];
 			const translationsTarget = await getTranslatedStrings(currentLang).catch(
 				(e) => console.error(e),
 			);
