@@ -1,3 +1,3 @@
-Source of images: https://github.com/yjb94/google-play-badge-svg/tree/master/img
+Source of images: https://partnermarketinghub.withgoogle.com/brands/google-play/visual-identity/badge-guidelines/?folder=86718
 
 Missing icons are symlinked to en.svg
