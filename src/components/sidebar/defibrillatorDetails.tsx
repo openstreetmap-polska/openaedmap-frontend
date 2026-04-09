@@ -108,6 +108,7 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 							visible: true,
 							type: ModalType.NeedToLogin,
 						});
+						return;
 					}
 					setSidebarAction(SidebarAction.uploadPhoto);
 				}}

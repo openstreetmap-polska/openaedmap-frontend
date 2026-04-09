@@ -121,6 +121,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
 												type: ModalType.Error,
 												errorMessage,
 											});
+											return;
 										}
 										const fd = new FormData();
 										fd.append("node_id", data.osmId);

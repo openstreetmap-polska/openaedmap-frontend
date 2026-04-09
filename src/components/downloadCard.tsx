@@ -27,11 +27,14 @@ export default function DownloadCard() {
 		}
 		return country.names.default;
 	}
-	const sortedCountriesByName = countriesData.sort((a: Country, b: Country) => {
-		if (a.code === worldCountryCode) return -1;
-		if (b.code === worldCountryCode) return 1;
-		return countryName(a) < countryName(b) ? -1 : 1;
-	});
+	// copy countriesData, sort modifies array
+	const sortedCountriesByName = [...countriesData].sort(
+		(a: Country, b: Country) => {
+			if (a.code === worldCountryCode) return -1;
+			if (b.code === worldCountryCode) return 1;
+			return countryName(a) < countryName(b) ? -1 : 1;
+		},
+	);
 	const [selectedCountryCode, setSelectedCountryCode] =
 		useState<string>(worldCountryCode);
 	const selectedCountry = countriesData.find(

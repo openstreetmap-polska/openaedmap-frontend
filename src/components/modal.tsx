@@ -107,7 +107,7 @@ const ModalContent: FC = () => {
 				</div>
 			);
 		case ModalType.Error: {
-			const errorText = `${t("modal.error_occurred")}: $${errorMessage}`;
+			const errorText = `${t("modal.error_occurred")}: ${errorMessage}`;
 			return <p className="pb-2">{errorText}</p>;
 		}
 		case ModalType.Partners:
