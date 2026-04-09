@@ -7,7 +7,8 @@
 			"!**/build",
 			"!**/public/locales",
 			"!**/public/img",
-			"!**/coverage"
+			"!**/coverage",
+			"!**/langs"
 		]
 	},
 	"assist": { "actions": { "source": { "organizeImports": "on" } } },

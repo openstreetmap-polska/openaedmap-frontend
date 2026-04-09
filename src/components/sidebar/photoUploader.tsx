@@ -110,7 +110,7 @@ const PhotoUpload: FC<DefibrillatorDetailsProps> = (props) => {
 										const url = auth?.options().url;
 										const storageKey = `${url}oauth2_access_token`;
 										const oauth2AccessToken = localStorage.getItem(storageKey);
-										if (!oauth2AccessToken || !auth || !auth.authenticated()) {
+										if (!oauth2AccessToken || !auth?.authenticated()) {
 											const errorMessage =
 												`auth.authenticated()=${auth?.authenticated()} ` +
 												`<br> oauth2AccessToken=${oauth2AccessToken}`;

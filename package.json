@@ -39,7 +39,7 @@
 		"test": "bun test"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.2.2",
+		"@biomejs/biome": "2.4.11",
 		"@sentry/vite-plugin": "^4.2.0",
 		"@types/bun": "^1.2.21",
 		"@types/node": "^24.3.0",
