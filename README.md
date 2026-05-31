@@ -1,4 +1,4 @@
-[![Translation status](https://hosted.weblate.org/widgets/openaedmap/-/svg-badge.svg)](https://hosted.weblate.org/engage/openaedmap/)
+[![Translation status](https://hosted.weblate.org/widgets/openaedmap/-/svg-badge.svg)](https://hosted.weblate.org/engage/openaedmap/) [![CI](https://github.com/openstreetmap-polska/openaedmap-frontend/actions/workflows/ci_test.yml/badge.svg)](https://github.com/openstreetmap-polska/openaedmap-frontend/actions/workflows/ci_test.yml)
 
 # Open AED Map
 
@@ -33,7 +33,7 @@ Language with multiple variants needs extra suffix e.g. zh-Hant for Traditional 
 
 Status:
 
-[![Translation status](https://hosted.weblate.org/widgets/openaedmap/-/multi-auto.svg)](https://hosted.weblate.org/engage/openaedmap/)
+[![Translation status](https://hosted.weblate.org/widgets/openaedmap/-/multi-auto.svg)](https://hosted.weblate.org/engage/openaedmap/) [![CI](https://github.com/openstreetmap-polska/openaedmap-frontend/actions/workflows/ci_test.yml/badge.svg)](https://github.com/openstreetmap-polska/openaedmap-frontend/actions/workflows/ci_test.yml)
 
 ## Local environment
 
