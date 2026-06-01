@@ -5,6 +5,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	cy: { nativeName: "Cymraeg" },
 	de: { nativeName: "Deutsch" },
 	en: { nativeName: "English" },
+	"en-GB": { nativeName: "English (United Kingdom)" },
 	es: { nativeName: "Español" },
 	fi: { nativeName: "Suomi" },
 	fr: { nativeName: "Français" },
