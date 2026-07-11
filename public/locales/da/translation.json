@@ -1,1 +1,131 @@
-{}
+{
+    "access": {
+        "yes": "Offentligt tilgængelig",
+        "permit": "Tilgængelig med ejers tilladelse",
+        "private": "Privat tilgængelighed",
+        "customers": "Kun tilgængelig for kunder",
+        "no": "Ikke tilgængelig",
+        "unknown": "Ukendt tilgængelighed",
+        "unknownTag": "Ingen tilgængelighedsindikation eller uoverensstemmelse med ovenstående",
+        "permissive": "Offentligt tilgængelig indtil videre"
+    },
+    "navbar": {
+        "created_with_<3_by": "skabt med ❤ af",
+        "visit_github": "Besøg vores Github-repository",
+        "visit_osmp_website": "Besøg OpenStreetMap Polens hjemmeside",
+        "login": "Log ind med OSM-konto",
+        "logout": "Log ud",
+        "about": "Om",
+        "hosted_by": "drives af",
+        "help_translating": "Hjælp med oversættelse"
+    },
+    "sidebar": {
+        "close": "Luk sidepanel",
+        "csv": "CSV",
+        "download_title": "Download hjertestarter-data som er tilføjet OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Kortforklaring",
+        "caption_info": "Hjertestarter",
+        "no_data": "Ingen data",
+        "indoor": "Inde i bygning",
+        "level": "etage",
+        "location": "Placering",
+        "opening_hours": "Åbningstider",
+        "description": "Beskrivelse",
+        "contact_number": "Telefonnummer",
+        "operator": "Ejer",
+        "note": "Bemærkning",
+        "edit": "Rediger",
+        "edit_in_osm": "Rediger i OSM",
+        "view": "Vis i OSM",
+        "copy_url": "Kopier URL",
+        "add_defibrillator": "Tilføj defibrillator",
+        "openstreetmap_navigation": "OpenStreetMap-navigation",
+        "google_maps_navigation": "Google Maps-navigation",
+        "verification_date": "Sidst kontrolleret",
+        "edit_defibrillator": "Rediger defibrillator",
+        "world": "Verden",
+        "find_location": "Find et sted"
+    },
+    "form": {
+        "optional_field": "Valgfrit felt",
+        "marker_popup_text": "Flyt markering til hjertestarter-position",
+        "is_indoor": "Er inde i bygning?",
+        "inside": "Indenfor",
+        "level": "Etage",
+        "outside": "Udenfor",
+        "accessibility": "Tilgængelighed",
+        "location": "Beskriv placering",
+        "location_example": "For eksempel: På væggen nær indgangen"
+    },
+    "footer": {
+        "add": "Tilføj",
+        "add_aed": "Tilføj hjertestarter",
+        "cancel": "Annuller",
+        "continue": "Fortsæt",
+        "save_aed": "Gem hjertestarter",
+        "partners": "Projektpartnere"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Åben",
+        "closed": "Lukket"
+    },
+    "indoor": {
+        "yes": "Ja",
+        "no": "Nej"
+    },
+    "osmp": "OpenStreetMap Polen",
+    "modal": {
+        "aed_added_successfully": "Hjertestarter succesfuldt tilføjet.",
+        "aed_updated_successfully": "Hjertestarter succesfuldt opdateret.",
+        "available_in_osm": "Tilgængelig i OpenStreetMap med URL:",
+        "should_appear_soon": "Objektet burde fremgå af kortet inden for 60 minutter.",
+        "error_occurred": "En fejl opstod",
+        "title": "Information",
+        "need_to_login": "For at tilføje kortobjekter er du nødt til at logge ind med din OpenStreetMap-konto.",
+        "click_login_button": "Luk dette vindue og klik på log ind-knappen øverst for at logge ind.",
+        "need_more_zoom": "For at tilføje kortobjekter er du nødt til at zoome ind så placeringen du angiver er præcis.",
+        "current_zoom": "Nuværende zoom:",
+        "zoom_need_to_be": "Zoom skal mindst være på niveau 15.",
+        "about_project": "OpenAEDMap er et åben data-projekt som viser alle hjertestartere (Automated External Defibrillators eller AED) rundt om i verden. Hjemmesiden er baseret på data fra OpenStreetMap og er resultatet af foreningen OpenStreetMap Polens indsats. Den blev skabt i 2022 efter at den polske hjemmeside AED Mapa skiftede til et nyt design.",
+        "about_osm": "OpenStreetMap (OSM) er som Wikipedia for landkort. Det er tilgængeligt for brug af alle og enhver kan tilføje objekter til kortet. Du kan bruge din OSM-konto til at tilføje hjertestarter-placeringer direkte fra denne side via en simpel formular.",
+        "create_account": "Du kan også bidrage! Bare opret en gratis konto på ",
+        "become_openaedmap_partner": "Vil du være OpenAEDMap-partner?",
+        "contact_us": "Kontakt os",
+        "thanks_for_photo": "Tak for at uploade billedet. Det burde snart være synligt.",
+        "thanks_for_report": "Tak for at indsende en rapport. Den vil blive behandlet af hjemmesidens administratorer."
+    },
+    "partners": {
+        "honorary_patronage": "Beærede støttere",
+        "gugik": "Polens kontor for Geodæsi og Kartografi",
+        "chief_geodesist": "Ledende geodæt i Polen",
+        "main_scientific_partner": "Den primære videnskabelige partner",
+        "warsaw_university_of_technology": "Warszawas tekniske universitet",
+        "wroclaw_medical_university": "Wroclaws medicinske universitet",
+        "e_health_centre": "e-Sundhedscenter"
+    },
+    "common": {
+        "loading": "Indlæser..."
+    },
+    "photo": {
+        "upload": "Upload foto",
+        "remove": "Slet foto",
+        "report": "Rapporter foto",
+        "send_report": "Send rapport",
+        "report_long_text": "Du kan rapportere et foto hvis det er i dårlig kvalitet, ikke viser hjertestarterens placering eller på anden vis er upassende. Hjemmesidens administratorer vil behandle rapporten.",
+        "license": "Alle hjertestarter-fotos er gemt hos os og er licenseret under Creative Commons Zero (CC0 v1.0). Ved at uploade dit foto accepterer du betingelserne for denne licens.",
+        "license_short_description": "I korte træk betyder dette at fotoet kan bruges af enhver til alle formål. Ingen kreditering er nødvendig."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Kort over hjertestartere",
+        "meta_title": "Åbent kort over hjertestartere (Automatic External Defibrillator, AED)",
+        "meta_description": "Kort over hjertestartere (AED, Automatic External Defibrillator) baseret på OpenStreetMap-data. Vores hjemmeside gør det nemt at finde en hjertestarter nær dig, hvilket kan være meget hjælpsomt i livstruende situationer. Hjertestartere er apparater som bruges til at genoprette hjerterytmen hos mennesker der rammes af hjertestop. Med vores kort, kan enhver hurtigt finde den nærmeste hjertestarter og hjælpe nogen som er i nød."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL er deaktiveret eller ikke understøttet af din browser.",
+        "required_for_using_openaedmap": "WebGL er påkrævet for at bruge OpenAEDMap.",
+        "please_check_instruction_at": "Tjek venligst instruktionerne for at aktivere WebGL på"
+    }
+}
