@@ -3,6 +3,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	ca: { nativeName: "Català" },
 	cs: { nativeName: "Čeština" },
 	cy: { nativeName: "Cymraeg" },
+	da: { nativeName: "dansk" },
 	de: { nativeName: "Deutsch" },
 	en: { nativeName: "English" },
 	es: { nativeName: "Español" },
