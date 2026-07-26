@@ -27,7 +27,7 @@ function convertMinutesToMilliseconds(minutes: number): number {
 	return minutes * 60 * 1000;
 }
 
-function getOpeningHoursConfig(language: string): argument_hash {
+function getOpeningHoursConfig(language: string): Partial<argument_hash> {
 	return {
 		...openingHoursDefaultConfig,
 		locale: language,
