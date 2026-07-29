@@ -1,1 +1,131 @@
-{}
+{
+    "access": {
+        "yes": "Opið öllum",
+        "permit": "Aðgengilegt með leyfi eiganda",
+        "private": "Einkaaðgangur",
+        "customers": "Aðgengilegt fyrir viðskiptavini",
+        "no": "Óaðgengilegt",
+        "unknown": "Óþekkt aðgengi",
+        "unknownTag": "Upplýsingar vantar eða annað en ofangreint",
+        "permissive": "Opið öllum þangað til annað er tilkynnt"
+    },
+    "navbar": {
+        "created_with_<3_by": "smíðað af ❤ af",
+        "visit_github": "Heimsæktu GitHub-síðuna okkar",
+        "login": "Skrá inn með OSM-reikningi",
+        "logout": "Skrá út",
+        "about": "Um",
+        "hosted_by": "hýst af",
+        "help_translating": "Hjálpaðu við þýðinguna",
+        "visit_osmp_website": "Heimsækja pólska OpenStreetMap"
+    },
+    "sidebar": {
+        "close": "Loka hliðarvalmynd",
+        "csv": "CSV",
+        "download_title": "Sækja gögn um hjartastuðtæki frá OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Kortaskýringar",
+        "caption_info": "Hjartastuðtæki",
+        "no_data": "Engin gögn",
+        "indoor": "Innandyra",
+        "location": "Staðsetning",
+        "opening_hours": "Opnunartímar",
+        "description": "Lýsing",
+        "contact_number": "Símanúmer",
+        "operator": "Rekstraraðili",
+        "note": "Athugasemd",
+        "edit": "Breyta",
+        "edit_in_osm": "Breyta í OSM",
+        "view": "Skoða í OSM",
+        "copy_url": "Afrita vefslóð",
+        "add_defibrillator": "Bæta við hjartastuðtæki",
+        "openstreetmap_navigation": "Vegvísun með OpenStreetMap",
+        "google_maps_navigation": "Vegvísun með Google Maps",
+        "verification_date": "Dagsetning skoðunar",
+        "edit_defibrillator": "Breyta hjartastuðtæki",
+        "world": "Heimur",
+        "find_location": "Finna staðsetningu",
+        "level": "hæð"
+    },
+    "form": {
+        "optional_field": "Valkvæður reitur",
+        "marker_popup_text": "Færa bendil á hjartastuðtæki",
+        "is_indoor": "Er innandyra?",
+        "inside": "Innandyra",
+        "outside": "Utandyra",
+        "accessibility": "Aðgengi",
+        "location": "Lýstu staðsetningu",
+        "location_example": "Til dæmis: Á vegg nálægt inngangi",
+        "level": "Hæð"
+    },
+    "footer": {
+        "add": "Bæta við",
+        "add_aed": "Bæta við hjartastuðtæki",
+        "cancel": "Hætta við",
+        "continue": "Halda áfram",
+        "save_aed": "Vista hjartastuðtæki",
+        "partners": "Samstarfsaðilar"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Opið",
+        "closed": "Lokað"
+    },
+    "indoor": {
+        "yes": "Já",
+        "no": "Nei"
+    },
+    "osmp": "OpenStreetMap Póllandi",
+    "modal": {
+        "aed_added_successfully": "Hjartastuðtæki bætt við.",
+        "aed_updated_successfully": "Hjartastuðtæki breytt.",
+        "available_in_osm": "Aðgengilegt í OpenStreetMap með vefslóð:",
+        "should_appear_soon": "Tæki ætti að birtast á kortinu innan klukkustundar.",
+        "error_occurred": "Villa kom upp",
+        "title": "Upplýsingar",
+        "need_to_login": "Til að bæta við hjartastuðtækjum þarf að skrá sig inn með OpenStreetMap-reikningi.",
+        "click_login_button": "Lokaðu þessum glugga og smelltu á innskráningartakkann efst til að skrá þig inn.",
+        "need_more_zoom": "Til að bæta við atriði þarftu að þysja inn svo staðsetningin verði nákvæm.",
+        "current_zoom": "Núverandi aðdráttur:",
+        "zoom_need_to_be": "Aðdráttur þarf að vera a.m.k. 15.",
+        "about_project": "OpenAEDMap er verkefni byggt á opnum gögnum þar sem hjartastuðtæki (Automated External Defibrillators, AED) hringinn í kringum heiminn eru sýnd. Gögnin eru frá OpenStreetMap og var smíðað að frumkvæði OpenStreetMap-samfélagsins í Póllandi og opnað í breyttri mynd 2022.",
+        "about_osm": "OpenStreetMap (OSM) er eins og Wikipedia fyrir kort. Það er opið öllum til að nota, breyta og bæta við. Þú getur notað OSM-reikninginn þinn til að bæta við hjartastuðtækjum með einfaldri valmynd.",
+        "create_account": "Þú getur hjálpað til. Búðu til ókeypis reikning á ",
+        "become_openaedmap_partner": "Viltu styðja OpenAEDMap?",
+        "contact_us": "Hafðu samband",
+        "thanks_for_photo": "Takk fyrir að hlaða upp myndinni. Hún ætti að verða sýnileg fljótlega.",
+        "thanks_for_report": "Takk fyrir að senda inn tilkynningu. Hún verður skoðuð af stjórnendum."
+    },
+    "partners": {
+        "e_health_centre": "Miðstöð fjarlækninga",
+        "gugik": "Aðalskrifstofa Landmælinga Póllands",
+        "chief_geodesist": "Yfirmaður landmælinga í Póllandi",
+        "warsaw_university_of_technology": "Tækniháskóli Varsjár",
+        "wroclaw_medical_university": "Læknaháskólinn í Wroclaw",
+        "honorary_patronage": "Stuðningsaðilar",
+        "main_scientific_partner": "Meginsamstarfsaðili úr vísindaheiminum"
+    },
+    "common": {
+        "loading": "Hleð..."
+    },
+    "photo": {
+        "upload": "Hlaða upp ljósmynd",
+        "remove": "Fjarlægja ljósmynd",
+        "report": "Tilkynna ljósmynd",
+        "send_report": "Senda tilkynningu",
+        "report_long_text": "Þú getur tilkynnt ljósmynd ef hún er í lélegum gæðum, sýnir ekki staðsetningu hjartastuðtækisins eða er óviðeigandi á annan hátt. Stjórnendur munu fara yfir tilkynninguna.",
+        "license": "Allar ljósmyndir eru hýstar af okkur og gerðar aðgengilegar undir Creative Commons Zero (CC0 v1.0) leyfi. Þegar þú hleður upp mynd samþykkirðu skilmálana.",
+        "license_short_description": "Í stuttu máli þýðir þetta að hver sem er mun mega nota myndina á þess að geta heimildar."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap – kort af hjartastuðtækjum",
+        "meta_title": "Opið kort af hjartastuðtækjum",
+        "meta_description": "Kort af hjartastuðtækjum byggt á gögnum frá OpenStreetMap. Þessi vefsíða gerir það auðvelt að finna hjartastuðtæki nálægt þér, sem getur nýst í lífshótandi aðstæðum. Hjartastuðtæki eru notuð við endurlífgun á fólki í hjartastoppi."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "Slökkt er á WebGL eða ekki stutt af vefvafranum þínum.",
+        "required_for_using_openaedmap": "WebGL er nauðsynlegt til að nota OpenAEDMap.",
+        "please_check_instruction_at": "Skoðaðu leiðbeiningar um það hvernig WebGL er virkjað á"
+    }
+}
