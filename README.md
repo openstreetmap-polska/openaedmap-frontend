@@ -45,12 +45,13 @@ One way to set up is:
 
 Second way is if you are using VS Code and have Docker installed you can use devContainer extension.
 
-Create .env file and put these variables there:
+The repo ships a `dev.env` template with sensible defaults for local
+development. Symlink it to `.env` (which stays gitignored, so your local
+overrides and any secrets are never committed):
 ```
-VITE_OSM_API_URL=https://master.apis.dev.openstreetmap.org
-VITE_BACKEND_API_URL=https://dev.openaedmap.org
-VITE_OSM_OAUTH2_CLIENT_ID=9MF6zlYwOE_FaFNZmhFcBpyx7BFtTSXcsikrQF0JM-8
+ln -s dev.env .env
 ```
+If you need custom values, copy it instead (`cp dev.env .env`) and edit `.env`.
 
 *Note: You can use Github Codespaces to develop.*
 
