@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Check JSON syntax errors in translations via jq
       run: jq . public/locales/*/translation.json > /dev/null
     - name: Setup Bun

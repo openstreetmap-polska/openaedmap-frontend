@@ -16,7 +16,7 @@ jobs:
           ssh-host: ${{ secrets.SSH_HOST_NEW_IP }}
           ssh-port: ${{ secrets.SSH_HOST_NEW_PORT }}
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
