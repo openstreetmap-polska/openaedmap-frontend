@@ -136,6 +136,15 @@ export default defineConfig(({ mode }) => {
 				"~": path.resolve(__dirname, "./src"),
 			},
 		},
+		css: {
+			preprocessorOptions: {
+				scss: {
+					// Bulma's SCSS still uses the deprecated Sass if() function.
+					// Silence the warning until Bulma migrates to the CSS syntax.
+					silenceDeprecations: ["if-function"],
+				},
+			},
+		},
 		build: {
 			target: "es2015",
 			outDir: "build",
