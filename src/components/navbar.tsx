@@ -1,5 +1,5 @@
 import { mdiMapLegend } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import React, { type FC, useId } from "react";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";

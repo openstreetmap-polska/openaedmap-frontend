@@ -1,5 +1,5 @@
 import { mdiMapLegend } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import { useTranslation } from "react-i18next";
 import MarkerCustomers from "~/marker_icons/marker_customers.svg";
 import MarkerNo from "~/marker_icons/marker_no.svg";

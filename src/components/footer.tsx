@@ -4,7 +4,7 @@ import {
 	mdiCancel,
 	mdiMapMarkerPlus,
 } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import type { FC } from "react";
 import { Button, Footer } from "react-bulma-components";
 import { useTranslation } from "react-i18next";

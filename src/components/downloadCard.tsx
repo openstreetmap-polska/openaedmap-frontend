@@ -1,5 +1,5 @@
 import { mdiDownload, mdiFileDownloadOutline } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "~/appContext";

@@ -6,7 +6,7 @@ import {
 	mdiMapMarkerPlus,
 	mdiPencil,
 } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import type React from "react";
 import type { FC } from "react";
 import { Button } from "react-bulma-components";

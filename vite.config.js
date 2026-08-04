@@ -4,11 +4,20 @@ import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
 import Sitemap from "vite-plugin-sitemap";
-import languages from "./src/languages";
+import languages from "./src/languages.ts";
 
 const getTranslatedStrings = async (languageCode) => {
-	const translations = await import(
-		`./public/locales/${languageCode}/translation.json`
+	// Read via an absolute path rather than a relative dynamic import: Vite 8
+	// bundles the config into node_modules/.vite-temp, so relative specifiers
+	// would resolve against that temp dir instead of the project root.
+	const translations = JSON.parse(
+		fs.readFileSync(
+			path.resolve(
+				process.cwd(),
+				`public/locales/${languageCode}/translation.json`,
+			),
+			"utf-8",
+		),
 	);
 	return translations.meta;
 };
@@ -88,9 +97,37 @@ const htmlPlugin = async (env) => {
 	};
 };
 
+// maplibre-gl v6 loads its web worker from `new URL(`./${name}`, import.meta.url)`
+// with a dynamic name, so Vite can't statically detect it and never emits the
+// worker chunk. Copy the worker (and the shared chunk it imports) next to the
+// built JS so the runtime URL resolves in production. Dev is handled separately
+// via optimizeDeps.exclude.
+const copyMaplibreWorkerPlugin = () => ({
+	name: "copy-maplibre-worker",
+	apply: "build",
+	writeBundle(options) {
+		const srcDir = path.resolve(
+			import.meta.dirname,
+			"node_modules/maplibre-gl/dist",
+		);
+		const outDir = path.join(options.dir, "assets");
+		for (const file of [
+			"maplibre-gl-worker.mjs",
+			"maplibre-gl-worker.mjs.map",
+			"maplibre-gl-shared.mjs",
+			"maplibre-gl-shared.mjs.map",
+		]) {
+			const from = path.join(srcDir, file);
+			if (fs.existsSync(from)) {
+				fs.copyFileSync(from, path.join(outDir, file));
+			}
+		}
+	},
+});
+
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd());
-	const plugins = [react(), htmlPlugin(env)];
+	const plugins = [react(), htmlPlugin(env), copyMaplibreWorkerPlugin()];
 
 	if (env.VITE_SENTRY_AUTH_TOKEN) {
 		plugins.push(
@@ -121,9 +158,12 @@ export default defineConfig(({ mode }) => {
 		);
 	}
 
-	const rollupInputs = { main: resolve(__dirname, "index.html") };
+	const rollupInputs = { main: resolve(import.meta.dirname, "index.html") };
 	for (const lang of Object.keys(languages)) {
-		rollupInputs[lang] = resolve(__dirname, `langs/${lang}/index.html`);
+		rollupInputs[lang] = resolve(
+			import.meta.dirname,
+			`langs/${lang}/index.html`,
+		);
 	}
 
 	return {
@@ -133,7 +173,7 @@ export default defineConfig(({ mode }) => {
 		},
 		resolve: {
 			alias: {
-				"~": path.resolve(__dirname, "./src"),
+				"~": path.resolve(import.meta.dirname, "./src"),
 			},
 		},
 		css: {
@@ -145,8 +185,13 @@ export default defineConfig(({ mode }) => {
 				},
 			},
 		},
+		optimizeDeps: {
+			// maplibre-gl loads its own web worker as a separate chunk, which the
+			// dep optimizer drops (the worker .mjs 404s). Serve it un-bundled.
+			exclude: ["maplibre-gl"],
+		},
 		build: {
-			target: "es2015",
+			target: "es2020",
 			outDir: "build",
 			chunkSizeWarningLimit: 1900,
 			sourcemap: true,

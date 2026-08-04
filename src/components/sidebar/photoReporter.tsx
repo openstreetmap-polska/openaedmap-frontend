@@ -1,5 +1,5 @@
 import { mdiArrowLeftBold, mdiSend } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import type React from "react";
 import type { FC } from "react";
 import { Button, Card, Image } from "react-bulma-components";

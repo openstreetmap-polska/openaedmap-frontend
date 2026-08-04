@@ -1,5 +1,5 @@
 import { mdiPhone } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import { useTranslation } from "react-i18next";
 
 export default function ContactPhoneFormField({

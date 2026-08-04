@@ -2,10 +2,9 @@ import MaplibreGeocoder, {
 	type MaplibreGeocoderOptions,
 } from "@maplibre/maplibre-gl-geocoder";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import maplibregl, {
-	type MapGeoJSONFeature,
-	type MapMouseEvent,
-} from "maplibre-gl";
+import type { Point } from "geojson";
+import type { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { type FC, useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -271,7 +270,7 @@ const MapView: FC<MapViewProps> = ({ openChangesetId, setOpenChangesetId }) => {
 					layers: [layer],
 				});
 				const zoom = map.getZoom();
-				const point = features[0].geometry as GeoJSON.Point;
+				const point = features[0].geometry as Point;
 				map.easeTo({
 					center: point.coordinates as [number, number],
 					zoom: zoom + 2,

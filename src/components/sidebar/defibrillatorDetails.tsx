@@ -7,12 +7,12 @@ import {
 	mdiMapMarkerOutline,
 	mdiPhoneOutline,
 } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import React, { type FC, Suspense, useState } from "react";
 import { Button, Card, Columns, Image } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
-import ImageGallery, { type ReactImageGalleryItem } from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery, { type GalleryItem } from "react-image-gallery";
+import "react-image-gallery/styles/image-gallery.css";
 import { useAppContext } from "~/appContext";
 import { backendBaseUrl } from "~/backend";
 import { useLanguage } from "~/i18n";
@@ -46,7 +46,7 @@ const PhotoGallery: FC<DefibrillatorDetailsProps> = ({
 	const [imageError, setImageError] = useState("");
 
 	if (data === null) return null;
-	let images: ReactImageGalleryItem[] = [];
+	let images: GalleryItem[] = [];
 	// Currently only one photo allowed
 	if (data.photoRelativeUrl !== undefined && data.photoRelativeUrl !== null) {
 		const imageUrl = backendBaseUrl + data.photoRelativeUrl;

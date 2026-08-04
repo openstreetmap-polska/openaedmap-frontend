@@ -1,5 +1,5 @@
 import { mdiAccount, mdiLogoutVariant } from "@mdi/js";
-import Icon from "@mdi/react";
+import { Icon } from "@mdi/react";
 import type { FC } from "react";
 import { Button, Navbar } from "react-bulma-components";
 import { useTranslation } from "react-i18next";
