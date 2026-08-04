@@ -11,6 +11,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	fi: { nativeName: "Suomi" },
 	fr: { nativeName: "Français" },
 	hu: { nativeName: "Magyar" },
+	is: { nativeName: "Íslenska" },
 	it: { nativeName: "Italiano" },
 	ja: { nativeName: "日本語" },
 	ko: { nativeName: "한국어" },
