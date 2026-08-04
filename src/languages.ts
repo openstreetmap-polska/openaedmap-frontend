@@ -25,6 +25,7 @@ const languages: { [index: string]: { nativeName: string } } = {
 	sl: { nativeName: "Slovenščina" },
 	sr: { nativeName: "Српски / Srpski" },
 	sv: { nativeName: "Svenska" },
+	ta: { nativeName: "தமிழ்" },
 	uk: { nativeName: "українська мова" },
 	zgh: { nativeName: "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ" },
 	"zh-Hans": { nativeName: "简体中文" },
