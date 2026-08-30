@@ -33,7 +33,7 @@
         "download_title": "Az OSM-en feltüntettet defibrillátorok adatainak letöltése",
         "geojson": "GeoJSON",
         "map_legend_title": "Jelmagyarázat",
-        "caption_info": "Defibrillátor (AED)",
+        "caption_info": "AED (defibrillátor)",
         "no_data": "Nincs adat",
         "indoor": "Épületen belül",
         "level": "szint",
