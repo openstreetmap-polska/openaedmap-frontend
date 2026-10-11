@@ -126,15 +126,15 @@ const copyMaplibreWorkerPlugin = () => ({
 });
 
 export default defineConfig(({ mode }) => {
-	const env = loadEnv(mode, process.cwd());
+	const env = loadEnv(mode, process.cwd(), ["VITE_", "SENTRY_"]);
 	const plugins = [react(), htmlPlugin(env), copyMaplibreWorkerPlugin()];
 
-	if (env.VITE_SENTRY_AUTH_TOKEN) {
+	if (env.SENTRY_AUTH_TOKEN) {
 		plugins.push(
 			sentryVitePlugin({
 				org: "sentry",
 				project: "openaedmap-frontend",
-				authToken: env.VITE_SENTRY_AUTH_TOKEN,
+				authToken: env.SENTRY_AUTH_TOKEN,
 				url: "https://sentry.monicz.dev",
 				telemetry: false,
 				release: {
