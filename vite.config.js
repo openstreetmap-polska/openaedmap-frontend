@@ -139,6 +139,7 @@ export default defineConfig(({ mode }) => {
 				telemetry: false,
 				release: {
 					dist: env.VITE_ENV,
+					setCommits: { auto: true },
 				},
 			}),
 		);
