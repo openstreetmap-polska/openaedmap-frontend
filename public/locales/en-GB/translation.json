@@ -1,0 +1,131 @@
+{
+    "access": {
+        "yes": "Publicly accessible",
+        "permit": "Accessible with owner's permit",
+        "private": "Privately accessible",
+        "customers": "Accessible only for customers",
+        "no": "Unavailable",
+        "unknown": "Unknown access",
+        "unknownTag": "No access tag or not matching above",
+        "permissive": "Publicly available until further notice"
+    },
+    "navbar": {
+        "created_with_<3_by": "created with ❤ by",
+        "visit_github": "Visit our GitHub repository",
+        "visit_osmp_website": "Visit OpenStreetMap Poland's website",
+        "login": "Log in using OSM account",
+        "logout": "Log out",
+        "about": "About",
+        "hosted_by": "hosted by",
+        "help_translating": "Help translating"
+    },
+    "sidebar": {
+        "close": "Close sidebar",
+        "csv": "CSV",
+        "download_title": "Download defibrillator data added to OSM",
+        "excel": "Excel",
+        "geojson": "GeoJSON",
+        "map_legend_title": "Map legend",
+        "caption_info": "AED",
+        "no_data": "No data",
+        "indoor": "Inside building",
+        "level": "level",
+        "location": "Location",
+        "opening_hours": "Opening hours",
+        "description": "Description",
+        "contact_number": "Contact number",
+        "operator": "Operator",
+        "note": "Note",
+        "edit": "Edit",
+        "edit_in_osm": "Edit in OSM",
+        "view": "View in OSM",
+        "copy_url": "Copy URL",
+        "add_defibrillator": "Add defibrillator",
+        "openstreetmap_navigation": "OpenStreetMap Navigation",
+        "google_maps_navigation": "Google Maps Navigation",
+        "verification_date": "Date of survey",
+        "edit_defibrillator": "Edit defibrillator",
+        "world": "World",
+        "find_location": "Find location"
+    },
+    "form": {
+        "optional_field": "Field optional",
+        "marker_popup_text": "Move marker to AED location",
+        "is_indoor": "Is inside building?",
+        "inside": "Inside",
+        "level": "Level",
+        "outside": "Outside",
+        "accessibility": "Accessibility",
+        "location": "Describe location",
+        "location_example": "For example: On the wall near the entrance"
+    },
+    "footer": {
+        "add": "Add",
+        "add_aed": "Add defibrillator",
+        "cancel": "Cancel",
+        "continue": "Continue",
+        "save_aed": "Save defibrillator",
+        "partners": "Project's partners"
+    },
+    "opening_hours": {
+        "24_7": "24/7",
+        "open": "Open",
+        "closed": "Closed"
+    },
+    "indoor": {
+        "yes": "Yes",
+        "no": "No"
+    },
+    "osmp": "OpenStreetMap Poland",
+    "modal": {
+        "aed_added_successfully": "AED added successfully.",
+        "aed_updated_successfully": "AED updated successfully.",
+        "available_in_osm": "Available in OpenStreetMap with the URL:",
+        "should_appear_soon": "Object should appear on the map within 60 minutes.",
+        "error_occurred": "Error occurred",
+        "title": "Information",
+        "need_to_login": "To add features you need to log in using OpenStreetMap account.",
+        "click_login_button": "Close this window and click login button at the top to log in.",
+        "need_more_zoom": "To add features you need to zoom in so the location that you provide is accurate.",
+        "current_zoom": "Current zoom:",
+        "zoom_need_to_be": "Zoom needs to be at level 15 minimum.",
+        "about_project": "OpenAEDMap is an open-data project which shows all Automated External Defibrillators (AED) around the world. The website is based on data from OpenStreetMap and is the result of OpenStreetMap Poland's association efforts. It was created in 2022 after changing the Polish website AED Mapa to a new design.",
+        "about_osm": "OpenStreetMap (OSM) is like a Wikipedia for maps. It's available to use for everyone and anybody can add objects to the map. You can use your OSM account to add AED locations directly from this site using a simple form.",
+        "create_account": "You can contribute too! Just create a free account on ",
+        "become_openaedmap_partner": "Do you want to become OpenAEDMap partner?",
+        "contact_us": "Contact us",
+        "thanks_for_photo": "Thank you for uploading the photo. It should be visible soon.",
+        "thanks_for_report": "Thank you for sending a report. It will be reviewed by the site administrators."
+    },
+    "partners": {
+        "e_health_centre": "e-Health Centre",
+        "honorary_patronage": "Honorary patronage",
+        "gugik": "Head Office of Geodesy and Cartography in Poland",
+        "chief_geodesist": "Chief Geodesist of Poland",
+        "main_scientific_partner": "The Main Scientific Partner",
+        "warsaw_university_of_technology": "Warsaw University of Technology",
+        "wroclaw_medical_university": "Wroclaw Medical University"
+    },
+    "common": {
+        "loading": "Loading..."
+    },
+    "photo": {
+        "upload": "Upload photo",
+        "remove": "Remove photo",
+        "report": "Report photo",
+        "send_report": "Send report",
+        "report_long_text": "You can report the photo if it's bad quality, does not show the AED's location or is inappropriate in any way. Administrators of the site will review the report.",
+        "license": "All AED photos are hosted by us and are licensed under Creative Commons Zero (CC0 v1.0). By uploading your photo you agree to these licence terms.",
+        "license_short_description": "In short this means that the photo can be used by anyone for any purpose. No attribution is necessary."
+    },
+    "meta": {
+        "website_title": "OpenAEDMap - Map of Defibrillators",
+        "meta_title": "Open map of Automatic External Defibrillators (AEDs)",
+        "meta_description": "Map of defibrillators (AEDs) based on OpenStreetMap data. Our website makes it easy to find a defibrillator near you, which can be very helpful in life-threatening situations. Defibrillators are devices used for cardiopulmonary resuscitation of people in cardiac arrest. With our map, anyone can quickly find the nearest defibrillator and help someone in need."
+    },
+    "webgl": {
+        "disabled_or_unsupported": "WebGL is disabled or unsupported by your browser.",
+        "required_for_using_openaedmap": "WebGL is required for using OpenAEDMap.",
+        "please_check_instruction_at": "Please check instruction for enabling WebGL at"
+    }
+}
